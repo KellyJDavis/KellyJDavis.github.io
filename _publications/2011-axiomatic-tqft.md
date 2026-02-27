@@ -6,6 +6,7 @@ permalink: /publication/2011-axiomatic-tqft
 excerpt: 'We prove that unitary axiomatic TQFT in four dimensions cannot detect changes in smooth structure; we resolve the apparent contradiction with Donaldson–Witten theory by introducing axioms for differential quantum field theory.'
 date: 2011-01-01
 venue: 'Quantum Topology (submitted)'
+paperurl: 'https://arxiv.org/abs/1106.2358'
 citation: 'Kelly Davis. (2011). &quot;Axiomatic TQFT, Axiomatic DQFT, and Exotic 4-Manifolds.&quot; <i>Quantum Topology</i> (submitted).'
 ---
 
