@@ -9,4 +9,4 @@ venue: 'WIP'
 citation: 'Kelly Davis. (2014). &quot;Amazon Elastic Compute Cloud vs Andrews–Curtis Conjecture.&quot; <i>Work in progress</i>.'
 ---
 
-The Andrews–Curtis conjecture—that every balanced presentation of the trivial group can be transformed into the trivial presentation by a sequence of Andrews–Curtis moves—is unresolved. Michael Freedman has shown that some counterexamples would refute the smooth four-dimensional Poincaré conjecture. We construct a parallel algorithm that searches for counterexamples, run it on the Amazon Elastic Compute Cloud, and report the results.
+The Andrews–Curtis conjecture—that every balanced presentation of the trivial group can be transformed into the trivial presentation by a sequence of Andrews–Curtis moves—is unresolved. Michael Freedman has shown that some counterexamples would refute the smooth four-dimensional Poincaré conjecture. We construct a parallel algorithm that searches for counterexamples, run it on the Amazon Elastic Compute Cloud, and report the results. Code is open-source at [KellyJDavis/Andrews-Curtis](https://github.com/KellyJDavis/Andrews-Curtis).
