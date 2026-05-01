@@ -59,13 +59,13 @@ But this leaves open the question: Exactly which topology *is* being used? The E
 If the Euclidean topology is being used, then this raises another question: Why use the $$\mathbf{B}$$, open sets with compact closure, based off a topology derived from a *Euclidian* metric on $$\mathbb{R}^4$$?  *Euclidian* metrics have *nothing* to do with physics which is determined by a Minkowski metric. A more "natural" thing to do would be to base $$\mathbf{B}$$ off a "topology derived from a Minkowski metric", whatever that might mean.
 
 ## Alexandrov Topology on Minkowski Space 
-To consider what that might mean let $$p$$ and $$q$$ be any two points in what physicists think of as Minkowski space. With these two points, one can define two natural sets: $$I^+(p)$$, the chronological future of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like curve), and $$I^-(q)$$, the chronological past of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like curve).
+To consider what that might mean let $$p$$ and $$q$$ be any two points in what physicists think of as Minkowski space. With these two points, one can define two natural sets: $$I^+(p)$$, the *chronological future* of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like curve), and $$I^-(q)$$, the *chronological past* of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like curve).
 
 It turns out that $$I^+(p)$$ is an open set in the Euclidean topology for any $$p$$ in what physicists think of as Minkowski space (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Similarly, the time-reversed version of Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609) implies that $$I^-(q)$$ is an open set in that same topology. Hence, $$I^+(p) \cap I^-(q)$$ is also open in that topology.
 
 This suggests that sets of the form $$I^+(p) \cap I^-(q)$$ might be able to be used as the [basis](https://ncatlab.org/nlab/show/topological+base) of a new topology on $$\mathbb{R}^4$$. As it so happens, sets of this form *can* be used as the basis for a topology on $$\mathbb{R}^4$$.
 
-Sets $$I^+(p) \cap I^-(q)$$ with $$p,q \in \mathbb{R}^4$$ form the basis for what's known as the Alexandrov topology of $$\mathbb{R}^4$$ (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, it turns out that the Alexandrov topology of $$\mathbb{R}^4$$ agrees with the Euclidean topology of $$\mathbb{R}^4$$ (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)), a welcome happenstance that "explains" why physicists had not confronted this earlier.
+Sets $$I^+(p) \cap I^-(q)$$ with $$p,q \in \mathbb{R}^4$$ form the basis for what's known as the *Alexandrov topology* of $$\mathbb{R}^4$$ (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, it turns out that the Alexandrov topology of $$\mathbb{R}^4$$ agrees with the Euclidean topology of $$\mathbb{R}^4$$ (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)), a welcome happenstance that "explains" why physicists had not confronted this earlier.
 
 All that being said, we will equip $$\mathbb{R}^4$$ with the Alexandrov topology as it is the "natural" topology of relativity.  So for us *Minkowski space* is $$\mathbb{R}^4$$ with the Alexandrov topology, the Minkowski metric, and standard time-orientation.
 
@@ -115,15 +115,17 @@ The resolution to this problem is the simple observation that in Algebraic Quant
 #### Casual Regions of Measurement 
 We chose regions $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ under the assumption that "observers" were massive like ourselves. Without any real justification this excludes massless "observers". We could have also considered massive and massless "observers" and utilized casual instead of chronological regions.
 
-In other words we could have required our regions $$\mathbf{B}$$ to be of the form $$J^+(p) \cap J^-(q)$$, where $$J^+(p)$$ is the casual future of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like or light-like curve) and $$J^-(q)$$ is the casual past of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like or light-like curve). This, then, would allow for massless "observers".
+In other words we could have required our regions $$\mathbf{B}$$ to be of the form $$J^+(p) \cap J^-(q)$$, where $$J^+(p)$$ is the *casual future* of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like or light-like curve) and $$J^-(q)$$ is the *casual past* of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like or light-like curve). This, then, would allow for massless "observers".
 
 Requiring our regions $$\mathbf{B}$$ to be of the form $$J^+(p) \cap J^-(q)$$, however, leads to problems. In particular, as the zero vector is light-like, the point $$\{p\}$$ is a light-like curve. Hence, the point $$\{p\}=J^+(p) \cap J^-(p)$$ would be an allowable form for a region $$\mathbf{B}$$ in this scenario.
 
-With a $$\mathbf{B}$$ of the form $$\{p\}$$ we can then use Axiom 1 to assign an (abstract) C*-algebra $$\mathfrak{U}(\{p\})$$ to the point $$\{p\}$$. This, while seemingly harmless, runs into problems, running afoul of the initial motivation for AQFT.
+With a $$\mathbf{B}$$ of the form $$\{p\}$$ we first note that $$\{p\}$$ is not open, which is required of our $$\mathbf{B}$$, a first strike against this idea. However, if we're trying to be optimistic, it might not be a death knell.
+
+Second, with a $$\mathbf{B}$$ of the form $$\{p\}$$ we can use Axiom 1 to assign an (abstract) C*-algebra $$\mathfrak{U}(\{p\})$$ to the point $$\{p\}$$. This, while seemingly harmless, runs into problems, running afoul of the initial motivation for AQFT.
 
 In standard quantum field theory a field is an operator valued distribution. (See Section 3.10 of [Talagrand](https://doi.org/10.1017/9781108225144).) So, as it is a distribution, it is defined almost everywhere. This means that there may exist points $$p$$ in Minkowski space at which it is not defined.
 
-Traditionlly (See Section II.4.1 of [Haag](https://doi.org/10.1007/978-3-642-61458-3)) AQFT motivates the passage from a standard field, i.e. an operator valued distribution $$\Phi$$, to the algebra $$\mathfrak{U}(\mathbf{B})$$ on an open, bounded set $$\mathbf{B}$$ by constructing the algebra $$\mathfrak{U}(\mathbf{B})$$ from *smearings* of $$\Phi$$ over $$\mathbf{B}$$, i.e. an element $$a$$ of $$\mathfrak{U}(\mathbf{B})$$ would be defined as follows
+Traditionlly (See Section II.4.1 of [Haag](https://doi.org/10.1007/978-3-642-61458-3)) AQFT motivates the passage from a standard field, i.e. an operator valued distribution $$\Phi$$, to the algebra $$\mathfrak{U}(\mathbf{B})$$ on an open, bounded set $$\mathbf{B}$$ by constructing a representation of the algebra $$\mathfrak{U}(\mathbf{B})$$ from *smearings* of $$\Phi$$ over $$\mathbf{B}$$, i.e. a representation $$a$$ of an element of $$\mathfrak{U}(\mathbf{B})$$ would be defined as follows
 
 $$
 a \equiv \int_{\mathbf{B}} f(x) \Phi(x) \, d^4x,
@@ -131,7 +133,7 @@ $$
 
 where $$f(x)$$ is a *test function*, a smooth function with support in $$\mathbf{B}$$.
 
-Trying to generalize this to $$\mathfrak{U}(\{p\})$$ immediately runs into problems. Naively an element $$b$$ in $$\mathfrak{U}(\{p\})$$ would be of the form 
+Trying to generalize this to $$\mathfrak{U}(\{p\})$$ immediately runs into problems. Naively a representation $$b$$ of an element in $$\mathfrak{U}(\{p\})$$ would be of the form 
 
 $$
 b \equiv \int_{\{p\}} f(x) \Phi(x) \, d^4x.
@@ -146,6 +148,8 @@ So, all of this implies that our original choice requiring regions $$\mathbf{B}$
 Now let us consider Axiom 2 (Isotony) which states
 
 **Axiom 2** *(Isotony)* If $$\mathbf{B_1} \subset \mathbf{B_2}$$ then $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$. We assume in addition that one of the two following situations prevails. Either $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ have a common unit element, or neither of them has a unit. The first situation can be obtained from the second by formal adjunction of a unit.
+
+## GNS Construction
 
 ## Isotony
 Isotony, along with the requirement that $$\mathfrak{U}(\mathbf{B})$$ be a C*-algebra, turns out to be "natural" physically.
