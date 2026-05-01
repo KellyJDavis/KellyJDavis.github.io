@@ -249,12 +249,34 @@ $$
 As the empty set $$\emptyset$$ is a member of any $$\mathbf{B}$$, isotony implies $$\mathfrak{U}(\emptyset) \subset \mathfrak{U}(\mathbf{B})$$ which in turn implies that all $$\mathfrak{U}(\mathbf{B})$$ contain a unit.
 
 # Axiom 3 (Local Commutativity)
+Let us now consider Axiom 3 (Local Commutativity) which states
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit libero suscipit neque molestie fermentum. Duis in velit sed nulla ullamcorper egestas. Mauris eu dui a ligula dictum placerat. Aliquam erat volutpat. Aenean at sem laoreet, dictum lacus eget, faucibus nisl. Donec tellus dolor, mattis eget lectus vitae, pretium ultrices dolor. Nullam id faucibus libero. Donec a mollis urna, ac viverra turpis. Vivamus vel purus a elit viverra posuere. Mauris viverra ex ac sem congue, eget sagittis ligula elementum. Aenean sollicitudin consectetur nunc quis tincidunt.
+**Axiom 3** *(Local Commutativity)* If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike with respect to each other, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute.
 
-Morbi sit amet sodales quam. Fusce tincidunt nisl eu justo ultrices volutpat. Pellentesque congue mi eget nisl feugiat, ac pulvinar urna sagittis. Integer efficitur pretium metus, vitae pharetra lacus. Phasellus sed leo diam. Fusce ut interdum magna. Curabitur semper faucibus semper. Suspendisse sed fermentum tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse nec ex sit amet quam varius feugiat.
+Axiom 3 (Local Commutativity) is largely self-explanitory. However, there are a couple of aspects that demand clarification.
 
-Integer fermentum id diam id eleifend. Nulla et interdum elit, quis ornare est. Sed eget pretium nisi. Donec nec pharetra odio. Morbi pretium eget sem eget ultrices. Nam arcu mauris, lacinia quis magna sit amet, lacinia efficitur augue. Sed ac odio id ligula gravida vulputate.
+## Completely Spacelike
+First, the term "completely spacelike" as applied to regions $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ is never defined. However, it's relatively clear what is meant.
+
+Two regions $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ are *completely spacelike* if any $$p_1$$ in $$\mathbf{B}_1$$ one selects is spacelike related to any $$p_2$$ in $$\mathbf{B}_2$$ one selects. Simple.
+
+## Quasilocal Algebra
+The second point that requires clarification is a bit more subtle.
+
+When one requires that $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute, this tacitly implies that $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ are subalgebras of a single, larger algebra, an algebra in which products and sums of their elements are defined.
+
+Naively one might hope that isotony would come to the rescue. However, this isn't the case. If say $$\mathbf{B_1} \subset \mathbf{B_2}$$, isotopy would imply that $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$. This would place $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ in a single, larger algebra $$\mathfrak{U}(\mathbf{B_2})$$ in which they could commute. However, the assumption that $$\mathbf{B_1} \subset \mathbf{B_2}$$ would imply that $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are not completely spacelike.  Isotony doesn't come to the rescue.
+
+However, what does come to the rescue is the quasilocal algebra $$\mathfrak{U}$$. By definition $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}$$ and $$\mathfrak{U}(\mathbf{B_2}) \subset \mathfrak{U}$$. So $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ are in a single, larger algebra $$\mathfrak{U}$$. We can thus interpret the statement
+
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike with respect to each other, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute.
+
+as the statement
+
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike with respect to each other, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$.
+
+Clarification.
+
 
 # Axiom 4 (Quasilocal Algebra)
 
