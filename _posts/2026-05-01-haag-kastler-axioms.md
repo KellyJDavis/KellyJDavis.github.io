@@ -279,12 +279,40 @@ Clarification.
 
 
 # Axiom 4 (Quasilocal Algebra)
+Next let's consider Axiom 4 (Quasilocal Algebra)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit libero suscipit neque molestie fermentum. Duis in velit sed nulla ullamcorper egestas. Mauris eu dui a ligula dictum placerat. Aliquam erat volutpat. Aenean at sem laoreet, dictum lacus eget, faucibus nisl. Donec tellus dolor, mattis eget lectus vitae, pretium ultrices dolor. Nullam id faucibus libero. Donec a mollis urna, ac viverra turpis. Vivamus vel purus a elit viverra posuere. Mauris viverra ex ac sem congue, eget sagittis ligula elementum. Aenean sollicitudin consectetur nunc quis tincidunt.
+**Axiom 4** *(Quasilocal Algebra)* The set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a normed \*-algebra. Taking its completion we get a C\*-algebra which we denote by $$\mathfrak{U}$$ and call the *algebra of quasilocal observables*. We maintain that $$\mathfrak{U}$$ contains all observables of interest.
 
-Morbi sit amet sodales quam. Fusce tincidunt nisl eu justo ultrices volutpat. Pellentesque congue mi eget nisl feugiat, ac pulvinar urna sagittis. Integer efficitur pretium metus, vitae pharetra lacus. Phasellus sed leo diam. Fusce ut interdum magna. Curabitur semper faucibus semper. Suspendisse sed fermentum tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse nec ex sit amet quam varius feugiat.
+This actually turns out to be straightforward.
 
-Integer fermentum id diam id eleifend. Nulla et interdum elit, quis ornare est. Sed eget pretium nisi. Donec nec pharetra odio. Morbi pretium eget sem eget ultrices. Nam arcu mauris, lacinia quis magna sit amet, lacinia efficitur augue. Sed ac odio id ligula gravida vulputate.
+## Set-Theoretic Union 
+The first claim this axiom makes is that the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a normed \*-algebra. Is this the case?
+
+If the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a normed \*-algebra, then all of standard properties of a normed \*-algebra (e.g. finite vector sums, finite algebraic products, involution...) must be defined for elements of this set-theoretic union. Are such properties defined?
+
+Consider two arbitrary elements $$a_1$$ and $$a_2$$ in this set-theoretic union. As $$a_1$$ and $$a_2$$ are elements of this set-theretic union, there exists a $$\mathbf{B}_1$$ such that $$a_1 \in \mathfrak{U}(\mathbf{B}_1)$$ and a $$\mathbf{B}_2$$ such that $$a_2 \in \mathfrak{U}(\mathbf{B}_2)$$.
+
+By definition $$\mathbf{B}_1$$ is of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$\mathbf{B}_2$$ is of the form $$I^+(p_2) \cap I^-(q_2)$$. As we are in Minkowski spacetime, there always exists a $$p$$ and $$q$$ such that both  $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$ are contained in $$I^+(p) \cap I^-(q)$$. Let us denote the set $$I^+(p) \cap I^-(q)$$ as $$\mathbf{B}$$, i.e. $$\mathbf{B} \equiv I^+(p) \cap I^-(q)$$.
+
+As both $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$ are contained in $$I^+(p) \cap I^-(q)$$, the isotony axiom implies that $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B})$$ and $$\mathfrak{U}(\mathbf{B}_2) \subset \mathfrak{U}(\mathbf{B})$$. This in turn implies that $$a_1, a_2 \in \mathfrak{U}(\mathbf{B})$$, which in turn implies that all of the standard properties of a normed \*-algebra (e.g. vector sum, algebraic product, involution...) hold for $$a_1$$ and $$a_2$$ viewed as elements of the algebra $$\mathfrak{U}(\mathbf{B})$$.
+
+As $$a_1$$ and $$a_2$$ were arbitrary elements of the set-theoretic union, the standard properties a normed \*-algebra (e.g. vector sum, algebraic product, involution...) hold for arbitrary finite number of elements in the set-theoretic union.
+
+The subtle point to note here is that limits of elements in this set-theoretic union may not be in the set-theoretic union. Completion solves this problem.
+
+## Completion of the Set-Theoretic Union
+Completion of the set-theoretic union is relatively standard.
+
+One considers any Cauchy sequence $$\{a_i\}$$ in the set-theoretic union. The limit of such a Cauchy sequence might not be in the set-theoretic union. So, we *complete* the set-theoretic union to the quasilocal algebra $$\mathfrak{U}$$ by asserting that $$\mathfrak{U}$$ contains, in addition to all the elements of the set-theoretic union, the limit of all Cauchy sequences in the set-theoretic union.
+
+It turns out that all the standard properties of a C\*-algebra are retained by the completion. For example, consider a Cauchy sequence $$\{a_i\}$$ that converges to $$a$$. One has
+
+$$
+\|a^*a\| - \|a\|^2 = \lim\limits_{i \rightarrow \infty} \|a_i^*a_i\| - \|a_i\|^2 = 0.
+$$
+
+So the C\*-norm property holds for the quasilocal algebra $$\mathfrak{U}$$.
+
 
 # Axiom 5 (Lorentz Covariance)
 
