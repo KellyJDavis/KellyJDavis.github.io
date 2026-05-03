@@ -374,7 +374,7 @@ $$\mathfrak{U}(\mathbf{B})^L = \mathfrak{U}(\mathbf{LB})$$
 
 where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the Lorentz transformation $$L$$.
 
-This axiom is likely mathematically the most straightforward axiom. However, it has the "deepest" implications.
+This axiom is the most straightforward axiom of all that we have encountered.
 
 ## Inhomogeneous Lorentz Group (Homotopic to the Identity)
 This original formulation of Axiom 5 (Lorentz Covariance) ([Haag and Kastler](https://doi.org/10.1063/1.1704187)) uses the term "inhomogeneous Lorentz group" without specifying if this refers to all connected components of the inhomogeneous Lorentz group or simply the component of the inhomogeneous Lorentz group that is connected to identity. This is likely a simple oversight.
@@ -383,16 +383,45 @@ The components of the inhomogeneous Lorentz group not homotopic to the identity 
 
 That being said, it is a reasonable assumption to make that the phrase "inhomogeneous Lorentz group" used in Axiom 5 (Lorentz Covariance) should more properly be read as "the component of the inhomogeneous Lorentz group homotopic to the identity. We will adopt this posture.
 
-## Implications
-Though simple, Axiom 5 (Lorentz Covariance) is a "deep" in that it postulates that spacetime symmetries, i.e. the component of the inhomogeneous Lorentz group homotopic to the identity, are "intimately tied" to properties of the quasilocal algebra $$\mathfrak{U}$$.
-
-For example, given an element $$L$$ from the the component of the inhomogeneous Lorentz group homotopic to the identity, $$L$$ acts on the quasilocal algebra as an automorphism $$\mathfrak{U} \rightarrow \mathfrak{U}^L$$. However, this automorphisms is also "aware" of the local topological and causal structure of Minkowski spacetime, as it acts on the C\*-algebras $$\mathfrak{U}(\mathbf{B})$$ as follows
+## Action of the Inhomogeneous Lorentz Group's Identity Component
+Consider an element $$L$$ of the inhomogeneous Lorentz group's identity component. For a given $$\mathfrak{U}(\mathbf{B})$$ the action of $$L$$ on $$\mathfrak{U}(\mathbf{B})$$ should "naturally" take the form
 
 $$
-\mathfrak{U}(\mathbf{B})^L = \mathfrak{U}(\mathbf{LB})
+\mathfrak{U}(\mathbf{B}) \rightarrow \mathfrak{U}(\mathbf{LB}),
 $$
 
-indicating that the automorphism $$\mathfrak{U}(\mathbf{B})^L$$ is "intimately tied" the action of the inhomogeneous Lorentz group on spacetime $$\mathfrak{U}(\mathbf{LB})$$.
+where $$\mathbf{LB}$$ is the set that results from $$L$$ acting on $$\mathbf{B}$$.
+
+By definition the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a dense subset of the quasilocal algebra $$\mathfrak{U}$$. Hence, this "natural" action of the inhomogeneous Lorentz group's identity component on elements of the form $$\mathfrak{U}(\mathbf{B})$$ defines its action on a dense subset of the quasilocal algebra $$\mathfrak{U}$$.
+
+This then leads to the question: How does one extend the action of the inhomogeneous Lorentz group's identity component to all of the quasilocal algebra $$\mathfrak{U}$$?
+
+It turns out, one can extend the action of the inhomogeneous Lorentz group's identity component to all of the quasilocal algebra $$\mathfrak{U}$$ by using the following theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+
+**Theorem** *(Bounded Linear Transformation Theorem)*
+*Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.*
+
+However, before applying this theorem to the case at hand we have to recount some properties of the elements we are working with.
+
+First, as the quasilocal algebra $$\mathfrak{U}$$ is a C\*-algebra, it is a normed space and can play the role of $$V_1$$ in this theorem.
+
+Second, as the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a dense subset of the quasilocal algebra $$\mathfrak{U}$$, it can play the role of $$W$$ in this theorem.
+
+Next, by construction the quasilocal algebra is the completion of the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$, thus it is a Banach space. Hence, it can also can play the role of $$V_2$$ in the theorem.
+
+Finally, the action of the inhomogeneous Lorentz group's identity component on the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a bounded linear map. In fact its operator norm is 1.
+
+As it's defined to be linear, the remaining thing to prove is that it's bounded. The easiest manner to prove this is to think of the action of $$L$$ as *passive*, i.e. $$\mathbf{B}$$ doesn't move under the action of $$L$$ only the coordinates used to describe $$\mathbf{B}$$ change. In thinking about $$L$$ as a passive transformation, it's obvious its norm is 1. Explicitly, the norm of an element in its domain is equal to the norm of the image of that element. Hence, the ratio that appears in the definition of the operator norm
+
+$$
+\|L\| \equiv \sup\limits_{\|a\| \ne 0} \frac{\|a^L\|}{\|a\|} = \sup\limits_{\|a\| \ne 0} \frac{\|a\|}{\|a\|} = 1
+$$
+
+is identically 1.
+
+With all of these ingredents prepared we can apply the Bounded Linear Transformation Theorem to extend the action of the inhomogeneous Lorentz group's identity component uniquely to all of the quasilocal algebra $$\mathfrak{U}$$.
+
+Hence, all elements of Axiom 5 (Lorentz Covariance) are relatively straightforward.
 
 # Axioms 6 (Primitivity)
 
