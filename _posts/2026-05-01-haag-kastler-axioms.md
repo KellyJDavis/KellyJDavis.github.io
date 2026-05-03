@@ -411,7 +411,9 @@ Next, by construction the quasilocal algebra is the completion of the set-theore
 
 Finally, the action of the inhomogeneous Lorentz group's identity component on the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a bounded linear map. In fact its operator norm is 1.
 
-As it's defined to be linear, the remaining thing to prove is that it's bounded. The easiest manner to prove this is to think of the action of $$L$$ as *passive*, i.e. $$\mathbf{B}$$ doesn't move under the action of $$L$$ only the coordinates used to describe $$\mathbf{B}$$ change. In thinking about $$L$$ as a passive transformation, it's obvious its norm is 1. Explicitly, the norm of an element in its domain is equal to the norm of the image of that element. Hence, the ratio that appears in the definition of the operator norm
+It's obviously linear, the remaining thing to prove is that it's bounded. The easiest manner to prove this is to think of the action of $$L$$ as *passive*, i.e. $$\mathbf{B}$$ doesn't move under the action of $$L$$ only the coordinates used to describe $$\mathbf{B}$$ change. In thinking about $$L$$ as a passive transformation, it's obvious its norm is 1.
+
+Explicitly, the norm of an element in its domain is equal to the norm of the image of that element. Hence, the ratio that appears in the definition of the operator norm
 
 $$
 \|L\| \equiv \sup\limits_{\|a\| \ne 0} \frac{\|a^L\|}{\|a\|} = \sup\limits_{\|a\| \ne 0} \frac{\|a\|}{\|a\|} = 1
@@ -419,9 +421,8 @@ $$
 
 is identically 1.
 
-With all of these ingredents prepared we can apply the Bounded Linear Transformation Theorem to extend the action of the inhomogeneous Lorentz group's identity component uniquely to all of the quasilocal algebra $$\mathfrak{U}$$.
+With all of these ingredents prepared we can apply the Bounded Linear Transformation Theorem to extend the action of the inhomogeneous Lorentz group's identity component uniquely to all of the quasilocal algebra $$\mathfrak{U}$$, completing our examination of Axiom 5 (Lorentz Covariance).
 
-Hence, all elements of Axiom 5 (Lorentz Covariance) are relatively straightforward.
 
 # Axioms 6 (Primitivity)
 
