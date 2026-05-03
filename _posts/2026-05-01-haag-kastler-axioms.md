@@ -370,7 +370,11 @@ Next let us consider Axiom 5 (Lorentz Covariance)
 
 **Axiom 5** *(Lorentz Covariance)* The inhomogeneous Lorentz group is represented by automorphisms $$A \in \mathfrak{U} \rightarrow A^L \in \mathfrak{U}$$ such that
 
-This axiom is likely the most straightforward axiom. However, it has the deepest implications.
+$$\mathfrak{U}(\mathbf{B})^L = \mathfrak{U}(\mathbf{LB})$$
+
+where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the Lorentz transformation $$L$$.
+
+This axiom is likely mathematically the most straightforward axiom. However, it has the "deepest" implications.
 
 ## Inhomogeneous Lorentz Group (Homotopic to the Identity)
 This original formulation of Axiom 5 (Lorentz Covariance) ([Haag and Kastler](https://doi.org/10.1063/1.1704187)) uses the term "inhomogeneous Lorentz group" without specifying if this refers to all connected components of the inhomogeneous Lorentz group or simply the component of the inhomogeneous Lorentz group that is connected to identity. This is likely a simple oversight.
@@ -378,6 +382,17 @@ This original formulation of Axiom 5 (Lorentz Covariance) ([Haag and Kastler](ht
 The components of the inhomogeneous Lorentz group not homotopic to the identity are obtained from the component homotopic to the identity by reflections in time and/or space (See Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)), and it is an open question as to whether such reflections correspond to "physical" symmetries (Again see Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)).
 
 That being said, it is a reasonable assumption to make that the phrase "inhomogeneous Lorentz group" used in Axiom 5 (Lorentz Covariance) should more properly be read as "the component of the inhomogeneous Lorentz group homotopic to the identity. We will adopt this posture.
+
+## Implications
+Though simple, Axiom 5 (Lorentz Covariance) is a "deep" in that it postulates that spacetime symmetries, i.e. the component of the inhomogeneous Lorentz group homotopic to the identity, are "intimately tied" to properties of the quasilocal algebra $$\mathfrak{U}$$.
+
+For example, given an element $$L$$ from the the component of the inhomogeneous Lorentz group homotopic to the identity, $$L$$ acts on the quasilocal algebra as an automorphism $$\mathfrak{U} \rightarrow \mathfrak{U}^L$$. However, this automorphisms is also "aware" of the local topological and causal structure of Minkowski spacetime, as it acts on the C\*-algebras $$\mathfrak{U}(\mathbf{B})$$ as follows
+
+$$
+\mathfrak{U}(\mathbf{B})^L = \mathfrak{U}(\mathbf{LB})
+$$
+
+indicating that the automorphism $$\mathfrak{U}(\mathbf{B})^L$$ is "intimately tied" the action of the inhomogeneous Lorentz group on spacetime $$\mathfrak{U}(\mathbf{LB})$$.
 
 # Axioms 6 (Primitivity)
 
