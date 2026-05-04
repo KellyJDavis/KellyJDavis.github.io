@@ -462,12 +462,60 @@ All of this said, the physical motivation for the requirement of being primitive
 We will follow suit and simply drop this axiom.
 
 # Haag Kastler Axioms Unpacked
+With all the original Haag Kastler Axioms unpacked, we are now in a position to "sharpen" their formulation.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit libero suscipit neque molestie fermentum. Duis in velit sed nulla ullamcorper egestas. Mauris eu dui a ligula dictum placerat. Aliquam erat volutpat. Aenean at sem laoreet, dictum lacus eget, faucibus nisl. Donec tellus dolor, mattis eget lectus vitae, pretium ultrices dolor. Nullam id faucibus libero. Donec a mollis urna, ac viverra turpis. Vivamus vel purus a elit viverra posuere. Mauris viverra ex ac sem congue, eget sagittis ligula elementum. Aenean sollicitudin consectetur nunc quis tincidunt.
+Before even stating the "sharpened" axioms, the first thing we need to do is to define what we mean when we say "Minkowski spacetime"
 
-Morbi sit amet sodales quam. Fusce tincidunt nisl eu justo ultrices volutpat. Pellentesque congue mi eget nisl feugiat, ac pulvinar urna sagittis. Integer efficitur pretium metus, vitae pharetra lacus. Phasellus sed leo diam. Fusce ut interdum magna. Curabitur semper faucibus semper. Suspendisse sed fermentum tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse nec ex sit amet quam varius feugiat.
+**Definition** *(Minkowski Spacetime)*
+*Minkowski spacetime is the set $$\mathbb{R}^4$$ equipt with the Alexandrov topology, Minkowski metric, and standard time orientation $$(1,0,0,0)$$. (Note the Alexandrov topology is the topology in which sets of the form $$I^+(p) \cap I^-(q)$$ form the base.)*
 
-Integer fermentum id diam id eleifend. Nulla et interdum elit, quis ornare est. Sed eget pretium nisi. Donec nec pharetra odio. Morbi pretium eget sem eget ultrices. Nam arcu mauris, lacinia quis magna sit amet, lacinia efficitur augue. Sed ac odio id ligula gravida vulputate.
+With that out of the way we can state the axioms
+
+**Axiom 1** *(Local Algebras)* The sets $$\mathbf{B}$$ for which the correspondence
+
+$$
+\mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B})
+$$
+
+is defined shall be of the form $$I^+(p) \cap I^-(q)$$ for elements $$p,q$$ in Minkowski spacetime, the algebras $$\mathfrak{U}(\mathbf{B})$$ shall be abstract C\*-algebras. In addition the empty set $$\emptyset$$ shall have the distinguished correspondence
+
+$$
+\emptyset \longmapsto \mathbb{C} \mathbf{1},
+$$
+
+where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
+
+**Axiom 2** *(Isotony)* If $$\mathbf{B_1} \subset \mathbf{B_2}$$ then $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$.
+
+Before introducting the next axiom, we must introduce two definitions:
+
+**Definition** *(Quasilocal Algebra)*
+Consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. As previously proven, this set-theoretic union is a normed \*-algebra. Also, as previously proven,  taking its completion one obtains a C\*-algebra denoted as $$\mathfrak{U}$$. This C\*-algebra $$\mathfrak{U}$$ is called the *quasilocal algebra*.
+
+**Definition** *(Completely Spacelike)*
+Consider two set $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Minkowski spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are *completely spacelike*  respect to each other if eveny $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$.
+
+**Axiom 3** *(Local Commutativity)* If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike with respect to each other, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$.
+
+The next axiom makes use of the following definition:
+
+**Definition** *(Quasilocal Observable)*
+The image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the quasilocal algebra $$\mathfrak{U}$$ under a GNS \*-homomorphism $$\pi_\omega$$ is self-adjoint and thus corresponds to an "observable". Any "observable" corrsponding to such a self-adjoint $$\pi_\omega(a)$$ is called a *quasilocal observable*.
+
+**Axiom 4** *(Quasilocal Algebra)* All "observables" are quasilocal observables.
+
+**Axiom 5** *(Lorentz Covariance)* A memeber $$L$$ of the inhomogeneous Lorentz group homotopic to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
+
+$$
+\mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\mathbf{LB}),
+$$
+
+where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$.
+
+As proven in this blog post, these "sharpened" axioms entail the original axioms save Axiom 6 (Primitivity), which is an axiom that's largely abandoned. 
+
+
+
 
 [^1]: Given $$\mathcal{N}$$ a self-adjoint subset of $$\mathcal{B}(\mathcal{H}_\omega)$$ the set of bounded operators on $$\mathcal{H}_\omega$$ ( i.e. $$\mathcal{N} \subseteq \mathcal{B}(\mathcal{H}_\omega)$$ such that $$\mathcal{N}^*=\mathcal{N}$$ ) we define $$\mathcal{N}' \equiv \{ N' \in \mathcal{B}(\mathcal{H}_\omega) : NN' - N'N = 0 \; \forall N \in \mathcal{N} \}$$ and similarly define the shorthand $$\mathcal{N}'' \equiv (\mathcal{N}')'$$.
 
