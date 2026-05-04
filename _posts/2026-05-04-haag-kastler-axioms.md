@@ -158,7 +158,7 @@ An *AQFT state*, sometimes simply called a *state*, is an element $$\omega$$ of 
 
 Furthermore, an AQFT state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ it follows that $$0 < \omega(a^*a)$$.
 
-The *GNS construction* is a procedure that given an AQFT state $$\omega$$ on an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ with a unit, produces a triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$ consisting of a Hilbert space $$\mathcal{H}_\omega$$, a \*-homomorphism (and thus representation) $$\pi_\omega$$ of $$\mathfrak{U}(\mathbf{B})$$ on the Hilbert space, and $$\Omega_\omega$$ a distinguished vector in the Hilbert space. (Note, without the unit in $$\mathfrak{U}(\mathbf{B})$$, the GNS construction is unable to produce the distinguished vector $$\Omega_\omega$$.)
+The *GNS construction* is a procedure that given an AQFT state $$\omega$$ on an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ with a unit, produces a triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$ consisting of a Hilbert space $$\mathcal{H}_\omega$$, a \*-homomorphism (and thus representation) $$\pi_\omega$$ of $$\mathfrak{U}(\mathbf{B})$$ on the Hilbert space, and $$\Omega_\omega$$ a distinguished vector in the Hilbert space. (Note[^3], without the unit in $$\mathfrak{U}(\mathbf{B})$$, the GNS construction is unable to produce the distinguished vector $$\Omega_\omega$$.)
 
 Furthermore, the GNS construction's representation $$\pi_\omega$$ is faithful if the AQFT state $$\omega$$ one starts with is faithful. (This justifies the name "faithful" being applied to an AQFT state.)
 
@@ -519,3 +519,5 @@ These "sharpened" axioms also allow for a straightforward generalization to a se
 [^1]: Given $$\mathcal{N}$$ a self-adjoint subset of $$\mathcal{B}(\mathcal{H}_\omega)$$ the set of bounded operators on $$\mathcal{H}_\omega$$ ( i.e. $$\mathcal{N} \subseteq \mathcal{B}(\mathcal{H}_\omega)$$ such that $$\mathcal{N}^*=\mathcal{N}$$ ) we define $$\mathcal{N}' \equiv \{ N' \in \mathcal{B}(\mathcal{H}_\omega) : NN' - N'N = 0 \; \forall N \in \mathcal{N} \}$$ and similarly define the shorthand $$\mathcal{N}'' \equiv (\mathcal{N}')'$$.
 
 [^2]: The *universal representation* of a unital C\*-algebra is the direct sum of all of its representations created via the GNS construction.
+
+[^3]: Technically, one only requires the existence of a "bounded, approximate identity" and not a unit to produce a distinguished vector $$\Omega_\omega$$. However, physical motivation for the existence of a "bounded, approximate identity" as opposed to a unit is lacking.
