@@ -92,9 +92,9 @@ The first "plausible" assumption is that the "process of measurement" starts at 
 The second "plausible" assumption is that the "process of measurement" stops at some point $$q$$ in Minkowski space.
 
 ### Regions of Measurement
-With these "plausible" assumptions, we reach the "plausible" conclusion that a "measurement", whatever that may be, when done by a massive entity like us, occurs within regions of the form $$I^+(p) \cap I^-(q)$$, where $$I^+(p)$$ is the chronological future of $$p$$ and $$I^-(q)$$ is the chronological past of $$q$$.
+With these "plausible" assumptions, we reach the "plausible" conclusion that a "measurement", whatever that may be, when done by a massive probe, occurs within regions of the form $$I^+(p) \cap I^-(q)$$, where $$I^+(p)$$ is the chronological future of $$p$$ and $$I^-(q)$$ is the chronological past of $$q$$.
 
-The choice $$I^+(p) \cap I^-(q)$$ makes sense as, due to the constraints of special relativity, a massive "observer", such as ourselves, can only perform a "measurement", whatever that is, in the region $$I^+(p) \cap I^-(q)$$.
+The choice $$I^+(p) \cap I^-(q)$$ makes sense as, due to the constraints of special relativity, a massive probe can only perform a "measurement", whatever that is, in the region $$I^+(p) \cap I^-(q)$$.
 
 This then implies that all our regions $$\mathbf{B}$$ should be of the form $$I^+(p) \cap I^-(q)$$ for appropriate $$p$$ and $$q$$ denoting the start and stop of the associated "measurement".
 
@@ -110,9 +110,9 @@ However, this seemingly leads to an infinite recursion. To "measure" the coordin
 The resolution to this problem is the simple observation that in Algebraic Quantum Field Theory (AQFT) Minkowski space is treated classically. Hence, coordinates of the point $$p$$ and those of the point $$q$$ can be measured in the sense of classical mechanics without having to worry about regions of the form $$I^+(p_p) \cap I^-(q_p)$$, for example.
 
 #### Causal Regions of Measurement
-We chose regions $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ under the assumption that "observers" were massive like ourselves. Without any real justification this excludes massless "observers". We could have also considered massive and massless "observers" and utilized causal instead of chronological regions.
+We chose regions $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ under the assumption that probes were massive. Without any real justification this excludes massless probes. We could have also considered massive and massless probes and utilized causal instead of chronological regions.
 
-In other words we could have required our regions $$\mathbf{B}$$ to be of the form $$J^+(p) \cap J^-(q)$$, where $$J^+(p)$$ is the *causal future* of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like or light-like curve) and $$J^-(q)$$ is the *causal past* of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like or light-like curve). This, then, would allow for massless "observers".
+In other words we could have required our regions $$\mathbf{B}$$ to be of the form $$J^+(p) \cap J^-(q)$$, where $$J^+(p)$$ is the *causal future* of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like or light-like curve) and $$J^-(q)$$ is the *causal past* of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like or light-like curve). This, then, would allow for massless probes.
 
 Requiring our regions $$\mathbf{B}$$ to be of the form $$J^+(p) \cap J^-(q)$$, however, leads to problems. In particular, as the zero vector is light-like, the point $$\{p\}$$ is a light-like curve. Hence, the point $$\{p\}=J^+(p) \cap J^-(p)$$ would be an allowable form for a region $$\mathbf{B}$$ in this scenario.
 
