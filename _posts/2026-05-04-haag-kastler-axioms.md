@@ -4,7 +4,6 @@ date:   2026-05-03 07:26:53 +0200
 categories: aqft
 ---
 
-# Algebraic Quantum Field Theory
 The aim of this blog post is to "sharpen" the statement of the Haag Kastler axioms ([Haag and Kastler](https://doi.org/10.1063/1.1704187)). As originally presented they were revolutionary. However, they left several small details under-specified. This blog post will hopefully clarify some of these details.
 
 The reader is assumed to have already encountered the Haag Kastler axioms. So no time is spent clarifying what a C\*-algebra is or what the goals of the Haag Kastler axioms are. We jump right in!
