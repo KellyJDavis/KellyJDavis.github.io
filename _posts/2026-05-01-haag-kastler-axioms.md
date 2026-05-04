@@ -161,7 +161,7 @@ An *AQFT state*, sometimes simply called a *state*, is an element $$\omega$$ of 
 
 Furthermore, an AQFT state $$\omega$$ is said to be a *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ it follows that $$0 < \omega(a^*a)$$.
 
-The *GNS construction* is a procedure that given an AQFT state $$\omega$$ on an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ with a unit, produces a triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$ consisting of a Hilbert space $$\mathcal{H}_\omega$$, a representation (and \*-homomorphisim) $$\pi_\omega$$ of $$\mathfrak{U}(\mathbf{B})$$ on the Hilbert space, and $$\Omega_\omega$$ a distinguished vector in the Hilbert space. (Note, without the unit in $$\mathfrak{U}(\mathbf{B})$$, the GNS construction is unable to produce the distinguished vector $$\Omega_\omega$$.)
+The *GNS construction* is a procedure that given an AQFT state $$\omega$$ on an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ with a unit, produces a triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$ consisting of a Hilbert space $$\mathcal{H}_\omega$$, a \*-homomorphism (and thus representation) $$\pi_\omega$$ of $$\mathfrak{U}(\mathbf{B})$$ on the Hilbert space, and $$\Omega_\omega$$ a distinguished vector in the Hilbert space. (Note, without the unit in $$\mathfrak{U}(\mathbf{B})$$, the GNS construction is unable to produce the distinguished vector $$\Omega_\omega$$.)
 
 Furthermore, the GNS construction's representation $$\pi_\omega$$ is faithful if the AQFT state $$\omega$$ one starts with is faithful. (This justifies the name "faithful" being applied to an AQFT state.)
 
@@ -172,7 +172,7 @@ Also note that this GNS construction can in addition be applied to $$\mathfrak{U
 ## Isotony
 With this understanding of how AQFT is operationalized, we can now examine isotony in a bit more detail. We will find that isotony, along with the requirement that $$\mathfrak{U}(\mathbf{B})$$ be a C*-algebra, is a "natural" requirement.
 
-As mentioned when we introduced the GNS construction, given an AQFT state $$\omega$$ on an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ with unit the GNS construction produces a triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$ consisting of a Hilbert space $$\mathcal{H}_\omega$$, a representation (and \*-homomorphism) $$\pi_\omega$$ of $$\mathfrak{U}(\mathbf{B})$$ on the Hilbert space, and $$\Omega_\omega$$ a distinguished vector in the Hilbert space.
+As mentioned when we introduced the GNS construction, given an AQFT state $$\omega$$ on an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ with unit the GNS construction produces a triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$ consisting of a Hilbert space $$\mathcal{H}_\omega$$, a \*-homomorphism (and thus representation) $$\pi_\omega$$ of $$\mathfrak{U}(\mathbf{B})$$ on the Hilbert space, and $$\Omega_\omega$$ a distinguished vector in the Hilbert space.
 
 "Observables" in the region $$\mathbf{B}$$ then correspond to self-adjoint elements of the von Neumann algebra $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$. Furthermore, the possible values one can obtain when "measuring" the "observable" corresponding to a self-adjoint $$A$$ in $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$ are the values in the specturm $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}))''}(A)$$ of $$A$$ when it is viewed as an element of the von Neumann algebra $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$.
 
@@ -425,12 +425,41 @@ With all of these ingredents prepared we can apply the Bounded Linear Transforma
 
 
 # Axioms 6 (Primitivity)
+Finally we will examine Axiom 6 (Primitivity)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit libero suscipit neque molestie fermentum. Duis in velit sed nulla ullamcorper egestas. Mauris eu dui a ligula dictum placerat. Aliquam erat volutpat. Aenean at sem laoreet, dictum lacus eget, faucibus nisl. Donec tellus dolor, mattis eget lectus vitae, pretium ultrices dolor. Nullam id faucibus libero. Donec a mollis urna, ac viverra turpis. Vivamus vel purus a elit viverra posuere. Mauris viverra ex ac sem congue, eget sagittis ligula elementum. Aenean sollicitudin consectetur nunc quis tincidunt.
+**Axiom 6** *(Primitivity)* $$\mathfrak{U}$$ is primitive.
 
-Morbi sit amet sodales quam. Fusce tincidunt nisl eu justo ultrices volutpat. Pellentesque congue mi eget nisl feugiat, ac pulvinar urna sagittis. Integer efficitur pretium metus, vitae pharetra lacus. Phasellus sed leo diam. Fusce ut interdum magna. Curabitur semper faucibus semper. Suspendisse sed fermentum tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse nec ex sit amet quam varius feugiat.
+Note that a C\*-algebra is said to be *primitive* if it admits a faithful, irreducible representation.
 
-Integer fermentum id diam id eleifend. Nulla et interdum elit, quis ornare est. Sed eget pretium nisi. Donec nec pharetra odio. Morbi pretium eget sem eget ultrices. Nam arcu mauris, lacinia quis magna sit amet, lacinia efficitur augue. Sed ac odio id ligula gravida vulputate.
+## Faithful Representations
+It turns out that requiring there exist a faithful representation of the quasilocal C\*-algebra $$\mathfrak{U}$$, doesn't constrain $$\mathfrak{U}$$ at all. This fact follows from the theorem (Theorem 3.4.1 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6))
+
+**Theorem** *(Gelfand-Naimark)*
+*If $$\mathfrak{U}$$ is a unital C\*-algebra, then it has a faithful representation. Specifically, its universal representation[^2] is faithful.*
+
+This implies that the unital, quasilocal C\*-algebra $$\mathfrak{U}$$ admits a faithful representation. This doesn't further constrain the quasilocal algebra at all.
+
+It turns out, however, that requiring that quasilocal algebra admit a faithful, irreducible representation does constrain the quasilocal algebra $$\mathfrak{U}$$.
+
+## Faithful and Irreducible Representations
+Not all unital C\*-algebras admit a faithful, irreducible representation, i.e. are primitive.
+
+For example, unital, Abelian C\*-algebras are "rarely" primitive. The following lemma formalizes this (See page 158 of Section 5.4 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6)) 
+
+**Lemma** *(Unital, Abelian C\*-algebras are Rarely Primitive)*
+*A non-zero Abelian C\*-algebra $$\mathcal{A}$$ is primitive if and only if $$\mathcal{A} = \mathbb{C}$$.*
+
+So, primitive, Abelian C\*-algebras are in this sense much more "rare" than Abelian C\*-algebras.
+
+As the to physical motivation in requiring $$\mathfrak{U}$$ be primitive, the original reference ([Haag and Kastler](https://doi.org/10.1063/1.1704187)) doesn't provide much detail.
+
+This original reference says the requirement is "natural" (Page 852 of [Haag and Kastler](https://doi.org/10.1063/1.1704187)), and doesn't go much further in motivating the requirement.
+
+The only additional motivation is on the same page in footnote 27 which references Appendix III of an unpublished article by Misra. Misra's article is claimed to exhibit a nonsimple C\*-algebra that is of "physical interest". This is of relavance as simple C\*-algebras are primitive (See page 158 of Section 5.4 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6)). So, one might think Axiom 6 should require $$\mathfrak{U}$$ be simple and not primitive. Misra's example is the counterweight to such an impluse.
+
+All of this said, the physical motivation for the requirement of being primitive is lacking. In addition in later versions of the axioms presented by Haag ([Haag](https://doi.org/10.1007/978-3-642-61458-3)), this axiom is dropped completely.
+
+We will follow suit and simply drop this axiom.
 
 # Haag Kastler Axioms Unpacked
 
@@ -441,3 +470,5 @@ Morbi sit amet sodales quam. Fusce tincidunt nisl eu justo ultrices volutpat. Pe
 Integer fermentum id diam id eleifend. Nulla et interdum elit, quis ornare est. Sed eget pretium nisi. Donec nec pharetra odio. Morbi pretium eget sem eget ultrices. Nam arcu mauris, lacinia quis magna sit amet, lacinia efficitur augue. Sed ac odio id ligula gravida vulputate.
 
 [^1]: Given $$\mathcal{N}$$ a self-adjoint subset of $$\mathcal{B}(\mathcal{H}_\omega)$$ the set of bounded operators on $$\mathcal{H}_\omega$$ ( i.e. $$\mathcal{N} \subseteq \mathcal{B}(\mathcal{H}_\omega)$$ such that $$\mathcal{N}^*=\mathcal{N}$$ ) we define $$\mathcal{N}' \equiv \{ N' \in \mathcal{B}(\mathcal{H}_\omega) : NN' - N'N = 0 \; \forall N \in \mathcal{N} \}$$ and similarly define the shorthand $$\mathcal{N}'' \equiv (\mathcal{N}')'$$.
+
+[^2]: The *universal representation* of a unital C\*-algebra is the direct sum of all of its representations created via the GNS construction.
