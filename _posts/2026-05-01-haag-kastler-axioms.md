@@ -5,11 +5,9 @@ categories: aqft
 ---
 
 # Algebraic Quantum Field Theory 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed suscipit libero suscipit neque molestie fermentum. Duis in velit sed nulla ullamcorper egestas. Mauris eu dui a ligula dictum placerat. Aliquam erat volutpat. Aenean at sem laoreet, dictum lacus eget, faucibus nisl. Donec tellus dolor, mattis eget lectus vitae, pretium ultrices dolor. Nullam id faucibus libero. Donec a mollis urna, ac viverra turpis. Vivamus vel purus a elit viverra posuere. Mauris viverra ex ac sem congue, eget sagittis ligula elementum. Aenean sollicitudin consectetur nunc quis tincidunt.
+The aim of this blog post is to "sharpen" the statement of the Haag Kastler axioms ([Haag and Kastler](https://doi.org/10.1063/1.1704187)). As originally presented they were revolutionary. However, they lefts several small details under or unspecified. This blog post will hopefully clarify some of these details.
 
-Morbi sit amet sodales quam. Fusce tincidunt nisl eu justo ultrices volutpat. Pellentesque congue mi eget nisl feugiat, ac pulvinar urna sagittis. Integer efficitur pretium metus, vitae pharetra lacus. Phasellus sed leo diam. Fusce ut interdum magna. Curabitur semper faucibus semper. Suspendisse sed fermentum tortor. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse nec ex sit amet quam varius feugiat.
-
-Integer fermentum id diam id eleifend. Nulla et interdum elit, quis ornare est. Sed eget pretium nisi. Donec nec pharetra odio. Morbi pretium eget sem eget ultrices. Nam arcu mauris, lacinia quis magna sit amet, lacinia efficitur augue. Sed ac odio id ligula gravida vulputate.
+The reader is assumed to have already encountered the Haag Kastler axioms. So no time is spent clarifying what a C\*-algebra is or what the goals of the Haag Kastler axioms are. We jump right in!
 
 # Original Haag Kastler Axioms
 The original Haag Kastler axioms state ([Haag and Kastler](https://doi.org/10.1063/1.1704187)):
@@ -493,11 +491,11 @@ Before introducting the next axiom, we must introduce two definitions:
 Consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. As previously proven, this set-theoretic union is a normed \*-algebra. Also, as previously proven,  taking its completion one obtains a C\*-algebra denoted as $$\mathfrak{U}$$. This C\*-algebra $$\mathfrak{U}$$ is called the *quasilocal algebra*.
 
 **Definition** *(Completely Spacelike)*
-Consider two set $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Minkowski spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are *completely spacelike*  respect to each other if eveny $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$.
+Consider two sets $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Minkowski spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are *completely spacelike*  with respect to each other if eveny $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$.
 
 **Axiom 3** *(Local Commutativity)* If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike with respect to each other, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$.
 
-The next axiom makes use of the following definition:
+The next axiom makes use of the following new definition:
 
 **Definition** *(Quasilocal Observable)*
 The image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the quasilocal algebra $$\mathfrak{U}$$ under a GNS \*-homomorphism $$\pi_\omega$$ is self-adjoint and thus corresponds to an "observable". Any "observable" corrsponding to such a self-adjoint $$\pi_\omega(a)$$ is called a *quasilocal observable*.
@@ -512,7 +510,9 @@ $$
 
 where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$.
 
-As proven in this blog post, these "sharpened" axioms entail the original axioms save Axiom 6 (Primitivity), which is an axiom that's largely abandoned. 
+This concludes the presentation of the "sharpened" axioms. As proven in this blog post, these "sharpened" axioms entail the original axioms save Axiom 6 (Primitivity), which is an axiom that we abandon.
+
+These "sharpened" axioms also allow for a straightforward generalization to a set of axioms describing AQFT in curved spacetime, i.e. a set of axioms describing AQFT in a curved spacetime background that is fixed and treated classically. In a subsequent blog post we will detail these axioms.
 
 
 
