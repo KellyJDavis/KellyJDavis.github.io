@@ -4,8 +4,8 @@ date:   2026-05-03 07:26:53 +0200
 categories: aqft
 ---
 
-# Algebraic Quantum Field Theory 
-The aim of this blog post is to "sharpen" the statement of the Haag Kastler axioms ([Haag and Kastler](https://doi.org/10.1063/1.1704187)). As originally presented they were revolutionary. However, they left several small details under or unspecified. This blog post will hopefully clarify some of these details.
+# Algebraic Quantum Field Theory
+The aim of this blog post is to "sharpen" the statement of the Haag Kastler axioms ([Haag and Kastler](https://doi.org/10.1063/1.1704187)). As originally presented they were revolutionary. However, they left several small details under-specified. This blog post will hopefully clarify some of these details.
 
 The reader is assumed to have already encountered the Haag Kastler axioms. So no time is spent clarifying what a C\*-algebra is or what the goals of the Haag Kastler axioms are. We jump right in!
 
@@ -54,9 +54,9 @@ In this case, as we require our $$\mathbf{B}$$ to be an open, proper subset of $
 But this leaves open the question: Exactly which topology *is* being used? The Euclidean topology?
 
 ## Euclidean Topology on Minkowski Space
-If the Euclidean topology is being used, then this raises another question: Why use the $$\mathbf{B}$$, open sets with compact closure, based off a topology derived from a *Euclidean* metric on $$\mathbb{R}^4$$?  *Euclidean* metrics have *nothing* to do with physics which is determined by a Minkowski metric. A more "natural" thing to do would be to base $$\mathbf{B}$$ off a "topology derived from a Minkowski metric", whatever that might mean.
+If the Euclidean topology is being used, then this raises another question: Why use the $$\mathbf{B}$$, open sets with compact closure, based on a topology derived from a *Euclidean* metric on $$\mathbb{R}^4$$?  *Euclidean* metrics have *nothing* to do with physics which is determined by a Minkowski metric. A more "natural" thing to do would be to base $$\mathbf{B}$$ on a "topology derived from a Minkowski metric", whatever that might mean.
 
-## Alexandrov Topology on Minkowski Space 
+## Alexandrov Topology on Minkowski Space
 To consider what that might mean let $$p$$ and $$q$$ be any two points in what physicists think of as Minkowski space. With these two points, one can define two natural sets: $$I^+(p)$$, the *chronological future* of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like curve), and $$I^-(q)$$, the *chronological past* of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like curve).
 
 It turns out that $$I^+(p)$$ is an open set in the Euclidean topology for any $$p$$ in what physicists think of as Minkowski space (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Similarly, the time-reversed version of Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609) implies that $$I^-(q)$$ is an open set in that same topology. Hence, $$I^+(p) \cap I^-(q)$$ is also open in that topology.
@@ -110,7 +110,7 @@ However, this seemingly leads to an infinite recursion. To "measure" the coordin
 
 The resolution to this problem is the simple observation that in Algebraic Quantum Field Theory (AQFT) Minkowski space is treated classically. Hence, coordinates of the point $$p$$ and those of the point $$q$$ can be measured in the sense of classical mechanics without having to worry about regions of the form $$I^+(p_p) \cap I^-(q_p)$$, for example.
 
-#### Causal Regions of Measurement 
+#### Causal Regions of Measurement
 We chose regions $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ under the assumption that "observers" were massive like ourselves. Without any real justification this excludes massless "observers". We could have also considered massive and massless "observers" and utilized causal instead of chronological regions.
 
 In other words we could have required our regions $$\mathbf{B}$$ to be of the form $$J^+(p) \cap J^-(q)$$, where $$J^+(p)$$ is the *causal future* of $$p$$ (i.e. the set of points reachable from $$p$$ via a future-directed, time-like or light-like curve) and $$J^-(q)$$ is the *causal past* of $$q$$ (i.e. the set of all points that reach $$q$$ via a future-directed, time-like or light-like curve). This, then, would allow for massless "observers".
@@ -123,7 +123,7 @@ Second, with a $$\mathbf{B}$$ of the form $$\{p\}$$ we can use Axiom 1 to assign
 
 In standard quantum field theory a field is an operator-valued distribution. (See Section 3.10 of [Talagrand](https://doi.org/10.1017/9781108225144).) So, as it is a distribution, it is defined almost everywhere. This means that there may exist points $$p$$ in Minkowski space at which it is not defined.
 
-Traditionally (See Section II.4.1 of [Haag](https://doi.org/10.1007/978-3-642-61458-3)) AQFT motivates the passage from a standard field, i.e. an operator valued distribution $$\Phi$$, to the algebra $$\mathfrak{U}(\mathbf{B})$$ on an open, bounded set $$\mathbf{B}$$ by constructing a representation of the algebra $$\mathfrak{U}(\mathbf{B})$$ from *smearings* of $$\Phi$$ over $$\mathbf{B}$$, i.e. a representation $$a$$ of an element of $$\mathfrak{U}(\mathbf{B})$$ would be defined as follows
+Traditionally (See Section II.4.1 of [Haag](https://doi.org/10.1007/978-3-642-61458-3)) AQFT motivates the passage from a standard field, i.e. an operator-valued distribution $$\Phi$$, to the algebra $$\mathfrak{U}(\mathbf{B})$$ on an open, bounded set $$\mathbf{B}$$ by constructing a representation of the algebra $$\mathfrak{U}(\mathbf{B})$$ from *smearings* of $$\Phi$$ over $$\mathbf{B}$$, i.e. a representation $$a$$ of an element of $$\mathfrak{U}(\mathbf{B})$$ would be defined as follows
 
 $$
 a \equiv \int_{\mathbf{B}} f(x) \Phi(x) \, d^4x,
@@ -131,7 +131,7 @@ $$
 
 where $$f(x)$$ is a *test function*, a smooth function with support in $$\mathbf{B}$$.
 
-Trying to generalize this to $$\mathfrak{U}(\{p\})$$ immediately runs into problems. Naively a representation $$b$$ of an element in $$\mathfrak{U}(\{p\})$$ would be of the form 
+Trying to generalize this to $$\mathfrak{U}(\{p\})$$ immediately runs into problems. Naively a representation $$b$$ of an element in $$\mathfrak{U}(\{p\})$$ would be of the form
 
 $$
 b \equiv \int_{\{p\}} f(x) \Phi(x) \, d^4x.
@@ -163,7 +163,7 @@ The *GNS construction* is a procedure that given an AQFT state $$\omega$$ on an 
 
 Furthermore, the GNS construction's representation $$\pi_\omega$$ is faithful if the AQFT state $$\omega$$ one starts with is faithful. (This justifies the name "faithful" being applied to an AQFT state.)
 
-It is in the Hilbert space $$\mathcal{H}_\omega$$ that "normal physics" occurs. In other words elements of $$\mathcal{H}_\omega$$ are what one thinks of as normal QFT states, and self-adjoint elements of $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$ ( the von Neumann algebra generated by $$\pi_\omega(\mathfrak{U}(\mathbf{B}))$$ ) are interpreted as the normal observables of QFT[^1]. Finally, the distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum state.
+It is in the Hilbert space $$\mathcal{H}_\omega$$ that "normal physics" occurs. In other words elements of $$\mathcal{H}_\omega$$ are what one thinks of as normal QFT states, and self-adjoint elements of $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$ (the von Neumann algebra generated by $$\pi_\omega(\mathfrak{U}(\mathbf{B}))$$) are interpreted as the normal observables of QFT[^1]. Finally, the distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum state.
 
 Also note that this GNS construction can in addition be applied to $$\mathfrak{U}$$ the algebra of quasilocal observables that appears in **Axiom 4** *(Quasilocal Algebra)*. In other words one can have an AQFT state $$\omega$$ that is an element of $$\mathfrak{U}^*$$ and use this AQFT state and the GNS construction to create the triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$. (Again, without a unit in $$\mathfrak{U}$$, the GNS construction is unable to produce the distinguished vector $$\Omega_\omega$$.)
 
@@ -174,7 +174,7 @@ As mentioned when we introduced the GNS construction, given an AQFT state $$\ome
 
 "Observables" in the region $$\mathbf{B}$$ then correspond to self-adjoint elements of the von Neumann algebra $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$. Furthermore, the possible values one can obtain when "measuring" the "observable" corresponding to a self-adjoint $$A$$ in $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$ are the values in the spectrum $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}))''}(A)$$ of $$A$$ when it is viewed as an element of the von Neumann algebra $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$.
 
-Consider again our main theme isotony. It implies that if $$\mathbf{B_1} \subset \mathbf{B_2}$$ then $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$.
+Consider again our main theme, isotony. It implies that if $$\mathbf{B_1} \subset \mathbf{B_2}$$ then $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$.
 
 So, if we have a state $$\omega$$ in $$\mathfrak{U}(\mathbf{B_2})^*$$ we can consider the "observables" corresponding to the self-adjoint elements of $$\pi_{\omega}(\mathfrak{U}(\mathbf{B_2}))''$$.
 
@@ -205,8 +205,8 @@ So we can view an "observable's" self-adjoint element $$A$$ in $$\pi_{\omega}(\m
 
 However, as one will recall, the possible values one can obtain when “measuring” the "observable" corresponding to a self-adjoint $$A$$ in $$\pi_{\omega}(\mathfrak{U}(\mathbf{B_1}))''$$ are the values in the spectrum $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}_1))''}(A)$$. Similarly, the possible values one can obtain when “measuring” the self-adjoint $$A$$ viewed as an element of $$\pi_{\omega}(\mathfrak{U}(\mathbf{B_2}))''$$ are the values in the spectrum $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}_2))''}(A)$$.
 
-Observation indicates that experimental results do not depend on if we consider an experiment as occurring in $$\mathbf{B}_1$$ the city Cambridge, Massachusetts or if we consider it as occurring in $$\mathbf{B}_2$$ the state Massachusetts. So this means that the specturm $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}_1))''}(A)$$ and the specturm $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}_2))''}(A)$$ should be identical.  
-  
+Observation indicates that experimental results do not depend on whether we consider an experiment as occurring in $$\mathbf{B}_1$$, the city of Cambridge, Massachusetts, or whether we consider it as occurring in $$\mathbf{B}_2$$, the state of Massachusetts. So this means that the spectrum $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}_1))''}(A)$$ and the spectrum $$\sigma_{\pi_\omega(\mathfrak{U}(\mathbf{B}_2))''}(A)$$ should be identical.
+
 
 It turns out that for C*-algebras we have the following theorem (Proposition 2.2.7 of [Bratteli and Robinson](https://doi.org/10.1007/978-3-662-02520-8))
 
@@ -217,7 +217,7 @@ $$
 \sigma_{\mathfrak{U}_1}(a) = \sigma_{\mathfrak{U}_2}(a).
 $$
 
-*This allows us drop the subscript from $$\sigma_{\mathfrak{U}_1}(a)$$ and $$\sigma_{\mathfrak{U}_2}(a)$$ and to write $$\sigma(a)$$ unambiguously.*
+*This allows us to drop the subscript from $$\sigma_{\mathfrak{U}_1}(a)$$ and $$\sigma_{\mathfrak{U}_2}(a)$$ and to write $$\sigma(a)$$ unambiguously.*
 
 As the von Neumann algebras $$\pi_{\omega}(\mathfrak{U}(\mathbf{B_1}))''$$ and $$\pi_{\omega}(\mathfrak{U}(\mathbf{B_2}))''$$ are both also C\*-algebras, we can apply this theorem to conclude
 
@@ -234,7 +234,7 @@ The isotony axiom also contains this rather "odd" addendum:
 
 If, as suggested, it is always possible, through formal adjunction, to add a unit, then why even consider the case in which there is no unit?
 
-For example using the state $$\omega$$ to apply the GNS construction to an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ that doesn't have a unit is impossible. The presence of a unit in $$\mathfrak{U}(\mathbf{B})$$ leads directly to the distinguished vector $$\Omega_\omega$$ in the Hilbert space $$\mathcal{H}_\omega$$. This distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum. So having a unit in $$\mathfrak{U}(\mathbf{B})$$ seems indispensable. 
+For example, using the state $$\omega$$ to apply the GNS construction to an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ that doesn't have a unit is impossible. The presence of a unit in $$\mathfrak{U}(\mathbf{B})$$ leads directly to the distinguished vector $$\Omega_\omega$$ in the Hilbert space $$\mathcal{H}_\omega$$. This distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum. So having a unit in $$\mathfrak{U}(\mathbf{B})$$ seems indispensable.
 
 That being said, we will simply assume that all such $$\mathfrak{U}(\mathbf{B})$$ contain a unit.
 
@@ -263,7 +263,7 @@ The second point that requires clarification is a bit more subtle.
 
 When one requires that $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute, this tacitly implies that $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ are subalgebras of a single, larger algebra, an algebra in which products and sums of their elements are defined.
 
-Naively one might hope that isotony would come to the rescue. However, this isn't the case. If say $$\mathbf{B_1} \subset \mathbf{B_2}$$, isotony would imply that $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$. This would place $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ in a single, larger algebra $$\mathfrak{U}(\mathbf{B_2})$$ in which they could commute. However, the assumption that $$\mathbf{B_1} \subset \mathbf{B_2}$$ would imply that $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are not completely spacelike.  Isotony doesn't come to the rescue.
+Naively one might hope that isotony would come to the rescue. However, this isn't the case. If, say, $$\mathbf{B_1} \subset \mathbf{B_2}$$, isotony would imply that $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$. This would place $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ in a single, larger algebra $$\mathfrak{U}(\mathbf{B_2})$$ in which they could commute. However, the assumption that $$\mathbf{B_1} \subset \mathbf{B_2}$$ would imply that $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are not completely spacelike.  Isotony doesn't come to the rescue.
 
 However, what does come to the rescue is the quasilocal algebra $$\mathfrak{U}$$. By definition $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}$$ and $$\mathfrak{U}(\mathbf{B_2}) \subset \mathfrak{U}$$. So $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ are in a single, larger algebra $$\mathfrak{U}$$. We can thus interpret the statement
 
@@ -283,7 +283,7 @@ Next let's consider Axiom 4 (Quasilocal Algebra)
 
 Most of this actually turns out to be straightforward.
 
-## Set-Theoretic Union 
+## Set-Theoretic Union
 The first claim this axiom makes is that the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a normed \*-algebra. Is this the case?
 
 If the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a normed \*-algebra, then all of the standard properties of a normed \*-algebra (e.g. finite vector sums, finite algebraic products, involution...) must be defined for elements of this set-theoretic union. Are such properties defined?
@@ -333,7 +333,7 @@ $$
 
 i.e. $$\pi_\omega(\mathfrak{U})$$ is generically a proper subset of $$\pi_\omega(\mathfrak{U})''$$ and the complement of $$\pi_\omega(\mathfrak{U})$$ in $$\pi_\omega(\mathfrak{U})''$$ may not be the empty set.
 
-For the generic state $$\omega$$ self-adjoint elements $$a$$ of $$\mathfrak{U}$$ then correspond to "observables" as follows: $$\pi_\omega$$ is a \*-homomorphism; hence, $$\pi_\omega$$ maps a self-adjoint element $$a$$ to self-adjoint element $$\pi_\omega(a)$$. By construction $$\pi_\omega(a)$$ is within $$\pi_\omega(\mathfrak{U})$$ and thus within $$\pi_\omega(\mathfrak{U})''$$. So $$\pi_\omega(a)$$ is a self-adjoint element of $$\pi_\omega(\mathfrak{U})''$$ and thus corresponds to an "observable". It is in this sense that $$\mathfrak{U}$$ "contains observables".
+For the generic state $$\omega$$ self-adjoint elements $$a$$ of $$\mathfrak{U}$$ then correspond to "observables" as follows: $$\pi_\omega$$ is a \*-homomorphism; hence, $$\pi_\omega$$ maps a self-adjoint element $$a$$ to a self-adjoint element $$\pi_\omega(a)$$. By construction $$\pi_\omega(a)$$ is within $$\pi_\omega(\mathfrak{U})$$ and thus within $$\pi_\omega(\mathfrak{U})''$$. So $$\pi_\omega(a)$$ is a self-adjoint element of $$\pi_\omega(\mathfrak{U})''$$ and thus corresponds to an "observable". It is in this sense that $$\mathfrak{U}$$ "contains observables".
 
 However, generically $$\pi_\omega(\mathfrak{U})$$ is only a proper subset of $$\pi_\omega(\mathfrak{U})''$$. Hence, generically there exist "observables" corresponding to self-adjoint elements of $$\pi_\omega(\mathfrak{U})''$$ that do not correspond to an element of $$\mathfrak{U}$$, i.e. generically self-adjoint elements of $$\pi_\omega(\mathfrak{U})'' \backslash \pi_\omega(\mathfrak{U})$$ exist.
 
@@ -375,7 +375,7 @@ where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the Lorent
 This axiom is the most straightforward axiom of all that we have encountered.
 
 ## Inhomogeneous Lorentz Group (Homotopic to the Identity)
-This original formulation of Axiom 5 (Lorentz Covariance) ([Haag and Kastler](https://doi.org/10.1063/1.1704187)) uses the term "inhomogeneous Lorentz group" without specifying if this refers to all connected components of the inhomogeneous Lorentz group or simply the component of the inhomogeneous Lorentz group that is connected to identity. This is likely a simple oversight.
+This original formulation of Axiom 5 (Lorentz Covariance) ([Haag and Kastler](https://doi.org/10.1063/1.1704187)) uses the term "inhomogeneous Lorentz group" without specifying if this refers to all connected components of the inhomogeneous Lorentz group or simply the component of the inhomogeneous Lorentz group that is connected to the identity. This is likely a simple oversight.
 
 The components of the inhomogeneous Lorentz group not homotopic to the identity are obtained from the component homotopic to the identity by reflections in time and/or space (See Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)), and it is an open question as to whether such reflections correspond to "physical" symmetries (Again see Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)).
 
@@ -409,7 +409,7 @@ Next, by construction the quasilocal algebra is the completion of the set-theore
 
 Finally, the action of the inhomogeneous Lorentz group's identity component on the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is a bounded linear map. In fact its operator norm is 1.
 
-It's obviously linear, the remaining thing to prove is that it's bounded. The easiest manner to prove this is to think of the action of $$L$$ as *passive*, i.e. $$\mathbf{B}$$ doesn't move under the action of $$L$$ only the coordinates used to describe $$\mathbf{B}$$ change. In thinking about $$L$$ as a passive transformation, it's obvious its norm is 1.
+It's obviously linear; the remaining thing to prove is that it's bounded. The easiest manner to prove this is to think of the action of $$L$$ as *passive*, i.e. $$\mathbf{B}$$ doesn't move under the action of $$L$$; only the coordinates used to describe $$\mathbf{B}$$ change. In thinking about $$L$$ as a passive transformation, it's obvious its norm is 1.
 
 Explicitly, the norm of an element in its domain is equal to the norm of the image of that element. Hence, the ratio that appears in the definition of the operator norm
 
@@ -430,7 +430,7 @@ Finally we will examine Axiom 6 (Primitivity)
 Note that a C\*-algebra is said to be *primitive* if it admits a faithful, irreducible representation.
 
 ## Faithful Representations
-It turns out that requiring there exist a faithful representation of the quasilocal C\*-algebra $$\mathfrak{U}$$, doesn't constrain $$\mathfrak{U}$$ at all. This fact follows from the theorem (Theorem 3.4.1 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6))
+It turns out that requiring that there exist a faithful representation of the quasilocal C\*-algebra $$\mathfrak{U}$$ doesn't constrain $$\mathfrak{U}$$ at all. This fact follows from the theorem (Theorem 3.4.1 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6))
 
 **Theorem** *(Gelfand-Naimark)*
 *If $$\mathfrak{U}$$ is a unital C\*-algebra, then it has a faithful representation. Specifically, its universal representation[^2] is faithful.*
@@ -442,7 +442,7 @@ It turns out, however, that requiring that the quasilocal algebra admit a faithf
 ## Faithful and Irreducible Representations
 Not all unital C\*-algebras admit a faithful, irreducible representation, i.e. are primitive.
 
-For example, unital, Abelian C\*-algebras are "rarely" primitive. The following lemma formalizes this (See page 158 of Section 5.4 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6)) 
+For example, unital, Abelian C\*-algebras are "rarely" primitive. The following lemma formalizes this (See page 158 of Section 5.4 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6))
 
 **Lemma** *(Unital, Abelian C\*-algebras are Rarely Primitive)*
 *A non-zero Abelian C\*-algebra $$\mathcal{A}$$ is primitive if and only if $$\mathcal{A} = \mathbb{C}$$.*
@@ -455,19 +455,19 @@ This original reference says the requirement is "natural" (Page 852 of [Haag and
 
 The only additional motivation is on the same page in footnote 27 which references Appendix III of an unpublished article by Misra. Misra's article is claimed to exhibit a nonsimple C\*-algebra that is of "physical interest". This is of relevance as simple C\*-algebras are primitive (See page 158 of Section 5.4 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6)). So, one might think Axiom 6 should require $$\mathfrak{U}$$ be simple and not primitive. Misra's example is the counterweight to such an impulse.
 
-All of this said, the physical motivation for the requirement of being primitive is lacking. In addition in later versions of the axioms presented by Haag ([Haag](https://doi.org/10.1007/978-3-642-61458-3)), this axiom is dropped completely.
+All of this said, the physical motivation for the requirement of being primitive is lacking. In addition, in later versions of the axioms presented by Haag ([Haag](https://doi.org/10.1007/978-3-642-61458-3)), this axiom is dropped completely.
 
 We will follow suit and simply drop this axiom.
 
 # Haag Kastler Axioms Unpacked
 With all the original Haag Kastler Axioms unpacked, we are now in a position to "sharpen" their formulation.
 
-Before even stating the "sharpened" axioms, the first thing we need to do is to define what we mean when we say "Minkowski spacetime"
+Before even stating the "sharpened" axioms, the first thing we need to do is to define what we mean when we say "Minkowski spacetime."
 
 **Definition** *(Minkowski Spacetime)*
 *Minkowski spacetime is the set $$\mathbb{R}^4$$ equipped with the Alexandrov topology, Minkowski metric, and standard time orientation $$(1,0,0,0)$$. (Note the Alexandrov topology is the topology in which sets of the form $$I^+(p) \cap I^-(q)$$ form the base.)*
 
-With that out of the way we can state the axioms
+With that out of the way we can state the axioms.
 
 **Axiom 1** *(Local Algebras)* The sets $$\mathbf{B}$$ for which the correspondence
 
