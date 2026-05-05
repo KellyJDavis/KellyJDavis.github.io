@@ -34,12 +34,12 @@ where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the Lorent
 # Axiom 0 (Minkowski Space)
 "Minkowski space" is referred to, directly or indirectly, in most of these axioms. However, a crisp, mathematical definition of "Minkowski space" is never given in Haag and Kastler's [original work](https://doi.org/10.1063/1.1704187). So, to clarify the axioms, we should provide one.
 
-Normally this level of pedanticism isn't warranted. But, for example, **Axiom 1** *(Local Algebras)* refers to the $$\mathbf{B}$$ as *"open sets with compact closure in Minkowski space"*. So, the topology of "Minkowski space" *is* relevant, and not all topologies may yield "physical" results.
+Normally this level of pedanticism isn't warranted. But, for example, Axiom 1 (Local Algebras) refers to the $$\mathbf{B}$$ as *"open sets with compact closure in Minkowski space"*. So, the topology of "Minkowski space" *is* relevant, and not all topologies may yield "physical" results.
 
 All that being said, to ensure that the axioms are built on a solid foundation, we need a formal definition of "Minkowski space" to build them on.
 
 ## Standard Topology on Minkowski Space
-Physicists usually think of Minkowski space as $$\mathbb{R}^4$$ equipped with the [Euclidean topology](https://ncatlab.org/nlab/show/Euclidean+topology), a [Minkowski metric](https://ncatlab.org/nlab/show/Minkowski+metric), and the "standard" time-orientation. The "standard" time-orientation in this context is simply the non-vanishing vector $$(1,0,0,0)$$ in the standard coordinate system on $$\mathbb{R}^4$$.
+Physicists usually think of Minkowski space as the set $$\mathbb{R}^4$$ equipped with a [Euclidean topology](https://ncatlab.org/nlab/show/Euclidean+topology), a [Minkowski metric](https://ncatlab.org/nlab/show/Minkowski+metric), and the "standard" time-orientation. The "standard" time-orientation in this context is simply the non-vanishing vector $$(1,0,0,0)$$ in the standard coordinate system on $$\mathbb{R}^4$$.
 
 This may be what Haag and Kastler mean by "Minkowski space", but then again it may not. As they don't explicitly define the term "Minkowski space", it's uncertain what they mean. Let's consider some alternatives.
 
@@ -62,7 +62,7 @@ It turns out that $$I^+(p)$$ is an open set in the Euclidean topology for any $$
 
 This suggests that sets of the form $$I^+(p) \cap I^-(q)$$ might be able to be used as the [basis](https://ncatlab.org/nlab/show/topological+base) of a new topology on $$\mathbb{R}^4$$. As it so happens, sets of this form *can* be used as the basis for a topology on $$\mathbb{R}^4$$.
 
-Sets $$I^+(p) \cap I^-(q)$$ with $$p,q \in \mathbb{R}^4$$ form the basis for what's known as the *Alexandrov topology* of $$\mathbb{R}^4$$ (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). (This is also sometimes known as the *interval topology* of $$\mathbb{R}^4$$ too (Remark 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609).) Furthermore, it turns out that the Alexandrov topology of $$\mathbb{R}^4$$ agrees with the Euclidean topology of $$\mathbb{R}^4$$ (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)), a welcome happenstance that "explains" why physicists had not confronted this earlier.
+Sets $$I^+(p) \cap I^-(q)$$ with $$p,q \in \mathbb{R}^4$$ form the basis for what's known as the *Alexandrov topology* of $$\mathbb{R}^4$$ (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). (This is also sometimes known as the *interval topology* of $$\mathbb{R}^4$$ (Remark 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)).) Furthermore, it turns out that the Alexandrov topology of $$\mathbb{R}^4$$ agrees with the Euclidean topology of $$\mathbb{R}^4$$ (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)), a welcome happenstance that "explains" why physicists had not confronted this earlier.
 
 All that being said, we will equip $$\mathbb{R}^4$$ with the Alexandrov topology as it is the "natural" topology of relativity.  So for us *Minkowski space* is $$\mathbb{R}^4$$ with the Alexandrov topology, the Minkowski metric, and standard time-orientation.
 
@@ -78,7 +78,7 @@ Next let us consider Axiom 1 (Local Algebras) which states
    is defined shall be the open sets with compact closure in Minkowski space, the algebras $$\mathfrak{U}(\mathbf{B})$$ shall be (abstract) C\*-algebras.
 
 ## Regions of Measurement
-In **Axiom 1** *(Local Algebras)*, the regions $$\mathbf{B}$$ are open sets with compact closure in Minkowski space, presumably equipped with a Euclidean topology though Haag and Kastler were silent on this point.
+In Axiom 1 (Local Algebras), the regions $$\mathbf{B}$$ are open sets with compact closure in Minkowski space, presumably equipped with a Euclidean topology though Haag and Kastler were silent on this point.
 
 In Haag and Kastler's original [work](https://doi.org/10.1063/1.1704187), these $$\mathbf{B}$$ are regions in which one "measures" an "observable". Let us focus on such open sets with compact closure and see if they do indeed represent regions in which one "measures" an "observable", or if they require modification.
 
@@ -147,7 +147,7 @@ Now let us consider Axiom 2 (Isotony) which states
 **Axiom 2** *(Isotony)* If $$\mathbf{B_1} \subset \mathbf{B_2}$$ then $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$. We assume in addition that one of the two following situations prevails. Either $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ have a common unit element, or neither of them has a unit. The first situation can be obtained from the second by formal adjunction of a unit.
 
 ## GNS Construction
-Before examining **Axiom 2** *(Isotony)*, we need to take a moment to review how AQFT is operationalized.
+Before examining Axiom 2 (Isotony), we need to take a moment to review how AQFT is operationalized.
 
 Operationally, the (abstract) C\*-algebras $$\mathfrak{U}(\mathbf{B})$$ aren't used directly. Instead they are operationalized through the "GNS construction", which we now describe.
 
@@ -233,11 +233,11 @@ The isotony axiom also contains this rather "odd" addendum:
 
 If, as suggested, it is always possible, through formal adjunction, to add a unit, then why even consider the case in which there is no unit?
 
-For example, using the state $$\omega$$ to apply the GNS construction to an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ that doesn't have a unit is impossible. The presence of a unit in $$\mathfrak{U}(\mathbf{B})$$ leads directly to the distinguished vector $$\Omega_\omega$$ in the Hilbert space $$\mathcal{H}_\omega$$. This distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum. So having a unit in $$\mathfrak{U}(\mathbf{B})$$ seems indispensable.
+For example, using the state $$\omega$$ to apply the GNS construction to an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ that doesn't have a unit is impossible[^4]. The presence of a unit in $$\mathfrak{U}(\mathbf{B})$$ leads directly to the distinguished vector $$\Omega_\omega$$ in the Hilbert space $$\mathcal{H}_\omega$$. This distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum. So having a unit in $$\mathfrak{U}(\mathbf{B})$$ seems indispensable.
 
 That being said, we will simply assume that all such $$\mathfrak{U}(\mathbf{B})$$ contain a unit.
 
-So if we adopt the position that a unit is always present, one convenient way to include it, and the method we adopt, is to assume that the empty set $$\emptyset$$ is assigned the C\*-algebra $$\mathbb{C} \mathbf{1}$$ generated by the unit operator $$\mathbf{1}$$
+So if we adopt the position that a unit is always present, one convenient way to include it, and the method we adopt, is to assume that the empty set $$\emptyset$$ is assigned the C\*-algebra $$\mathbb{C} \mathbf{1}$$ generated by the unit $$\mathbf{1}$$
 
 $$
 \emptyset \rightarrow \mathfrak{U}(\emptyset) \equiv \mathbb{C} \mathbf{1}.
@@ -444,7 +444,7 @@ Not all unital C\*-algebras admit a faithful, irreducible representation, i.e. a
 For example, unital, Abelian C\*-algebras are "rarely" primitive. The following lemma formalizes this (See page 158 of Section 5.4 of [Murphy](https://doi.org/10.1016/C2009-0-22289-6))
 
 **Lemma** *(Unital, Abelian C\*-algebras are Rarely Primitive)*
-*A non-zero Abelian C\*-algebra $$\mathcal{A}$$ is primitive if and only if $$\mathcal{A} = \mathbb{C}$$.*
+*A non-zero Abelian C\*-algebra $$\mathcal{A}$$ is primitive if and only if $$\mathcal{A} = \mathbb{C} \mathbf{1}$$.*
 
 So, primitive, Abelian C\*-algebras are in this sense much more "rare" than Abelian C\*-algebras.
 
@@ -521,3 +521,5 @@ These "sharpened" axioms also allow for a straightforward generalization to a se
 [^2]: The *universal representation* of a unital C\*-algebra is the direct sum of all of its representations created via the GNS construction.
 
 [^3]: Technically, one only requires the existence of a "bounded, approximate identity" and not a unit to produce a distinguished vector $$\Omega_\omega$$. However, physical motivation for the existence of a "bounded, approximate identity" as opposed to a unit is lacking.
+
+[^4]: Again, technically, one only requires the existence of a "bounded, approximate identity" and not a unit to produce a distinguished vector $$\Omega_\omega$$. However, physical motivation for the existence of a "bounded, approximate identity" as opposed to a unit is lacking.
