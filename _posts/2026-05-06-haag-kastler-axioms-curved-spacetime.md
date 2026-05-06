@@ -67,9 +67,21 @@ This results in Minkowski spacetime being "clearly physical", in that it doesn't
 
 
 ## Axiom 1 (Local Algebras)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci mattis, vestibulum mi sed, ultrices quam. Aenean tellus quam, gravida et rhoncus quis, porta pretium diam. Duis sem augue, dictum ac erat sed, dictum feugiat nisl. Quisque pellentesque convallis arcu, et rutrum ipsum faucibus quis. Quisque in consequat augue. Morbi quis mollis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed non leo dolor. Sed id nisl arcu.
+With this prologue completed, we are now able to state the first axiom of AQFT:
 
-Nam non facilisis est, varius suscipit ante. Donec lobortis nec lectus commodo volutpat. Pellentesque sit amet metus orci. Vivamus suscipit neque tortor, scelerisque scelerisque augue convallis sed. Nam blandit a eros quis mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam aliquam ullamcorper magna vel viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur placerat libero ac est tempor tincidunt. Suspendisse potenti. Integer at diam neque. Nunc sollicitudin, ante quis scelerisque ullamcorper, diam nunc dapibus nibh, vehicula congue libero augue eget eros. Nunc tincidunt at tellus vitae mattis.
+**Axiom 1** *(Local Algebras)* For all sets $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ in Minkowski spacetime, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
+
+$$
+\mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
+$$
+
+and when $$\mathbf{B}$$ is the the empty set we have the distinguished correspondence
+
+$$
+\emptyset \longmapsto \mathbb{C} \mathbf{1},
+$$
+
+where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 
 ## Axiom 2 (Isotony)
