@@ -190,28 +190,70 @@ Consider a smooth, connected, four dimensional Hausdorff manifold $$M$$ that is 
 
 We these definitions, in hand we can then present the key theorem describing how the Alexandrov topology and the manifold topology are related (Theorem 4.24 of [Penrose](https://doi.org/10.1137/1.9781611970609)):
 
+**Theorem** *(Properties of the Alexandrov Topology)*
+*The following three conditions on a smooth, connected, four dimensional manifold $$M$$ with Hausdorff manifold topology are equivalent:*
+1. *$$M$$ is strongly causal;*
+2. *the Alexandrov Topology agrees with the manifold topology;*
+3. *the Alexandrov Topology is Hausdorff.* 
+
+As one can see, this has "deep" implications for the case at hand, the smooth manifold $$M$$.
+
+Physically, the Alexandrov topology seems more "natural" as it relies up basis elements $$I^+(p) \cap I^+(q)$$ "natural" to Lorentzian nature of spacetime. So physically one would expect a "Lorentzian spacetime" to "natually" be equipped with an Alexandrov topology. The question is how does one accomplish this goal?
+
+In the case of Minkowski spacetime the Alexandrov topology on $$\mathbb{R}^4$$ agreed with the Euclidian topology without any further assumptions. The Euclidian "scaffolding" used to construct the Alexandrov topology simply "fell away". The previous theorem implies that for the more general case we are dealing with now on $$M$$, removing the manifold topology "scaffolding" requires additional assumptions. 
+
+In particular, we can either assume that $$M$$ is strongly causal or that the Alexandrov Topology is Hausdorff. Either assumption implies that the Alexandrov Topology agrees with the manifold topology, and thus the manifold topology "scaffolding" can be removed.
+
+As both assumptions are equivalent, we can select either. With that in mind, we add the additional assumption that the Alexandrov Topology on $$M$$ is Hausdorff. So in total $$M$$ is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition $$M$$ is equipped with a smooth, global vector field $$t^a$$ and associated Lorentzian metric.
+
 ### Lorentzian Spacetime
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar aliquam odio quis ullamcorper. Donec vel est ex. Duis nisi ipsum, sollicitudin sed pharetra sit amet, porttitor quis augue. Pellentesque congue, lectus non ullamcorper aliquam, arcu mauris congue purus, vel lobortis quam nibh pulvinar quam. Etiam sit amet erat lacus. Maecenas placerat diam metus, eu tristique nisl dapibus sit amet. Curabitur malesuada vitae nunc a venenatis. Quisque in orci posuere, porttitor metus a, tincidunt neque. Donec elementum lorem non dolor viverra pulvinar. Mauris eleifend posuere dolor vel tempor. Cras ut dolor non odio fringilla dignissim et vel nunc. Quisque faucibus blandit accumsan. Morbi vel elementum ligula, et consectetur erat.
+Finally we have all the peices in place to define a "Lorentzian spacetime".
+
+**Definition** *(Lorentzian Spacetime)*
+A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, global vector field $$t^a$$ and associated Lorentzian metric.
+
+It will be on such Lorentzian spacetimes that AQFT "unfolds".
 
 
 ## Axiom 1 (Local Algebras)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis est. Quisque in dapibus diam. Maecenas eget dolor gravida, volutpat felis sit amet, porttitor quam. Sed et enim quis odio congue interdum. Maecenas pretium aliquam tellus vel sodales. Mauris accumsan, ipsum at sollicitudin iaculis, metus purus finibus elit, vitae maximus lacus justo ac arcu. Aliquam fermentum in lacus at consectetur.
+With the prologue complete, we are now in a position to state the axioms of AQFT on Lorentzian spacetime. Surprisingly, all the hard work is done.
 
-Sed aliquet dolor dui, eu lacinia ex ullamcorper sed. Ut a arcu vitae purus consequat pretium et et enim. Ut semper nunc non nisi imperdiet, quis egestas massa dignissim. Curabitur luctus mi hendrerit, hendrerit nisi ac, efficitur ex. Cras feugiat pulvinar leo ac blandit. Nulla facilisi. Vivamus dictum ullamcorper leo, id tristique enim maximus et. Nam odio nisi, consequat nec molestie quis, dapibus ac neque. Integer id cursus libero, sed sodales tellus. Pellentesque gravida in nisi nec interdum. Aenean fermentum purus lectus, in varius tortor consequat nec. Suspendisse posuere porttitor lacus a blandit. Cras at diam enim. Integer id nunc eu felis fringilla volutpat eu eget dui. Donec at magna luctus dolor scelerisque maximus id sed nulla.
+The first axiom is:
+
+> **Axiom 1** *(Local Algebras)* For any basis element $$\mathbf{B}$$ of the Alexandrov topology on a Lorentzian spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
+> 
+> $$
+> \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
+> $$
+> 
+> and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
+> 
+> $$
+> \emptyset \longmapsto \mathbb{C} \mathbf{1},
+> $$
+> 
+> where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 
 ## Axiom 2 (Isotony)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis est. Quisque in dapibus diam. Maecenas eget dolor gravida, volutpat felis sit amet, porttitor quam. Sed et enim quis odio congue interdum. Maecenas pretium aliquam tellus vel sodales. Mauris accumsan, ipsum at sollicitudin iaculis, metus purus finibus elit, vitae maximus lacus justo ac arcu. Aliquam fermentum in lacus at consectetur.
+The second axiom takes the following form:
 
-Sed aliquet dolor dui, eu lacinia ex ullamcorper sed. Ut a arcu vitae purus consequat pretium et et enim. Ut semper nunc non nisi imperdiet, quis egestas massa dignissim. Curabitur luctus mi hendrerit, hendrerit nisi ac, efficitur ex. Cras feugiat pulvinar leo ac blandit. Nulla facilisi. Vivamus dictum ullamcorper leo, id tristique enim maximus et. Nam odio nisi, consequat nec molestie quis, dapibus ac neque. Integer id cursus libero, sed sodales tellus. Pellentesque gravida in nisi nec interdum. Aenean fermentum purus lectus, in varius tortor consequat nec. Suspendisse posuere porttitor lacus a blandit. Cras at diam enim. Integer id nunc eu felis fringilla volutpat eu eget dui. Donec at magna luctus dolor scelerisque maximus id sed nulla.
+> **Axiom 2** *(Isotony)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on a Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+>
+> If $$\mathbf{B}_1 \subset \mathbf{B}_2$$ then $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B}_2)$$, where inclusion is implemented by
+> 
+> $$
+> i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
+> $$
+> 
+> a unital \*-homomorphism.
 
 
 ## Axiom 3 (Local Commutativity)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla placerat, erat a placerat dapibus, arcu turpis pellentesque risus, vel consectetur dolor justo a nisl. Cras vitae varius purus. Quisque consectetur sapien eget magna tincidunt tincidunt. Suspendisse libero orci, pharetra ut neque ac, gravida venenatis leo. Aenean sit amet rhoncus libero. Curabitur pellentesque ac augue sit amet tempus. Nunc efficitur at purus vitae lacinia. Ut mattis neque mattis ex commodo tempus. Curabitur tristique augue a mauris pretium, eu bibendum neque feugiat. Integer sem velit, accumsan vel dolor a, vestibulum imperdiet dui.
+So far the axioms have differed little from those of AQFT in Minkowski spacetime. This ceases to be true for subsequent axioms. The primary reason for this is that the existence of a quasilocal algebra is not guaranteed on a Lorentzian spacetime. Let us prove this is the case.
 
-Quisque mattis risus at metus placerat rhoncus. Sed pellentesque ipsum ante, quis facilisis quam interdum venenatis. Vestibulum et turpis ut nisi vehicula faucibus et et velit. Vivamus id elit at magna imperdiet iaculis nec eu justo. Phasellus urna diam, venenatis vel velit eget, aliquet laoreet elit. Ut et tincidunt diam, et fermentum magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla diam tellus, dignissim et ligula congue, tincidunt lacinia massa. Vestibulum sagittis sed ante vel faucibus. Proin accumsan eleifend mollis. Nunc leo erat, dictum sed nulla malesuada, fermentum facilisis magna. Etiam in libero lectus.
-
-Etiam purus lorem, ornare consequat egestas sit amet, posuere id enim. Aenean finibus arcu quis porttitor finibus. Nulla laoreet quis purus non commodo. Curabitur auctor ut sem nec egestas. Curabitur convallis dictum felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec suscipit sapien hendrerit, placerat tellus vel, condimentum enim. Ut pulvinar nisl a semper condimentum. Nulla erat lacus, vestibulum ut finibus et, venenatis ac libero. Fusce blandit auctor lacinia. Donec in dui laoreet mi dictum commodo. Quisque consectetur vehicula nulla ac porttitor. Aenean scelerisque dui vitae augue semper mattis.
+### Quasilocal Algebra?
+Naively, to define a quasilocal algebra associated with a Lorentzian spacetime $$M$$ one would first consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ over all basis elements $$\mathbf{B}$$ of the Alexandrov topology on $$M$$ and prove this set-theoretic union is a normed \*-algebra. It turns out that for a generic Lorentzian spacetime $$M$$ this set-theoretic union isn't a normed \*-algebra and thus the construction of the quasilocal algebra fails. Let's see why this is the case.
 
 
 ## Axiom 4 (Quasilocal Algebra)
