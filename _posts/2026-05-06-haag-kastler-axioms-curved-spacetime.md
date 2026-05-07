@@ -67,63 +67,128 @@ This results in Minkowski spacetime being "clearly physical", in that it doesn't
 
 
 ## Axiom 1 (Local Algebras)
-With this prologue completed, we are now able to state the first axiom of AQFT:
+With this prologue completed, we are now able to state the first axiom of AQFT in Minkowski spacetime:
 
-**Axiom 1** *(Local Algebras)* For all sets $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ in Minkowski spacetime, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
-
-$$
-\mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
-$$
-
-and when $$\mathbf{B}$$ is the the empty set we have the distinguished correspondence
-
-$$
-\emptyset \longmapsto \mathbb{C} \mathbf{1},
-$$
-
-where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
+> **Axiom 1** *(Local Algebras)* For any basis element $$\mathbf{B}$$ of the Alexandrov topology on Minkowski spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
+> 
+> $$
+> \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
+> $$
+> 
+> and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
+> 
+> $$
+> \emptyset \longmapsto \mathbb{C} \mathbf{1},
+> $$
+> 
+> where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 
 ## Axiom 2 (Isotony)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci mattis, vestibulum mi sed, ultrices quam. Aenean tellus quam, gravida et rhoncus quis, porta pretium diam. Duis sem augue, dictum ac erat sed, dictum feugiat nisl. Quisque pellentesque convallis arcu, et rutrum ipsum faucibus quis. Quisque in consequat augue. Morbi quis mollis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed non leo dolor. Sed id nisl arcu.
+The second axiom takes the following form:
 
-Nam non facilisis est, varius suscipit ante. Donec lobortis nec lectus commodo volutpat. Pellentesque sit amet metus orci. Vivamus suscipit neque tortor, scelerisque scelerisque augue convallis sed. Nam blandit a eros quis mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam aliquam ullamcorper magna vel viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur placerat libero ac est tempor tincidunt. Suspendisse potenti. Integer at diam neque. Nunc sollicitudin, ante quis scelerisque ullamcorper, diam nunc dapibus nibh, vehicula congue libero augue eget eros. Nunc tincidunt at tellus vitae mattis.
+> **Axiom 2** *(Isotony)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Minkowski spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+>
+> If $$\mathbf{B}_1 \subset \mathbf{B}_2$$ then $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B}_2)$$, where inclusion is implemented by
+> 
+> $$
+> i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
+> $$
+> 
+> a unital \*-homomorphism.
 
 
 ## Axiom 3 (Local Commutativity)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar aliquam odio quis ullamcorper. Donec vel est ex. Duis nisi ipsum, sollicitudin sed pharetra sit amet, porttitor quis augue. Pellentesque congue, lectus non ullamcorper aliquam, arcu mauris congue purus, vel lobortis quam nibh pulvinar quam. Etiam sit amet erat lacus. Maecenas placerat diam metus, eu tristique nisl dapibus sit amet. Curabitur malesuada vitae nunc a venenatis. Quisque in orci posuere, porttitor metus a, tincidunt neque. Donec elementum lorem non dolor viverra pulvinar. Mauris eleifend posuere dolor vel tempor. Cras ut dolor non odio fringilla dignissim et vel nunc. Quisque faucibus blandit accumsan. Morbi vel elementum ligula, et consectetur erat.
+Before stating the next axiom, we need to introduce some terminology that will aid in stating the  axiom.
 
-Etiam condimentum enim vel lectus auctor, ut vestibulum risus porta. Suspendisse sit amet nunc vitae arcu tempus fringilla. Duis varius posuere urna ut cursus. Duis pellentesque rutrum arcu, et fermentum neque consectetur semper. Donec ultricies faucibus tincidunt. Duis suscipit at quam non aliquet. Curabitur at velit in leo ornare faucibus et at nisi. In gravida quam sed leo egestas imperdiet. Donec ut iaculis tortor. In hac habitasse platea dictumst. Maecenas ipsum ligula, tincidunt id aliquam a, blandit at neque. Maecenas eget dolor lorem. Integer vel tortor tincidunt, congue libero at, aliquam tortor. Suspendisse lobortis felis purus, ac pellentesque ante blandit ac. Integer gravida at magna sed scelerisque. Pellentesque odio ante, tristique ut pulvinar vitae, maximus in lorem.
+**Definition** *(Quasilocal Algebra)*
+Consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. As proven in the previous blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)), this set-theoretic union is a normed \*-algebra. Also, as proven in the previous blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)), its completion yields C\*-algebra, denoted as $$\mathfrak{U}$$. This C\*-algebra $$\mathfrak{U}$$ is called the *quasilocal algebra*.
 
-Aenean cursus augue non enim pellentesque varius. Phasellus non lacus ipsum. Integer nec mollis urna. Sed viverra ante nec sem luctus, et scelerisque tellus fringilla. Cras consectetur mauris nec aliquam cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris malesuada commodo condimentum. Donec placerat mollis sem a sagittis. Suspendisse quis viverra nibh. Suspendisse potenti. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras vel rhoncus felis. Vestibulum ac placerat erat.
+**Definition** *(Causal Future and Past)*
+Consider a point $$p$$ in Minkowski spacetime. The *causal future* of $$p$$ is the set $$J^+(p)$$ of points reachable from $$p$$ via a future-directed, time-like or light-like curve. Similarly, the *causal past* of $$p$$ is the set $$J^-(p)$$ of all points that reach $$p$$ via a future-directed, time-like or light-like curve.
 
+**Definition** *(Spacelike Related)*
+Consider two points $$p_1$$ and $$p_2$$ in Minkowski spacetime. The points are said to be *spacelike related* if $$p_2 \notin J^+(p_1) \cup J^-(p_1)$$ or equivalently $$p_1 \notin J^+(p_2) \cup J^-(p_2)$$.
+
+**Definition** *(Completely Spacelike)*
+Consider two sets $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Minkowski spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are said to be *completely spacelike* if every $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$ or equivalently if every $$p_2$$ in $$\mathbf{O}_2$$ is spacelike related to every $$p_1$$ in $$\mathbf{O}_1$$.
+
+With all of these definitions in hand, we can now state the next axiom:
+
+> **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Minkowski spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+>
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
+> 
+> $$
+> a_1 a_2 - a_2 a_1 = 0
+> $$
+> 
+> in the quasilocal algebra $$\mathfrak{U}$$.
 
 ## Axiom 4 (Quasilocal Algebra)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci mattis, vestibulum mi sed, ultrices quam. Aenean tellus quam, gravida et rhoncus quis, porta pretium diam. Duis sem augue, dictum ac erat sed, dictum feugiat nisl. Quisque pellentesque convallis arcu, et rutrum ipsum faucibus quis. Quisque in consequat augue. Morbi quis mollis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed non leo dolor. Sed id nisl arcu.
+To state the next axiom we make use of the following definition which relies upon some constructs presented in the previous blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)).
 
-Nam non facilisis est, varius suscipit ante. Donec lobortis nec lectus commodo volutpat. Pellentesque sit amet metus orci. Vivamus suscipit neque tortor, scelerisque scelerisque augue convallis sed. Nam blandit a eros quis mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam aliquam ullamcorper magna vel viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur placerat libero ac est tempor tincidunt. Suspendisse potenti. Integer at diam neque. Nunc sollicitudin, ante quis scelerisque ullamcorper, diam nunc dapibus nibh, vehicula congue libero augue eget eros. Nunc tincidunt at tellus vitae mattis.
+**Definition** *(Quasilocal Observable)*
+The image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the quasilocal algebra $$\mathfrak{U}$$ under a GNS \*-homomorphism $$\pi_\omega$$ of state $$\omega$$ is self-adjoint and thus corresponds to an "observable". Any "observable" corresponding to such a self-adjoint $$\pi_\omega(a)$$ is called a *quasilocal observable*.
+
+Using this definition we can then state the next axiom
+
+> **Axiom 4** *(Quasilocal Algebra)* All "observables" are quasilocal observables.
 
 
 ## Axiom 5 (Lorentz Covariance)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci mattis, vestibulum mi sed, ultrices quam. Aenean tellus quam, gravida et rhoncus quis, porta pretium diam. Duis sem augue, dictum ac erat sed, dictum feugiat nisl. Quisque pellentesque convallis arcu, et rutrum ipsum faucibus quis. Quisque in consequat augue. Morbi quis mollis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed non leo dolor. Sed id nisl arcu.
+Finally we can state the last axiom
 
-Nam non facilisis est, varius suscipit ante. Donec lobortis nec lectus commodo volutpat. Pellentesque sit amet metus orci. Vivamus suscipit neque tortor, scelerisque scelerisque augue convallis sed. Nam blandit a eros quis mollis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam aliquam ullamcorper magna vel viverra. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur placerat libero ac est tempor tincidunt. Suspendisse potenti. Integer at diam neque. Nunc sollicitudin, ante quis scelerisque ullamcorper, diam nunc dapibus nibh, vehicula congue libero augue eget eros. Nunc tincidunt at tellus vitae mattis.
+> **Axiom 5** *(Lorentz Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on Minkowski spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
+>
+> A member $$L$$ of the inhomogeneous Lorentz group homotopic to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
+> 
+> $$
+> \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\mathbf{LB}),
+> $$
+> 
+> where $$L\mathbf{B}$$ is the image of the basis element $$\mathbf{B}$$ under the transformation $$L$$.
 
 
 # Haag Kastler Axioms in Curved Spacetime
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis purus viverra felis suscipit ultricies. Curabitur elementum convallis diam a pellentesque. Donec consequat elementum sollicitudin. Nulla pharetra convallis congue. Mauris ullamcorper venenatis arcu in luctus. Vivamus fringilla mi id pretium laoreet. Vivamus maximus ligula dictum libero sollicitudin, quis congue urna congue. Vestibulum mattis id augue pellentesque lacinia. Maecenas facilisis in mauris sit amet interdum. In hac habitasse platea dictumst. Vestibulum tincidunt vel metus id eleifend. In finibus dictum eros sed eleifend.
+As we've recounted the axioms of AQFT in Minkowski spacetime, we are now in a position to generalize this to curved spacetime, i.e. "Lorentzian spacetime". Surprisingly the generalization to "Lorentzian spacetime" is relatively straightforward.
+
+We note, however, that as in the case of AQFT in Minkowski spacetime, the generalization to "Lorentzian spacetime" will not account for "backreaction" of the quantum fields on "Lorentzian spacetime". The "Lorentzian spacetime" will be a fixed, classical background upon which AQFT "unfolds".
 
 ## Prologue
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non orci mattis, vestibulum mi sed, ultrices quam. Aenean tellus quam, gravida et rhoncus quis, porta pretium diam. Duis sem augue, dictum ac erat sed, dictum feugiat nisl. Quisque pellentesque convallis arcu, et rutrum ipsum faucibus quis. Quisque in consequat augue. Morbi quis mollis diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed non leo dolor. Sed id nisl arcu.
+Most presentations of AQFT in curved spacetime gloss over the details of exactly what "Lorentzian spacetime" is. It's too "basic".
+
+In contrast to those presentations, we to spend some time detailing exactly what "Lorentzian spacetime" is before we formulate AQFT there. This level of pedantry will serve us well when formulating AQFT on "Lorentzian spacetime", helping to motivate otherwise opaque aspects of the formulation.
 
 ### Smooth Manifold
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar aliquam odio quis ullamcorper. Donec vel est ex. Duis nisi ipsum, sollicitudin sed pharetra sit amet, porttitor quis augue. Pellentesque congue, lectus non ullamcorper aliquam, arcu mauris congue purus, vel lobortis quam nibh pulvinar quam. Etiam sit amet erat lacus. Maecenas placerat diam metus, eu tristique nisl dapibus sit amet. Curabitur malesuada vitae nunc a venenatis. Quisque in orci posuere, porttitor metus a, tincidunt neque. Donec elementum lorem non dolor viverra pulvinar. Mauris eleifend posuere dolor vel tempor. Cras ut dolor non odio fringilla dignissim et vel nunc. Quisque faucibus blandit accumsan. Morbi vel elementum ligula, et consectetur erat.
+Consider a smooth, connected, four dimensional Hausdorff manifold $$M$$ and equipped with a topology, which we simply call the "manifold topology". This will form the "core" of our definition of a "Lorentzian spacetime".
 
 ### Existence of a Lorentzian Metric
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar aliquam odio quis ullamcorper. Donec vel est ex. Duis nisi ipsum, sollicitudin sed pharetra sit amet, porttitor quis augue. Pellentesque congue, lectus non ullamcorper aliquam, arcu mauris congue purus, vel lobortis quam nibh pulvinar quam. Etiam sit amet erat lacus. Maecenas placerat diam metus, eu tristique nisl dapibus sit amet. Curabitur malesuada vitae nunc a venenatis. Quisque in orci posuere, porttitor metus a, tincidunt neque. Donec elementum lorem non dolor viverra pulvinar. Mauris eleifend posuere dolor vel tempor. Cras ut dolor non odio fringilla dignissim et vel nunc. Quisque faucibus blandit accumsan. Morbi vel elementum ligula, et consectetur erat.
+As we wish this $$M$$ ot be a "Lorentzian spacetime", it should support a Lorentzian metric. Not all such $$M$$ support Lorentzian metrics. In fact for such an $$M$$ to support a Lorentzian metric, it must admit additional structure.
+
+In particular, as we have seen previously, the required structure follows from the theorem (Theorem 2.69 from [Lee](https://doi.org/10.1007/978-3-319-91755-9))
+
+**Theorem** *(Existence of a Lorentz Metric)*
+*A smooth manifold $$M$$ admits a smooth Lorentz metric if and only if it admits a smooth, global vector field.*
+
+So, we require, in addition to all the structure $$M$$ already supports, that it also support a smooth, global vector field $$t^a$$, as this is required for $$M$$ to support a smooth Lorentzian metric.
 
 ### Alexandrov Topology
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar aliquam odio quis ullamcorper. Donec vel est ex. Duis nisi ipsum, sollicitudin sed pharetra sit amet, porttitor quis augue. Pellentesque congue, lectus non ullamcorper aliquam, arcu mauris congue purus, vel lobortis quam nibh pulvinar quam. Etiam sit amet erat lacus. Maecenas placerat diam metus, eu tristique nisl dapibus sit amet. Curabitur malesuada vitae nunc a venenatis. Quisque in orci posuere, porttitor metus a, tincidunt neque. Donec elementum lorem non dolor viverra pulvinar. Mauris eleifend posuere dolor vel tempor. Cras ut dolor non odio fringilla dignissim et vel nunc. Quisque faucibus blandit accumsan. Morbi vel elementum ligula, et consectetur erat.
+As in the case of a Minkowski spacetime, it's "odd" that the manifold topology on $$M$$ need have nothing to do with the Lorentzian nature of spacetime. The manifold topology could, as was the case for Minkowski spacetime, be derived from purely Euclidian metrics. Physics isn't Euclidian; so there seems to be a fundamental tension.
+
+In the case of Minkowski spacetime we introduced sets of the form $$I^+(p) \cap I^+(q)$$, showed that they are open in the Euclidian topology (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)), and can be used as the basis of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, we showed that the Alexandrov topology is equivalent to the Euclidian topology (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). We want to generalize all of this toe "Lorentzian spacetimes".
+
+It turns out that just as in the case of Minkowski spacetime, sets of the form $$I^+(p) \cap I^+(q)$$ on $$M$$ are open sets in the manifold topology (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, on $$M$$ they also form the basis of a topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)), again called the Alexandrov topology. However, for $$M$$ the relationship between the Alexandrov topology and the manifold topology is more nuanced than in the case of Minkowski spacetime.
+
+It turns out that to understand this nuance, we need to introduce several definitions that aid in the process.
+
+**Definition** *(Causally Convex)*
+Consider an open subset $$\mathbf{O}$$ of a smooth, connected, four dimensional Hausdorff manifold $$M$$ that is equipped with a Lorentzian metric. $$\mathbf{O}$$ is said to be *causally convex* if for every $$p$$ and $$r$$ in $$\mathbf{O}$$ and $$q$$ in $$M$$ the existence of a future-directed, time-like curve from $$p$$ to $$q$$ and a future-directed, time-like curve from $$q$$ to $$r$$ implies that $$q$$ is a member of $$\mathbf{O}$$.
+
+**Definition** *(Strongly Causal)*
+Consider a smooth, connected, four dimensional Hausdorff manifold $$M$$ that is equipped with a Lorentzian metric. $$M$$ is said to be *strongly causal* at $$p \in M$$ if $$p$$ has arbitrarily small causally convex neighborhoods. $$M$$ is said to be *strongly causal* if $$M$$ is strongly causal at every $$p \in M$$.
+
+We these definitions, in hand we can then present the key theorem describing how the Alexandrov topology and the manifold topology are related (Theorem 4.24 of [Penrose](https://doi.org/10.1137/1.9781611970609)):
 
 ### Lorentzian Spacetime
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean pulvinar aliquam odio quis ullamcorper. Donec vel est ex. Duis nisi ipsum, sollicitudin sed pharetra sit amet, porttitor quis augue. Pellentesque congue, lectus non ullamcorper aliquam, arcu mauris congue purus, vel lobortis quam nibh pulvinar quam. Etiam sit amet erat lacus. Maecenas placerat diam metus, eu tristique nisl dapibus sit amet. Curabitur malesuada vitae nunc a venenatis. Quisque in orci posuere, porttitor metus a, tincidunt neque. Donec elementum lorem non dolor viverra pulvinar. Mauris eleifend posuere dolor vel tempor. Cras ut dolor non odio fringilla dignissim et vel nunc. Quisque faucibus blandit accumsan. Morbi vel elementum ligula, et consectetur erat.
