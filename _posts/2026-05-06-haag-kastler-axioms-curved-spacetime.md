@@ -277,7 +277,7 @@ For any two basis elements $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandr
 
 All that being said, we can still state a variation of Axiom 3 (Local Commutativity) that applies to a Lorentzian spacetime. But before doing so we have to introduce some terminology.
 
-## Causality and Chronology
+### Causality and Chronology
 As in the case of AQFT on Minkowski spacetime, we have to introduce a few defintions related to causality and chronology. Thankfully, the are the obvious variations of those that applied to Minkowski spacetime.
 
 **Definition** *(Causal Future and Past)*
@@ -289,6 +289,7 @@ Consider two points $$p_1$$ and $$p_2$$ in Lorentzian spacetime. The points are 
 **Definition** *(Completely Spacelike)*
 Consider two sets $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Lorentzian spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are said to be *completely spacelike* if every $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$ or equivalently if every $$p_2$$ in $$\mathbf{O}_2$$ is spacelike related to every $$p_1$$ in $$\mathbf{O}_1$$.
 
+### Axiom 3 (Local Commutativity)
 With all of these definitions in hand, we can finally state Axiom 3 (Local Commutativity) as applied to Lorentzian spacetime: 
 
 > **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
@@ -305,20 +306,40 @@ With all of these definitions in hand, we can finally state Axiom 3 (Local Commu
 
 While having the commutation status of $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ sometimes being undefined seems "odd" at first. It's actually not "odd" at all. The commutation status of $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ is only undefined when its impossible to conduct an experiment that determines if they commute. This makes complete sense.
 
-## Axiom 4 (Quasilocal Algebra)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla placerat, erat a placerat dapibus, arcu turpis pellentesque risus, vel consectetur dolor justo a nisl. Cras vitae varius purus. Quisque consectetur sapien eget magna tincidunt tincidunt. Suspendisse libero orci, pharetra ut neque ac, gravida venenatis leo. Aenean sit amet rhoncus libero. Curabitur pellentesque ac augue sit amet tempus. Nunc efficitur at purus vitae lacinia. Ut mattis neque mattis ex commodo tempus. Curabitur tristique augue a mauris pretium, eu bibendum neque feugiat. Integer sem velit, accumsan vel dolor a, vestibulum imperdiet dui.
+## Axiom 4 (Local Algebra)
+The axiom we are about to present also changes slightly from its analog Axiom 4 (Quasilocal Algebra) on Minkowski spacetime. The reason for the change, as was the reason for the change in Axiom 3 (Local Commutativity), is the fact that there is no such thing as a quasilocal algebra on a generic Lorentzian spacetime.
 
-Quisque mattis risus at metus placerat rhoncus. Sed pellentesque ipsum ante, quis facilisis quam interdum venenatis. Vestibulum et turpis ut nisi vehicula faucibus et et velit. Vivamus id elit at magna imperdiet iaculis nec eu justo. Phasellus urna diam, venenatis vel velit eget, aliquet laoreet elit. Ut et tincidunt diam, et fermentum magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla diam tellus, dignissim et ligula congue, tincidunt lacinia massa. Vestibulum sagittis sed ante vel faucibus. Proin accumsan eleifend mollis. Nunc leo erat, dictum sed nulla malesuada, fermentum facilisis magna. Etiam in libero lectus.
+Before we state the next axiom for Lorentzian spacetimes, we need to, as in the case of Minkowski spacetime, present a definition used in the statement of the axiom.
 
-Etiam purus lorem, ornare consequat egestas sit amet, posuere id enim. Aenean finibus arcu quis porttitor finibus. Nulla laoreet quis purus non commodo. Curabitur auctor ut sem nec egestas. Curabitur convallis dictum felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec suscipit sapien hendrerit, placerat tellus vel, condimentum enim. Ut pulvinar nisl a semper condimentum. Nulla erat lacus, vestibulum ut finibus et, venenatis ac libero. Fusce blandit auctor lacinia. Donec in dui laoreet mi dictum commodo. Quisque consectetur vehicula nulla ac porttitor. Aenean scelerisque dui vitae augue semper mattis.
+This definition relies upon the fact, which one may check, that the GNS construction for a state $$\omega$$ on a C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, where $$\mathbf{B}$$ is an element of the Alexandrov topology on the Lorentzian spacetime $$M$$, works just as described in the previous blog post  ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)).
 
+**Definition** *(Local Observable)*
+For Lorentzian spacetime $$M$$ the image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the local algebra $$\mathfrak{U}(\mathbf{B})$$ under the GNS \*-homomorphism $$\pi_\omega$$ of a state $$\omega$$ on $$\mathfrak{U}(\mathbf{B})$$ is self-adjoint and thus corresponds to an "observable". Any "observable" corresponding to such a self-adjoint $$\pi_\omega(a)$$ is called a *local observable*.
 
-## Axiom 5 (Lorentz Covariance)
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla placerat, erat a placerat dapibus, arcu turpis pellentesque risus, vel consectetur dolor justo a nisl. Cras vitae varius purus. Quisque consectetur sapien eget magna tincidunt tincidunt. Suspendisse libero orci, pharetra ut neque ac, gravida venenatis leo. Aenean sit amet rhoncus libero. Curabitur pellentesque ac augue sit amet tempus. Nunc efficitur at purus vitae lacinia. Ut mattis neque mattis ex commodo tempus. Curabitur tristique augue a mauris pretium, eu bibendum neque feugiat. Integer sem velit, accumsan vel dolor a, vestibulum imperdiet dui.
+Using this definition we can state the axiom
 
-Quisque mattis risus at metus placerat rhoncus. Sed pellentesque ipsum ante, quis facilisis quam interdum venenatis. Vestibulum et turpis ut nisi vehicula faucibus et et velit. Vivamus id elit at magna imperdiet iaculis nec eu justo. Phasellus urna diam, venenatis vel velit eget, aliquet laoreet elit. Ut et tincidunt diam, et fermentum magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla diam tellus, dignissim et ligula congue, tincidunt lacinia massa. Vestibulum sagittis sed ante vel faucibus. Proin accumsan eleifend mollis. Nunc leo erat, dictum sed nulla malesuada, fermentum facilisis magna. Etiam in libero lectus.
+> **Axiom 4** *(Local Algebra)* All "observables" are local observables.
 
-Etiam purus lorem, ornare consequat egestas sit amet, posuere id enim. Aenean finibus arcu quis porttitor finibus. Nulla laoreet quis purus non commodo. Curabitur auctor ut sem nec egestas. Curabitur convallis dictum felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec suscipit sapien hendrerit, placerat tellus vel, condimentum enim. Ut pulvinar nisl a semper condimentum. Nulla erat lacus, vestibulum ut finibus et, venenatis ac libero. Fusce blandit auctor lacinia. Donec in dui laoreet mi dictum commodo. Quisque consectetur vehicula nulla ac porttitor. Aenean scelerisque dui vitae augue semper mattis.
+As shown in the blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/), this theorem is essentially the statement that there exist "observables" that are not local observables, but such "observables" are "experimentally indistinguishable" from local observables.
+
+## Axiom 5 (General Covariance)
+Now present the final, and most interesting axiom in the case of Lorentzian spacetimes.
+
+The interesting aspect of this theorm is understanding what replaces the inhomogeneous Lorentz group homotopic to the identity, which appears in the Minkowski spacetime analog. One might think to replace it with diffeomorphisms of a Lorentzian spacetime. However, this isn't the correct analog.
+
+Lorentzian spacetimes can admit diffeomorphisms that are not homotopic to the identity. (For example [Dehn twists](https://en.wikipedia.org/wiki/Dehn_twist) are diffeomorphisms that are not homotopic to the identity.) So, if we want to "mirror" Axiom 5 (Lorentz Covariance) in Minkowski spacetime, we should limit the diffeomorphisms we employ in this axiom.
+
+The "natural" choice seems to be the set of diffeomorphisms that are homotopic to the identity. Using this, the axiom takes the following form:
+
+> **Axiom 5** *(General Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
+>
+> A member $$\varphi$$ of the group of diffeomorphisms of $$M$$ that are homotopic to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
+> 
+> $$
+> \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\varphi(\mathbf{B})),
+> $$
+> 
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the diffeomorphism $$\varphi$$.
 
 
 # Summary 
