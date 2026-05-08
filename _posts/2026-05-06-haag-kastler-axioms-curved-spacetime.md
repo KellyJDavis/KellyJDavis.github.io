@@ -323,11 +323,11 @@ Using this definition we can state the axiom
 As shown in the blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/), this theorem is essentially the statement that there exist "observables" that are not local observables, but such "observables" are "experimentally indistinguishable" from local observables.
 
 ## Axiom 5 (General Covariance)
-Now present the final, and most interesting axiom in the case of Lorentzian spacetimes.
+Now we present the final, and most interesting, axiom in the case of Lorentzian spacetimes.
 
 The interesting aspect of this theorm is understanding what replaces the inhomogeneous Lorentz group homotopic to the identity, which appears in the Minkowski spacetime analog. One might think to replace it with diffeomorphisms of a Lorentzian spacetime. However, this isn't the correct analog.
 
-Lorentzian spacetimes can admit diffeomorphisms that are not homotopic to the identity. (For example [Dehn twists](https://en.wikipedia.org/wiki/Dehn_twist) are diffeomorphisms that are not homotopic to the identity.) So, if we want to "mirror" Axiom 5 (Lorentz Covariance) in Minkowski spacetime, we should limit the diffeomorphisms we employ in this axiom.
+Lorentzian spacetimes can admit diffeomorphisms that are not homotopic to the identity. (For example [Dehn twists](https://en.wikipedia.org/wiki/Dehn_twist) aren't homotopic to the identity.) So, if we want to "mirror" Axiom 5 (Lorentz Covariance) from the Minkowski case (which only considers group elements homotopic to the identity), we should limit the diffeomorphisms we employ.
 
 The "natural" choice seems to be the set of diffeomorphisms that are homotopic to the identity. Using this, the axiom takes the following form:
 
@@ -343,12 +343,87 @@ The "natural" choice seems to be the set of diffeomorphisms that are homotopic t
 
 
 # Summary 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare ullamcorper ex a ultricies. Vestibulum facilisis lorem lacinia, iaculis erat ac, molestie est. Fusce volutpat, lectus eu egestas rutrum, nunc tellus ornare nibh, vitae mollis risus libero sed nibh. Sed at augue quis sapien bibendum finibus sit amet quis neque. Nunc ornare lorem ex, ac cursus purus sollicitudin a. Nulla sed justo dapibus lacus faucibus dapibus. Ut suscipit euismod lacus eget mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas feugiat commodo tempus.
+Here we recount the axioms we've established for AQFT in Lorentzian spacetime.
 
-Quisque non dolor egestas, ultrices nunc at, facilisis felis. Maecenas pulvinar lobortis molestie. Nunc vestibulum ipsum et nulla tristique rhoncus. Proin et consectetur elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer ac sapien pharetra, mattis lectus sit amet, malesuada leo. Etiam elementum quam eget neque eleifend, vel blandit nulla rutrum.
+First we remind the reader of the Lorentzian spacetime definition
 
-Maecenas ut tellus ultrices, rhoncus augue quis, rutrum urna. Duis aliquam condimentum consequat. Integer aliquet mi vel mollis aliquet. Aliquam ac egestas erat. Curabitur vel ex suscipit, feugiat urna sed, rhoncus lectus. Curabitur lorem ex, lobortis quis turpis nec, tincidunt molestie dolor. Proin nec metus quis magna malesuada tristique. Vestibulum et ante risus. Sed varius elit libero, vel efficitur lorem lobortis eu. Ut venenatis dolor sit amet massa porttitor vestibulum. Aenean accumsan porta mi id mollis.
+**Definition** *(Lorentzian Spacetime)*
+A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, global vector field $$t^a$$ and associated Lorentzian metric.
 
-Suspendisse velit enim, facilisis id fermentum vel, auctor non justo. Integer quis vulputate nisi. Quisque a sapien tempus leo pretium porta pharetra sed purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ipsum tellus. Curabitur vitae condimentum neque. Fusce vel vestibulum nisi, sit amet malesuada augue. Nunc eros dolor, gravida molestie varius non, egestas in est. Pellentesque ac est tempor, ultrices lectus vitae, luctus sem. Proin tristique hendrerit libero id efficitur. Etiam fringilla vel neque ut commodo. Cras iaculis enim odio, vel dapibus nisl aliquet vitae. Etiam vitae urna sit amet ligula vulputate ultricies sit amet quis est. Suspendisse interdum est ante, sed accumsan neque fermentum quis. Vivamus quam odio, rutrum at est vel, feugiat molestie arcu. Morbi at auctor sem.
+With that clarified, we can present the first axiom
+
+> **Axiom 1** *(Local Algebras)* For any basis element $$\mathbf{B}$$ of the Alexandrov topology on a Lorentzian spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
+> 
+> $$
+> \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
+> $$
+> 
+> and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
+> 
+> $$
+> \emptyset \longmapsto \mathbb{C} \mathbf{1},
+> $$
+> 
+> where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
+
+The second axiom can be immediately stated too.
+
+> **Axiom 2** *(Isotony)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on a Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+>
+> If $$\mathbf{B}_1 \subset \mathbf{B}_2$$ then $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B}_2)$$, where inclusion is implemented by
+> 
+> $$
+> i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
+> $$
+> 
+> a unital \*-homomorphism.
+
+The next axiom makes use of the following definitions:
+
+**Definition** *(Causal Future and Past)*
+Consider a point $$p$$ in Lorentzian spacetime. The *causal future* of $$p$$ is the set $$J^+(p)$$ of points reachable from $$p$$ via a future-directed, time-like or light-like curve. Similarly, the *causal past* of $$p$$ is the set $$J^-(p)$$ of all points that reach $$p$$ via a future-directed, time-like or light-like curve.
+
+**Definition** *(Spacelike Related)*
+Consider two points $$p_1$$ and $$p_2$$ in Lorentzian spacetime. The points are said to be *spacelike related* if $$p_2 \notin J^+(p_1) \cup J^-(p_1)$$ or equivalently $$p_1 \notin J^+(p_2) \cup J^-(p_2)$$.
+
+**Definition** *(Completely Spacelike)*
+Consider two sets $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Lorentzian spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are said to be *completely spacelike* if every $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$ or equivalently if every $$p_2$$ in $$\mathbf{O}_2$$ is spacelike related to every $$p_1$$ in $$\mathbf{O}_1$$.
+
+and can be stated as follows:
+
+> **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+>
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike and there exists a basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
+> 
+> $$
+> a_1 a_2 - a_2 a_1 = 0
+> $$
+> 
+> in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$.
+>
+> If no such $$\mathbf{B}$$ exists, then it simply doesn't make sense to consider if $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute as they are not in the same algebra.
+
+The next axiom has need of the following definition
+
+**Definition** *(Local Observable)*
+For Lorentzian spacetime $$M$$ the image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the local algebra $$\mathfrak{U}(\mathbf{B})$$ under the GNS \*-homomorphism $$\pi_\omega$$ of a state $$\omega$$ on $$\mathfrak{U}(\mathbf{B})$$ is self-adjoint and thus corresponds to an "observable". Any "observable" corresponding to such a self-adjoint $$\pi_\omega(a)$$ is called a *local observable*.
+
+and can be stated as follows:
+
+> **Axiom 4** *(Local Algebra)* All "observables" are local observables.
+
+The final axiom states:
+
+> **Axiom 5** *(General Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
+>
+> A member $$\varphi$$ of the group of diffeomorphisms of $$M$$ that are homotopic to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
+> 
+> $$
+> \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\varphi(\mathbf{B})),
+> $$
+> 
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the diffeomorphism $$\varphi$$.
+
+Generally these axioms follow in a straightforward manner from those of AQFT in Minkowski spacetime. The only "suprise" in this presentation is the absence of a quasilocal algebra. However, as we found, its absence is simply a reflection of the observational constraints of Lorentzian spacetime which don't exist in Minkowski spacetime.
 
 [^1]: This argument can be formalized. However, doing so doesn't provide any insight beyond what's presented by this informal argument. Hence, we omitted the formal argument.
