@@ -25,11 +25,11 @@ $$
 \varphi_V \circ \varphi_U^{-1} : \varphi_U(U \cap V) \rightarrow \varphi_V(U \cap V)
 $$
 
-is called a *transition map*. The charts $$(U,\varphi_U)$$ and $$(V,\varphi_V)$$ are said to be *smoothly compatible* if $$U \cap V$$ is the empty set or the transition map $$\varphi_V \circ \varphi_U^{-1}$$ is a diffeomorphism. ($$\varphi_V \circ \varphi_U^{-1}$$ is a map from an open subset of $$\mathbb{R}^n$$ to an open subset of $$\mathbb{R}^4$$. So this is well-defined.)
+is called a *transition map*. The charts $$(U,\varphi_U)$$ and $$(V,\varphi_V)$$ are said to be *smoothly compatible* if $$U \cap V$$ is the empty set or the transition map $$\varphi_V \circ \varphi_U^{-1}$$ is a diffeomorphism. ($$\varphi_V \circ \varphi_U^{-1}$$ is a map from an open subset of $$\mathbb{R}^4$$ to an open subset of $$\mathbb{R}^4$$. So this is well-defined.)
 
 An *atlas* for $$M$$ is a set of charts whose domains cover all of $$M$$. A *smooth atlas* on $$M$$ is an atlas in which any two charts are smoothly compatible. Such a smooth atlas is *maximal* if it is not the proper subset of any other smooth atlas. Finally, a *smooth structure* on $$M$$ is a maximal smooth atlas on $$M$$, and the topological manifold $$M$$ is in addition a *smooth manifold* if admits a smooth structure.
 
-As is relatively obvious, $$\mathbb{R}^4$$ equipped with the Euclidean topology is a smooth manifold. The charts of the maximal smooth atlas on $$\mathbb{R}^4$$ are simply pairs of the form $$(U, i)$$, where $$U$$ is an open set of the Euclidean topology and $$i$$ is the identity map. So, $$\mathbb{R}^4$$, which will form the "core" of "Minkowski spacetime", is a smooth manifold.
+As is relatively obvious, $$\mathbb{R}^4$$ equipped with the Euclidean topology is a smooth manifold. The charts of the maximal smooth atlas on $$\mathbb{R}^4$$ are simply pairs of the form $$(U, \varphi)$$, where $$U$$ is an open set of the Euclidean topology and $$\varphi$$ is a diffeomorphism. So, $$\mathbb{R}^4$$, which will form the "core" of "Minkowski spacetime", is a smooth manifold.
 
 ### Existence of a Minkowski Metric
 We've established that $$\mathbb{R}^4$$ equipped with the Euclidean topology is a smooth manifold, and we've also defined a Euclidean metric on $$\mathbb{R}^4$$. What we have not yet done is defined a Minkowski metric on $$\mathbb{R}^4$$. It is to this we now turn.
@@ -178,9 +178,9 @@ So, we require, in addition to all the structure $$M$$ already supports, that it
 ### Alexandrov Topology
 As in the case of a Minkowski spacetime, it's "odd" that the manifold topology on $$M$$ may have nothing to do with the Lorentzian nature of spacetime. The manifold topology could, as was the case for Minkowski spacetime, be derived from purely Euclidean metrics. Physics isn't Euclidean; so there seems to be a fundamental tension.
 
-In the case of Minkowski spacetime we introduced sets of the form $$I^+(p) \cap I^+(q)$$, showed that they are open in the Euclidean topology (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)), and can be used as the basis of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, we showed that the Alexandrov topology is equivalent to the Euclidean topology (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). We want to generalize all of this to "Lorentzian spacetimes".
+In the case of Minkowski spacetime we introduced sets of the form $$I^+(p) \cap I^-(q)$$, showed that they are open in the Euclidean topology (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)), and can be used as the basis of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, we showed that the Alexandrov topology is equivalent to the Euclidean topology (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). We want to generalize all of this to "Lorentzian spacetimes".
 
-It turns out that just as in the case of Minkowski spacetime, sets of the form $$I^+(p) \cap I^+(q)$$ on $$M$$ are open sets in the manifold topology (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, on $$M$$ they also form the basis of a topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)), again called the Alexandrov topology. However, for $$M$$ the relationship between the Alexandrov topology and the manifold topology is more nuanced than in the case of Minkowski spacetime.
+It turns out that just as in the case of Minkowski spacetime, sets of the form $$I^+(p) \cap I^-(q)$$ on $$M$$ are open sets in the manifold topology (Proposition 2.8 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, on $$M$$ they also form the basis of a topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)), again called the Alexandrov topology. However, for $$M$$ the relationship between the Alexandrov topology and the manifold topology is more nuanced than in the case of Minkowski spacetime.
 
 It turns out that to understand this nuance, we need to introduce several definitions that aid in the process.
 
@@ -200,7 +200,7 @@ With these definitions in hand we can then present the key theorem describing ho
 
 As one can see, this has "deep" implications for the case at hand, the smooth manifold $$M$$.
 
-Physically, the Alexandrov topology seems more "natural" as it relies upon basis elements $$I^+(p) \cap I^+(q)$$ "natural" to Lorentzian nature of spacetime. So physically one would expect a "Lorentzian spacetime" to "naturally" be equipped with an Alexandrov topology. The question is how does one accomplish this goal?
+Physically, the Alexandrov topology seems more "natural" as it relies upon basis elements $$I^+(p) \cap I^-(q)$$ "natural" to Lorentzian nature of spacetime. So physically one would expect a "Lorentzian spacetime" to "naturally" be equipped with an Alexandrov topology. The question is how does one accomplish this goal?
 
 In the case of Minkowski spacetime the Alexandrov topology on $$\mathbb{R}^4$$ agreed with the Euclidean topology without any further assumptions. The Euclidean "scaffolding" used to construct the Alexandrov topology simply "fell away". The previous theorem implies that for the more general case we are dealing with now on $$M$$, removing the manifold topology "scaffolding" requires additional assumptions. 
 
@@ -271,7 +271,7 @@ What is obvious is that there exists no basis element $$\mathbf{B}$$ of the Alex
 
 which is of course not allowed.
 
-As a result of this, one can not employ the isotony axiom, the only tool one has, to place $$\mathfrak{U}(\mathbf{B}_1)$$ and $$\mathfrak{U}(\mathbf{B}_1)$$ in a larger algebra, an algebra in which addition and multiplication of their elements would make sense.
+As a result of this, one can not employ the isotony axiom, the only tool one has, to place $$\mathfrak{U}(\mathbf{B}_1)$$ and $$\mathfrak{U}(\mathbf{B}_2)$$ in a larger algebra, an algebra in which addition and multiplication of their elements would make sense.
 
 This implies that the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ over all basis elements $$\mathbf{B}$$ of the Alexandrov topology on $$M_{BH}$$ is not a normed \*-algebra. This in turn implies that the construction of the quasilocal algebra fails[^1] for $$M_{BH}$$.
 
@@ -322,14 +322,14 @@ Using this definition we can state the axiom
 
 > **Axiom 4** *(Local Algebra)* All "observables" are local observables.
 
-As shown in the blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/), this theorem is essentially the statement that there exist "observables" that are not local observables, but such "observables" are "experimentally indistinguishable" from local observables and thus can be ignored.
+As shown in the blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/), this axiom is essentially the statement that there exist "observables" that are not local observables, but such "observables" are "experimentally indistinguishable" from local observables and thus can be ignored.
 
 ## Axiom 5 (General Covariance)
 Now we present the final, and most interesting, axiom in the case of Lorentzian spacetimes.
 
 The interesting aspect of this theorem is understanding what replaces the inhomogeneous Lorentz group homotopic to the identity, which appears in the Minkowski spacetime analog. One might think to replace it with diffeomorphisms of a Lorentzian spacetime. However, this isn't the correct analog.
 
-Lorentzian spacetimes can admit diffeomorphisms that are not homotopic to the identity. (For example [Dehn twists](https://en.wikipedia.org/wiki/Dehn_twist) aren't homotopic to the identity.) So, if we want to "mirror" Axiom 5 (Lorentz Covariance) from the Minkowski case (which only considers group elements homotopic to the identity), we should limit the diffeomorphisms we employ.
+Lorentzian spacetimes can admit diffeomorphisms that are not homotopic to the identity. (For example, in two dimensions [Dehn twists](https://en.wikipedia.org/wiki/Dehn_twist) aren't homotopic to the identity.) So, if we want to "mirror" Axiom 5 (Lorentz Covariance) from the Minkowski case (which only considers group elements homotopic to the identity), we should limit the diffeomorphisms we employ.
 
 The "natural" choice seems to be the set of diffeomorphisms that are homotopic to the identity. Using this, the axiom takes the following form:
 
