@@ -255,6 +255,55 @@ So far the axioms have differed little from those of AQFT in Minkowski spacetime
 ### Quasilocal Algebra?
 Naively, to define a quasilocal algebra associated with a Lorentzian spacetime $$M$$ one would first consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ over all basis elements $$\mathbf{B}$$ of the Alexandrov topology on $$M$$ and prove this set-theoretic union is a normed \*-algebra. It turns out that for a generic Lorentzian spacetime $$M$$ this set-theoretic union isn't a normed \*-algebra and thus the construction of the quasilocal algebra fails. Let's see why this is the case.
 
+Consider $$M_{BH}$$ the Schwarzschild blackhole solution Lorentzian spacetime. $$M_{BH}$$ has the following Penrose diagram 
+
+![Penrose diagram of the Schwarzschild blackhole solution](../../../images/posts/schwarzschild_penrose_diagram.png)
+
+Zooming in on the singularity we can introduce two basis elements $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology that are $$\varepsilon$$ from the singularity
+
+![Penrose diagram of the Schwarzschild blackhole solution zoomed to singularity and containing two basis elements](../../../images/posts/schwarzschild_penrose_diagram_zoom1.png)
+
+What is obvious is that there exists no basis element $$\mathbf{B}$$ of the Alexandrov topology that contains both $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ as it would have to extend beyond the singulatiry off of $$M_{BH}$$
+
+![Penrose diagram of the Schwarzschild blackhole solution zoomed to singularity and containing three basis elements](../../../images/posts/schwarzschild_penrose_diagram_zoom2.png)
+
+which is of course not allowed.
+
+As a result of this one can not employ the isotony axiom, the only tool one has, to place $$\mathfrak{U}(\mathbf{B}_1)$$ and $$\mathfrak{U}(\mathbf{B}_1)$$ in a larger algebra, an algebra in which addition and multiplication of their elements would make sense.
+
+This further implies that the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ over all basis elements $$\mathbf{B}$$ of the Alexandrov topology on $$M_{BH}$$ is not a normed \*-algebra. This in turn implies that the construction of the quasilocal algebra fails[^1] for $$M_{BH}$$.
+
+For any two basis elements $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology on a generic Lorentzian spacetime $$M$$ the best one can hope for is that there exists a third element $$\mathbf{B}$$ of the Alexandrov topology such that $$\mathbf{B}_1, \mathbf{B}_2 \subseteq \mathbf{B}$$. There is no guarantee that such a $$\mathbf{B}$$ exists as occurs in Minkowski spacetime.
+
+All that being said, we can still state a variation of Axiom 3 (Local Commutativity) that applies to a Lorentzian spacetime. But before doing so we have to introduce some terminology.
+
+## Causality and Chronology
+As in the case of AQFT on Minkowski spacetime, we have to introduce a few defintions related to causality and chronology. Thankfully, the are the obvious variations of those that applied to Minkowski spacetime.
+
+**Definition** *(Causal Future and Past)*
+Consider a point $$p$$ in Lorentzian spacetime. The *causal future* of $$p$$ is the set $$J^+(p)$$ of points reachable from $$p$$ via a future-directed, time-like or light-like curve. Similarly, the *causal past* of $$p$$ is the set $$J^-(p)$$ of all points that reach $$p$$ via a future-directed, time-like or light-like curve.
+
+**Definition** *(Spacelike Related)*
+Consider two points $$p_1$$ and $$p_2$$ in Lorentzian spacetime. The points are said to be *spacelike related* if $$p_2 \notin J^+(p_1) \cup J^-(p_1)$$ or equivalently $$p_1 \notin J^+(p_2) \cup J^-(p_2)$$.
+
+**Definition** *(Completely Spacelike)*
+Consider two sets $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Lorentzian spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are said to be *completely spacelike* if every $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$ or equivalently if every $$p_2$$ in $$\mathbf{O}_2$$ is spacelike related to every $$p_1$$ in $$\mathbf{O}_1$$.
+
+With all of these definitions in hand, we can finally state Axiom 3 (Local Commutativity) as applied to Lorentzian spacetime: 
+
+> **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+>
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike and there exists a basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
+> 
+> $$
+> a_1 a_2 - a_2 a_1 = 0
+> $$
+> 
+> in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$.
+>
+> If no such $$\mathbf{B}$$ exists, then it simply doesn't make sense to consider if $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute as they are not in the same algebra.
+
+While having the commutation status of $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ sometimes being undefined seems "odd" at first. It's actually not "odd" at all. The commutation status of $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ is only undefined when its impossible to conduct an experiment that determines if they commute. This makes complete sense.
 
 ## Axiom 4 (Quasilocal Algebra)
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla placerat, erat a placerat dapibus, arcu turpis pellentesque risus, vel consectetur dolor justo a nisl. Cras vitae varius purus. Quisque consectetur sapien eget magna tincidunt tincidunt. Suspendisse libero orci, pharetra ut neque ac, gravida venenatis leo. Aenean sit amet rhoncus libero. Curabitur pellentesque ac augue sit amet tempus. Nunc efficitur at purus vitae lacinia. Ut mattis neque mattis ex commodo tempus. Curabitur tristique augue a mauris pretium, eu bibendum neque feugiat. Integer sem velit, accumsan vel dolor a, vestibulum imperdiet dui.
@@ -280,3 +329,5 @@ Quisque non dolor egestas, ultrices nunc at, facilisis felis. Maecenas pulvinar 
 Maecenas ut tellus ultrices, rhoncus augue quis, rutrum urna. Duis aliquam condimentum consequat. Integer aliquet mi vel mollis aliquet. Aliquam ac egestas erat. Curabitur vel ex suscipit, feugiat urna sed, rhoncus lectus. Curabitur lorem ex, lobortis quis turpis nec, tincidunt molestie dolor. Proin nec metus quis magna malesuada tristique. Vestibulum et ante risus. Sed varius elit libero, vel efficitur lorem lobortis eu. Ut venenatis dolor sit amet massa porttitor vestibulum. Aenean accumsan porta mi id mollis.
 
 Suspendisse velit enim, facilisis id fermentum vel, auctor non justo. Integer quis vulputate nisi. Quisque a sapien tempus leo pretium porta pharetra sed purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut ipsum tellus. Curabitur vitae condimentum neque. Fusce vel vestibulum nisi, sit amet malesuada augue. Nunc eros dolor, gravida molestie varius non, egestas in est. Pellentesque ac est tempor, ultrices lectus vitae, luctus sem. Proin tristique hendrerit libero id efficitur. Etiam fringilla vel neque ut commodo. Cras iaculis enim odio, vel dapibus nisl aliquet vitae. Etiam vitae urna sit amet ligula vulputate ultricies sit amet quis est. Suspendisse interdum est ante, sed accumsan neque fermentum quis. Vivamus quam odio, rutrum at est vel, feugiat molestie arcu. Morbi at auctor sem.
+
+[^1]: This argument can be formalized. However, doing so doesn't provide any insight beyond what's presented by this informal argument. Hence, we omitted the formal argument.
