@@ -373,12 +373,12 @@ where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the Lorent
 
 This axiom is the most straightforward axiom of all that we have encountered.
 
-## Inhomogeneous Lorentz Group (Homotopic to the Identity)
+## Inhomogeneous Lorentz Group (Connected to the Identity)
 This original formulation of Axiom 5 (Lorentz Covariance) ([Haag and Kastler](https://doi.org/10.1063/1.1704187)) uses the term "inhomogeneous Lorentz group" without specifying if this refers to all connected components of the inhomogeneous Lorentz group or simply the component of the inhomogeneous Lorentz group that is connected to the identity. This is likely a simple oversight.
 
-The components of the inhomogeneous Lorentz group not homotopic to the identity are obtained from the component homotopic to the identity by reflections in time and/or space (See Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)), and it is an open question as to whether such reflections correspond to "physical" symmetries (Again see Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)).
+The components of the inhomogeneous Lorentz group not connected to the identity are obtained from the component connected to the identity by reflections in time and/or space (See Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)), and it is an open question as to whether such reflections correspond to "physical" symmetries (Again see Section I.2.1 of  [Haag](https://doi.org/10.1007/978-3-642-61458-3)).
 
-That being said, it is a reasonable assumption to make that the phrase "inhomogeneous Lorentz group" used in Axiom 5 (Lorentz Covariance) should more properly be read as "the component of the inhomogeneous Lorentz group homotopic to the identity". We will adopt this posture.
+That being said, it is a reasonable assumption to make that the phrase "inhomogeneous Lorentz group" used in Axiom 5 (Lorentz Covariance) should more properly be read as "the component of the inhomogeneous Lorentz group connected to the identity". We will adopt this posture.
 
 ## Action of the Inhomogeneous Lorentz Group's Identity Component
 Consider an element $$L$$ of the inhomogeneous Lorentz group's identity component. For a given $$\mathfrak{U}(\mathbf{B})$$ the action of $$L$$ on $$\mathfrak{U}(\mathbf{B})$$ should "naturally" take the form
@@ -501,7 +501,7 @@ The image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the quasilocal alg
 
 **Axiom 4** *(Quasilocal Algebra)* All "observables" are quasilocal observables.
 
-**Axiom 5** *(Lorentz Covariance)* A member $$L$$ of the inhomogeneous Lorentz group homotopic to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
+**Axiom 5** *(Lorentz Covariance)* A member $$L$$ of the inhomogeneous Lorentz group connected to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
 
 $$
 \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\mathbf{LB}),
