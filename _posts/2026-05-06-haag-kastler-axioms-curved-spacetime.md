@@ -324,24 +324,34 @@ Using this definition we can state the axiom
 
 As shown in the blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/), this axiom is essentially the statement that there exist "observables" that are not local observables, but such "observables" are "experimentally indistinguishable" from local observables and thus can be ignored.
 
-## Axiom 5 (General Covariance)
+## Axiom 5 (Isometric Covariance)
 Now we present the final, and most interesting, axiom in the case of Lorentzian spacetimes.
 
 The interesting aspect of this theorem is understanding what replaces the inhomogeneous Lorentz group connected to the identity, which appears in the Minkowski spacetime analog. One might think to replace it with diffeomorphisms of a Lorentzian spacetime. However, this isn't the correct analog.
 
 Lorentzian spacetimes can admit diffeomorphisms that are not connected to the identity. (For example, in two dimensions [Dehn twists](https://en.wikipedia.org/wiki/Dehn_twist) aren't connected to the identity.) So, if we want to "mirror" Axiom 5 (Lorentz Covariance) from the Minkowski case (which only considers group elements connected to the identity), we should limit the diffeomorphisms we employ.
 
-The "natural" choice seems to be the set of diffeomorphisms that are connected to the identity. Using this, the axiom takes the following form:
+So the "natural" choice seems to be the set of diffeomorphisms that are connected to the identity. However, this also isn't the correct analog.
 
-> **Axiom 5** *(General Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
+Consider the case of Minkowski spacetime and the analogous axiom Axiom 5 (Lorentz Covariance). There the inhomogeneous Lorentz group connected to the identity is used. Under that group the Minkowski metric is invariant
+
+$$
+\eta \longrightarrow \eta.
+$$
+
+So instead of diffeomorphisms connected to the identity being used, what's being used here are isometries connected to the identity, i.e. diffeomorphism connected to the identity that leave the metric invariant.
+
+So in the current case of a Lorentzian spacetime what we should be using are isometries connected to the identity. Using this, the axiom takes the following form:
+
+> **Axiom 5** *(Isometric Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
 >
-> A member $$\varphi$$ of the group of diffeomorphisms of $$M$$ that are connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
+> A member $$\varphi$$ of the group of isometries of $$M$$ connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
 > 
 > $$
 > \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\varphi(\mathbf{B})),
 > $$
 > 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the diffeomorphism $$\varphi$$.
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$.
 
 
 # Summary 
@@ -416,15 +426,15 @@ and can be stated as follows:
 
 The final axiom states:
 
-> **Axiom 5** *(General Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
+> **Axiom 5** *(Isometric Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
 >
-> A member $$\varphi$$ of the group of diffeomorphisms of $$M$$ that are connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
+> A member $$\varphi$$ of the group of isometries of $$M$$ connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
 > 
 > $$
 > \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\varphi(\mathbf{B})),
 > $$
 > 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the diffeomorphism $$\varphi$$.
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$.
 
 Generally these axioms follow in a straightforward manner from those of AQFT in Minkowski spacetime. The only "surprise" in this presentation is the absence of a quasilocal algebra. However, as we found, its absence is simply a reflection of the observational constraints of Lorentzian spacetime which don't exist in Minkowski spacetime.
 
