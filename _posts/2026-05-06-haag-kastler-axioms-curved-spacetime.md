@@ -39,14 +39,14 @@ One might hope that one could simply place a Minkowski metric on $$\mathbb{R}^4$
 The following theorem (Theorem 2.69 from [Lee](https://doi.org/10.1007/978-3-319-91755-9))
 
 **Theorem** *(Existence of a Lorentz Metric)*
-*A smooth manifold $$M$$ admits a smooth Lorentz metric if and only if it admits a smooth, global vector field.*
+*A smooth manifold $$M$$ admits a smooth Lorentz metric if and only if it admits a smooth, nowhere-vanishing global vector field.*
 
-governs when a Lorentz, and thus Minkowski metric exists. As expected, it requires the existence of a smooth, global vector field that at each point specifies a distinguished "time" direction.
+governs when a Lorentz, and thus Minkowski metric exists. As expected, it requires the existence of a smooth, nowhere-vanishing global vector field that at each point specifies a distinguished "time" direction.
 
-So in order to introduce a Minkowski metric on $$\mathbb{R}^4$$, we must first introduce a smooth, global vector field on $$\mathbb{R}^4$$. Traditionally this smooth, global vector field is taken to be $$t^\mu \equiv (1,0,0,0)$$ in the standard global coordinates on $$\mathbb{R}^4$$. This can then be used to derive the standard Minkowski metric on $$\mathbb{R}^4$$.
+So in order to introduce a Minkowski metric on $$\mathbb{R}^4$$, we must first introduce a smooth, nowhere-vanishing global vector field on $$\mathbb{R}^4$$. Traditionally this smooth, nowhere-vanishing global vector field is taken to be $$t^\mu \equiv (1,0,0,0)$$ in the standard global coordinates on $$\mathbb{R}^4$$. This can then be used to derive the standard Minkowski metric on $$\mathbb{R}^4$$.
 
 ### Alexandrov Topology
-With the smooth manifold $$\mathbb{R}^4$$ equipped with a smooth, global vector field $$t^a$$ and a Minkowski metric, one might think we've completed the construction of "Minkowski spacetime". In most treatments of "Minkowski spacetime", this is indeed where the presentation ends. We won't end here, but instead add another level of detail pertinent to AQFT on "Minkowski spacetime".
+With the smooth manifold $$\mathbb{R}^4$$ equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and a Minkowski metric, one might think we've completed the construction of "Minkowski spacetime". In most treatments of "Minkowski spacetime", this is indeed where the presentation ends. We won't end here, but instead add another level of detail pertinent to AQFT on "Minkowski spacetime".
 
 To wit, what might seem "odd" about the construction to this point is the central role played by the Euclidean norm, Euclidean metric, and Euclidean topology. The entire construction starts by placing a Euclidean norm on $$\mathbb{R}^4$$, then using this norm to define a Euclidean metric on $$\mathbb{R}^4$$ which in turn is used to define the Euclidean topology.
 
@@ -63,7 +63,7 @@ This suggests that sets of the form $$I^+(p) \cap I^-(q)$$ might be able to be u
 Sets $$I^+(p) \cap I^-(q)$$ with $$p,q \in \mathbb{R}^4$$ form the basis for what's known as the *Alexandrov topology* of $$\mathbb{R}^4$$ (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). (This is also sometimes known as the *interval topology* of $$\mathbb{R}^4$$ (Remark 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)).) Furthermore, it turns out that the Alexandrov topology of $$\mathbb{R}^4$$ agrees with the Euclidean topology of $$\mathbb{R}^4$$ (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)), a welcome happenstance that "explains" why physicists had not confronted this earlier.
 
 ### Minkowski Spacetime
-Now with the introduction of the Alexandrov topology, we can finally define "Minkowski spacetime". For us *Minkowski spacetime* is the smooth manifold $$\mathbb{R}^4$$ equipped with a smooth, global vector field $$t^a$$ and a Minkowski metric, where the topology of $$\mathbb{R}^4$$ is the Alexandrov topology and not the Euclidean topology.
+Now with the introduction of the Alexandrov topology, we can finally define "Minkowski spacetime". For us *Minkowski spacetime* is the smooth manifold $$\mathbb{R}^4$$ equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and a Minkowski metric, where the topology of $$\mathbb{R}^4$$ is the Alexandrov topology and not the Euclidean topology.
 
 This results in Minkowski spacetime being "clearly physical", in that it doesn't rely upon a Euclidean norm, metric, or topology. Furthermore, as the Alexandrov topology agrees with the Euclidean topology (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)), Minkowski spacetime doesn't rely upon the Euclidean "scaffolding" we used to construct it.
 
@@ -171,9 +171,9 @@ As we wish this $$M$$ to be a "Lorentzian spacetime", it should support a Lorent
 In particular, as we have seen previously, the required structure follows from the theorem (Theorem 2.69 from [Lee](https://doi.org/10.1007/978-3-319-91755-9))
 
 **Theorem** *(Existence of a Lorentz Metric)*
-*A smooth manifold $$M$$ admits a smooth Lorentz metric if and only if it admits a smooth, global vector field.*
+*A smooth manifold $$M$$ admits a smooth Lorentz metric if and only if it admits a smooth, nowhere-vanishing global vector field.*
 
-So, we require, in addition to all the structure $$M$$ already supports, that it also supports a smooth, global vector field $$t^a$$, as this is required for $$M$$ to support a smooth Lorentzian metric.
+So, we require, in addition to all the structure $$M$$ already supports, that it also supports a smooth, nowhere-vanishing global vector field $$t^a$$, as this is required for $$M$$ to support a smooth Lorentzian metric.
 
 ### Alexandrov Topology
 As in the case of a Minkowski spacetime, it's "odd" that the manifold topology on $$M$$ may have nothing to do with the Lorentzian nature of spacetime. The manifold topology could, as was the case for Minkowski spacetime, be derived from purely Euclidean metrics. Physics isn't Euclidean; so there seems to be a fundamental tension.
@@ -206,13 +206,13 @@ In the case of Minkowski spacetime the Alexandrov topology on $$\mathbb{R}^4$$ a
 
 In particular, we can either assume that $$M$$ is strongly causal or that the Alexandrov Topology is Hausdorff. Either assumption implies the other and that the Alexandrov Topology agrees with the manifold topology, and thus the manifold topology "scaffolding" can be removed.
 
-As both assumptions are equivalent, we can select either. With that in mind, we add the additional assumption that the Alexandrov Topology on $$M$$ is Hausdorff. So in total $$M$$ is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition $$M$$ is equipped with a smooth, global vector field $$t^a$$ and associated Lorentzian metric.
+As both assumptions are equivalent, we can select either. With that in mind, we add the additional assumption that the Alexandrov Topology on $$M$$ is Hausdorff. So in total $$M$$ is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition $$M$$ is equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric.
 
 ### Lorentzian Spacetime
 Finally we have all the pieces in place to define a "Lorentzian spacetime".
 
 **Definition** *(Lorentzian Spacetime)*
-A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, global vector field $$t^a$$ and associated Lorentzian metric.
+A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric.
 
 It will be on such Lorentzian spacetimes that AQFT "unfolds".
 
@@ -360,7 +360,7 @@ Here we recount the axioms we've established for AQFT in Lorentzian spacetime.
 First we remind the reader of the Lorentzian spacetime definition
 
 **Definition** *(Lorentzian Spacetime)*
-A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, global vector field $$t^a$$ and associated Lorentzian metric.
+A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric.
 
 With that clarified, we can present the first axiom
 
