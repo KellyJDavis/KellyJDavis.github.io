@@ -83,7 +83,7 @@ With this prologue completed, we are now able to state the first axiom of AQFT i
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
 > $$
 > 
-> where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
+> where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 
 ## Axiom 2 (Isotony)
@@ -146,10 +146,13 @@ Finally we can state the last axiom
 > A member $$L$$ of the inhomogeneous Lorentz group connected to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
 > 
 > $$
-> \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\mathbf{LB}),
+> \begin{align}
+> \alpha_L : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
+>                      a              &\longmapsto     \alpha_L(a)
+> \end{align}
 > $$
 > 
-> where $$L\mathbf{B}$$ is the image of the basis element $$\mathbf{B}$$ under the transformation $$L$$.
+> where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital, bijective *-homomorphism.
 
 
 # Haag Kastler Axioms in Curved Spacetime
@@ -206,13 +209,13 @@ In the case of Minkowski spacetime the Alexandrov topology on $$\mathbb{R}^4$$ a
 
 In particular, we can either assume that $$M$$ is strongly causal or that the Alexandrov Topology is Hausdorff. Either assumption implies the other and that the Alexandrov Topology agrees with the manifold topology, and thus the manifold topology "scaffolding" can be removed.
 
-As both assumptions are equivalent, we can select either. With that in mind, we add the additional assumption that the Alexandrov Topology on $$M$$ is Hausdorff. So in total $$M$$ is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition $$M$$ is equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric.
+As both assumptions are equivalent, we can select either. With that in mind, we add the additional assumption that the Alexandrov Topology on $$M$$ is Hausdorff. So in total $$M$$ is a smooth, connected, four dimensional manifold equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric. In addition $$M$$ is equipped with an associated Hausdorff Alexandrov Topology. 
 
 ### Lorentzian Spacetime
 Finally we have all the pieces in place to define a "Lorentzian spacetime".
 
 **Definition** *(Lorentzian Spacetime)*
-A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric.
+A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric. In addition it is equipped with an associated Hausdorff Alexandrov topology.
 
 It will be on such Lorentzian spacetimes that AQFT "unfolds".
 
@@ -234,7 +237,7 @@ The first axiom is:
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
 > $$
 > 
-> where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
+> where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 
 ## Axiom 2 (Isotony)
@@ -348,10 +351,13 @@ So in the current case of a Lorentzian spacetime what we should be using are iso
 > A member $$\varphi$$ of the group of isometries of $$M$$ connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
 > 
 > $$
-> \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\varphi(\mathbf{B})),
-> $$
+> \begin{align}
+> \alpha_\varphi : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\varphi(\mathbf{B})) \\
+>                            a              &\longmapsto     \alpha_\varphi(a)
+> \end{align}
+$$
 > 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$.
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital, bijective *-homomorphism.
 
 
 # Summary 
@@ -360,7 +366,7 @@ Here we recount the axioms we've established for AQFT in Lorentzian spacetime.
 First we remind the reader of the Lorentzian spacetime definition
 
 **Definition** *(Lorentzian Spacetime)*
-A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a Hausdorff Alexandrov topology. In addition it is equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric.
+A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric. In addition it is equipped with an associated Hausdorff Alexandrov topology.
 
 With that clarified, we can present the first axiom
 
@@ -376,7 +382,7 @@ With that clarified, we can present the first axiom
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
 > $$
 > 
-> where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
+> > where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 The second axiom can be immediately stated too.
 
@@ -431,10 +437,13 @@ The final axiom states:
 > A member $$\varphi$$ of the group of isometries of $$M$$ connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
 > 
 > $$
-> \mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\varphi(\mathbf{B})),
-> $$
+> \begin{align}
+> \alpha_\varphi : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\varphi(\mathbf{B})) \\
+>                            a              &\longmapsto     \alpha_\varphi(a)
+> \end{align}
+$$
 > 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$.
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital, bijective *-homomorphism.
 
 Generally these axioms follow in a straightforward manner from those of AQFT in Minkowski spacetime. The only "surprise" in this presentation is the absence of a quasilocal algebra. However, as we found, its absence is simply a reflection of the observational constraints of Lorentzian spacetime which don't exist in Minkowski spacetime.
 
