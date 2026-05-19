@@ -4,7 +4,7 @@ date:   2026-05-03 07:26:53 +0200
 categories: aqft
 ---
 
-The aim of this blog post is to "sharpen" the statement of the Haag Kastler axioms ([Haag and Kastler](https://doi.org/10.1063/1.1704187)). As originally presented they were revolutionary. However, they left several small details under-specified. This blog post will hopefully clarify some of these details.
+The aim of this blog post is to "sharpen" the statement of the Haag Kastler axioms ([Haag and Kastler](https://doi.org/10.1063/1.1704187)). As originally presented they were revolutionary. However, several small details were left under-specified. This blog post will hopefully clarify some of these details.
 
 The reader is assumed to have already encountered the Haag Kastler axioms. So no time is spent clarifying what a C\*-algebra is or what the goals of the Haag Kastler axioms are. We jump right in!
 
@@ -107,7 +107,7 @@ Consider the point $$p$$ at which the “process of measurement” starts. This 
 
 However, this seemingly leads to an infinite recursion. To "measure" the coordinates of $$p$$ one must "measure" the coordinates of two other points $$p_p$$ and $$q_p$$ to determine the region $$I^+(p_p) \cap I^-(q_p)$$ in which $$p$$ is "measured", then one has to do the same for $$p_p$$ and $$q_p$$...
 
-The resolution to this problem is the simple observation that in Algebraic Quantum Field Theory (AQFT) Minkowski space is treated classically. Hence, coordinates of the point $$p$$ and those of the point $$q$$ can be measured in the sense of classical mechanics without having to worry about regions of the form $$I^+(p_p) \cap I^-(q_p)$$, for example.
+The resolution to this problem is the simple observation that in Algebraic Quantum Field Theory (AQFT) Minkowski spacetime is treated classically. Hence, coordinates of the point $$p$$ and those of the point $$q$$ can be measured in the sense of classical mechanics without having to worry about regions of the form $$I^+(p_p) \cap I^-(q_p)$$, for example.
 
 #### Causal Regions of Measurement
 We chose regions $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ under the assumption that probes were massive. Without any real justification this excludes massless probes. We could have also considered massive and massless probes and utilized causal instead of chronological regions.
@@ -122,21 +122,21 @@ Second, with a $$\mathbf{B}$$ of the form $$\{p\}$$ we can use Axiom 1 to assign
 
 In standard quantum field theory a field is an operator-valued distribution. (See Section 3.10 of [Talagrand](https://doi.org/10.1017/9781108225144).) So, as it is a distribution, it is defined almost everywhere. This means that there may exist points $$p$$ in Minkowski space at which it is not defined.
 
-Traditionally (See Section II.4.1 of [Haag](https://doi.org/10.1007/978-3-642-61458-3)) AQFT motivates the passage from a standard field, i.e. an operator-valued distribution $$\Phi$$, to the algebra $$\mathfrak{U}(\mathbf{B})$$ on an open, bounded set $$\mathbf{B}$$ by constructing a representation of the algebra $$\mathfrak{U}(\mathbf{B})$$ from *smearings* of $$\Phi$$ over $$\mathbf{B}$$, i.e. a representation $$a$$ of an element of $$\mathfrak{U}(\mathbf{B})$$ would be defined as follows
+Traditionally (See Section II.4.1 of [Haag](https://doi.org/10.1007/978-3-642-61458-3)) AQFT motivates the passage from a standard field, i.e. an operator-valued distribution $$\Phi$$, to the algebra $$\mathfrak{U}(\mathbf{B})$$ on an open, bounded set $$\mathbf{B}$$ by constructing a representation of the algebra $$\mathfrak{U}(\mathbf{B})$$ from *smearings* of $$\Phi$$ over $$\mathbf{B}$$, i.e. a representation[^5] $$a_R$$ of an element $$a$$ of $$\mathfrak{U}(\mathbf{B})$$ would be defined as follows
 
 $$
-a \equiv \int_{\mathbf{B}} f(x) \Phi(x) \, d^4x,
+a_R \equiv \int_{\mathbf{B}} f(x) \Phi(x) \, d^4x,
 $$
 
 where $$f(x)$$ is a *test function*, a smooth function with support in $$\mathbf{B}$$.
 
-Trying to generalize this to $$\mathfrak{U}(\{p\})$$ immediately runs into problems. Naively a representation $$b$$ of an element in $$\mathfrak{U}(\{p\})$$ would be of the form
+Trying to generalize this to $$\mathfrak{U}(\{p\})$$ immediately runs into problems. Naively a representation $$b_R$$ of an element $$b$$ in $$\mathfrak{U}(\{p\})$$ would be of the form
 
 $$
-b \equiv \int_{\{p\}} f(x) \Phi(x) \, d^4x.
+b_R \equiv \int_{\{p\}} f(x) \Phi(x) \, d^4x.
 $$
 
-However, this doesn't make any sense. $$\Phi$$ is an operator valued distribution and may not even be defined at $$p$$. Hence, $$b$$ isn't defined, which in turn implies $$\mathfrak{U}(\{p\})$$ isn't defined.
+However, this doesn't make any sense. $$\Phi$$ is an operator valued distribution and may not even be defined at $$p$$. Hence, $$b_R$$ and thus $$b$$ isn't defined, which in turn implies $$\mathfrak{U}(\{p\})$$ isn't defined.
 
 So, all of this implies that our original choice requiring regions $$\mathbf{B}$$ to be of the form $$I^+(p) \cap I^-(q)$$, and not of the form $$J^+(p) \cap J^-(q)$$, was the right one.
 
@@ -162,7 +162,7 @@ The *GNS construction* is a procedure that given an AQFT state $$\omega$$ on an 
 
 Furthermore, the GNS construction's representation $$\pi_\omega$$ is faithful if the AQFT state $$\omega$$ one starts with is faithful. (This justifies the name "faithful" being applied to an AQFT state.)
 
-It is in the Hilbert space $$\mathcal{H}_\omega$$ that "normal physics" occurs. In other words elements of $$\mathcal{H}_\omega$$ are what one thinks of as normal QFT states, and self-adjoint elements of $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$ (the von Neumann algebra generated by $$\pi_\omega(\mathfrak{U}(\mathbf{B}))$$) are interpreted as the normal observables of QFT[^1]. Finally, the distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum state.
+It is in the Hilbert space $$\mathcal{H}_\omega$$ that "normal physics" occurs. In other words elements of $$\mathcal{H}_\omega$$ are what one thinks of as normal QFT states, and self-adjoint elements of $$\pi_\omega(\mathfrak{U}(\mathbf{B}))''$$ (the von Neumann algebra generated by $$\pi_\omega(\mathfrak{U}(\mathbf{B}))$$) are interpreted as the normal observables of QFT[^1]. Finally, the distinguished vector $$\Omega_\omega$$ is interpreted as being a vacuum state.
 
 Also note that this GNS construction can in addition be applied to $$\mathfrak{U}$$ the algebra of quasilocal observables that appears in **Axiom 4** *(Quasilocal Algebra)*. In other words one can have an AQFT state $$\omega$$ that is an element of $$\mathfrak{U}^*$$ and use this AQFT state and the GNS construction to create the triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega_\omega)$$. (Again, without a unit in $$\mathfrak{U}$$, the GNS construction is unable to produce the distinguished vector $$\Omega_\omega$$.)
 
@@ -233,7 +233,7 @@ The isotony axiom also contains this rather "odd" addendum:
 
 If, as suggested, it is always possible, through formal adjunction, to add a unit, then why even consider the case in which there is no unit?
 
-For example, using the state $$\omega$$ to apply the GNS construction to an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ that doesn't have a unit is impossible[^4]. The presence of a unit in $$\mathfrak{U}(\mathbf{B})$$ leads directly to the distinguished vector $$\Omega_\omega$$ in the Hilbert space $$\mathcal{H}_\omega$$. This distinguished vector $$\Omega_\omega$$ is interpreted as being the vacuum. So having a unit in $$\mathfrak{U}(\mathbf{B})$$ seems indispensable.
+For example, using the state $$\omega$$ to apply the GNS construction to an (abstract) C\*-algebra $$\mathfrak{U}(\mathbf{B})$$ that doesn't have a unit is impossible[^4]. The presence of a unit in $$\mathfrak{U}(\mathbf{B})$$ leads directly to the distinguished vector $$\Omega_\omega$$ in the Hilbert space $$\mathcal{H}_\omega$$. This distinguished vector $$\Omega_\omega$$ is interpreted as being a vacuum. So having a unit in $$\mathfrak{U}(\mathbf{B})$$ seems indispensable.
 
 That being said, we will simply assume that all such $$\mathfrak{U}(\mathbf{B})$$ contain a unit.
 
@@ -504,10 +504,13 @@ The image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the quasilocal alg
 **Axiom 5** *(Lorentz Covariance)* A member $$L$$ of the inhomogeneous Lorentz group connected to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
 
 $$
-\mathfrak{U}(\mathbf{B}) \longmapsto \mathfrak{U}(\mathbf{LB}),
+\begin{align}
+\alpha_L : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
+                     a              &\longmapsto     \alpha_L(a)
+\end{align}
 $$
 
-where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$.
+where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital, bijective *-homomorphism.
 
 This concludes the presentation of the "sharpened" axioms. As proven in this blog post, these "sharpened" axioms entail the original axioms save Axiom 6 (Primitivity), which is an axiom that we abandon.
 
@@ -523,3 +526,5 @@ These "sharpened" axioms also allow for a straightforward generalization to a se
 [^3]: Technically, one only requires the existence of a "bounded, approximate identity" and not a unit to produce a distinguished vector $$\Omega_\omega$$. However, physical motivation for the existence of a "bounded, approximate identity" as opposed to a unit is lacking.
 
 [^4]: Again, technically, one only requires the existence of a "bounded, approximate identity" and not a unit to produce a distinguished vector $$\Omega_\omega$$. However, physical motivation for the existence of a "bounded, approximate identity" as opposed to a unit is lacking.
+
+[^5]: The notation $$a_R$$ used here is used instead of the more traditional $$\pi_\omega(a)$$ to prevent a degression into the GNS construction, which we none-the-less present later.
