@@ -264,15 +264,11 @@ Consider $$M_{BH}$$ the Schwarzschild blackhole solution Lorentzian spacetime. $
 
 ![Penrose diagram of the Schwarzschild blackhole solution](../../../images/posts/schwarzschild_penrose_diagram.png)
 
-Zooming in on the singularity we can introduce two basis elements $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology that are $$\varepsilon$$ from the singularity
+Zooming in on the singularity we can introduce two basis elements $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology one of which is "$$\varepsilon$$ from the singularity" and the second of which is "$$\varepsilon$$ from $$i^+$$"
 
 ![Penrose diagram of the Schwarzschild blackhole solution zoomed to singularity and containing two basis elements](../../../images/posts/schwarzschild_penrose_diagram_zoom1.png)
 
-What is obvious is that there exists no basis element $$\mathbf{B}$$ of the Alexandrov topology that contains both $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ as it would have to extend beyond the singularity off of $$M_{BH}$$
-
-![Penrose diagram of the Schwarzschild blackhole solution zoomed to singularity and containing three basis elements](../../../images/posts/schwarzschild_penrose_diagram_zoom2.png)
-
-which is of course not allowed.
+What is obvious is that there exists no basis element $$\mathbf{B}$$ of the Alexandrov topology that contains both $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ as it would have to extend beyond the singularity off of $$M_{BH}$$ which is of course not allowed.
 
 As a result of this, one can not employ the isotony axiom, the only tool one has, to place $$\mathfrak{U}(\mathbf{B}_1)$$ and $$\mathfrak{U}(\mathbf{B}_2)$$ in a larger algebra, an algebra in which addition and multiplication of their elements would make sense.
 
