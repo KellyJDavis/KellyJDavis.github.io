@@ -91,8 +91,116 @@ $$
 
 actually isn't an inner product. However, the form $$\mathcal{N}$$ takes gives us a hint as to how to repair this naive inner product.
 
-In particular, if we quotient $$\mathfrak{U}$$ by $$\mathcal{N}$$ we would rid ourselves of the problem we encountered above and hopefully be able to construct an inner product on $$\mathfrak{U} / \mathcal{N}$$ and its completion. We'll see this plan actually works.
+In particular, if we quotient $$\mathfrak{U}$$ by $$\mathcal{N}$$ we may rid ourselves of the problem we encountered above and hopefully be able to construct an inner product on $$\mathfrak{U} / \mathcal{N}$$ and its completion. We'll see this plan actually works.
 
+However, before being able to see this plan through we'll need to take a quick detour and prove a few needed results.
+
+The most famous of these results is the Cauchy-Schwarz Inequality
+
+> **Lemma** *(Cauchy-Schwarz Inequality)*
+> Let $$\mathcal{A}$$ be a \*-algebra and $$\omega$$ a *positive* element of the dual space $$\mathcal{A}^*$$, i.e. $$\omega$$ is an element of the dual space $$\mathcal{A}^*$$ such that for any $$a \in \mathcal{A}$$ one has $$0 \le \omega(a^*a)$$. Then
+> 
+> $$
+> \begin{align}
+> \omega(a^*b) &= \overline{\omega(b^*a)} \\
+> |\omega(a^*b)|^2 &\le \omega(a^*a) \omega(b^*b)
+> \end{align}
+> $$
+> 
+> for all $$a$$ and $$b$$ in $$\mathcal{A}$$.
+
+**Proof**
+Positivity of $$\omega$$ implies that for any $$a$$ and $$b$$ in $$\mathcal{A}$$ and $$\lambda \in \mathbb{C}$$ one has
+
+$$
+0 \le \omega\left((\lambda a + b)^*(\lambda a + b)\right)
+$$
+
+As $$\omega$$ is an element of the dual space $$\mathcal{A}^*$$ and thus linear, this implies
+
+$$
+0 \le |\lambda|^2\omega(a^*a) + \overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) + \omega(b^*b)
+$$
+
+This inequality then implies both desired results, $$\omega(a^*b) = \overline{\omega(b^*a)}$$ and $$\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b)$$.
+
+Let us first prove that this inequality implies $$\omega(a^*b) = \overline{\omega(b^*a)}$$.
+
+Notice that the inequality is between two real numbers, $$0$$ and the righthand side. The first and last summands on the righthand side are obviously real. This then implies
+
+$$
+\overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) \in \mathbb{R}
+$$
+
+As $$\lambda$$ ia arbitrary we are free to let it be real, which implies the imaginary parts of $$\omega(a^*b)$$ and $$\omega(b^*a)$$ are equal but have the opposite sign.
+
+Similarly, we are free to let $$\lambda$$ be imaginary, which implies that the real parts of $$\omega(a^*b)$$ and $$\omega(b^*a)$$ are equal. Together these facts imply the first result
+
+$$
+\omega(a^*b) = \overline{\omega(b^*a)}.
+$$
+
+Let us next prove that our inequality
+
+$$
+0 \le |\lambda|^2\omega(a^*a) + \overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) + \omega(b^*b)
+$$
+
+implies $$\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b)$$.
+
+Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ one finds at the extrema
+
+$$
+\lambda = - \frac{\omega(a^*b)}{\omega(a^*a)}.
+$$
+
+Substituting this into the inequality, multiplying by $$\omega(a^*a)$$, and using $$\omega(a^*b) = \overline{\omega(b^*a)}$$ one obtains
+
+$$
+0 \le \lvert \omega(a^*b) \rvert^2 - \lvert \omega(a^*b) \rvert^2 - \lvert \omega(a^*b) \rvert^2 + \omega(a^*a) \omega(b^*b)
+$$
+
+which implies
+
+$$
+\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b),
+$$
+
+the second desired result. $$\blacksquare$$
+
+The next result we need to prove is:
+
+> **Lemma**
+> Let $$\omega$$ be a state over a unital C\*-algebra $$\mathfrak{U}$$. Then the set $$\mathcal{N}_1$$ defined by
+> 
+> $$
+> \mathcal{N}_1 \equiv \{ n \in \mathfrak{U} : \omega(b^*n) = 0 \;\; \forall b \in \mathfrak{U} \}
+> $$
+> 
+> is equivalent to the set $$\mathcal{N}$$ defined by
+> 
+> $$
+> \mathcal{N} \equiv \{ n \in \mathfrak{U} : \omega(n^*n) = 0 \}.
+> $$
+
+**Proof**
+We will first prove that $$\mathcal{N} \subseteq \mathcal{N}_1$$. Then we will prove $$\mathcal{N}_1 \subseteq \mathcal{N}$$. Together these imply $$\mathcal{N} = \mathcal{N}_1$$, the final desired result.
+
+Let us begin by proving $$\mathcal{N} \subseteq \mathcal{N}_1$$.
+
+For arbitrary $$b$$ and $$n$$ in $$\mathfrak{U}$$ the Cauchy-Schwarz inequality implies
+
+$$
+\lvert \omega(b^*n) \rvert^2 \le \omega(b^*b) \omega(n^*n). 
+$$
+
+Thus if $$n$$ is in $$\mathcal{N}$$, and thus satisfies $$\omega(n^*n) = 0$$, then this inequality implies $$\omega(b^*n) = 0$$ for all $$b$$ in $$\mathfrak{U}$$. This then implies $$n$$ is in $$\mathcal{N}_1$$. As $$n$$ was an arbitrary element of $$\mathcal{N}$$, this in turn implies that $$\mathcal{N} \subseteq \mathcal{N}_1$$, the first desired result.
+
+Next let us prove that $$\mathcal{N}_1 \subseteq \mathcal{N}$$.
+
+Consider an arbitrary $$n_1$$ in $$\mathcal{N}_1$$. By definition $$\omega(b^*n_1) = 0$$ for any $$b$$ in $$\mathfrak{U}$$. In particular we can select $$b=n_1$$. Doing so we have $$\omega(n_1^*n_1) = 0$$. This then implies $$n_1$$ is in $$\mathcal{N}$$. As $$n_1$$ was an arbitrary element of $$\mathcal{N}_1$$ this further implies $$\mathcal{N}_1 \subseteq \mathcal{N}$$, the second desired result.
+
+We have thus proven $$\mathcal{N} \subseteq \mathcal{N}_1$$ and $$\mathcal{N}_1 \subseteq \mathcal{N}$$ which together imply $$\mathcal{N} = \mathcal{N}_1$$, the final desired result. $$\blacksquare$$
 
 #### Construction of the GNS Representation
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget mauris fringilla metus sollicitudin sagittis sollicitudin quis mi. Aliquam quis lacus sed eros tincidunt fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in neque ac massa sagittis dapibus ut a nulla. Aenean fringilla finibus est, vel semper justo bibendum eu. Nulla quis nisl eget lacus tempor posuere dictum at ligula. Duis interdum nec metus quis eleifend. Sed eget lacinia erat, eget aliquet orci. Fusce convallis fringilla pellentesque. Aliquam nec luctus quam. Praesent nec feugiat risus. Nunc mattis volutpat efficitur. Pellentesque tempor aliquam ipsum vitae bibendum. Mauris eget sem auctor, pharetra sem at, varius urna. Praesent id quam vitae justo mattis rhoncus. Pellentesque tempor eros commodo convallis faucibus.
