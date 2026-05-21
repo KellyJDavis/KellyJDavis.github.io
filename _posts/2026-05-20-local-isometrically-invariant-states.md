@@ -4,19 +4,116 @@ date:   2026-05-20 06:53:53 +0200
 categories: aqft lcaqft
 ---
 
-This blog post introduces the notion of "local, isometrically invariant states" of Algebraic Quantum Field Theory in (AQFT) Minkowski spacetime (a theory defined in [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)) and also does the same for AQFT in Lorentzian spacetime (a theory defined in [Haag Kastler Axioms in Curved Spacetime](https://kellyjdavis.github.io/aqft/lcaqft/haag-kastler-axioms-curved-spacetime/)). Such "local, isometrically invariant states" capture the physics of quantum systems that are invariant under isometries and which "reside" in bounded regions of spacetime.
+This blog post introduces the notion of "local, isometrically invariant states" of Algebraic Quantum Field Theory (AQFT) in Minkowski spacetime (a theory defined in [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)) and also does the same for AQFT in Lorentzian spacetime (a theory defined in [Haag Kastler Axioms in Curved Spacetime](https://kellyjdavis.github.io/aqft/lcaqft/haag-kastler-axioms-curved-spacetime/)). Such "local, isometrically invariant states" capture the physics of quantum systems that are invariant under isometries and that "reside" in bounded regions of spacetime.
 
 # Reveiw of Algebraic Quantum Field Theory
-Instead of diving headlong into a definition of "local, isometrically invariant states", we will begin with a review of AQFT in Minkowski and Lorentzian spacetime. While not providing all the details of the blog posts [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/) and [Haag Kastler Axioms in Curved Spacetime](https://kellyjdavis.github.io/aqft/lcaqft/haag-kastler-axioms-curved-spacetime/) where these theories were introduced, this review serves as a refresher, making sure all readers are clear on the various definitions and axioms used in defining AQFT in Minkowski and Lorentzian spacetime.
+Instead of diving headlong into a definition of "local, isometrically invariant states", we will begin with a review of the GNS construction, AQFT in Minkowski spacetime, and AQFT in Lorentzian spacetime.
+
+We will provide a detailed review of the GNS construction as we will have need of these details here and in subsequent blog posts. However, the review of AQFT in Minkowski and Lorentzian spacetime will not provide all details of the blog posts [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/) and [Haag Kastler Axioms in Curved Spacetime](https://kellyjdavis.github.io/aqft/lcaqft/haag-kastler-axioms-curved-spacetime/) where these theories were introduced. The AQFT reviews serve only as a refresher, making sure readers are clear on the various definitions and axioms used in AQFT in Minkowski and Lorentzian spacetimes.
 
 ## GNS Construction
+In the previous blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/), a sketch of the GNS construction was presented. However, the details and proof of these results were not provided. Here we rectify that situation, presenting all details of the GNS Construction and its proof following [Entanglement in Algebraic Quantum Field Theories](https://arxiv.org/abs/2410.16599).
+
+### GNS Construction Theorem
+In this section we will state the GNS Construction Theorem, which we prove in subsequent sections.
+
+However, before stating the theorem we'll need to introduce some terminology that appears in the theorem's statement. We begin with the definition of "state" and some closely associated terms.
+
+> **Definition** *(State)*
+> Let $$\mathfrak{U}$$ be an abstract C\*-algebra[^1]. A *state* is an element $$\omega$$ of the dual space $$\mathfrak{U}^*$$ that is
+> 
+> * *Positive* - for any $$a \in \mathfrak{U}$$ we have $$0 \le \omega(a^*a)$$ and
+> * *Normalized* - the operator norm satisfies $$\| \omega \|=1$$.
+> 
+> Furthermore, a state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}$$, it follows that $$0 < \omega(a^*a)$$.
+
+We will also have need of the term "cyclic vector".
+
+> **Definition** *(Cyclic Vector)*
+> Let $$\mathcal{A}$$ be an algebra represented by the bounded operators $$\pi(\mathcal{A})$$ on the Hilbert space $$\mathcal{H}$$. A vector $$\Omega$$ in $$\mathcal{H}$$ is said to be a *cyclic vector* if the set
+> 
+> $$
+> \{ A\Omega : A \in \pi(\mathcal{A}) \}
+> $$
+> 
+> is dense in $$\mathcal{H}$$.
+
+With this terminology we are then able to state the GNS Construction Theorem
+
+> **Theorem** *(GNS Construction Theorem)*
+> Let $$\omega$$ be a state over a unital C\*-algebra $$\mathfrak{U}$$. One can then construct a Hilbert space $$\mathcal{H}_\omega$$ and \*-representation $$\pi_\omega$$ of $$\mathfrak{U}$$ by bounded operators on $$\mathcal{H}_\omega$$ such that
+>
+> $$
+> \pi_\omega(a^*) = \pi_\omega(a)^\dagger.
+> $$
+> 
+> As $$\mathfrak{U}$$ is unital, there exists a cyclic vector $$\Omega$$ in $$\mathcal{H}_\omega$$ for the representation $$\pi_\omega$$ such that
+> 
+> $$
+> \omega(a) = \left<\Omega, \pi_\omega(a)\Omega\right>_{\mathcal{H}_\omega}.
+> $$
+> 
+> The triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega)$$ is called the *GNS triple associated to $$(\mathfrak{U}, \omega)$$* or the *cyclic representation of $$(\mathfrak{U}, \omega)$$*. Furthermore, if $$\omega$$ is a faithful state, then the \*-representation $$\pi_\omega$$ is faithful. In addition the GNS triple associated to $$(\mathfrak{U}, \omega)$$ is unique up to unitary equivalence.
+
+### Proof of the GNS Construction Theorem
+With the GNS Construction Theorem stated, we can now commence with its proof.
+
+This proof has four parts: (1) the construction of the GNS Hilbert space $$\mathcal{H}_\omega$$, (2) the construction of the \*-representation $$\pi_\omega$$, (3) the construction of the cyclic vector $$\Omega$$ in $$\mathcal{H}_\omega$$, and (4) the proof of uniqueness up to unitary equivalence. Each part corresponds to a subsequent subsection.
+
+#### Construction of the GNS Hilbert Space
+We'll construct the GNS Hilbert space $$\mathcal{H}_\omega$$ from the C\*-algebra $$\mathfrak{U}$$ itself, modifying $$\mathfrak{U}$$ as needed to obtain the desired $$\mathcal{H}_\omega$$.
+
+Let's start by attemptiing to place an inner product on $$\mathfrak{U}$$. Naively one might hope the following defines an inner product
+
+$$
+\left< a, b \right> \equiv \omega(a^*b)
+$$
+
+on $$\mathfrak{U}$$. Unfortunately it doesn't. Let's examine why this fails.
+
+Consider the set
+
+$$
+\mathcal{N} \equiv \{ n \in \mathfrak{U} : \omega(n^*n) = 0 \}.
+$$
+
+Generically $$\omega$$ isn't faithful. Thus $$\mathcal{N}$$ isn't empty and there exist non-zero $$n$$ in $$\mathcal{N}$$ such that $$\omega(n^*n) = 0$$. For such $$n$$ one has
+
+$$
+\left< n, n \right> \equiv \omega(n^*n) = 0.
+$$
+
+Hence, there are non-zero $$n$$ in $$\mathfrak{U}$$ such that $$\left< n, n \right> = 0$$. The existence of such $$n$$ proves that our naive inner product on $$\mathfrak{U}$$
+
+$$
+\left< a, b \right> \equiv \omega(a^*b)
+$$
+
+actually isn't an inner product. However, the form $$\mathcal{N}$$ takes gives us a hint as to how to repair this naive inner product.
+
+In particular, if we quotient $$\mathfrak{U}$$ by $$\mathcal{N}$$ we would rid ourselves of the problem we encountered above and hopefully be able to construct an inner product on $$\mathfrak{U} / \mathcal{N}$$ and its completion. We'll see this plan actually works.
+
+
+#### Construction of the GNS Representation
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget mauris fringilla metus sollicitudin sagittis sollicitudin quis mi. Aliquam quis lacus sed eros tincidunt fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in neque ac massa sagittis dapibus ut a nulla. Aenean fringilla finibus est, vel semper justo bibendum eu. Nulla quis nisl eget lacus tempor posuere dictum at ligula. Duis interdum nec metus quis eleifend. Sed eget lacinia erat, eget aliquet orci. Fusce convallis fringilla pellentesque. Aliquam nec luctus quam. Praesent nec feugiat risus. Nunc mattis volutpat efficitur. Pellentesque tempor aliquam ipsum vitae bibendum. Mauris eget sem auctor, pharetra sem at, varius urna. Praesent id quam vitae justo mattis rhoncus. Pellentesque tempor eros commodo convallis faucibus.
+
+Vestibulum a egestas magna, sit amet molestie nisi. Sed a ex id mauris varius accumsan sed ut nulla. Donec non feugiat nulla. Cras ut erat a augue venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper turpis in semper luctus. Ut vel nibh ut mauris lacinia fermentum nec nec odio. Donec a nunc ac odio placerat rhoncus. Nunc eget nunc ac massa tristique mollis vel quis lectus. Sed rutrum ante vitae dui faucibus auctor. Nullam ut rhoncus augue.
+
+Duis a arcu sit amet arcu bibendum ultricies quis id lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris sit amet felis in sem efficitur porta sit amet at eros. Nunc lectus nisl, hendrerit a massa ullamcorper, eleifend suscipit nisl. In nec ante ut ex bibendum posuere a vitae ex. Suspendisse id tincidunt eros. Donec nec libero posuere, euismod est et, posuere massa. Phasellus cursus mi nulla. Nunc at lacus elit. Praesent vel placerat lectus. Nam faucibus porta ipsum, sit amet rhoncus nulla. Nunc mattis erat non bibendum auctor. Aenean ornare urna justo, ut rutrum nibh viverra non. Nam urna augue, vehicula sed commodo eget, auctor ut quam. Donec porttitor lorem sit amet ornare hendrerit.
+
+Vivamus accumsan velit mauris, id efficitur augue blandit ut. Duis iaculis efficitur eros, non volutpat turpis accumsan vitae. Maecenas tincidunt mauris vitae eros condimentum imperdiet ac tincidunt erat. Nam nibh nunc, faucibus vel commodo eu, fermentum in enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin scelerisque augue nec velit blandit, eu accumsan est tempus. Nunc consectetur, arcu sit amet porttitor vehicula, diam justo dictum arcu, eu dictum mauris enim et est. Nunc egestas congue malesuada. Cras pharetra faucibus mi, sed mollis tortor rhoncus id. Ut ornare ligula non mattis condimentum. Vestibulum tincidunt risus ac venenatis consequat. Etiam vitae arcu ante. Maecenas vel venenatis elit.
+
+Fusce odio arcu, euismod eget erat eget, interdum feugiat lacus. Morbi porta turpis lorem, at lacinia arcu sagittis sed. Vestibulum cursus porta auctor. Curabitur porta risus sed ligula maximus, at accumsan nibh mattis. Sed aliquam neque dolor, commodo posuere arcu feugiat et. In vel molestie lorem. Phasellus sed tincidunt felis, ut euismod nibh. Integer a lacus ultrices, cursus purus eu, pulvinar nulla. Aenean sit amet enim ac mauris aliquet eleifend. Duis dictum cursus lacinia. Nunc metus ipsum, euismod vulputate auctor eu, feugiat ac tortor. Etiam pellentesque turpis sit amet aliquet ornare. Morbi interdum massa nec enim posuere, sed dignissim diam accumsan. Nullam tempus nisl lectus, lacinia consequat nibh posuere vitae. Maecenas et enim sed tellus efficitur euismod.
+
+#### Construction of the Cyclic Vector 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin placerat porttitor. Suspendisse iaculis condimentum mi, sed lobortis ex pharetra ac. Maecenas eget suscipit neque. In id porttitor ex, eget rhoncus nibh. Phasellus non libero semper, placerat urna quis, pellentesque nibh. Phasellus nec ex at dui rutrum sagittis. Etiam venenatis cursus felis. Vivamus tellus nulla, pellentesque ac mauris vel, faucibus eleifend metus. Sed ac tincidunt dui. Phasellus non tempor justo.
 
-Praesent vitae turpis ornare, mollis elit at, iaculis lectus. In faucibus elit eleifend, vehicula sapien nec, cursus sapien. Cras magna nunc, dictum non porta vitae, malesuada rhoncus magna. Donec non nisi eget felis aliquet porttitor. Aenean eget elit purus. Nullam eget ipsum eu quam gravida accumsan. Morbi luctus lacus nec laoreet dignissim. Pellentesque porttitor luctus elit eget ornare. Aenean pharetra metus velit, non commodo odio rutrum quis. Sed ac tincidunt lorem, sodales semper sem. Fusce non ante finibus, condimentum quam ac, interdum mi. Nunc euismod a felis a tristique. Nullam in tempor ligula. Sed vulputate rutrum lobortis.
+### Uniqueness up to Unitary Equivalence
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget mauris fringilla metus sollicitudin sagittis sollicitudin quis mi. Aliquam quis lacus sed eros tincidunt fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in neque ac massa sagittis dapibus ut a nulla. Aenean fringilla finibus est, vel semper justo bibendum eu. Nulla quis nisl eget lacus tempor posuere dictum at ligula. Duis interdum nec metus quis eleifend. Sed eget lacinia erat, eget aliquet orci. Fusce convallis fringilla pellentesque. Aliquam nec luctus quam. Praesent nec feugiat risus. Nunc mattis volutpat efficitur. Pellentesque tempor aliquam ipsum vitae bibendum. Mauris eget sem auctor, pharetra sem at, varius urna. Praesent id quam vitae justo mattis rhoncus. Pellentesque tempor eros commodo convallis faucibus.
 
-Vivamus ultricies tincidunt mauris quis posuere. Aenean semper libero id lacinia egestas. Proin egestas, eros sed blandit fringilla, augue augue mattis mauris, et molestie massa eros at enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc ac fringilla lectus. Vivamus metus ante, tempor iaculis odio et, viverra pulvinar orci. Ut semper, metus non hendrerit viverra, massa magna imperdiet urna, eget ultrices tellus libero sit amet ipsum. Morbi dictum, arcu at fringilla luctus, nisi justo lobortis arcu, a viverra velit justo at ipsum. Quisque in nisl eu tellus lacinia condimentum. Cras lectus massa, efficitur aliquam maximus in, rhoncus vitae ex. Aenean blandit massa sagittis massa vestibulum scelerisque. Aliquam porttitor dui eget metus viverra molestie. Fusce ornare convallis nisl, sagittis sollicitudin ex scelerisque non. Curabitur interdum massa in massa posuere pharetra. Curabitur in urna sit amet velit posuere rhoncus vitae vel leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+Vestibulum a egestas magna, sit amet molestie nisi. Sed a ex id mauris varius accumsan sed ut nulla. Donec non feugiat nulla. Cras ut erat a augue venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper turpis in semper luctus. Ut vel nibh ut mauris lacinia fermentum nec nec odio. Donec a nunc ac odio placerat rhoncus. Nunc eget nunc ac massa tristique mollis vel quis lectus. Sed rutrum ante vitae dui faucibus auctor. Nullam ut rhoncus augue.
 
-Vivamus mollis tristique dapibus. Morbi dignissim ipsum non diam lacinia, in tincidunt nisl accumsan. Aliquam convallis vel lorem eu convallis. Vestibulum convallis arcu vel eros elementum, ac fringilla lectus tempus. In urna elit, venenatis ut augue quis, viverra vehicula est. Aliquam dictum sem eu justo dapibus laoreet. Morbi id ultrices nisl, non fringilla libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut hendrerit pellentesque ipsum, vitae mattis erat molestie sit amet.
+Duis a arcu sit amet arcu bibendum ultricies quis id lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris sit amet felis in sem efficitur porta sit amet at eros. Nunc lectus nisl, hendrerit a massa ullamcorper, eleifend suscipit nisl. In nec ante ut ex bibendum posuere a vitae ex. Suspendisse id tincidunt eros. Donec nec libero posuere, euismod est et, posuere massa. Phasellus cursus mi nulla. Nunc at lacus elit. Praesent vel placerat lectus. Nam faucibus porta ipsum, sit amet rhoncus nulla. Nunc mattis erat non bibendum auctor. Aenean ornare urna justo, ut rutrum nibh viverra non. Nam urna augue, vehicula sed commodo eget, auctor ut quam. Donec porttitor lorem sit amet ornare hendrerit.
 
 ## Algebraic Quantum Field Theory in Minkowski Spacetime
 Now, before introducing any axioms that codify AQFT in Minkowski Spacetime, we must define Minkowski spacetime itself, the arena upon which everything unfolds.
@@ -270,3 +367,5 @@ Ut posuere convallis convallis. Cras fermentum lacinia blandit. Ut posuere ex se
 Nunc ut imperdiet neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas aliquam nisi eget augue cursus, efficitur egestas ligula bibendum. Suspendisse fringilla mi dictum libero fermentum gravida. Mauris vehicula tortor ac orci aliquam dictum. Mauris ac enim enim. Suspendisse molestie eros et massa volutpat, non convallis arcu posuere. Sed id nunc in lectus tincidunt pellentesque. Nunc vestibulum facilisis ante, vitae vehicula ex. Donec maximus sem a tincidunt vulputate. Sed lacinia molestie mauris, et efficitur nisi dapibus eget. Aliquam vel elit quis dolor laoreet varius.
 
 Nulla vel mollis neque. Proin vulputate nisi nec tellus consequat placerat. Etiam congue diam ante, in posuere sem eleifend vel. Suspendisse potenti. Duis tempus rhoncus mauris, ac dapibus mauris maximus in. Pellentesque finibus sagittis eros eu commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor nibh ut eros aliquam, vel rhoncus sem varius. Nam ac iaculis dolor, eu varius ligula. Sed vel tellus libero. Aenean vel diam at sem vulputate vehicula.
+
+[^1]: Note $$\mathfrak{U}$$ is an abstract C\*-algebra and need not be a quasilocal algebra or in any way associated with an AQFT.
