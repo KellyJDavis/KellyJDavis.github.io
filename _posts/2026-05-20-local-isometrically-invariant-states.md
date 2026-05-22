@@ -12,12 +12,12 @@ Instead of diving headlong into a definition of "local, isometrically invariant 
 We will provide a detailed review of the GNS construction as we will have need of these details here and in subsequent blog posts. However, the review of AQFT in Minkowski and Lorentzian spacetime will not provide all details of the blog posts [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/) and [Haag Kastler Axioms in Curved Spacetime](https://kellyjdavis.github.io/aqft/lcaqft/haag-kastler-axioms-curved-spacetime/) where these theories were introduced. The AQFT reviews serve only as a refresher, making sure readers are clear on the various definitions and axioms used in AQFT in Minkowski and Lorentzian spacetimes.
 
 ## GNS Construction
-In the previous blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/), a sketch of the GNS construction was presented. However, the details and proof of these results were not provided. Here we rectify that situation, presenting all details of the GNS Construction and its proof following [Entanglement in Algebraic Quantum Field Theories](https://arxiv.org/abs/2410.16599).
+In the previous blog post [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/) a sketch of the GNS construction was presented. However, the details and proof of the construction were not provided. Here we rectify that situation, presenting all details of the GNS construction and its proof following [Entanglement in Algebraic Quantum Field Theories](https://arxiv.org/abs/2410.16599).
 
 ### GNS Construction Theorem
 In this section we will state the GNS Construction Theorem, which we prove in subsequent sections.
 
-However, before stating the theorem we'll need to introduce some terminology that appears in the theorem's statement. We begin with the definition of "state" and some closely associated terms.
+Before stating the theorem we'll need to introduce terminology that appears in the theorem's statement. We begin with the definition of "state" and some closely associated terms.
 
 > **Definition** *(State)*
 > Let $$\mathfrak{U}$$ be an abstract C\*-algebra[^1]. A *state* is an element $$\omega$$ of the dual space $$\mathfrak{U}^*$$ that is
@@ -60,10 +60,10 @@ With the GNS Construction Theorem stated, we can now commence with its proof.
 
 This proof has four parts: (1) the construction of the GNS Hilbert space $$\mathcal{H}_\omega$$, (2) the construction of the \*-representation $$\pi_\omega$$, (3) the construction of the cyclic vector $$\Omega$$ in $$\mathcal{H}_\omega$$, and (4) the proof of uniqueness up to unitary equivalence. Each part corresponds to a subsequent subsection.
 
-#### Construction of the GNS Hilbert Space
+**Construction of the GNS Hilbert Space**
 We'll construct the GNS Hilbert space $$\mathcal{H}_\omega$$ from the C\*-algebra $$\mathfrak{U}$$ itself, modifying $$\mathfrak{U}$$ as needed to obtain the desired $$\mathcal{H}_\omega$$.
 
-Let's start by attemptiing to place an inner product on $$\mathfrak{U}$$. Naively one might hope the following defines an inner product
+Let's start by attempting to place an inner product on $$\mathfrak{U}$$. Naively one might hope the following defines an inner product
 
 $$
 \left< a, b \right> \equiv \omega(a^*b)
@@ -77,7 +77,7 @@ $$
 \mathcal{N} \equiv \{ n \in \mathfrak{U} : \omega(n^*n) = 0 \}.
 $$
 
-Generically $$\omega$$ isn't faithful. Thus $$\mathcal{N}$$ isn't empty and there exist non-zero $$n$$ in $$\mathcal{N}$$ such that $$\omega(n^*n) = 0$$. For such $$n$$ one has
+Generically $$\omega$$ isn't faithful. Thus $$\mathcal{N}$$ there exist non-zero $$n$$ in $$\mathcal{N}$$. For such $$n$$ one has
 
 $$
 \left< n, n \right> \equiv \omega(n^*n) = 0.
@@ -113,28 +113,35 @@ The most famous of these results is the Cauchy-Schwarz Inequality
 Positivity of $$\omega$$ implies that for any $$a$$ and $$b$$ in $$\mathcal{A}$$ and $$\lambda \in \mathbb{C}$$ one has
 
 $$
-0 \le \omega\left((\lambda a + b)^*(\lambda a + b)\right)
+0 \le \omega\left((\lambda a + b)^*(\lambda a + b)\right).
 $$
 
 As $$\omega$$ is an element of the dual space $$\mathcal{A}^*$$ and thus linear, this implies
 
 $$
-0 \le |\lambda|^2\omega(a^*a) + \overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) + \omega(b^*b)
+0 \le |\lambda|^2\omega(a^*a) + \overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) + \omega(b^*b).
 $$
 
-This inequality then implies both desired results, $$\omega(a^*b) = \overline{\omega(b^*a)}$$ and $$\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b)$$.
-
-Let us first prove that this inequality implies $$\omega(a^*b) = \overline{\omega(b^*a)}$$.
-
-Notice that the inequality is between two real numbers, $$0$$ and the righthand side. The first and last summands on the righthand side are obviously real. This then implies
+This inequality then implies both desired results,
 
 $$
-\overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) \in \mathbb{R}
+\begin{align}
+\omega(a^*b) &= \overline{\omega(b^*a)} \\
+|\omega(a^*b)|^2 &\le \omega(a^*a) \omega(b^*b).
+\end{align}
 $$
 
-As $$\lambda$$ ia arbitrary we are free to let it be real, which implies the imaginary parts of $$\omega(a^*b)$$ and $$\omega(b^*a)$$ are equal but have the opposite sign.
+We will prove these one-by-one. Let us first prove this inequality implies $$\omega(a^*b) = \overline{\omega(b^*a)}$$.
 
-Similarly, we are free to let $$\lambda$$ be imaginary, which implies that the real parts of $$\omega(a^*b)$$ and $$\omega(b^*a)$$ are equal. Together these facts imply the first result
+Notice that the inequality is between two real numbers, $$0$$ and the righthand side. As $$\omega$$ is positive, the first and last summands on the righthand side are obviously real. This then implies
+
+$$
+\overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) \in \mathbb{R}.
+$$
+
+As $$\lambda$$ is arbitrary, we are free to choose it to be real, which implies the imaginary parts of $$\omega(a^*b)$$ and $$\omega(b^*a)$$ are equal but have the opposite signs.
+
+Similarly, we are free to choose $$\lambda$$ to be imaginary, which implies that the real parts of $$\omega(a^*b)$$ and $$\omega(b^*a)$$ are equal. Together these facts imply the first result
 
 $$
 \omega(a^*b) = \overline{\omega(b^*a)}.
@@ -148,13 +155,13 @@ $$
 
 implies $$\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b)$$.
 
-Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ one finds at the extrema
+Again, as $$\lambda$$ is arbitrary, we are free to choose it to extreemize the righthand side of the inequality. Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ one finds at the extrema
 
 $$
 \lambda = - \frac{\omega(a^*b)}{\omega(a^*a)}.
 $$
 
-Substituting this into the inequality, multiplying by $$\omega(a^*a)$$, and using $$\omega(a^*b) = \overline{\omega(b^*a)}$$ one obtains
+Substituting this into the inequality, multiplying by $$\omega(a^*a)$$ while using the fact that $$\omega$$ is positive, and using $$\omega(a^*b) = \overline{\omega(b^*a)}$$, then one obtains
 
 $$
 0 \le \lvert \omega(a^*b) \rvert^2 - \lvert \omega(a^*b) \rvert^2 - \lvert \omega(a^*b) \rvert^2 + \omega(a^*a) \omega(b^*b)
@@ -174,7 +181,7 @@ The next result we need to prove is:
 > Let $$\omega$$ be a state over a unital C\*-algebra $$\mathfrak{U}$$. Then the set $$\mathcal{N}_1$$ defined by
 > 
 > $$
-> \mathcal{N}_1 \equiv \{ n \in \mathfrak{U} : \omega(b^*n) = 0 \;\; \forall b \in \mathfrak{U} \}
+> \mathcal{N}_1 \equiv \{ n \in \mathfrak{U} : \omega(b^*n) = 0 \;\; \forall \, b \in \mathfrak{U} \}
 > $$
 > 
 > is equivalent to the set $$\mathcal{N}$$ defined by
@@ -188,7 +195,7 @@ We will first prove that $$\mathcal{N} \subseteq \mathcal{N}_1$$. Then we will p
 
 Let us begin by proving $$\mathcal{N} \subseteq \mathcal{N}_1$$.
 
-For arbitrary $$b$$ and $$n$$ in $$\mathfrak{U}$$ the Cauchy-Schwarz inequality implies
+$$\mathfrak{U}$$ is a C\*-algebra and thus a \*-algebra. In addition $$\omega$$ is a state and thus a positive element of the dual space $$\mathfrak{U}^*$$. Thus, for arbitrary $$b$$ and $$n$$ in $$\mathfrak{U}$$ we can apply the Cauchy-Schwarz inequality to obtain
 
 $$
 \lvert \omega(b^*n) \rvert^2 \le \omega(b^*b) \omega(n^*n). 
@@ -202,7 +209,97 @@ Consider an arbitrary $$n_1$$ in $$\mathcal{N}_1$$. By definition $$\omega(b^*n_
 
 We have thus proven $$\mathcal{N} \subseteq \mathcal{N}_1$$ and $$\mathcal{N}_1 \subseteq \mathcal{N}$$ which together imply $$\mathcal{N} = \mathcal{N}_1$$, the final desired result. $$\blacksquare$$
 
-#### Construction of the GNS Representation
+Next we will prove $$\mathcal{N}$$ is a closed, linear subspace of $$\mathfrak{U}$$. Establishing this will allow us to take the quotient of $$\mathfrak{U}$$ by $$\mathcal{N}$$.
+
+> **Lemma**
+> Let $$\omega$$ be a state over a unital C\*-algebra $$\mathfrak{U}$$. Then the set $$\mathcal{N}$$ defined by
+> 
+> $$
+> \mathcal{N} \equiv \{ n \in \mathfrak{U} : \omega(n^*n) = 0 \}.
+> $$
+> 
+> is a closed, linear subspace of $$\mathfrak{U}$$.
+
+**Proof**
+First let us prove that $$\mathcal{N}$$ is a linear subspace of $$\mathfrak{U}$$.
+
+Consider arbitrary $$n,m \in \mathcal{N}$$ and arbitrary $$\lambda, \mu \in \mathbb{C}$$. As proven above $$\mathcal{N} = \mathcal{N}_1$$, thus for arbitrary $$b \in \mathfrak{U}$$, one has
+
+$$
+\begin{align}
+\omega(b^*n) &= 0 \\
+\omega(b^*m) &= 0.
+\end{align}
+$$
+
+Hence, the linearity of $$\omega$$ then implies
+
+$$
+\omega(b^*(\lambda n + \mu m)) = \lambda \omega(b^*n) + \mu \omega(b^*m) = 0.
+$$
+
+As $$b \in \mathfrak{U}$$ was arbitrary, this implies that $$(\lambda n + \mu m) \in \mathcal{N}_1$$. As we previously proved $$\mathcal{N} = \mathcal{N}_1$$, this in turn implies $$(\lambda n + \mu m) \in \mathcal{N}$$. Hence $$\mathcal{N}$$ is a linear subspace of $$\mathfrak{U}$$, the first desired result.
+
+Next let us prove that $$\mathcal{N}$$ is a closed subspace of $$\mathfrak{U}$$.
+
+First, let us note that as $$\omega$$ is a state, it is by definition a linear, normalized operator on $$\mathfrak{U}$$. Hence, it is a linear, bounded operator on $$\mathfrak{U}$$, a normed space. Thus, as a result of the standard theorem (Theorem B.2.4 of [Entanglement in Algebraic Quantum Field Theories](https://arxiv.org/abs/2410.16599))
+
+> **Theorem**
+> Let $$X$$ and $$Y$$ be normed spaces and $$T: \mathcal{D}(T) \rightarrow Y$$ be a linear operator where $$\mathcal{D}(T) \subseteq X$$. Then $$T$$ is continuous if and only if it is bounded. 
+
+along with the fact that $$\mathbb{C}$$ is a normed space, it follows that $$\omega$$ is continuous.
+
+With the continuity of $$\omega$$ in hand, consider a sequence $$(n_i)_{i \in \mathbb{N}}$$ in $$\mathcal{N}$$ that converges to $$n$$ in $$\mathfrak{U}$$. As $$\omega$$ is continuous, for any $$b$$ in $$\mathfrak{U}$$ one has
+
+$$
+\omega\left(b^*n\right) = \omega\left(b^*(\lim\limits_{i \rightarrow \infty} n_i)\right) = \lim\limits_{i \rightarrow \infty} \omega(b^*n_i) = 0,
+$$
+
+where the final equality follows from our previous result $$\mathcal{N} = \mathcal{N}_1$$. This proves that $$n$$ is an element of $$\mathcal{N}_1$$ and thus, as a result of our previous proof that $$\mathcal{N}_1 = \mathcal{N}$$, that $$n$$ is an element of $$\mathcal{N}$$. This establishes that $$\mathcal{N}$$ is closed, proving the second and final desired result, $$\mathcal{N}$$ is a closed subspace of $$\mathfrak{U}$$. $$\blacksquare$$
+
+As we have established that $$\mathcal{N}$$ is a closed, linear subspace of $$\mathfrak{U}$$, we can now take the quotient of $$\mathfrak{U}$$ by $$\mathcal{N}$$. Elements of thie quotient $$\mathfrak{U} / \mathcal{N}$$ are equivalence classes of the form
+
+$$
+[a] \equiv \{ a + n : n \in \mathcal{N} \}
+$$
+
+with the zero vector in $$\mathfrak{U} / \mathcal{N}$$ given by
+
+$$
+[0] \equiv \{ n : n \in \mathcal{N} \}.
+$$
+
+On $$\mathfrak{U} / \mathcal{N}$$ we can introduce an inner product
+
+$$
+\left<[a], [b]\right> \equiv \omega(a^*b)
+$$
+
+motivated by our naive attempt at placing an inner product on $$\mathfrak{U}$$. This inner product is well-defined on $$\mathfrak{U} / \mathcal{N}$$ as one can see from its invariance under $$a \rightarrow a + n$$ where $$n$$ is in $$\mathcal{N}$$,
+
+$$
+\omega((a + n)^*b) = \omega(a^*b) + \omega(n^*b) = \omega(a^*b) + \overline{\omega(b^*n)} = \omega(a^*b).
+$$
+
+In this the first equality follows from $$\omega$$ being linear, the second from our previous result $$\omega(n^*b) = \overline{\omega(b^*n)}$$, and the final from our previous result $$\mathcal{N} = \mathcal{N}_1$$.
+
+Furthermore, the inner product
+
+$$
+\left<[a], [b]\right> \equiv \omega(a^*b)
+$$
+
+on $$\mathfrak{U} / \mathcal{N}$$ doesn't suffer from the same problem of our naive inner product on $$\mathfrak{U}$$ did. In particular, one can easilly prove
+
+$$
+\left<[a], [a]\right> = 0
+$$
+
+if and only if $$[a] = [0]$$. This is essentially by construction.
+
+The final step in going from $$\mathfrak{U} / \mathcal{N}$$ to the Hilbert space $$\mathcal{H}_\omega$$ consists of completing $$\mathfrak{U} / \mathcal{N}$$ in the norm defined by the inner product above. As this is standard, we will not present the details here. The completion of $$\mathfrak{U} / \mathcal{N}$$ in this norm is the Hilbert space $$\mathcal{H}_\omega$$ of the GNS Construction Theorem.
+
+**Construction of the GNS Representation**
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget mauris fringilla metus sollicitudin sagittis sollicitudin quis mi. Aliquam quis lacus sed eros tincidunt fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in neque ac massa sagittis dapibus ut a nulla. Aenean fringilla finibus est, vel semper justo bibendum eu. Nulla quis nisl eget lacus tempor posuere dictum at ligula. Duis interdum nec metus quis eleifend. Sed eget lacinia erat, eget aliquet orci. Fusce convallis fringilla pellentesque. Aliquam nec luctus quam. Praesent nec feugiat risus. Nunc mattis volutpat efficitur. Pellentesque tempor aliquam ipsum vitae bibendum. Mauris eget sem auctor, pharetra sem at, varius urna. Praesent id quam vitae justo mattis rhoncus. Pellentesque tempor eros commodo convallis faucibus.
 
 Vestibulum a egestas magna, sit amet molestie nisi. Sed a ex id mauris varius accumsan sed ut nulla. Donec non feugiat nulla. Cras ut erat a augue venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper turpis in semper luctus. Ut vel nibh ut mauris lacinia fermentum nec nec odio. Donec a nunc ac odio placerat rhoncus. Nunc eget nunc ac massa tristique mollis vel quis lectus. Sed rutrum ante vitae dui faucibus auctor. Nullam ut rhoncus augue.
@@ -213,10 +310,10 @@ Vivamus accumsan velit mauris, id efficitur augue blandit ut. Duis iaculis effic
 
 Fusce odio arcu, euismod eget erat eget, interdum feugiat lacus. Morbi porta turpis lorem, at lacinia arcu sagittis sed. Vestibulum cursus porta auctor. Curabitur porta risus sed ligula maximus, at accumsan nibh mattis. Sed aliquam neque dolor, commodo posuere arcu feugiat et. In vel molestie lorem. Phasellus sed tincidunt felis, ut euismod nibh. Integer a lacus ultrices, cursus purus eu, pulvinar nulla. Aenean sit amet enim ac mauris aliquet eleifend. Duis dictum cursus lacinia. Nunc metus ipsum, euismod vulputate auctor eu, feugiat ac tortor. Etiam pellentesque turpis sit amet aliquet ornare. Morbi interdum massa nec enim posuere, sed dignissim diam accumsan. Nullam tempus nisl lectus, lacinia consequat nibh posuere vitae. Maecenas et enim sed tellus efficitur euismod.
 
-#### Construction of the Cyclic Vector 
+**Construction of the Cyclic Vector**
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin placerat porttitor. Suspendisse iaculis condimentum mi, sed lobortis ex pharetra ac. Maecenas eget suscipit neque. In id porttitor ex, eget rhoncus nibh. Phasellus non libero semper, placerat urna quis, pellentesque nibh. Phasellus nec ex at dui rutrum sagittis. Etiam venenatis cursus felis. Vivamus tellus nulla, pellentesque ac mauris vel, faucibus eleifend metus. Sed ac tincidunt dui. Phasellus non tempor justo.
 
-### Uniqueness up to Unitary Equivalence
+**Uniqueness up to Unitary Equivalence**
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget mauris fringilla metus sollicitudin sagittis sollicitudin quis mi. Aliquam quis lacus sed eros tincidunt fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in neque ac massa sagittis dapibus ut a nulla. Aenean fringilla finibus est, vel semper justo bibendum eu. Nulla quis nisl eget lacus tempor posuere dictum at ligula. Duis interdum nec metus quis eleifend. Sed eget lacinia erat, eget aliquet orci. Fusce convallis fringilla pellentesque. Aliquam nec luctus quam. Praesent nec feugiat risus. Nunc mattis volutpat efficitur. Pellentesque tempor aliquam ipsum vitae bibendum. Mauris eget sem auctor, pharetra sem at, varius urna. Praesent id quam vitae justo mattis rhoncus. Pellentesque tempor eros commodo convallis faucibus.
 
 Vestibulum a egestas magna, sit amet molestie nisi. Sed a ex id mauris varius accumsan sed ut nulla. Donec non feugiat nulla. Cras ut erat a augue venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper turpis in semper luctus. Ut vel nibh ut mauris lacinia fermentum nec nec odio. Donec a nunc ac odio placerat rhoncus. Nunc eget nunc ac massa tristique mollis vel quis lectus. Sed rutrum ante vitae dui faucibus auctor. Nullam ut rhoncus augue.
