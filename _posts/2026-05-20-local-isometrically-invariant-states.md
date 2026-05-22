@@ -58,7 +58,7 @@ With this terminology we are then able to state the GNS Construction Theorem
 ### Proof of the GNS Construction Theorem
 With the GNS Construction Theorem stated, we can now commence with its proof.
 
-This proof has four parts: (1) the construction of the GNS Hilbert space $$\mathcal{H}_\omega$$, (2) the construction of the \*-representation $$\pi_\omega$$, (3) the construction of the cyclic vector $$\Omega$$ in $$\mathcal{H}_\omega$$, and (4) the proof of uniqueness up to unitary equivalence. Each part corresponds to a subsequent subsection.
+This proof has five parts: (1) the construction of the GNS Hilbert space $$\mathcal{H}_\omega$$, (2) the construction of the \*-representation $$\pi_\omega$$, (3) the construction of the cyclic vector $$\Omega$$ in $$\mathcal{H}_\omega$$, (4) the proof that the \*-representation $$\pi_\omega$$ is faithful, and (5) the proof of uniqueness up to unitary equivalence. Each part corresponds to a subsequent subsection.
 
 **Construction of the GNS Hilbert Space**
 We'll construct the GNS Hilbert space $$\mathcal{H}_\omega$$ from the C\*-algebra $$\mathfrak{U}$$ itself, modifying $$\mathfrak{U}$$ as needed to obtain the desired $$\mathcal{H}_\omega$$.
@@ -406,9 +406,57 @@ $$
 
 Hence, $$\pi_\omega(a^*) = \pi_\omega(a)^\dagger$$ and $$\pi_\omega$$ is a \*-morphism.
 
-
 **Construction of the Cyclic Vector**
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin placerat porttitor. Suspendisse iaculis condimentum mi, sed lobortis ex pharetra ac. Maecenas eget suscipit neque. In id porttitor ex, eget rhoncus nibh. Phasellus non libero semper, placerat urna quis, pellentesque nibh. Phasellus nec ex at dui rutrum sagittis. Etiam venenatis cursus felis. Vivamus tellus nulla, pellentesque ac mauris vel, faucibus eleifend metus. Sed ac tincidunt dui. Phasellus non tempor justo.
+Our next task is to construct the cyclic vector $$\Omega$$. This is relatively straightforward.
+
+As $$\mathfrak{U}$$ is unital we can make the definition
+
+$$
+\Omega \equiv [\mathbf{1}].
+$$
+
+Tracing definitions we have
+
+$$
+\{\pi_\omega(a)\Omega : a \in \mathfrak{U}\} = \{[a] : a \in \mathfrak{U}\} = \mathfrak{U} / \mathcal{N}.
+$$
+
+As $$\mathfrak{U} / \mathcal{N}$$ is dense in $$\mathcal{H}_\omega$$, this implies that $$\Omega$$ is a cyclic vector in $$\mathcal{H}_\omega$$ for the representation $$\pi_\omega$$, the property claimed of $$\Omega$$ in the GNS Construction Theorem.
+
+In addition tracing definitions gives
+
+$$
+\left<\Omega, \pi_\omega(a)\Omega\right> = \left<[\mathbf{1}], \pi_\omega(a)[\mathbf{1}]\right> = \left<[\mathbf{1}], [a]\right> = \omega(\mathbf{1}a) = \omega(a)
+$$
+
+which proves another relation
+
+$$
+\omega(a) = \left<\Omega, \pi_\omega(a)\Omega\right>
+$$
+
+claimed in the GNS Construction Theorem.
+
+**Faithfullness of the GNS Representation**
+Now we are going to prove the \*-representation $$\pi_\omega$$ is faithful if $$\omega$$ is a faithful state.
+
+For this section of the proof, assume that $$\omega$$ is a faithful state.
+
+To prove that $$\pi_\omega$$ is faithful representation, we must prove that $$\ker \pi_\omega = \{0\}$$. In other words, we must prove that $$\pi_\omega(a) = 0$$ implies that $$a=0$$.
+
+Assume that $$\pi_\omega(a) = 0$$. Thus we have
+
+$$
+0 = \left<\pi_\omega(a)\Omega, \pi_\omega(a)\Omega\right> = \omega(a^*a).
+$$
+
+As $$\omega$$ is assumed faithful in this section of the proof, this implies that $$a^*a=0$$. Hence,
+
+$$
+0 = \|a^*a\| = \|a\|^2,
+$$
+
+where we have employed the C\*-norm property. This in turn implies $$\|a\|=0$$ which implies $$a=0$$. This in turn implies $$\ker \pi_\omega = \{0\}$$, which proves that if $$\omega$$ is faithful, then $$\pi_\omega$$ is faithful, the desired result.
 
 **Uniqueness up to Unitary Equivalence**
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget mauris fringilla metus sollicitudin sagittis sollicitudin quis mi. Aliquam quis lacus sed eros tincidunt fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in neque ac massa sagittis dapibus ut a nulla. Aenean fringilla finibus est, vel semper justo bibendum eu. Nulla quis nisl eget lacus tempor posuere dictum at ligula. Duis interdum nec metus quis eleifend. Sed eget lacinia erat, eget aliquet orci. Fusce convallis fringilla pellentesque. Aliquam nec luctus quam. Praesent nec feugiat risus. Nunc mattis volutpat efficitur. Pellentesque tempor aliquam ipsum vitae bibendum. Mauris eget sem auctor, pharetra sem at, varius urna. Praesent id quam vitae justo mattis rhoncus. Pellentesque tempor eros commodo convallis faucibus.
