@@ -300,15 +300,112 @@ if and only if $$[a] = [0]$$. This is essentially by construction.
 The final step in going from $$\mathfrak{U} / \mathcal{N}$$ to the Hilbert space $$\mathcal{H}_\omega$$ consists of completing $$\mathfrak{U} / \mathcal{N}$$ in the norm defined by the inner product above. As this is standard, we will not present the details here. The completion of $$\mathfrak{U} / \mathcal{N}$$ in this norm is the Hilbert space $$\mathcal{H}_\omega$$ of the GNS Construction Theorem.
 
 **Construction of the GNS Representation**
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget mauris fringilla metus sollicitudin sagittis sollicitudin quis mi. Aliquam quis lacus sed eros tincidunt fermentum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum in neque ac massa sagittis dapibus ut a nulla. Aenean fringilla finibus est, vel semper justo bibendum eu. Nulla quis nisl eget lacus tempor posuere dictum at ligula. Duis interdum nec metus quis eleifend. Sed eget lacinia erat, eget aliquet orci. Fusce convallis fringilla pellentesque. Aliquam nec luctus quam. Praesent nec feugiat risus. Nunc mattis volutpat efficitur. Pellentesque tempor aliquam ipsum vitae bibendum. Mauris eget sem auctor, pharetra sem at, varius urna. Praesent id quam vitae justo mattis rhoncus. Pellentesque tempor eros commodo convallis faucibus.
+Next we will construct $$\pi_\omega$$ the \*-representation of $$\mathfrak{U}$$ by bounded operators on $$\mathcal{H}_\omega$$. This will be much easier than the construction of $$\mathcal{H}_\omega$$.
 
-Vestibulum a egestas magna, sit amet molestie nisi. Sed a ex id mauris varius accumsan sed ut nulla. Donec non feugiat nulla. Cras ut erat a augue venenatis placerat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras semper turpis in semper luctus. Ut vel nibh ut mauris lacinia fermentum nec nec odio. Donec a nunc ac odio placerat rhoncus. Nunc eget nunc ac massa tristique mollis vel quis lectus. Sed rutrum ante vitae dui faucibus auctor. Nullam ut rhoncus augue.
+By construction we can consider $$\mathfrak{U} / \mathcal{N}$$ as dense in $$\mathcal{H}_\omega$$. On this dense subset we define the action of $$\pi_\omega$$ the \*-representation of $$\mathfrak{U}$$ on $$\mathfrak{U} / \mathcal{N}$$ as follows
 
-Duis a arcu sit amet arcu bibendum ultricies quis id lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris sit amet felis in sem efficitur porta sit amet at eros. Nunc lectus nisl, hendrerit a massa ullamcorper, eleifend suscipit nisl. In nec ante ut ex bibendum posuere a vitae ex. Suspendisse id tincidunt eros. Donec nec libero posuere, euismod est et, posuere massa. Phasellus cursus mi nulla. Nunc at lacus elit. Praesent vel placerat lectus. Nam faucibus porta ipsum, sit amet rhoncus nulla. Nunc mattis erat non bibendum auctor. Aenean ornare urna justo, ut rutrum nibh viverra non. Nam urna augue, vehicula sed commodo eget, auctor ut quam. Donec porttitor lorem sit amet ornare hendrerit.
+$$
+\pi_\omega(a)[z] \equiv [az]
+$$
 
-Vivamus accumsan velit mauris, id efficitur augue blandit ut. Duis iaculis efficitur eros, non volutpat turpis accumsan vitae. Maecenas tincidunt mauris vitae eros condimentum imperdiet ac tincidunt erat. Nam nibh nunc, faucibus vel commodo eu, fermentum in enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin scelerisque augue nec velit blandit, eu accumsan est tempus. Nunc consectetur, arcu sit amet porttitor vehicula, diam justo dictum arcu, eu dictum mauris enim et est. Nunc egestas congue malesuada. Cras pharetra faucibus mi, sed mollis tortor rhoncus id. Ut ornare ligula non mattis condimentum. Vestibulum tincidunt risus ac venenatis consequat. Etiam vitae arcu ante. Maecenas vel venenatis elit.
+where $$[z]$$ is an arbitrary element of $$\mathfrak{U} / \mathcal{N}$$.
 
-Fusce odio arcu, euismod eget erat eget, interdum feugiat lacus. Morbi porta turpis lorem, at lacinia arcu sagittis sed. Vestibulum cursus porta auctor. Curabitur porta risus sed ligula maximus, at accumsan nibh mattis. Sed aliquam neque dolor, commodo posuere arcu feugiat et. In vel molestie lorem. Phasellus sed tincidunt felis, ut euismod nibh. Integer a lacus ultrices, cursus purus eu, pulvinar nulla. Aenean sit amet enim ac mauris aliquet eleifend. Duis dictum cursus lacinia. Nunc metus ipsum, euismod vulputate auctor eu, feugiat ac tortor. Etiam pellentesque turpis sit amet aliquet ornare. Morbi interdum massa nec enim posuere, sed dignissim diam accumsan. Nullam tempus nisl lectus, lacinia consequat nibh posuere vitae. Maecenas et enim sed tellus efficitur euismod.
+This definition of $$\pi_\omega$$ on $$\mathfrak{U} / \mathcal{N}$$ is well-defined as for any other member of the equivalence class $$[z]$$ of the form $$z + n$$ one has
+
+$$
+\pi_\omega(a)[z + n] = [az + an] = [az],
+$$
+
+where the second equality follows from our previous result $$\mathcal{N}_1 = \mathcal{N}$$. In other words, $$\pi_\omega$$ is well-defined as $$\mathcal{N}$$ is a left-ideal in $$\mathfrak{U}$$.
+
+Furthermore, it trivially follows from the definition of $$\pi_\omega$$ that it is a linear and an algebraic morphism.
+
+So it remains to prove that $$\pi_\omega$$ is bounded and also a \*-morphism. 
+
+Let us first prove that $$\pi_\omega$$ is bounded.
+
+Consider a non-zero $$[z]$$ in $$\mathfrak{U} / \mathcal{N}$$. Simply applying definitions one has 
+
+$$
+\begin{align}
+\|\pi_\omega(a)[z]\|^2 &= \|[az]\|^2 \\
+                       &= \left<[az], [az]\right> \\
+                       &= \omega((az)^*(az)) \\
+                       &= \omega(z^*(a^*a)z) \\
+                       &= \frac{\omega(z^*(a^*a)z)}{\omega(z^*z)} \omega(z^*z) \\
+                       &= \frac{\omega(z^*(a^*a)z)}{\omega(z^*z)} \|[z]\|^2. 
+\end{align}
+$$
+
+With that last equation in mind let us define the map $$\phi$$ acting on $$\mathfrak{U}$$ by
+
+$$
+\phi(a) \equiv \frac{\omega(z^*az)}{\omega(z^*z)}.
+$$
+
+One can easilly check that $$\phi$$ defines a state on $$\mathfrak{U}$$ as it is linear, positive
+
+$$
+\phi(c^*c) = \frac{\omega(z^*(c^*c)z)}{\omega(z^*z)} = \frac{\omega((cz)^*(cz))}{\omega(z^*z)} \ge 0
+$$
+
+as $$\omega$$ is positive, and normalized
+
+$$
+\|\phi\| \equiv \sup\limits_{a \in \{b \in \mathfrak{U} : \|b\| = 1\}} |\phi(a)| = \sup\limits_{a \in \{b \in \mathfrak{U} : \|b\| = 1\}} \left| \frac{\omega(z^*az)}{\omega(z^*z)} \right| = 1,
+$$
+
+where the final equality follows from the fact that $$\phi$$ divides by $$\omega(z^*z)$$ and $$\|a\|=1$$ and so the supremum is achieved at $$a=\mathbf{1}$$.
+
+Now as $$\phi$$ is normalized and thus $$\|\phi\|=1$$, the definition of the norm $$\|\phi\|$$ implies
+
+$$
+\|\phi(c)\| \le \|\phi\| \, \|c\| = \|c\|.
+$$
+
+This along with our previous derivation gives
+
+$$
+\begin{align}
+\|\pi_\omega(a)[z]\|^2 &= \phi(a^*a) \|[z]\|^2 \\
+                       &\le \|\phi\| \, \|a^*a\| \, \|[z]\|^2 \\
+                       &=  \|a^*a\| \, \|[z]\|^2 \\
+                       &= \|a\|^2 \, \|[z]\|^2.
+\end{align}
+$$
+
+Using the definition of the norm $$\|\pi_\omega(a)\|$$ this equation then implies
+
+$$
+\|\pi_\omega(a)\| \le \|a\|
+$$
+
+which is the statement that $$\pi_\omega(a)$$ is a bounded operator on $$\mathfrak{U} / \mathcal{N}$$.
+
+Thus using the following standard theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) 
+
+> **Theorem** *(Bounded Linear Transformation Theorem)*
+> *Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.*
+
+one can extend $$\pi_\omega$$ from the dense subset $$\mathfrak{U} / \mathcal{N}$$ of $$\mathcal{H}_\omega$$ to all of $$\mathcal{H}_\omega$$. We do so and use the same notation $$\pi_\omega$$ for this extension.
+
+Finally we need to prove that $$\pi_\omega$$ is not only an algebraic morphism but is a \*-morphism. Thankfully this is relatively simple.
+
+For $$[x]$$ and $$[y]$$ in $$\mathfrak{U} / \mathcal{N}$$ and $$a$$ in $$\mathfrak{U}$$, we have
+
+$$
+\begin{align}
+\left<[x], \pi_\omega(a^*)[y]\right> &= \left<[x], [a^*y]\right> \\
+                                     &= \omega(x^*a^*y) \\
+                                     &= \omega((ax)^*y) \\
+                                     &= \left<[ax], [y]\right> \\
+                                     &= \left<\pi_\omega(a)[x], [y]\right> \\
+                                     &= \left<[x], \pi_\omega(a)^\dagger [y]\right>
+\end{align}
+$$
+
+Hence, $$\pi_\omega(a^*) = \pi_\omega(a)^\dagger$$ and $$\pi_\omega$$ is a \*-morphism.
+
 
 **Construction of the Cyclic Vector**
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin placerat porttitor. Suspendisse iaculis condimentum mi, sed lobortis ex pharetra ac. Maecenas eget suscipit neque. In id porttitor ex, eget rhoncus nibh. Phasellus non libero semper, placerat urna quis, pellentesque nibh. Phasellus nec ex at dui rutrum sagittis. Etiam venenatis cursus felis. Vivamus tellus nulla, pellentesque ac mauris vel, faucibus eleifend metus. Sed ac tincidunt dui. Phasellus non tempor justo.
