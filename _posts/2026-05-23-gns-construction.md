@@ -6,7 +6,7 @@ categories: aqft
 
 In this blog post we will state and prove the GNS Construction Theorem, which we make extensive use of in subsequent blog posts.
 
-In this blog post generally we follow the clear, straightforward presentation in [Entanglement in Algebraic Quantum Field Theories](https://arxiv.org/abs/2410.16599).
+In this blog post, we generally follow the clear, straightforward presentation in [Entanglement in Algebraic Quantum Field Theories](https://arxiv.org/abs/2410.16599).
 
 # GNS Construction Theorem
 In this section we will state the GNS Construction Theorem, which we prove in subsequent sections.
@@ -503,7 +503,7 @@ $$
 U\pi_\omega(a)\Omega \equiv \pi_\omega(a)'\Omega'.
 $$
 
-The operator $$U$$ is obviously linear. Furthermore, as $$\Omega$$ and $$\Omega'$$ are cyclic, the domain of $$U$$ is dense in $$\mathcal{H}_\omega$$ and its range is dense in $$\mathcal{H}_\omega'$$ . Now, as a result of chasing definitions
+The operator $$U$$ is obviously linear. Furthermore, as $$\Omega$$ and $$\Omega'$$ are cyclic, the domain of $$U$$ is dense in $$\mathcal{H}_\omega$$ and its range is dense in $$\mathcal{H}_\omega'$$. Now, as a result of chasing definitions
 
 $$
 \begin{align}
@@ -583,7 +583,7 @@ As $$\Omega'$$ is cyclic, $$\pi_\omega(c)'\Omega'$$ is dense in $$\mathcal{H}_\o
 > **Theorem** *(Bounded Linear Transformation Theorem)*
 > *Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.*
 
-an be invoked to prove that $$U\pi_\omega(a)U^{-1}$$ and $$\pi_\omega(a)'$$ agree on $$\mathcal{H}_\omega'$$, proving that
+can be invoked to prove that $$U\pi_\omega(a)U^{-1}$$ and $$\pi_\omega(a)'$$ agree on $$\mathcal{H}_\omega'$$, proving that
 
 $$
 \pi_\omega(a)' = U\pi_\omega(a)U^{-1},
