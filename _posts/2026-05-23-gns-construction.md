@@ -312,7 +312,7 @@ $$
 \omega((a + n)^*b) = \omega(a^*b) + \omega(n^*b) = \omega(a^*b) + \overline{\omega(b^*n)} = \omega(a^*b).
 $$
 
-In this the first equality follows from $$\omega$$ being linear, the second from our previous result $$\omega(n^*b) = \overline{\omega(b^*n)}$$, and the final from our previous result $$\mathcal{N} = \mathcal{N}_1$$.
+In this the first equality follows from $$\omega$$ being linear, the second from our previous result $$\omega(n^*b) = \overline{\omega(b^*n)}$$, and the final from our previous result $$\mathcal{N} = \mathcal{N}_1$$. A similar argument using $$\mathcal{N} = \mathcal{N}_1$$ yields invariance under $$b \rightarrow b + n$$ too.
 
 Furthermore, the inner product
 
@@ -556,7 +556,7 @@ $$
 \left< U\pi_\omega(a)U^{-1}\Omega', \pi_\omega(b)'\Omega' \right>' = \left<\pi_\omega(a)'\Omega', \pi_\omega(b)'\Omega'\right>'.
 $$
 
-This implies that
+As a result of cyclicity of $$\Omega'$$ this implies that
 
 $$
 U\pi_\omega(a)U^{-1}\Omega' = \pi_\omega(a)'\Omega'.
