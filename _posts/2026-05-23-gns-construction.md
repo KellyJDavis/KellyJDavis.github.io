@@ -184,7 +184,7 @@ $$
 Now as $$\lambda$$ is arbitrary we are free to select it as follows
 
 $$
-\lambda = -r \overline{\omega(a^*b)}
+\overline{\lambda} = -r \overline{\omega(a^*b)}
 $$
 
 where $$0 < r$$ is an arbitrary positive real number. Then the previous inequality takes the form
