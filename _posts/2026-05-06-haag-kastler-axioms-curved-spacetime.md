@@ -378,7 +378,7 @@ With that clarified, we can present the first axiom
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
 > $$
 > 
-> > where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
+> where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 The second axiom can be immediately stated too.
 
