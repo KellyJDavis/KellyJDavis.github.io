@@ -149,7 +149,7 @@ $$
 
 implies $$\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b)$$.
 
-Again, as $$\lambda$$ is arbitrary, we are free to choose it to extremize the righthand side of the inequality. Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ one finds at the extrema
+Again, as $$\lambda$$ is arbitrary, we are free to choose it to extremize the righthand side of the inequality. Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ and assuming $$\omega(a^*a) \ne 0$$ one finds at the extrema
 
 $$
 \lambda = - \frac{\omega(a^*b)}{\omega(a^*a)}.
@@ -167,7 +167,44 @@ $$
 \lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b),
 $$
 
-the second desired result. $$\blacksquare$$
+the second desired result under the assumption that $$\omega(a^*a) \ne 0$$.
+
+If we now allow for the case $$\omega(a^*a) = 0$$, our inequality reduces to
+
+$$
+0 \le \overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) + \omega(b^*b).
+$$
+
+Our previous result implies $$\omega(b^*a) = \overline{\omega(a^*b)}$$. Hence, this inequality takes the form
+
+$$
+0 \le \overline{\lambda}\omega(a^*b) + \lambda\overline{\omega(a^*b)} + \omega(b^*b) = 2\text{Re}\left(\overline{\lambda} \omega(a^*b)\right) + \omega(b^*b).
+$$
+
+Now as $$\lambda$$ is arbitrary we are free to select it as follows
+
+$$
+\lambda = -r \overline{\omega(a^*b)}
+$$
+
+where $$0 < r$$ is an arbitrary non-negative real number. Then the previous inequality takes the form
+
+$$
+\begin{align}
+0 &\le 2\text{Re}\left(\overline{\lambda} \omega(a^*b)\right) + \omega(b^*b) \\
+  &= -2r \lvert \omega(a^*b) \rvert^2 + \omega(b^*b).
+\end{align}
+$$
+
+Now if we assume for the moment that $$0 < \lvert \omega(a^*b) \rvert$$, then we can always select $$0 < r$$ large enough such that this inequality if violated, the $$-2r \lvert \omega(a^*b) \rvert^2$$ term dominating the $$\omega(b^*b)$$ term. Hence, it must be the case that $$\lvert \omega(a^*b) \rvert = 0$$.
+
+Now we have $$\omega(a^*a) = 0$$ and $$\lvert \omega(a^*b) \rvert = 0$$. Hence, the desired inequality
+
+$$
+\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b),
+$$
+
+follows trivially, completing our proof. $$\blacksquare$$
 
 The next result we need to prove is:
 
@@ -335,19 +372,32 @@ $$
 \phi(a) \equiv \frac{\omega(z^*az)}{\omega(z^*z)}.
 $$
 
-One can easily check that $$\phi$$ defines a state on $$\mathfrak{U}$$ as it is linear, positive
+One can easily check that $$\phi$$ when acting on $$\mathfrak{U}$$ is linear and positive as
 
 $$
 \phi(c^*c) = \frac{\omega(z^*(c^*c)z)}{\omega(z^*z)} = \frac{\omega((cz)^*(cz))}{\omega(z^*z)} \ge 0
 $$
 
-as $$\omega$$ is positive, and normalized
+as a result of $$\omega$$ being positive.
+
+Now as $$\phi$$ is a positive, linear function on the unital C\*-algebra $$\mathfrak{U}$$ we can invoke the theorem (Chapter III Theorem 2.2.9 of [Haag](https://doi.org/10.1007/978-3-642-61458-3))
+
+> **Theorem**
+> A positive, linear operator $$\phi$$ on a unital Banch \*-algebra $$\mathcal{A}$$ is bounded and satisfies
+>
+> $$
+> \|\phi\| = \phi(\mathbf{1})
+> $$
+>
+> where $$\phi(\mathbf{1})$$ is $$\phi$$ acting on the unit $$\mathbf{1}$$ of $$\mathcal{A}$$.
+
+to prove that $$\|\phi\| = \phi(\mathbf{1})$$. A short computation finds
 
 $$
-\|\phi\| \equiv \sup\limits_{a \in \{b \in \mathfrak{U} : \|b\| = 1\}} |\phi(a)| = \sup\limits_{a \in \{b \in \mathfrak{U} : \|b\| = 1\}} \left| \frac{\omega(z^*az)}{\omega(z^*z)} \right| = 1,
+\phi(\mathbf{1}) = \frac{\omega(z^*\mathbf{1}z)}{\omega(z^*z)} = 1
 $$
 
-where the final equality follows from the fact that $$\phi$$ divides by $$\omega(z^*z)$$ and $$\|a\|=1$$ and so the supremum is achieved at $$a=\mathbf{1}$$.
+proving $$\|\phi\|=1$$, i.e. $$\phi$$ is normalized. As $$\phi$$ is a linear, positive, normalized operator on the unital C\*-algebra $$\mathfrak{U}$$, it is indeed a state.
 
 Now as $$\phi$$ is normalized and thus $$\|\phi\|=1$$, the definition of the norm $$\|\phi\|$$ implies
 
@@ -509,10 +559,10 @@ $$
 Thus the previous two equations imply
 
 $$
-\left< U\pi_\omega(a)U^{-1}\Omega', \pi_\omega(b)'\Omega' \right>' = \left<\pi_\omega(a)'\Omega', \pi_\omega(b)'\Omega'\right>'
+\left< U\pi_\omega(a)U^{-1}\Omega', \pi_\omega(b)'\Omega' \right>' = \left<\pi_\omega(a)'\Omega', \pi_\omega(b)'\Omega'\right>'.
 $$
 
-which implies
+As a result of $$\Omega'$$ being cyclic, this implies
 
 $$
 \pi_\omega(a)' = U\pi_\omega(a)U^{-1},
