@@ -149,7 +149,7 @@ $$
 
 implies $$\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b)$$.
 
-Again, as $$\lambda$$ is arbitrary, we are free to choose it to extreemize the righthand side of the inequality. Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ one finds at the extrema
+Again, as $$\lambda$$ is arbitrary, we are free to choose it to extremize the righthand side of the inequality. Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ one finds at the extrema
 
 $$
 \lambda = - \frac{\omega(a^*b)}{\omega(a^*a)}.
@@ -251,7 +251,7 @@ $$
 
 where the final equality follows from our previous result $$\mathcal{N} = \mathcal{N}_1$$. This proves that $$n$$ is an element of $$\mathcal{N}_1$$ and thus, as a consequence of our previous result $$\mathcal{N}_1 = \mathcal{N}$$, that $$n$$ is an element of $$\mathcal{N}$$. This establishes that $$\mathcal{N}$$ is closed, proving the second and final desired result, $$\mathcal{N}$$ is a closed subspace of $$\mathfrak{U}$$. $$\blacksquare$$
 
-As we have established that $$\mathcal{N}$$ is a closed, linear subspace of $$\mathfrak{U}$$, we can now take the quotient of $$\mathfrak{U}$$ by $$\mathcal{N}$$. Elements of thie quotient $$\mathfrak{U} / \mathcal{N}$$ are equivalence classes of the form
+As we have established that $$\mathcal{N}$$ is a closed, linear subspace of $$\mathfrak{U}$$, we can now take the quotient of $$\mathfrak{U}$$ by $$\mathcal{N}$$. Elements of the quotient $$\mathfrak{U} / \mathcal{N}$$ are equivalence classes of the form
 
 $$
 [a] \equiv \{ a + n : n \in \mathcal{N} \}
@@ -283,7 +283,7 @@ $$
 \left<[a], [b]\right> \equiv \omega(a^*b)
 $$
 
-on $$\mathfrak{U} / \mathcal{N}$$ doesn't suffer from the same problem of our naive inner product on $$\mathfrak{U}$$ did. In particular, one can easilly prove
+on $$\mathfrak{U} / \mathcal{N}$$ doesn't suffer from the same problem of our naive inner product on $$\mathfrak{U}$$ did. In particular, one can easily prove
 
 $$
 \left<[a], [a]\right> = 0
@@ -335,7 +335,7 @@ $$
 \phi(a) \equiv \frac{\omega(z^*az)}{\omega(z^*z)}.
 $$
 
-One can easilly check that $$\phi$$ defines a state on $$\mathfrak{U}$$ as it is linear, positive
+One can easily check that $$\phi$$ defines a state on $$\mathfrak{U}$$ as it is linear, positive
 
 $$
 \phi(c^*c) = \frac{\omega(z^*(c^*c)z)}{\omega(z^*z)} = \frac{\omega((cz)^*(cz))}{\omega(z^*z)} \ge 0
@@ -429,12 +429,12 @@ $$
 
 claimed in the GNS Construction Theorem.
 
-## Faithfullness of the GNS Representation
+## Faithfulness of the GNS Representation
 Now we are going to prove the \*-representation $$\pi_\omega$$ is faithful if $$\omega$$ is a faithful state.
 
 For this section of the proof, assume that $$\omega$$ is a faithful state.
 
-To prove that $$\pi_\omega$$ is faithful representation, we must prove that $$\ker \pi_\omega = \{0\}$$. In other words, we must prove that $$\pi_\omega(a) = 0$$ implies that $$a=0$$.
+To prove that $$\pi_\omega$$ is a faithful representation, we must prove that $$\ker \pi_\omega = \{0\}$$. In other words, we must prove that $$\pi_\omega(a) = 0$$ implies that $$a=0$$.
 
 Assume that $$\pi_\omega(a) = 0$$. Thus we have
 
@@ -451,7 +451,7 @@ $$
 where we have employed the C\*-norm property. This in turn implies $$\|a\|=0$$ which implies $$a=0$$. This in turn implies $$\ker \pi_\omega = \{0\}$$, which proves that if $$\omega$$ is faithful, then $$\pi_\omega$$ is faithful, the desired result.
 
 ## Uniqueness up to Unitary Equivalence
-Finally to complete the proof of the GNS Construction Theorem we now prove that the GNS triple associated to $$(\mathfrak{U}, \omega)$$ is is unique up to unitary equivalence.
+Finally to complete the proof of the GNS Construction Theorem we now prove that the GNS triple associated to $$(\mathfrak{U}, \omega)$$ is unique up to unitary equivalence.
 
 To that end let $$(\mathcal{H}_\omega', \pi_\omega', \Omega')$$ be a second GNS triple associated to $$(\mathfrak{U}, \omega)$$. (This implies, in particular, that the inner product on $$\mathcal{H}_\omega'$$ is given by $$\omega$$.) Then define an operator $$U$$ by
 
@@ -538,6 +538,6 @@ This concludes the proof of the GNS Construction Theorem,
 > 
 > The triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega)$$ is called the *GNS triple associated to $$(\mathfrak{U}, \omega)$$* or the *cyclic representation of $$(\mathfrak{U}, \omega)$$*. Furthermore, if $$\omega$$ is a faithful state, then the \*-representation $$\pi_\omega$$ is faithful. In addition the GNS triple associated to $$(\mathfrak{U}, \omega)$$ is unique up to unitary equivalence.
 
-The reason we provided such detail is that we will have need not only of the theorem, but also of the details of the theorem's proof in subsequent blogs posts.
+The reason we provided such detail is that we will have need not only of the theorem, but also of the details of the theorem's proof in subsequent blog posts.
 
 [^1]: Note $$\mathfrak{U}$$ is an abstract C\*-algebra and need not be a quasilocal algebra or in any way associated with an AQFT.
