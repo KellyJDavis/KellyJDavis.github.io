@@ -6,6 +6,8 @@ categories: aqft
 
 In this blog post we will state and prove the GNS Construction Theorem, which we make extensive use of in subsequent blog posts.
 
+In this blog post generally we follow the clear, straightforward presentation in [Entanglement in Algebraic Quantum Field Theories](https://arxiv.org/abs/2410.16599).
+
 # GNS Construction Theorem
 In this section we will state the GNS Construction Theorem, which we prove in subsequent sections.
 
@@ -69,7 +71,7 @@ $$
 \mathcal{N} \equiv \{ n \in \mathfrak{U} : \omega(n^*n) = 0 \}.
 $$
 
-Generically $$\omega$$ isn't faithful. Thus $$\mathcal{N}$$ there exist non-zero $$n$$ in $$\mathcal{N}$$. For such $$n$$ one has
+Generically $$\omega$$ isn't faithful. Thus in $$\mathcal{N}$$ there exist non-zero $$n$$. For such $$n$$ one has
 
 $$
 \left< n, n \right> \equiv \omega(n^*n) = 0.
@@ -247,7 +249,7 @@ $$
 \omega\left(b^*n\right) = \omega\left(b^*(\lim\limits_{i \rightarrow \infty} n_i)\right) = \lim\limits_{i \rightarrow \infty} \omega(b^*n_i) = 0,
 $$
 
-where the final equality follows from our previous result $$\mathcal{N} = \mathcal{N}_1$$. This proves that $$n$$ is an element of $$\mathcal{N}_1$$ and thus, as a result of our previous proof that $$\mathcal{N}_1 = \mathcal{N}$$, that $$n$$ is an element of $$\mathcal{N}$$. This establishes that $$\mathcal{N}$$ is closed, proving the second and final desired result, $$\mathcal{N}$$ is a closed subspace of $$\mathfrak{U}$$. $$\blacksquare$$
+where the final equality follows from our previous result $$\mathcal{N} = \mathcal{N}_1$$. This proves that $$n$$ is an element of $$\mathcal{N}_1$$ and thus, as a consequence of our previous result $$\mathcal{N}_1 = \mathcal{N}$$, that $$n$$ is an element of $$\mathcal{N}$$. This establishes that $$\mathcal{N}$$ is closed, proving the second and final desired result, $$\mathcal{N}$$ is a closed subspace of $$\mathfrak{U}$$. $$\blacksquare$$
 
 As we have established that $$\mathcal{N}$$ is a closed, linear subspace of $$\mathfrak{U}$$, we can now take the quotient of $$\mathfrak{U}$$ by $$\mathcal{N}$$. Elements of thie quotient $$\mathfrak{U} / \mathcal{N}$$ are equivalence classes of the form
 
@@ -302,7 +304,7 @@ $$
 
 where $$[z]$$ is an arbitrary element of $$\mathfrak{U} / \mathcal{N}$$.
 
-This definition of $$\pi_\omega$$ on $$\mathfrak{U} / \mathcal{N}$$ is well-defined as for any other member of the equivalence class $$[z]$$ of the form $$z + n$$ one has
+This definition of $$\pi_\omega$$ on $$\mathfrak{U} / \mathcal{N}$$ is well-defined as for any other member of the equivalence class $$[z]$$ of the form $$[z + n]$$ one has
 
 $$
 \pi_\omega(a)[z + n] = [az + an] = [az],
@@ -310,9 +312,7 @@ $$
 
 where the second equality follows from our previous result $$\mathcal{N}_1 = \mathcal{N}$$. In other words, $$\pi_\omega$$ is well-defined as $$\mathcal{N}$$ is a left-ideal in $$\mathfrak{U}$$.
 
-Furthermore, it trivially follows from the definition of $$\pi_\omega$$ that it is a linear and an algebraic morphism.
-
-So it remains to prove that $$\pi_\omega$$ is bounded and also a \*-morphism. 
+Furthermore, it trivially follows from the definition of $$\pi_\omega$$ that it is linear and an algebraic morphism. So it remains to prove that $$\pi_\omega$$ is bounded and also a \*-morphism. 
 
 Let us first prove that $$\pi_\omega$$ is bounded.
 
@@ -471,12 +471,12 @@ $$
 
 we find that $$U$$ preserves the inner product and is thus bounded. Furthermore, as $$U$$ preserves the inner product on its dense domain and dense range, it's also unitary there.
 
-As $$U$$ is bounded on its dense domain the Bounded Linear Transformation Theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+As $$U$$ is bounded on its dense domain, the Bounded Linear Transformation Theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
 > **Theorem** *(Bounded Linear Transformation Theorem)*
 > *Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.*
 
-can be used to extend the domain of $$U$$ to all of $$\mathcal{H}_\omega$$. This gives a well-defined, unitary map from $$\mathcal{H}_\omega$$ to $$\mathcal{H}_\omega'$$ that we denote by $$U : \mathcal{H}_\omega \rightarrow \mathcal{H}_\omega'$$.
+can be used to extend the domain of $$U$$ to all of $$\mathcal{H}_\omega$$. This gives a well-defined, unitary map from $$\mathcal{H}_\omega$$ to $$\mathcal{H}_\omega'$$ that we also denote by $$U : \mathcal{H}_\omega \rightarrow \mathcal{H}_\omega'$$.
 
 Now, the definition of $$U$$
 
@@ -519,3 +519,25 @@ $$
 $$
 
 proving that two GNS triples associated to $$(\mathfrak{U}, \omega)$$ can differ at most by a unitary transformation, completing our proof of the GNS Construction Theorem. $$\blacksquare$$
+
+# Summary
+This concludes the proof of the GNS Construction Theorem, 
+
+> **Theorem** *(GNS Construction Theorem)*
+> Let $$\omega$$ be a state over a unital C\*-algebra $$\mathfrak{U}$$. One can then construct a Hilbert space $$\mathcal{H}_\omega$$ and \*-representation $$\pi_\omega$$ of $$\mathfrak{U}$$ by bounded operators on $$\mathcal{H}_\omega$$ such that
+>
+> $$
+> \pi_\omega(a^*) = \pi_\omega(a)^\dagger.
+> $$
+> 
+> As $$\mathfrak{U}$$ is unital, there exists a cyclic vector $$\Omega$$ in $$\mathcal{H}_\omega$$ for the representation $$\pi_\omega$$ such that
+> 
+> $$
+> \omega(a) = \left<\Omega, \pi_\omega(a)\Omega\right>_{\mathcal{H}_\omega}.
+> $$
+> 
+> The triple $$(\mathcal{H}_\omega, \pi_\omega, \Omega)$$ is called the *GNS triple associated to $$(\mathfrak{U}, \omega)$$* or the *cyclic representation of $$(\mathfrak{U}, \omega)$$*. Furthermore, if $$\omega$$ is a faithful state, then the \*-representation $$\pi_\omega$$ is faithful. In addition the GNS triple associated to $$(\mathfrak{U}, \omega)$$ is unique up to unitary equivalence.
+
+The reason we provided such detail is that we will have need not only of the theorem, but also of the details of the theorem's proof in subsequent blogs posts.
+
+[^1]: Note $$\mathfrak{U}$$ is an abstract C\*-algebra and need not be a quasilocal algebra or in any way associated with an AQFT.
