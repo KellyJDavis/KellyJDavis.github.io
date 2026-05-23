@@ -187,7 +187,7 @@ $$
 \lambda = -r \overline{\omega(a^*b)}
 $$
 
-where $$0 < r$$ is an arbitrary non-negative real number. Then the previous inequality takes the form
+where $$0 < r$$ is an arbitrary positive real number. Then the previous inequality takes the form
 
 $$
 \begin{align}
@@ -492,13 +492,7 @@ $$
 0 = \left<\pi_\omega(a)\Omega, \pi_\omega(a)\Omega\right> = \omega(a^*a).
 $$
 
-As $$\omega$$ is assumed faithful in this section of the proof, this implies that $$a^*a=0$$. Hence,
-
-$$
-0 = \|a^*a\| = \|a\|^2,
-$$
-
-where we have employed the C\*-norm property. This in turn implies $$\|a\|=0$$ which implies $$a=0$$. This in turn implies $$\ker \pi_\omega = \{0\}$$, which proves that if $$\omega$$ is faithful, then $$\pi_\omega$$ is faithful, the desired result.
+As $$\omega$$ is assumed faithful in this section of the proof, this implies that $$a=0$$. This in turn implies $$\ker \pi_\omega = \{0\}$$, which proves that if $$\omega$$ is faithful, then $$\pi_\omega$$ is faithful, the desired result.
 
 ## Uniqueness up to Unitary Equivalence
 Finally to complete the proof of the GNS Construction Theorem we now prove that the GNS triple associated to $$(\mathfrak{U}, \omega)$$ is unique up to unitary equivalence.
@@ -562,13 +556,40 @@ $$
 \left< U\pi_\omega(a)U^{-1}\Omega', \pi_\omega(b)'\Omega' \right>' = \left<\pi_\omega(a)'\Omega', \pi_\omega(b)'\Omega'\right>'.
 $$
 
-As a result of $$\Omega'$$ being cyclic, this implies
+This implies that
+
+$$
+U\pi_\omega(a)U^{-1}\Omega' = \pi_\omega(a)'\Omega'.
+$$
+
+To complete the proof we must first show that $$U\pi_\omega(a)U^{-1}$$ and $$\pi_\omega(a)'$$ agree not only on $$\Omega'$$, but also on $$\pi_\omega(c)'\Omega'$$, which as $$\Omega'$$ is cyclic is dense in $$\mathcal{H}_\omega'$$. This can then be used along with the Bounded Linear Transformation Theorem to prove that $$U\pi_\omega(a)U^{-1}$$ and $$\pi_\omega(a)'$$ agree on $$\mathcal{H}_\omega'$$.
+
+Let us first prove that $$U\pi_\omega(a)U^{-1}$$ and $$\pi_\omega(a)'$$ agree on $$\pi_\omega(c)'\Omega'$$. We have
+
+$$
+\begin{align}
+U\pi_\omega(a)U^{-1} \pi_\omega(c)'\Omega' &= U\pi_\omega(a)U^{-1} U\pi_\omega(c)U^{-1} \Omega' \\
+                                           &= U\pi_\omega(a)\pi_\omega(c)U^{-1} \Omega' \\
+                                           &= U\pi_\omega(ac)U^{-1} \Omega' \\
+                                           &= \pi_\omega(ac)' \Omega' \\
+                                           &= \pi_\omega(a)'\pi_\omega(c)' \Omega'
+\end{align}
+$$
+
+Thus $$U\pi_\omega(a)U^{-1}$$ and $$\pi_\omega(a)'$$ agree on $$\pi_\omega(c)'\Omega'$$.
+
+As $$\Omega'$$ is cyclic, $$\pi_\omega(c)'\Omega'$$ is dense in $$\mathcal{H}_\omega'$$, and thus the  Bounded Linear Transformation Theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) 
+
+> **Theorem** *(Bounded Linear Transformation Theorem)*
+> *Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.*
+
+an be invoked to prove that $$U\pi_\omega(a)U^{-1}$$ and $$\pi_\omega(a)'$$ agree on $$\mathcal{H}_\omega'$$, proving that
 
 $$
 \pi_\omega(a)' = U\pi_\omega(a)U^{-1},
 $$
 
-proving that two GNS triples associated to $$(\mathfrak{U}, \omega)$$ can differ at most by a unitary transformation, completing our proof of the GNS Construction Theorem. $$\blacksquare$$
+and two GNS triples associated to $$(\mathfrak{U}, \omega)$$ can differ at most by a unitary transformation, completing our proof of the GNS Construction Theorem. $$\blacksquare$$
 
 # Summary
 This concludes the proof of the GNS Construction Theorem:
