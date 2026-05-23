@@ -32,7 +32,7 @@ We will also have need of the term "cyclic vector".
 > 
 > is dense in $$\mathcal{H}$$.
 
-With this terminology we are then able to state the GNS Construction Theorem
+With this terminology we are then able to state the GNS Construction Theorem.
 
 > **Theorem** *(GNS Construction Theorem)*
 > Let $$\omega$$ be a state over a unital C\*-algebra $$\mathfrak{U}$$. One can then construct a Hilbert space $$\mathcal{H}_\omega$$ and \*-representation $$\pi_\omega$$ of $$\mathfrak{U}$$ by bounded operators on $$\mathcal{H}_\omega$$ such that
@@ -127,7 +127,7 @@ $$
 
 We will prove these one-by-one. Let us first prove this inequality implies $$\omega(a^*b) = \overline{\omega(b^*a)}$$.
 
-Notice that the inequality is between two real numbers, $$0$$ and the righthand side. As $$\omega$$ is positive, the first and last summands on the righthand side are obviously real. This then implies
+Notice that the inequality is between two real numbers, $$0$$ and the right-hand side. As $$\omega$$ is positive, the first and last summands on the right-hand side are obviously real. This then implies
 
 $$
 \overline{\lambda}\omega(a^*b) + \lambda\omega(b^*a) \in \mathbb{R}.
@@ -149,7 +149,7 @@ $$
 
 implies $$\lvert \omega(a^*b) \rvert^2 \le \omega(a^*a) \omega(b^*b)$$.
 
-Again, as $$\lambda$$ is arbitrary, we are free to choose it to extremize the righthand side of the inequality. Extremizing the righthand of this inequality with respect to $$\overline{\lambda}$$ and assuming $$\omega(a^*a) \ne 0$$ one finds at the extrema
+Again, as $$\lambda$$ is arbitrary, we are free to choose it to extremize the right-hand side of the inequality. Extremizing the right-hand of this inequality with respect to $$\overline{\lambda}$$ and assuming $$\omega(a^*a) \ne 0$$ one finds at the extrema
 
 $$
 \lambda = - \frac{\omega(a^*b)}{\omega(a^*a)}.
@@ -196,7 +196,7 @@ $$
 \end{align}
 $$
 
-Now if we assume for the moment that $$0 < \lvert \omega(a^*b) \rvert$$, then we can always select $$0 < r$$ large enough such that this inequality if violated, the $$-2r \lvert \omega(a^*b) \rvert^2$$ term dominating the $$\omega(b^*b)$$ term. Hence, it must be the case that $$\lvert \omega(a^*b) \rvert = 0$$.
+Now if we assume for the moment that $$0 < \lvert \omega(a^*b) \rvert$$, then we can always select $$0 < r$$ large enough such that this inequality is violated, the $$-2r \lvert \omega(a^*b) \rvert^2$$ term dominating the $$\omega(b^*b)$$ term. Hence, it must be the case that $$\lvert \omega(a^*b) \rvert = 0$$.
 
 Now we have $$\omega(a^*a) = 0$$ and $$\lvert \omega(a^*b) \rvert = 0$$. Hence, the desired inequality
 
@@ -320,7 +320,7 @@ $$
 \left<[a], [b]\right> \equiv \omega(a^*b)
 $$
 
-on $$\mathfrak{U} / \mathcal{N}$$ doesn't suffer from the same problem of our naive inner product on $$\mathfrak{U}$$ did. In particular, one can easily prove
+on $$\mathfrak{U} / \mathcal{N}$$ doesn't suffer from the same problem that our naive inner product on $$\mathfrak{U}$$ did. In particular, one can easily prove
 
 $$
 \left<[a], [a]\right> = 0
@@ -383,7 +383,7 @@ as a result of $$\omega$$ being positive.
 Now as $$\phi$$ is a positive, linear function on the unital C\*-algebra $$\mathfrak{U}$$ we can invoke the theorem (Chapter III Theorem 2.2.9 of [Haag](https://doi.org/10.1007/978-3-642-61458-3))
 
 > **Theorem**
-> A positive, linear operator $$\phi$$ on a unital Banch \*-algebra $$\mathcal{A}$$ is bounded and satisfies
+> A positive, linear operator $$\phi$$ on a unital Banach \*-algebra $$\mathcal{A}$$ is bounded and satisfies
 >
 > $$
 > \|\phi\| = \phi(\mathbf{1})
@@ -571,7 +571,7 @@ $$
 proving that two GNS triples associated to $$(\mathfrak{U}, \omega)$$ can differ at most by a unitary transformation, completing our proof of the GNS Construction Theorem. $$\blacksquare$$
 
 # Summary
-This concludes the proof of the GNS Construction Theorem, 
+This concludes the proof of the GNS Construction Theorem:
 
 > **Theorem** *(GNS Construction Theorem)*
 > Let $$\omega$$ be a state over a unital C\*-algebra $$\mathfrak{U}$$. One can then construct a Hilbert space $$\mathcal{H}_\omega$$ and \*-representation $$\pi_\omega$$ of $$\mathfrak{U}$$ by bounded operators on $$\mathcal{H}_\omega$$ such that
