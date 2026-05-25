@@ -416,6 +416,48 @@ The next result we need to establish on the road to proving that $$\alpha_L$$ is
 > $$ 
 
 **Proof**
+Recall the followiing lemma (Lemma 8.1 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+
+> **Lemma**
+> If $$a_1$$ is a self-adjoint member of a C\*-algebra, then its norm $$\|a_1\|$$ is equivalent to its spectral radius $$r(a_1)$$, i.e.
+> 
+> $$
+> \|a_1\| = r(a_1)
+> $$
+
+Hence,
+
+$$
+\|a_1\| = r(a_1)
+$$
+
+as a result of this lemma.
+
+As $$\alpha$$ is a \*-morphism and $$a_1$$ is self-adjoint
+
+$$
+\alpha(a_1) = \alpha(a_1^*) = \alpha(a_1)^*,
+$$
+
+i.e. $$\alpha(a_1)$$ is also self-adjoint. Hence, the previous lemma implies
+
+$$
+\|\alpha(a_1)\| = r(\alpha(a_1)).
+$$
+
+Now the definition of spectral radius along with our Spectral Contraction Theorem imply
+
+$$
+r(\alpha(a_1)) \equiv \sup\{|\lambda| : \lambda \in \sigma(\alpha(a_1))\} \le \sup\{|\lambda| : \lambda \in \sigma(a_1)\} \equiv r(a_0).
+$$
+
+Thus $$r(\alpha(a_1)) \le r(a_0)$$. This along with $$\|\alpha(a_1)\| = r(\alpha(a_1))$$ and $$\|a_1\| = r(a_1)$$ implies
+
+$$
+\|\alpha(a_1)\| \le \|a_1\|,
+$$
+
+the desired result. $$\blacksquare$$
 
 
 ### Definition of Global, Isometric Invariant States
