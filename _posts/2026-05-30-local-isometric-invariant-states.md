@@ -197,21 +197,21 @@ In this section we will examine various types of states with the goal of eventua
 Before introducting the various states associated with AQFT, we will take a moment to remind the reader of the definition of an abstract C\*-algebra state that was introduced in the blog post [GNS Construction Theorem](https://kellyjdavis.github.io/aqft/gns-construction/)
 
 > **Definition** *(State)*
-> Let $$\mathcal{C}$$ be an abstract C\*-algebra. A *state* is an element $$\omega$$ of the dual space $$\mathcal{C}^*$$ that is
+> Let $$\mathfrak{S}$$ be an abstract C\*-algebra. A *state* is an element $$\omega$$ of the dual space $$\mathfrak{S}^*$$ that is
 > 
-> * *Positive* - for any $$a \in \mathcal{C}$$ we have $$0 \le \omega(a^*a)$$ and
+> * *Positive* - for any $$a \in \mathfrak{S}$$ we have $$0 \le \omega(a^*a)$$ and
 > * *Normalized* - the operator norm satisfies $$\| \omega \|=1$$.
 > 
-> Furthermore, a state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathcal{C}$$, it follows that $$0 < \omega(a^*a)$$.
+> Furthermore, a state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{S}$$, it follows that $$0 < \omega(a^*a)$$.
 
 This definition is critical; all subsequent notions of state associated with AQFT are built upon it.
 
 ## States of Algebraic Quantum Field Theory in Minkowski Spacetime
-The various states associated with AQFT in Minkowski spacetime all follow "naturally" from the notion of an abstract C\*-algebra state.
+In this section we detail how some notions of state in AQFT in Minkowski spacetime follow "naturally" from the notion of state for an abstract C\*-algebra.
 
-"Local states" are simply abstract C\*-algebra states associated to a local algebra $$\mathfrak{U}(\mathbf{B})$$, where $$\mathbf{B}$$ is a basis element of the Alexandrov topology in Minkowski spacetime. Similarly, "global states" are abstract C\*-algebra states associated to the quasilocal algebra $$\mathfrak{U}$$.
+"Local states" in AQFT on Minkowski spacetime are simply abstract C\*-algebra states associated to a local algebra $$\mathfrak{U}(\mathbf{B})$$, where $$\mathbf{B}$$ is a basis element of the Alexandrov topology in Minkowski spacetime. Similarly, "global states" there are abstract C\*-algebra states associated to the quasilocal algebra $$\mathfrak{U}$$.
 
-These are "simple" extensions of the notion of an abstract C\*-algebra state. These "simple" extensions start to become interesting when we examine how they behave under isometries. 
+These are "simple" extensions of the notion of an abstract C\*-algebra state. These extensions start to become interesting only when we examine how they behave under isometries. 
 
 ### Local States of Algebraic Quantum Field Theory in Minkowski Spacetime
 Formally a "local state" of AQFT in Minkowski Spacetime is defined as follows
@@ -249,7 +249,7 @@ The states associated to AQFT in Lorentzian spacetime also follow "naturally" fr
 "Local states" are abstract C\*-algebra states associated to a local algebra. And in contrast to Minkowski spacetime, there exists no notion of "global states" in Lorentzian spacetime as there exists no quasilocal algebra associated with a general Lorentzian spacetime.
 
 ### Local States of Algebraic Quantum Field Theory in Lorentzian Spacetime
-The formal definition of a "local state" of AQFT in a Lorentzian spacetime is
+Formally a "local state" of AQFT in a Lorentzian spacetime is
 
 > **Definition** *(Local State)*
 > Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology in a Lorentzian spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, and $$\mathfrak{U}(\mathbf{B})$$ its associated abstract C\*-algebra.
@@ -261,10 +261,14 @@ The formal definition of a "local state" of AQFT in a Lorentzian spacetime is
 > 
 > Furthermore, a local state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}(\mathbf{B})$$, it follows that $$0 < \omega(a^*a)$$.
 
-So a local state is "simply" an abstract C\*-algebra state associated to a local algebra $$\mathfrak{U}(\mathbf{B})$$. Furthermore, as there exists no quasilocal algebra associated with a general Lorentzian spacetime, there is no such thing as a "global state" on a generic Lorentzian spacetime.
+So a local state is just an abstract C\*-algebra state associated to a local algebra $$\mathfrak{U}(\mathbf{B})$$. Furthermore, as there exists no quasilocal algebra associated with a general Lorentzian spacetime, there is no such thing as a "global state" on a generic Lorentzian spacetime.
 
 # Introduction to Isometric Invariant States
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et dui nisl. Aliquam a erat eget metus commodo viverra et ut orci. Duis vitae leo ultricies purus feugiat rhoncus. In imperdiet, tortor quis tincidunt ultrices, orci diam aliquam sapien, eu laoreet erat dui id massa. Donec venenatis vitae velit malesuada euismod. Nunc euismod, turpis non gravida commodo, massa quam rutrum massa, sit amet venenatis tellus dui ac odio. Vestibulum ut porttitor ipsum. Nunc eget ultricies eros. Integer leo odio, vulputate ut sagittis at, vestibulum ac massa. In vulputate bibendum nisl, ut vestibulum lorem cursus et.
+Finally, we've reached the "core" of this blog post, the study of "isometric invariant states". As one might guess, "isometric invariant states" are local or global states that are "invariant" under isometries of the ambient spacetime.
+
+These states are interesting for many reasons. For example, they are a canonical example of how to create a state "invariant" under a given classical symmetry. Critically, "isometric invariant states", with some additionaly properties, can also serve as AQFT vacua. In addition, they provide a laboratory in which to examine aspects of spontaneous symmetry breaking: e.g., Are the classical spacetime isometries broken by a quantum state?
+
+With that as motivation, let us jump right in!
 
 ## Global, Isometric Invariant States in Minkowski Spacetime
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et dui nisl. Aliquam a erat eget metus commodo viverra et ut orci. Duis vitae leo ultricies purus feugiat rhoncus. In imperdiet, tortor quis tincidunt ultrices, orci diam aliquam sapien, eu laoreet erat dui id massa. Donec venenatis vitae velit malesuada euismod. Nunc euismod, turpis non gravida commodo, massa quam rutrum massa, sit amet venenatis tellus dui ac odio. Vestibulum ut porttitor ipsum. Nunc eget ultricies eros. Integer leo odio, vulputate ut sagittis at, vestibulum ac massa. In vulputate bibendum nisl, ut vestibulum lorem cursus et.
