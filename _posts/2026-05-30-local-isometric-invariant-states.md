@@ -46,7 +46,7 @@ The second axiom takes the following form:
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
 > 
-> a unital, injective \*-homomorphism.
+> a unital \*-monomorphism.
 
 Before stating the next axiom, we need to introduce some terminology that appears therein.
 
@@ -137,7 +137,7 @@ The second axiom can be immediately stated:
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
 > 
-> a unital, injective \*-homomorphism.
+> a unital \*-monomorphism.
 
 The next axiom makes use of the following definitions:
 
