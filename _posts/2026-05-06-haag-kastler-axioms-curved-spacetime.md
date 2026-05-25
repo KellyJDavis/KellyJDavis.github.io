@@ -97,7 +97,7 @@ The second axiom takes the following form:
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
 > 
-> a unital, injective \*-homomorphism.
+> a unital \*-monomorphism.
 
 
 ## Axiom 3 (Local Commutativity)
@@ -152,7 +152,7 @@ Finally we can state the last axiom
 > \end{align}
 > $$
 > 
-> where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital, bijective *-homomorphism.
+> where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital *-isomorphism.
 
 
 # Haag Kastler Axioms in Curved Spacetime
@@ -251,7 +251,7 @@ The second axiom takes the following form:
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
 > 
-> a unital, injective \*-homomorphism.
+> a unital \*-monomorphism.
 
 
 ## Axiom 3 (Local Commutativity)
@@ -353,7 +353,7 @@ So in the current case of a Lorentzian spacetime what we should be using are iso
 > \end{align}
 $$
 > 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital, bijective *-homomorphism.
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital *-isomorphism.
 
 
 # Summary 
@@ -390,7 +390,7 @@ The second axiom can be immediately stated too.
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
 > 
-> a unital, injective \*-homomorphism.
+> a unital \*-monomorphism.
 
 The next axiom makes use of the following definitions:
 
@@ -439,7 +439,7 @@ The final axiom states:
 > \end{align}
 $$
 > 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital, bijective *-homomorphism.
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital *-isomorphism.
 
 Generally these axioms follow in a straightforward manner from those of AQFT in Minkowski spacetime. The only "surprise" in this presentation is the absence of a quasilocal algebra. However, as we found, its absence is simply a reflection of the observational constraints of Lorentzian spacetime which don't exist in Minkowski spacetime.
 
