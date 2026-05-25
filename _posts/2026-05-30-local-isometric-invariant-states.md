@@ -340,7 +340,7 @@ $$
 
 Furthermore, as a result of Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{B}_1), \mathfrak{U}(\mathbf{B}_2) \subset \mathfrak{U}(\mathbf{B})$$. As a result of continuity of the isometry $$L$$ we have $$\mathbf{LB}_1, \mathbf{LB}_2 \subset \mathbf{LB}$$ and thus as a result of  Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{LB}_1), \mathfrak{U}(\mathbf{LB}_2) \subset \mathfrak{U}(\mathbf{LB})$$.
 
-So as a result of all this the unital \*-isomorphism
+So as a result of all this, the unital \*-isomorphism
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(\mathbf{LB})
@@ -355,10 +355,68 @@ $$
 This general construction can be repeated a finite number of times, defining a linear map
 
 $$
-\alpha_L : \bigcup_{\mathbf{B}} \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup_{i \in \mathcal{T}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
-extending $$\alpha_L$$ to a linear map on the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. To apply the Bounded Linear Transformation Theorem to such an $$\alpha_L$$ we must further prove that $$\alpha_L$$ is bounded. It is to this we now turn.
+where $$\mathcal{T}$$ indexes all basis elements of the Alexandrov topology. This extends $$\alpha_L$$ to a linear map on the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. To apply the Bounded Linear Transformation Theorem to such an $$\alpha_L$$ we must further prove that $$\alpha_L$$ is bounded. It is to this we now turn.
+
+We begin this by proving the followiing result
+
+> **Theorem** *(Spectral Contraction)*
+> Let $$\mathfrak{U}_1$$ and $$\mathfrak{U}_2$$ be unital C\*-algebras, $$\alpha: \mathfrak{U}_1 \rightarrow \mathfrak{U}_2$$ a unital \*-morphism, and $$a_1$$ an arbitrary element of $$\mathfrak{U}_1$$.
+> 
+> Then it follows that
+>
+> $$
+> \sigma(\alpha(a_1)) \subseteq \sigma(a_1).
+> $$
+>
+> In other words, the specturm of $$\sigma(\alpha(a_1))$$ of $$\alpha(a_1)$$ in $$\mathfrak{U}_2$$ is a subset of the specturm $$\sigma(a_1)$$ of $$a_1$$ in $$\mathfrak{U}_1$$.
+
+**Proof**
+Consider $$\lambda \notin \sigma(a_1)$$. The definition of spectrum then implies that  $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})$$ is invertible in $$\mathfrak{U}_1$$. Let $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}$$ be than inverse. As $$\alpha$$ is a unital \*-morphism
+
+$$
+\begin{align}
+\alpha\left((a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})\right) \alpha\left((a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}\right)
+  &= \alpha\left((a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}\right) \\
+  &= \alpha(\mathbf{1}_{\mathfrak{U}_1}) \\
+  &= \mathbf{1}_{\mathfrak{U}_2}.
+\end{align}
+$$
+
+Similarly, as $$\alpha$$ is a unital \*-morphism
+
+$$
+\begin{align}
+\alpha\left((a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})\right)
+  &= \alpha(a_1) - \alpha(\lambda \mathbf{1}_{\mathfrak{U}_1}) \\
+  &= \alpha(a_1) - \lambda \alpha(\mathbf{1}_{\mathfrak{U}_1}) \\
+  &= \alpha(a_1) - \lambda \mathbf{1}_{\mathfrak{U}_2}.
+\end{align}
+$$
+
+Combining the previous two derivations
+
+$$
+\left( \alpha(a_1) - \lambda \mathbf{1}_{\mathfrak{U}_2} \right) \alpha\left((a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}\right) = \mathbf{1}_{\mathfrak{U}_2}.
+$$
+
+Thus, $$(\alpha(a_1) - \lambda \mathbf{1}_{\mathfrak{U}_2})$$ is invertible in $$\mathfrak{U}_2$$, and thus $$\lambda \notin \sigma(\alpha(a_1))$$. This then implies the desired result $$\sigma(\alpha(a_1)) \subseteq \sigma(a_1)$$. $$\blacksquare$$
+
+The next result we need to establish on the road to proving that $$\alpha_L$$ is bounded is the following
+
+> **Theorem**
+> Let $$\mathfrak{U}_1$$ and $$\mathfrak{U}_2$$ be unital C\*-algebras, $$\alpha: \mathfrak{U}_1 \rightarrow \mathfrak{U}_2$$ a unital \*-morphism, and $$a_1$$ an arbitrary self-adjoint element of $$\mathfrak{U}_1$$.
+> 
+> Then it follows that
+> 
+> $$
+> \|\alpha(a_1)\| \le \|a_1\|
+> $$ 
+
+**Proof**
+
 
 ### Definition of Global, Isometric Invariant States
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu placerat dolor. Integer dictum libero id lectus imperdiet, id semper orci interdum. Vestibulum sed nibh vel lorem ultricies egestas vitae sit amet mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque pretium magna id facilisis laoreet. Quisque neque purus, ultrices nec placerat sed, porta ut quam. Quisque molestie ornare purus ac eleifend. Vestibulum lectus massa, malesuada rhoncus mi non, auctor tincidunt mauris. Phasellus accumsan lectus quis orci suscipit, laoreet consequat nunc rhoncus. In efficitur mauris in convallis bibendum. Duis nisi erat, porta id accumsan non, dignissim quis elit.
