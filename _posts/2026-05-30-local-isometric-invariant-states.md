@@ -264,17 +264,17 @@ Formally a "local state" of AQFT in a Lorentzian spacetime is
 So a local state is just an abstract C\*-algebra state associated to a local algebra $$\mathfrak{U}(\mathbf{B})$$. Furthermore, as there exists no quasilocal algebra associated with a general Lorentzian spacetime, there is no such thing as a "global state" on a generic Lorentzian spacetime.
 
 # Introduction to Isometric Invariant States
-Finally, we've reached the "core" of this blog post, the study of "isometric invariant states". As one might guess, "isometric invariant states" are local or global states that are "invariant" under isometries of the ambient spacetime.
+Finally, we've reached the "core" of this blog post, the study of "isometric invariant" states. As one might guess, "isometric invariant" states are local or global states that are "invariant" under isometries of the ambient spacetime.
 
-These states are interesting for many reasons. For example, they are a canonical example of how to create a state "invariant" under a given classical symmetry. Critically, "isometric invariant states", with some additionaly properties, can also serve as AQFT vacua. In addition, they provide a laboratory in which to examine aspects of spontaneous symmetry breaking: e.g., Are the classical spacetime isometries broken by a quantum state?
+These states are interesting for many reasons. For example, they provide a canonical example of how one can create a state "invariant" under a given classical symmetry. Critically, "isometric invariant" states, with some additionaly properties, can also serve as AQFT vacua. In addition, they provide a laboratory in which to examine aspects of spontaneous symmetry breaking: e.g., Are the classical spacetime isometries broken by a quantum state?
 
 With that as motivation, let us jump right in!
 
 ## Global, Isometric Invariant States in Minkowski Spacetime
 We begin with global, "isometric invariant" states in Minkowski spacetime. They are, in some sense, the "simplest" "isometric invariant" states. However, a careful examination of such  global, "isometric invariant" states in Minkowski spacetime clarifies essentially all subtleties that arise in other cases.
 
-### Quasilocal Algebra Automorphism of a Isometry
-"Morally", an isometry $$L$$ of Minkowski spacetime should generate $$\alpha_L$$ an associated unital \*-automorphism of the quasilocal algebra $$\mathfrak{U}$$
+### Isometry of the Quasilocal Algebra
+"Morally" an isometry $$L$$ of Minkowski spacetime, in particular a member  of the inhomogeneous Lorentz group connected to the identity, should generate $$\alpha_L$$ an associated unital \*-automorphism of the quasilocal algebra $$\mathfrak{U}$$
 
 $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
@@ -307,9 +307,9 @@ $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
 $$
 
-isn't even defined. Out first task is thus defining this unital \*-automorphism.
+isn't defined by this axiom. Our first task, then, is to define this unital \*-automorphism.
 
-This task begins with the quasilocal algebra definition
+This task begins by recounting the quasilocal algebra definition
 
 **Definition** *(Quasilocal Algebra)*
 Consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. As proven in the blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)), this set-theoretic union is a normed \*-algebra. Also, as proven in the blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)), its completion yields a C\*-algebra, denoted as $$\mathfrak{U}$$. This C\*-algebra $$\mathfrak{U}$$ is called the *quasilocal algebra*.
@@ -321,7 +321,36 @@ This implies that the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ is
 
 to extend $$\alpha_L$$ to the entire quasilocal algebra, the desired result. It is to this argument we now turn.
 
-As a result of Axiom 5 (Lorentz Covariance), for any two basis element $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology on Minkowski spacetime we have
+The first step in this argument is to prove the following theorem 
+
+> **Theorem**
+> Let $$L$$ be any member of the inhomogeneous Lorentz group of Minkowski spacetime that is connected to the identity. Then there exists a map
+> 
+> $$
+> \alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+> $$
+> 
+> from the set theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ over the basis elements $$\mathbf{B}$$ of the Alexandrov topology on Minkowski spacetime to the quasilocal algebra $$\mathfrak{U}$$ such that: (1) The map $$\alpha_L$$ is linear; (2) The map $$\alpha_L$$ is bounded; and (3) The restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B})$$ 
+> 
+> $$
+> \begin{align} 
+> \left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B})} : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
+>                                                  a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B})}(a)
+> \end{align} 
+> $$
+> 
+> is the map that appears in Axiom 5 (Lorentz Covariance).
+
+**Proof**
+First we will prove that there exists a map
+
+$$
+\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+$$
+
+of the desired form that is linear.
+
+As a result of Axiom 5 (Lorentz Covariance), for any two basis element $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology on Minkowski spacetime we have maps
 
 $$
 \begin{align}
@@ -332,49 +361,59 @@ $$
 
 where $$\alpha_L$$ is a unital \*-isomorphism.
 
-As $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ are basis elements of the Alexandrov topology on Minkowski spacetime, there exists[^1] a basis element $$\mathbf{B}$$ such that $$\mathbf{B}_1, \mathbf{B}_2 \subset \mathbf{B}$$, where again Axiom 5 (Lorentz Covariance) implies
+As $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ are basis elements of the Alexandrov topology on Minkowski spacetime, there exists[^1] a basis element $$\mathbf{B}$$ such that $$\mathbf{B}_1, \mathbf{B}_2 \subset \mathbf{B}$$. Axiom 5 (Lorentz Covariance) implies that for such a $$\mathbf{B}$$ there exists a map
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(\mathbf{LB}).
 $$
 
-Furthermore, as a result of Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{B}_1), \mathfrak{U}(\mathbf{B}_2) \subset \mathfrak{U}(\mathbf{B})$$. As a result of continuity of the isometry $$L$$ we have $$\mathbf{LB}_1, \mathbf{LB}_2 \subset \mathbf{LB}$$ and thus as a result of  Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{LB}_1), \mathfrak{U}(\mathbf{LB}_2) \subset \mathfrak{U}(\mathbf{LB})$$.
+where $$\alpha_L$$ is a unital \*-isomorphism.
+
+Now, as a result of Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{B}_1), \mathfrak{U}(\mathbf{B}_2) \subset \mathfrak{U}(\mathbf{B})$$. As a result of continuity of the isometry $$L$$ we have $$\mathbf{LB}_1, \mathbf{LB}_2 \subset \mathbf{LB}$$ and thus as a result of  Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{LB}_1), \mathfrak{U}(\mathbf{LB}_2) \subset \mathfrak{U}(\mathbf{LB})$$.
 
 So as a result of all this, the unital \*-isomorphism
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(\mathbf{LB})
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(\mathbf{LB}),
 $$
 
-through restriction defines a linear map
+which by definition is a linear map, through restriction defines a linear map
 
 $$
 \alpha_L : \bigcup_{i \in \{1,2\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(\mathbf{LB}).
 $$
 
-This general construction can be repeated a finite number of times, defining a linear map
+This construction can be repeated inductively[^2] thus defining a linear map
 
 $$
-\alpha_L : \bigcup_{i \in \mathcal{T}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
 $$
 
-where $$\mathcal{T}$$ indexes all basis elements of the Alexandrov topology. This extends $$\alpha_L$$ to a linear map on the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. To apply the Bounded Linear Transformation Theorem to such an $$\alpha_L$$ we must further prove that $$\alpha_L$$ is bounded. It is to this we now turn.
+of the desired form, proving the first desired result. (Note here we have implicitly used the fact that by definition $$\mathfrak{U}$$ contains $$\mathfrak{U}(\mathbf{B})$$ for any basis element $$\mathbf{B}$$.)
 
-We begin this by proving the followiing result
+Second let us prove that the map that our map
 
-> **Theorem** *(Spectral Contraction)*
-> Let $$\mathfrak{U}_1$$ and $$\mathfrak{U}_2$$ be unital C\*-algebras, $$\alpha: \mathfrak{U}_1 \rightarrow \mathfrak{U}_2$$ a unital \*-morphism, and $$a_1$$ an arbitrary element of $$\mathfrak{U}_1$$.
+$$
+\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+$$
+
+is bounded.
+
+We begin this part of the proof by proving the following lemma
+
+> **Lemma** *(Spectral Equivalence)*
+> Let $$\mathfrak{U}_1$$ and $$\mathfrak{U}_2$$ be unital C\*-algebras, $$\alpha: \mathfrak{U} \rightarrow \mathfrak{U}_2$$ a unital \*-monomorphism where $$\mathfrak{U} \subseteq \mathfrak{U}_1$$, and $$a_1$$ an arbitrary element of $$\mathfrak{U}$$.
 > 
 > Then it follows that
 >
 > $$
-> \sigma(\alpha(a_1)) \subseteq \sigma(a_1).
+> \sigma(\alpha(a_1)) = \sigma(a_1).
 > $$
 >
-> In other words, the specturm of $$\sigma(\alpha(a_1))$$ of $$\alpha(a_1)$$ in $$\mathfrak{U}_2$$ is a subset of the specturm $$\sigma(a_1)$$ of $$a_1$$ in $$\mathfrak{U}_1$$.
+> In other words, the specturm of $$\sigma(\alpha(a_1))$$ of $$\alpha(a_1)$$ in $$\mathfrak{U}_2$$ is equivalent to the specturm $$\sigma(a_1)$$ of $$a_1$$ in $$\mathfrak{U}_1$$.
 
 **Proof**
-Consider $$\lambda \notin \sigma(a_1)$$. The definition of spectrum then implies that  $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})$$ is invertible in $$\mathfrak{U}_1$$. Let $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}$$ be than inverse. As $$\alpha$$ is a unital \*-morphism
+Consider $$\lambda \notin \sigma(a_1)$$. The definition of spectrum then implies that  $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})$$ is invertible in $$\mathfrak{U}_1$$. Let $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}$$ be that inverse. As $$\alpha$$ is a unital \*-monomorphism
 
 $$
 \begin{align}
@@ -385,7 +424,7 @@ $$
 \end{align}
 $$
 
-Similarly, as $$\alpha$$ is a unital \*-morphism
+Similarly, as $$\alpha$$ is a unital \*-monomorphism
 
 $$
 \begin{align}
@@ -402,17 +441,29 @@ $$
 \left( \alpha(a_1) - \lambda \mathbf{1}_{\mathfrak{U}_2} \right) \alpha\left((a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}\right) = \mathbf{1}_{\mathfrak{U}_2}.
 $$
 
-Thus, $$(\alpha(a_1) - \lambda \mathbf{1}_{\mathfrak{U}_2})$$ is invertible in $$\mathfrak{U}_2$$, and thus $$\lambda \notin \sigma(\alpha(a_1))$$. This then implies the desired result $$\sigma(\alpha(a_1)) \subseteq \sigma(a_1)$$. $$\blacksquare$$
+Thus, $$(\alpha(a_1) - \lambda \mathbf{1}_{\mathfrak{U}_2})$$ is invertible in $$\mathfrak{U}_2$$, and thus $$\lambda \notin \sigma(\alpha(a_1))$$. This then implies
+
+$$
+\sigma(\alpha(a_1)) \subseteq \sigma(a_1).
+$$
+
+Now as $$\alpha$$ is a unital \*-monomorphism, it is a unital \*-isomorphism when viewed as having range $$\alpha(\mathfrak{U})$$. It follows that $$\alpha^{-1}$$ with domain $$\alpha(\mathfrak{U})$$ is a unital \*-monomorphism, in fact is it a unital \*-isomorphism. Hence, we can repeat the above argument using $$\alpha^{-1}$$ with domain $$\alpha(\mathfrak{U})$$ to conclude
+
+$$
+\sigma(a_1) \subseteq \sigma(\alpha(a_1)).
+$$
+
+So, we have proven that $$\sigma(\alpha(a_1)) \subseteq \sigma(a_1)$$ and that $$\sigma(a_1) \subseteq \sigma(\alpha(a_1))$$. Together these imply the desired result $$\sigma(\alpha(a_1)) = \sigma(a_1)$$. $$\blacksquare$$
 
 The next result we need to establish on the road to proving that $$\alpha_L$$ is bounded is the following
 
-> **Theorem**
-> Let $$\mathfrak{U}_1$$ and $$\mathfrak{U}_2$$ be unital C\*-algebras, $$\alpha: \mathfrak{U}_1 \rightarrow \mathfrak{U}_2$$ a unital \*-morphism, and $$a_1$$ an arbitrary self-adjoint element of $$\mathfrak{U}_1$$.
+> **Lemma**
+> Let $$\mathfrak{U}_1$$ and $$\mathfrak{U}_2$$ be unital C\*-algebras, $$\alpha: \mathfrak{U} \rightarrow \mathfrak{U}_2$$ a unital \*-monomorphism where $$\mathfrak{U} \subset \mathfrak{U}_1$$, and $$a_1$$ an arbitrary self-adjoint element of $$\mathfrak{U}$$.
 > 
 > Then it follows that
 > 
 > $$
-> \|\alpha(a_1)\| \le \|a_1\|
+> \|\alpha(a_1)\| = \|a_1\|
 > $$ 
 
 **Proof**
@@ -433,7 +484,7 @@ $$
 
 as a result of this lemma.
 
-As $$\alpha$$ is a \*-morphism and $$a_1$$ is self-adjoint
+As $$\alpha$$ is a unital \*-monomorphism and $$a_1$$ is self-adjoint
 
 $$
 \alpha(a_1) = \alpha(a_1^*) = \alpha(a_1)^*,
@@ -445,25 +496,155 @@ $$
 \|\alpha(a_1)\| = r(\alpha(a_1)).
 $$
 
-Now the definition of spectral radius along with our Spectral Contraction Theorem imply
+Now the definition of spectral radius along with our Spectral Equivalence Theorem imply
 
 $$
-r(\alpha(a_1)) \equiv \sup\{|\lambda| : \lambda \in \sigma(\alpha(a_1))\} \le \sup\{|\lambda| : \lambda \in \sigma(a_1)\} \equiv r(a_0).
+r(\alpha(a_1)) \equiv \sup\{|\lambda| : \lambda \in \sigma(\alpha(a_1))\} = \sup\{|\lambda| : \lambda \in \sigma(a_1)\} \equiv r(a_0).
 $$
 
-Thus $$r(\alpha(a_1)) \le r(a_0)$$. This along with $$\|\alpha(a_1)\| = r(\alpha(a_1))$$ and $$\|a_1\| = r(a_1)$$ implies
+Thus $$r(\alpha(a_1)) = r(a_0)$$. This along with $$\|\alpha(a_1)\| = r(\alpha(a_1))$$ and $$\|a_1\| = r(a_1)$$ implies
 
 $$
-\|\alpha(a_1)\| \le \|a_1\|,
+\|\alpha(a_1)\| = \|a_1\|,
 $$
 
 the desired result. $$\blacksquare$$
 
+As proven in the blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)) the quasilocal algebra $$\mathfrak{U}$$ is a C\*-algebra. Also, by definition of the quasilocal algebra $$\mathfrak{U}$$
+
+$$
+\bigcup \mathfrak{U}(\mathbf{B}) \subseteq \mathfrak{U}.
+$$
+
+Furthermore, Axiom 2 (Isotony), Axiom 5 (Lorentz Covariance), and our construction of the map
+
+$$
+\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+$$
+
+imply that this map $$\alpha_L$$ is a unital *-monomorphism. Hence, we can apply the previous lemma to an arbitrary element $$a$$
+
+$$
+a \in \bigcup \mathfrak{U}(\mathbf{B})
+$$
+
+to conclude that $$\|\alpha_L(a)\|=\|a\|$$.
+
+Now, by definition
+
+$$
+\|\alpha_L\| \equiv \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} \|\alpha_L(a)\|.
+$$
+
+Using the result $$\|\alpha_L(a)\|=\|a\|$$ of the last paragraph this becomes
+
+$$
+\begin{align}
+\|\alpha_L\|
+  &\equiv \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} \|\alpha_L(a)\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} \|a\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} 1 \\
+  &= 1.
+\end{align}
+$$
+
+In other words $$\|\alpha_L\|=1$$ and thus $$\alpha_L$$ is bounded, the second desired result.
+
+The final desired result---i.e. the restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B})$$ 
+
+$$
+\begin{align} 
+\left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B})} : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
+                                                 a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B})}(a)
+\end{align} 
+$$
+
+is the map that appears in Axiom 5 (Lorentz Covariance)---follows obviously from our construction of $$\alpha_L$$. $$\blacksquare$$
+
+So, as we have established that our $$\alpha_L$$ is linear, bounded, and reduces to $$\alpha_L$$ from Axiom 5 (Lorentz Covariance) in the correct limit, then we can apply the Bounded Linear Transformation Theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+
+> **Theorem** *(Bounded Linear Transformation Theorem)*
+> *Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.*
+
+to extend
+
+$$
+\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+$$
+
+to
+
+$$
+\alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
+$$
+
+as a unital *-automorphism, the map this section has been building towards.
 
 ### Definition of Global, Isometric Invariant States
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu placerat dolor. Integer dictum libero id lectus imperdiet, id semper orci interdum. Vestibulum sed nibh vel lorem ultricies egestas vitae sit amet mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque pretium magna id facilisis laoreet. Quisque neque purus, ultrices nec placerat sed, porta ut quam. Quisque molestie ornare purus ac eleifend. Vestibulum lectus massa, malesuada rhoncus mi non, auctor tincidunt mauris. Phasellus accumsan lectus quis orci suscipit, laoreet consequat nunc rhoncus. In efficitur mauris in convallis bibendum. Duis nisi erat, porta id accumsan non, dignissim quis elit.
+As we have established the definition of the unital *-automorphism
 
-Nunc rhoncus, velit at rutrum bibendum, dolor est viverra sem, a vestibulum ex enim ut nulla. Maecenas iaculis hendrerit vulputate. Curabitur a condimentum dolor. In pharetra, arcu sit amet feugiat aliquet, nibh turpis maximus sem, sed vestibulum urna dui id mi. Sed at pretium ligula, nec efficitur odio. Aenean gravida purus et iaculis scelerisque. Morbi accumsan quis sapien eget luctus. Cras volutpat nunc et nulla interdum, eget consectetur orci porta. Nullam posuere diam nisi, eget ultricies dui molestie vel. Nam vitae dapibus mi. Morbi quis nibh leo. Nunc sagittis, mi sed fringilla pulvinar, felis justo sollicitudin ipsum, id fringilla felis massa venenatis dolor. Duis at ante a elit imperdiet tincidunt ut non mauris. Cras in aliquet nisl, id vehicula mi.
+$$
+\alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
+$$
+
+corresponding to any member $$L$$ of the inhomogeneous Lorentz group of Minkowski spacetime that is connected to the identity, we are now in the position to define a global "isometric invariant" states
+
+> **Definition** *(Global Isometric Invariant State)*
+> Let $$\mathfrak{U}$$ be the quasilocal algebra associated with Minkowski spacetime.
+>
+> A *global isometric invariant state* is global state $$\omega$$ such that for any $$a$$ in the quasilocal algebra $$\mathfrak{U}$$ and any $$L$$ in the inhomogeneous Lorentz group of connected to the identity one has
+>
+> $$
+> \omega(a) = \omega(\alpha_L(a)) 
+> $$
+>
+> where $$\alpha_L$$ is the unital *-automorphism
+>
+> $$
+> \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
+> $$
+>
+> corresponding to $$L$$ that was defined in the the previous section.
+> 
+> Furthermore, a global isometric invariant state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}$$, it follows that $$0 < \omega(a^*a)$$.
+
+This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given local algebra $$\mathfrak{U}(\mathbf{B})$$ aids in understanding subsequent definitions of "isometric invariant" states.
+
+To that end consider an arbitrary element $$\mathbf{B}$$ of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphisim
+
+$$
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B}).
+$$
+
+As we've proven above, $$\alpha_L$$ acting on the quasilocal algebra $$\mathfrak{U}$$ restricts to this local $$\alpha_L$$.
+
+Let $$\omega$$ be a global isometric invariant state. By restriction $$\omega$$ defines elements
+
+$$
+\begin{align}
+\omega|_{\mathfrak{U}(\mathbf{B})} \quad \text{and} \quad \omega|_{\mathfrak{U}(L\mathbf{B})}
+\end{align}
+$$
+
+of the dual spaces of $$\mathfrak{U}(\mathbf{B})^*$$ and $$\mathfrak{U}(L\mathbf{B})^*$$ respectively. Using the unital *-isomorphisim
+
+$$
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
+$$
+
+we can pull-back to $$\mathfrak{U}(\mathbf{B})$$ the restriction of $$\omega$$ to $$\mathfrak{U}(L\mathbf{B})$$ as follows
+
+$$
+\left( \omega|_{\mathfrak{U}(L\mathbf{B})} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B})}(\alpha_L(a))
+$$
+
+where $$a$$ is an arbitrary element of $$\mathfrak{U}(\mathbf{B})$$. As $$\omega$$ is a global isometric invariant state, it follows that
+
+$$
+\omega|_{\mathfrak{U}(\mathbf{B})}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B})} \right)^*(a)
+$$
+
+for an arbitrary element $$a$$ of $$\mathfrak{U}(\mathbf{B})$$. This is a "local" reflection of isometric invariance of $$\omega$$, and, as we shall see, it is this condition that plays a key role in defining "isometric invariant" local states.
 
 ### Existence of Global, Isometric Invariant States
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu placerat dolor. Integer dictum libero id lectus imperdiet, id semper orci interdum. Vestibulum sed nibh vel lorem ultricies egestas vitae sit amet mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque pretium magna id facilisis laoreet. Quisque neque purus, ultrices nec placerat sed, porta ut quam. Quisque molestie ornare purus ac eleifend. Vestibulum lectus massa, malesuada rhoncus mi non, auctor tincidunt mauris. Phasellus accumsan lectus quis orci suscipit, laoreet consequat nunc rhoncus. In efficitur mauris in convallis bibendum. Duis nisi erat, porta id accumsan non, dignissim quis elit.
@@ -506,3 +687,5 @@ Nunc ut imperdiet neque. Vestibulum ante ipsum primis in faucibus orci luctus et
 Nulla vel mollis neque. Proin vulputate nisi nec tellus consequat placerat. Etiam congue diam ante, in posuere sem eleifend vel. Suspendisse potenti. Duis tempus rhoncus mauris, ac dapibus mauris maximus in. Pellentesque finibus sagittis eros eu commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor nibh ut eros aliquam, vel rhoncus sem varius. Nam ac iaculis dolor, eu varius ligula. Sed vel tellus libero. Aenean vel diam at sem vulputate vehicula.
 
 [^1]: Note such a $$\mathbf{B}$$ need not exist on a general Lorentzian spacetime. This is special to Minkowski spacetime.
+
+[^2]: Note here we are making the assumption that $$\mathbb{R}^4$$ with the Alexandrov topology is *second-countable*, i.e. has a countable basis.
