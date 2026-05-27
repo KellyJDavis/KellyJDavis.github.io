@@ -348,7 +348,7 @@ The first step in this argument is to prove the following theorem
 > is the map that appears in Axiom 5 (Lorentz Covariance).
 
 **Proof**
-First let us prove the existence of a countable basis
+Let us start by proving the existence of a countable basis
 
 $$
 \{ \mathbf{B}_i \}_{i \in \mathbb{N}}
@@ -368,13 +368,13 @@ $$
 
 is a countable basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ of the Euclidian topology on Minkowski spacetime (Example 2.49 [Lee](https://doi.org/10.1007/978-1-4419-7940-7)). Thus, by definition, the Euclidian topology of Minkowski spacetime is second countable.
 
-Sets of the form $$I^+(p) \cap I^{-}(q)$$ form an uncountable a basis $$\{ \mathbf{B}_i \}_{i \in \mathcal{I}}$$ of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, as proven by Penrose, the Alexandrov and Euclidian topology of Minkowski spacetime are equivalent (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Hence, $$\{ \mathbf{B}_i \}_{i \in \mathcal{I}}$$ forms a basis for the Euclidian topology. Thus the definition of basis implies that for any given $$\mathbf{E}_i$$ one has
+Sets of the form $$I^+(p) \cap I^{-}(q)$$ form an uncountable a basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, as proven by Penrose, the Alexandrov and Euclidian topology of Minkowski spacetime are equivalent (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Hence, $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ forms a basis for the Euclidian topology. Thus the definition of basis implies that for any given $$\mathbf{E}_i$$ one has
 
 $$
 \mathbf{E}_i = \bigcup\limits_{\mathbf{B}_j \in \mathbf{B}(\mathbf{E}_i)} \mathbf{B}_j,
 $$
 
-where $$\mathbf{B}(\mathbf{E}_i)$$ is the set of $$\mathbf{B}_j$$ in $$\{ \mathbf{B}_i \}_{i \in \mathcal{I}}$$ that are subsets $$\mathbf{B}_j \subseteq \mathbf{E}_i$$ of $$\mathbf{E}_i$$.
+where $$\mathbf{B}(\mathbf{E}_i)$$ is the set of $$\mathbf{B}_j$$ in $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ that are subsets $$\mathbf{B}_j \subseteq \mathbf{E}_i$$ of $$\mathbf{E}_i$$.
 
 Now any open subset $$U$$ of a second countable space $$X$$ is second countable, just discard all basis elements of $$X$$ not contained in $$U$$. Thus, $$\mathbf{E}_i$$ is second countable.
 
@@ -387,7 +387,7 @@ Now if we recall the standard theorem (Theorem 2.50 [Lee](https://doi.org/10.100
 > 2. $$X$$ contains a countable, dense subset.
 > 3. Every open cover of $$X$$ has a countable subcover.
 
-We see that the fact that $$\mathbf{E}_i$$ is second contable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_i \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
+We see that the fact that $$\mathbf{E}_i$$ is second contable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_j \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
 
 As the basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is countable and each $$\mathbf{E}_i$$ admits a countable cover of basis elements of the Alexandrov topology, it follows that there is a countable $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ cover of the $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$.
 
@@ -395,59 +395,84 @@ Obviously every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{
 
 These two facts (1) every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open and (2) any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, imply that $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is a countable basis of the Alexandrov topology, the desired result. $$\blacksquare$$
 
-Second we will prove that there exists a linear map of the desired form
+With that preliminary step completed, let us now move onto the first proper element of the proof. We will now prove by induction that there exists a linear map $$\alpha_L$$ of the desired form
 
 $$
 \alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
 $$
 
-where the $$\mathbf{B}_i$$ are elements of the countable basis $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ of the Alexandrov topology.
+where the $$\mathbf{B}_i$$ are elements of the countable basis of the Alexandrov topology.
 
-As a result of Axiom 5 (Lorentz Covariance), for any two basis element $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology on Minkowski spacetime we have maps
+Let us start with the base case.
 
-$$
-\begin{align}
-\alpha_L : \mathfrak{U}(\mathbf{B}_1) &\longrightarrow \mathfrak{U}(\mathbf{LB}_1) \\
-\alpha_L : \mathfrak{U}(\mathbf{B}_2) &\longrightarrow \mathfrak{U}(\mathbf{LB}_1),
-\end{align}
-$$
-
-where the $$\alpha_L$$ are a unital \*-isomorphisms.
-
-As $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ are basis elements of the Alexandrov topology on Minkowski spacetime, there exists[^1] a basis element $$\mathbf{B}$$ such that $$\mathbf{B}_1, \mathbf{B}_2 \subset \mathbf{B}$$. Axiom 5 (Lorentz Covariance) implies that for such a $$\mathbf{B}$$ there exists a map
+Let $$\mathbf{B}_1$$ be an element of the countable basis of the Alexandrov topology. As a result of Axiom 5 (Lorentz Covariance), for any member $$L$$ of the inhomogeneous Lorentz group that is connected to the identity we have the map
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(\mathbf{LB}).
+\alpha_L : \mathfrak{U}(\mathbf{B}_1) \longrightarrow \mathfrak{U}(L\mathbf{B}_1)
 $$
 
-where $$\alpha_L$$ is a unital \*-isomorphism.
-
-Now, as a result of Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{B}_1), \mathfrak{U}(\mathbf{B}_2) \subset \mathfrak{U}(\mathbf{B})$$. As a result of continuity of the isometry $$L$$ we have $$\mathbf{LB}_1, \mathbf{LB}_2 \subset \mathbf{LB}$$ and thus as a result of  Axiom 2 (Isotony) $$\mathfrak{U}(\mathbf{LB}_1), \mathfrak{U}(\mathbf{LB}_2) \subset \mathfrak{U}(\mathbf{LB})$$.
-
-So as a result of all this, the unital \*-isomorphism
+where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. The definition of the quasilocal algebra $$\mathcal{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}_1) \subseteq \mathcal{U}$$. Hence, viewing the range $$\mathfrak{U}(L\mathbf{B}_1)$$ of $$\alpha_L$$ as a subset of $$\mathcal{U}$$, we have a map
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(\mathbf{LB}),
+\alpha_L : \mathfrak{U}(\mathbf{B}_1) \longrightarrow \mathcal{U}
 $$
 
-which by definition is a linear map, through restriction defines a linear map
+of the desired form, i.e. linear and with the proper restriction.
+
+Now let us prove the inductive case.
+
+Assume that for $$n$$ in $$\mathbb{N}$$ there exists a map
 
 $$
-\alpha_L : \bigcup_{i \in \{1,2\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(\mathbf{LB}).
+\alpha_L : \bigcup\limits_{i \in [1,\ldots,n]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
 $$
 
-This construction can be repeated inductively[^2] thus defining a linear map
+of the desired form, i.e. a linear map that restricts to the unital \*-isomorphisms that appear in Axiom 5 (Lorentz Covariance). We must prove that this implies that there exists a map
 
 $$
-\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
-of the desired form, proving the first desired result. (Note here we have implicitly used the fact that by definition $$\mathfrak{U}$$ contains $$\mathfrak{U}(\mathbf{B})$$ for any basis element $$\mathbf{B}$$.)
+of the desired form.
 
-Second let us prove that our map
+Consider any element $$\mathbf{B}_{n+1}$$ of the countable basis of the Alexandrov topology that is different from the first $$n$$ we are already considering. As we are in Minkowski spacetime, there exists an element $$\mathbf{B}$$ in the uncountable a basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology such that $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$. As a result of Axiom 5 (Lorentz Covariance) there exists a map 
 
 $$
-\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
+$$
+
+where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. As $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$, Axiom 2 (Isotony) implies
+
+$$
+\bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \subseteq \mathfrak{U}(\mathbf{B}).
+$$
+
+Thus restriction of $$\alpha_L$$ to the above subdomain of $$\mathfrak{U}(\mathbf{B})$$ gives the map
+
+$$
+\alpha_L : \bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}).
+$$
+
+The definition of the quasilocal algebra $$\mathcal{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}) \subseteq \mathcal{U}$$. Hence, as above, viewing this leads to the map
+
+$$
+\alpha_L : \bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+$$
+
+that obviously has the desired form, i.e. a linear map that restricts to the unital \*-isomorphism that appear in Axiom 5 (Lorentz Covariance). This completes the proof of the recursive case.
+
+So with this we have proven that there exists a map
+
+$$
+\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
+$$
+
+of the desired form, where the $$\mathbf{B}_i$$ are elements of the countable basis of the Alexandrov topology.
+
+Now let us prove that our map
+
+$$
+\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
 $$
 
 is bounded.
@@ -577,19 +602,19 @@ the desired result. $$\blacksquare$$
 As proven in the blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)) the quasilocal algebra $$\mathfrak{U}$$ is a C\*-algebra. Also, the definition of the quasilocal algebra $$\mathfrak{U}$$ implies
 
 $$
-\bigcup \mathfrak{U}(\mathbf{B}) \subseteq \mathfrak{U}.
+\bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \subseteq \mathfrak{U}.
 $$
 
 Furthermore, Axiom 2 (Isotony), Axiom 5 (Lorentz Covariance), and our construction of the map
 
 $$
-\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
 imply that this map $$\alpha_L$$ is a unital *-monomorphism. Hence, we can apply the previous lemma to an arbitrary element $$a$$
 
 $$
-a \in \bigcup \mathfrak{U}(\mathbf{B})
+a \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
 $$
 
 to conclude that $$\|\alpha_L(a)\|=\|a\|$$.
@@ -597,7 +622,7 @@ to conclude that $$\|\alpha_L(a)\|=\|a\|$$.
 Now, by definition
 
 $$
-\|\alpha_L\| \equiv \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} \|\alpha_L(a)\|.
+\|\alpha_L\| \equiv \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|\alpha_L(a)\|.
 $$
 
 Using the result $$\|\alpha_L(a)\|=\|a\|$$ of the last paragraph this becomes
@@ -605,21 +630,21 @@ Using the result $$\|\alpha_L(a)\|=\|a\|$$ of the last paragraph this becomes
 $$
 \begin{align}
 \|\alpha_L\|
-  &\equiv \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} \|\alpha_L(a)\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} \|a\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup \mathfrak{U}(\mathbf{B}) : \|b\| = 1\}} 1 \\
+  &\equiv \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|\alpha_L(a)\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|a\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} 1 \\
   &= 1.
 \end{align}
 $$
 
 In other words $$\|\alpha_L\|=1$$ and thus $$\alpha_L$$ is bounded, the second desired result.
 
-The final desired result---i.e. the restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B})$$
+The final desired result---i.e. the restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_i)$$
 
 $$
 \begin{align}
-\left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B})} : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
-                                                 a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B})}(a)
+\left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)} : \mathfrak{U}(\mathbf{B}_i) &\longrightarrow \mathfrak{U}(L\mathbf{B}_i) \\
+                                                 a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)}(a)
 \end{align}
 $$
 
@@ -633,7 +658,7 @@ So, as we have established that our $$\alpha_L$$ is linear, bounded, and reduces
 to uniquely extend
 
 $$
-\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
 to
