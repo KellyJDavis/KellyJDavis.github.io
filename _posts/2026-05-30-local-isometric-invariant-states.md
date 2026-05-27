@@ -268,13 +268,13 @@ Finally, we've reached the "core" of this blog post, the study of "isometric inv
 
 These states are interesting for many reasons. For example, they provide a canonical example of how one can create a state "invariant" under a given classical symmetry. Critically, "isometric invariant" states, with some additionaly properties, can also serve as AQFT vacua. In addition, they provide a laboratory in which to examine aspects of spontaneous symmetry breaking: e.g. Are the classical spacetime isometries broken by a quantum state?
 
-With this as motivation, let us jump right in!
+With this as motivation, let's jump right in!
 
 ## Global, Isometric Invariant States in Minkowski Spacetime
 We begin with global, "isometric invariant" states in Minkowski spacetime. They are, in some sense, the "simplest" "isometric invariant" states. However, a careful examination of such  global, "isometric invariant" states in Minkowski spacetime clarifies essentially all subtleties that arise in other cases.
 
 ### Isometries of the Quasilocal Algebra
-"Morally" an isometry $$L$$ of Minkowski spacetime, in particular a member  of the inhomogeneous Lorentz group connected to the identity, should generate $$\alpha_L$$ an associated unital \*-automorphism of the quasilocal algebra $$\mathfrak{U}$$
+"Morally", as the metric doesn't change under and isometry, an isometry $$L$$ of Minkowski spacetime, in particular a member  of the inhomogeneous Lorentz group connected to the identity, should generate an associated unital \*-automorphism $$\alpha_L$$ of the quasilocal algebra $$\mathfrak{U}$$
 
 $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
@@ -327,28 +327,81 @@ The first step in this argument is to prove the following theorem
 > On Minkowski spacetime let $$L$$ be any member of the inhomogeneous Lorentz group that is connected to the identity. Then there exists a map
 >
 > $$
-> \alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+> \alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 > $$
 >
-> from the set theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ over the basis elements $$\mathbf{B}$$ of the Alexandrov topology on Minkowski spacetime to the quasilocal algebra $$\mathfrak{U}$$ such that: (1) The map $$\alpha_L$$ is linear; (2) The map $$\alpha_L$$ is bounded; and (3) The restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B})$$
+> from the set theoretic union over a countable basis
+>
+> $$
+> \{ \mathbf{B}_i \}_{i \in \mathbb{N}}
+> $$
+>
+> of the Alexandrov topology on Minkowski spacetime to the quasilocal algebra $$\mathfrak{U}$$ such that: (1) The map $$\alpha_L$$ is linear; (2) The map $$\alpha_L$$ is bounded; and (3) The restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_i)$$
 >
 > $$
 > \begin{align}
-> \left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B})} : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
->                                                  a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B})}(a)
+> \left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)} : \mathfrak{U}(\mathbf{B}_i) &\longrightarrow \mathfrak{U}(L\mathbf{B}_i) \\
+>                                                  a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)}(a)
 > \end{align}
 > $$
 >
 > is the map that appears in Axiom 5 (Lorentz Covariance).
 
 **Proof**
-First we will prove that there exists a map
+First let us prove the existence of a countable basis
 
 $$
-\alpha_L : \bigcup \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}
+\{ \mathbf{B}_i \}_{i \in \mathbb{N}}
 $$
 
-of the desired form that is linear.
+of the Alexandrov topology. In other words, let us prove the lemma
+
+> **Lemma**
+> A countable basis $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ of the Alexandrov topology exists on Minkowski spacetime.
+
+**Proof**
+Let $$E_r(p)$$ be a Euclidian open ball in Minkowski spacetime centered at $$p$$ and with radius $$r$$. The set
+
+$$
+\{ E_r(p) : r \in \mathbb{Q} \text{ and } p \in \mathbb{Q}^4 \}
+$$
+
+is a countable basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ of the Euclidian topology on Minkowski spacetime (Example 2.49 [Lee](https://doi.org/10.1007/978-1-4419-7940-7)). Thus, by definition, the Euclidian topology of Minkowski spacetime is second countable.
+
+Sets of the form $$I^+(p) \cap I^{-}(q)$$ form an uncountable a basis $$\{ \mathbf{B}_i \}_{i \in \mathcal{I}}$$ of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, as proven by Penrose, the Alexandrov and Euclidian topology of Minkowski spacetime are equivalent (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Hence, $$\{ \mathbf{B}_i \}_{i \in \mathcal{I}}$$ forms a basis for the Euclidian topology. Thus the definition of basis implies that for any given $$\mathbf{E}_i$$ one has
+
+$$
+\mathbf{E}_i = \bigcup\limits_{\mathbf{B}_j \in \mathbf{B}(\mathbf{E}_i)} \mathbf{B}_j,
+$$
+
+where $$\mathbf{B}(\mathbf{E}_i)$$ is the set of $$\mathbf{B}_j$$ in $$\{ \mathbf{B}_i \}_{i \in \mathcal{I}}$$ that are subsets $$\mathbf{B}_j \subseteq \mathbf{E}_i$$ of $$\mathbf{E}_i$$.
+
+Now any open subset $$U$$ of a second countable space $$X$$ is second countable, just discard all basis elements of $$X$$ not contained in $$U$$. Thus, $$\mathbf{E}_i$$ is second countable.
+
+Now if we recall the standard theorem (Theorem 2.50 [Lee](https://doi.org/10.1007/978-1-4419-7940-7))
+
+> **Theorem** *(Properties of Second Countable Spaces)*
+> Suppose $$X$$ is a second countable space.
+> 
+> 1. $$X$$ is first countable
+> 2. $$X$$ contains a countable, dense subset.
+> 3. Every open cover of $$X$$ has a countable subcover.
+
+We see that the fact that $$\mathbf{E}_i$$ is second contable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_i \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
+
+As the basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is countable and each $$\mathbf{E}_i$$ admits a countable cover of basis elements of the Alexandrov topology, it follows that there is a countable $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ cover of the $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$.
+
+Obviously every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open. Furthermore, as $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is a basis the definition of basis implies that any open set is a union of elements of $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$. As each $$\mathbf{E}_i$$ is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, this implies that any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$.
+
+These two facts (1) every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open and (2) any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, imply that $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is a countable basis of the Alexandrov topology, the desired result. $$\blacksquare$$
+
+Second we will prove that there exists a linear map of the desired form
+
+$$
+\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
+$$
+
+where the $$\mathbf{B}_i$$ are elements of the countable basis $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ of the Alexandrov topology.
 
 As a result of Axiom 5 (Lorentz Covariance), for any two basis element $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ of the Alexandrov topology on Minkowski spacetime we have maps
 
