@@ -650,7 +650,7 @@ $$
 
 is the map that appears in Axiom 5 (Lorentz Covariance)---follows obviously from our construction of $$\alpha_L$$. $$\blacksquare$$
 
-So, as we have established that our $$\alpha_L$$ is linear, bounded, and reduces to $$\alpha_L$$ from Axiom 5 (Lorentz Covariance) in the appropriate limit, we can apply the Bounded Linear Transformation Theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+So, as we have established that our $$\alpha_L$$ is linear, bounded, and reduces to $$\alpha_L$$ from Axiom 5 (Lorentz Covariance) in the appropriate limit, we now want to apply the Bounded Linear Transformation Theorem (Theorem A.36 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
 > **Theorem** *(Bounded Linear Transformation Theorem)*
 > *Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.*
@@ -667,7 +667,67 @@ $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
 $$
 
-as a unital *-automorphism, the map this section has built towards.
+as a unital *-automorphism.
+
+In applying this theorem $$\mathfrak{U}$$, being a C\*-algebra and thus normed space, takes on the role of $$V_1$$. Similarly, $$\mathfrak{U}$$, being a C\*-algebra and thus Banach space, also takes on the role of $$V_2$$. In addition $$\alpha_L$$, being bounded and linear, takes on the role of $$T$$. Finally, we want
+
+$$
+\bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
+$$
+
+to take on the role of $$W$$. However, we haven't proven that it is dense in $$\mathfrak{U}$$. Let us prove that this is the case.
+
+The definition of the quasilocal algebra $$\mathfrak{U}$$ implies that the union
+
+$$
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
+$$
+
+over the uncountable basis elements $$\mathbf{B}_\iota$$ is dense in $$\mathfrak{U}$$. As each $$\mathbf{B}_\iota$$ is open the definition of a basis implies that
+
+$$
+\mathbf{B}_\iota = \bigcup_{\mathbf{B}_j \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_j
+$$
+
+where $$\mathbf{B}(\mathbf{B}_\iota)$$ is the set of $$\mathbf{B}_j$$ in $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ that are subsets $$\mathbf{B}_j \subseteq \mathbf{B}_\iota$$ of $$\mathbf{B}_\iota$$. Hence
+
+$$
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) = \bigcup\limits_{\iota \in \mathcal{I}} \left( \bigcup_{\mathbf{B}_j \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_j \right) \subseteq \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i),
+$$
+
+where the final subset relation follows from the fact that the iterated union can at most contain all elements $$\mathbf{B}_i$$ of the countable basis. Hence, as
+
+$$
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
+$$
+
+is dense in $$\mathfrak{U}$$ and 
+
+$$
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
+$$
+
+it follows that
+
+$$
+\bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
+$$
+
+is dense in $$\mathfrak{U}$$ and can thus take on the role of $$W$$ in the theorem.
+
+With this we can then apply the Bounded Linear Transformation Theorem and uniquely extend
+
+$$
+\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+$$
+
+to
+
+$$
+\alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
+$$
+
+as a unital *-automorphism, the desired result of this section.
 
 ### Definition of Global, Isometric Invariant States
 As we have established the definition of the unital *-automorphism
@@ -687,22 +747,22 @@ corresponding to any member $$L$$ of the inhomogeneous Lorentz group of Minkowsk
 > \omega(a) = \omega(\alpha_L(a))
 > $$
 >
-> where $$\alpha_L$$ is the unital *-automorphism
+> where $$\alpha_L$$ is the unital *-automorphism defined in the the previous section
 >
 > $$
 > \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
 > $$
 >
-> corresponding to $$L$$ that was defined in the the previous section.
+> corresponding to $$L$$.
 >
 > Furthermore, a global isometric invariant state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}$$, it follows that $$0 < \omega(a^*a)$$.
 
-This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given local algebra $$\mathfrak{U}(\mathbf{B})$$ aids in understanding subsequent definitions of local "isometric invariant" states.
+This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given local algebra $$\mathfrak{U}(\mathbf{B}_i)$$, where $$\mathbf{B}_i$$ is from the countable basis, aids in understanding subsequent definitions of local "isometric invariant" states.
 
-So, to that end consider an arbitrary element $$\mathbf{B}$$ of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphisim
+So, to that end consider an arbitrary element $$\mathbf{B}_i$$ from the countable basis of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}_i$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B}_i)$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphisim
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B}).
+\alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i).
 $$
 
 As we've proven above, $$\alpha_L$$ acting on the quasilocal algebra $$\mathfrak{U}$$ restricts to this local $$\alpha_L$$.
@@ -711,29 +771,29 @@ Let $$\omega$$ be a global isometric invariant state. By restriction $$\omega$$ 
 
 $$
 \begin{align}
-\omega|_{\mathfrak{U}(\mathbf{B})} \quad \text{and} \quad \omega|_{\mathfrak{U}(L\mathbf{B})}
+\omega|_{\mathfrak{U}(\mathbf{B}_i)} \quad \text{and} \quad \omega|_{\mathfrak{U}(L\mathbf{B}_i)}
 \end{align}
 $$
 
-of the dual spaces of $$\mathfrak{U}(\mathbf{B})^*$$ and $$\mathfrak{U}(L\mathbf{B})^*$$ respectively. Using the unital *-isomorphisim
+of the dual spaces of $$\mathfrak{U}(\mathbf{B}_i)^*$$ and $$\mathfrak{U}(L\mathbf{B}_i)^*$$ respectively. Using the unital *-isomorphisim
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
+\alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i)
 $$
 
-we can pull-back to $$\mathfrak{U}(\mathbf{B})$$ the restriction of $$\omega$$ to $$\mathfrak{U}(L\mathbf{B})$$ as follows
+we can pull-back to $$\mathfrak{U}(\mathbf{B}_i)$$ the restriction of $$\omega$$ to $$\mathfrak{U}(L\mathbf{B}_i)$$ as follows
 
 $$
-\left( \omega|_{\mathfrak{U}(L\mathbf{B})} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B})}(\alpha_L(a)),
+\left( \omega|_{\mathfrak{U}(L\mathbf{B}_i)} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B}_i)}(\alpha_L(a)),
 $$
 
-where $$a$$ is an arbitrary element of $$\mathfrak{U}(\mathbf{B})$$. As $$\omega$$ is a global isometric invariant state, it follows that
+where $$a$$ is an arbitrary element of $$\mathfrak{U}(\mathbf{B}_i)$$. As $$\omega$$ is a global isometric invariant state, it follows that
 
 $$
-\omega|_{\mathfrak{U}(\mathbf{B})}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B})} \right)^*(a)
+\omega|_{\mathfrak{U}(\mathbf{B}_i)}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B}_i)} \right)^*(a)
 $$
 
-for an arbitrary element $$a$$ of $$\mathfrak{U}(\mathbf{B})$$. This is a "local" manifestation of isometric invariance of $$\omega$$, and, as we shall see, it is this condition that plays a key role in defining local "isometric invariant" states.
+for an arbitrary element $$a$$ of $$\mathfrak{U}(\mathbf{B}_i)$$. This is a "local" manifestation of isometric invariance of $$\omega$$, and, as we shall see, it is this condition that plays a key role in defining local "isometric invariant" states.
 
 ### Existence of Global, Isometric Invariant States
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu placerat dolor. Integer dictum libero id lectus imperdiet, id semper orci interdum. Vestibulum sed nibh vel lorem ultricies egestas vitae sit amet mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque pretium magna id facilisis laoreet. Quisque neque purus, ultrices nec placerat sed, porta ut quam. Quisque molestie ornare purus ac eleifend. Vestibulum lectus massa, malesuada rhoncus mi non, auctor tincidunt mauris. Phasellus accumsan lectus quis orci suscipit, laoreet consequat nunc rhoncus. In efficitur mauris in convallis bibendum. Duis nisi erat, porta id accumsan non, dignissim quis elit.
