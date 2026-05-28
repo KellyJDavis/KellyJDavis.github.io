@@ -72,17 +72,17 @@ This results in Minkowski spacetime being "clearly physical", in that it doesn't
 With this prologue completed, we are now able to state the first axiom of AQFT in Minkowski spacetime:
 
 > **Axiom 1** *(Local Algebras)* For any basis element $$\mathbf{B}$$ of the Alexandrov topology on Minkowski spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
-> 
+>
 > $$
 > \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
 > $$
-> 
+>
 > and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
-> 
+>
 > $$
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
 > $$
-> 
+>
 > where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 
@@ -92,11 +92,11 @@ The second axiom takes the following form:
 > **Axiom 2** *(Isotony)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Minkowski spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
 > If $$\mathbf{B}_1 \subset \mathbf{B}_2$$ then $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B}_2)$$, where inclusion is implemented by
-> 
+>
 > $$
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
-> 
+>
 > a unital \*-monomorphism.
 
 
@@ -120,11 +120,11 @@ With all of these definitions in hand, we can now state the next axiom:
 > **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Minkowski spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
 > If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
-> 
+>
 > $$
 > a_1 a_2 - a_2 a_1 = 0
 > $$
-> 
+>
 > in the quasilocal algebra $$\mathfrak{U}$$.
 
 ## Axiom 4 (Quasilocal Algebra)
@@ -144,15 +144,25 @@ Finally we can state the last axiom
 > **Axiom 5** *(Lorentz Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on Minkowski spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
 >
 > A member $$L$$ of the inhomogeneous Lorentz group connected to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
-> 
+>
 > $$
 > \begin{align}
 > \alpha_L : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
 >                      a              &\longmapsto     \alpha_L(a)
 > \end{align}
 > $$
-> 
-> where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital *-isomorphism.
+>
+> where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital *-isomorphism that satisfies for the Lorentz group identity $$\mathbf{1}$$
+>
+> $$
+> \alpha_{\mathbf{1}}(a) = a
+> $$
+>
+> and for all appropriate $$a$$, $$L$$, and $$L'$$
+>
+> $$
+> \alpha_{L' \cdot L}(a) = \alpha_{L'}(\alpha_{L}(a)).
+> $$
 
 
 # Haag Kastler Axioms in Curved Spacetime
@@ -199,17 +209,17 @@ With these definitions in hand we can then present the key theorem describing ho
 *The following three conditions on a smooth, connected, four dimensional manifold $$M$$ with Hausdorff manifold topology are equivalent:*
 1. *$$M$$ is strongly causal;*
 2. *the Alexandrov Topology agrees with the manifold topology;*
-3. *the Alexandrov Topology is Hausdorff.* 
+3. *the Alexandrov Topology is Hausdorff.*
 
 As one can see, this has "deep" implications for the case at hand, the smooth manifold $$M$$.
 
 Physically, the Alexandrov topology seems more "natural" as it relies upon basis elements $$I^+(p) \cap I^-(q)$$ "natural" to Lorentzian nature of spacetime. So physically one would expect a "Lorentzian spacetime" to "naturally" be equipped with an Alexandrov topology. The question is how does one accomplish this goal?
 
-In the case of Minkowski spacetime the Alexandrov topology on $$\mathbb{R}^4$$ agreed with the Euclidean topology without any further assumptions. The Euclidean "scaffolding" used to construct the Alexandrov topology simply "fell away". The previous theorem implies that for the more general case we are dealing with now on $$M$$, removing the manifold topology "scaffolding" requires additional assumptions. 
+In the case of Minkowski spacetime the Alexandrov topology on $$\mathbb{R}^4$$ agreed with the Euclidean topology without any further assumptions. The Euclidean "scaffolding" used to construct the Alexandrov topology simply "fell away". The previous theorem implies that for the more general case we are dealing with now on $$M$$, removing the manifold topology "scaffolding" requires additional assumptions.
 
 In particular, we can either assume that $$M$$ is strongly causal or that the Alexandrov Topology is Hausdorff. Either assumption implies the other and that the Alexandrov Topology agrees with the manifold topology, and thus the manifold topology "scaffolding" can be removed.
 
-As both assumptions are equivalent, we can select either. With that in mind, we add the additional assumption that the Alexandrov Topology on $$M$$ is Hausdorff. So in total $$M$$ is a smooth, connected, four dimensional manifold equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric. In addition $$M$$ is equipped with an associated Hausdorff Alexandrov Topology. 
+As both assumptions are equivalent, we can select either. With that in mind, we add the additional assumption that the Alexandrov Topology on $$M$$ is Hausdorff. So in total $$M$$ is a smooth, connected, four dimensional manifold equipped with a smooth, nowhere-vanishing global vector field $$t^a$$ and associated Lorentzian metric. In addition $$M$$ is equipped with an associated Hausdorff Alexandrov Topology.
 
 ### Lorentzian Spacetime
 Finally we have all the pieces in place to define a "Lorentzian spacetime".
@@ -226,17 +236,17 @@ With the prologue complete, we are now in a position to state the axioms of AQFT
 The first axiom is:
 
 > **Axiom 1** *(Local Algebras)* For any basis element $$\mathbf{B}$$ of the Alexandrov topology on a Lorentzian spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
-> 
+>
 > $$
 > \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
 > $$
-> 
+>
 > and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
-> 
+>
 > $$
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
 > $$
-> 
+>
 > where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 
@@ -246,11 +256,11 @@ The second axiom takes the following form:
 > **Axiom 2** *(Isotony)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on a Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
 > If $$\mathbf{B}_1 \subset \mathbf{B}_2$$ then $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B}_2)$$, where inclusion is implemented by
-> 
+>
 > $$
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
-> 
+>
 > a unital \*-monomorphism.
 
 
@@ -260,7 +270,7 @@ So far the axioms have differed little from those of AQFT in Minkowski spacetime
 ### Quasilocal Algebra?
 Naively, to define a quasilocal algebra associated with a Lorentzian spacetime $$M$$ one would first consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$ over all basis elements $$\mathbf{B}$$ of the Alexandrov topology on $$M$$ and prove this set-theoretic union is a normed \*-algebra. It turns out that for a generic Lorentzian spacetime $$M$$ this set-theoretic union isn't a normed \*-algebra and thus the construction of the quasilocal algebra fails. Let's see why this is the case.
 
-Consider $$M_{BH}$$ the Schwarzschild blackhole solution Lorentzian spacetime. $$M_{BH}$$ has the following Penrose diagram 
+Consider $$M_{BH}$$ the Schwarzschild blackhole solution Lorentzian spacetime. $$M_{BH}$$ has the following Penrose diagram
 
 ![Penrose diagram of the Schwarzschild blackhole solution](../../../images/posts/schwarzschild_penrose_diagram.png)
 
@@ -291,16 +301,16 @@ Consider two points $$p_1$$ and $$p_2$$ in Lorentzian spacetime. The points are 
 Consider two sets $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Lorentzian spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are said to be *completely spacelike* if every $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$ or equivalently if every $$p_2$$ in $$\mathbf{O}_2$$ is spacelike related to every $$p_1$$ in $$\mathbf{O}_1$$.
 
 ### Axiom 3 (Local Commutativity)
-With all of these definitions in hand, we can finally state Axiom 3 (Local Commutativity) as applied to Lorentzian spacetime: 
+With all of these definitions in hand, we can finally state Axiom 3 (Local Commutativity) as applied to Lorentzian spacetime:
 
 > **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
 > If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike and there exists a basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
-> 
+>
 > $$
 > a_1 a_2 - a_2 a_1 = 0
 > $$
-> 
+>
 > in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$.
 >
 > If no such $$\mathbf{B}$$ exists, then it simply doesn't make sense to consider if $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute as they are not in the same algebra.
@@ -345,18 +355,28 @@ So in the current case of a Lorentzian spacetime what we should be using are iso
 > **Axiom 5** *(Isometric Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
 >
 > A member $$\varphi$$ of the group of isometries of $$M$$ connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
-> 
+>
 > $$
 > \begin{align}
 > \alpha_\varphi : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\varphi(\mathbf{B})) \\
 >                            a              &\longmapsto     \alpha_\varphi(a)
 > \end{align}
 $$
-> 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital *-isomorphism.
+>
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital *-isomorphism that satisfies for the identity $$\mathbf{1}$$
+>
+> $$
+> \alpha_{\mathbf{1}}(a) = a
+> $$
+>
+> and for all appropriate $$a$$, $$\varphi$$, and $$\varphi'$$
+>
+> $$
+> \alpha_{\varphi' \cdot \varphi}(a) = \alpha_{\varphi'}(\alpha_{\varphi}(a)).
+> $$
 
 
-# Summary 
+# Summary
 Here we recount the axioms we've established for AQFT in Lorentzian spacetime.
 
 First we remind the reader of the Lorentzian spacetime definition
@@ -367,17 +387,17 @@ A *Lorentzian spacetime* is a smooth, connected, four dimensional manifold equip
 With that clarified, we can present the first axiom
 
 > **Axiom 1** *(Local Algebras)* For any basis element $$\mathbf{B}$$ of the Alexandrov topology on a Lorentzian spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
-> 
+>
 > $$
 > \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
 > $$
-> 
+>
 > and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
-> 
+>
 > $$
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
 > $$
-> 
+>
 > where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
 The second axiom can be immediately stated too.
@@ -385,11 +405,11 @@ The second axiom can be immediately stated too.
 > **Axiom 2** *(Isotony)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on a Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
 > If $$\mathbf{B}_1 \subset \mathbf{B}_2$$ then $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B}_2)$$, where inclusion is implemented by
-> 
+>
 > $$
 > i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
 > $$
-> 
+>
 > a unital \*-monomorphism.
 
 The next axiom makes use of the following definitions:
@@ -408,11 +428,11 @@ and can be stated as follows:
 > **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
 > If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike and there exists a basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
-> 
+>
 > $$
 > a_1 a_2 - a_2 a_1 = 0
 > $$
-> 
+>
 > in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$.
 >
 > If no such $$\mathbf{B}$$ exists, then it simply doesn't make sense to consider if $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute as they are not in the same algebra.
@@ -431,15 +451,25 @@ The final axiom states:
 > **Axiom 5** *(Isometric Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on a Lorentzian spacetime $$M$$, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
 >
 > A member $$\varphi$$ of the group of isometries of $$M$$ connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
-> 
+>
 > $$
 > \begin{align}
 > \alpha_\varphi : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\varphi(\mathbf{B})) \\
 >                            a              &\longmapsto     \alpha_\varphi(a)
 > \end{align}
 $$
-> 
-> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital *-isomorphism.
+>
+> where $$\varphi(\mathbf{B})$$ is the image of the basis element $$\mathbf{B}$$ under the isometry $$\varphi$$ and $$\alpha_\varphi$$ is a unital *-isomorphism that satisfies for the identity $$\mathbf{1}$$
+>
+> $$
+> \alpha_{\mathbf{1}}(a) = a
+> $$
+>
+> and for all appropriate $$a$$, $$\varphi$$, and $$\varphi'$$
+>
+> $$
+> \alpha_{\varphi' \cdot \varphi}(a) = \alpha_{\varphi'}(\alpha_{\varphi}(a)).
+> $$
 
 Generally these axioms follow in a straightforward manner from those of AQFT in Minkowski spacetime. The only "surprise" in this presentation is the absence of a quasilocal algebra. However, as we found, its absence is simply a reflection of the observational constraints of Lorentzian spacetime which don't exist in Minkowski spacetime.
 
