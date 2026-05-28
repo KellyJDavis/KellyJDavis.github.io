@@ -510,7 +510,18 @@ $$
 \end{align}
 $$
 
-where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital *-isomorphism.
+where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital *-isomorphism that satisfies for the Lorentz group identity $$\mathbf{1}$$
+
+$$
+\alpha_{\mathbf{1}}(a) = a
+$$
+
+and for all appropriate $$a$$, $$L$$, and $$L'$$
+
+$$
+\alpha_{L' \cdot L}(a) = \alpha_{L'}(\alpha_{L}(a)).
+$$
+
 
 This concludes the presentation of the "sharpened" axioms. As proven in this blog post, these "sharpened" axioms entail the original axioms save Axiom 6 (Primitivity), which is an axiom that we abandon.
 
