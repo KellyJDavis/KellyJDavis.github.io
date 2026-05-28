@@ -435,7 +435,7 @@ $$
 
 of the desired form.
 
-Consider any element $$\mathbf{B}_{n+1}$$ of the countable basis of the Alexandrov topology that is different from the first $$n$$ we are already considering. As we are in Minkowski spacetime, there exists an element $$\mathbf{B}$$ in the uncountable a basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology such that $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$. As a result of Axiom 5 (Lorentz Covariance) there exists a map 
+Consider any element $$\mathbf{B}_{n+1}$$ of the countable basis of the Alexandrov topology that is different from the first $$n$$ we are already considering. As we are in Minkowski spacetime, there exists[^1] an element $$\mathbf{B}$$ in the uncountable a basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology such that $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$. As a result of Axiom 5 (Lorentz Covariance) there exists a map
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
@@ -836,5 +836,3 @@ Nunc ut imperdiet neque. Vestibulum ante ipsum primis in faucibus orci luctus et
 Nulla vel mollis neque. Proin vulputate nisi nec tellus consequat placerat. Etiam congue diam ante, in posuere sem eleifend vel. Suspendisse potenti. Duis tempus rhoncus mauris, ac dapibus mauris maximus in. Pellentesque finibus sagittis eros eu commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor nibh ut eros aliquam, vel rhoncus sem varius. Nam ac iaculis dolor, eu varius ligula. Sed vel tellus libero. Aenean vel diam at sem vulputate vehicula.
 
 [^1]: Note such a $$\mathbf{B}$$ need not exist on a general Lorentzian spacetime. This is special to Minkowski spacetime.
-
-[^2]: Note here we are making the assumption that $$\mathbb{R}^4$$ with the Alexandrov topology is *second-countable*, i.e. has a countable basis.
