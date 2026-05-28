@@ -266,7 +266,7 @@ So a local state is just an abstract C\*-algebra state associated to a local alg
 # Introduction to Isometric Invariant States
 Finally, we've reached the "core" of this blog post, the study of "isometric invariant" states. As one might guess, "isometric invariant" states are local or global states that are "invariant" under spacetime isometries.
 
-These states are interesting for many reasons. For example, they provide a canonical example of how one can create a state "invariant" under a given classical symmetry. Critically, "isometric invariant" states, with some additionaly properties, can also serve as AQFT vacua. In addition, they provide a laboratory in which to examine aspects of spontaneous symmetry breaking: e.g. Are the classical spacetime isometries broken by a quantum state?
+These states are interesting for many reasons. For example, they provide a canonical example of how one can create a state "invariant" under a given classical symmetry. Critically, "isometric invariant" states, with some additional properties, can also serve as AQFT vacua. In addition, they provide a laboratory in which to examine aspects of spontaneous symmetry breaking: e.g. Are the classical spacetime isometries broken by a quantum state?
 
 With this as motivation, let's jump right in!
 
@@ -294,7 +294,7 @@ While "morally" this is indeed the case, the problem one immediately encounters 
 >
 > $$
 > \begin{align}
-> \alpha_L : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
+> \alpha_L : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(L\mathbf{B}) \\
 >                      a              &\longmapsto     \alpha_L(a)
 > \end{align}
 > $$
@@ -336,7 +336,7 @@ The first step in this argument is to prove the following theorem
 > \{ \mathbf{B}_i \}_{i \in \mathbb{N}}
 > $$
 >
-> of the Alexandrov topology on Minkowski spacetime to the quasilocal algebra $$\mathfrak{U}$$ such that: (1) The map $$\alpha_L$$ is linear; (2) The map $$\alpha_L$$ is bounded; and (3) The restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_i)$$
+> of the Alexandrov topology to the quasilocal algebra $$\mathfrak{U}$$ such that: (1) The map $$\alpha_L$$ is linear; (2) The map $$\alpha_L$$ is bounded; and (3) The restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_i)$$
 >
 > $$
 > \begin{align}
@@ -371,10 +371,10 @@ is a countable basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ of the Euclidian 
 Sets of the form $$I^+(p) \cap I^{-}(q)$$ form an uncountable a basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, as proven by Penrose, the Alexandrov and Euclidian topology of Minkowski spacetime are equivalent (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Hence, $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ forms a basis for the Euclidian topology. Thus the definition of basis implies that for any given $$\mathbf{E}_i$$ one has
 
 $$
-\mathbf{E}_i = \bigcup\limits_{\mathbf{B}_j \in \mathbf{B}(\mathbf{E}_i)} \mathbf{B}_j,
+\mathbf{E}_i = \bigcup\limits_{\mathbf{B}_\iota \in \mathbf{B}(\mathbf{E}_i)} \mathbf{B}_\iota,
 $$
 
-where $$\mathbf{B}(\mathbf{E}_i)$$ is the set of $$\mathbf{B}_j$$ in $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ that are subsets $$\mathbf{B}_j \subseteq \mathbf{E}_i$$ of $$\mathbf{E}_i$$.
+where $$\mathbf{B}(\mathbf{E}_i)$$ is the set of all $$\mathbf{B}_\iota$$ in $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ that are subsets $$\mathbf{B}_\iota \subseteq \mathbf{E}_i$$ of $$\mathbf{E}_i$$.
 
 Now any open subset $$U$$ of a second countable space $$X$$ is second countable, just discard all basis elements of $$X$$ not contained in $$U$$. Thus, $$\mathbf{E}_i$$ is second countable.
 
@@ -387,11 +387,11 @@ Now if we recall the standard theorem (Theorem 2.50 [Lee](https://doi.org/10.100
 > 2. $$X$$ contains a countable, dense subset.
 > 3. Every open cover of $$X$$ has a countable subcover.
 
-We see that the fact that $$\mathbf{E}_i$$ is second contable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_j \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
+We see that the fact that $$\mathbf{E}_i$$ is second contable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_\iota \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
 
 As the basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is countable and each $$\mathbf{E}_i$$ admits a countable cover of basis elements of the Alexandrov topology, it follows that there is a countable $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ cover of the $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$.
 
-Obviously every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open. Furthermore, as $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is a basis the definition of basis implies that any open set is a union of elements of $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$. As each $$\mathbf{E}_i$$ is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, this implies that any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$.
+Obviously every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open. Furthermore, as $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is a basis the definition of a basis implies that any open set is a union of elements of $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$. As each $$\mathbf{E}_i$$ is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, this implies that any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$.
 
 These two facts (1) every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open and (2) any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, imply that $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is a countable basis of the Alexandrov topology, the desired result. $$\blacksquare$$
 
@@ -414,7 +414,7 @@ $$
 where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. The definition of the quasilocal algebra $$\mathcal{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}_1) \subseteq \mathcal{U}$$. Hence, viewing the range $$\mathfrak{U}(L\mathbf{B}_1)$$ of $$\alpha_L$$ as a subset of $$\mathcal{U}$$, we have a map
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}_1) \longrightarrow \mathcal{U}
+\alpha_L : \bigcup\limits_{i \in \{1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathcal{U}
 $$
 
 of the desired form, i.e. linear and with the proper restriction.
@@ -424,13 +424,13 @@ Now let us prove the inductive case.
 Assume that for $$n$$ in $$\mathbb{N}$$ there exists a map
 
 $$
-\alpha_L : \bigcup\limits_{i \in [1,\ldots,n]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
+\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
 $$
 
 of the desired form, i.e. a linear map that restricts to the unital \*-isomorphisms that appear in Axiom 5 (Lorentz Covariance). We must prove that this implies that there exists a map
 
 $$
-\alpha_L : \bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
 of the desired form.
@@ -444,19 +444,19 @@ $$
 where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. As $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$, Axiom 2 (Isotony) implies
 
 $$
-\bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \subseteq \mathfrak{U}(\mathbf{B}).
+\bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \subseteq \mathfrak{U}(\mathbf{B}).
 $$
 
 Thus restriction of $$\alpha_L$$ to the above subdomain of $$\mathfrak{U}(\mathbf{B})$$ gives the map
 
 $$
-\alpha_L : \bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}).
+\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}).
 $$
 
-The definition of the quasilocal algebra $$\mathcal{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}) \subseteq \mathcal{U}$$. Hence, as above, viewing this leads to the map
+The definition of the quasilocal algebra $$\mathcal{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}) \subseteq \mathcal{U}$$. Hence, as above, viewing $$\mathfrak{U}(L\mathbf{B})$$ as a subset of $$\mathcal{U}$$ leads to the map
 
 $$
-\alpha_L : \bigcup\limits_{i \in [1,\ldots,n+1]} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
 that obviously has the desired form, i.e. a linear map that restricts to the unital \*-isomorphism that appear in Axiom 5 (Lorentz Covariance). This completes the proof of the recursive case.
@@ -559,10 +559,10 @@ The next result we need to establish on the road to proving that $$\alpha_L$$ is
 Recall the followiing lemma (Lemma 8.1 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
 > **Lemma**
-> If $$a_1$$ is a self-adjoint member of a unital C\*-algebra, then its norm $$\|a_1\|$$ is equivalent to its spectral radius $$r(a_1)$$, i.e.
+> If $$a$$ is a self-adjoint member of a unital C\*-algebra, then its norm $$\|a\|$$ is equivalent to its spectral radius $$r(a)$$, i.e.
 >
 > $$
-> \|a_1\| = r(a_1).
+> \|a\| = r(a).
 > $$
 
 Hence,
@@ -686,13 +686,13 @@ $$
 over the uncountable basis elements $$\mathbf{B}_\iota$$ is dense in $$\mathfrak{U}$$. As each $$\mathbf{B}_\iota$$ is open the definition of a basis implies that
 
 $$
-\mathbf{B}_\iota = \bigcup_{\mathbf{B}_j \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_j
+\mathbf{B}_\iota = \bigcup_{\mathbf{B}_i \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_i
 $$
 
-where $$\mathbf{B}(\mathbf{B}_\iota)$$ is the set of $$\mathbf{B}_j$$ in $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ that are subsets $$\mathbf{B}_j \subseteq \mathbf{B}_\iota$$ of $$\mathbf{B}_\iota$$. Hence
+where $$\mathbf{B}(\mathbf{B}_\iota)$$ is the set of $$\mathbf{B}_i$$ in $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ that are subsets $$\mathbf{B}_i \subseteq \mathbf{B}_\iota$$ of $$\mathbf{B}_\iota$$. Hence
 
 $$
-\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) = \bigcup\limits_{\iota \in \mathcal{I}} \left( \bigcup_{\mathbf{B}_j \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_j \right) \subseteq \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i),
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) = \bigcup\limits_{\iota \in \mathcal{I}} \left( \bigcup_{\mathbf{B}_i \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_i \right) \subseteq \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i),
 $$
 
 where the final subset relation follows from the fact that the iterated union can at most contain all elements $$\mathbf{B}_i$$ of the countable basis. Hence, as
@@ -736,7 +736,7 @@ $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
 $$
 
-corresponding to any member $$L$$ of the inhomogeneous Lorentz group of Minkowski spacetime that is connected to the identity, we are now in the position to define a global "isometric invariant" states
+corresponding to any member $$L$$ of the inhomogeneous Lorentz group that is connected to the identity, we are now in the position to define a global "isometric invariant" states
 
 > **Definition** *(Global Isometric Invariant State)*
 > Let $$\mathfrak{U}$$ be the quasilocal algebra associated with Minkowski spacetime.
@@ -757,15 +757,15 @@ corresponding to any member $$L$$ of the inhomogeneous Lorentz group of Minkowsk
 >
 > Furthermore, a global isometric invariant state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}$$, it follows that $$0 < \omega(a^*a)$$.
 
-This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given local algebra $$\mathfrak{U}(\mathbf{B}_i)$$, where $$\mathbf{B}_i$$ is from the countable basis, aids in understanding subsequent definitions of local "isometric invariant" states.
+This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given "local" algebra $$\mathfrak{U}(\mathbf{B}_i)$$, where $$\mathbf{B}_i$$ is from the countable basis, aids in understanding subsequent definitions of local "isometric invariant" states.
 
-So, to that end consider an arbitrary element $$\mathbf{B}_i$$ from the countable basis of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}_i$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B}_i)$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphisim
+So, to that end, consider an arbitrary element $$\mathbf{B}_i$$ from the countable basis of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}_i$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B}_i)$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphisim
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i).
 $$
 
-As we've proven above, $$\alpha_L$$ acting on the quasilocal algebra $$\mathfrak{U}$$ restricts to this local $$\alpha_L$$.
+As we've proven above, $$\alpha_L$$ acting on the quasilocal algebra $$\mathfrak{U}$$ restricts to this "local" $$\alpha_L$$.
 
 Let $$\omega$$ be a global isometric invariant state. By restriction $$\omega$$ defines elements
 
