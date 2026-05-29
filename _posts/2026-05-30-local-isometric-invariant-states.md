@@ -441,10 +441,10 @@ $$
 \alpha_L : \mathfrak{U}(\mathbf{B}_1) \longrightarrow \mathfrak{U}(L\mathbf{B}_1)
 $$
 
-where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. The definition of the quasilocal algebra $$\mathcal{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}_1) \subseteq \mathcal{U}$$. Hence, viewing the range $$\mathfrak{U}(L\mathbf{B}_1)$$ of $$\alpha_L$$ as a subset of $$\mathcal{U}$$, we have a map
+where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. The definition of the quasilocal algebra $$\mathfrak{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}_1) \subseteq \mathfrak{U}$$. Hence, viewing the range $$\mathfrak{U}(L\mathbf{B}_1)$$ of $$\alpha_L$$ as a subset of $$\mathfrak{U}$$, we have a map
 
 $$
-\alpha_L : \bigcup\limits_{i \in \{1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathcal{U}
+\alpha_L : \bigcup\limits_{i \in \{1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
 of the desired form, i.e. linear and with the proper restriction.
@@ -483,7 +483,7 @@ $$
 \alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}).
 $$
 
-The definition of the quasilocal algebra $$\mathcal{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}) \subseteq \mathcal{U}$$. Hence, as above, viewing $$\mathfrak{U}(L\mathbf{B})$$ as a subset of $$\mathcal{U}$$ leads to the map
+The definition of the quasilocal algebra $$\mathfrak{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}) \subseteq \mathfrak{U}$$. Hence, as above, viewing $$\mathfrak{U}(L\mathbf{B})$$ as a subset of $$\mathfrak{U}$$ leads to the map
 
 $$
 \alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
@@ -555,7 +555,7 @@ $$
 \sigma(\alpha(a_1)) \subseteq \sigma(a_1).
 $$
 
-Now as $$\alpha$$ is a unital \*-monomorphism, it follows that when $$\alpha$$ is restricted to the domain $$\mathfrak{U}$$ and range $$\alpha(\mathfrak{U})$$ it is invertible and
+Now as $$\alpha$$ is a unital \*-monomorphism, it follows that when $$\alpha$$ is restricted to domain $$\mathfrak{U}$$ and range $$\alpha(\mathfrak{U})$$, it is invertible. Thus
 
 $$
 \alpha^{-1} : \alpha(\mathfrak{U}) \rightarrow \mathfrak{U}
@@ -641,13 +641,49 @@ $$
 \alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
 $$
 
-imply that this map $$\alpha_L$$ is a unital *-monomorphism. Hence, we can apply the previous lemma to an arbitrary element $$a$$
+imply that this map $$\alpha_L$$ is a unital *-monomorphism. Hence, we can apply the previous lemma to an arbitrary self-adjoint element $$b$$
+
+$$
+b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
+$$
+
+to conclude that $$\|\alpha_L(b)\|=\|b\|$$.
+
+However, not all elements we need to consider in this union are self-adjoint. But it turns out that every element $$a$$
 
 $$
 a \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
 $$
 
-to conclude that $$\|\alpha_L(a)\|=\|a\|$$.
+in this union can be written as the sum of self-adjoint elements
+
+$$
+a = \left( \frac{a + a^*}{2} \right) + i \left( \frac{a - a^*}{2i} \right),
+$$
+
+where both
+
+$$
+\left( \frac{a + a^*}{2} \right) \text{ and } \left( \frac{a - a^*}{2i} \right)
+$$
+
+are self-adjoint. Our previous result, proving $$\alpha_L$$ is linear, then implies
+
+$$
+\alpha_L(a) = \alpha_L \left( \frac{a + a^*}{2} \right) + i \alpha_L\left( \frac{a - a^*}{2i} \right).
+$$
+
+Thus as a result of our previous lemma
+
+$$
+\begin{align}
+\|\alpha_L(a)\|
+  &= \left\| \alpha_L \left( \frac{a + a^*}{2} \right) + i \alpha_L\left( \frac{a - a^*}{2i} \right) \right\| \\
+  &\le \left\| \alpha_L \left( \frac{a + a^*}{2} \right) \right\| + \left\| i \alpha_L\left( \frac{a - a^*}{2i} \right) \right\| \\
+  &= \left\| \alpha_L \left( \frac{a + a^*}{2} \right) \right\| + \left\| \alpha_L\left( \frac{a - a^*}{2i} \right) \right\| \\
+  &= \left\| \frac{a + a^*}{2} \right\| + \left\| \frac{a - a^*}{2i} \right\|.
+\end{align}
+$$
 
 Now, by definition
 
@@ -655,19 +691,23 @@ $$
 \|\alpha_L\| \equiv \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|\alpha_L(a)\|.
 $$
 
-Using the result $$\|\alpha_L(a)\|=\|a\|$$ of the last paragraph this becomes
+Using the results of the last paragraph this becomes
 
 $$
 \begin{align}
 \|\alpha_L\|
   &\equiv \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|\alpha_L(a)\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|a\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} 1 \\
-  &= 1.
+  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \left\| \frac{a + a^*}{2} \right\| + \left\| \frac{a - a^*}{2i} \right\| \\
+  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \frac{\|a\| + \|a^*\|}{2} + \frac{\|a\| + \|a^*\|}{2} \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|a\| + \|a^*\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|a\| + \|a\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} 2\|a\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} 2 \\
+  &= 2.
 \end{align}
 $$
 
-In other words $$\|\alpha_L\|=1$$ and thus $$\alpha_L$$ is bounded, the second desired result.
+In other words $$\|\alpha_L\| \le 2$$ and thus $$\alpha_L$$ is bounded, the second desired result.
 
 The final desired result---i.e. the restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_i)$$
 
@@ -731,7 +771,7 @@ $$
 \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
 $$
 
-is dense in $$\mathfrak{U}$$ and 
+is dense in $$\mathfrak{U}$$ and
 
 $$
 \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
