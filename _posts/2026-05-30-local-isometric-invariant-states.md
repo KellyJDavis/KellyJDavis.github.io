@@ -6,7 +6,7 @@ categories: aqft lcaqft
 
 This blog post introduces the notion of "local isometric invariant states" in Algebraic Quantum Field Theory (AQFT) in Minkowski spacetime (a theory defined in [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)) and also does the same for AQFT in Lorentzian spacetime (a theory defined in [Haag Kastler Axioms in Curved Spacetime](https://kellyjdavis.github.io/aqft/lcaqft/haag-kastler-axioms-curved-spacetime/)). Such "local isometric invariant states" capture the physics of quantum systems that are invariant under isometries of spacetime.
 
-# Reveiw of Algebraic Quantum Field Theory
+# Review of Algebraic Quantum Field Theory
 Instead of diving headlong into a definition of "local isometric invariant states", we will begin with a review of AQFT in Minkowski spacetime and AQFT in Lorentzian spacetime.
 
 The reviews of AQFT in Minkowski and Lorentzian spacetime will not provide all details of the blog posts [Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/) and [Haag Kastler Axioms in Curved Spacetime](https://kellyjdavis.github.io/aqft/lcaqft/haag-kastler-axioms-curved-spacetime/) where these theories were introduced. The AQFT reviews serve only as a refresher, making sure readers are clear on the various definitions and axioms used.
@@ -28,7 +28,7 @@ That done we can introduce the first axiom of AQFT in Minkowski spacetime:
 > \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
 > $$
 >
-> and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
+> and when $$\mathbf{B}$$ is the empty set, we have the distinguished correspondence
 >
 > $$
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
@@ -129,7 +129,7 @@ That clarified, we can present the first axiom:
 > \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
 > $$
 >
-> and when $$\mathbf{B}$$ is the the empty set, we have the distinguished correspondence
+> and when $$\mathbf{B}$$ is the empty set, we have the distinguished correspondence
 >
 > $$
 > \emptyset \longmapsto \mathbb{C} \mathbf{1},
@@ -214,7 +214,7 @@ $$
 In this section we will examine various types of states with the goal of eventually introducing "global isometric invariant states" and "local isometric invariant states", the "local" case being of most physical relevance.
 
 ## Abstract C\*-Algebra States
-Before introducting the various states associated with AQFT, we will take a moment to remind the reader of the definition of an abstract C\*-algebra state that was introduced in the blog post [GNS Construction Theorem](https://kellyjdavis.github.io/aqft/gns-construction/)
+Before introducing the various states associated with AQFT, we will take a moment to remind the reader of the definition of an abstract C\*-algebra state that was introduced in the blog post [GNS Construction Theorem](https://kellyjdavis.github.io/aqft/gns-construction/)
 
 > **Definition** *(State)*
 > Let $$\mathcal{C}$$ be an abstract C\*-algebra. A *state* is an element $$\omega$$ of the dual space $$\mathcal{C}^*$$ that is
@@ -291,10 +291,10 @@ These states are interesting for many reasons. For example, they provide a canon
 With this as motivation, let's jump right in!
 
 ## Global Isometric Invariant States in Minkowski Spacetime
-We begin with global, "isometric invariant" states in Minkowski spacetime. They are, in some sense, the "simplest" "isometric invariant" states. However, a careful examination of such  global, "isometric invariant" states in Minkowski spacetime clarifies essentially all subtleties that arise in other cases.
+We begin with global, "isometric invariant" states in Minkowski spacetime. They are, in some sense, the "simplest" "isometric invariant" states. However, a careful examination of such global, "isometric invariant" states in Minkowski spacetime clarifies essentially all subtleties that arise in other cases.
 
 ### Isometries of the Quasilocal Algebra
-"Morally", as the metric doesn't change under and isometry, an isometry $$L$$ of Minkowski spacetime, in particular a member  of the inhomogeneous Lorentz group connected to the identity, should generate an associated unital \*-automorphism $$\alpha_L$$ of the quasilocal algebra $$\mathfrak{U}$$
+"Morally", as the metric doesn't change under an isometry, an isometry $$L$$ of Minkowski spacetime, in particular a member of the inhomogeneous Lorentz group connected to the identity, should generate an associated unital \*-automorphism $$\alpha_L$$ of the quasilocal algebra $$\mathfrak{U}$$
 
 $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
@@ -398,7 +398,7 @@ $$
 
 is a countable basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ of the Euclidian topology on Minkowski spacetime (Example 2.49 [Lee](https://doi.org/10.1007/978-1-4419-7940-7)). Thus, by definition, the Euclidian topology of Minkowski spacetime is second countable.
 
-Sets of the form $$I^+(p) \cap I^{-}(q)$$ form an uncountable a basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, as proven by Penrose, the Alexandrov and Euclidian topology of Minkowski spacetime are equivalent (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Hence, $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ forms a basis for the Euclidian topology. Thus the definition of basis implies that for any given $$\mathbf{E}_i$$ one has
+Sets of the form $$I^+(p) \cap I^{-}(q)$$ form an uncountable basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, as proven by Penrose, the Alexandrov and Euclidian topology of Minkowski spacetime are equivalent (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Hence, $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ forms a basis for the Euclidian topology. Thus the definition of basis implies that for any given $$\mathbf{E}_i$$ one has
 
 $$
 \mathbf{E}_i = \bigcup\limits_{\mathbf{B}_\iota \in \mathbf{B}(\mathbf{E}_i)} \mathbf{B}_\iota,
@@ -417,7 +417,7 @@ Now if we recall the standard theorem (Theorem 2.50 [Lee](https://doi.org/10.100
 > 2. $$X$$ contains a countable, dense subset.
 > 3. Every open cover of $$X$$ has a countable subcover.
 
-We see that the fact that $$\mathbf{E}_i$$ is second contable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_\iota \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
+We see that the fact that $$\mathbf{E}_i$$ is second countable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_\iota \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
 
 As the basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is countable and each $$\mathbf{E}_i$$ admits a countable cover of basis elements of the Alexandrov topology, it follows that there is a countable $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ cover of the $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$.
 
@@ -465,7 +465,7 @@ $$
 
 of the desired form.
 
-Consider any element $$\mathbf{B}_{n+1}$$ of the countable basis of the Alexandrov topology that is different from the first $$n$$ we are already considering. As we are in Minkowski spacetime, there exists[^1] an element $$\mathbf{B}$$ in the uncountable a basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology such that $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$. As a result of Axiom 5 (Lorentz Covariance) there exists a map
+Consider any element $$\mathbf{B}_{n+1}$$ of the countable basis of the Alexandrov topology that is different from the first $$n$$ we are already considering. As we are in Minkowski spacetime, there exists[^1] an element $$\mathbf{B}$$ in the uncountable basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology such that $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$. As a result of Axiom 5 (Lorentz Covariance) there exists a map
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
@@ -518,7 +518,7 @@ We begin this part of the proof by proving the following lemma
 > \sigma(\alpha(a_1)) = \sigma(a_1).
 > $$
 >
-> In other words, the specturm of $$\sigma(\alpha(a_1))$$ of $$\alpha(a_1)$$ in $$\mathfrak{U}_2$$ is equivalent to the specturm $$\sigma(a_1)$$ of $$a_1$$ in $$\mathfrak{U}_1$$.
+> In other words, the spectrum of $$\sigma(\alpha(a_1))$$ of $$\alpha(a_1)$$ in $$\mathfrak{U}_2$$ is equivalent to the spectrum $$\sigma(a_1)$$ of $$a_1$$ in $$\mathfrak{U}_1$$.
 
 **Proof**
 Consider $$\lambda \notin \sigma(a_1)$$. The definition of spectrum then implies that  $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})$$ is invertible in $$\mathfrak{U}_1$$. Let $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}$$ be that inverse. As $$\alpha$$ is a unital \*-monomorphism
@@ -586,7 +586,7 @@ The next result we need to establish on the road to proving that $$\alpha_L$$ is
 > $$
 
 **Proof**
-Recall the followiing lemma (Lemma 8.1 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+Recall the following lemma (Lemma 8.1 [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
 > **Lemma**
 > If $$a$$ is a self-adjoint member of a unital C\*-algebra, then its norm $$\|a\|$$ is equivalent to its spectral radius $$r(a)$$, i.e.
@@ -806,7 +806,7 @@ $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
 $$
 
-corresponding to any member $$L$$ of the inhomogeneous Lorentz group that is connected to the identity, we are now in the position to define a global "isometric invariant" states
+corresponding to any member $$L$$ of the inhomogeneous Lorentz group that is connected to the identity, we are now in the position to define a global "isometric invariant" state
 
 > **Definition** *(Global Isometric Invariant State)*
 > Let $$\mathfrak{U}$$ be the quasilocal algebra associated with Minkowski spacetime.
@@ -817,7 +817,7 @@ corresponding to any member $$L$$ of the inhomogeneous Lorentz group that is con
 > \omega(a) = \omega(\alpha_L(a))
 > $$
 >
-> where $$\alpha_L$$ is the unital *-automorphism defined in the the previous section
+> where $$\alpha_L$$ is the unital *-automorphism defined in the previous section
 >
 > $$
 > \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
@@ -829,7 +829,7 @@ corresponding to any member $$L$$ of the inhomogeneous Lorentz group that is con
 
 This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given "local" algebra $$\mathfrak{U}(\mathbf{B}_i)$$, where $$\mathbf{B}_i$$ is from the countable basis, aids in understanding subsequent definitions of local "isometric invariant" states.
 
-So, to that end, consider an arbitrary element $$\mathbf{B}_i$$ from the countable basis of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}_i$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B}_i)$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphisim
+So, to that end, consider an arbitrary element $$\mathbf{B}_i$$ from the countable basis of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}_i$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B}_i)$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphism
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i).
@@ -845,7 +845,7 @@ $$
 \end{align}
 $$
 
-of the dual spaces of $$\mathfrak{U}(\mathbf{B}_i)^*$$ and $$\mathfrak{U}(L\mathbf{B}_i)^*$$ respectively. Using the unital *-isomorphisim
+of the dual spaces of $$\mathfrak{U}(\mathbf{B}_i)^*$$ and $$\mathfrak{U}(L\mathbf{B}_i)^*$$ respectively. Using the unital *-isomorphism
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i)
@@ -896,7 +896,7 @@ Let's jump right in with the definition:
 >
 > is the pull-back via the unital \*-isomorphism $$\alpha_L$$ of Axiom 5 (Lorentz Covariance).
 
-In light of our examination of the implications global isometric invariant states for "local" algebras, this is exactly what would one expect as a definition. It treats $$\mathbf{B}$$ in the same manner as the entire Minkowski spacetime was treated in the global case.
+In light of our examination of the implications global isometric invariant states for "local" algebras, this is exactly what one would expect as a definition. It treats $$\mathbf{B}$$ in the same manner as the entire Minkowski spacetime was treated in the global case.
 
 ## Local Isometric Invariant States in Lorentzian Spacetime
 As there is no quasilocal algebra associated with a generic Lorentzian spacetime, we begin not by defining global "isometric invariant" states but by defining local "isometric invariant" states.
@@ -936,7 +936,7 @@ This alone is enough for us to introduce the following
 Obviously, this reduces to a local isometric invariant state in Minkowski spacetime in the proper limit. Hence, it seems like the "natural" generalization to Lorentzian spacetime.
 
 # Summary
-We've covered alot of ground.
+We've covered a lot of ground.
 
 We've introduced the notion of states on abstract C\*-algebras. Then, using many key results from the AQFT axioms, we were able to generalize such states to global and local states on Minkowski spacetime and global and local isometric invariant states also on Minkowski spacetime.
 
