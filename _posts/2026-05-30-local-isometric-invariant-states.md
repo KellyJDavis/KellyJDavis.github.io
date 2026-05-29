@@ -873,27 +873,27 @@ Let's jump right in with the definition
 
 > **Definition** *(Local Isometric Invariant State)*
 > Let $$\mathbf{B}$$ be an arbitrary basis element of the Alexandrov topology on Minkowski spacetime and $$\mathfrak{U}(\mathbf{B})$$ the abstract C\*-algebra associated with $$\mathbf{B}$$ via Axiom 1 (Local Algebras).
-> 
-> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(L, \mathbf{B}_\iota)$$ where $$L$$ is in the inhomogeneous Lorentz group connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, L\mathbf{B}_\iota \subseteq \mathbf{B}$$, one has 
-> 
+>
+> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(L, \mathbf{B}_\iota)$$ where $$L$$ is in the inhomogeneous Lorentz group connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, L\mathbf{B}_\iota \subseteq \mathbf{B}$$, one has
+>
 > $$
 > \omega|_{\mathfrak{U}(\mathbf{B}_\iota)}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)} \right)^*(a),
 > $$
-> 
+>
 > where
-> 
+>
 > $$
 > \begin{align}
 > \omega|_{\mathfrak{U}(\mathbf{B}_\iota)} \quad \text{and} \quad \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)}
 > \end{align}
 > $$
-> 
+>
 > are the restrictions of $$\omega$$ and
-> 
+>
 > $$
 > \left( \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)}(\alpha_L(a))
 > $$
-> 
+>
 > is the pull-back via the unital \*-isomorphism $$\alpha_L$$ of Axiom 5 (Lorentz Covariance).
 
 In light of our examination of the implications global isometric invariant states had on "local" algebras, this is exactly what would one expect as a definition. It treats $$\mathbf{B}$$ in the same manner as the entire Minkowski spacetime was treated in the global case.
@@ -910,27 +910,27 @@ This alone is enough for us to introduce the following
 
 > **Definition** *(Local Isometric Invariant State)*
 > Let $$\mathbf{B}$$ be an arbitrary basis element of the Alexandrov topology in a Lorentzian spacetime $$M$$ and $$\mathfrak{U}(\mathbf{B})$$ the abstract C\*-algebra associated with $$\mathbf{B}$$ via Axiom 1 (Local Algebras).
-> 
-> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(\varphi, \mathbf{B}_\iota)$$ where $$\varphi$$ is a member of the group of isometries of $$M$$ connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, \varphi(\mathbf{B}_\iota) \subseteq \mathbf{B}$$, one has 
-> 
+>
+> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(\varphi, \mathbf{B}_\iota)$$ where $$\varphi$$ is a member of the group of isometries of $$M$$ connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, \varphi(\mathbf{B}_\iota) \subseteq \mathbf{B}$$, one has
+>
 > $$
 > \omega|_{\mathfrak{U}(\mathbf{B}_\iota)}(a) = \left( \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))} \right)^*(a),
 > $$
-> 
+>
 > where
-> 
+>
 > $$
 > \begin{align}
 > \omega|_{\mathfrak{U}(\mathbf{B}_\iota)} \quad \text{and} \quad \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))}
 > \end{align}
 > $$
-> 
+>
 > are the restrictions of $$\omega$$ and
-> 
+>
 > $$
 > \left( \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))} \right)^*(a) \equiv \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))}(\alpha_\varphi(a))
 > $$
-> 
+>
 > is the pull-back via the unital \*-isomorphism $$\alpha_\varphi$$ of Axiom 5 (Isometric Covariance).
 
 Obviously, this reduces to a local isometric invariant state in Minkowski spacetime in the proper limit. Hence, it seems like the "natural" generalization to Lorentzian spacetime.
@@ -942,7 +942,7 @@ We've introduced the notion of states on abstract C\*-algebras. Then, using many
 
 Motivated by the Minkowski case, we also introduced the notion of local states and local isometric invariant states on Lorentzian spacetime. (As there is no quasilocal algebra on a generic Lorentzian spacetime, there is no analog of a global state or a global isometric invariant state there.)
 
-What we haven't done here is prove if global and/or local isometric invariant states on Minkowski spacetime exist. Similarly, we didn't prove local isometric invariant states on Lorentzian spacetime exist either. 
+What we haven't done here however is prove if global and/or local isometric invariant states on Minkowski spacetime exist. Similarly, we didn't prove local isometric invariant states on Lorentzian spacetime exist either.
 
 Unfortunately, such existence questions are relatively complex and would have made this blog post unbearably long. So we reserve these existence questions for a future blog post.
 
