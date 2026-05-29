@@ -618,10 +618,10 @@ $$
 Now the definition of spectral radius along with our Spectral Equivalence Theorem imply
 
 $$
-r(\alpha(a_1)) \equiv \sup\{|\lambda| : \lambda \in \sigma(\alpha(a_1))\} = \sup\{|\lambda| : \lambda \in \sigma(a_1)\} \equiv r(a_0).
+r(\alpha(a_1)) \equiv \sup\{|\lambda| : \lambda \in \sigma(\alpha(a_1))\} = \sup\{|\lambda| : \lambda \in \sigma(a_1)\} \equiv r(a_1).
 $$
 
-Thus $$r(\alpha(a_1)) = r(a_0)$$. This along with $$\|\alpha(a_1)\| = r(\alpha(a_1))$$ and $$\|a_1\| = r(a_1)$$ imply
+Thus $$r(\alpha(a_1)) = r(a_1)$$. This along with $$\|\alpha(a_1)\| = r(\alpha(a_1))$$ and $$\|a_1\| = r(a_1)$$ imply
 
 $$
 \|\alpha(a_1)\| = \|a_1\|,
@@ -874,13 +874,13 @@ Let's jump right in with the definition:
 > **Definition** *(Local Isometric Invariant State)*
 > Let $$\mathbf{B}$$ be an arbitrary basis element of the Alexandrov topology on Minkowski spacetime and $$\mathfrak{U}(\mathbf{B})$$ the abstract C\*-algebra associated with $$\mathbf{B}$$ via Axiom 1 (Local Algebras).
 >
-> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(L, \mathbf{B}_\iota)$$ where $$L$$ is in the inhomogeneous Lorentz group connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, L\mathbf{B}_\iota \subseteq \mathbf{B}$$, one has
+> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any pair $$(L, \mathbf{B}_\iota)$$ where $$L$$ is in the inhomogeneous Lorentz group connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, L\mathbf{B}_\iota \subseteq \mathbf{B}$$, one has
 >
 > $$
 > \omega|_{\mathfrak{U}(\mathbf{B}_\iota)}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)} \right)^*(a),
 > $$
 >
-> where
+> for any $$a$$ in $$\mathfrak{U}(\mathbf{B}_\iota)$$ where we made use of
 >
 > $$
 > \begin{align}
@@ -888,13 +888,13 @@ Let's jump right in with the definition:
 > \end{align}
 > $$
 >
-> are the restrictions of $$\omega$$ and
+> the restrictions of $$\omega$$ and
 >
 > $$
 > \left( \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)}(\alpha_L(a))
 > $$
 >
-> is the pull-back via the unital \*-isomorphism $$\alpha_L$$ of Axiom 5 (Lorentz Covariance).
+> the pull-back via the unital \*-isomorphism $$\alpha_L$$ of Axiom 5 (Lorentz Covariance).
 
 In light of our examination of the implications global isometric invariant states for "local" algebras, this is exactly what one would expect as a definition. It treats $$\mathbf{B}$$ in the same manner as the entire Minkowski spacetime was treated in the global case.
 
@@ -911,13 +911,13 @@ This alone is enough for us to introduce the following
 > **Definition** *(Local Isometric Invariant State)*
 > Let $$\mathbf{B}$$ be an arbitrary basis element of the Alexandrov topology in a Lorentzian spacetime $$M$$ and $$\mathfrak{U}(\mathbf{B})$$ the abstract C\*-algebra associated with $$\mathbf{B}$$ via Axiom 1 (Local Algebras).
 >
-> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(\varphi, \mathbf{B}_\iota)$$ where $$\varphi$$ is a member of the group of isometries of $$M$$ connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, \varphi(\mathbf{B}_\iota) \subseteq \mathbf{B}$$ one has
+> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any pair $$(\varphi, \mathbf{B}_\iota)$$ where $$\varphi$$ is a member of the group of isometries of $$M$$ connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, \varphi(\mathbf{B}_\iota) \subseteq \mathbf{B}$$ one has
 >
 > $$
 > \omega|_{\mathfrak{U}(\mathbf{B}_\iota)}(a) = \left( \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))} \right)^*(a),
 > $$
 >
-> where
+> for any $$a$$ in $$\mathfrak{U}(\mathbf{B}_\iota)$$ where we made use of
 >
 > $$
 > \begin{align}
@@ -925,13 +925,13 @@ This alone is enough for us to introduce the following
 > \end{align}
 > $$
 >
-> are the restrictions of $$\omega$$ and
+> the restrictions of $$\omega$$ and
 >
 > $$
 > \left( \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))} \right)^*(a) \equiv \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))}(\alpha_\varphi(a))
 > $$
 >
-> is the pull-back via the unital \*-isomorphism $$\alpha_\varphi$$ of Axiom 5 (Isometric Covariance).
+> the pull-back via the unital \*-isomorphism $$\alpha_\varphi$$ of Axiom 5 (Isometric Covariance).
 
 Obviously, this reduces to a local isometric invariant state in Minkowski spacetime in the proper limit. Hence, it seems like the "natural" generalization to Lorentzian spacetime.
 
