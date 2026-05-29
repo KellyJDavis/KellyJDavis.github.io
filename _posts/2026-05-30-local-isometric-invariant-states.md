@@ -866,32 +866,84 @@ $$
 for an arbitrary element $$a$$ of $$\mathfrak{U}(\mathbf{B}_i)$$. This is a "local" manifestation of isometric invariance of $$\omega$$, and, as we shall see, it is this condition that plays a key role in defining local "isometric invariant" states.
 
 ## Local, Isometric Invariant States in Minkowski Spacetime
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et dui nisl. Aliquam a erat eget metus commodo viverra et ut orci. Duis vitae leo ultricies purus feugiat rhoncus. In imperdiet, tortor quis tincidunt ultrices, orci diam aliquam sapien, eu laoreet erat dui id massa. Donec venenatis vitae velit malesuada euismod. Nunc euismod, turpis non gravida commodo, massa quam rutrum massa, sit amet venenatis tellus dui ac odio. Vestibulum ut porttitor ipsum. Nunc eget ultricies eros. Integer leo odio, vulputate ut sagittis at, vestibulum ac massa. In vulputate bibendum nisl, ut vestibulum lorem cursus et.
+Global isometric invariant states in Minkowski spacetime defined, we can proceed to define local "isometric invariant" states in Minkowski spacetime. Our careful examination of implications global isometric invariant states had for "local" algebras will pay dividends in this section, simplifying and clarifying definitions and the presentation.
 
 ### Definition of Local, Isometric Invariant States
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu placerat dolor. Integer dictum libero id lectus imperdiet, id semper orci interdum. Vestibulum sed nibh vel lorem ultricies egestas vitae sit amet mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque pretium magna id facilisis laoreet. Quisque neque purus, ultrices nec placerat sed, porta ut quam. Quisque molestie ornare purus ac eleifend. Vestibulum lectus massa, malesuada rhoncus mi non, auctor tincidunt mauris. Phasellus accumsan lectus quis orci suscipit, laoreet consequat nunc rhoncus. In efficitur mauris in convallis bibendum. Duis nisi erat, porta id accumsan non, dignissim quis elit.
+Let's jump right in with the definition
 
-Nunc rhoncus, velit at rutrum bibendum, dolor est viverra sem, a vestibulum ex enim ut nulla. Maecenas iaculis hendrerit vulputate. Curabitur a condimentum dolor. In pharetra, arcu sit amet feugiat aliquet, nibh turpis maximus sem, sed vestibulum urna dui id mi. Sed at pretium ligula, nec efficitur odio. Aenean gravida purus et iaculis scelerisque. Morbi accumsan quis sapien eget luctus. Cras volutpat nunc et nulla interdum, eget consectetur orci porta. Nullam posuere diam nisi, eget ultricies dui molestie vel. Nam vitae dapibus mi. Morbi quis nibh leo. Nunc sagittis, mi sed fringilla pulvinar, felis justo sollicitudin ipsum, id fringilla felis massa venenatis dolor. Duis at ante a elit imperdiet tincidunt ut non mauris. Cras in aliquet nisl, id vehicula mi.
+> **Definition** *(Local Isometric Invariant State)*
+> Let $$\mathbf{B}$$ be an arbitrary basis element of the Alexandrov topology on Minkowski spacetime and $$\mathfrak{U}(\mathbf{B})$$ the abstract C\*-algebra associated with $$\mathbf{B}$$ via Axiom 1 (Local Algebras).
+> 
+> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(L, \mathbf{B}_\iota)$$ where $$L$$ is in the inhomogeneous Lorentz group connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, L\mathbf{B}_\iota \subseteq \mathbf{B}$$, one has 
+> 
+> $$
+> \omega|_{\mathfrak{U}(\mathbf{B}_\iota)}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)} \right)^*(a),
+> $$
+> 
+> where
+> 
+> $$
+> \begin{align}
+> \omega|_{\mathfrak{U}(\mathbf{B}_\iota)} \quad \text{and} \quad \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)}
+> \end{align}
+> $$
+> 
+> are the restrictions of $$\omega$$ and
+> 
+> $$
+> \left( \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B}_\iota)}(\alpha_L(a))
+> $$
+> 
+> is the pull-back via the unital \*-isomorphism $$\alpha_L$$ of Axiom 5 (Lorentz Covariance).
 
-Nunc rhoncus, velit at rutrum bibendum, dolor est viverra sem, a vestibulum ex enim ut nulla. Maecenas iaculis hendrerit vulputate. Curabitur a condimentum dolor. In pharetra, arcu sit amet feugiat aliquet, nibh turpis maximus sem, sed vestibulum urna dui id mi. Sed at pretium ligula, nec efficitur odio. Aenean gravida purus et iaculis scelerisque. Morbi accumsan quis sapien eget luctus. Cras volutpat nunc et nulla interdum, eget consectetur orci porta. Nullam posuere diam nisi, eget ultricies dui molestie vel. Nam vitae dapibus mi. Morbi quis nibh leo. Nunc sagittis, mi sed fringilla pulvinar, felis justo sollicitudin ipsum, id fringilla felis massa venenatis dolor. Duis at ante a elit imperdiet tincidunt ut non mauris. Cras in aliquet nisl, id vehicula mi.
+In light of our examination of the implications global isometric invariant states had on "local" algebras, this is exactly what would one expect as a definition. It treats $$\mathbf{B}$$ in the same manner as the entire Minkowski spacetime was treated in the global case.
 
 ## Local, Isometric Invariant States in Lorentzian Spacetime
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec et dui nisl. Aliquam a erat eget metus commodo viverra et ut orci. Duis vitae leo ultricies purus feugiat rhoncus. In imperdiet, tortor quis tincidunt ultrices, orci diam aliquam sapien, eu laoreet erat dui id massa. Donec venenatis vitae velit malesuada euismod. Nunc euismod, turpis non gravida commodo, massa quam rutrum massa, sit amet venenatis tellus dui ac odio. Vestibulum ut porttitor ipsum. Nunc eget ultricies eros. Integer leo odio, vulputate ut sagittis at, vestibulum ac massa. In vulputate bibendum nisl, ut vestibulum lorem cursus et.
+As there is no quasilocal algebra associated with a generic Lorentzian spacetime, we begin not by defining global "isometric invariant" states but by defining local "isometric invariant" states.
 
 ### Definition of Local, Isometric Invariant States
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu placerat dolor. Integer dictum libero id lectus imperdiet, id semper orci interdum. Vestibulum sed nibh vel lorem ultricies egestas vitae sit amet mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque pretium magna id facilisis laoreet. Quisque neque purus, ultrices nec placerat sed, porta ut quam. Quisque molestie ornare purus ac eleifend. Vestibulum lectus massa, malesuada rhoncus mi non, auctor tincidunt mauris. Phasellus accumsan lectus quis orci suscipit, laoreet consequat nunc rhoncus. In efficitur mauris in convallis bibendum. Duis nisi erat, porta id accumsan non, dignissim quis elit.
+A Minkowski spacetime is a Lorentzian spacetime, one with far more symmetries than a generic Lorentzian spacetime but none-the-less a Lorentzian spacetime.
 
-Nunc rhoncus, velit at rutrum bibendum, dolor est viverra sem, a vestibulum ex enim ut nulla. Maecenas iaculis hendrerit vulputate. Curabitur a condimentum dolor. In pharetra, arcu sit amet feugiat aliquet, nibh turpis maximus sem, sed vestibulum urna dui id mi. Sed at pretium ligula, nec efficitur odio. Aenean gravida purus et iaculis scelerisque. Morbi accumsan quis sapien eget luctus. Cras volutpat nunc et nulla interdum, eget consectetur orci porta. Nullam posuere diam nisi, eget ultricies dui molestie vel. Nam vitae dapibus mi. Morbi quis nibh leo. Nunc sagittis, mi sed fringilla pulvinar, felis justo sollicitudin ipsum, id fringilla felis massa venenatis dolor. Duis at ante a elit imperdiet tincidunt ut non mauris. Cras in aliquet nisl, id vehicula mi.
+So, whatever definition is put forward for a local "isometric invariant" state in Lorentzian spacetime, it should reduce to the definition of a local isometric invariant state in Minkowski spacetime in the proper limit.
 
-Nunc rhoncus, velit at rutrum bibendum, dolor est viverra sem, a vestibulum ex enim ut nulla. Maecenas iaculis hendrerit vulputate. Curabitur a condimentum dolor. In pharetra, arcu sit amet feugiat aliquet, nibh turpis maximus sem, sed vestibulum urna dui id mi. Sed at pretium ligula, nec efficitur odio. Aenean gravida purus et iaculis scelerisque. Morbi accumsan quis sapien eget luctus. Cras volutpat nunc et nulla interdum, eget consectetur orci porta. Nullam posuere diam nisi, eget ultricies dui molestie vel. Nam vitae dapibus mi. Morbi quis nibh leo. Nunc sagittis, mi sed fringilla pulvinar, felis justo sollicitudin ipsum, id fringilla felis massa venenatis dolor. Duis at ante a elit imperdiet tincidunt ut non mauris. Cras in aliquet nisl, id vehicula mi.
+This alone is enough for us to introduce the following
+
+> **Definition** *(Local Isometric Invariant State)*
+> Let $$\mathbf{B}$$ be an arbitrary basis element of the Alexandrov topology in a Lorentzian spacetime $$M$$ and $$\mathfrak{U}(\mathbf{B})$$ the abstract C\*-algebra associated with $$\mathbf{B}$$ via Axiom 1 (Local Algebras).
+> 
+> A *local isometric invariant state* on $$\mathbf{B}$$ is a local state $$\omega$$ on $$\mathbf{B}$$ such that for any $$a$$ in $$\mathfrak{U}(\mathbf{B})$$ and any pair $$(\varphi, \mathbf{B}_\iota)$$ where $$\varphi$$ is a member of the group of isometries of $$M$$ connected to the identity and $$\mathbf{B}_\iota$$ is a basis element of the Alexandrov topology such that $$\mathbf{B}_\iota, \varphi(\mathbf{B}_\iota) \subseteq \mathbf{B}$$, one has 
+> 
+> $$
+> \omega|_{\mathfrak{U}(\mathbf{B}_\iota)}(a) = \left( \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))} \right)^*(a),
+> $$
+> 
+> where
+> 
+> $$
+> \begin{align}
+> \omega|_{\mathfrak{U}(\mathbf{B}_\iota)} \quad \text{and} \quad \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))}
+> \end{align}
+> $$
+> 
+> are the restrictions of $$\omega$$ and
+> 
+> $$
+> \left( \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))} \right)^*(a) \equiv \omega|_{\mathfrak{U}(\varphi(\mathbf{B}_\iota))}(\alpha_\varphi(a))
+> $$
+> 
+> is the pull-back via the unital \*-isomorphism $$\alpha_\varphi$$ of Axiom 5 (Isometric Covariance).
+
+Obviously, this reduces to a local isometric invariant state in Minkowski spacetime in the proper limit. Hence, it seems like the "natural" generalization to Lorentzian spacetime.
 
 # Summary
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas vitae quam sed ex gravida hendrerit. Curabitur ac ante fringilla, aliquet purus et, commodo justo. Nulla commodo consectetur nisl, eget cursus justo convallis non. Proin a consectetur libero. Proin placerat, turpis quis tristique porta, nibh orci laoreet dolor, non dignissim sem quam vel nisl. Cras metus ligula, mollis ut justo in, sollicitudin tincidunt magna. Nunc molestie pulvinar nibh, ac venenatis odio viverra vulputate. Nunc suscipit dignissim maximus. Ut consectetur condimentum sodales. Ut ultricies leo sed odio semper, a vehicula libero pellentesque.
+We've covered alot of ground.
 
-Ut posuere convallis convallis. Cras fermentum lacinia blandit. Ut posuere ex sed neque porttitor condimentum. Sed ac felis luctus, bibendum velit vitae, sollicitudin dolor. Nunc tristique ante vitae ullamcorper lacinia. Mauris sodales dui at justo ornare porta. Nulla facilisi. Pellentesque vel eleifend risus, ac auctor sapien. Sed pellentesque finibus turpis, et ornare lectus auctor ut. Nulla ut dui tellus. Fusce risus augue, vehicula id convallis at, hendrerit sit amet orci.
+We've introduced the notion of states on abstract C\*-algebras. Then, using many key results from the AQFT axioms, we were able to generalize such states to global and local states on Minkowski spacetime and global and local isometric invariant states also on Minkowski spacetime.
 
-Nunc ut imperdiet neque. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas aliquam nisi eget augue cursus, efficitur egestas ligula bibendum. Suspendisse fringilla mi dictum libero fermentum gravida. Mauris vehicula tortor ac orci aliquam dictum. Mauris ac enim enim. Suspendisse molestie eros et massa volutpat, non convallis arcu posuere. Sed id nunc in lectus tincidunt pellentesque. Nunc vestibulum facilisis ante, vitae vehicula ex. Donec maximus sem a tincidunt vulputate. Sed lacinia molestie mauris, et efficitur nisi dapibus eget. Aliquam vel elit quis dolor laoreet varius.
+Motivated by the Minkowski case, we also introduced the notion of local states and local isometric invariant states on Lorentzian spacetime. (As there is no quasilocal algebra on a generic Lorentzian spacetime, there is no analog of a global state or a global isometric invariant state there.)
 
-Nulla vel mollis neque. Proin vulputate nisi nec tellus consequat placerat. Etiam congue diam ante, in posuere sem eleifend vel. Suspendisse potenti. Duis tempus rhoncus mauris, ac dapibus mauris maximus in. Pellentesque finibus sagittis eros eu commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor nibh ut eros aliquam, vel rhoncus sem varius. Nam ac iaculis dolor, eu varius ligula. Sed vel tellus libero. Aenean vel diam at sem vulputate vehicula.
+What we haven't done here is prove if global and/or local isometric invariant states on Minkowski spacetime exist. Similarly, we didn't prove local isometric invariant states on Lorentzian spacetime exist either. 
+
+Unfortunately, such existence questions are relatively complex and would have made this blog post unbearably long. So we reserve these existence questions for a future blog post.
 
 [^1]: Note such a $$\mathbf{B}$$ need not exist on a general Lorentzian spacetime. This is special to Minkowski spacetime.
