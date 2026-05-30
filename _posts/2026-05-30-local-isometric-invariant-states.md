@@ -747,43 +747,23 @@ $$
 
 to take on the role of $$W$$. However, we haven't proven that it is dense in $$\mathfrak{U}$$. Let us prove that this is the case.
 
-The definition of the quasilocal algebra $$\mathfrak{U}$$ implies that the union
+---------------------------------------
+**TODO:** Prove the countable union of the $$\mathfrak{U}(\mathbf{B}_i)$$ is dense in $$\mathfrak{U}$$. This may require a new axiom that asserts
+
+
+If $$\mathbf{B}$$ is covered by basis elements $$\mathbf{B}_\iota$$
 
 $$
-\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
+\mathbf{B} = \bigcup\limits_{\mathbf{B}_\iota \in \mathbf{B}(\mathbf{B})} \mathbf{B}_\iota,
 $$
 
-over the uncountable basis elements $$\mathbf{B}_\iota$$ is dense in $$\mathfrak{U}$$. As each $$\mathbf{B}_\iota$$ is open the definition of a basis implies that
+where $$\mathbf{B}(\mathbf{B})$$ is the set of all elements $$\mathbf{B}_\iota$$ in the uncountable basis that are subsets $$\mathbf{B}_\iota \subseteq \mathbf{B}$$ of $$\mathbf{B}$$ then
 
 $$
-\mathbf{B}_\iota = \bigcup_{\mathbf{B}_i \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_i
+\mathfrak{U}(\mathbf{B}) = \overline{\bigcup\limits_{\mathbf{B}_\iota \in \mathbf{B}(\mathbf{B})} \mathfrak{U}(\mathbf{B}_\iota})
 $$
 
-where $$\mathbf{B}(\mathbf{B}_\iota)$$ is the set of $$\mathbf{B}_i$$ in $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ that are subsets $$\mathbf{B}_i \subseteq \mathbf{B}_\iota$$ of $$\mathbf{B}_\iota$$. Hence
-
-$$
-\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) = \bigcup\limits_{\iota \in \mathcal{I}} \left( \bigcup_{\mathbf{B}_i \in \mathbf{B}(\mathbf{B}_\iota)} \mathbf{B}_i \right) \subseteq \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i),
-$$
-
-where the final subset relation follows from the fact that the iterated union can at most contain all elements $$\mathbf{B}_i$$ of the countable basis. Hence, as
-
-$$
-\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
-$$
-
-is dense in $$\mathfrak{U}$$ and
-
-$$
-\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
-$$
-
-it follows that
-
-$$
-\bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
-$$
-
-is dense in $$\mathfrak{U}$$ and can thus take on the role of $$W$$ in the theorem.
+---------------------------------------
 
 With this we can then apply the Bounded Linear Transformation Theorem and uniquely extend
 
@@ -794,10 +774,14 @@ $$
 to
 
 $$
-\alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
+\alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}.
 $$
 
-as a unital *-automorphism, the desired result of this section.
+---------------------------------------
+
+**TODO:** Prove that this extension is indeed a unital \*-automorphism. Hopefully this should only be a continuity argument.
+
+---------------------------------------
 
 ### Definition of Global Isometric Invariant States
 As we have established the definition of the unital *-automorphism
@@ -845,7 +829,7 @@ $$
 \end{align}
 $$
 
-of the dual spaces of $$\mathfrak{U}(\mathbf{B}_i)^*$$ and $$\mathfrak{U}(L\mathbf{B}_i)^*$$ respectively. Using the unital *-isomorphism
+of the dual spaces $$\mathfrak{U}(\mathbf{B}_i)^*$$ and $$\mathfrak{U}(L\mathbf{B}_i)^*$$ respectively. Using the unital *-isomorphism
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i)
