@@ -353,6 +353,15 @@ to extend $$\alpha_L$$ to the entire quasilocal algebra, the desired result. It 
 
 The first step in this argument is to prove the following theorem
 
+> **Start here:**
+> 
+> 1. Modify the theorem below to have $$\alpha_L$$ act not on the union over a countable basis, but over $$\{B_\iota\}_{\iota \in \mathcal{I}}$$ all sets of the form $$\mathbf{B} = I^+(p) \cap I^+(q)$$.
+> 2. Remove the proof that there exists a countable basis. This is true but not of use for the new direction.
+> 3. Prove that $$\{B_\iota\}_{\iota \in \mathcal{I}}$$ and the proper subset relation is a well-founded relation with the empty set being the minimal element.
+> 4. Use Noetherian induction to prove that the Axiom 5's linear $$\alpha_L$$ generates a linear $$\alpha_L$$ for the union over $$\{B_\iota\}_{\iota \in \mathcal{I}}$$ 
+> 
+> Make various (hopefully) minor tweaks of subsequent arguments.
+
 > **Theorem**
 > On Minkowski spacetime let $$L$$ be any member of the inhomogeneous Lorentz group that is connected to the identity. Then there exists a map
 >
