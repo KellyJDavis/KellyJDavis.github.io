@@ -353,165 +353,137 @@ to extend $$\alpha_L$$ to the entire quasilocal algebra, the desired result. It 
 
 The first step in this argument is to prove the following theorem
 
-> **Start here:**
-> 
-> 1. Modify the theorem below to have $$\alpha_L$$ act not on the union over a countable basis, but over $$\{B_\iota\}_{\iota \in \mathcal{I}}$$ all sets of the form $$\mathbf{B} = I^+(p) \cap I^+(q)$$.
-> 2. Remove the proof that there exists a countable basis. This is true but not of use for the new direction.
-> 3. Prove that $$\{B_\iota\}_{\iota \in \mathcal{I}}$$ and the proper subset relation is a well-founded relation with the empty set being the minimal element.
-> 4. Use Noetherian induction to prove that the Axiom 5's linear $$\alpha_L$$ generates a linear $$\alpha_L$$ for the union over $$\{B_\iota\}_{\iota \in \mathcal{I}}$$ 
-> 
-> Make various (hopefully) minor tweaks of subsequent arguments.
-
 > **Theorem**
-> On Minkowski spacetime let $$L$$ be any member of the inhomogeneous Lorentz group that is connected to the identity. Then there exists a map
+> On Minkowski spacetime let $$L$$ be any member of the inhomogeneous Lorentz group that is connected to the identity and let
+> 
+> $$
+> \{ \mathbf{B}_\iota \}_{\iota \in \mathcal{I}}
+> $$
+> 
+> be the set of all elements $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^+(q_\iota)$$ in Minkowski spacetime.
+> 
+> Then there exists a map
 >
 > $$
-> \alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+> \alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
 > $$
 >
-> from the set theoretic union over a countable basis
+> from the set theoretic union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$ to the quasilocal algebra $$\mathfrak{U}$$ such that: (1) The map $$\alpha_L$$ is linear; (2) The map $$\alpha_L$$ is bounded; and (3) The restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_\iota)$$
 >
 > $$
-> \{ \mathbf{B}_i \}_{i \in \mathbb{N}}
-> $$
->
-> of the Alexandrov topology to the quasilocal algebra $$\mathfrak{U}$$ such that: (1) The map $$\alpha_L$$ is linear; (2) The map $$\alpha_L$$ is bounded; and (3) The restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_i)$$
->
-> $$
-> \begin{align}
-> \left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)} : \mathfrak{U}(\mathbf{B}_i) &\longrightarrow \mathfrak{U}(L\mathbf{B}_i) \\
->                                                  a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)}(a)
-> \end{align}
+> \left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B}_\iota)} : \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}(L\mathbf{B}_\iota)
 > $$
 >
 > is the map that appears in Axiom 5 (Lorentz Covariance).
 
 **Proof**
-Let us start by proving the existence of a countable basis
+First will prove that there exists a linear map $$\alpha_L$$ of the desired form
 
 $$
-\{ \mathbf{B}_i \}_{i \in \mathbb{N}}
+\alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
 $$
 
-of the Alexandrov topology. In other words, let us prove the lemma
+where the union is over all sets $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^+(q_\iota)$$ in Minkowski spacetime.
 
-> **Lemma**
-> A countable basis $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ of the Alexandrov topology exists on Minkowski spacetime.
+------------------
 
-**Proof**
-Let $$E_r(p)$$ be a Euclidian open ball in Minkowski spacetime centered at $$p$$ and with radius $$r$$. The set
+Let us start be explicitly defining the domain of $$\alpha_L$$, the set theoretic union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$.
 
-$$
-\{ E_r(p) : r \in \mathbb{Q} \text{ and } p \in \mathbb{Q}^4 \}
-$$
-
-is a countable basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ of the Euclidian topology on Minkowski spacetime (Example 2.49 [Lee](https://doi.org/10.1007/978-1-4419-7940-7)). Thus, by definition, the Euclidian topology of Minkowski spacetime is second countable.
-
-Sets of the form $$I^+(p) \cap I^{-}(q)$$ form an uncountable basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology (Definition 4.22 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Furthermore, as proven by Penrose, the Alexandrov and Euclidian topology of Minkowski spacetime are equivalent (Paragraph 4.23 of [Penrose](https://doi.org/10.1137/1.9781611970609)). Hence, $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ forms a basis for the Euclidian topology. Thus the definition of basis implies that for any given $$\mathbf{E}_i$$ one has
+Consider first the disjoint union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$
 
 $$
-\mathbf{E}_i = \bigcup\limits_{\mathbf{B}_\iota \in \mathbf{B}(\mathbf{E}_i)} \mathbf{B}_\iota,
+\coprod\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota).
 $$
 
-where $$\mathbf{B}(\mathbf{E}_i)$$ is the set of all $$\mathbf{B}_\iota$$ in $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ that are subsets $$\mathbf{B}_\iota \subseteq \mathbf{E}_i$$ of $$\mathbf{E}_i$$.
+As a result of Axiom 2 (Isotony), we can define an equivalence relation over this disjoint union, which we now proceed to do.
 
-Now any open subset $$U$$ of a second countable space $$X$$ is second countable, just discard all basis elements of $$X$$ not contained in $$U$$. Thus, $$\mathbf{E}_i$$ is second countable.
+Consider two elements $$a_\iota$$ and $$a_\kappa$$ of this disjoint union. The definition of disjoint union implies that there exist two sets $$\mathbf{B}_\iota$$ and $$\mathbf{B}_\kappa$$ such that $$a_\iota \in \mathfrak{U}(\mathbf{B}_\iota)$$ and $$a_\kappa \in \mathfrak{U}(\mathbf{B}_\kappa)$$. The two elements $$a_\iota$$ and $$a_\kappa$$ are defined to be *equivalent* if $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and thus, as a result of Axiom 2 (Isotony), $$\mathfrak{U}(\mathbf{B}_\iota) \subset \mathfrak{U}(\mathbf{B}_\kappa)$$ and $$a_\iota$$ and $$a_\kappa$$ are related as follows $$i(a_\iota) = a_\kappa$$ by the unital *-monomorphism $$i$$ of Axiom 2 (Isotony).
 
-Now if we recall the standard theorem (Theorem 2.50 [Lee](https://doi.org/10.1007/978-1-4419-7940-7))
-
-> **Theorem** *(Properties of Second Countable Spaces)*
-> Suppose $$X$$ is a second countable space.
->
-> 1. $$X$$ is first countable
-> 2. $$X$$ contains a countable, dense subset.
-> 3. Every open cover of $$X$$ has a countable subcover.
-
-We see that the fact that $$\mathbf{E}_i$$ is second countable and $$\mathbf{B}(\mathbf{E}_i)$$ is an open cover of $$\mathbf{E}_i$$ imply that $$\mathbf{E}_i$$ has a countable subcover consisting of basis elements $$\mathbf{B}_\iota \in \mathbf{B}(\mathbf{E}_i)$$ of the Alexandrov topology.
-
-As the basis $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is countable and each $$\mathbf{E}_i$$ admits a countable cover of basis elements of the Alexandrov topology, it follows that there is a countable $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ cover of the $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$.
-
-Obviously every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open. Furthermore, as $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$ is a basis the definition of a basis implies that any open set is a union of elements of $$\{ \mathbf{E}_i \}_{i \in \mathbb{N}}$$. As each $$\mathbf{E}_i$$ is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, this implies that any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$.
-
-These two facts (1) every element $$\mathbf{B}_i$$ of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is open and (2) any open set is a union of elements of $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$, imply that $$\{ \mathbf{B}_i \}_{i \in \mathbb{N}}$$ is a countable basis of the Alexandrov topology, the desired result. $$\blacksquare$$
-
-With that preliminary step completed, let us now move onto the first proper element of the proof. We will now prove by induction that there exists a linear map $$\alpha_L$$ of the desired form
+The set theoretic union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$ is defined as the disjoint union mod this equivalence relation
 
 $$
-\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \equiv \left. \left( \coprod\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) \middle/ \sim \right.
 $$
 
-where the $$\mathbf{B}_i$$ are elements of the countable basis of the Alexandrov topology.
+This is the domain of $$\alpha_L$$ and it is, by definition of the quasilocal algebra, a subset of the quasilocal algebra $$\mathfrak{U}$$.
 
-Let us start with the base case.
+Next let us define how $$\alpha_L$$ acts on this set theoretic union.
 
-Let $$\mathbf{B}_1$$ be an element of the countable basis of the Alexandrov topology. As a result of Axiom 5 (Lorentz Covariance), for any member $$L$$ of the inhomogeneous Lorentz group that is connected to the identity we have the map
-
-$$
-\alpha_L : \mathfrak{U}(\mathbf{B}_1) \longrightarrow \mathfrak{U}(L\mathbf{B}_1)
-$$
-
-where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. The definition of the quasilocal algebra $$\mathfrak{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}_1) \subseteq \mathfrak{U}$$. Hence, viewing the range $$\mathfrak{U}(L\mathbf{B}_1)$$ of $$\alpha_L$$ as a subset of $$\mathfrak{U}$$, we have a map
-
-$$
-\alpha_L : \bigcup\limits_{i \in \{1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
-$$
-
-of the desired form, i.e. linear and with the proper restriction.
-
-Now let us prove the inductive case.
-
-Assume that for $$n$$ in $$\mathbb{N}$$ there exists a map
-
-$$
-\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
-$$
-
-of the desired form, i.e. a linear map that restricts to the unital \*-isomorphisms that appear in Axiom 5 (Lorentz Covariance). We must prove that this implies that there exists a map
-
-$$
-\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
-$$
-
-of the desired form.
-
-Consider any element $$\mathbf{B}_{n+1}$$ of the countable basis of the Alexandrov topology that is different from the first $$n$$ we are already considering. As we are in Minkowski spacetime, there exists[^1] an element $$\mathbf{B}$$ in the uncountable basis $$\{ \mathbf{B}_{\iota} \}_{\iota \in \mathcal{I}}$$ of the Alexandrov topology such that $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$. As a result of Axiom 5 (Lorentz Covariance) there exists a map
+Consider an element $$[a]$$ in this set theoretic union. Let $$a$$ be any representative of the equivalence class $$[a]$$. Thus there exists a $$\mathbf{B}$$ such that $$a$$ is an element in $$\mathfrak{U}(\mathbf{B})$$. Axiom 5 (Lorentz Covariance) implies that there exists a unital \*-isomorphism $$\alpha_L$$
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
 $$
 
-where $$\alpha_L$$ is a unital \*-isomorphism and is thus linear. As $$\mathbf{B}_1, \ldots, \mathbf{B}_{n+1} \subseteq \mathbf{B}$$, Axiom 2 (Isotony) implies
+that can act on $$a$$. We then define the action of our desired $$\alpha_L$$ on $$[a]$$ as follows
 
 $$
-\bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \subseteq \mathfrak{U}(\mathbf{B}).
+\alpha_L([a]) \equiv \alpha_L(a).
 $$
 
-Thus restriction of $$\alpha_L$$ to the above subdomain of $$\mathfrak{U}(\mathbf{B})$$ gives the map
+To prove this is well-defined we must prove that it is independent of which representative $$a$$ of the equivalence class $$[a]$$ is used in this definition. It is to this proof which we now turn.
+
+Any other representative $$a'$$ of the equivalence class $$[a]$$ by definition is related to $$a$$ by $$a = i(a')$$ or by $$a' = i(a)$$ where $$i$$ is the unital *-monomorphism  of Axiom 2 (Isotony). However, Axiom 5 (Lorentz Covariance) states that $$\alpha_L$$ is invariant with respect to the action of $$i$$. In the case $$a = i(a')$$ this means
 
 $$
-\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}).
+\alpha_L(a) = \alpha_L(i(a')) = \alpha_L(a').
 $$
 
-The definition of the quasilocal algebra $$\mathfrak{U}$$ implies that $$\mathfrak{U}(L\mathbf{B}) \subseteq \mathfrak{U}$$. Hence, as above, viewing $$\mathfrak{U}(L\mathbf{B})$$ as a subset of $$\mathfrak{U}$$ leads to the map
+In the case $$a' = i(a)$$ is means
 
 $$
-\alpha_L : \bigcup\limits_{i \in \{1,\ldots,n+1\}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+\alpha_L(a') = \alpha_L(i(a)) = \alpha_L(a).
 $$
 
-that obviously has the desired form, i.e. a linear map that restricts to the unital \*-isomorphism that appear in Axiom 5 (Lorentz Covariance). This completes the proof of the recursive case.
-
-So with this we have proven that there exists a map
+So in both cases the defintion
 
 $$
-\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
+\alpha_L([a]) \equiv \alpha_L(a)
 $$
 
-of the desired form, where the $$\mathbf{B}_i$$ are elements of the countable basis of the Alexandrov topology.
+is independent of the representative of the equivalence class $$[a]$$ used and is thus well-defined.
+
+To determine the range of our map $$\alpha_L$$ acting on the set theoretic union, note that it is defined in terms of a map
+
+$$
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
+$$
+
+acting on $$\mathfrak{U}(\mathbf{B})$$. The range of the map $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$ is $$\mathfrak{U}(L\mathbf{B})$$. By definition, the quasilocal algebra $$\mathfrak{U}$$ contains the set theoretic union. Hence, $$\mathfrak{U}(L\mathbf{B}) \subset \mathfrak{U}$$. Thus,
+
+$$
+\alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
+$$
+
+the image of the map $$\alpha_L$$ acting on the set theoretic union is in $$\mathfrak{U}$$
+
+Now we need to prove $$\alpha_L$$ is linear.
+
+Consider two elements $$[a]$$ and $$[b]$$ in the set theoretic union as well as two elements $$\lambda$$ and $$\mu$$ of $$\mathbb{C}$$. Let $$a$$ be a representative of the equivalence class $$[a]$$ and $$b$$ a representative of the equivalence class $$[b]$$. Thus there exists a $$\mathbf{B}_a$$ such that $$a$$ is an element in $$\mathfrak{U}(\mathbf{B}_a)$$ and $$\mathbf{B}_b$$ such that $$b$$ is in $$\mathfrak{U}(\mathbf{B}_b)$$.
+
+As we are in Minkowski spacetime there exists a $$\mathbf{B}$$ of the form $$I^+(p) \cap I^+(q)$$ such that $$\mathbf{B}_a, \mathbf{B}_b \subseteq \mathbf{B}$$. Via Axiom 5 (Lorentz Covariance) we also have the associated unital *-isomorphism
+
+$$
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B}).
+$$
+
+As this $$\alpha_L$$ is a unital *-isomorphism, it is linear. Axiom 2 (Isotony) implies that $$\mathfrak{U}(\mathbf{B}_a), \mathfrak{U}(\mathbf{B}_b) \subset \mathfrak{U}(\mathbf{B})$$. So all of this together implies
+
+$$
+\begin{align}
+\alpha_L(\lambda [a] + \mu [b])
+  &= \alpha_L(\lambda a + \mu b) \\
+  &= \lambda \alpha_L(a) + \mu \alpha_L(b) \\
+  &= \lambda \alpha_L([a]) + \mu \alpha_L([b]),
+\end{align}
+$$
+
+where the first equality employs the definition of $$\alpha_L$$ acting on the set theretic union interms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, the second equality uses the linearity of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, and the final line uses the definition of $$\alpha_L$$ acting on the set theretic union interms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$. This proves $$\alpha_L$$ acting on the set theretic union is linear, the desired result. (Note in future we will not use the equivalence class $$[a]$$ notation for members of the set theretic union. We will simply used $$a$$.)
 
 Now let us prove that our map
 
 $$
-\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U},
+\alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U},
 $$
 
 is bounded.
@@ -641,19 +613,19 @@ the desired result. $$\blacksquare$$
 As proven in the blog post ([Unpacking the Haag Kastler Axioms](https://kellyjdavis.github.io/aqft/haag-kastler-axioms/)) the quasilocal algebra $$\mathfrak{U}$$ is a C\*-algebra. Also, the definition of the quasilocal algebra $$\mathfrak{U}$$ implies
 
 $$
-\bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \subseteq \mathfrak{U}.
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \mathfrak{U}.
 $$
 
-Furthermore, Axiom 2 (Isotony), Axiom 5 (Lorentz Covariance), and our construction of the map
+Furthermore, Axiom 5 (Lorentz Covariance) and our construction of the map
 
 $$
-\alpha_L : \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}
+\alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
 $$
 
 imply that this map $$\alpha_L$$ is a unital *-monomorphism. Hence, we can apply the previous lemma to an arbitrary self-adjoint element $$b$$
 
 $$
-b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
+b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
 $$
 
 to conclude that $$\|\alpha_L(b)\|=\|b\|$$.
@@ -661,7 +633,7 @@ to conclude that $$\|\alpha_L(b)\|=\|b\|$$.
 However, not all elements we need to consider in this union are self-adjoint. But it turns out that every element $$a$$
 
 $$
-a \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i)
+a \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
 $$
 
 in this union can be written as the sum of self-adjoint elements
@@ -697,7 +669,7 @@ $$
 Now, by definition
 
 $$
-\|\alpha_L\| \equiv \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|\alpha_L(a)\|.
+\|\alpha_L\| \equiv \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|\alpha_L(a)\|.
 $$
 
 Using the results of the last paragraph this becomes
@@ -705,25 +677,25 @@ Using the results of the last paragraph this becomes
 $$
 \begin{align}
 \|\alpha_L\|
-  &\equiv \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|\alpha_L(a)\| \\
-  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \left\| \frac{a + a^*}{2} \right\| + \left\| \frac{a - a^*}{2i} \right\| \\
-  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \frac{\|a\| + \|a^*\|}{2} + \frac{\|a\| + \|a^*\|}{2} \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|a\| + \|a^*\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} \|a\| + \|a\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} 2\|a\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{i \in \mathbb{N}} \mathfrak{U}(\mathbf{B}_i) : \|b\| = 1\}} 2 \\
+  &\equiv \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|\alpha_L(a)\| \\
+  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \left\| \frac{a + a^*}{2} \right\| + \left\| \frac{a - a^*}{2i} \right\| \\
+  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \frac{\|a\| + \|a^*\|}{2} + \frac{\|a\| + \|a^*\|}{2} \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|a\| + \|a^*\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|a\| + \|a\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} 2\|a\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} 2 \\
   &= 2.
 \end{align}
 $$
 
 In other words $$\|\alpha_L\| \le 2$$ and thus $$\alpha_L$$ is bounded, the second desired result.
 
-The final desired result---i.e. the restriction of $$\alpha_L$$ to any $$\mathfrak{U}(\mathbf{B}_i)$$
+The final desired result---i.e. the restriction of $$\alpha_L$$ acting on the set theoretic union to any $$\mathfrak{U}(\mathbf{B}_\iota)$$
 
 $$
 \begin{align}
-\left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)} : \mathfrak{U}(\mathbf{B}_i) &\longrightarrow \mathfrak{U}(L\mathbf{B}_i) \\
-                                                 a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B}_i)}(a)
+\left. \alpha_L\right|_{\mathfrak{U}(\mathbf{B}_\iota)} : \mathfrak{U}(\mathbf{B}_\iota) &\longrightarrow \mathfrak{U}(L\mathbf{B}_\iota) \\
+                                                 a              &\longmapsto     \left.\alpha_L\right|_{\mathfrak{U}(\mathbf{B}_\iota)}(a)
 \end{align}
 $$
 
