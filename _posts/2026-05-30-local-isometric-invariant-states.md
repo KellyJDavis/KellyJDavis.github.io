@@ -776,14 +776,157 @@ $$
 \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}.
 $$
 
-Now we must prove that this extension is indeed a unital \*-automorphism.
+Now we must prove that this extension is indeed a unital \*-automorphism. In other words we must prove the following theorem
 
----------------------------------------
+> **Theorem**
+> The extension
+> 
+> $$
+> \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
+> $$
+> 
+> of the unital \*-monomorphism
+> 
+> $$
+> \alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
+> $$
+> 
+> to the domain $$\mathfrak{U}$$ by the Bounded Linear Transformation Theorem is a unital \*-automorphism.
 
-**TODO:** Prove that this extension is indeed a unital \*-automorphism. Hopefully this should only be a continuity argument.
+**Proof**
+Proving the extension $$\alpha_L$$ is a unital \*-automorphism invovles several steps: (1) proving it is a \*-homomorphism, (2) proviing it is unital, (3) proving it is injective, and (4) proving it is surjective. Together these results will prove that the extension is a unital \*-automorphism.
 
-First note that the identity element is a member us the set theoretic union and the unextended $$\alpha_L$$ is unital. Thus, as the unextended $$\alpha_L$$ and the extended  $$\alpha_L$$ agree on the set theoretic union, it follows that the extension $$\alpha_L$$ is also unital.
+Let us first (1) prove the extension $$\alpha_L$$ is a \*-homomorphism.
 
+Proving the extension $$\alpha_L$$ is a \*-homomorphism involves (1a) proving $$\alpha_L(ab) = \alpha_L(a)\alpha_L(b)$$ and (1b) proving $$\alpha_L(a^*)=\alpha_L(a)^*$$ for arbitrary $$a$$ and $$b$$ in the quasilocal algebra $$\mathfrak{U}$$.
+
+Let us first prove that $$\alpha_L(ab) = \alpha_L(a)\alpha_L(b)$$.
+
+Let $$a$$ and $$b$$ be arbitrary elements of $$\mathfrak{U}$$. As the set theoretic union is dense in $$\mathfrak{U}$$ there exists a sequence $$(a_i)_{i=1}^\infty$$ in the the set theoretic union that converges to $$a$$ and a sequence $$(b_i)_{i=1}^\infty$$ in the the set theoretic union that converges to $$b$$.
+
+As a result of the fact that $$\mathfrak{U}$$ is a C\*-algebra, for arbitrary $$c$$ and $$d$$ in $$\mathfrak{U}$$ one has
+
+$$
+\|cd\| \le \|c\| \, \|d\|.
+$$
+
+This implies that multiplication in $$\mathfrak{U}$$ is jointly continuous. Hence.
+
+$$
+\lim\limits_{i \rightarrow \infty} a_ib_i = ab.
+$$
+
+Now the Bounded Linear Transformation Theorem implies that the extension $$\alpha_L$$ is continuous. Hence,
+
+$$
+\begin{align}
+\alpha_L(ab)
+ &= \alpha_L(\lim\limits_{i \rightarrow \infty} a_ib_i) \\
+ &= \lim\limits_{i \rightarrow \infty} \alpha_L(a_ib_i).
+\end{align}
+$$
+
+As $$a_i$$ and $$b_i$$ are in the set theoretic union, the extension and original $$\alpha_L$$ agree on the set theoretic union, and the original $$\alpha_L$$ is a unital \*-monomorphism, we can continue the derivation as follows
+
+$$
+\begin{align}
+\alpha_L(ab)
+ &= \alpha_L(\lim\limits_{i \rightarrow \infty} a_ib_i) \\
+ &= \lim\limits_{i \rightarrow \infty} \alpha_L(a_ib_i) \\
+ &= \lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \alpha_L(b_i).
+\end{align}
+$$
+
+However, joint continuity implies
+
+$$
+\lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \alpha_L(b_i) = \left( \lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \right) \left( \lim\limits_{i \rightarrow \infty} \alpha_L(b_i) \right) = \alpha_L(a) \alpha_L(b).
+$$
+
+Putting everything together we have proven that
+
+$$
+\alpha_L(ab) = \alpha_L(a) \alpha_L(b)
+$$
+
+that the extension is a homomorphism.
+
+Let us next prove that the extension satisfies $$\alpha_L(a^*)=\alpha_L(a)^*$$.
+
+This proof is similar. Let $$a$$ be an arbitrary element of $$\mathfrak{U}$$. As the set theoretic union is dense in $$\mathfrak{U}$$ there exists a sequence $$(a_i)_{i=1}^\infty$$ in the the set theoretic union that converges to $$a$$.
+
+As the extension $$\alpha_L$$ is continuous and the unextended $$\alpha_L$$ is a unital \*-monomorphism we have
+
+$$
+\begin{align}
+\alpha_L(a^*)
+  &= \alpha_L(\lim\limits_{i \rightarrow \infty} a_i^*) \\
+  &= \lim\limits_{i \rightarrow \infty} \alpha_L(a_i^*) \\
+  &= \lim\limits_{i \rightarrow \infty} \alpha_L(a_i)^* \\
+  &= \left( \lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \right)^* \\
+  &= \alpha_L(a)^*,
+\end{align}
+$$
+
+proving that the extension $$\alpha_L$$ is not only a homomorphism but is a \*-homomorphism.
+
+Net let us next (2) prove the extension $$\alpha_L$$ is unital.
+
+This proof is easier than the previous step in this proof.
+
+The identity $$\mathbf{1}$$ is in the set theoretic union, the extension $$\alpha_L$$ and unextended $$\alpha_L$$ agree on the set theoretic union, and the unextended $$\alpha_L$$ is a unital \*-monomorphism. This immediately results in
+
+$$
+\alpha_L(\mathbf{1}) = \alpha_L(\mathbf{1}) = \mathbf{1},
+$$
+
+where the first equality follows from the fact that the extended and unextended $$\alpha_L$$ agree on the set theoretic union the second equality follows from the fact that the unextended $$\alpha_L$$ is a unital \*-monomorphism. This proves the extension $$\alpha_L$$ is unital.
+
+Next let us next (3) prove the extension $$\alpha_L$$ is injective.
+
+Proving the extension $$\alpha_L$$ is injective consists in (3a) proving it is an isometry $$\|\alpha_L(a)\| = \|a\|$$ and (3b) proving the fact it is an isometry implies it is injective.
+
+Let us first prove that $$\|\alpha_L(a)\| = \|a\|$$.
+
+As we previously proved that the unextended $$\alpha_L$$ is an isometry, the goal of the current proof is to extend this result to all of $$\mathfrak{U}$$.
+
+Let $$a$$ be an arbitrary element of the quasilocal algebra $$\mathfrak{U}$$. As the set theoretic union is dense in $$\mathfrak{U}$$, there exists a sequence $$(a_i)_{i=1}^\infty$$ in the the set theoretic union that converges to $$a$$. The continuity of the extended $$\alpha_L$$ then implies
+
+$$
+\begin{align}
+\| \alpha_L(a) \|
+  &= \| \alpha_L( \lim\limits_{i \rightarrow \infty} a_i ) \| \\
+  &= \| \lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \| \\
+  &= \lim\limits_{i \rightarrow \infty} \| \alpha_L(a_i) \|.
+\end{align}
+$$
+
+Now as the extended and unextended $$\alpha_L$$ agree on the set theoretic union and the unextended $$\alpha_L$$ is an isometry, we can continue the derivation as follows 
+
+$$
+\begin{align}
+\| \alpha_L(a) \|
+  &= \| \alpha_L( \lim\limits_{i \rightarrow \infty} a_i ) \| \\
+  &= \| \lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \| \\
+  &= \lim\limits_{i \rightarrow \infty} \| \alpha_L(a_i) \| \\
+  &= \lim\limits_{i \rightarrow \infty} \| a_i \| \\
+  &= \| a \|.
+\end{align}
+$$
+
+Putting this all together we have proven $$\|\alpha_L(a)\| = \|a\|$$ which is none other than the statement that the extended $$\alpha_L$$ is an isometry.
+
+Next we will prove that the extended $$\alpha_L$$ is injective.
+
+To prove that the extended $$\alpha_L$$ is injective, we must prove that its kernel is trivial. So, to that end let $$a$$ be an element of its kernel. By definition $$\alpha_L(a) = 0$$. Hence, $$\|\alpha_L(a)\| = 0$$. However, as $$\alpha_L$$ is an isometry this implies
+
+$$
+0 = \|\alpha_L(a)\| = \|a\|.
+$$
+
+This implies $$\|a\|=0$$ and thus $$a=0$$. Hence, it implies that the kernel of the extended $$\alpha_L$$ is trivial, i.e. consists only of the zero element.  This in turn implies that the extended $$\alpha_L$$ is injective, the desired result.
+
+Next let us (4) prove that the extended $$\alpha_L$$ is surjective.
 
 ---------------------------------------
 
