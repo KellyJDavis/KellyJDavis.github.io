@@ -658,49 +658,32 @@ $$
 
 is a unital \*-isomorphism and the set theoretic union being a subset of $$\mathfrak{U}$$, implies that the map $$\alpha_L([a])$$ is a unital *-monomorphism.
 
-Hence, we can apply the previous lemma to an arbitrary self-adjoint element $$b$$
+Hence, we can apply the previous lemma to an arbitrary self-adjoint element of the set thoretic union. To that end consider an arbitrary element $$a$$ in the set thoretic union
 
 $$
-b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
+a \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota).
 $$
 
-to conclude that $$\|\alpha_L(b)\|=\|b\|$$.
-
-However, not all elements we need to consider in this union are self-adjoint. But it turns out that every element $$a$$
-
-$$
-a \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
-$$
-
-in this union can be written as the sum of self-adjoint elements
-
-$$
-a = \left( \frac{a + a^*}{2} \right) + i \left( \frac{a - a^*}{2i} \right),
-$$
-
-where both
-
-$$
-\left( \frac{a + a^*}{2} \right) \text{ and } \left( \frac{a - a^*}{2i} \right)
-$$
-
-are self-adjoint. Our previous result, proving $$\alpha_L$$ is linear, then implies
-
-$$
-\alpha_L(a) = \alpha_L \left( \frac{a + a^*}{2} \right) + i \alpha_L\left( \frac{a - a^*}{2i} \right).
-$$
-
-Thus as a result of our previous lemma
+The element $$a$$ need not be self-adjoint. However, $$a^*a$$ is self-adjoint. Thus using C\*-norm properties along with the fact that the "local" $$\alpha_L$$ used to define $$\alpha_L$$ are unital \*-isomorphisims, we have
 
 $$
 \begin{align}
-\|\alpha_L(a)\|
-  &= \left\| \alpha_L \left( \frac{a + a^*}{2} \right) + i \alpha_L\left( \frac{a - a^*}{2i} \right) \right\| \\
-  &\le \left\| \alpha_L \left( \frac{a + a^*}{2} \right) \right\| + \left\| i \alpha_L\left( \frac{a - a^*}{2i} \right) \right\| \\
-  &= \left\| \alpha_L \left( \frac{a + a^*}{2} \right) \right\| + \left\| \alpha_L\left( \frac{a - a^*}{2i} \right) \right\| \\
-  &= \left\| \frac{a + a^*}{2} \right\| + \left\| \frac{a - a^*}{2i} \right\|.
+\|\alpha_L(a)\|^2
+  &= \|\alpha_L(a)^*\alpha_L(a)\| \\
+  &= \|\alpha_L(a^*)\alpha_L(a)\| \\
+  &= \|\alpha_L(a^*a)\| \\
+  &= \|a^*a\| \\
+  &= \|a\|^2.
 \end{align}
 $$
+
+This implies
+
+$$
+\|\alpha_L(a)\| = \|a\|.
+$$
+
+In other words, $$\alpha_L$$ is an isometry.
 
 Now, by definition
 
@@ -714,17 +697,13 @@ $$
 \begin{align}
 \|\alpha_L\|
   &\equiv \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|\alpha_L(a)\| \\
-  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \left\| \frac{a + a^*}{2} \right\| + \left\| \frac{a - a^*}{2i} \right\| \\
-  &\le \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \frac{\|a\| + \|a^*\|}{2} + \frac{\|a\| + \|a^*\|}{2} \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|a\| + \|a^*\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|a\| + \|a\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} 2\|a\| \\
-  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} 2 \\
-  &= 2.
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} \|a\| \\
+  &= \sup\limits_{a \in \{b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) : \|b\| = 1\}} 1 \\
+  &= 1
 \end{align}
 $$
 
-In other words $$\|\alpha_L\| \le 2$$ and thus $$\alpha_L$$ is bounded, the second desired result.
+In other words $$\|\alpha_L\| = 1$$ and thus $$\alpha_L$$ is bounded, the second desired result.
 
 The final desired result---i.e. the restriction of $$\alpha_L$$ acting on the set theoretic union to any $$\mathfrak{U}(\mathbf{B}_\iota)$$
 
