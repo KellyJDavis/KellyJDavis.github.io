@@ -928,7 +928,47 @@ This implies $$\|a\|=0$$ and thus $$a=0$$. Hence, it implies that the kernel of 
 
 Next let us (4) prove that the extended $$\alpha_L$$ is surjective.
 
----------------------------------------
+First note that as the extended $$\alpha_L$$ is an isometry, it maps Cauchy sequences to Cauchy sequence. As its domain $$\mathfrak{U}$$ is a C\*-algebra, $$\mathfrak{U}$$ is complete. Thus, the image $$\alpha_L(\mathfrak{U})$$ of the complete space $$\mathfrak{U}$$ is closed in $$\mathfrak{U}$$.
+
+Now as the unextended $$\alpha_L$$ is a unital \*-monomorphism, it's definition implies
+
+$$
+\alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) =  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(L\mathbf{B}_\iota).
+$$
+
+As the image of this unextended $$\alpha_L$$ is in $$\alpha_L(\mathfrak{U})$$ we can extend this equation as follows
+
+$$
+\alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) =  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(L\mathbf{B}_\iota) \subseteq \alpha_L(\mathfrak{U}).
+$$
+
+As $$L$$ is a group element and thus invertible and the union is over all elements $$\mathbf{B}_\iota$$, the original set theoretic union is a subset of the left most term. Thus we can conclude 
+
+$$
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) \subseteq \alpha_L(\mathfrak{U}).
+$$
+
+Now as the set theoretic union is dense in $$\mathfrak{U}$$, taking the closure of this equation gives
+
+$$
+\mathfrak{U} = \overline{ \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) } \subseteq \overline{\alpha_L(\mathfrak{U})}.
+$$
+
+However, we just proved that $$\alpha_L(\mathfrak{U})$$ is closed. Thus we can conclude
+
+$$
+\mathfrak{U} \subseteq \alpha_L(\mathfrak{U}).
+$$
+
+But, we know also that $$\alpha_L(\mathfrak{U}) \subseteq \mathfrak{U}$$ and thus
+
+$$
+\mathfrak{U} \subseteq \alpha_L(\mathfrak{U}) \subseteq \mathfrak{U},
+$$
+
+which implies $$\alpha_L(\mathfrak{U}) = \mathfrak{U}$$. In other words $$\alpha_L$$ is surjective, the desired result.
+
+Now we have proven that the extended $$\alpha_L$$ is a unital \*-homomorphism that is and injective and surjective map of $$\mathfrak{U}$$ to itself. Thus by definition it is a unital \*-automorphism, the desired result. $$\blacksquare$$
 
 ### Definition of Global Isometric Invariant States
 As we have established the definition of the unital *-automorphism
