@@ -484,7 +484,7 @@ As this $$\alpha_L$$ is a unital *-isomorphism, it is linear. Axiom 2 (Isotony) 
 $$
 \begin{align}
 \alpha_L(\lambda [a] + \mu [b])
-  &= \alpha_L(\lambda a + \mu b) \\
+  &\equiv \alpha_L(\lambda a + \mu b) \\
   &= \lambda \alpha_L(a) + \mu \alpha_L(b) \\
   &= \lambda \alpha_L([a]) + \mu \alpha_L([b]),
 \end{align}
@@ -492,7 +492,7 @@ $$
 
 where the first equality employs the definition of $$\alpha_L$$ acting on the set theretic union interms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, the second equality uses the linearity of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, and the final line uses the definition of $$\alpha_L$$ acting on the set theretic union interms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$. This proves $$\alpha_L$$ acting on the set theretic union is linear, the desired result.
 
-Note in the subsequent text we will not use the equivalence class $$[a]$$ notation for members of the set theoretic union. We will simply use $$a$$. While it's technically correct to use $$[a]$$, the exposition is "far cleaner" using $$a$$, and, as we have seen, results are independent of the equivalence class representative selected. So nothing is lost in using $$a$$.
+Note in the subsequent text we will rarely use the equivalence class $$[a]$$ notation for members of the set theoretic union. We will simply use $$a$$. While it's technically correct to use $$[a]$$, the exposition is "far cleaner" using $$a$$, and, as we have seen, results are independent of the equivalence class representative selected. So nothing is lost in using $$a$$.
 
 Now let us prove that our map
 
@@ -636,7 +636,29 @@ $$
 \alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
 $$
 
-imply that this map $$\alpha_L$$ is a unital *-monomorphism. Hence, we can apply the previous lemma to an arbitrary self-adjoint element $$b$$
+imply that this map $$\alpha_L$$ is a unital *-monomorphism.
+
+One can see that $$\alpha_L$$ is a unital *-monomorphism by looking at its definition
+
+$$
+\alpha_L([a]) = [\alpha_L(a)].
+$$
+
+As $$\alpha_L$$ on the righthand side is a unital \*-isomorphism we have
+
+$$
+\alpha_L([\mathbf{1}]) = [\alpha_L(\mathbf{1})] = [\mathbf{1}],
+$$
+
+which implies $$\alpha_L([a])$$ is unital. A similar argument, relying upon the the fact that $$\alpha_L$$ on the righthand side of
+
+$$
+\alpha_L([a]) = [\alpha_L(a)]
+$$
+
+is a unital \*-isomorphism and the set theoretic union being a subset of $$\mathfrak{U}$$, implies that the map $$\alpha_L([a])$$ is a unital *-monomorphism.
+
+Hence, we can apply the previous lemma to an arbitrary self-adjoint element $$b$$
 
 $$
 b \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
@@ -759,6 +781,9 @@ Now we must prove that this extension is indeed a unital \*-automorphism.
 ---------------------------------------
 
 **TODO:** Prove that this extension is indeed a unital \*-automorphism. Hopefully this should only be a continuity argument.
+
+First note that the identity element is a member us the set theoretic union and the unextended $$\alpha_L$$ is unital. Thus, as the unextended $$\alpha_L$$ and the extended  $$\alpha_L$$ agree on the set theoretic union, it follows that the extension $$\alpha_L$$ is also unital.
+
 
 ---------------------------------------
 
