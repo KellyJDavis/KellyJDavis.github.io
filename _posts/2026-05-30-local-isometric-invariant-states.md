@@ -843,13 +843,13 @@ $$
 \lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \alpha_L(b_i) = \left( \lim\limits_{i \rightarrow \infty} \alpha_L(a_i) \right) \left( \lim\limits_{i \rightarrow \infty} \alpha_L(b_i) \right) = \alpha_L(a) \alpha_L(b).
 $$
 
-Putting everything together we have proven that
+Putting everything together we have proven
 
 $$
-\alpha_L(ab) = \alpha_L(a) \alpha_L(b)
+\alpha_L(ab) = \alpha_L(a) \alpha_L(b).
 $$
 
-that the extension is a homomorphism.
+In other words, the extension $$\alpha_L$$ is a homomorphism.
 
 Let us next prove that the extension satisfies $$\alpha_L(a^*)=\alpha_L(a)^*$$.
 
@@ -872,7 +872,7 @@ proving that the extension $$\alpha_L$$ is not only a homomorphism but is a \*-h
 
 Net let us next (2) prove the extension $$\alpha_L$$ is unital.
 
-This proof is easier than the previous step in this proof.
+This proof is easier than the previous step.
 
 The identity $$\mathbf{1}$$ is in the set theoretic union, the extension $$\alpha_L$$ and unextended $$\alpha_L$$ agree on the set theoretic union, and the unextended $$\alpha_L$$ is a unital \*-monomorphism. This immediately results in
 
@@ -880,7 +880,7 @@ $$
 \alpha_L(\mathbf{1}) = \alpha_L(\mathbf{1}) = \mathbf{1},
 $$
 
-where the first equality follows from the fact that the extended and unextended $$\alpha_L$$ agree on the set theoretic union the second equality follows from the fact that the unextended $$\alpha_L$$ is a unital \*-monomorphism. This proves the extension $$\alpha_L$$ is unital.
+where the first equality follows from the fact that the extended and unextended $$\alpha_L$$ agree on the set theoretic union and the second equality follows from the fact that the unextended $$\alpha_L$$ is a unital \*-monomorphism. This proves the extension $$\alpha_L$$ is unital.
 
 Next let us next (3) prove the extension $$\alpha_L$$ is injective.
 
@@ -928,9 +928,9 @@ This implies $$\|a\|=0$$ and thus $$a=0$$. Hence, it implies that the kernel of 
 
 Next let us (4) prove that the extended $$\alpha_L$$ is surjective.
 
-First note that as the extended $$\alpha_L$$ is an isometry, it maps Cauchy sequences to Cauchy sequence. As its domain $$\mathfrak{U}$$ is a C\*-algebra, $$\mathfrak{U}$$ is complete. Thus, the image $$\alpha_L(\mathfrak{U})$$ of the complete space $$\mathfrak{U}$$ is closed in $$\mathfrak{U}$$.
+First note that as the extended $$\alpha_L$$ is an isometry, it maps Cauchy sequences to Cauchy sequences. As its domain $$\mathfrak{U}$$ is a C\*-algebra, $$\mathfrak{U}$$ is complete. Thus, the image $$\alpha_L(\mathfrak{U})$$ of the complete space $$\mathfrak{U}$$ is closed in $$\mathfrak{U}$$.
 
-Now as the unextended $$\alpha_L$$ is a unital \*-monomorphism, it's definition implies
+The definition of the unextended $$\alpha_L$$ in terms of the unitial \*-isomorphisms of Axiom 5 (Lorentz Covariance) implies 
 
 $$
 \alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) =  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(L\mathbf{B}_\iota).
@@ -968,7 +968,7 @@ $$
 
 which implies $$\alpha_L(\mathfrak{U}) = \mathfrak{U}$$. In other words $$\alpha_L$$ is surjective, the desired result.
 
-Now we have proven that the extended $$\alpha_L$$ is a unital \*-homomorphism that is and injective and surjective map of $$\mathfrak{U}$$ to itself. Thus by definition it is a unital \*-automorphism, the desired result. $$\blacksquare$$
+Now we have proven that the extended $$\alpha_L$$ is a unital \*-homomorphism that is an injective and surjective map of $$\mathfrak{U}$$ to itself. Thus by definition it is a unital \*-automorphism, the desired result. $$\blacksquare$$
 
 ### Definition of Global Isometric Invariant States
 As we have established the definition of the unital *-automorphism
