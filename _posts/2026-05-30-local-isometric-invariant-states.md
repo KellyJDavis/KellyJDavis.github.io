@@ -69,7 +69,7 @@ With all of these definitions in hand, we can now state the next axiom:
 > If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
 >
 > $$
-> a_1 a_2 - a_2 a_1 = 0
+> i(a_1) i(a_2) - i(a_2) i(a_1) = 0
 > $$
 >
 > in the quasilocal algebra $$\mathfrak{U}$$.
@@ -110,13 +110,11 @@ Finally we can state the last axiom
 > \alpha_{L' \cdot L}(a) = \alpha_{L'}(\alpha_{L}(a)),
 > $$
 >
-> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) it commutes with $$i$$. In other words the following diagram
+> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) $$\alpha_L$$ commutes with $$i$$. In other words the following diagram
 >
 > <p align="center"><img src="../../../images/posts/axiom_5_minkowski.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
 >
 > commutues.
-
-So, the unital \*-automorphism
 
 ## Algebraic Quantum Field Theory in Lorentzian Spacetime
 The lightning review of AQFT in Minkowski spacetime complete, we now move onto a review of AQFT in Lorentzian spacetime.
@@ -172,10 +170,10 @@ and can be stated as follows:
 
 > **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on a Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
-> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike and there exists a basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike, for any basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ the algebras $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ we have 
 >
 > $$
-> a_1 a_2 - a_2 a_1 = 0
+> i(a_1) i(a_2) - i(a_2) i(a_1) = 0
 > $$
 >
 > in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$.
@@ -218,7 +216,7 @@ $$
 > \alpha_{\varphi' \cdot \varphi}(a) = \alpha_{\varphi'}(\alpha_{\varphi}(a)),
 > $$
 >
-> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) it commutes with $$i$$. In other words the following diagram
+> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) $$\alpha_L$$ commutes with $$i$$. In other words the following diagram
 >
 > <p align="center"><img src="../../../images/posts/axiom_5_lorentzian.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
 >
@@ -280,7 +278,7 @@ So, a global state is just an abstract C\*-algebra state associated to the quasi
 ## States of Algebraic Quantum Field Theory in Lorentzian Spacetime
 The states associated to AQFT in Lorentzian spacetime also follow "naturally" from the definition of an abstract C\*-algebra state.
 
-"Local states" are abstract C\*-algebra states associated to a local algebra. And in contrast to Minkowski spacetime, there exists no notion of "global states" in Lorentzian spacetime as there exists no quasilocal algebra associated with a general Lorentzian spacetime.
+"Local states" are abstract C\*-algebra states associated to a "local" algebra. And in contrast to Minkowski spacetime, there exists no notion of "global states" in Lorentzian spacetime as there exists no quasilocal algebra associated with a general Lorentzian spacetime.
 
 ### Local States of Algebraic Quantum Field Theory in Lorentzian Spacetime
 Formally a "local state" of AQFT in a Lorentzian spacetime is
@@ -345,7 +343,7 @@ While "morally" this is indeed the case, the problem one immediately encounters 
 > \alpha_{L' \cdot L}(a) = \alpha_{L'}(\alpha_{L}(a)),
 > $$
 >
-> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) it commutes with $$i$$. In other words the following diagram
+> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) $$\alpha_L$$ commutes with $$i$$. In other words the following diagram
 >
 > <p align="center"><img src="../../../images/posts/axiom_5_minkowski.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
 >
@@ -486,7 +484,7 @@ $$
 \alpha_L(\lambda [a] + \mu [b])
   &\equiv \alpha_L(\lambda a + \mu b) \\
   &= \lambda \alpha_L(a) + \mu \alpha_L(b) \\
-  &= \lambda \alpha_L([a]) + \mu \alpha_L([b]),
+  &\equiv \lambda \alpha_L([a]) + \mu \alpha_L([b]),
 \end{align}
 $$
 
@@ -638,16 +636,16 @@ $$
 
 imply that this map $$\alpha_L$$ is a unital *-monomorphism.
 
-One can see that $$\alpha_L$$ is a unital *-monomorphism by looking at its definition
+One can see $$\alpha_L$$ is a unital *-monomorphism by looking at its definition
 
 $$
-\alpha_L([a]) = [\alpha_L(a)].
+\alpha_L([a]) \equiv [\alpha_L(a)].
 $$
 
 As $$\alpha_L$$ on the righthand side is a unital \*-isomorphism we have
 
 $$
-\alpha_L([\mathbf{1}]) = [\alpha_L(\mathbf{1})] = [\mathbf{1}],
+\alpha_L([\mathbf{1}]) \equiv [\alpha_L(\mathbf{1})] = [\mathbf{1}],
 $$
 
 which implies $$\alpha_L([a])$$ is unital. A similar argument, relying upon the the fact that $$\alpha_L$$ on the righthand side of
@@ -921,7 +919,13 @@ $$
 \alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) =  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(L\mathbf{B}_\iota) \subseteq \alpha_L(\mathfrak{U}).
 $$
 
-As $$L$$ is a group element and thus invertible and the union is over all elements $$\mathbf{B}_\iota$$, the original set theoretic union is a subset of the left most term. Thus we can conclude 
+As $$L$$ is a group element and thus invertible and the union is over all elements $$\mathbf{B}_\iota$$, the original set theoretic union is a subset of the left most term,
+
+$$
+\bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(L\mathbf{B}_\iota).
+$$
+
+Thus we can conclude 
 
 $$
 \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) \subseteq \alpha_L(\mathfrak{U}).
@@ -977,12 +981,12 @@ corresponding to any member $$L$$ of the inhomogeneous Lorentz group that is con
 >
 > Furthermore, a global isometric invariant state $$\omega$$ is said to be *faithful* if for any non-zero $$a$$ in $$\mathfrak{U}$$, it follows that $$0 < \omega(a^*a)$$.
 
-This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given "local" algebra $$\mathfrak{U}(\mathbf{B}_i)$$, where $$\mathbf{B}_i$$ is from the countable basis, aids in understanding subsequent definitions of local "isometric invariant" states.
+This is the "natural" definition that flows from everything up until this point. However, examining what this definition implies for a given "local" algebra $$\mathfrak{U}(\mathbf{B})$$ aids in understanding subsequent definitions of local "isometric invariant" states.
 
-So, to that end, consider an arbitrary element $$\mathbf{B}_i$$ from the countable basis of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}_i$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B}_i)$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphism
+So, to that end, consider an arbitrary basis element $$\mathbf{B}$$ of the Alexandrov topology. Axiom 1 (Local Algebras) associates to $$\mathbf{B}$$ the abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$. For any $$L$$ in the inhomogeneous Lorentz group connected to the identity Axiom 5 (Lorentz Covariance) defines the unital *-isomorphism
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i).
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B}).
 $$
 
 As we've proven above, $$\alpha_L$$ acting on the quasilocal algebra $$\mathfrak{U}$$ restricts to this "local" $$\alpha_L$$.
@@ -991,29 +995,29 @@ Let $$\omega$$ be a global isometric invariant state. By restriction $$\omega$$ 
 
 $$
 \begin{align}
-\omega|_{\mathfrak{U}(\mathbf{B}_i)} \quad \text{and} \quad \omega|_{\mathfrak{U}(L\mathbf{B}_i)}
+\omega|_{\mathfrak{U}(\mathbf{B})} \quad \text{and} \quad \omega|_{\mathfrak{U}(L\mathbf{B})}
 \end{align}
 $$
 
-of the dual spaces $$\mathfrak{U}(\mathbf{B}_i)^*$$ and $$\mathfrak{U}(L\mathbf{B}_i)^*$$ respectively. Using the unital *-isomorphism
+of the dual spaces $$\mathfrak{U}(\mathbf{B})^*$$ and $$\mathfrak{U}(L\mathbf{B})^*$$ respectively. Using the unital *-isomorphism
 
 $$
-\alpha_L : \mathfrak{U}(\mathbf{B}_i) \longrightarrow \mathfrak{U}(L\mathbf{B}_i)
+\alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B})
 $$
 
-we can pull-back to $$\mathfrak{U}(\mathbf{B}_i)$$ the restriction of $$\omega$$ to $$\mathfrak{U}(L\mathbf{B}_i)$$ as follows
+we can pull-back to $$\mathfrak{U}(\mathbf{B})$$ the restriction of $$\omega$$ to $$\mathfrak{U}(L\mathbf{B})$$ as follows
 
 $$
-\left( \omega|_{\mathfrak{U}(L\mathbf{B}_i)} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B}_i)}(\alpha_L(a)),
+\left( \omega|_{\mathfrak{U}(L\mathbf{B})} \right)^*(a) \equiv \omega|_{\mathfrak{U}(L\mathbf{B})}(\alpha_L(a)),
 $$
 
-where $$a$$ is an arbitrary element of $$\mathfrak{U}(\mathbf{B}_i)$$. As $$\omega$$ is a global isometric invariant state, it follows that
+where $$a$$ is an arbitrary element of $$\mathfrak{U}(\mathbf{B})$$. As $$\omega$$ is a global isometric invariant state, it follows that
 
 $$
-\omega|_{\mathfrak{U}(\mathbf{B}_i)}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B}_i)} \right)^*(a)
+\omega|_{\mathfrak{U}(\mathbf{B})}(a) = \left( \omega|_{\mathfrak{U}(L\mathbf{B})} \right)^*(a)
 $$
 
-for an arbitrary element $$a$$ of $$\mathfrak{U}(\mathbf{B}_i)$$. This is a "local" manifestation of isometric invariance of $$\omega$$, and, as we shall see, it is this condition that plays a key role in defining local "isometric invariant" states.
+for an arbitrary element $$a$$ of $$\mathfrak{U}(\mathbf{B})$$. This is a "local" manifestation of isometric invariance of $$\omega$$, and, as we shall see, it is this condition that plays a key role in defining local "isometric invariant" states.
 
 ## Local Isometric Invariant States in Minkowski Spacetime
 Global isometric invariant states in Minkowski spacetime defined, we can proceed to define local "isometric invariant" states in Minkowski spacetime. Our careful examination of the implications global isometric invariant states had for "local" algebras will pay dividends in this section, simplifying and clarifying definitions and the presentation.
@@ -1088,7 +1092,7 @@ Obviously, this reduces to a local isometric invariant state in Minkowski spacet
 # Summary
 We've covered a lot of ground.
 
-We've introduced the notion of states on abstract C\*-algebras. Then, using many key results from the AQFT axioms, we were able to generalize such states to global and local states on Minkowski spacetime and global and local isometric invariant states also on Minkowski spacetime.
+We've introduced the notion of states on abstract C\*-algebras. Then, using many key results derived from the AQFT axioms, we were able to generalize such states to global and local states on Minkowski spacetime and global and local isometric invariant states also on Minkowski spacetime.
 
 Motivated by the Minkowski case, we also introduced the notion of local states and local isometric invariant states on Lorentzian spacetime. (As there is no quasilocal algebra on a generic Lorentzian spacetime, there is no analog of a global state or a global isometric invariant state there.)
 
