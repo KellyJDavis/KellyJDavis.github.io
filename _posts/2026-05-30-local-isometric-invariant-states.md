@@ -378,7 +378,7 @@ The first step in this argument is to prove the following theorem
 > \{ \mathbf{B}_\iota \}_{\iota \in \mathcal{I}}
 > $$
 >
-> be the set of all elements $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^+(q_\iota)$$ in Minkowski spacetime.
+> be the set of all elements $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^-(q_\iota)$$ in Minkowski spacetime.
 >
 > Then there exists a map
 >
@@ -401,7 +401,7 @@ $$
 \alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
 $$
 
-where the union is over all sets $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^+(q_\iota)$$ in Minkowski spacetime.
+where the union is over all sets $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^-(q_\iota)$$ in Minkowski spacetime.
 
 Let us start by explicitly defining the domain of $$\alpha_L$$, the set theoretic union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$.
 
@@ -471,7 +471,7 @@ Now we need to prove $$\alpha_L$$ is linear.
 
 Consider two elements $$[a]$$ and $$[b]$$ in the set theoretic union as well as two elements $$\lambda$$ and $$\mu$$ of $$\mathbb{C}$$. Let $$a$$ be a representative of the equivalence class $$[a]$$ and $$b$$ a representative of the equivalence class $$[b]$$. Thus there exists a $$\mathbf{B}_a$$ such that $$a$$ is an element in $$\mathfrak{U}(\mathbf{B}_a)$$ and $$\mathbf{B}_b$$ such that $$b$$ is in $$\mathfrak{U}(\mathbf{B}_b)$$.
 
-As we are in Minkowski spacetime there exists a $$\mathbf{B}$$ of the form $$I^+(p) \cap I^+(q)$$ such that $$\mathbf{B}_a, \mathbf{B}_b \subseteq \mathbf{B}$$. Via Axiom 5 (Lorentz Covariance) we also have the associated unital *-isomorphism
+As we are in Minkowski spacetime there exists a $$\mathbf{B}$$ of the form $$I^+(p) \cap I^-(q)$$ such that $$\mathbf{B}_a, \mathbf{B}_b \subseteq \mathbf{B}$$. Via Axiom 5 (Lorentz Covariance) we also have the associated unital *-isomorphism
 
 $$
 \alpha_L : \mathfrak{U}(\mathbf{B}) \longrightarrow \mathfrak{U}(L\mathbf{B}).
@@ -511,7 +511,7 @@ We begin this part of the proof by proving the following lemma
 > \sigma(\alpha(a_1)) = \sigma(a_1).
 > $$
 >
-> In other words, the spectrum of $$\sigma(\alpha(a_1))$$ of $$\alpha(a_1)$$ in $$\mathfrak{U}_2$$ is equivalent to the spectrum $$\sigma(a_1)$$ of $$a_1$$ in $$\mathfrak{U}_1$$.
+> In other words, the spectrum $$\sigma(\alpha(a_1))$$ of $$\alpha(a_1)$$ in $$\mathfrak{U}_2$$ is equivalent to the spectrum $$\sigma(a_1)$$ of $$a_1$$ in $$\mathfrak{U}_1$$.
 
 **Proof**
 Consider $$\lambda \notin \sigma(a_1)$$. The definition of spectrum then implies that  $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})$$ is invertible in $$\mathfrak{U}_1$$. Let $$(a_1 - \lambda \mathbf{1}_{\mathfrak{U}_1})^{-1}$$ be that inverse. As $$\alpha$$ is a unital \*-monomorphism
@@ -847,7 +847,7 @@ $$
 
 proving that the extension $$\alpha_L$$ is not only a homomorphism but is a \*-homomorphism.
 
-Next let us next (2) prove the extension $$\alpha_L$$ is unital.
+Next let us (2) prove the extension $$\alpha_L$$ is unital.
 
 This proof is easier than the previous step.
 
