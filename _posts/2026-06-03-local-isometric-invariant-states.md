@@ -1,6 +1,6 @@
 ---
 title:  "Local Isometric Invariant States"
-date:   2026-05-30 06:53:53 +0200
+date:   2026-06-03 06:53:53 +0200
 categories: aqft lcaqft
 ---
 
