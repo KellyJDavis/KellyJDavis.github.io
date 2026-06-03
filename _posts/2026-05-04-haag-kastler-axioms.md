@@ -468,21 +468,29 @@ Before even stating the "sharpened" axioms, the first thing we need to do is to 
 
 With that out of the way we can state the axioms.
 
-**Axiom 1** *(Local Algebras)* The sets $$\mathbf{B}$$ for which the correspondence
+> **Axiom 1** *(Local Algebras)* For any basis element $$\mathbf{B}$$ of the Alexandrov topology on Minkowski spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$, there is a corresponding abstract C\*-algebra $$\mathfrak{U}(\mathbf{B})$$
+> 
+> $$
+> \mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B}),
+> $$
+> 
+> and when $$\mathbf{B}$$ is the empty set, we have the distinguished correspondence
+> 
+> $$
+> \emptyset \longmapsto \mathbb{C} \mathbf{1},
+> $$
+> 
+> where $$\mathbf{1}$$ is the multiplicative identity in the abstract C\*-algebra $$\mathbb{C} \mathbf{1}$$.
 
-$$
-\mathbf{B} \longmapsto \mathfrak{U}(\mathbf{B})
-$$
-
-is defined shall be of the form $$I^+(p) \cap I^-(q)$$ for elements $$p,q$$ in Minkowski spacetime, the algebras $$\mathfrak{U}(\mathbf{B})$$ shall be abstract C\*-algebras. In addition the empty set $$\emptyset$$ shall have the distinguished correspondence
-
-$$
-\emptyset \longmapsto \mathbb{C} \mathbf{1},
-$$
-
-where $$\mathbf{1}$$ is the multiplicative identity in the C\*-algebra $$\mathbb{C} \mathbf{1}$$.
-
-**Axiom 2** *(Isotony)* If $$\mathbf{B_1} \subset \mathbf{B_2}$$ then $$\mathfrak{U}(\mathbf{B_1}) \subset \mathfrak{U}(\mathbf{B_2})$$.
+> **Axiom 2** *(Isotony)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Minkowski spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+> 
+> If $$\mathbf{B}_1 \subset \mathbf{B}_2$$ then $$\mathfrak{U}(\mathbf{B}_1) \subset \mathfrak{U}(\mathbf{B}_2)$$, where inclusion is implemented by
+> 
+> $$
+> i : \mathfrak{U}(\mathbf{B}_1) \hookrightarrow \mathfrak{U}(\mathbf{B}_2),
+> $$
+> 
+> a unital \*-monomorphism.
 
 Before introducing the next axiom, we must introduce two definitions:
 
@@ -492,35 +500,51 @@ Consider the set-theoretic union of all $$\mathfrak{U}(\mathbf{B})$$. As previou
 **Definition** *(Completely Spacelike)*
 Consider two sets $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ in Minkowski spacetime. $$\mathbf{O}_1$$ and $$\mathbf{O}_2$$ are *completely spacelike*  with respect to each other if every $$p_1$$ in $$\mathbf{O}_1$$ is spacelike related to every $$p_2$$ in $$\mathbf{O}_2$$.
 
-**Axiom 3** *(Local Commutativity)* If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike with respect to each other, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$.
+> **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on Minkowski spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
+> 
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike, then $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the quasilocal algebra $$\mathfrak{U}$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ it follows that
+> 
+> $$
+> i(a_1) i(a_2) - i(a_2) i(a_1) = 0
+> $$
+> 
+> in the quasilocal algebra $$\mathfrak{U}$$.
 
 The next axiom makes use of the following new definition:
 
 **Definition** *(Quasilocal Observable)*
 The image $$\pi_\omega(a)$$ of a self-adjoint member $$a$$ of the quasilocal algebra $$\mathfrak{U}$$ under a GNS \*-homomorphism $$\pi_\omega$$ is self-adjoint and thus corresponds to an "observable". Any "observable" corresponding to such a self-adjoint $$\pi_\omega(a)$$ is called a *quasilocal observable*.
 
-**Axiom 4** *(Quasilocal Algebra)* All "observables" are quasilocal observables.
+> **Axiom 4** *(Quasilocal Algebra)* All "observables" are quasilocal observables.
 
-**Axiom 5** *(Lorentz Covariance)* A member $$L$$ of the inhomogeneous Lorentz group connected to the identity acts on a $$\mathfrak{U}(\mathbf{B}) \subset \mathfrak{U}$$ as follows
-
-$$
-\begin{align}
-\alpha_L : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(\mathbf{LB}) \\
-                     a              &\longmapsto     \alpha_L(a)
-\end{align}
-$$
-
-where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital *-isomorphism that satisfies for the Lorentz group identity $$\mathbf{1}$$
-
-$$
-\alpha_{\mathbf{1}}(a) = a
-$$
-
-and for all appropriate $$a$$, $$L$$, and $$L'$$
-
-$$
-\alpha_{L' \cdot L}(a) = \alpha_{L'}(\alpha_{L}(a)).
-$$
+> **Axiom 5** *(Lorentz Covariance)* Let $$\mathbf{B}$$ be any basis element of the Alexandrov topology on Minkowski spacetime, i.e. any set of the form $$I^+(p) \cap I^-(q)$$.
+> 
+> A member $$L$$ of the inhomogeneous Lorentz group connected to the identity acts on $$\mathfrak{U}(\mathbf{B})$$ as follows
+> 
+> $$
+> \begin{align}
+> \alpha_L : \mathfrak{U}(\mathbf{B}) &\longrightarrow \mathfrak{U}(L\mathbf{B}) \\
+>                      a              &\longmapsto     \alpha_L(a)
+> \end{align}
+> $$
+> 
+> where $$L\mathbf{B}$$ is the image of the region $$\mathbf{B}$$ under the transformation $$L$$ and $$\alpha_L$$ is a unital *-isomorphism generated by $$L$$. The map $$\alpha_L$$ is such that (1) for the identity element $$\mathbf{1}$$ of the Lorentz group it satisfies
+> 
+> $$
+> \alpha_{\mathbf{1}}(a) = a,
+> $$
+> 
+> (2) for all appropriate $$a$$, $$L$$, and $$L'$$ it satisfies
+> 
+> $$
+> \alpha_{L' \cdot L}(a) = \alpha_{L'}(\alpha_{L}(a)),
+> $$
+> 
+> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) $$\alpha_L$$ commutes with $$i$$. In other words the following diagram
+> 
+> <p align="center"><img src="../../../images/posts/axiom_5_minkowski.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
+> 
+> commutes.
 
 
 This concludes the presentation of the "sharpened" axioms. As proven in this blog post, these "sharpened" axioms entail the original axioms save Axiom 6 (Primitivity), which is an axiom that we abandon.
