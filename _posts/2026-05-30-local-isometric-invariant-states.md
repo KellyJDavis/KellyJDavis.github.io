@@ -114,7 +114,7 @@ Finally we can state the last axiom
 >
 > <p align="center"><img src="../../../images/posts/axiom_5_minkowski.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
 >
-> commutues.
+> commutes.
 
 ## Algebraic Quantum Field Theory in Lorentzian Spacetime
 The lightning review of AQFT in Minkowski spacetime complete, we now move onto a review of AQFT in Lorentzian spacetime.
@@ -170,7 +170,7 @@ and can be stated as follows:
 
 > **Axiom 3** *(Local Commutativity)* Let $$\mathbf{B}_1$$ and $$\mathbf{B}_2$$ be any two basis elements of the Alexandrov topology on a Lorentzian spacetime, i.e. any two sets of the form $$I^+(p_1) \cap I^-(q_1)$$ and $$I^+(p_2) \cap I^-(q_2)$$.
 >
-> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike, for any basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ the algebras $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ we have 
+> If $$\mathbf{B_1}$$ and $$\mathbf{B_2}$$ are completely spacelike, for any basis element $$\mathbf{B}$$ such that $$\mathbf{B_1}, \mathbf{B_2} \subseteq \mathbf{B}$$ the algebras $$\mathfrak{U}(\mathbf{B_1})$$ and $$\mathfrak{U}(\mathbf{B_2})$$ commute in the C\*-algebra $$\mathfrak{U}(\mathbf{B})$$, i.e. for any $$a_1$$ in $$\mathfrak{U}(\mathbf{B_1})$$ and $$a_2$$ in $$\mathfrak{U}(\mathbf{B_2})$$ we have
 >
 > $$
 > i(a_1) i(a_2) - i(a_2) i(a_1) = 0
@@ -220,7 +220,7 @@ $$
 >
 > <p align="center"><img src="../../../images/posts/axiom_5_lorentzian.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
 >
-> commutues. 
+> commutes.
 
 # Introduction to States
 In this section we will examine various types of states with the goal of eventually introducing "global isometric invariant states" and "local isometric invariant states", the "local" case being of most physical relevance.
@@ -347,7 +347,7 @@ While "morally" this is indeed the case, the problem one immediately encounters 
 >
 > <p align="center"><img src="../../../images/posts/axiom_5_minkowski.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
 >
-> commutues.
+> commutes.
 
 So, the unital \*-automorphism
 
@@ -373,13 +373,13 @@ The first step in this argument is to prove the following theorem
 
 > **Theorem**
 > On Minkowski spacetime let $$L$$ be any member of the inhomogeneous Lorentz group that is connected to the identity and let
-> 
+>
 > $$
 > \{ \mathbf{B}_\iota \}_{\iota \in \mathcal{I}}
 > $$
-> 
+>
 > be the set of all elements $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^+(q_\iota)$$ in Minkowski spacetime.
-> 
+>
 > Then there exists a map
 >
 > $$
@@ -403,7 +403,7 @@ $$
 
 where the union is over all sets $$\mathbf{B}_\iota$$ of the form $$I^+(p_\iota) \cap I^+(q_\iota)$$ in Minkowski spacetime.
 
-Let us start be explicitly defining the domain of $$\alpha_L$$, the set theoretic union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$.
+Let us start by explicitly defining the domain of $$\alpha_L$$, the set theoretic union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$.
 
 Consider first the disjoint union over all $$\mathfrak{U}(\mathbf{B}_\iota)$$
 
@@ -440,7 +440,7 @@ $$
 \end{align}
 $$
 
-In otherwords
+In other words
 
 $$
 \alpha_L([a]) \equiv [\alpha_L(a)].
@@ -448,7 +448,7 @@ $$
 
 To prove this is well-defined we must prove that it is independent of which representative $$a$$ of the equivalence class $$[a]$$ is used in this definition. Proving this is relatively easy.
 
-Axiom 5 (Lorentz Covariance) states that the unital \*-monomorphism $$i$$ of Axiom 2 (Isotony) commutes with the unital *-isomorphism $$\alpha_L$$. Hence, if we were to select any other representitive $$i(a)$$ of the equivalence class to define the action of $$\alpha_L$$ on the set theoretic union we would have
+Axiom 5 (Lorentz Covariance) states that the unital \*-monomorphism $$i$$ of Axiom 2 (Isotony) commutes with the unital *-isomorphism $$\alpha_L$$. Hence, if we were to select any other representative $$i(a)$$ of the equivalence class to define the action of $$\alpha_L$$ on the set theoretic union we would have
 
 $$
 \alpha_L([a]) \equiv [\alpha_L(i(a))] = [i(\alpha_L(a))] = [\alpha_L(a)],
@@ -488,7 +488,7 @@ $$
 \end{align}
 $$
 
-where the first equality employs the definition of $$\alpha_L$$ acting on the set theretic union interms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, the second equality uses the linearity of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, and the final line uses the definition of $$\alpha_L$$ acting on the set theretic union interms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$. This proves $$\alpha_L$$ acting on the set theretic union is linear, the desired result.
+where the first equality employs the definition of $$\alpha_L$$ acting on the set theoretic union in terms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, the second equality uses the linearity of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$, and the final line uses the definition of $$\alpha_L$$ acting on the set theoretic union in terms of $$\alpha_L$$ acting on $$\mathfrak{U}(\mathbf{B})$$. This proves $$\alpha_L$$ acting on the set theoretic union is linear, the desired result.
 
 Note in the subsequent text we will rarely use the equivalence class $$[a]$$ notation for members of the set theoretic union. We will simply use $$a$$. While it's technically correct to use $$[a]$$, the exposition is "far cleaner" using $$a$$, and, as we have seen, results are independent of the equivalence class representative selected. So nothing is lost in using $$a$$.
 
@@ -656,13 +656,13 @@ $$
 
 is a unital \*-isomorphism and the set theoretic union being a subset of $$\mathfrak{U}$$, implies that the map $$\alpha_L([a])$$ is a unital *-monomorphism.
 
-Hence, we can apply the previous lemma to an arbitrary self-adjoint element of the set thoretic union. To that end consider an arbitrary element $$a$$ in the set thoretic union
+Hence, we can apply the previous lemma to an arbitrary self-adjoint element of the set theoretic union. To that end consider an arbitrary element $$a$$ in the set theoretic union
 
 $$
 a \in \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota).
 $$
 
-The element $$a$$ need not be self-adjoint. However, $$a^*a$$ is self-adjoint. Thus using C\*-norm properties along with the fact that the "local" $$\alpha_L$$ used to define $$\alpha_L$$ are unital \*-isomorphisims, we have
+The element $$a$$ need not be self-adjoint. However, $$a^*a$$ is self-adjoint. Thus using C\*-norm properties along with the fact that the "local" $$\alpha_L$$ used to define $$\alpha_L$$ are unital \*-isomorphisms, we have
 
 $$
 \begin{align}
@@ -733,7 +733,7 @@ $$
 
 as a unital *-automorphism.
 
-In applying this theorem $$\mathfrak{U}$$, being a C\*-algebra and thus normed space, takes on the role of $$V_1$$. Similarly, $$\mathfrak{U}$$, being a C\*-algebra and thus Banach space, also takes on the role of $$V_2$$. In addition $$\alpha_L$$, being bounded and linear, takes on the role of $$T$$. Finally, 
+In applying this theorem $$\mathfrak{U}$$, being a C\*-algebra and thus normed space, takes on the role of $$V_1$$. Similarly, $$\mathfrak{U}$$, being a C\*-algebra and thus Banach space, also takes on the role of $$V_2$$. In addition $$\alpha_L$$, being bounded and linear, takes on the role of $$T$$. Finally,
 
 $$
 \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota)
@@ -757,21 +757,21 @@ Now we must prove that this extension is indeed a unital \*-automorphism. In oth
 
 > **Theorem**
 > The extension
-> 
+>
 > $$
 > \alpha_L : \mathfrak{U} \longrightarrow \mathfrak{U}
 > $$
-> 
+>
 > of the unital \*-monomorphism
-> 
+>
 > $$
 > \alpha_L : \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \longrightarrow \mathfrak{U}
 > $$
-> 
+>
 > to the domain $$\mathfrak{U}$$ by the Bounded Linear Transformation Theorem is a unital \*-automorphism.
 
 **Proof**
-Proving the extension $$\alpha_L$$ is a unital \*-automorphism invovles several steps: (1) proving it is a \*-homomorphism, (2) proviing it is unital, (3) proving it is injective, and (4) proving it is surjective. Together these results will prove that the extension is a unital \*-automorphism.
+Proving the extension $$\alpha_L$$ is a unital \*-automorphism involves several steps: (1) proving it is a \*-homomorphism, (2) proving it is unital, (3) proving it is injective, and (4) proving it is surjective. Together these results will prove that the extension is a unital \*-automorphism.
 
 Let us first (1) prove the extension $$\alpha_L$$ is a \*-homomorphism.
 
@@ -787,7 +787,7 @@ $$
 \|cd\| \le \|c\| \, \|d\|.
 $$
 
-This implies that multiplication in $$\mathfrak{U}$$ is jointly continuous. Hence.
+This implies that multiplication in $$\mathfrak{U}$$ is jointly continuous. Hence,
 
 $$
 \lim\limits_{i \rightarrow \infty} a_ib_i = ab.
@@ -847,7 +847,7 @@ $$
 
 proving that the extension $$\alpha_L$$ is not only a homomorphism but is a \*-homomorphism.
 
-Net let us next (2) prove the extension $$\alpha_L$$ is unital.
+Next let us next (2) prove the extension $$\alpha_L$$ is unital.
 
 This proof is easier than the previous step.
 
@@ -878,7 +878,7 @@ $$
 \end{align}
 $$
 
-Now as the extended and unextended $$\alpha_L$$ agree on the set theoretic union and the unextended $$\alpha_L$$ is an isometry, we can continue the derivation as follows 
+Now as the extended and unextended $$\alpha_L$$ agree on the set theoretic union and the unextended $$\alpha_L$$ is an isometry, we can continue the derivation as follows
 
 $$
 \begin{align}
@@ -907,7 +907,7 @@ Next let us (4) prove that the extended $$\alpha_L$$ is surjective.
 
 First note that as the extended $$\alpha_L$$ is an isometry, it maps Cauchy sequences to Cauchy sequences. As its domain $$\mathfrak{U}$$ is a C\*-algebra, $$\mathfrak{U}$$ is complete. Thus, the image $$\alpha_L(\mathfrak{U})$$ of the complete space $$\mathfrak{U}$$ is closed in $$\mathfrak{U}$$.
 
-The definition of the unextended $$\alpha_L$$ in terms of the unitial \*-isomorphisms of Axiom 5 (Lorentz Covariance) implies 
+The definition of the unextended $$\alpha_L$$ in terms of the unital \*-isomorphisms of Axiom 5 (Lorentz Covariance) implies
 
 $$
 \alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) =  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(L\mathbf{B}_\iota).
@@ -925,7 +925,7 @@ $$
 \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(L\mathbf{B}_\iota).
 $$
 
-Thus we can conclude 
+Thus we can conclude
 
 $$
 \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \subseteq \alpha_L \left(  \bigcup\limits_{\iota \in \mathcal{I}} \mathfrak{U}(\mathbf{B}_\iota) \right) \subseteq \alpha_L(\mathfrak{U}).
@@ -965,7 +965,7 @@ corresponding to any member $$L$$ of the inhomogeneous Lorentz group that is con
 > **Definition** *(Global Isometric Invariant State)*
 > Let $$\mathfrak{U}$$ be the quasilocal algebra associated with Minkowski spacetime.
 >
-> A *global isometric invariant state* is global state $$\omega$$ such that for any $$a$$ in the quasilocal algebra $$\mathfrak{U}$$ and any $$L$$ in the inhomogeneous Lorentz group connected to the identity one has
+> A *global isometric invariant state* is a global state $$\omega$$ such that for any $$a$$ in the quasilocal algebra $$\mathfrak{U}$$ and any $$L$$ in the inhomogeneous Lorentz group connected to the identity one has
 >
 > $$
 > \omega(a) = \omega(\alpha_L(a))
