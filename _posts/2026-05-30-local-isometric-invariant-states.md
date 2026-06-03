@@ -216,7 +216,7 @@ $$
 > \alpha_{\varphi' \cdot \varphi}(a) = \alpha_{\varphi'}(\alpha_{\varphi}(a)),
 > $$
 >
-> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) $$\alpha_L$$ commutes with $$i$$. In other words the following diagram
+> and (3) for basis elements $$\mathbf{B}_\iota \subset \mathbf{B}_\kappa$$ and the unital *-monomorphism $$i$$ of Axiom 2 (Isotony) $$\alpha_\varphi$$ commutes with $$i$$. In other words the following diagram
 >
 > <p align="center"><img src="../../../images/posts/axiom_5_lorentzian.png" width="200" alt="Commuting diagram for Axiom 5"/></p>
 >
@@ -859,7 +859,7 @@ $$
 
 where the first equality follows from the fact that the extended and unextended $$\alpha_L$$ agree on the set theoretic union and the second equality follows from the fact that the unextended $$\alpha_L$$ is a unital \*-monomorphism. This proves the extension $$\alpha_L$$ is unital.
 
-Next let us next (3) prove the extension $$\alpha_L$$ is injective.
+Next let us (3) prove the extension $$\alpha_L$$ is injective.
 
 Proving the extension $$\alpha_L$$ is injective consists in (3a) proving it is an isometry $$\|\alpha_L(a)\| = \|a\|$$ and (3b) proving the fact it is an isometry implies it is injective.
 
