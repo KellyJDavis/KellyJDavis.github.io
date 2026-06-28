@@ -15,13 +15,13 @@ In this section we will state and prove the Spectral Theorem for bounded, self-a
 In this section we will introduce and prove some relatively "elementary" properties of bounded operators that will be of use when proving the Spectral Theorem for bounded, self-adjoint operators. We begin by introducing some notation
 
 > **Definition** *(Bounded Operator Notation)*
-<!--  \label{def:bounded-operator-notation} -->
+<a name="def:bounded-operator-notation"></a>
 > We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
 
 along with an "elementary" lemma that proves $$\mathcal{B}(\mathbf{H})$$ is a Banach space
 
 > **Lemma** *(Bounded Operators form a Banach Space)*
-<!--  \label{lmm:bounded-operators-form-a-banach-space} -->
+<a name="lmm:bounded-operators-form-a-banach-space"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 > $$\mathcal{B}(\mathbf{H})$$ forms a Banach space under the operator norm.
 
@@ -169,14 +169,14 @@ So in summary we have proven that $$\mathcal{B}(\mathbf{H})$$ is a normed vector
 With this first, elementary result out of the way, our next step is the introduction of several definitions required by the Spectral Theorem. The first of these is the notion of "bounded inverse"
 
 > **Definition** *(Bounded Inverse)*
-<!--  \label{def:bounded-inverse} -->
+<a name="def:bounded-inverse"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 > The *bounded inverse* of $$A \in \mathcal{B}(\mathbf{H})$$ is an element $$B \in \mathcal{B}(\mathbf{H})$$ such that $$AB = BA = \mathbf{1}$$, where $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$ is the multiplicative identity element.
 
 This is required to define the "spectrum" of an operator, which is required by much of what follows
 
 > **Definition** *(Resolvent and Spectrum)*
-<!--  \label{def:bounded-operator-resolvent-and-spectrum} % Hall Definition 7.4 -->
+<a name="def:bounded-operator-resolvent-and-spectrum"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-inverse} -->
 > For $$A \in \mathcal{B}(\mathbf{H})$$, the *resolvent set* of $$A$$, denoted as $$\rho(A)$$, is the set of all $$\lambda \in \mathbb{C}$$ such that the operator $$(A - \lambda \mathbf{1})$$ has a bounded inverse. The *spectrum* of $$A$$, denoted by $$\sigma(A)$$, is the complement of $$A$$'s resolvent set $$\rho(A)$$ in $$\mathbb{C}$$. For $$\lambda$$ in the resolvent set of $$A$$ the bounded inverse of $$(A - \lambda \mathbf{1})$$, which we notate as $$(A - \lambda \mathbf{1})^{-1}$$, is called the *resolvent* of $$A$$ at $$\lambda$$.
@@ -185,17 +185,17 @@ This is required to define the "spectrum" of an operator, which is required by m
 In this section we will actually be able to state the Spectral Theorem. However, we will only be able to do so after introducing "substantial machinary" related to "projection-valued measures".
 
 ### Projection-Valued Measures
-"Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
+"Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive, real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
 
 > **Definition** *(Resolvent and Spectrum)*
-<!--  \label{def:bounded-orthogonal-projection} -->
+<a name="def:bounded-orthogonal-projection"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 > A *bounded orthogonal projection*, sometimes shortened to *orthogonal projection* or simply *projection*, is an element $$P \in \mathcal{B}(\mathbf{H})$$ such that $$P^2 = P$$ and $$P^* = P$$.
 
 The notion of a bounded orthogonal projection can then be employed to define a "projection-valued measure"
 
 > **Definition** *(Projection-Valued Measure)*
-<!--  \label{def:projection-valued-measure} % Hall Definition 7.10 -->
+<a name="def:projection-valued-measure"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 > Let $$X$$ be a set and $$\Omega(X)$$ a $$\sigma$$-algebra on $$X$$. A map $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ is called a *projection-valued measure* if the following properties are satisfied:
@@ -210,10 +210,10 @@ The notion of a bounded orthogonal projection can then be employed to define a "
 >    where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
 > 4. For all $$E_1, E_2 \in \Omega(X)$$, we have $$\mu(E_1 \cap E_2) = \mu(E_1) \mu(E_2)$$.
 
-Now, we can associate a positive real-valued measure $$\mu_\psi$$ to a projection-valued measure $$\mu$$ and any $$\psi \in \mathbf{H}$$ as follows:
+Now, we can associate a positive, real-valued measure $$\mu_\psi$$ to a projection-valued measure $$\mu$$ and any $$\psi \in \mathbf{H}$$ as follows:
 
 > **Theorem** *(Projection-Valued Measure's Associated Measure)*
-<!--  \label{thrm:projection-valued-measures-associated-measure} % Hall bottom of page 138 -->
+<a name="thrm:projection-valued-measures-associated-measure"></a>
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > Given a projection-valued measure $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ and any $$\psi \in \mathbf{H}$$ the map $$\mu_\psi$$ defined by
@@ -225,4 +225,154 @@ Now, we can associate a positive real-valued measure $$\mu_\psi$$ to a projectio
 > \end{align}
 > $$
 >
-> defines a positive real-valued measure $$\mu_\psi$$ on $$\Omega(X)$$.
+> defines a positive, real-valued measure $$\mu_\psi$$ on $$\Omega(X)$$.
+
+**Proof**
+To prove that $$\mu_\psi$$ defines a positive, real-valued measure on $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ we must prove
+* **Empty set is of measure zero** - $$\mu_\psi(\emptyset) = 0$$, where $$\emptyset$$ is the empty set.
+* **Non-negativity** - For all $$E \in \Omega(X)$$, it follows that $$\mu_\psi(E) \ge 0$$.
+* **Countable additivity** - For disjoint $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ 
+
+$$
+    \mu_\psi \left( \bigcup_{j = 1}^{\infty} E_j \right) = \sum_{j = 1}^{\infty} \mu_\psi(E_j).
+$$
+
+Let us first prove the empty set is of measure zero, i.e. $$\mu_\psi(\emptyset) = 0$$. The definition of $$\mu_\psi$$ along with the definition of the projection-valued measure $$\mu$$ imply
+
+$$
+\begin{align}
+    \mu_\psi(\emptyset) &= \left< \psi, \mu(\emptyset) \psi \right> \\
+                        &= \left< \psi, 0 \psi \right> \\
+                        &= 0 \left< \psi, \psi \right> \\
+                        &= 0.
+\end{align}
+$$
+
+Hence, the empty set is of measure zero $$\mu_\psi(\emptyset) = 0$$ as desired.
+
+Next let us prove non-negativity, i.e. for all $$E \in \Omega(X)$$, it follows that $$\mu_\psi(E) \ge 0$$.  The definition of $$\mu_\psi$$, the projection-valued measure $$\mu$$, and of an orthogonal projection imply
+
+$$
+\begin{align}
+    \mu_\psi(E) &= \left< \psi, \mu(E) \psi \right> \\
+                &= \left< \psi, \mu(E) \mu(E) \psi \right>  \\
+                &= \left< \psi, \mu(E)^* \mu(E) \psi \right>  \\
+                &= \left< \mu(E) \psi, \mu(E) \psi \right>  \\
+                &\ge 0,
+\end{align}
+$$
+
+where the final step follows from the definition of an inner product. Thus, $$\mu_\psi(E) \ge 0$$ as desired.
+
+Finally let us prove countable additivity. Let $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ be disjoint. The definition of $$\mu_\psi$$ along with the definition of the projection-valued measure $$\mu$$ imply
+
+$$
+\begin{align}
+    \mu_\psi \left( \bigcup_{j = 1}^{\infty} E_j \right) &= \left< \psi, \mu \left( \bigcup_{j = 1}^{\infty} E_j \right) \psi \right>  \\
+                                                         &= \left< \psi, \sum_{j = 1}^{\infty} \mu(E_j) \psi \right>  \\
+                                                         &= \sum_{j = 1}^{\infty} \left< \psi, \mu(E_j) \psi \right>  \\
+                                                         &= \sum_{j = 1}^{\infty} \mu_\psi(E_j),
+\end{align}
+$$
+
+where the third equality follows from the definition of an inner product. This implies
+
+$$
+    \mu_\psi \left( \bigcup_{j = 1}^{\infty} E_j \right) = \sum_{j = 1}^{\infty} \mu_\psi(E_j),
+$$
+
+which is the desired result.
+
+Together these imply that $$\mu_\psi$$ defines a positive, real-valued measure $$\mu_\psi$$ on $$\Omega(X)$$. $$\blacksquare$$
+
+Projection-valued measures give rise to a type of integration known as "operator-valued integration". The primary properties of "operator-valued integration" are described by the following theorem
+
+> **Theorem** *(Operator-Valued Integration)*
+<a name="thrm:operator-valued-integration"></a>
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
+> Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. Then there exists a unique linear map, denoted by
+> 
+> $$
+>     f \longmapsto \int_X f \, d\mu,
+> $$
+> 
+> from the space of bounded, measurable, complex-valued functions on $$X$$ into $$\mathcal{B}(\mathbf{H})$$ such that
+> 
+> $$
+>     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi,
+> $$
+> 
+> for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure) $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. This unique linear map has the following additional properties
+> 
+> 1. For all $$E \in \Omega(X)$$, we have
+> 
+>    $$
+>        \int_X 1_E \, d\mu = \mu(E),
+>    $$
+> 
+>    where $$1_E$$ is the indicator function of $$E$$. In particular, the integral of the constant function $$1$$ is the multiplicative identity $$\mathbf{1}$$.
+> 2. For all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+> 
+>    $$
+>        \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left| f(\lambda) \right|,
+>    $$
+> 
+>    where $$\| \cdot \|$$ is the Hilbert space norm on $$\mathbf{H}$$ and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
+> 3. Integration is multiplicative: For all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
+> 
+>    $$
+>        \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
+>    $$
+> 
+> 4. For all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+> 
+>    $$
+>        \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
+>    $$
+> 
+>    where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$ arising from the Hilbert space inner product. In particular, if $$f$$ is real-valued, then $$f = \overline{f}$$ and
+> 
+>    $$
+>        \left( \int_X f \, d\mu \right) = \left( \int_X \overline{f} \, d\mu \right) = \left( \int_X f \, d\mu \right)^*
+>    $$
+> 
+>    is self-adjoint.
+
+To streamline the proof of this theorem, we will introduce a few new terms
+
+> **Definition** *((Bounded) Sesquilinear Form)*
+<a name="def:bounded-sesquilinear form"></a>
+> A *sesquilinear form* on a Hilbert space $$\mathbf{H}$$ is a map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ that is conjugate linear in the first factor and linear in the second factor. A sesquilinear form  $$L$$ is a *bounded sesquilinear form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi, \psi \in \mathbf{H}$$
+> 
+> $$
+>     |L(\phi, \psi)| \le C \|\phi\| \, \|\psi\|,
+> $$
+> 
+> where $$\mid\cdot\mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+
+> **Definition** *((Bounded) Quadratic Form)*
+<a name="def:bounded-quadratic-form"></a>
+<!--  \uses{def:bounded-sesquilinear form} -->
+> A *quadratic form* on a Hilbert space $$\mathbf{H}$$ is a map $$Q : \mathbf{H} \rightarrow \mathbb{C}$$ with the following properties:
+> 
+> 1. $$Q(\lambda\psi) = \mid\lambda\mid^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+> 2. The map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+> 
+>    $$
+>    \begin{align}
+>        L(\phi, \psi) &\equiv \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
+>                      &-\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right]
+>    \end{align}
+>    $$
+> 
+>    is a sesquilinear form on $$\mathbf{H}$$.
+> 
+> A quadratic form $$Q$$ is a *bounded quadratic form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+> 
+> $$
+>     |Q(\phi)| \le C \|\phi\|^2,
+> $$
+> 
+> where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
