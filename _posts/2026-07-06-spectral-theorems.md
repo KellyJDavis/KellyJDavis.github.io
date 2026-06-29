@@ -402,9 +402,9 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 > where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure), is a bounded quadratic form.
 
 **Proof**
-To prove this result we will first prove the result for indicator functions, then for simple functions, and finally for any bounded, measurable, complex-valued function.
+To prove this result we will first prove the result for indicator functions, then for simple functions, and finally for bounded, measurable, complex-valued functions.
 
-Let us start this proof by proving it is true for the case of an indicator function. Consider any $$E \in \Omega(X)$$ and its indicator function $$1_E$$. In this case we have 
+Let us start this proof by proving it is true for the case of indicator functions. Consider an arbitrary $$E \in \Omega(X)$$ and its indicator function $$1_E$$. In this case the definition of $$Q_{1_E}$$, standard properties of integration, and the definition of $$\mu_\psi$$ implies
 
 $$
 \begin{align}
@@ -430,13 +430,13 @@ To prove that this $$Q_{1_E}$$ is a bounded quadratic form we must prove that
 
    is a sesquilinear form on $$\mathbf{H}$$.
 
-and there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+3. There exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
-$$
-    |Q_{1_E}(\phi)| \le C \|\phi\|^2,
-$$
+   $$
+       |Q_{1_E}(\phi)| \le C \|\phi\|^2,
+   $$
 
-where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+   where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
 Let us first prove that $$Q_{1_E}(\lambda\psi) = \mid\lambda\mid^2 Q_{1_E}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$. As a result of our previous derivation, the definition of an inner product, and the definition of the norm on $$\mathbb{C}$$ one has
 
@@ -460,7 +460,7 @@ $$
 \end{align}
 $$
 
-for all $$\phi, \psi \in \mathbf{H}$$. Using the definition of an inner product this simplifies as
+for all $$\phi, \psi \in \mathbf{H}$$. Using the definition of an inner product, this simplifies as follows
 
 $$
 \begin{align}
@@ -484,7 +484,7 @@ $$
     |Q_{1_E}(\phi)| \le C \|\phi\|^2.
 $$
 
-Using the results of our previous derivation along with the definition of an orthogonal projection and standard properties of an inner product and its associated norm we have
+Using the results of our previous derivation, the definition of an orthogonal projection, and standard properties of an inner product and its associated norm we have
 
 $$
 \begin{align}
@@ -498,7 +498,7 @@ $$
 \end{align}
 $$
 
-where the final inequality follows from the fact that $$\mu(E)$$ is an orthogonal projection. This then proves that
+where the final inequality follows from the fact that $$\mu(E)$$ is an orthogonal projection. This proves that
 
 $$
     |Q_{1_E}(\phi)| \le \|\phi\|^2,
@@ -509,7 +509,7 @@ which implies that the constant required to prove that $$Q_{1_E}$$ is a bounded 
 Next we will prove that any simple function $$s$$, i.e. any finite linear combination of indicator functions
 
 $$
-  s = \sum_{i = 1}^n \alpha_i 1_{E_i},
+  s = \sum_{i = 1}^n \alpha_i 1_{E_i}
 $$
 
 where $$\alpha_i \in \mathbb{C}$$ and $$E_i \in \Omega(X)$$, also results in a bounded quadratic form $$Q_s$$.
@@ -531,7 +531,7 @@ $$
     Q_s(\psi) = \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right>.
 $$
 
-To prove that $$Q_s$$ is a bounded quadratic for we must prove the same three results.
+To prove that such a $$Q_s$$ is a bounded quadratic for we must prove the same three results.
 
 First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from the same logic of the indicator function case
 
@@ -551,7 +551,7 @@ Next we must prove the map $$L_s : \mathbf{H} \times \mathbf{H} \rightarrow \mat
 
 $$
 \begin{align}
-    L_s(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_s(\phi + \psi) - Q_s(\phi) - Q_s(\psi) \right] \\
+    L_s(\phi, \psi) &= \frac{1}{2} \left[ Q_s(\phi + \psi) - Q_s(\phi) - Q_s(\psi) \right] \\
                     &-\frac{i}{2} \left[ Q_s(\phi + i\psi) - Q_s(\phi) - Q_s(i\psi) \right]
 \end{align}
 $$
@@ -629,7 +629,7 @@ $$
 \end{align}
 $$
 
-where the second equality follows from the Complex-Valued Simple Approximation Theorem, the third from the fact that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ and thus the limit can be pulled out of the integral, the fourth from the definition of $$Q_{s_i}$$, the fifth from our simple function result, and the final from the uniform convergence and the Complex-Valued Simple Approximation Theorem. So in summary we have proven that
+where the second equality follows from the Complex-Valued Simple Approximation Theorem, the third from the fact that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ and thus the limit can be pulled out of the integral, the fourth from the definition of $$Q_{s_i}$$, the fifth from our simple function result, and the final as before from uniform convergence and the Complex-Valued Simple Approximation Theorem. So in summary we have proven that
 
 $$
     Q_f(\lambda\psi) = \left|\lambda\right|^2 Q_f(\psi),
@@ -641,12 +641,12 @@ A similar argument implies that $$L_f$$ defined by
 
 $$
 \begin{align}
-    L_f(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_f(\phi + \psi) - Q_f(\phi) - Q_f(\psi) \right] \\
+    L_f(\phi, \psi) &= \frac{1}{2} \left[ Q_f(\phi + \psi) - Q_f(\phi) - Q_f(\psi) \right] \\
                     &-\frac{i}{2} \left[ Q_f(\phi + i\psi) - Q_f(\phi) - Q_f(i\psi) \right]
 \end{align}
 $$
 
-is a sesquilinear form on $$\mathbf{H}$$. Using the same argument as above but for $$\lambda = 1$$ we have
+is a sesquilinear form on $$\mathbf{H}$$. In particular, using the same argument as above but for $$\lambda = 1$$ we have
 
 $$
 \begin{align}
@@ -668,8 +668,8 @@ $$
     \end{aligned} \\
     &=
     \begin{aligned}[t]
-        \lim\limits_{i \rightarrow \infty} &\frac{1}{2} \left[ Q_{s_i}(\phi + \psi) - Q_{s_i}(\phi) - Q_{s_i}(\psi) \right] \\
-        -&\frac{i}{2} \left[ Q_{s_i}(\phi + i\psi) - Q_{s_i}(\phi) - Q_{s_i}(i\psi) \right]
+        \lim\limits_{i \rightarrow \infty} &\left( \frac{1}{2} \left[ Q_{s_i}(\phi + \psi) - Q_{s_i}(\phi) - Q_{s_i}(\psi) \right] \right. \\
+        &-\left. \frac{i}{2} \left[ Q_{s_i}(\phi + i\psi) - Q_{s_i}(\phi) - Q_{s_i}(i\psi) \right] \right)
     \end{aligned} \\
     &= \lim\limits_{i \rightarrow \infty} L_{s_i}(\phi, \psi). 
 \end{align}
