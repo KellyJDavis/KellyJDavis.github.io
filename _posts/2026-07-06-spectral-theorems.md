@@ -376,3 +376,328 @@ To streamline the proof of this theorem, we will introduce a few new terms
 > $$
 > 
 > where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+
+These will now let us begin the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration)
+
+**Proof**
+By hypothesis we have a projection-valued measure $$\mu$$. Consider any bounded, measurable, complex-valed function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$. With this, let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
+
+$$
+    Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
+$$
+
+where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure). It turns out that such a $$Q_f(\psi)$$ is a bounded quadratic form which we now prove
+
+> **Lemma**
+<a name="lmm:lemma1-of-operator-valued-integration"></a>
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
+> Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any bounded, measurable, complex-valued function $$f$$ on $$X$$ and $$\psi \in \mathbf{H}$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+> 
+> $$
+>     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
+> $$
+> 
+> where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure), is a bounded quadratic form.
+
+**Proof**
+To prove this result we will first prove the result for indicator functions, then for simple functions, and finally for any bounded, measurable, complex-valued function.
+
+Let us start this proof by proving it is true for the case of an indicator function. Consider any $$E \in \Omega(X)$$ and its indicator function $$1_E$$. In this case we have 
+
+$$
+\begin{align}
+    Q_{1_E}(\psi) &= \int_X 1_E \, d\mu_\psi \\
+                  &= \int_E d\mu_\psi \\
+                  &= \left< \psi, \mu(E) \psi \right>.
+\end{align}
+$$
+
+So, $$Q_{1_E}(\psi) = \left< \psi, \mu(E) \psi \right>$$.
+
+To prove that this $$Q_{1_E}$$ is a bounded quadratic form we must prove that
+
+1. $$Q_{1_E}(\lambda\psi) = \mid\lambda\mid^2 Q_{1_E}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+2. The map $$L_{1_E} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+
+   $$
+   \begin{align}
+       L_{1_E}(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_{1_E}(\phi + \psi) - Q_{1_E}(\phi) - Q_{1_E}(\psi) \right] \\
+                           &-\frac{i}{2} \left[ Q_{1_E}(\phi + i\psi) - Q_{1_E}(\phi) - Q_{1_E}(i\psi) \right]
+   \end{align}
+   $$
+
+   is a sesquilinear form on $$\mathbf{H}$$.
+
+and there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+$$
+    |Q_{1_E}(\phi)| \le C \|\phi\|^2,
+$$
+
+where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+
+Let us first prove that $$Q_{1_E}(\lambda\psi) = \mid\lambda\mid^2 Q_{1_E}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$. As a result of our previous derivation, the definition of an inner product, and the definition of the norm on $$\mathbb{C}$$ one has
+
+$$
+\begin{align}
+  Q_{1_E}(\lambda\psi) &= \left< \lambda\psi, \mu(E) \lambda\psi \right> \\
+                       &= \lambda^*\lambda \left< \psi, \mu(E) \psi \right> \\
+                       &= \mid\lambda\mid^2 \left< \psi, \mu(E) \psi \right> \\
+                       &= \mid\lambda\mid^2 Q_{1_E}(\psi),
+\end{align}
+$$
+
+which proves $$Q_{1_E}(\lambda\psi) = \mid\lambda\mid^2 Q_{1_E}(\psi)$$, the desired result.
+
+Next let us prove the map $$L_{1_E} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined above is a sesquilinear form on $$\mathbf{H}$$. As a result of our previous derivation and the definition of $$L_{1_E}$$ we have
+
+$$
+\begin{align}
+    L_{1_E}(\phi, \psi) &= \frac{1}{2} \left[ \left< (\phi + \psi), \mu(E) (\phi + \psi) \right> - \left< \phi, \mu(E) \phi \right> - \left< \psi, \mu(E) \psi \right> \right] \\
+                        &-\frac{i}{2} \left[ \left< (\phi + i\psi), \mu(E) (\phi + i\psi) \right> - \left< \phi, \mu(E) \phi \right> - \left< i\psi, \mu(E) i\psi \right> \right]
+\end{align}
+$$
+
+for all $$\phi, \psi \in \mathbf{H}$$. Using the definition of an inner product this simplifies as
+
+$$
+\begin{align}
+    L_{1_E}(\phi, \psi) &= \frac{1}{2} \left[ \left< \phi, \mu(E) \psi \right> + \left< \psi, \mu(E) \phi \right> \right] - \frac{i}{2} \left[ \left< \phi, \mu(E) i\psi \right> + \left< i\psi, \mu(E) \phi \right> \right] \\
+                        &= \frac{1}{2} \left[ \left< \phi, \mu(E) \psi \right> + \left< \psi, \mu(E) \phi \right> \right] + \frac{1}{2} \left[ \left< \phi, \mu(E) \psi \right> - \left< \psi, \mu(E) \phi \right> \right] \\
+                        &= \left< \phi, \mu(E) \psi \right>,
+\end{align}
+$$
+
+which implies
+
+$$
+     L_{1_E}(\phi, \psi) = \left< \phi, \mu(E) \psi \right>.
+$$
+
+The definition of an inner product then implies that $$L_{1_E}(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Thus $$L_{1_E}(\phi, \psi)$$ is a sesquilinear form, the desired result. The results up until this point prove that $$Q_{1_E}$$ is a quadratic form.
+
+Finally, to prove that $$Q_{1_E}$$ isn't only a quadratic form but is a bounded quadratic form we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+$$
+    |Q_{1_E}(\phi)| \le C \|\phi\|^2.
+$$
+
+Using the results of our previous derivation along with the definition of an orthogonal projection and standard properties of an inner product and its associated norm we have
+
+$$
+\begin{align}
+    |Q_{1_E}(\phi)| &= | \left< \phi, \mu(E) \phi \right> | \\
+                    &= | \left< \phi, \mu(E) \mu(E) \phi \right> | \\
+                    &= | \left< \phi, \mu(E)^* \mu(E) \phi \right> | \\
+                    &= | \left< \mu(E) \phi, \mu(E) \phi \right> | \\
+                    &= | \|\mu(E) \phi\|^2 | \\
+                    &= \|\mu(E) \phi\|^2 \\
+                    &\le \|\phi\|^2,
+\end{align}
+$$
+
+where the final inequality follows from the fact that $$\mu(E)$$ is an orthogonal projection. This then proves that
+
+$$
+    |Q_{1_E}(\phi)| \le \|\phi\|^2,
+$$
+
+which implies that the constant required to prove that $$Q_{1_E}$$ is a bounded quadratic form is simply $$1$$. This concludes the proof of the indicator function result, $$Q_{1_E}$$ is a bounded quadratic form for any indicator function $$1_E$$.
+
+Next we will prove that any simple function $$s$$, i.e. any finite linear combination of indicator functions
+
+$$
+  s = \sum_{i = 1}^n \alpha_i 1_{E_i},
+$$
+
+where $$\alpha_i \in \mathbb{C}$$ and $$E_i \in \Omega(X)$$, also results in a bounded quadratic form $$Q_s$$.
+
+In this case, following a logic similar to the indicator function case, we have
+
+$$
+\begin{align}
+    Q_s(\psi) &= \int_X \left( \sum_{i = 1}^n \alpha_i 1_{E_i} \right) d\mu_\psi \\
+              &= \sum_{i = 1}^n \int_X \alpha_i 1_{E_i} d\mu_\psi \\
+              &= \sum_{i = 1}^n \alpha_i  \int_X 1_{E_i} d\mu_\psi \\
+              &= \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right>.
+\end{align}
+$$
+
+So in summary
+
+$$
+    Q_s(\psi) = \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right>.
+$$
+
+To prove that $$Q_s$$ is a bounded quadratic for we must prove the same three results.
+
+First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from the same logic of the indicator function case
+
+$$
+\begin{align}
+    Q_s(\lambda\psi) &= \sum_{i = 1}^n \alpha_i  \left< \lambda\psi, \mu(E_i) \lambda\psi \right> \\
+                     &= \sum_{i = 1}^n \alpha_i  \lambda^*\lambda \left< \psi, \mu(E_i) \psi \right> \\
+                     &= \lambda^*\lambda \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right> \\
+                     &= |\lambda|^2 \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right> \\
+                     &= |\lambda|^2 Q_s(\psi),
+\end{align}
+$$
+
+giving the desired result $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$.
+
+Next we must prove the map $$L_s : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+
+$$
+\begin{align}
+    L_s(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_s(\phi + \psi) - Q_s(\phi) - Q_s(\psi) \right] \\
+                    &-\frac{i}{2} \left[ Q_s(\phi + i\psi) - Q_s(\phi) - Q_s(i\psi) \right]
+\end{align}
+$$
+
+is a sesquilinear form on $$\mathbf{H}$$. Basically this result follows from linearity and our indicator function result. 
+
+Explicitly, we can write $$Q_s$$ in terms of the $$Q_{1_{E_i}}$$ as follows 
+
+$$
+    Q_s(\psi) = \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right> = \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\psi).
+$$
+
+This implies that
+
+$$
+  L_s(\phi, \psi) = \sum_{i = 1}^n \alpha_i L_{1_{E_i}}(\phi, \psi).
+$$
+
+From our indicator function result we know that each $$L_{1_{E_i}}(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Hence, $$L_s(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Thus $$L_s(\phi, \psi)$$ is a sesquilinear form on $$\mathbf{H}$$, the desired result.
+
+Finally, we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+$$
+    |Q_s(\phi)| \le C \|\phi\|^2.
+$$
+
+This again follows from linearity and our indicator function result. We have
+
+$$
+\begin{align}
+  |Q_s(\phi)| &= \left| \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\phi) \right| \\
+              &\le \sum_{i = 1}^n \left| \alpha_i Q_{1_{E_i}}(\phi) \right| \\
+              &= \sum_{i = 1}^n \left|\alpha_i\right| \, \left| Q_{1_{E_i}}(\phi) \right| \\
+              &\le \sum_{i = 1}^n \left|\alpha_i\right| \|\phi\|^2 \\
+              &\le \left( \sum_{i = 1}^n \left|\alpha_i\right| \right) \|\phi\|^2.
+\end{align}
+$$
+
+This gives the desired result
+
+$$
+    |Q_s(\phi)| \le C \|\phi\|^2
+$$
+
+for
+
+$$
+    C = \sum_{i = 1}^n \left|\alpha_i\right|.
+$$
+
+This completes the proof that $$Q_s$$ is a bounded quadratic form for any simple function $$s$$.
+
+Next we will prove that for any bounded, measurable, complex-valued function $$f$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+
+$$
+    Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
+$$ 
+
+is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem 
+
+> **Theorem** *(Complex-Valued Simple Approximation Theorem)*
+> Given any bounded, measurable, complex-valued function $$f$$ on the measurable set $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
+
+To wit we must first prove that $$Q_f(\lambda\psi) = \mid\lambda\mid^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
+
+$$
+\begin{align}
+    Q_f(\lambda\psi) &= \int_X f \, d\mu_{\lambda\psi} \\
+                     &= \int_X \lim\limits_{i \rightarrow \infty} s_i \, d\mu_{\lambda\psi} \\
+                     &= \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu_{\lambda\psi} \\
+                     &= \lim\limits_{i \rightarrow \infty} Q_{s_i}(\lambda\psi) \\
+                     &= \lim\limits_{i \rightarrow \infty} \left|\lambda\right|^2 Q_{s_i}(\psi) \\
+                     &= \left|\lambda\right|^2 \lim\limits_{i \rightarrow \infty} Q_{s_i}(\psi) \\
+                     &= \left|\lambda\right|^2 Q_f(\psi),
+\end{align}
+$$
+
+where the second equality follows from the Complex-Valued Simple Approximation Theorem, the third from the fact that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ and thus the limit can be pulled out of the integral, the fourth from the definition of $$Q_{s_i}$$, the fifth from our simple function result, and the final from the uniform convergence and the Complex-Valued Simple Approximation Theorem. So in summary we have proven that
+
+$$
+    Q_f(\lambda\psi) = \left|\lambda\right|^2 Q_f(\psi),
+$$
+
+which is the first desired result.
+
+A similar argument implies that $$L_f$$ defined by
+
+$$
+\begin{align}
+    L_f(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_f(\phi + \psi) - Q_f(\phi) - Q_f(\psi) \right] \\
+                    &-\frac{i}{2} \left[ Q_f(\phi + i\psi) - Q_f(\phi) - Q_f(i\psi) \right]
+\end{align}
+$$
+
+is a sesquilinear form on $$\mathbf{H}$$. Using the same argument as above but for $$\lambda = 1$$ we have
+
+$$
+\begin{align}
+    Q_f(\psi) &= \int_X f \, d\mu_{\psi} \\
+              &= \int_X \lim\limits_{i \rightarrow \infty} s_i \, d\mu_{\psi} \\
+              &= \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu_{\psi} \\
+              &= \lim\limits_{i \rightarrow \infty} Q_{s_i}(\psi).
+\end{align}
+$$
+
+Hence,
+
+$$
+\begin{align}
+    L_f(\phi, \psi) &=
+    \begin{aligned}[t]
+        &\frac{1}{2} \left[ \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi + \psi) - \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi) - \lim\limits_{i \rightarrow \infty} Q_{s_i}(\psi) \right] \\
+       -&\frac{i}{2} \left[ \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi + i\psi) - \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi) - \lim\limits_{i \rightarrow \infty} Q_{s_i}(i\psi) \right]
+    \end{aligned} \\
+    &=
+    \begin{aligned}[t]
+        \lim\limits_{i \rightarrow \infty} &\frac{1}{2} \left[ Q_{s_i}(\phi + \psi) - Q_{s_i}(\phi) - Q_{s_i}(\psi) \right] \\
+        -&\frac{i}{2} \left[ Q_{s_i}(\phi + i\psi) - Q_{s_i}(\phi) - Q_{s_i}(i\psi) \right]
+    \end{aligned} \\
+    &= \lim\limits_{i \rightarrow \infty} L_{s_i}(\phi, \psi). 
+\end{align}
+$$
+
+This implies
+
+$$
+    L_f(\phi, \psi) = \lim\limits_{i \rightarrow \infty} L_{s_i}(\phi, \psi),
+$$
+
+which---as a result of our simple function proof that $$L_{s_i}(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor---implies that $$L_f(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor, and thus a sesquilinear form on $$\mathbf{H}$$.
+
+Finally, a similar argument can also be used to prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+$$
+    |Q_f(\phi)| \le C \|\phi\|^2.
+$$
+
+Using our previous results
+
+$$
+\begin{align}
+    |Q_f(\phi)| &= \left| \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi) \right| \\
+                &= \lim\limits_{i \rightarrow \infty} \left| Q_{s_i}(\phi) \right| \\
+                &\le \lim\limits_{i \rightarrow \infty} C_i \|\phi\|^2
+\end{align}
+$$
+
+
+This completes our proof of the lemma that $$Q_f$$ is a bounded quadratic form for bounded, measurable, complex-valued function $$f$$. $$\blacksquare$$
