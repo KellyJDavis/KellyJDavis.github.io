@@ -683,21 +683,58 @@ $$
 
 which---as a result of our simple function proof that $$L_{s_i}(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor---implies that $$L_f(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor, and thus a sesquilinear form on $$\mathbf{H}$$.
 
-Finally, a similar argument can also be used to prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+Finally, we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
     |Q_f(\phi)| \le C \|\phi\|^2.
 $$
 
-Using our previous results
+for all $$\phi \in \mathbf{H}$$. It is to this we now turn.
+
+Consider an arbitrary $$\phi \in \mathbf{H}$$ such that $$\|\phi\| \neq 0$$. As $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ we have
 
 $$
 \begin{align}
-    |Q_f(\phi)| &= \left| \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi) \right| \\
-                &= \lim\limits_{i \rightarrow \infty} \left| Q_{s_i}(\phi) \right| \\
-                &\le \lim\limits_{i \rightarrow \infty} C_i \|\phi\|^2
+    \frac{Q_f(\phi)}{\|\phi\|^2} &= \frac{1}{\|\phi\|^2} \int_X f d\mu_\phi \\
+                                 &= \frac{1}{\|\phi\|^2} \int_X \lim\limits_{i \rightarrow \infty} s_i \, d\mu_\phi \\
+                                 &= \frac{1}{\|\phi\|^2} \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu_\phi \\
+                                 &= \frac{1}{\|\phi\|^2} \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi) \\
+                                 &= \lim\limits_{i \rightarrow \infty} \frac{Q_{s_i}(\phi)}{\|\phi\|^2},
 \end{align}
 $$
 
+were we can pull the limit out of the integral as $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$. Hence, we proved that
 
-This completes our proof of the lemma that $$Q_f$$ is a bounded quadratic form for bounded, measurable, complex-valued function $$f$$. $$\blacksquare$$
+$$
+    \frac{Q_f(\phi)}{\|\phi\|^2} = \lim\limits_{i \rightarrow \infty} \frac{Q_{s_i}(\phi)}{\|\phi\|^2}
+$$
+
+for all non-zero $$\phi \in \mathbf{H}$$.
+
+Hence, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
+
+$$
+    \left| \frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_i}(\phi)}{\|\phi\|^2} \right| < \frac{\epsilon}{2}
+$$
+
+for all non-zero $$\phi \in \mathbf{H}$$. Thus, for this same $$\epsilon > 0$$ and $$N$$ for all $$i,j \ge N$$ and non-zero $$\phi \in \mathbf{H}$$ one has
+
+$$
+\begin{align}
+    \left| \frac{Q_{s_i}(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right|
+        &= \left| \left(\frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right) - \left(\frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_i}(\phi)}{\|\phi\|^2} \right) \right| \\
+        &\le \left| \frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right| + \left| \frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_i}(\phi)}{\|\phi\|^2} \right| \\
+        &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+        &= \epsilon,
+\end{align}
+$$
+
+where we had used the definition of a norm in the second line and our previous result in the third line.
+
+So we have proven that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i,j \ge N$$ 
+
+$$
+     \left| \frac{Q_{s_i}(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right| < \epsilon
+$$
+
+for all non-zero $$\phi \in \mathbf{H}$$.
