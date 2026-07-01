@@ -393,7 +393,7 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
-> Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any bounded, measurable, complex-valued function $$f$$ on $$X$$ and $$\psi \in \mathbf{H}$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+> Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any bounded, measurable, complex-valued function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 > 
 > $$
 >     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
@@ -410,6 +410,7 @@ $$
 \begin{align}
     Q_{1_E}(\psi) &= \int_X 1_E \, d\mu_\psi \\
                   &= \int_E d\mu_\psi \\
+                  &= \mu_\psi(E) \\
                   &= \left< \psi, \mu(E) \psi \right>.
 \end{align}
 $$
@@ -512,7 +513,7 @@ $$
   s = \sum_{i = 1}^n \alpha_i 1_{E_i}
 $$
 
-where $$\alpha_i \in \mathbb{C}$$ and $$E_i \in \Omega(X)$$, also results in a bounded quadratic form $$Q_s$$.
+where $$\alpha_i \in \mathbb{C}$$ and $$E_i \in \Omega(X)$$ are disjoint, also results in a bounded quadratic form $$Q_s$$.
 
 In this case, following a logic similar to the indicator function case, we have
 
@@ -521,26 +522,26 @@ $$
     Q_s(\psi) &= \int_X \left( \sum_{i = 1}^n \alpha_i 1_{E_i} \right) d\mu_\psi \\
               &= \sum_{i = 1}^n \int_X \alpha_i 1_{E_i} d\mu_\psi \\
               &= \sum_{i = 1}^n \alpha_i  \int_X 1_{E_i} d\mu_\psi \\
-              &= \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right>.
+              &= \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right> \\
+              &= \sum_{i = 1}^n \alpha_i  Q_{1_{E_i}}(\psi)
 \end{align}
 $$
 
 So in summary
 
 $$
-    Q_s(\psi) = \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right>.
+    Q_s(\psi) = \sum_{i = 1}^n \alpha_i  Q_{1_{E_i}}(\psi)
 $$
 
 To prove that such a $$Q_s$$ is a bounded quadratic for we must prove the same three results.
 
-First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from the same logic of the indicator function case
+First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from our indicator function result 
 
 $$
 \begin{align}
-    Q_s(\lambda\psi) &= \sum_{i = 1}^n \alpha_i  \left< \lambda\psi, \mu(E_i) \lambda\psi \right> \\
-                     &= \sum_{i = 1}^n \alpha_i  \lambda^*\lambda \left< \psi, \mu(E_i) \psi \right> \\
-                     &= \lambda^*\lambda \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right> \\
-                     &= |\lambda|^2 \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right> \\
+    Q_s(\lambda\psi) &= \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\lambda\psi) \\
+                     &= \sum_{i = 1}^n \alpha_i |\lambda|^2 Q_{1_{E_i}}(\psi) \\
+                     &= |\lambda|^2 \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\psi) \\
                      &= |\lambda|^2 Q_s(\psi),
 \end{align}
 $$
@@ -558,13 +559,13 @@ $$
 
 is a sesquilinear form on $$\mathbf{H}$$. Basically this result follows from linearity and our indicator function result. 
 
-Explicitly, we can write $$Q_s$$ in terms of the $$Q_{1_{E_i}}$$ as follows 
+As
 
 $$
-    Q_s(\psi) = \sum_{i = 1}^n \alpha_i  \left< \psi, \mu(E_i) \psi \right> = \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\psi).
+    Q_s(\psi) = \sum_{i = 1}^n \alpha_i  Q_{1_{E_i}}(\psi)
 $$
 
-This implies that
+we have
 
 $$
   L_s(\phi, \psi) = \sum_{i = 1}^n \alpha_i L_{1_{E_i}}(\phi, \psi).
@@ -613,7 +614,7 @@ $$
 is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem 
 
 > **Theorem** *(Complex-Valued Simple Approximation Theorem)*
-> Given any bounded, measurable, complex-valued function $$f$$ on the measurable set $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
+> Given any bounded, measurable, complex-valued function $$f$$ on a measurable set $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
 To wit we must first prove that $$Q_f(\lambda\psi) = \mid\lambda\mid^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
 
@@ -717,7 +718,7 @@ $$
     \left| \frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_i}(\phi)}{\|\phi\|^2} \right| < \frac{\epsilon}{2}
 $$
 
-for all non-zero $$\phi \in \mathbf{H}$$. Thus, for this same $$\epsilon > 0$$ and $$N$$ for all $$i,j \ge N$$ and non-zero $$\phi \in \mathbf{H}$$ one has
+for all non-zero $$\phi \in \mathbf{H}$$. Thus, for this same $$\epsilon > 0$$ and $$N$$ and for all $$i,j \ge N$$ and non-zero $$\phi \in \mathbf{H}$$ one has
 
 $$
 \begin{align}
@@ -843,7 +844,7 @@ $$
     \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2.
 $$
 
-One has
+As $$i$$ does not appear on the right-hand side of this inequality, one has
 
 $$
     \lim\limits_{i \rightarrow \infty} \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2
