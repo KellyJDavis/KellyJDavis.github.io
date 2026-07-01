@@ -343,7 +343,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 To streamline the proof of this theorem, we will introduce a few new terms
 
 > **Definition** *((Bounded) Sesquilinear Form)*
-<a name="def:bounded-sesquilinear form"></a>
+<a name="def:bounded-sesquilinear-form"></a>
 > A *sesquilinear form* on a Hilbert space $$\mathbf{H}$$ is a map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ that is conjugate linear in the first factor and linear in the second factor. A sesquilinear form  $$L$$ is a *bounded sesquilinear form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi, \psi \in \mathbf{H}$$
 > 
 > $$
@@ -354,7 +354,7 @@ To streamline the proof of this theorem, we will introduce a few new terms
 
 > **Definition** *((Bounded) Quadratic Form)*
 <a name="def:bounded-quadratic-form"></a>
-<!--  \uses{def:bounded-sesquilinear form} -->
+<!--  \uses{def:bounded-sesquilinear-form} -->
 > A *quadratic form* on a Hilbert space $$\mathbf{H}$$ is a map $$Q : \mathbf{H} \rightarrow \mathbb{C}$$ with the following properties:
 > 
 > 1. $$Q(\lambda\psi) = \mid\lambda\mid^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
@@ -871,3 +871,129 @@ $$
 for all $$\phi \in \mathbf{H}$$, the desired result.
 
 This concludes our proof that for any bounded, measurable, complex-valued function $$f$$ on the set $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ the map $$Q_f$$ is a bounded quadratic form. $$\blacksquare$$
+
+Our next step in the larger proof is establishing some propositions we will have need of later in our argument. To wit let us first prove the proposition (Proposition A.61 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+
+> **Proposition**
+> <a name="prpstn:hall-a.61"></a>
+> <!--  \uses{def:bounded-quadratic-form} -->
+> <!--  \uses{def:bounded-sesquilinear-form} -->
+> <!--  \uses{def:bounded-operator-notation} -->
+> If $$Q$$ is a quadratic form on $$\mathbf{H}$$ and $$L$$ is the associated sesquilinear form 
+> 
+> $$
+> \begin{align}
+>     L(\phi, \psi) &\equiv \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
+>                   &-\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right],
+> \end{align}
+> $$
+> 
+> then we have the following results
+> 
+> 1. For all $$\psi \in \mathbf{H}$$, we have $$Q(\psi) = L(\psi, \psi)$$.
+> 2. If $$Q$$ is bounded, then $$L$$ is bounded.
+> 3. If $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then $$L$$ is conjugate symmetric, that is
+> 
+>    $$
+>        L(\phi, \psi) = \overline{L(\psi, \phi)}
+>    $$
+> 
+>    for all $$\phi, \psi \in \mathbf{H}$$
+
+**Proof**
+Let us first prove for all $$\psi \in \mathbf{H}$$, we have $$Q(\psi) = L(\psi, \psi)$$.
+
+The definition of a quadratic form along with standard properties of the norm $$\mid \cdot \mid$$ imply
+
+$$
+\begin{align}
+    L(\psi, \psi) &=
+    \begin{aligned}[t]
+        &\frac{1}{2} \left[ Q(\psi + \psi) - Q(\psi) - Q(\psi) \right] \\
+        &-\frac{i}{2} \left[ Q(\psi + i\psi) - Q(\psi) - Q(i\psi) \right]
+    \end{aligned} \\
+    &=
+    \begin{aligned}[t]
+        &\frac{1}{2} \left[ Q(2\psi) - 2Q(\psi) \right] \\
+        &-\frac{i}{2} \left[ Q((1 + i)\psi) - Q(\psi) - |i|^2 Q(\psi) \right]
+    \end{aligned} \\
+    &=
+    \begin{aligned}[t]
+        &\frac{1}{2} \left[ |2|^2Q(\psi) - 2Q(\psi) \right] \\
+        &-\frac{i}{2} \left[ |1 + i|^2Q(\psi) - 2Q(\psi) \right]
+    \end{aligned} \\
+    &= Q(\psi), 
+\end{align}
+$$
+
+the desired result $$L(\psi, \psi) = Q(\psi)$$.
+
+Let us next prove that if $$Q$$ is bounded, then $$L$$ is bounded.
+
+In this case by hypothesis $$Q$$ is bounded. Hence, there exists a $$C$$ in $$\mathbb{R}$$ such that
+
+$$
+    \left| Q(\psi) \right| \le C \|\psi\|^2
+$$
+
+for all $$\psi \in \mathbf{H}$$.
+
+Consider for the moment $$\phi, \psi \in \mathbf{H}$$ such that $$\|\phi\| = 1$$ and $$\|\psi\| = 1$$. The definition of a norm then implies
+
+$$
+    \|\phi + \psi\| \le \|\phi\| + \|\psi\| = 2,
+$$
+
+which implies $$\|\phi + \psi\| \le 2$$ as well as 
+
+$$
+\begin{align}
+    \|\phi + i\psi\| &\le \|\phi\| + \|i\psi\| \\
+                     &=    \|\phi\| + |i| \|\psi\| \\
+                     &=    \|\phi\| + \|\psi\| \\
+                     &=    2,
+\end{align}
+$$
+
+which implies $$\|\phi + i\psi\| \le 2$$.
+
+This, along with the definition of a norm and the fact that $$Q$$ is bounded, implies
+
+$$
+\begin{align}
+    \left| L(\phi, \psi) \right| &= \left| \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] -\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right] \right| \\
+    &\le \frac{1}{2} \left[ \left|Q(\phi + \psi)\right| + \left|Q(\phi)\right| + \left|Q(\psi)\right| + \left|Q(\phi + i\psi)\right| + \left|Q(\phi)\right| + \left|Q(i\psi)\right| \right] \\
+    &\le C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|i\psi\|^2 \right] \\
+    &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + |i| \, \|\psi\|^2 \right] \\
+    &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|\psi\|^2 \right] \\
+    &\le C \frac{1}{2} \left[ 4 + 1 + 1 + 4 + 1 + 1 \right] \\
+    &=   6C.
+\end{align}
+$$
+
+Now for arbitrary $$\phi, \psi \in \mathbf{H}$$ that need not satisfy $$\|\phi\| = 1$$ and $$\|\psi\| = 1$$, we can obviously always find unit vectors $$\widehat{\phi}$$ and $$\widehat{\psi}$$ in $$\mathbf{H}$$ such that
+
+$$
+\begin{align}
+    \phi &= \|\phi\| \widehat{\phi} \\
+    \psi &= \|\psi\| \widehat{\psi}.
+\end{align}
+$$
+
+As the definition of a quadratic form implies that $$L$$ is sesquilinear, we thus have for these arbitrary $$\phi, \psi \in \mathbf{H}$$
+
+$$
+    \left|L(\phi, \psi)\right| = \|\phi\| \, \|\psi\| \, \left| L(\widehat{\phi}, \widehat{\psi}) \right| \le 6C \|\phi\| \, \|\psi\|,
+$$
+
+where the inequality follows from our previous result. This we have proven the second desired result
+
+$$
+    \left|L(\phi, \psi)\right| \le 6C \|\phi\| \, \|\psi\|
+$$
+
+that $$L$$ is bounded.
+
+Finally, we will prove that if $$Q(\psi)$$ is valued in $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then $$L$$ is conjugate symmetric.
+
+In this case, by hypothesis $$Q(\psi)$$ is valued in $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$.
