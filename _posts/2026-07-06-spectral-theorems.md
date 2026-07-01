@@ -989,11 +989,96 @@ $$
 where the inequality follows from our previous result. This we have proven the second desired result
 
 $$
-    \left|L(\phi, \psi)\right| \le 6C \|\phi\| \, \|\psi\|
+    \left|L(\phi, \psi)\right| \le 6C \|\phi\| \, \|\psi\|,
 $$
 
 that $$L$$ is bounded.
 
 Finally, we will prove that if $$Q(\psi)$$ is valued in $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then $$L$$ is conjugate symmetric.
 
-In this case, by hypothesis $$Q(\psi)$$ is valued in $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$.
+In this case, by hypothesis $$Q(\psi)$$ is valued in $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$. This implies that for arbitrary $$\phi, \psi \in \mathbf{H}$$
+
+$$
+\begin{align}
+    \text{Re} \left[ L(\phi, \psi) \right]
+        &= \text{Re} \left[ \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] -\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right] \right] \\
+        &= \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right].
+\end{align}
+$$
+
+If we define $$M(\phi, \psi) \equiv \text{Re} \left[ L(\phi, \psi) \right]$$, then we have shown
+
+$$
+    M(\phi, \psi) = \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right].
+$$
+
+Now lets us derive several basic properties of $$M$$.
+
+First one can note that by inspection of
+
+$$
+    M(\phi, \psi) = \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right]
+$$
+
+that $$M(\phi, \psi)$$ is symmetric, i.e. $$M(\phi, \psi) = M(\psi, \phi)$$.
+
+Second, as $$M(\phi, \psi) \equiv \text{Re} \left[ L(\phi, \psi) \right]$$ and $$L$$ is a sesquilinear form, and thus conjugate linear in the first factor and linear in the second factor, it follows that $$M$$ is linear in both factors, i.e. real-bilinear.
+
+Finally, as $$Q$$ is a quadratic form, and thus satisfies $$Q(\lambda\psi) = \mid\lambda\mid^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$, one has
+
+$$
+\begin{align}
+    M(i\phi, i\psi) &= \frac{1}{2} \left[ Q(i\phi + i\psi) - Q(i\phi) - Q(i\psi) \right] \\
+                    &= \frac{1}{2} \left[ Q(i(\phi + \psi)) - |i|^2Q(\phi) - |i|^2Q(\psi) \right] \\
+                    &= \frac{1}{2} \left[ |i|^2Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
+                    &= \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
+                    &= M(\phi, \psi),
+\end{align}
+$$
+
+which implies $$M(i\phi, i\psi) = M(\phi, \psi)$$.
+
+Together these basic properties of $$M$$ imply
+
+$$
+\begin{align}
+    M(\phi, i\psi) &= M(i\psi, \phi) \\
+                   &= M(i^2\psi, i\phi) \\
+                   &= M(-\psi, i\phi) \\
+                   &= -M(\psi, i\phi),
+\end{align}
+$$
+
+which implies $$M(\phi, i\psi) = -M(\psi, i\phi)$$.
+
+Now noting that
+
+$$
+    M(\phi, i\psi) = \frac{1}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right],
+$$
+
+we have
+
+$$
+\begin{align}
+    L(\phi, \psi)
+        &= \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] -\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right] \\
+        &= M(\phi, \psi) - iM(\phi, i\psi) \\
+        &= M(\phi, \psi) + iM(\psi, i\phi) \\
+        &= M(\psi, \phi) + iM(\psi, i\phi), \\
+\end{align}
+$$
+
+where the second to last step follows from our previous result $$M(\phi, i\psi) = -M(\psi, i\phi)$$ and the last from the symmetry of $$M$$. As $$M$$ is real this derivation can be continued as
+
+$$
+\begin{align}
+    L(\phi, \psi)
+        &= M(\phi, \psi) - iM(\phi, i\psi) \\
+        &= M(\phi, \psi) + iM(\psi, i\phi) \\
+        &= M(\psi, \phi) + iM(\psi, i\phi) \\
+        &= \overline{L(\psi, \phi)},
+\end{align}
+$$
+
+proving that $$L(\phi, \psi) = \overline{L(\psi, \phi)}$$, the desired result, i.e. if $$Q$$ is real, then $$L$$ is conjugate symmetric.$$\blacksquare$$
