@@ -872,13 +872,12 @@ for all $$\phi \in \mathbf{H}$$, the desired result.
 
 This concludes our proof that for any bounded, measurable, complex-valued function $$f$$ on the set $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ the map $$Q_f$$ is a bounded quadratic form. $$\blacksquare$$
 
-Our next step in the larger proof is establishing some propositions we will have need of later in our argument. To wit let us first prove the proposition (Proposition A.61 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+Our next step in the larger proof is establishing several propositions we will have need of later in our argument. To wit let us first prove the proposition (Proposition A.61 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
 > **Proposition**
-> <a name="prpstn:hall-a.61"></a>
-> <!--  \uses{def:bounded-quadratic-form} -->
-> <!--  \uses{def:bounded-sesquilinear-form} -->
-> <!--  \uses{def:bounded-operator-notation} -->
+<a name="prpstn:hall-a.61"></a>
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{def:bounded-sesquilinear-form} -->
 > If $$Q$$ is a quadratic form on $$\mathbf{H}$$ and $$L$$ is the associated sesquilinear form 
 > 
 > $$
@@ -1082,3 +1081,142 @@ $$
 $$
 
 proving that $$L(\phi, \psi) = \overline{L(\psi, \phi)}$$, the desired result, i.e. if $$Q$$ is real, then $$L$$ is conjugate symmetric.$$\blacksquare$$
+
+The next in the set of "helper" propositions that we will prove is the proposition (Proposition A.63 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
+
+> **Proposition**
+<a name="prpstn:hall-a.63"></a>
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{def:bounded-operator-notation} -->
+> If $$Q$$ is a bounded quadratic form on $$\mathbf{H}$$, there is a unique $$A \in \mathcal{B}(\mathbf{H})$$ such that $$Q(\psi) = \left< \psi, A\psi \right>$$ for all $$\psi \in \mathbf{H}$$. If $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then the operator $$A$$ is self-adjoint.
+
+**Proof**
+By hypothesis $$Q$$ is a bounded quadratic form. Hence, as a result of the [**Proposition**](#prpstn:hall-a.61) we just proved, the sesquilinear form associated to $$Q$$ is bounded. This implies that there exists a constant $$C$$ in $$\mathbb{R}$$ such that
+
+$$
+    \left| L(\phi, \psi) \right| \le C \|\phi\| \, \|\psi\|,
+$$
+
+for all $$\phi, \psi \in \mathbf{H}$$.
+
+Hence, for any fixed $$\phi \in \mathbf{H}$$, the operator norm of the linear map $$\psi \mapsto L(\phi, \psi)$$ is bounded, with operator norm at most $$C \|\phi\|$$.
+
+Explicitly, $$\psi \mapsto L(\phi, \psi)$$ is linear as a result of $$Q$$ being a quadratic form, which implies $$L$$ is a sesquilinear form, which in turn implies that $$\psi \mapsto L(\phi, \psi)$$ is linear in $$\psi$$.
+
+Furthermore, the definition of operator norm implies
+
+$$
+    \|L(\phi, \cdot)\| \equiv \sup\limits_{\|\psi\| = 1} |L(\phi, \psi)|.
+$$
+
+The fact that $$L$$ is bounded as a sesquilinear form implies
+
+$$
+    \left| L(\phi, \psi) \right| \le C \|\phi\| \, \|\psi\|,
+$$
+
+for our fixed $$\phi$$ and any $$\psi \in \mathbf{H}$$. So for any $$\psi$$ such that $$\|\psi\| = 1$$
+
+$$
+    \left| L(\phi, \psi) \right| \le C \|\phi\|.
+$$
+
+Hence, these together imply
+
+$$
+    \|L(\phi, \cdot)\| \equiv \sup\limits_{\|\psi\| = 1} |L(\phi, \psi)| \le C \|\phi\|,
+$$
+
+the desired result.
+
+Now as one will recall the Riesz Theorem (Theorem A.52 (Riesz Theorem) of [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) states 
+
+> **Theorem** *(Riesz Theorem)*
+> If $$\xi : \mathbf{H} \rightarrow \mathbb{C}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, then there exists a unique $$\chi \in \mathbf{H}$$ such that
+> 
+> $$
+>     \xi(\psi) = \left< \chi, \psi \right>
+> $$
+> 
+> for all $$\psi \in \mathbf{H}$$. Furthermore, the operator norm of $$\xi$$ as a bounded linear functional is equal to the norm of $$\chi$$ as an element of $$\mathbf{H}$$.
+
+As a result of the Riesz Theorem, for any fixed $$\phi$$ there exists a $$\chi$$ in $$\mathbf{H}$$ such that $$L(\phi, \psi) = \left< \chi, \psi \right>$$. In addition, the "operator norm conclusion" of the Riesz Theorem and our finding that the operator norm of $$\psi \mapsto L(\phi, \psi)$$ is bounded for any fixed $$\phi$$ imply that
+
+$$
+    \|\chi\| \le C \|\phi\|.
+$$
+
+As this is true for any $$\phi$$, we can use it to define a map $$B : \mathbf{H} \rightarrow \mathbf{H}$$ by $$B\phi \equiv \chi$$. It turns out that $$B$$ is linear and bounded relative to the operator norm.
+
+Boundedness of $$B$$ relative to the operator norm follows from 
+
+$$
+    \|\chi\| \le C \|\phi\|
+$$
+
+along with $$B\phi = \chi$$. These imply
+
+$$
+    \|B\phi\| \le C \|\phi\|.
+$$
+
+This is simply the statement that $$B$$ is bounded in the operator norm.
+
+Linearity of $$B$$ follows from explicit calculation. For $$\phi_1, \phi_2 \in \mathbf{H}$$ we have by definition
+
+$$
+\begin{align}
+    L(\phi_1, \psi) &= \left< B\phi_1, \psi \right> \\
+    L(\phi_2, \psi) &= \left< B\phi_2, \psi \right>,
+\end{align}
+$$
+
+for any $$\psi \in \mathbf{H}$$. Similarly, for any $$\alpha_1, \alpha_2 \in \mathbb{C}$$ we have by defintion
+
+$$
+    L(\alpha_1 \phi_1 + \alpha_2 \phi_1 , \psi) = \left< B(\alpha_1 \phi_1 + \alpha_2 \phi_1), \psi \right>.
+$$
+
+As $$L$$ is a sesquilinear form and thus conjugate-linear in its first argument
+
+$$
+    L(\alpha_1\phi_1 + \alpha_2\phi_2, \psi) = \overline{\alpha_1} L(\phi_1, \psi) + \overline{\alpha_2} L(\phi_2, \psi).
+$$
+
+Hence, for any $$\psi \in \mathbf{H}$$
+
+$$
+    \left< B(\alpha_1 \phi_1 + \alpha_2 \phi_1), \psi \right> = \overline{\alpha_1} \left< B\phi_1, \psi \right> + \overline{\alpha_2}  \left< B\phi_2, \psi \right> = \left< \alpha_1 B\phi_1 + \alpha_2 B\phi_2, \psi \right>
+$$
+
+where the final equality uses the fact that the inner product is conjugate-linear in its first argument. As this is true for any $$\psi \in \mathbf{H}$$ it implies
+
+$$
+    B(\alpha_1 \phi_1 + \alpha_2 \phi_1) =  \alpha_1 B\phi_1 + \alpha_2 B\phi_2,
+$$
+
+which is none other than the statement of linearity.
+
+It turns out that the unique operator $$A \in \mathcal{B}(\mathbf{H})$$ of the proposition, i.e. the operator satisfying $$Q(\psi) = \left< \psi, A \psi \right>$$, is given by $$A \equiv B^*$$. Let us prove that this is the case.
+
+As a result of the last [**Proposition**](#prpstn:hall-a.61) we proved, 
+
+$$
+    Q(\psi) = L(\psi, \psi)
+$$
+
+for all $$\psi \in \mathbf{H}$$. The definition of $$B$$ implies that
+
+$$
+    L(\psi, \psi) = \left< B\psi, \psi \right>.
+$$
+
+Together these imply
+
+$$
+    Q(\psi) = L(\psi, \psi) = \left< B\psi, \psi \right> = \left< \psi, B^*\psi \right>,
+$$
+
+which implies $$Q(\psi) = \left< \psi, B^*\psi \right>$$. This in turn implies that $$A \equiv B^*$$ is indeed the appropriate definition.
+
+Uniqueness of $$A$$ follows from
