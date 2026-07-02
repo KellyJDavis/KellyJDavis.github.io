@@ -319,7 +319,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 >        \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left| f(\lambda) \right|,
 >    $$
 > 
->    where $$\| \cdot \|$$ is the Hilbert space norm on $$\mathbf{H}$$ and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
+>    where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
 > 3. Integration is multiplicative: For all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
 > 
 >    $$
@@ -339,6 +339,8 @@ Projection-valued measures give rise to a type of integration known as "operator
 >    $$
 > 
 >    is self-adjoint.
+
+**Proof**
 
 To streamline the proof of this theorem, we will introduce a few new terms
 
@@ -379,7 +381,6 @@ To streamline the proof of this theorem, we will introduce a few new terms
 
 These will now let us begin the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration)
 
-**Proof**
 By hypothesis we have a projection-valued measure $$\mu$$. Consider any bounded, measurable, complex-valed function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$. With this, let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
 
 $$
@@ -1220,3 +1221,109 @@ $$
 which implies $$Q(\psi) = \left< \psi, B^*\psi \right>$$. This in turn implies that $$A \equiv B^*$$ is indeed the appropriate definition.
 
 Uniqueness of $$A \equiv B^*$$ follows from the uniqueness of the Riesz Theorem. Explicitly, as a result of the Riesz Theorem, for any fixed $$\phi$$ there exists a unique $$\chi$$ in $$\mathbf{H}$$ such that $$L(\phi, \psi) = \left< \chi, \psi \right>$$. We then defined the map $$B$$ by $$B\phi \equiv \chi$$ and the map $$A$$ by $$A \equiv B^*$$. As $$\chi$$ is unique, any other possible $$B'$$ one could choose would have to satisfy $$B'\phi = \chi$$ too. Hence, $$(B - B')\phi = 0$$ for all $$\phi \in \mathbf{H}$$. This then implies that $$B - B'$$ is the zero operator, and thus $$B = B'$$, i.e. $$B$$ and thus $$A \equiv B^*$$ is unique.
+
+Finally we must prove that it $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then the operator $$A$$ is self-adjoint. 
+
+Assuming that $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, the last [**Proposition**](#prpstn:hall-a.61) we proved implies that $$L$$ is conjugate symmetric,
+
+$$
+    L(\phi, \psi) = \overline{L(\psi, \phi)}
+$$
+
+for all $$\phi, \psi \in \mathbf{H}$$. This along with our definition of $$B$$ and $$A \equiv B^*$$ imply
+
+$$
+  \left< \phi, A\psi \right> = L(\phi, \psi) = \overline{L(\psi, \phi)} = \overline{\left< \psi, A\phi \right>} = \left< A\phi, \psi \right>,
+$$
+
+for all $$\phi, \psi \in \mathbf{H}$$, where the final step used the definition of an inner product. This implies
+
+$$
+    \left< \phi, A\psi \right> = \left< A\phi, \psi \right>
+$$
+
+for all $$\phi, \psi \in \mathbf{H}$$, which is simply the statement that $$A$$ is self-adjoint.$$\blacksquare$$
+
+With these two "helper" propositions proven, we can now join the main thread of the [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration).
+
+As one will recall we had established that for any bounded, measurable, complex-valued function $$f$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+
+$$
+    Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
+$$
+
+is a bounded, bounded quadratic form. Hence, [**Proposition**](#prpstn:hall-a.63) implies that there is a unique, bounded operator $$A_f \in \mathcal{B}(\mathbf{H})$$ such that
+
+$$
+    Q_f(\psi) = \left< \psi, A\psi \right>
+$$
+
+for all $$\psi \in \mathbf{H}$$. We then define the operator valued integral of $$f$$ as follows
+
+$$
+    f \longmapsto \int_X f d\mu \equiv A_f.
+$$
+
+By construction it is a map from the space of bounded, measurable, complex-valued functions to $$\mathcal{B}(\mathbf{H})$$, as required.
+
+Tracing definitions it is obvious that this satisfies the first required property 
+
+$$
+    \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi
+$$ 
+
+of an operator valued integral. Explicitly, the definiton of the operator valued integral along with the definition of $$Q_f$$ imply
+
+$$
+\begin{align}
+    \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> &= \left< \psi, A_f \psi \right> \\
+                                                              &= Q_f(\psi) \\
+                                                              &= \int_X f d\mu_\psi,
+\end{align}
+$$
+
+giving
+
+$$
+    \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi,
+$$ 
+
+the desired result.
+
+Next we must prove that for all $$E \in \Omega(X)$$, we have
+
+$$ 
+    \int_X 1_E \, d\mu = \mu(E),
+$$
+
+where $$1_E$$ is the indicator function of $$E$$.
+
+Consider then the case $$f = 1_E$$. The definition of $$Q_{1_E}$$ and that of the measure $$\mu_\psi$$ imply
+
+$$
+    Q_{1_E}(\psi) = \int_X 1_E \, d\mu_\psi = \mu_\psi(E) = \left< \psi, \mu(E) \psi \right>.
+$$
+
+So, $$Q_{1_E}(\psi) = \left< \psi, \mu(E) \psi \right>$$.
+
+As we proved, [**Proposition**](#prpstn:hall-a.63) implies that there is a unique, bounded operator $$A_{1_E} \in \mathcal{B}(\mathbf{H})$$ such that
+
+$$
+    Q_{1_E}(\psi) = \left< \psi, A_{1_E}\psi \right>
+$$
+
+for all $$\psi \in \mathbf{H}$$. Hence, $$A_{1_E} = \mu(E)$$. Thus the definition of the operator valued integral implies
+
+$$
+    \int_X 1_E \, d\mu = \mu(E),
+$$
+
+which is the desired result.
+
+The next result we must prove is that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+
+$$
+    \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left| f(\lambda) \right|,
+$$
+
+where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
