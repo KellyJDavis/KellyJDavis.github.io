@@ -187,7 +187,7 @@ In this section we will actually be able to state the Spectral Theorem. However,
 ### Projection-Valued Measures
 "Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive, real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
 
-> **Definition** *(Resolvent and Spectrum)*
+> **Definition** *(Orthogonal Projection)*
 <a name="def:bounded-orthogonal-projection"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 > A *bounded orthogonal projection*, sometimes shortened to *orthogonal projection* or simply *projection*, is an element $$P \in \mathcal{B}(\mathbf{H})$$ such that $$P^2 = P$$ and $$P^* = P$$.
@@ -201,7 +201,7 @@ The notion of a bounded orthogonal projection can then be employed to define a "
 > Let $$X$$ be a set and $$\Omega(X)$$ a $$\sigma$$-algebra on $$X$$. A map $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ is called a *projection-valued measure* if the following properties are satisfied:
 > 1. For each $$E \in \Omega(X)$$, it follows that $$\mu(E)$$ is a bounded orthogonal projection.
 > 2. $$\mu(\emptyset) = 0$$, where $$\emptyset \in \Omega(X)$$ is the empty set, and $$\mu(X) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element. 
-> 3. If $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ are disjoint, then for all $$v \in \mathbf{H}$$, we have
+> 3. If $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ are pairwise disjoint, then for all $$v \in \mathbf{H}$$, we have
 >
 >    $$
 >        \mu \left( \bigcup_{j = 1}^{\infty} E_j \right) v = \sum_{j = 1}^{\infty} \mu(E_j)v,
@@ -231,7 +231,7 @@ Now, we can associate a positive, real-valued measure $$\mu_\psi$$ to a projecti
 To prove that $$\mu_\psi$$ defines a positive, real-valued measure on $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ we must prove
 * **Empty set is of measure zero** - $$\mu_\psi(\emptyset) = 0$$, where $$\emptyset$$ is the empty set.
 * **Non-negativity** - For all $$E \in \Omega(X)$$, it follows that $$\mu_\psi(E) \ge 0$$.
-* **Countable additivity** - For disjoint $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ 
+* **Countable additivity** - For pairwise disjoint $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ 
 
 $$
     \mu_\psi \left( \bigcup_{j = 1}^{\infty} E_j \right) = \sum_{j = 1}^{\infty} \mu_\psi(E_j).
@@ -264,7 +264,7 @@ $$
 
 where the final step follows from the definition of an inner product. Thus, $$\mu_\psi(E) \ge 0$$ as desired.
 
-Finally let us prove countable additivity. Let $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ be disjoint. The definition of $$\mu_\psi$$ along with the definition of the projection-valued measure $$\mu$$ imply
+Finally let us prove countable additivity. Let $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ be pairwise disjoint. The definition of $$\mu_\psi$$ along with the definition of the projection-valued measure $$\mu$$ imply
 
 $$
 \begin{align}
@@ -514,7 +514,7 @@ $$
   s = \sum_{i = 1}^n \alpha_i 1_{E_i}
 $$
 
-where $$\alpha_i \in \mathbb{C}$$ and $$E_i \in \Omega(X)$$ are disjoint, also results in a bounded quadratic form $$Q_s$$.
+where $$\alpha_i \in \mathbb{C}$$ and $$E_i \in \Omega(X)$$ are pairwise disjoint, also results in a bounded quadratic form $$Q_s$$.
 
 In this case, following a logic similar to the indicator function case, we have
 
@@ -693,182 +693,48 @@ $$
 
 for all $$\phi \in \mathbf{H}$$. It is to this we now turn.
 
-Consider an arbitrary $$\phi \in \mathbf{H}$$ such that $$\|\phi\| \neq 0$$. As $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ we have
+The definition of $$Q_f$$, triangle inequality for integrals, and the fact that $$f$$ is bounded imply
 
 $$
 \begin{align}
-    \frac{Q_f(\phi)}{\|\phi\|^2} &= \frac{1}{\|\phi\|^2} \int_X f d\mu_\phi \\
-                                 &= \frac{1}{\|\phi\|^2} \int_X \lim\limits_{i \rightarrow \infty} s_i \, d\mu_\phi \\
-                                 &= \frac{1}{\|\phi\|^2} \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu_\phi \\
-                                 &= \frac{1}{\|\phi\|^2} \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi) \\
-                                 &= \lim\limits_{i \rightarrow \infty} \frac{Q_{s_i}(\phi)}{\|\phi\|^2},
+    \left| Q_f(\phi) \right| &= \left| \int_X f \, d\mu_\phi \right| \\
+                             &\le \int_X \left| f \right| \, d\mu_\phi \\
+                             &\le \int_X \left(  \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right) \, d\mu_\phi \\
+                             &= \left( \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right) \int_X d\mu_\phi.
 \end{align}
 $$
 
-were we can pull the limit out of the integral as $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$. Hence, we proved that
-
-$$
-    \frac{Q_f(\phi)}{\|\phi\|^2} = \lim\limits_{i \rightarrow \infty} \frac{Q_{s_i}(\phi)}{\|\phi\|^2}
-$$
-
-for all non-zero $$\phi \in \mathbf{H}$$.
-
-Hence, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
-
-$$
-    \left| \frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_i}(\phi)}{\|\phi\|^2} \right| < \frac{\epsilon}{2}
-$$
-
-for all non-zero $$\phi \in \mathbf{H}$$. Thus, for this same $$\epsilon > 0$$ and $$N$$ and for all $$i,j \ge N$$ and non-zero $$\phi \in \mathbf{H}$$ one has
+However, the definitions of $$\mu_\phi$$ and $$\mu$$ imply 
 
 $$
 \begin{align}
-    \left| \frac{Q_{s_i}(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right|
-        &= \left| \left(\frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right) - \left(\frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_i}(\phi)}{\|\phi\|^2} \right) \right| \\
-        &\le \left| \frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right| + \left| \frac{Q_f(\phi)}{\|\phi\|^2} - \frac{Q_{s_i}(\phi)}{\|\phi\|^2} \right| \\
-        &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
-        &= \epsilon,
+    \int_X d\mu_\phi &= \left< \phi, \mu(X) \phi \right> \\ 
+                     &= \left< \phi, \mathbf{1} \phi \right> \\ 
+                     &= \left< \phi, \phi \right> \\ 
+                     &= \| \phi \|^2,
 \end{align}
 $$
 
-where we had used the definition of a norm in the second line and our previous result in the third line.
+where the final step uses the definition of the Hilbert space norm in terms of the Hilbert space inner product.
 
-So we have proven that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i,j \ge N$$ 
-
-$$
-     \left| \frac{Q_{s_i}(\phi)}{\|\phi\|^2} - \frac{Q_{s_j}(\phi)}{\|\phi\|^2} \right| < \epsilon
-$$
-
-for all non-zero $$\phi \in \mathbf{H}$$.
-
-That being the case consider $$\epsilon = 1$$. Thus, there exists a natural number $$N_1$$ such that for all $$i_1,j_1 \ge N_1$$ one has
+The previous two results together imply
 
 $$
-     \left| \frac{Q_{s_{i_1}}(\phi)}{\|\phi\|^2} - \frac{Q_{s_{j_1}}(\phi)}{\|\phi\|^2} \right| < 1
+    \left| Q_f(\phi) \right| \le \left( \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right) \| \phi \|^2
 $$
 
-for all non-zero $$\phi \in \mathbf{H}$$. In particular one may set $$j_1 = N_1$$ to obtain
+which, if we make the identification
 
 $$
-     \left| \frac{Q_{s_{i_1}}(\phi)}{\|\phi\|^2} - \frac{Q_{s_{N_1}}(\phi)}{\|\phi\|^2} \right| < 1
+    C = \left( \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right),
 $$
 
-for all non-zero $$\phi \in \mathbf{H}$$. Hence, the definition of a norm along with this result implies
+is nothing more than the statetment that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
-\begin{align}
-    \left| \frac{Q_{s_{i_1}}(\phi)}{\|\phi\|^2} \right|
-        &= \left| \left( \frac{Q_{s_{i_1}}(\phi)}{\|\phi\|^2} - \frac{Q_{s_{N_1}}(\phi)}{\|\phi\|^2} \right) + \frac{Q_{s_{N_1}}(\phi)}{\|\phi\|^2} \right| \\
-        &\le \left| \frac{Q_{s_{i_1}}(\phi)}{\|\phi\|^2} - \frac{Q_{s_{N_1}}(\phi)}{\|\phi\|^2} \right| + \left| \frac{Q_{s_{N_1}}(\phi)}{\|\phi\|^2} \right| \\
-        &< 1 + \left| \frac{Q_{s_{N_1}}(\phi)}{\|\phi\|^2} \right| \\
-        &\le 1 + C_{N_1},
-\end{align}
-$$
-
-where in the final step we employed our simple function result
-
-$$
-    \left| Q_{s_{N_1}}(\phi) \right| \le C_{N_1} \|\phi\|^2.
-$$
-
-So in summary we have shown that for $$i_1 \ge N_1$$ one has
-
-$$
-    \left| \frac{Q_{s_{i_1}}(\phi)}{\|\phi\|^2} \right| < 1 + C_{N_1},
-$$
-
-which implies
-
-$$
-    \left| Q_{s_{i_1}}(\phi) \right| < \left( 1 + C_{N_1} \right) \|\phi\|^2,
-$$
-
-for all non-zero $$\phi \in \mathbf{H}$$.
-
-Now as $$N_1$$ is just some finite natural number, we have a finite set of natural numbers $$\{1,2,\ldots,(N_1 - 1)\}$$. And as a result of our simple function result, for any $$j \in \{1,2,\ldots, (N_1 - 1)\}$$ we have
-
-$$
-    \left| Q_{s_j}(\phi) \right| \le C_j \|\phi\|^2.
-$$
-
-So if we define $$C$$ by
-
-$$
-    C \equiv \max \{C_1, C_1,\ldots, C_{(N_1 - 1)}, (1 + C_{N_1}) \},
-$$
-
-then for $$j < N_1$$ we have
-
-$$
-    \left| Q_{s_j}(\phi) \right| \le C \|\phi\|^2
-$$
-
-and for $$i \ge N_1$$ we have
-
-$$
-    \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2.
-$$
-
-So, for for any natural number $$i$$ we have proven that
-
-$$
-    \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2
-$$
-
-for all non-zero $$\phi \in \mathbf{H}$$. This result also is true for $$\phi = 0$$.
-
-Explicitly, for $$\phi = 0$$, the associated measure $$\mu_\phi$$ assigns zero measure to all $$E \in \Omega(X)$$ as
-
-$$
-    \mu_0(E) = \left< 0, \mu(E) 0 \right> = 0.
-$$
-
-Hence, $$Q_{s_i}(0) = 0$$ and thus for $$\phi = 0$$ the inequality 
-
-$$
-    \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2
-$$
-
-reduces to $$\mid 0 \mid \le 0$$, which is trivially true.
-
-So we have proven that for any natural number $$i$$
-
-$$
-    \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2
-$$
-
-for all $$\phi \in \mathbf{H}$$.
-
-Now consider taking the $$i \rightarrow \infty$$ limit of
-
-$$
-    \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2.
-$$
-
-As $$i$$ does not appear on the right-hand side of this inequality, one has
-
-$$
-    \lim\limits_{i \rightarrow \infty} \left| Q_{s_i}(\phi) \right| \le C \|\phi\|^2
-$$
-
-for all $$\phi \in \mathbf{H}$$. As we have previously proven that
-
-$$
-    Q_f(\phi) = \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi),
-$$
-
-we can pull the limit through $$\mid \cdot \mid$$ to obtain
-
-$$
-    \lim\limits_{i \rightarrow \infty} \left| Q_{s_i}(\phi) \right| = \left| \lim\limits_{i \rightarrow \infty} Q_{s_i}(\phi) \right| = \left| Q_f(\phi) \right| \le C \|\phi\|^2
-$$
-
-for all $$\phi \in \mathbf{H}$$. So we have proven that
-
-$$
-    \left| Q_f(\phi) \right| \le C \|\phi\|^2
-$$
-
+    |Q_f(\phi)| \le C \|\phi\|^2
+$$                   
+    
 for all $$\phi \in \mathbf{H}$$, the desired result.
 
 This concludes our proof that for any bounded, measurable, complex-valued function $$f$$ on the set $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ the map $$Q_f$$ is a bounded quadratic form. $$\blacksquare$$
@@ -1278,14 +1144,14 @@ $$
 \begin{align}
     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> &= \left< \psi, A_f \psi \right> \\
                                                               &= Q_f(\psi) \\
-                                                              &= \int_X f d\mu_\psi,
+                                                              &= \int_X f \, d\mu_\psi,
 \end{align}
 $$
 
 giving
 
 $$
-    \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi,
+    \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f \, d\mu_\psi,
 $$ 
 
 the desired result.
@@ -1327,3 +1193,187 @@ $$
 $$
 
 where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
+
+To prove this we will first prove a "utility" lemma that will aid our argument.
+
+> **Lemma** 
+> <a name="lmm:lemma2-of-operator-valued-integration"></a>
+> <!--  \uses{def:projection-valued-measure} -->
+> <!--  \uses{def:bounded-operator-notation} -->
+> Let $$X$$ be a set with $$\sigma$$-algebra $$\Omega(X)$$, and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. If $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ are a finite set of elements that are pairwise disjoint and satisfy
+> 
+> $$
+>     X = \bigcup\limits_{i = 1}^n E_i,
+> $$
+> 
+> then for any $$\psi \in \mathbf{H}$$
+> 
+> 1. The vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthognal.
+> 2. The norm $$\|\psi\|$$ of $$\psi$$ can be written as follows
+> 
+>    $$
+>        \|\psi\|^2 = \sum_{i = 1}^n \|\mu(E_i)\psi\|^2.
+>    $$
+
+**Proof**
+Let us first prove that the vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthognal.
+
+Let $$i \neq j$$ be indicies of the elements $$E_1, E_2, \ldots, E_n$$. The projection-valued measure definition along with the definitions of inner product and orthogonal projection imply
+
+$$
+\begin{align}
+    \left< \mu(E_i)\psi, \mu(E_j)\psi \right> &= \left< \psi, \mu(E_i)^* \mu(E_j)\psi \right> \\
+                                              &= \left< \psi, \mu(E_i) \mu(E_j)\psi \right> \\
+                                              &= \left< \psi, \mu(E_i \cap E_j)\psi \right> \\
+                                              &= \left< \psi, \mu(\emptyset)\psi \right> \\
+                                              &= \left< \psi, 0\psi \right> \\
+                                              &= 0,
+\end{align}
+$$
+
+proving that $$\left< \mu(E_i)\psi, \mu(E_j)\psi \right> = 0$$, the desired pairwise orthogonality.
+
+Next let us prove that the norm $$\|\psi\|$$ of $$\psi$$ can be written as follows
+
+$$
+    \|\psi\|^2 = \sum_{i = 1}^n \|\mu(E_i)\psi\|^2.
+$$
+
+The definition of a projection-valued measure implies
+
+$$
+\begin{align}
+    \sum_{i = 1}^n \mu(E_i) \psi &= \mu \left( \bigcup_{i = 1}^n E_i \right) \psi \\
+                                 &= \mu \left( X  \right) \psi \\
+                                 &= \mathbf{1} \psi \\
+                                 &= \psi,
+\end{align}
+$$
+
+which implies
+
+$$
+     \psi = \sum_{i = 1}^n \mu(E_i) \psi.
+$$
+
+As we just proved, these summands are pairwise orthognal; hence
+
+$$
+\begin{align}
+    \| \psi \|^2 &= \left< \psi, \psi \right> \\
+                 &= \left< \sum_{i = 1}^n \mu(E_i) \psi, \sum_{j = 1}^n \mu(E_j) \psi \right> \\
+                 &= \sum_{i = 1}^n \sum_{j = 1}^n \left< \mu(E_i) \psi, \mu(E_j) \psi \right> \\
+                 &= \sum_{i = 1}^n \left< \mu(E_i) \psi, \mu(E_i) \psi \right> \\
+                 &= \sum_{i = 1}^n \|\mu(E_i) \psi\|^2,
+\end{align}
+$$
+
+giving
+
+$$
+    \| \psi \|^2 = \sum_{i = 1}^n \|\mu(E_i) \psi\|^2,
+$$
+
+the desired result and completing the proof of our "utility" lemma.$$\blacksquare$$
+
+With this lemma proven, we can once again continue on with our main argument.
+
+Consider, as in the lemma, a finite set of elements $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ that are pairwise disjoint and satisfy
+
+$$
+    X = \bigcup\limits_{i = 1}^n E_i.
+$$
+
+If we are given in addition a set of complex numbers $$c_1, c_2, \ldots, c_n \in \mathbb{C}$$, we can define a simple function $$s$$ by
+
+$$
+    s \equiv \sum_{i = 1}^n c_i 1_{E_i}.
+$$
+
+As we have alread proven,
+
+$$
+    \int_X 1_{E_i} = \mu(E_i).
+$$
+
+Linearity of the map
+
+$$
+    f \longmapsto \int_X f d\mu
+$$
+
+then implies that
+
+$$
+    \int_X s \, d\mu \equiv A_s = \sum_{i = 1}^n c_i \mu(E_i).
+$$
+
+Hence, for any $$\phi, \psi \in \mathbf{H}$$ we have
+
+$$
+\begin{align}
+    \left< \phi, A_s \psi \right> &= \left< \phi, \left(  \sum_{i = 1}^n c_i \mu(E_i) \right) \psi \right> \\
+                                  &= \sum_{i = 1}^n c_i \left< \phi, \mu(E_i) \psi \right> \\
+                                  &= \sum_{i = 1}^n c_i \left< \phi, \mu(E_i) \mu(E_i) \psi \right> \\
+                                  &= \sum_{i = 1}^n c_i \left< \phi, \mu(E_i)^* \mu(E_i) \psi \right> \\
+                                  &= \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right>,
+\end{align}
+$$
+
+were we have used our previous equation for $$A_s$$, the definition of an inner product, definition of a projection-valued measure, and the definition of an orthognal projection to conclude
+
+$$
+    \left< \phi, A_s \psi \right> = \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right>.
+$$
+
+Now using the definition of a norm and applying Cauchy–Schwarz twice, first to each summand and then across the sum (viewing $$\|\mu(E_i) \phi\|$$ and $$\|\mu(E_i) \psi\|$$ as vectors in $$\mathbb{R}^n$$), one obtains
+
+$$
+\begin{align}
+    \left| \left< \phi, A_s \psi \right> \right| &= \left| \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right| \\
+                                                 &\le \sum_{i = 1}^n \left| c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right| \\
+                                                 &= \sum_{i = 1}^n \left| c_i \right| \, \left| \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right| \\
+                                                 &\le \sum_{i = 1}^n \left| c_i \right| \left\| \mu(E_i) \phi \right\| \left\| \mu(E_i) \psi \right\| \\
+                                                 &\le \left( \max_i \left| c_i \right| \right)  \sum_{i = 1}^n \left\| \mu(E_i) \phi \right\| \left\| \mu(E_i) \psi \right\| \\
+                                                 &\le \left( \max_i \left| c_i \right| \right) \left( \sum_{i = 1}^n \left\| \mu(E_i) \phi \right\|^2 \right)^{1/2} \left( \sum_{i = 1}^n \left\| \mu(E_i) \psi \right\|^2 \right)^{1/2} \\
+                                                 &= \left( \max_i \left| c_i \right| \right) \|\phi\| \, \|\psi\|,
+\end{align}
+$$
+
+where in the final step we employed the second result of [**Lemma**](#lmm:lemma2-of-operator-valued-integration). So in summary
+
+$$
+    \left| \left< \phi, A_s \psi \right> \right| \le \left( \max_i \left| c_i \right| \right) \|\phi\| \, \|\psi\|
+$$
+
+for all $$\phi, \psi \in \mathbf{H}$$.
+
+Now another way one can write the operator norm of $$A_s$$, or really any element of $$\mathcal{B}(\mathbf{H})$$, is as follows
+
+$$
+    \|A_s\| = \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left| \left< \phi, A_s \psi \right> \right|.
+$$
+
+Hence, our result implies
+
+$$
+\begin{align}
+    \|A_s\| &= \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left| \left< \phi, A_s \psi \right> \right| \\
+            &\le \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left( \max_i \left| c_i \right| \right) \|\phi\| \, \|\psi\| \\
+            &= \left( \max_i \left| c_i \right| \right).
+\end{align}
+$$
+
+Obviously
+
+$$
+    \sup_{\lambda \in X} | s(\lambda) | = \max_i \left| c_i \right|.
+$$ 
+
+Hence, we have proven the desired result
+
+$$
+    \|A_s\|  \le \sup_{\lambda \in X} \| s(\lambda) \|
+$$
+
+for our simple function $$s$$. What remains to do is to generalize this to a bounded, measurable, complex-valued function $$f$$.
