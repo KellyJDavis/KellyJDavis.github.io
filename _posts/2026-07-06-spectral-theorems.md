@@ -1132,7 +1132,7 @@ $$
 
 By construction it is a map from the space of bounded, measurable, complex-valued functions to $$\mathcal{B}(\mathbf{H})$$, as required.
 
-Tracing definitions it is obvious that this satisfies the first required property 
+**Property 0:** Tracing definitions it is obvious that this satisfies the required property 
 
 $$
     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi
@@ -1156,7 +1156,7 @@ $$
 
 the desired result.
 
-Next we must prove that for all $$E \in \Omega(X)$$, we have
+**Property 1:** Next we must prove that for all $$E \in \Omega(X)$$, we have
 
 $$ 
     \int_X 1_E \, d\mu = \mu(E),
@@ -1186,7 +1186,7 @@ $$
 
 which is the desired result.
 
-The next result we must prove is that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+**Property 2:** The next result we must prove is that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 
 $$
     \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left| f(\lambda) \right|,
@@ -1601,3 +1601,73 @@ $$
 $$
 
 in proven.
+
+**Property 3:** next we must prove that integration is multiplicative. In other words for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
+
+$$
+    \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
+$$
+
+As in other proofs, we will first prove this result for indicator functions, then simple functions, then finally for bounded, measurable, complex-valued functions.
+
+Let us begin with indicator functions. Consider $$E_1, E_2 \in \Omega(X)$$. Property 1, which we have already proved, along with the projection-valued measure definition imply 
+
+$$
+\begin{align}
+    \left( \int_X 1_{E_1} \, d\mu \right) \left( \int_X 1_{E_2} \, d\mu \right) &= \mu(E_1) \mu(E_2) \\
+                                                                                &= \mu(E_1 \cap E_2) \\
+                                                                                &= \int_X 1_{E_1 \cap E_2} \, d\mu \\
+                                                                                &= \int_X 1_{E_1} 1_{E_2} \, d\mu, 
+\end{align}
+$$
+
+which gives the desired result
+
+$$
+    \left( \int_X 1_{E_1} \, d\mu \right) \left( \int_X 1_{E_2} \, d\mu \right) = \int_X 1_{E_1} 1_{E_2} \, d\mu
+$$
+
+for indicator functions.
+
+Let us next prove the result for simple functions. This result follows from the indicator function result and linearity.
+
+To wit, consider two simple functions $$s_1$$ and $$s_2$$
+
+$$
+\begin{align} 
+    s_1 &= \sum_{i = 1}^n \alpha_i 1_{E_i} \\
+    s_2 &= \sum_{j = 1}^m \beta_j 1_{F_j},
+\end{align}
+$$
+
+where $$\alpha_i, \beta_j \in \mathbb{C}$$ and $$E_i, F_j \in \Omega(X)$$. Linearity implies
+
+$$
+\begin{align}
+    \int_X s_1 \, d\mu &= \sum_{i = 1}^n \alpha_i \int_X 1_{E_i} \, d\mu \\
+    \int_X s_2 \, d\mu &= \sum_{j = 1}^m \beta_j \int_X 1_{F_j} \, d\mu.
+\end{align}
+$$
+
+Hence, using linearity and our previous indicator function result we have
+
+$$
+\begin{align}
+    \left( \int_X s_1 \, d\mu \right) \left( \int_X s_2 \, d\mu \right)
+    &= \left( \sum_{i = 1}^n \alpha_i \int_X 1_{E_i} \, d\mu \right) \left( \sum_{j = 1}^m \beta_j \int_X 1_{F_j} \, d\mu \right) \\
+    &= \sum_{i = 1}^n \sum_{j = 1}^m \alpha_i \beta_j \left( \int_X 1_{E_i} \, d\mu \right) \left( \int_X 1_{F_j} \, d\mu \right) \\
+    &= \sum_{i = 1}^n \sum_{j = 1}^m \alpha_i \beta_j \int_X 1_{E_i} 1_{F_j} \, d\mu \\
+    &= \int_X \sum_{i = 1}^n \sum_{j = 1}^m \alpha_i \beta_j 1_{E_i} 1_{F_j} \, d\mu \\
+    &= \int_X s_1 s_2 \, d\mu, 
+\end{align}
+$$
+
+proving
+
+$$
+    \left( \int_X s_1 \, d\mu \right) \left( \int_X s_2 \, d\mu \right) = \int_X s_1 s_2 \, d\mu,
+$$
+
+the desired simple function result.
+
+Let us next prove the result for bounded, measurable, complex-valued functions.
