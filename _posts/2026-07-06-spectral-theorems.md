@@ -9,7 +9,7 @@ Here we will state and prove two versions of the Spectral Theorem, one for bound
 Here, we generally follow the clear, straightforward presentation of [Quantum Theory for Mathematicians](https://doi.org/10.1007/978-1-4614-7116-5).
 
 # Spectral Theorem: Bounded Self-Adjoint Operators
-In this section we will state and prove the Spectral Theorem for bounded, self-adjoint operators. However, we must introduce "extensive machinary" before we are able to state and prove the theorem. To that end we begin by examining some properties of bounded operators.
+In this section we will state and prove the Spectral Theorem for bounded, self-adjoint operators. However, we must introduce "extensive machinery" before we are able to state and prove the theorem. To that end we begin by examining some properties of bounded operators.
 
 ## Elementary Properties of Bounded Operators
 In this section we will introduce and prove some relatively "elementary" properties of bounded operators that will be of use when proving the Spectral Theorem for bounded, self-adjoint operators. We begin by introducing some notation
@@ -141,7 +141,7 @@ $$
     \lim\limits_{j \rightarrow \infty} \|A_i\psi - A_j\psi\| = \|A_i\psi - A\psi\| \le \epsilon.
 $$
 
-As $$\epsilon$$ independent of $$\psi$$, this limit holds uniformly for all $$\psi \in \mathbf{H}$$ that satisfy $$\|\psi\| = 1$$. Thus we can take the supremum over such $$\psi$$ to obtain
+As $$\epsilon$$ is independent of $$\psi$$, this limit holds uniformly for all $$\psi \in \mathbf{H}$$ that satisfy $$\|\psi\| = 1$$. Thus we can take the supremum over such $$\psi$$ to obtain
 
 $$
     \|A_i - A\| \equiv \sup\limits_{\|\psi\| = 1} \|A_i\psi - A\psi\| \le \epsilon.
@@ -182,7 +182,7 @@ This is required to define the "spectrum" of an operator, which is required by m
 > For $$A \in \mathcal{B}(\mathbf{H})$$, the *resolvent set* of $$A$$, denoted as $$\rho(A)$$, is the set of all $$\lambda \in \mathbb{C}$$ such that the operator $$(A - \lambda \mathbf{1})$$ has a bounded inverse. The *spectrum* of $$A$$, denoted by $$\sigma(A)$$, is the complement of $$A$$'s resolvent set $$\rho(A)$$ in $$\mathbb{C}$$. For $$\lambda$$ in the resolvent set of $$A$$ the bounded inverse of $$(A - \lambda \mathbf{1})$$, which we notate as $$(A - \lambda \mathbf{1})^{-1}$$, is called the *resolvent* of $$A$$ at $$\lambda$$.
 
 ## Spectral Theorem for Bounded Self-Adjoint Operators
-In this section we will actually be able to state the Spectral Theorem. However, we will only be able to do so after introducing "substantial machinary" related to "projection-valued measures".
+In this section we will actually be able to state the Spectral Theorem. However, we will only be able to do so after introducing "substantial machinery" related to "projection-valued measures".
 
 ### Projection-Valued Measures
 "Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive, real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
@@ -381,7 +381,7 @@ To streamline the proof of this theorem, we will introduce a few new terms
 
 These will now let us begin the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration)
 
-By hypothesis we have a projection-valued measure $$\mu$$. Consider any bounded, measurable, complex-valed function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$. With this, let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
+By hypothesis we have a projection-valued measure $$\mu$$. Consider any bounded, measurable, complex-valued function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$. With this, let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
 
 $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
@@ -729,7 +729,7 @@ $$
     C = \left( \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right),
 $$
 
-is nothing more than the statetment that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+is nothing more than the statement that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
     |Q_f(\phi)| \le C \|\phi\|^2
@@ -878,7 +878,7 @@ $$
     M(\phi, \psi) = \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right].
 $$
 
-Now lets us derive several basic properties of $$M$$.
+Now let us derive several basic properties of $$M$$.
 
 First one can note that by inspection of
 
@@ -1038,7 +1038,7 @@ $$
 \end{align}
 $$
 
-for any $$\psi \in \mathbf{H}$$. Similarly, for any $$\alpha_1, \alpha_2 \in \mathbb{C}$$ we have by defintion
+for any $$\psi \in \mathbf{H}$$. Similarly, for any $$\alpha_1, \alpha_2 \in \mathbb{C}$$ we have by definition
 
 $$
     L(\alpha_1 \phi_1 + \alpha_2 \phi_1 , \psi) = \left< B(\alpha_1 \phi_1 + \alpha_2 \phi_1), \psi \right>.
@@ -1138,7 +1138,7 @@ $$
     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi
 $$ 
 
-of an operator valued integral. Explicitly, the definiton of the operator valued integral along with the definition of $$Q_f$$ imply
+of an operator valued integral. Explicitly, the definition of the operator valued integral along with the definition of $$Q_f$$ imply
 
 $$
 \begin{align}
@@ -1208,7 +1208,7 @@ To prove this we will first prove a "utility" lemma that will aid our argument.
 > 
 > then for any $$\psi \in \mathbf{H}$$
 > 
-> 1. The vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthognal.
+> 1. The vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthogonal.
 > 2. The norm $$\|\psi\|$$ of $$\psi$$ can be written as follows
 > 
 >    $$
@@ -1216,9 +1216,9 @@ To prove this we will first prove a "utility" lemma that will aid our argument.
 >    $$
 
 **Proof**
-Let us first prove that the vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthognal.
+Let us first prove that the vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthogonal.
 
-Let $$i \neq j$$ be indicies of the elements $$E_1, E_2, \ldots, E_n$$. The projection-valued measure definition along with the definitions of inner product and orthogonal projection imply
+Let $$i \neq j$$ be indices of the elements $$E_1, E_2, \ldots, E_n$$. The projection-valued measure definition along with the definitions of inner product and orthogonal projection imply
 
 $$
 \begin{align}
@@ -1256,7 +1256,7 @@ $$
      \psi = \sum_{i = 1}^n \mu(E_i) \psi.
 $$
 
-As we just proved, these summands are pairwise orthognal; hence
+As we just proved, these summands are pairwise orthogonal; hence
 
 $$
 \begin{align}
@@ -1290,7 +1290,7 @@ $$
     s \equiv \sum_{i = 1}^n c_i 1_{E_i}.
 $$
 
-As we have alread proven,
+As we have already proven,
 
 $$
     \int_X 1_{E_i} = \mu(E_i).
@@ -1320,7 +1320,7 @@ $$
 \end{align}
 $$
 
-were we have used our previous equation for $$A_s$$, the definition of an inner product, definition of a projection-valued measure, and the definition of an orthognal projection to conclude
+where we have used our previous equation for $$A_s$$, the definition of an inner product, definition of a projection-valued measure, and the definition of an orthogonal projection to conclude
 
 $$
     \left< \phi, A_s \psi \right> = \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right>.
@@ -1385,7 +1385,7 @@ This generalization relies upon the following theorem, which we have encountered
 
 This theorem implies that a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ exists such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
-Now for any two simple function $$s_i$$ and $$s_j$$ in this sequence, their difference $$s_i - s_j$$ is also a simple function. Furthermore, linearity of the map
+Now for any two simple functions $$s_i$$ and $$s_j$$ in this sequence, their difference $$s_i - s_j$$ is also a simple function. Furthermore, linearity of the map
 
 $$
     f \longmapsto \int_X f d\mu
@@ -1533,7 +1533,7 @@ $$
     \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} | f(\lambda) |.
 $$
 
-We simply need to ideentify $$A_f$$ with $$A_s$$ and we will have complted the proof. It is to this we now turn.
+We simply need to identify $$A_f$$ with $$A_s$$ and we will have completed the proof. It is to this we now turn.
 
 We previously proved
 
@@ -1600,7 +1600,7 @@ $$
     \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} | f(\lambda) |,
 $$
 
-in proven.
+is proven.
 
 **Property 3:** Next we must prove that integration is multiplicative. In other words for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
 
@@ -1692,7 +1692,7 @@ $$
 
 in other words operator-valued integral of $$s_i$$ converges to the operator-valued integral of $$f$$. One can establish using similar logic that the operator-valued integral of $$r_i$$ converges to the operator-valued integral of $$g$$.
 
-Similarly, uniform convergence along with linearity imply for any any $$s_i$$ and $$r_j$$
+Similarly, uniform convergence along with linearity imply for any $$s_i$$ and $$r_j$$
 
 $$
 \begin{align}
@@ -1710,7 +1710,7 @@ $$
 
 then we can conclude that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
 
-One can prove this desired convergence as follows. Consider any $$s_i$$ and $$r_j$$. Con has
+One can prove this desired convergence as follows. Consider any $$s_i$$ and $$r_j$$. One has
 
 $$
 \begin{align}
@@ -1784,7 +1784,7 @@ $$
 
 for bounded, measurable, complex-valued functions $$f$$ and $$g$$. 
 
-**Property 4:** Fonally we must prove that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+**Property 4:** Finally we must prove that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 
 $$
     \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
