@@ -1373,7 +1373,231 @@ $$
 Hence, we have proven the desired result
 
 $$
-    \|A_s\|  \le \sup_{\lambda \in X} \| s(\lambda) \|
+    \|A_s\|  \le \sup_{\lambda \in X} | s(\lambda) |
 $$
 
 for our simple function $$s$$. What remains to do is to generalize this to a bounded, measurable, complex-valued function $$f$$.
+
+This generalization relies upon the following theorem, which we have encountered before
+
+> **Theorem** *(Complex-Valued Simple Approximation Theorem)*
+> Given any bounded, measurable, complex-valued function $$f$$ on a measurable set $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
+
+This theorem implies that a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ exists such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
+
+Now for any two simple function $$s_i$$ and $$s_j$$ in this sequence, their difference $$s_i - s_j$$ is also a simple function. Furthermore, linearity of the map
+
+$$
+    f \longmapsto \int_X f d\mu
+$$
+
+implies
+
+$$
+    A_{s_i - s_j} = A_{s_i} - A_{s_j},
+$$
+
+and thus
+
+$$
+    \|A_{s_i - s_j}\| = \|A_{s_i} - A_{s_j}\|.
+$$
+
+However, the result we just proved for simple functions implies
+
+$$
+    \|A_{s_i - s_j}\| \le \sup_{\lambda \in X} | s_i(\lambda) - s_j(\lambda) |.
+$$
+
+This in turn implies
+
+$$
+\begin{align}
+    \|A_{s_i} - A_{s_j}\| &= \|A_{s_i - s_j}\| \\
+                          &\le \sup_{\lambda \in X} | s_i(\lambda) - s_j(\lambda) |.
+\end{align}
+$$
+
+However, the definition of a norm implies
+
+$$
+\begin{align}
+    | s_i(\lambda) - s_j(\lambda) | &=   | (f(\lambda) - s_j(\lambda)) - (f(\lambda) - s_i(\lambda))| \\
+                                    &\le | f(\lambda) - s_j(\lambda) | + | f(\lambda) - s_i(\lambda) |.
+\end{align}
+$$
+
+Hence, we can continue our derivation
+
+$$
+\begin{align}
+    \|A_{s_i} - A_{s_j}\| &= \|A_{s_i - s_j}\| \\
+                          &\le \sup_{\lambda \in X} | s_i(\lambda) - s_j(\lambda) | \\
+                          &\le \sup_{\lambda \in X} \left( | f(\lambda) - s_j(\lambda) | + | f(\lambda) - s_i(\lambda) | \right) \\
+                          &\le \sup_{\lambda \in X} | f(\lambda) - s_j(\lambda) | + \sup_{\lambda \in X} | f(\lambda) - s_i(\lambda) |.
+\end{align}
+$$
+
+However, as the sequence $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$k \ge N$$
+
+$$
+    \sup_{\lambda \in X}  | f(\lambda) - s_k(\lambda) | < \frac{\epsilon}{2}.
+$$
+
+This along with our previous derivation allows us to conclude that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i, j \ge N$$ we have
+
+$$
+\begin{align}
+    \|A_{s_i} - A_{s_j}\| &\le \sup_{\lambda \in X} | f(\lambda) - s_j(\lambda) | + \sup_{\lambda \in X} | f(\lambda) - s_i(\lambda) | \\
+                          &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
+                          &= \epsilon.
+\end{align}
+$$
+
+This is nothing more than the statement that $$\{A_{s_i}\}_{i \in \mathbb{N}}$$ is a Cauchy sequence.
+
+By construction each $$A_{s_i}$$ is an element of $$\mathcal{B}(\mathbf{H})$$. Hence, $$\{A_{s_i}\}_{i \in \mathbb{N}}$$ is a sequence in $$\mathcal{B}(\mathbf{H})$$. As we proved in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) $$\mathcal{B}(\mathbf{H})$$ is a Banach space. So, in particular, $$\mathcal{B}(\mathbf{H})$$ is complete. Thus there exists an operator $$A_s$$ in $$\mathcal{B}(\mathbf{H})$$ that is the limit of the sequence $$\{A_{s_i}\}_{i \in \mathbb{N}}$$ relative to the operator norm on $$\mathcal{B}(\mathbf{H})$$.
+
+As the sequence $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$k \ge N$$
+
+$$
+    \sup_{\lambda \in X}  | f(\lambda) - s_k(\lambda) | < \epsilon.
+$$
+
+Hence, using the definition of a norm, we can conclude that for all $$k \ge N$$
+
+$$
+\begin{align}
+    \sup_{\lambda \in X} | s_k(\lambda) | &=   \sup_{\lambda \in X} | f(\lambda) - (f(\lambda) - s_k(\lambda)) | \\
+                                          &\le \sup_{\lambda \in X} | f(\lambda) | + | f(\lambda) - s_k(\lambda) | \\
+                                          &\le \sup_{\lambda \in X} | f(\lambda) | + \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | \\
+                                          &< \sup_{\lambda \in X} | f(\lambda) | + \epsilon.
+\end{align}
+$$
+
+This implies
+
+$$
+    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | \le \sup_{\lambda \in X} | f(\lambda) |.
+$$
+
+We can also create a similar derivation switching the roles of $$s_k$$ and $$f$$ as follows
+
+$$
+\begin{align}
+    \sup_{\lambda \in X} | f(\lambda) | &= \sup_{\lambda \in X} | (f(\lambda) - s_k(\lambda)) + s_k(\lambda) | \\
+                                        &\le \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | +  | s_k(\lambda) | \\
+                                        &\le \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | +  \sup_{\lambda \in X} | s_k(\lambda) | \\
+                                        &< \epsilon +  \sup_{\lambda \in X} | s_k(\lambda) |. 
+\end{align}
+$$
+
+This implies
+
+$$
+    \sup_{\lambda \in X} | f(\lambda) | \le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) |.
+$$
+
+The last two conclusions imply
+
+$$
+    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | = \sup_{\lambda \in X} | f(\lambda) |.
+$$
+
+Now tying the last results together
+
+$$
+\begin{align}
+    \|A_s\| &=   \lim_{i \rightarrow \infty} \| A_{s_i} \| \\
+            &\le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | \\ 
+            &= \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | f(\lambda) | \\ 
+            &= \sup_{\lambda \in X} | f(\lambda) |.
+\end{align}
+$$
+
+In other words
+
+$$
+    \|A_s\| \le \sup_{\lambda \in X} | f(\lambda) |.
+$$
+
+As
+
+$$
+    \int_X f \, d\mu \equiv A_f,
+$$
+
+this is almost the desired result
+
+$$
+    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} | f(\lambda) |.
+$$
+
+We simply need to ideentify $$A_f$$ with $$A_s$$ and we will have complted the proof. It is to this we now turn.
+
+We previously proved
+
+$$
+    \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f \, d\mu_\psi
+$$
+
+for any $$\psi \in \mathbf{H}$$. So in particular as
+
+$$
+    \int_X s_i \, d\mu \equiv A_{s_i},
+$$
+
+for any $$s_i$$ of our sequence, our result implies
+
+$$
+    \left< \psi, A_{s_i} \psi \right> = \int_X s_i \, d\mu_\psi.
+$$
+
+Using this along with the fact that $$\{A_{s_i}\}_{i \in \mathbb{N}}$$ converges uniformly to $$A_s$$ in the operator norm
+
+$$
+\begin{align}
+    \left< \psi, A_s\psi \right> &= \lim_{i \rightarrow \infty} \left< \psi, A_{s_i} \psi \right> \\
+                                 &= \lim_{i \rightarrow \infty} \int_X s_i \, d\mu_\psi \\
+                                 &= \int_X \lim_{i \rightarrow \infty} s_i \, d\mu_\psi \\
+                                 &= \int_X f \, d\mu_\psi,
+\end{align}
+$$
+
+where the fact that the convergence is uniform allows us to bring the limit under the integral. Hence,
+
+$$
+    \left< \psi, A_s\psi \right> = \int_X f \, d\mu_\psi.
+$$
+
+Now previously we proved that there is a unique linear map
+
+$$
+    f \longrightarrow \int_X f \, d\mu
+$$
+
+such that
+
+$$
+    \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f \, d\mu_\psi.
+$$
+
+As this map is unique and
+
+$$
+    \left< \psi, A_s\psi \right> = \int_X f \, d\mu_\psi,
+$$
+
+it follows that
+
+$$
+    A_s = \int_X f \, d\mu
+$$
+
+and thus the desired relation
+
+$$
+    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} | f(\lambda) |,
+$$
+
+in proven.
