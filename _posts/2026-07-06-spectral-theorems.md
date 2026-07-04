@@ -1602,7 +1602,7 @@ $$
 
 in proven.
 
-**Property 3:** next we must prove that integration is multiplicative. In other words for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
+**Property 3:** Next we must prove that integration is multiplicative. In other words for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
 
 $$
     \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
@@ -1671,3 +1671,123 @@ $$
 the desired simple function result.
 
 Let us next prove the result for bounded, measurable, complex-valued functions.
+
+As one will recall **Theorem** *(Complex-Valued Simple Approximation Theorem)* implies that there exist sequences of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ and $$\{r_j\}_{j \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to a bounded, measurable, complex-valued function $$f$$ on $$X$$ and similarly $$\{r_j\}_{j \in \mathbb{N}}$$ to $$g$$.
+
+This along with linearity of operator-valued integration implies for any $$s_i$$
+
+$$
+\begin{align}
+    \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\|
+    &= \left\| \int_X ( f - s_i ) \, d\mu \right\| \\
+    &\le \sup\limits_{\lambda \in X} | f(\lambda) - s_i(\lambda) |,
+\end{align}
+$$
+
+where in the final step we employed our **Property 2** result. As $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, this implies that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
+
+$$
+    \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\| < \epsilon,
+$$
+
+in other words operator-valued integral of $$s_i$$ converges to the operator-valued integral of $$f$$. One can establish using similar logic that the operator-valued integral of $$r_i$$ converges to the operator-valued integral of $$g$$.
+
+Similarly, uniform convergence along with linearity imply for any any $$s_i$$ and $$r_j$$
+
+$$
+\begin{align}
+    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\|
+    &= \left\| \int_X (fg - s_i r_j) \, d\mu \right\| \\
+    &\le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) | 
+\end{align}
+$$
+
+where in the final step we employed our **Property 2** result. Looking at this result and our previous similar result, one concludes that if we can prove that given any $$\epsilon > 0$$, there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
+
+$$
+    \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) | < \epsilon,
+$$
+
+then we can conclude that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
+
+One can prove this desired convergence as follows. Consider any $$s_i$$ and $$r_j$$. Con has
+
+$$
+\begin{align}
+    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| &=   |s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) + f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \\
+                                                      &\le |s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda)| + |f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \\
+                                                      &\le |r_j(\lambda)| \, |s_i(\lambda) - f(\lambda)| + |f(\lambda)| \, |r_j(\lambda) - g(\lambda)|.
+\end{align}
+$$
+
+As $$f$$ is bounded and $$r_j$$ is a simple function, their suprema are finite numbers. This allows us to continue this derivation as follows
+
+$$
+    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)|.
+$$
+
+Now as $$s_j$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists an $$N$$ such that for all $$i \ge N$$ one has
+
+$$
+    \sup\limits_{\lambda \in X} |s_i(\lambda) - f(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \right. .
+$$
+
+Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
+
+$$
+    \sup\limits_{\lambda \in X} |r_j(\lambda) - g(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} |f(\lambda)| \right) \right. .
+$$
+
+This implies that for all $$i,j \ge \max(N,M)$$ we have
+
+$$
+\begin{align}
+    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| 
+    &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
+    &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |r_j(\lambda)|} \right)  + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |f(\lambda)|} \right) \\
+    &< \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
+    &= \epsilon.
+\end{align}
+$$
+
+This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
+
+$$
+    \sup\limits_{\lambda \in X} |f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda)| < \epsilon.
+$$
+
+This along with our previous result
+
+$$
+    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| \le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) |
+$$
+
+this implies that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
+
+Combining all of these results together we find
+
+$$
+\begin{align}
+    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right) 
+    &=  \left( \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu \right) \left( \lim\limits_{j \rightarrow \infty} \int_x r_j \, d\mu \right)   \\
+    &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \left( \int_X s_i \, d\mu \right) \left( \int_x r_j \, d\mu \right)   \\
+    &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \int_X s_i r_j \, d\mu   \\
+    &=  \int_X f g \, d\mu. 
+\end{align}
+$$
+
+This leads to the desired result
+
+$$
+    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right) = \int_X f g \, d\mu
+$$
+
+for bounded, measurable, complex-valued functions $$f$$ and $$g$$. 
+
+**Property 4:** Fonally we must prove that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+
+$$
+    \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
+$$ 
+
+where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$ arising from the Hilbert space inner product.
