@@ -1791,3 +1791,50 @@ $$
 $$ 
 
 where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$ arising from the Hilbert space inner product.
+
+Let us start by considering the case in which $$f$$ is real. The definition of $$Q_f$$ states
+
+$$
+    Q_f(\psi) \equiv \int_X f \, d\mu_\psi.
+$$
+
+for all $$\psi \in \mathbf{H}$$. As $$f$$ is real, this implies that $$Q_f(\psi)$$ is real. As $$Q_f(\psi)$$ is real, the [**Proposition**](#prpstn:hall-a.63) we previously proved along with the definition of $$A_f$$
+
+$$
+    Q_f(\psi) = \left< \psi, A_f \psi \right>
+$$
+
+imply that $$A_f$$ is self-adjoint. As $$A_f$$ is self-adjoint, it implies that
+
+$$
+    \int_X f \, d\mu \equiv A_f
+$$
+
+is also self-adjoint.
+
+Consider now the case in which $$f$$ is complex. This implies that $$f$$ can be written as
+
+$$
+    f = f_1 + if_2,
+$$
+
+where both $$f_1$$ and $$f_2$$ are real. Linearity then implies
+
+$$
+\begin{align}
+    \int_X \overline{f} \, d\mu &= \int_X \overline{(f_1 + if_2)} \, d\mu \\
+                                &= \int_X (f_1 - if_2) \, d\mu \\
+                                &= \int_X f_1 \, d\mu - i \int_X f_2 \, d\mu \\
+                                &= \left( \int_X f_1 \, d\mu + i \int_X f_2 \, d\mu \right)^* \\
+                                &= \left( \int_X (f_1 + i f_2) \, d\mu \right)^* \\
+                                &= \left( \int_X f \, d\mu \right)^*,
+\end{align}
+$$
+
+where when taking the adjoint we have also used our previous result that $$A_{f_i} = A_{f_i}^*$$ when $$f_i$$ is real. This proves the desired result
+
+$$
+    \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*
+$$
+
+for any bounded, measurable, complex-valued function $$f$$. This also completes the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration).$$\blacksquare$$
