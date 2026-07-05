@@ -1876,3 +1876,35 @@ To facilitate the proof of this theorem, we first introduce the useful notion of
 > $$
 >
 > where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
+
+With functional calculus defined, we can now outline the proof of [**Theorem** *(Spectral Theorem for Bounded Operators)*](#thrm:spectral-theorem-for-bounded-operators). This proof consists of two main stages.
+
+**Stage 1:** In the first stage any self-adjoint $$A \in \mathcal{B}(\mathbf{H})$$ is used to construct a "continuous functional calculus" that associates to each continuous function $$f$$ on $$\sigma(A)$$ an operator $$f(A)$$.
+
+This association is such that for natural number $$m$$ the function $$f(\lambda) = \lambda^m$$ is associated with the operator $$f(A)=A^m$$. The full "continuous functional calculus" is then constructed by approximating arbitrary continuous functions $$f$$ on $$\sigma(A)$$ by polynomials.
+
+The [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) implies that polynomials are dense in the space of continuous functions on $$\sigma(A)$$. Hence, for any continuous function $$f$$ on $$\sigma(A)$$ there exists a sequence of polynomials $$\{p_i\}_{i \in \mathbb{N}}$$ that converge uniformly to $$f$$ on $$\sigma(A)$$. The final step of stage 1 then proves that the sequence of operators $$\{p_i(A)\}_{i \in \mathbb{N}}$$ converge to an operator denoted as $$f(A)$$.
+
+**Stage 2:** The second stage of the proof shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
+
+
+
+
+> **Definition** *(Separates Points)*
+<a name="def:separates-points"></a>
+> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. The algebra $$\mathcal{A}$$ is said to *separate points* if for any $$x,y \in X$$ such that $$x \neq y$$ there exists a $$f \in \mathcal{A}$$ such that $$f(x) \neq f(y)$$.
+
+> **Theorem** *(Stone–Weierstrass)*
+<a name="thrm:stone–weierstrass"></a>
+<!--  \uses{def:separates-points} -->
+> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
+
+> **Theorem** *(Riesz Representation)*
+<a name="thrm:riesz-representation"></a>
+> Let $$X$$ be a compact metric space and let $$C^0(X; \mathbb{R})$$ be the space of continuous, real-valued functions on $$X$$. Suppose $$\Lambda : C^0(X; \mathbb{R}) \rightarrow \mathbb{R}$$ is a linear function with the property that $$\Lambda(f)$$ is non-negative whenever all the values of $$f$$ are non-negative. Then there exists a unique, real-valued, positive measure $$\mu$$ on the Borel $$\sigma$$-algebra of $$X$$ for which
+>
+> $$
+>     \Lambda(f) = \int_X f \, d\mu
+> $$
+>
+> for all $$f \in C^0(X; \mathbb{R})$$.
