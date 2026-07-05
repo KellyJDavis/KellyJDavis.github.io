@@ -4,7 +4,7 @@ date:   2026-07-06 07:43:42 +0200
 categories: functional-analysis
 ---
 
-Here we will state and prove two versions of the Spectral Theorem, one for bounded, self-adjoint operators and a second for unbounded, self-adjoint operators. Both sit at the core of much of AQFT. Extensive use of both will be made in subsequent work. 
+Here we will state and prove two versions of the Spectral Theorem, one for bounded, self-adjoint operators and a second for unbounded, self-adjoint operators. Both sit at the core of much of AQFT. Extensive use of both will be made in subsequent work.
 
 Here, we generally follow the clear, straightforward presentation of [Quantum Theory for Mathematicians](https://doi.org/10.1007/978-1-4614-7116-5).
 
@@ -98,7 +98,7 @@ $$
     A\psi \equiv \lim\limits_{i \rightarrow \infty} A_i\psi.
 $$
 
-As we have just proven, the fact that $$\{A_i\psi\}_{i \in \mathbb{N}}$$ is a Cauchy sequence implies this map is well-defined. 
+As we have just proven, the fact that $$\{A_i\psi\}_{i \in \mathbb{N}}$$ is a Cauchy sequence implies this map is well-defined.
 
 Linearity of $$A$$ follows from the fact that each $$\{A_i\}_{i \in \mathbb{N}}$$ is linear. In more detail, given $$\psi,\phi \in \mathbf{H}$$ and $$\alpha,\beta \in \mathbb{C}$$ we have
 
@@ -200,7 +200,7 @@ The notion of a bounded orthogonal projection can then be employed to define a "
 <!--  \uses{def:bounded-orthogonal-projection} -->
 > Let $$X$$ be a set and $$\Omega(X)$$ a $$\sigma$$-algebra on $$X$$. A map $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ is called a *projection-valued measure* if the following properties are satisfied:
 > 1. For each $$E \in \Omega(X)$$, it follows that $$\mu(E)$$ is a bounded orthogonal projection.
-> 2. $$\mu(\emptyset) = 0$$, where $$\emptyset \in \Omega(X)$$ is the empty set, and $$\mu(X) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element. 
+> 2. $$\mu(\emptyset) = 0$$, where $$\emptyset \in \Omega(X)$$ is the empty set, and $$\mu(X) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element.
 > 3. If $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ are pairwise disjoint, then for all $$v \in \mathbf{H}$$, we have
 >
 >    $$
@@ -231,7 +231,7 @@ Now, we can associate a positive, real-valued measure $$\mu_\psi$$ to a projecti
 To prove that $$\mu_\psi$$ defines a positive, real-valued measure on $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ we must prove
 * **Empty set is of measure zero** - $$\mu_\psi(\emptyset) = 0$$, where $$\emptyset$$ is the empty set.
 * **Non-negativity** - For all $$E \in \Omega(X)$$, it follows that $$\mu_\psi(E) \ge 0$$.
-* **Countable additivity** - For pairwise disjoint $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$ 
+* **Countable additivity** - For pairwise disjoint $$E_1$$, $$E_2$$, $$E_3$$... in $$\Omega(X)$$
 
 $$
     \mu_\psi \left( \bigcup_{j = 1}^{\infty} E_j \right) = \sum_{j = 1}^{\infty} \mu_\psi(E_j).
@@ -298,51 +298,51 @@ Projection-valued measures give rise to a type of integration known as "operator
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. Then there exists a unique linear map, denoted by
-> 
+>
 > $$
 >     f \longmapsto \int_X f \, d\mu,
 > $$
-> 
+>
 > from the space of bounded, measurable, complex-valued functions on $$X$$ into $$\mathcal{B}(\mathbf{H})$$ such that
-> 
+>
 > $$
 >     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi,
 > $$
-> 
+>
 > for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure) $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. This unique linear map has the following additional properties
-> 
+>
 > 1. For all $$E \in \Omega(X)$$, we have
-> 
+>
 >    $$
 >        \int_X 1_E \, d\mu = \mu(E),
 >    $$
-> 
+>
 >    where $$1_E$$ is the indicator function of $$E$$. In particular, the integral of the constant function $$1$$ is the multiplicative identity $$\mathbf{1}$$.
 > 2. For all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
-> 
+>
 >    $$
 >        \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left| f(\lambda) \right|,
 >    $$
-> 
+>
 >    where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
 > 3. Integration is multiplicative: For all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
-> 
+>
 >    $$
 >        \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
 >    $$
-> 
+>
 > 4. For all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
-> 
+>
 >    $$
 >        \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
 >    $$
-> 
+>
 >    where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$ arising from the Hilbert space inner product. In particular, if $$f$$ is real-valued, then $$f = \overline{f}$$ and
-> 
+>
 >    $$
 >        \left( \int_X f \, d\mu \right) = \left( \int_X \overline{f} \, d\mu \right) = \left( \int_X f \, d\mu \right)^*
 >    $$
-> 
+>
 >    is self-adjoint.
 
 **Proof**
@@ -352,36 +352,36 @@ To streamline the proof of this theorem, we will introduce a few new terms
 > **Definition** *((Bounded) Sesquilinear Form)*
 <a name="def:bounded-sesquilinear-form"></a>
 > A *sesquilinear form* on a Hilbert space $$\mathbf{H}$$ is a map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ that is conjugate linear in the first factor and linear in the second factor. A sesquilinear form  $$L$$ is a *bounded sesquilinear form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi, \psi \in \mathbf{H}$$
-> 
+>
 > $$
 >     |L(\phi, \psi)| \le C \|\phi\| \, \|\psi\|,
 > $$
-> 
+>
 > where $$\mid\cdot\mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
 > **Definition** *((Bounded) Quadratic Form)*
 <a name="def:bounded-quadratic-form"></a>
 <!--  \uses{def:bounded-sesquilinear-form} -->
 > A *quadratic form* on a Hilbert space $$\mathbf{H}$$ is a map $$Q : \mathbf{H} \rightarrow \mathbb{C}$$ with the following properties:
-> 
+>
 > 1. $$Q(\lambda\psi) = \mid\lambda\mid^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 > 2. The map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
-> 
+>
 >    $$
 >    \begin{align}
 >        L(\phi, \psi) &\equiv \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
 >                      &-\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right]
 >    \end{align}
 >    $$
-> 
+>
 >    is a sesquilinear form on $$\mathbf{H}$$.
-> 
+>
 > A quadratic form $$Q$$ is a *bounded quadratic form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
-> 
+>
 > $$
 >     |Q(\phi)| \le C \|\phi\|^2,
 > $$
-> 
+>
 > where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
 These will now let us begin the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration)
@@ -402,11 +402,11 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any bounded, measurable, complex-valued function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
-> 
+>
 > $$
 >     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
 > $$
-> 
+>
 > where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure), is a bounded quadratic form.
 
 **Proof**
@@ -543,7 +543,7 @@ $$
 
 To prove that such a $$Q_s$$ is a bounded quadratic for we must prove the same three results.
 
-First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from our indicator function result 
+First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from our indicator function result
 
 $$
 \begin{align}
@@ -565,7 +565,7 @@ $$
 \end{align}
 $$
 
-is a sesquilinear form on $$\mathbf{H}$$. Basically this result follows from linearity and our indicator function result. 
+is a sesquilinear form on $$\mathbf{H}$$. Basically this result follows from linearity and our indicator function result.
 
 As
 
@@ -617,9 +617,9 @@ Next we will prove that for any bounded, measurable, complex-valued function $$f
 
 $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
-$$ 
+$$
 
-is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem 
+is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem
 
 > **Theorem** *(Complex-Valued Simple Approximation Theorem)*
 <a name="thrm:complex-valued-simple-approximation-theorem"></a>
@@ -681,7 +681,7 @@ $$
         \lim\limits_{i \rightarrow \infty} &\left( \frac{1}{2} \left[ Q_{s_i}(\phi + \psi) - Q_{s_i}(\phi) - Q_{s_i}(\psi) \right] \right. \\
         &-\left. \frac{i}{2} \left[ Q_{s_i}(\phi + i\psi) - Q_{s_i}(\phi) - Q_{s_i}(i\psi) \right] \right)
     \end{aligned} \\
-    &= \lim\limits_{i \rightarrow \infty} L_{s_i}(\phi, \psi). 
+    &= \lim\limits_{i \rightarrow \infty} L_{s_i}(\phi, \psi).
 \end{align}
 $$
 
@@ -712,13 +712,13 @@ $$
 \end{align}
 $$
 
-However, the definitions of $$\mu_\phi$$ and $$\mu$$ imply 
+However, the definitions of $$\mu_\phi$$ and $$\mu$$ imply
 
 $$
 \begin{align}
-    \int_X d\mu_\phi &= \left< \phi, \mu(X) \phi \right> \\ 
-                     &= \left< \phi, \mathbf{1} \phi \right> \\ 
-                     &= \left< \phi, \phi \right> \\ 
+    \int_X d\mu_\phi &= \left< \phi, \mu(X) \phi \right> \\
+                     &= \left< \phi, \mathbf{1} \phi \right> \\
+                     &= \left< \phi, \phi \right> \\
                      &= \| \phi \|^2,
 \end{align}
 $$
@@ -741,8 +741,8 @@ is nothing more than the statement that there exists a constant $$C$$ in $$\math
 
 $$
     |Q_f(\phi)| \le C \|\phi\|^2
-$$                   
-    
+$$
+
 for all $$\phi \in \mathbf{H}$$, the desired result.
 
 This concludes our proof that for any bounded, measurable, complex-valued function $$f$$ on the set $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ the map $$Q_f$$ is a bounded quadratic form. $$\blacksquare$$
@@ -753,25 +753,25 @@ Our next step in the larger proof is establishing several propositions we will h
 <a name="prpstn:hall-a.61"></a>
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
-> If $$Q$$ is a quadratic form on $$\mathbf{H}$$ and $$L$$ is the associated sesquilinear form 
-> 
+> If $$Q$$ is a quadratic form on $$\mathbf{H}$$ and $$L$$ is the associated sesquilinear form
+>
 > $$
 > \begin{align}
 >     L(\phi, \psi) &\equiv \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
 >                   &-\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right],
 > \end{align}
 > $$
-> 
+>
 > then we have the following results
-> 
+>
 > 1. For all $$\psi \in \mathbf{H}$$, we have $$Q(\psi) = L(\psi, \psi)$$.
 > 2. If $$Q$$ is bounded, then $$L$$ is bounded.
 > 3. If $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then $$L$$ is conjugate symmetric, that is
-> 
+>
 >    $$
 >        L(\phi, \psi) = \overline{L(\psi, \phi)}
 >    $$
-> 
+>
 >    for all $$\phi, \psi \in \mathbf{H}$$
 
 **Proof**
@@ -796,7 +796,7 @@ $$
         &\frac{1}{2} \left[ |2|^2Q(\psi) - 2Q(\psi) \right] \\
         &-\frac{i}{2} \left[ |1 + i|^2Q(\psi) - 2Q(\psi) \right]
     \end{aligned} \\
-    &= Q(\psi), 
+    &= Q(\psi),
 \end{align}
 $$
 
@@ -818,7 +818,7 @@ $$
     \|\phi + \psi\| \le \|\phi\| + \|\psi\| = 2,
 $$
 
-which implies $$\|\phi + \psi\| \le 2$$ as well as 
+which implies $$\|\phi + \psi\| \le 2$$ as well as
 
 $$
 \begin{align}
@@ -1005,15 +1005,15 @@ $$
 
 the desired result.
 
-Now as one will recall the Riesz Theorem (Theorem A.52 (Riesz Theorem) of [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) states 
+Now as one will recall the Riesz Theorem (Theorem A.52 (Riesz Theorem) of [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) states
 
 > **Theorem** *(Riesz Theorem)*
 > If $$\xi : \mathbf{H} \rightarrow \mathbb{C}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, then there exists a unique $$\chi \in \mathbf{H}$$ such that
-> 
+>
 > $$
 >     \xi(\psi) = \left< \chi, \psi \right>
 > $$
-> 
+>
 > for all $$\psi \in \mathbf{H}$$. Furthermore, the operator norm of $$\xi$$ as a bounded linear functional is equal to the norm of $$\chi$$ as an element of $$\mathbf{H}$$.
 
 As a result of the Riesz Theorem, for any fixed $$\phi$$ there exists a $$\chi$$ in $$\mathbf{H}$$ such that $$L(\phi, \psi) = \left< \chi, \psi \right>$$. In addition, the "operator norm conclusion" of the Riesz Theorem and our finding that the operator norm of $$\psi \mapsto L(\phi, \psi)$$ is bounded for any fixed $$\phi$$ imply that
@@ -1024,7 +1024,7 @@ $$
 
 As this is true for any $$\phi$$, we can use it to define a map $$B : \mathbf{H} \rightarrow \mathbf{H}$$ by $$B\phi \equiv \chi$$. It turns out that $$B$$ is linear and bounded relative to the operator norm.
 
-Boundedness of $$B$$ relative to the operator norm follows from 
+Boundedness of $$B$$ relative to the operator norm follows from
 
 $$
     \|\chi\| \le C \|\phi\|
@@ -1075,7 +1075,7 @@ which is none other than the statement of linearity.
 
 It turns out that the unique operator $$A \in \mathcal{B}(\mathbf{H})$$ of the proposition, i.e. the operator satisfying $$Q(\psi) = \left< \psi, A \psi \right>$$, is given by $$A \equiv B^*$$. Let us prove that this is the case.
 
-As a result of the last [**Proposition**](#prpstn:hall-a.61) we proved, 
+As a result of the last [**Proposition**](#prpstn:hall-a.61) we proved,
 
 $$
     Q(\psi) = L(\psi, \psi)
@@ -1097,7 +1097,7 @@ which implies $$Q(\psi) = \left< \psi, B^*\psi \right>$$. This in turn implies t
 
 Uniqueness of $$A \equiv B^*$$ follows from the uniqueness of the Riesz Theorem. Explicitly, as a result of the Riesz Theorem, for any fixed $$\phi$$ there exists a unique $$\chi$$ in $$\mathbf{H}$$ such that $$L(\phi, \psi) = \left< \chi, \psi \right>$$. We then defined the map $$B$$ by $$B\phi \equiv \chi$$ and the map $$A$$ by $$A \equiv B^*$$. As $$\chi$$ is unique, any other possible $$B'$$ one could choose would have to satisfy $$B'\phi = \chi$$ too. Hence, $$(B - B')\phi = 0$$ for all $$\phi \in \mathbf{H}$$. This then implies that $$B - B'$$ is the zero operator, and thus $$B = B'$$, i.e. $$B$$ and thus $$A \equiv B^*$$ is unique.
 
-Finally we must prove that it $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then the operator $$A$$ is self-adjoint. 
+Finally we must prove that it $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then the operator $$A$$ is self-adjoint.
 
 Assuming that $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, the last [**Proposition**](#prpstn:hall-a.61) we proved implies that $$L$$ is conjugate symmetric,
 
@@ -1141,11 +1141,11 @@ $$
 
 By construction it is a map from the space of bounded, measurable, complex-valued functions to $$\mathcal{B}(\mathbf{H})$$, as required.
 
-**Property 0:** Tracing definitions it is obvious that this satisfies the required property 
+**Property 0:** Tracing definitions it is obvious that this satisfies the required property
 
 $$
     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi
-$$ 
+$$
 
 of an operator valued integral. Explicitly, the definition of the operator valued integral along with the definition of $$Q_f$$ imply
 
@@ -1161,13 +1161,13 @@ giving
 
 $$
     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f \, d\mu_\psi,
-$$ 
+$$
 
 the desired result.
 
 **Property 1:** Next we must prove that for all $$E \in \Omega(X)$$, we have
 
-$$ 
+$$
     \int_X 1_E \, d\mu = \mu(E),
 $$
 
@@ -1205,21 +1205,21 @@ where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm o
 
 To prove this we will first prove a "utility" lemma that will aid our argument.
 
-> **Lemma** 
+> **Lemma**
 > <a name="lmm:lemma2-of-operator-valued-integration"></a>
 > <!--  \uses{def:projection-valued-measure} -->
 > <!--  \uses{def:bounded-operator-notation} -->
 > Let $$X$$ be a set with $$\sigma$$-algebra $$\Omega(X)$$, and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. If $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ are a finite set of elements that are pairwise disjoint and satisfy
-> 
+>
 > $$
 >     X = \bigcup\limits_{i = 1}^n E_i,
 > $$
-> 
+>
 > then for any $$\psi \in \mathbf{H}$$
-> 
+>
 > 1. The vectors $$\mu(E_1)\psi, \mu(E_2)\psi, \ldots, \mu(E_n)\psi$$ in $$\mathbf{H}$$ are pairwise orthogonal.
 > 2. The norm $$\|\psi\|$$ of $$\psi$$ can be written as follows
-> 
+>
 >    $$
 >        \|\psi\|^2 = \sum_{i = 1}^n \|\mu(E_i)\psi\|^2.
 >    $$
@@ -1377,7 +1377,7 @@ Obviously
 
 $$
     \sup_{\lambda \in X} | s(\lambda) | = \max_i \left| c_i \right|.
-$$ 
+$$
 
 Hence, we have proven the desired result
 
@@ -1492,7 +1492,7 @@ $$
     \sup_{\lambda \in X} | f(\lambda) | &= \sup_{\lambda \in X} | (f(\lambda) - s_k(\lambda)) + s_k(\lambda) | \\
                                         &\le \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | +  | s_k(\lambda) | \\
                                         &\le \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | +  \sup_{\lambda \in X} | s_k(\lambda) | \\
-                                        &< \epsilon +  \sup_{\lambda \in X} | s_k(\lambda) |. 
+                                        &< \epsilon +  \sup_{\lambda \in X} | s_k(\lambda) |.
 \end{align}
 $$
 
@@ -1513,8 +1513,8 @@ Now tying the last results together
 $$
 \begin{align}
     \|A_s\| &=   \lim_{i \rightarrow \infty} \| A_{s_i} \| \\
-            &\le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | \\ 
-            &= \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | f(\lambda) | \\ 
+            &\le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | \\
+            &= \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | f(\lambda) | \\
             &= \sup_{\lambda \in X} | f(\lambda) |.
 \end{align}
 $$
@@ -1614,14 +1614,14 @@ $$
 
 As in other proofs, we will first prove this result for indicator functions, then simple functions, then finally for bounded, measurable, complex-valued functions.
 
-Let us begin with indicator functions. Consider $$E_1, E_2 \in \Omega(X)$$. Property 1, which we have already proved, along with the projection-valued measure definition imply 
+Let us begin with indicator functions. Consider $$E_1, E_2 \in \Omega(X)$$. Property 1, which we have already proved, along with the projection-valued measure definition imply
 
 $$
 \begin{align}
     \left( \int_X 1_{E_1} \, d\mu \right) \left( \int_X 1_{E_2} \, d\mu \right) &= \mu(E_1) \mu(E_2) \\
                                                                                 &= \mu(E_1 \cap E_2) \\
                                                                                 &= \int_X 1_{E_1 \cap E_2} \, d\mu \\
-                                                                                &= \int_X 1_{E_1} 1_{E_2} \, d\mu, 
+                                                                                &= \int_X 1_{E_1} 1_{E_2} \, d\mu,
 \end{align}
 $$
 
@@ -1638,7 +1638,7 @@ Let us next prove the result for simple functions. This result follows from the 
 To wit, consider two simple functions $$s_1$$ and $$s_2$$
 
 $$
-\begin{align} 
+\begin{align}
     s_1 &= \sum_{i = 1}^n \alpha_i 1_{E_i} \\
     s_2 &= \sum_{j = 1}^m \beta_j 1_{F_j},
 \end{align}
@@ -1662,7 +1662,7 @@ $$
     &= \sum_{i = 1}^n \sum_{j = 1}^m \alpha_i \beta_j \left( \int_X 1_{E_i} \, d\mu \right) \left( \int_X 1_{F_j} \, d\mu \right) \\
     &= \sum_{i = 1}^n \sum_{j = 1}^m \alpha_i \beta_j \int_X 1_{E_i} 1_{F_j} \, d\mu \\
     &= \int_X \sum_{i = 1}^n \sum_{j = 1}^m \alpha_i \beta_j 1_{E_i} 1_{F_j} \, d\mu \\
-    &= \int_X s_1 s_2 \, d\mu, 
+    &= \int_X s_1 s_2 \, d\mu,
 \end{align}
 $$
 
@@ -1702,7 +1702,7 @@ $$
 \begin{align}
     \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\|
     &= \left\| \int_X (fg - s_i r_j) \, d\mu \right\| \\
-    &\le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) | 
+    &\le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) |
 \end{align}
 $$
 
@@ -1746,7 +1746,7 @@ This implies that for all $$i,j \ge \max(N,M)$$ we have
 
 $$
 \begin{align}
-    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| 
+    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)|
     &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
     &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |r_j(\lambda)|} \right)  + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |f(\lambda)|} \right) \\
     &< \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
@@ -1772,11 +1772,11 @@ Combining all of these results together we find
 
 $$
 \begin{align}
-    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right) 
+    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right)
     &=  \left( \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu \right) \left( \lim\limits_{j \rightarrow \infty} \int_x r_j \, d\mu \right)   \\
     &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \left( \int_X s_i \, d\mu \right) \left( \int_x r_j \, d\mu \right)   \\
     &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \int_X s_i r_j \, d\mu   \\
-    &=  \int_X f g \, d\mu. 
+    &=  \int_X f g \, d\mu.
 \end{align}
 $$
 
@@ -1786,13 +1786,13 @@ $$
     \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right) = \int_X f g \, d\mu
 $$
 
-for bounded, measurable, complex-valued functions $$f$$ and $$g$$. 
+for bounded, measurable, complex-valued functions $$f$$ and $$g$$.
 
 **Property 4:** Finally we must prove that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 
 $$
     \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
-$$ 
+$$
 
 where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$ arising from the Hilbert space inner product.
 
@@ -1859,3 +1859,20 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 > $$
 >     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
 > $$
+
+**Proof**
+To facilitate the proof of this theorem, we first introduce the useful notion of "Functional Calculus".
+
+> **Definition** *(Functional Calculus)*
+<a name="def:functional-calculus"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{thrm:spectral-theorem-for-bounded-operators} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$f : \sigma(A) \rightarrow \mathbb{C}$$ is a bounded measurable function on the the spectrum $$\sigma(A)$$ of $$A$$, *functional calculus* defines an operator $$f(A)$$ by
+>
+> $$
+>     f(A) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda),
+> $$
+>
+> where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
