@@ -292,6 +292,10 @@ Projection-valued measures give rise to a type of integration known as "operator
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{lmm:lemma1-of-operator-valued-integration} -->
+<!--  \uses{lmm:lemma2-of-operator-valued-integration} -->
+<!--  \uses{prpstn:hall-a.61} -->
+<!--  \uses{prpstn:hall-a.63} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. Then there exists a unique linear map, denoted by
 > 
 > $$
@@ -394,6 +398,7 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{def:bounded-quadratic-form} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any bounded, measurable, complex-valued function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 > 
 > $$
@@ -615,6 +620,7 @@ $$
 is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem 
 
 > **Theorem** *(Complex-Valued Simple Approximation Theorem)*
+<a name="thrm:complex-valued-simple-approximation-theorem"></a>
 > Given any bounded, measurable, complex-valued function $$f$$ on a measurable set $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
 To wit we must first prove that $$Q_f(\lambda\psi) = \mid\lambda\mid^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
@@ -955,6 +961,7 @@ The next in the set of "helper" propositions that we will prove is the propositi
 <a name="prpstn:hall-a.63"></a>
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{prpstn:hall-a.61} -->
 > If $$Q$$ is a bounded quadratic form on $$\mathbf{H}$$, there is a unique $$A \in \mathcal{B}(\mathbf{H})$$ such that $$Q(\psi) = \left< \psi, A\psi \right>$$ for all $$\psi \in \mathbf{H}$$. If $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then the operator $$A$$ is self-adjoint.
 
 **Proof**
@@ -1208,7 +1215,7 @@ To prove this we will first prove a "utility" lemma that will aid our argument.
 > 
 > then for any $$\psi \in \mathbf{H}$$
 > 
-> 1. The vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthogonal.
+> 1. The vectors $$\mu(E_1)\psi, \mu(E_2)\psi, \ldots, \mu(E_n)\psi$$ in $$\mathbf{H}$$ are pairwise orthogonal.
 > 2. The norm $$\|\psi\|$$ of $$\psi$$ can be written as follows
 > 
 >    $$
@@ -1216,7 +1223,7 @@ To prove this we will first prove a "utility" lemma that will aid our argument.
 >    $$
 
 **Proof**
-Let us first prove that the vectors $$E_1\psi, E_2\psi, \ldots, E_n\psi$$ in $$\mathbf{H}$$ are pairwise orthogonal.
+Let us first prove that the vectors $$\mu(E_1)\psi, \mu(E_2)\psi, \ldots, \mu(E_n)\psi$$ in $$\mathbf{H}$$ are pairwise orthogonal.
 
 Let $$i \neq j$$ be indices of the elements $$E_1, E_2, \ldots, E_n$$. The projection-valued measure definition along with the definitions of inner product and orthogonal projection imply
 
@@ -1378,12 +1385,7 @@ $$
 
 for our simple function $$s$$. What remains to do is to generalize this to a bounded, measurable, complex-valued function $$f$$.
 
-This generalization relies upon the following theorem, which we have encountered before
-
-> **Theorem** *(Complex-Valued Simple Approximation Theorem)*
-> Given any bounded, measurable, complex-valued function $$f$$ on a measurable set $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
-
-This theorem implies that a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ exists such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
+This generalization relies upon the [**Theorem** *(Complex-Valued Simple Approximation Theorem)*](#thrm:complex-valued-simple-approximation-theorem). This theorem implies that a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ exists such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
 Now for any two simple functions $$s_i$$ and $$s_j$$ in this sequence, their difference $$s_i - s_j$$ is also a simple function. Furthermore, linearity of the map
 
@@ -1672,7 +1674,7 @@ the desired simple function result.
 
 Let us next prove the result for bounded, measurable, complex-valued functions.
 
-As one will recall **Theorem** *(Complex-Valued Simple Approximation Theorem)* implies that there exist sequences of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ and $$\{r_j\}_{j \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to a bounded, measurable, complex-valued function $$f$$ on $$X$$ and similarly $$\{r_j\}_{j \in \mathbb{N}}$$ to $$g$$.
+As one will recall [**Theorem** *(Complex-Valued Simple Approximation Theorem)*](#thrm:complex-valued-simple-approximation-theorem) implies that there exist sequences of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ and $$\{r_j\}_{j \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to a bounded, measurable, complex-valued function $$f$$ on $$X$$ and similarly $$\{r_j\}_{j \in \mathbb{N}}$$ to $$g$$.
 
 This along with linearity of operator-valued integration implies for any $$s_i$$
 
