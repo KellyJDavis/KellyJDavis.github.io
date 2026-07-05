@@ -1838,3 +1838,20 @@ $$
 $$
 
 for any bounded, measurable, complex-valued function $$f$$. This also completes the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration).$$\blacksquare$$
+
+### The Spectral Theorem
+
+Now we are finally in the position to state the spectral theorem for bounded operators.
+
+> **Theorem** *(Spectral Theorem for Bounded Operators)*
+<a name="thrm:spectral-theorem-for-bounded-operators"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then there exists a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$, the spectrum of $$A$$, with values in orthogonal projections on $$\mathbf{H}$$ such that
+>
+> $$
+>     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+> $$
