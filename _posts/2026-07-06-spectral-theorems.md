@@ -296,6 +296,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 <!--  \uses{lmm:lemma2-of-operator-valued-integration} -->
 <!--  \uses{prpstn:hall-a.61} -->
 <!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. Then there exists a unique linear map, denoted by
 > 
 > $$
@@ -399,6 +400,7 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any bounded, measurable, complex-valued function $$f$$ on $$X$$ and any $$\psi \in \mathbf{H}$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 > 
 > $$
