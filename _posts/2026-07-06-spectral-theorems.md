@@ -830,7 +830,7 @@ $$
     \left| L(\phi, \psi) \right| &= \left| \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] -\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right] \right| \\
     &\le \frac{1}{2} \left[ \left|Q(\phi + \psi)\right| + \left|Q(\phi)\right| + \left|Q(\psi)\right| + \left|Q(\phi + i\psi)\right| + \left|Q(\phi)\right| + \left|Q(i\psi)\right| \right] \\
     &\le C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|i\psi\|^2 \right] \\
-    &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + |i| \, \|\psi\|^2 \right] \\
+    &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + |i|^2 \, \|\psi\|^2 \right] \\
     &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|\psi\|^2 \right] \\
     &\le C \frac{1}{2} \left[ 4 + 1 + 1 + 4 + 1 + 1 \right] \\
     &=   6C.
@@ -1118,10 +1118,10 @@ $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
 $$
 
-is a bounded, bounded quadratic form. Hence, [**Proposition**](#prpstn:hall-a.63) implies that there is a unique, bounded operator $$A_f \in \mathcal{B}(\mathbf{H})$$ such that
+is a bounded quadratic form. Hence, [**Proposition**](#prpstn:hall-a.63) implies that there is a unique, bounded operator $$A_f \in \mathcal{B}(\mathbf{H})$$ such that
 
 $$
-    Q_f(\psi) = \left< \psi, A\psi \right>
+    Q_f(\psi) = \left< \psi, A_f\psi \right>
 $$
 
 for all $$\psi \in \mathbf{H}$$. We then define the operator valued integral of $$f$$ as follows
