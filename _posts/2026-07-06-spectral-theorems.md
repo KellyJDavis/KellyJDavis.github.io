@@ -1879,13 +1879,137 @@ To facilitate the proof of this theorem, we first introduce the useful notion of
 
 With functional calculus defined, we can now outline the proof of [**Theorem** *(Spectral Theorem for Bounded Operators)*](#thrm:spectral-theorem-for-bounded-operators). This proof consists of two main stages.
 
-**Stage 1:** In the first stage any self-adjoint $$A \in \mathcal{B}(\mathbf{H})$$ is used to construct a "continuous functional calculus" that associates to each continuous function $$f$$ on $$\sigma(A)$$ an operator $$f(A)$$.
+*Stage 1:* In the first stage any self-adjoint $$A \in \mathcal{B}(\mathbf{H})$$ is used to construct a "continuous functional calculus" that associates to each continuous function $$f$$ on $$\sigma(A)$$ an operator $$f(A)$$.
 
-This association is such that for natural number $$m$$ the function $$f(\lambda) = \lambda^m$$ is associated with the operator $$f(A)=A^m$$. The full "continuous functional calculus" is then constructed by approximating arbitrary continuous functions $$f$$ on $$\sigma(A)$$ by polynomials.
+This association is such that for any natural number $$m$$ the function $$f(\lambda) = \lambda^m$$ is associated with the operator $$f(A)=A^m$$. The full "continuous functional calculus" is then constructed by approximating arbitrary continuous functions $$f$$ on $$\sigma(A)$$ by polynomials.
 
 The [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) implies that polynomials are dense in the space of continuous functions on $$\sigma(A)$$. Hence, for any continuous function $$f$$ on $$\sigma(A)$$ there exists a sequence of polynomials $$\{p_i\}_{i \in \mathbb{N}}$$ that converge uniformly to $$f$$ on $$\sigma(A)$$. The final step of stage 1 then proves that the sequence of operators $$\{p_i(A)\}_{i \in \mathbb{N}}$$ converge to an operator denoted as $$f(A)$$.
 
-**Stage 2:** The second stage of the proof shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
+*Stage 2:* The second stage of the proof shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
+
+#### Stage 1: The Continuous Functional Calculus
+We begin this stage of the proof with two "utility" lemmas and propositions that we will have need of later in this stage.
+
+> **Lemma**
+<a name="lmm:hall-7.6"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-inverse} -->
+> Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse given by the following series
+>
+> $$
+>     (I - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots
+> $$
+>
+> convergent in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm.
+
+**Proof**
+As the product of operators $$A,B \in \mathcal{B}(\mathbf{H})$$ is submultiplicative
+
+$$
+    \|AB\| \le \|A\| \, \|B\|,
+$$
+
+for an arbitrary natural number $$m$$ one has
+
+$$
+    \|X^m\| \le \|X^{m - 1}\| \, \|X\| \le \|X^{m-2}\| \, \|X\|^2 \le \cdots \le \|X\|^m.
+$$
+
+In other words $$\|X^m\| \le \|X\|^m$$.
+
+Now the hypothesis $$\|X\| < 1$$ implies that the series $$\{\|X\|^m\}_{m \in \mathbb{N}}$$ converges
+
+$$
+    \sum\limits_{m \in \mathbb{N}} \|X\|^m < \infty.
+$$
+
+This along with the following following proposition
+
+> **Proposition**
+<a name="prpstn:hall-a.34"></a>
+> If $$V$$ is a Banach space, then absolute convergence implies convergence in $$V$$. That is, if $$\{\psi_i\}_{i \in \mathbb{N}}$$ is a sequence in $$V$$ and
+>
+> $$
+>     \sum\limits_{i \in \mathbb{N}} \|\psi_i\| < \infty,
+> $$
+>
+> then
+>
+> $$
+>     \sum\limits_{i \in \mathbb{N}} \psi_i
+> $$
+>
+> converges in $$V$$.
+
+and $$\|X^m\| \le \|X\|^m$$, then imply that the series $$\{X^m\}_{m \in \mathbb{N}}$$ converges in $$\mathcal{B}(\mathbf{H})$$. In other words the series
+
+$$
+    \mathbf{1} + X + X^2 + X^3 + \cdots
+$$
+
+of the hypothesis converges in $$\mathcal{B}(\mathbf{H})$$, one of the desired results.
+
+Now if we consider this convergent series of the hypothesis
+
+$$
+    \mathbf{1} + X + X^2 + X^3 + \cdots
+$$
+
+and multiply by $$(\mathbf{1} - X)$$ we find
+
+$$
+\begin{align}
+    (\mathbf{1} - X) \left( \mathbf{1} + X + X^2 + \cdots \right) &= (\mathbf{1} - X) + (X - X^2) + (X^2 - X^3) + \cdots \\
+                                                                  &= \mathbf{1} + (- X + X) + (- X^2 + X^2) + (-X^3 + X^3) + \cdots \\
+                                                                  &= \mathbf{1},
+\end{align}
+$$
+
+proving
+
+$$
+    (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots,
+$$
+
+the final desired result.$$\blacksquare$$
+
+> **Proposition**
+<a name="prpstn:hall-7.5"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+> For all $$A \in \mathcal{B}(\mathbf{H})$$, the following results hold.
+>
+> 1. The spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$.
+> 2. If $$\lvert \lambda \rvert > \|A\|$$, where $$\|A\|$$ is the operator norm of $$A$$, then $$\lambda$$ is in the resolvent set of $$A$$.
+
+**Proof**
+TODO!
+
+> **Proposition**
+<a name="prpstn:hall-7.7"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is contained in $$\mathbb{R}$$.
+
+**Proof**
+TODO!
+
+
+> **Definition** *(Spectral Radius)*
+<a name="def:spectral-radius"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{prpstn:hall-7.7} -->
+> For any $$A \in \mathcal{B}(\mathbf{H})$$ the *spectral radius* $$R(A)$$ of $$A$$ is defined by
+>
+> $$
+>     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} |\lambda|.
+> $$
+>
+> As a result of the proved previously [**Proposition**](#prpstn:hall-7.5) and [**Proposition**](#prpstn:hall-7.7), $$\sigma(A)$$ is a nonempty, bounded subset of $$\mathbb{R}$$. Hence, $$R(A)$$ is well-defined.
+
+
 
 
 
@@ -1898,6 +2022,8 @@ The [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) implies that po
 <a name="thrm:stone–weierstrass"></a>
 <!--  \uses{def:separates-points} -->
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
+
+#### Stage 2: An Operator-Valued Riesz Representation Theorem
 
 > **Theorem** *(Riesz Representation)*
 <a name="thrm:riesz-representation"></a>
