@@ -1887,23 +1887,25 @@ The [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) implies that po
 
 *Stage 2:* The second stage of the proof shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
 
-#### Stage 1: The Continuous Functional Calculus
-We begin this stage of the proof with two "utility" lemmas and propositions that we will have need of later in this stage.
+**Stage 1: The Continuous Functional Calculus**
+
+We begin this stage of the proof with "utility" lemmas and propositions that we will have need of later in this stage.
 
 > **Lemma**
 <a name="lmm:hall-7.6"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-inverse} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 > Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse given by the following series
 >
 > $$
 >     (I - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots
 > $$
 >
-> convergent in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm.
+> that is convergent in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm.
 
 **Proof**
-As the product of operators $$A,B \in \mathcal{B}(\mathbf{H})$$ is submultiplicative
+As the product of operators $$A,B \in \mathcal{B}(\mathbf{H})$$ is submultiplicative,
 
 $$
     \|AB\| \le \|A\| \, \|B\|,
@@ -1917,13 +1919,25 @@ $$
 
 In other words $$\|X^m\| \le \|X\|^m$$.
 
-Now the hypothesis $$\|X\| < 1$$ implies that the series $$\{\|X\|^m\}_{m \in \mathbb{N}}$$ converges
+Now the hypothesis $$\|X\| < 1$$ implies that the geometric series $$\{\|X\|^m\}_{m \in \mathbb{N}}$$ converges
 
 $$
     \sum\limits_{m \in \mathbb{N}} \|X\|^m < \infty.
 $$
 
-This along with the following following proposition
+Furthermore, as $$\|X^m\| \le \|X\|^m$$ this further implies the series $$\{\|X^m\|\}_{m \in \mathbb{N}}$$ also converges
+
+$$
+    \sum\limits_{m \in \mathbb{N}} \|X^m\| < \infty.
+$$
+
+Explicitly this follows from the definition of norm, $$\|X^m\| \le \|X\|^m$$, and convergence of the series $$\{\|X\|^m\}_{m \in \mathbb{N}}$$ together implying
+
+$$
+    0 \le \sum\limits_{m \in \mathbb{N}} \|X^m\| \le \sum\limits_{m \in \mathbb{N}} \|X\|^m < \infty.
+$$
+
+Finally, recalling the fact established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) that $$\mathcal{B}(\mathbf{H})$$ is a Banach space with respect to the operator norm, one can from the following proposition
 
 > **Proposition**
 <a name="prpstn:hall-a.34"></a>
@@ -1941,7 +1955,7 @@ This along with the following following proposition
 >
 > converges in $$V$$.
 
-and $$\|X^m\| \le \|X\|^m$$, then imply that the series $$\{X^m\}_{m \in \mathbb{N}}$$ converges in $$\mathcal{B}(\mathbf{H})$$. In other words the series
+conclude that the series $$\{X^m\}_{m \in \mathbb{N}}$$ converges in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. In other words the series
 
 $$
     \mathbf{1} + X + X^2 + X^3 + \cdots
@@ -1959,7 +1973,7 @@ and multiply by $$(\mathbf{1} - X)$$ we find
 
 $$
 \begin{align}
-    (\mathbf{1} - X) \left( \mathbf{1} + X + X^2 + \cdots \right) &= (\mathbf{1} - X) + (X - X^2) + (X^2 - X^3) + \cdots \\
+    (\mathbf{1} - X) \left( \mathbf{1} + X + X^2 + \cdots \right) &= (\mathbf{1} - X) + (X - X^2) + (X^2 - X^3) + (X^3 - \cdots) + \cdots \\
                                                                   &= \mathbf{1} + (- X + X) + (- X^2 + X^2) + (-X^3 + X^3) + \cdots \\
                                                                   &= \mathbf{1},
 \end{align}
