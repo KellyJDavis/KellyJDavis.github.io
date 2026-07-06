@@ -1991,13 +1991,49 @@ the final desired result.$$\blacksquare$$
 <a name="prpstn:hall-7.5"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{lmm:hall-7.6} -->
 > For all $$A \in \mathcal{B}(\mathbf{H})$$, the following results hold.
 >
 > 1. The spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$.
 > 2. If $$\lvert \lambda \rvert > \|A\|$$, where $$\|A\|$$ is the operator norm of $$A$$, then $$\lambda$$ is in the resolvent set of $$A$$.
 
 **Proof**
-TODO!
+For any non-zero $$\lambda \in \mathbb{C}$$ and $$A$$ from our hypothesis, consider the operator
+
+$$
+    A - \lambda \mathbf{1} = -\lambda \left( \mathbf{1} - \frac{A}{\lambda} \right).
+$$
+
+If $$\lvert \lambda \rvert > \|A\|$$, then $$\|A / \lambda\| < 1$$ and as a result of the [**Lemma**](#lmm:hall-7.6) we just proved $$(\mathbf{1} - A / \lambda)$$ is invertible. As a result of the previous equation and $$\lambda \neq 0$$, this then implies that $$A - \lambda \mathbf{1}$$ is also invertible, with inverse given by
+
+$$
+    (A - \lambda \mathbf{1})^{-1} = - \frac{1}{\lambda} \left( \mathbf{1} + \frac{A}{\lambda} + \frac{A^2}{\lambda^2} + \frac{A^3}{\lambda^3} + \cdots \right).
+$$
+
+Hence, $$\lambda$$ is in the resolvent set of $$A$$.
+
+This establishes that if $$\lvert \lambda \rvert > \|A\|$$, then $$\lambda$$ is in the resolvent set of $$A$$, which is the desired result of Point 2 of the proposition.
+
+Furthermore, as $$\lvert \lambda \rvert > \|A\|$$ implies that $$\lambda$$ is in the resolvent set of $$A$$ and the spectrum $$\sigma(A)$$ is the complement of the resolvent set in $$\mathbb{C}$$, this also proves that the specturm $$\sigma(A)$$ of $$A$$ is bounded. This is one of the desired results of Point 1 of the proposition.
+
+Suppose now that $$\lambda_0 \in \mathbb{C}$$ is in the resolvent set of $$A$$. For any other $$\lambda \in \mathbb{C}$$ one has
+
+$$
+\begin{align}
+    A - \lambda \mathbf{1} &= A - \lambda_0 \mathbf{1} - (\lambda - \lambda_0) \mathbf{1} \\
+                           &= (A - \lambda_0 \mathbf{1})^{-1} (\mathbf{1} - (\lambda - \lambda_0) (A - \lambda_0 \mathbf{1})^{-1} ),
+\end{align}
+$$
+
+where in the second line we have used the fact that $$\lambda_0$$ is in the resolvent set of $$A$$ to factor out $$(A - \lambda_0 \mathbf{1})^{-1}$$.
+
+Looking at the previous equation along with the [**Lemma**](#lmm:hall-7.6) we just proved, we can conclude that if
+
+$$
+    \lvert \lambda - \lambda_0 \rvert < \frac{1}{\|(A - \lambda_0 \mathbf{1})^{-1}\|},
+$$
+
+then both factors on the righthand side of the previous equation are invertible, and thus $$A - \lambda \mathbf{1}$$ would also be invertible. This implies that the resolvent set of $$A$$ is open and thus the spectrum $$\sigma(A)$$ of $$A$$, the complement of the resolvent set in $$\mathbb{C}$$, is closed. This is another one of the desired results of Part 1 of the proposition.
 
 > **Proposition**
 <a name="prpstn:hall-7.7"></a>
