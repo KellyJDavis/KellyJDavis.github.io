@@ -2021,11 +2021,11 @@ Suppose now that $$\lambda_0 \in \mathbb{C}$$ is in the resolvent set of $$A$$. 
 $$
 \begin{align}
     A - \lambda \mathbf{1} &= A - \lambda_0 \mathbf{1} - (\lambda - \lambda_0) \mathbf{1} \\
-                           &= (A - \lambda_0 \mathbf{1})^{-1} (\mathbf{1} - (\lambda - \lambda_0) (A - \lambda_0 \mathbf{1})^{-1} ),
+                           &= (A - \lambda_0 \mathbf{1}) (\mathbf{1} - (\lambda - \lambda_0) (A - \lambda_0 \mathbf{1})^{-1} ),
 \end{align}
 $$
 
-where in the second line we have used the fact that $$\lambda_0$$ is in the resolvent set of $$A$$ to factor out $$(A - \lambda_0 \mathbf{1})^{-1}$$.
+where in the second line we have used the fact that $$\lambda_0$$ is in the resolvent set of $$A$$ to factor out $$(A - \lambda_0 \mathbf{1})$$.
 
 Looking at the previous equation along with the [**Lemma**](#lmm:hall-7.6) we just proved, we can conclude that if
 
@@ -2034,6 +2034,85 @@ $$
 $$
 
 then both factors on the righthand side of the previous equation are invertible, and thus $$A - \lambda \mathbf{1}$$ would also be invertible. This implies that the resolvent set of $$A$$ is open and thus the spectrum $$\sigma(A)$$ of $$A$$, the complement of the resolvent set in $$\mathbb{C}$$, is closed. This is another one of the desired results of Part 1 of the proposition.
+
+The final result that needs to be proven in the proposition is that the spectrum $$\sigma(A)$$ is non-empty, which is in Part 1 of the proposition.
+
+Continuing on with the previous calculation where $$\lambda_0$$ is in the the resolvent set of $$A$$ but now under the additional assumption that
+
+$$
+    \lvert \lambda - \lambda_0 \rvert < \frac{1}{\|(A - \lambda_0 \mathbf{1})^{-1}\|},
+$$
+
+we see that the righthand side of
+
+$$
+    A - \lambda \mathbf{1} = (A - \lambda_0 \mathbf{1})(\mathbf{1} - (\lambda - \lambda_0) (A - \lambda_0 \mathbf{1})^{-1} ),
+$$
+
+is invertible. This gives
+
+$$
+\begin{align}
+    (A - \lambda \mathbf{1})^{-1} &= (\mathbf{1} - (\lambda - \lambda_0) (A - \lambda_0 \mathbf{1})^{-1} )^{-1} (A - \lambda_0 \mathbf{1})^{-1} \\
+                                  &= \left( \sum_{m \in \mathbb{N}} (\lambda - \lambda_0)^m ((A - \lambda_0 \mathbf{1})^{-1})^m \right) (A - \lambda_0 \mathbf{1})^{-1},
+\end{align}
+$$
+
+where the second equality follows from the [**Lemma**](#lmm:hall-7.6) we just proved.
+
+This implies that in the neighborhood of any point $$\lambda_0$$ in the resolvent set of $$A$$ the resolvent $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed by this locally convergent series in powers of $$(\lambda - \lambda_0)$$ with coeﬃcients of these powers being elements of $$\mathcal{B}(\mathbf{H})$$.
+
+Hence, for any $$\phi, \psi \in \mathbf{H}$$ the map
+
+$$
+    \lambda \longmapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>
+$$
+
+can be expressed as a locally convergent power series with coeﬃcients in $$\mathbb{C}$$. In other words it is an analytic function on the resolvent set of $$A$$ which, as we have proven, is open. Thus, as a result of the [**Analytic Equivalence Theorem**](#thrm:analytic-equivalence-theorem)
+
+> **Theorem** *(Analytic Equivalence Theorem)*
+<a name="thrm:analytic-equivalence-theorem"></a>
+> Let $$U$$ be an open subset of $$\mathbb{C}$$ and let $$f: U \rightarrow \mathbb{C}$$ be a function. Then $$f$$ is analytic on $$U$$ if and only if it is holomorphic on $$U$$.
+
+this function is holomorphic on the resolvent set of $$A$$.
+
+Now, as we proved earlier, for $$\lambda$$ in the resolvent set of $$A$$ we can also write $$(A - \lambda \mathbf{1})^{-1}$$ as
+
+$$
+    (A - \lambda \mathbf{1})^{-1} = - \frac{1}{\lambda} \left( \mathbf{1} + \frac{A}{\lambda} + \frac{A^2}{\lambda^2} + \frac{A^3}{\lambda^3} + \cdots \right).
+$$
+
+This manner of writing $$(A - \lambda \mathbf{1})^{-1}$$ makes it clear that $$\|(A - \lambda \mathbf{1})^{-1}\|$$ tends to zero as $$\lvert \lambda \rvert$$ tends to infinity. Hence, the righthand side of our other expression for $$\| (A - \lambda \mathbf{1})^{-1} \|$$
+
+$$
+    \left\| (A - \lambda \mathbf{1})^{-1} \right\| = \left\| \left( \sum_{m \in \mathbb{N}} (\lambda - \lambda_0)^m ((A - \lambda_0 \mathbf{1})^{-1})^m \right) (A - \lambda_0 \mathbf{1})^{-1} \right\|,
+$$
+
+also tends to zero as $$\lvert \lambda \rvert$$ tends to infinity. And thus so does the holomorphic function
+
+$$
+    \lambda \longmapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>
+$$
+
+in the same limit.
+
+Now let us assume the spectrum $$\sigma(A)$$ of $$A$$ is the empty set. Then the resolvent set of $$A$$, the complement of $$\sigma(A)$$ in $$\mathbb{C}$$,  would be all of $$\mathbb{C}$$. This would then impliy that the holomorphic function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is holomorphic on all of $$\mathbb{C}$$. In other words it is an entire function.
+
+Hence, by evaluating the entire function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ on ever larger closed disks $$\overline{B}$$, the [**Maximum Modulus Principle**](#thrm:maximum-modulus-principle)
+
+> **Theorem** *(Maximum Modulus Principle)*
+<a name="thrm:maximum-modulus-principle"></a>
+> Let $$B$$ be a bounded, nonempty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains it maximum at some point on the boundary of $$B$$.
+
+implies that the maximum of $$\lvert \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right> \rvert$$ is zero. As a result of the definition of a norm, this in turn implies that $$\left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is identically zero.
+
+As this is true for any $$\phi, \psi \in \mathbf{H}$$, it implies that $$(A - \lambda \mathbf{1})^{-1}$$ has operator norm zero and is thus the zero operator. However, we know that $$(A - \lambda \mathbf{1})(A - \lambda \mathbf{1})^{-1} = \mathbf{1}$$. Thus, $$(A - \lambda \mathbf{1})^{-1}$$ can not be the zero operator, and we have arrived at a contradiction.
+
+Hence, our assumption that the spectrum $$\sigma(A)$$ of $$A$$ is the empty set is false. The the spectrum $$\sigma(A)$$ is non-empty. This is the final desired result of Part 1.$$\blacksquare$$
+
+
+
+
 
 > **Proposition**
 <a name="prpstn:hall-7.7"></a>
