@@ -2215,23 +2215,91 @@ Now we move onto the result
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.
 
 **Proof**
-A statement obviously equivalent to that in this proposition is the following: For $$a,b \in \mathbb{R}$$ and $$\lambda \equiv a + ib$$ it follows that if $$b \neq 0$$, then $$\lambda$$ is in the resolvent set of $$A$$. We will prove this equivalent statement.
+A statement obviously equivalent to that of this proposition is the following: For $$a,b \in \mathbb{R}$$ and $$\lambda \equiv a + ib$$ it follows that if $$b \neq 0$$, then $$\lambda$$ is in the resolvent set of $$A$$. We will prove this equivalent statement.
 
 Now the [**Lemma**](#lmm:hall-7.8) we just proved implies that
 
 $$
-    \left< (A - \lambda \mathbf{1}) \psi, (A - \lambda \mathbf{1}) \psi \right> \ge b^2 \left< \psi, \psi \right>.
+    \left< (A - \lambda \mathbf{1}) \psi, (A - \lambda \mathbf{1}) \psi \right> \ge b^2 \left< \psi, \psi \right>
 $$
 
-By hypothesis $$b \neq 0$$; this along with the previous inequality and the inner product definition imply that if $$\psi \neq 0$$, then $$(A - \lambda \mathbf{1}) \psi \ne 0$$. In other words $$(A - \lambda \mathbf{1})$$ is injective.
+for arbitrary $$\psi \in \mathbf{H}$$. By hypothesis $$b \neq 0$$; this along with the previous inequality and the inner product definition imply that if $$\psi \neq 0$$, then $$(A - \lambda \mathbf{1}) \psi \ne 0$$. In other words $$(A - \lambda \mathbf{1})$$ is one-to-one.
 
-As $$\overline{\lambda}$$ also has a non-zero imarinary part the previous argument also applies to $$(A - \overline{\lambda} \mathbf{1})$$ and thus $$(A - \overline{\lambda} \mathbf{1})$$ is also injective.
+As $$\overline{\lambda}$$ also has a non-zero imarinary part the previous argument also applies to $$(A - \overline{\lambda} \mathbf{1})$$ and thus $$(A - \overline{\lambda} \mathbf{1})$$ is also one-to-one.
 
 Recall that as a result of the [**Proposition**](#prpstn:hall-7.3) we just proved we have
 
 $$
-    \left( \text{Range}(A) \right)^\perp = \text{Ker}(A^*).
+\begin{align}
+    \left( \text{Range}(A - \lambda \mathbf{1}) \right)^\perp &= \text{Ker}((A - \lambda \mathbf{1})^*) \\
+    \                                                         &= \text{Ker}(A - \overline{\lambda} \mathbf{1}),
+\end{align}
 $$
+
+where the second equality follows from the hypothesis that $$A$$ is self-adjoint. As $$(A - \overline{\lambda} \mathbf{1})$$ is one-to-one, $$\text{Ker}(A - \overline{\lambda} \mathbf{1})$$ consists of the zero vector $$\psi = 0$$. Hence, the previous equation implies $$\left( \text{Range}(A - \lambda \mathbf{1}) \right)^\perp$$ consists of the zero vector. This in turn implies that $$\text{Range}(A - \lambda \mathbf{1})$$ is dense in $$\mathbf{H}$$.
+
+Next we will prove that $$\text{Range}(A - \lambda \mathbf{1})$$ is not only dense in $$\mathbf{H}$$ but is in fact all of $$\mathbf{H}$$.
+
+Consider any $$\phi \in \mathbf{H}$$. As $$\text{Range}(A - \lambda \mathbf{1})$$ is dense in $$\mathbf{H}$$, there exists a sequence $$\{ \phi_i \equiv (A - \lambda \mathbf{1}) \psi_i \}_{i \in \mathbb{N}}$$ in $$\text{Range}(A - \lambda \mathbf{1})$$ such that $$\{ \phi_i \}_{i \in \mathbb{N}}$$ converges to $$\phi$$.
+
+The [**Lemma**](#lmm:hall-7.8) we just proved implies that for any natural numbers $$i$$ and $$j$$ we have
+
+$$
+    \left< (A - \lambda \mathbf{1}) (\psi_j - \psi_i), (A - \lambda \mathbf{1}) (\psi_j - \psi_i) \right> \ge b^2 \left< (\psi_j - \psi_i), (\psi_j - \psi_i) \right>.
+$$
+
+As a result of the fact that $$\{ \phi_i \}_{i \in \mathbb{N}}$$ converges to $$\phi$$ it follows that $$\{ \phi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence. As $$\{ \phi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence $$\{ (A - \lambda \mathbf{1}) \psi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence.
+
+Hence, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
+
+$$
+    \| (A - \lambda \mathbf{1}) \psi_j - (A - \lambda \mathbf{1}) \psi_i \| < \epsilon b.
+$$
+
+As a result of the previous inequality involving $$b^2$$ this, along with the definition of the norm on $$\mathbf{H}$$, implies that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
+
+
+$$
+    \epsilon^2 b^2 > \| (A - \lambda \mathbf{1}) (\psi_j - \psi_i) \|^2 \ge b^2 \|\psi_j - \psi_i\|^2.
+$$
+
+This in turn implies that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
+
+$$
+    \|\psi_j - \psi_i\| < \epsilon.
+$$
+
+In other words $$\{ \psi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence. Furthermore, as $$\{ \psi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence and $$\mathbf{H}$$ is complete, there exists a $$\psi \in \mathbf{H}$$ such that $$\{ \psi_i \}_{i \in \mathbb{N}}$$ converges to $$\psi$$.
+
+Now as $$A \in \mathcal{B}(\mathbf{H})$$ it is a bounded linear operator from the normed space $$\mathbf{H}$$ to the normed space $$\mathbf{H}$$. Thus, as a result of the standard proposition
+
+> **Proposition** *(Bounded Operators are Continuous)*
+> A linear operator between normed spaces is bounded if and only if it is continuous.
+
+$$A$$ is continuous. As $$A$$ is continuous our definitions imply
+
+$$
+    (A - \lambda \mathbf{1}) \psi = \lim\limits_{i \rightarrow \infty} (A - \lambda \mathbf{1}) \psi_i = \lim\limits_{i \rightarrow \infty} \phi_i = \phi.
+$$
+
+As $$\phi \in \mathbf{H}$$ was arbitrary, this implies that an arbitrary $$\phi \in \mathbf{H}$$ is in $$\text{Range}(A - \lambda \mathbf{1})$$, and thus $$\text{Range}(A - \lambda \mathbf{1})$$ is all of $$\mathbf{H}$$, the desired result.
+
+Hence, we have proven that $$(A - \lambda \mathbf{1})$$ is one-to-one and onto. There is one remaining result required to to show that $$\lambda$$ is in the resolvent set of $$A$$. It remains to prove that $$(A - \lambda \mathbf{1})^{-1}$$ is bounded.
+
+As we just proved, for an arbitrary $$\phi \in \mathbf{H}$$ there exists a $$\psi \in \mathbf{H}$$ such that $$(A - \lambda \mathbf{1}) \psi = \phi$$. In this case [**Lemma**](#lmm:hall-7.8) and the definition of norm on $$\mathbf{H}$$ imply
+
+$$
+\begin{align}
+    b^2 \| (A - \lambda \mathbf{1})^{-1}\phi \|^2 &\le \| (A - \lambda \mathbf{1}) (A - \lambda \mathbf{1})^{-1}\phi \|^2 \\
+                                                &=   \| \phi \|^2 \\
+                                                &<   \infty,
+\end{align}
+$$
+
+which proves that $$(A - \lambda \mathbf{1})^{-1}$$ is bounded.
+
+Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and $$\lambda$$ defined by $$\lambda \equiv a  + ib$$, then it follows that $$\lambda$$ is in the resolvent set of a self-adjoint $$A$$. This is then equivalent to the statement that if $$A$$ is self-adjoint, then the specturm $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.$$\blacksquare$$
+
 
 > **Definition** *(Spectral Radius)*
 <a name="def:spectral-radius"></a>
