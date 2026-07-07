@@ -2110,19 +2110,128 @@ As this is true for any $$\phi, \psi \in \mathbf{H}$$, it implies that $$(A - \l
 
 Hence, our assumption that the spectrum $$\sigma(A)$$ of $$A$$ is the empty set is false. The the spectrum $$\sigma(A)$$ is non-empty. This is the final desired result of Part 1.$$\blacksquare$$
 
+Another proposition we will have need of is
 
+> **Proposition**
+<a name="prpstn:hall-7.3"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> For any $$A \in \mathcal{B}(\mathbf{H})$$, we have
+>
+> $$
+>     \left( \text{Range}(A) \right)^\perp = \text{Ker}(A^*)
+> $$
+>
+> where $$\text{Ker}(A^*)$$ is the kernel of $$A^*$$, $$\text{Range}(A)$$ is the range of $$A$$, and $$\left( \text{Range}(A) \right)^\perp \equiv \{ \psi \in \mathbf{H} : \left< \psi, A\phi \right> = 0 \text{ for all } \phi \in \mathbf{H} \}$$.
 
+**Proof**
+Assume that $$\psi \in \left( \text{Range}(A) \right)^\perp$$. Hence, for all $$\phi \in \mathbf{H}$$
 
+$$
+\begin{align}
+    0 &= \left< \psi, A\phi \right> \\
+      &= \left< A^*\psi, \phi \right>.
+\end{align}
+$$
+
+As this is true for all $$\phi \in \mathbf{H}$$, it implies that $$A^*\psi = 0$$ and thus $$\psi \in \text{Ker}(A^*)$$. Hence, we have proven that $$\left( \text{Range}(A) \right)^\perp \subseteq \text{Ker}(A^*)$$.
+
+Assume now that $$\psi \in \text{Ker}(A^*)$$. Hence, $$A^*\psi = 0$$. Thus for all $$\phi \in \mathbf{H}$$
+
+$$
+\begin{align}
+    0 &= \left< A^*\psi, \phi \right>  \\
+      &= \left< \psi, A\phi \right>.
+\end{align}
+$$
+
+As this is true for all $$\phi \in \mathbf{H}$$, it implies that $$\psi \in \left( \text{Range}(A) \right)^\perp$$. Hence, we have proven that $$\text{Ker}(A^*) \subseteq \left( \text{Range}(A) \right)^\perp$$.
+
+As we have proven that $$\left( \text{Range}(A) \right)^\perp \subseteq \text{Ker}(A^*)$$ and that $$\text{Ker}(A^*) \subseteq \left( \text{Range}(A) \right)^\perp$$ it follows that
+
+$$
+    \left( \text{Range}(A) \right)^\perp = \text{Ker}(A^*),
+$$
+
+which is the desired result.$$\blacksquare$$
+
+Another result we will require is
+
+> **Lemma**
+<a name="lmm:hall-7.8"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then for all $$a,b \in \mathbb{R}$$ and associated $$\lambda \equiv a + ib$$ in $$\mathbb{C}$$, we have
+>
+> $$
+>     \left< (A - \lambda \mathbf{1}) \psi, (A - \lambda \mathbf{1}) \psi \right> \ge b^2 \left< \psi, \psi \right>
+> $$
+>
+> for all $$\psi \in \mathbf{H}$$.
+
+**Proof**
+The definition of $$\lambda$$ in terms of $$a,b \in \mathbb{R}$$ along with the definition of an inner product imply that for any $$\psi \in \mathbf{H}$$
+
+$$
+\begin{align}
+    &\left< (A - \lambda \mathbf{1}) \psi, (A - \lambda \mathbf{1}) \psi \right> \\
+    &= \left< (A - (a + ib) \mathbf{1}) \psi, (A - (a + ib) \mathbf{1}) \psi \right> \\
+    &= \left< (A - a\mathbf{1}) \psi, (A - a\mathbf{1}) \psi \right> + ib \left< \psi, (A - a\mathbf{1}) \psi \right> - ib \left< (A - a\mathbf{1}) \psi, \psi \right> + b^2 \left< \psi, \psi \right>.
+\end{align}
+$$
+
+Now by hypothesis $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$a \in \mathbb{R}$$, hence $$(A - a\mathbf{1})$$ is self-adjoint. Thus
+
+$$
+    \left< \psi, (A - a\mathbf{1}) \psi \right> = \left< (A - a\mathbf{1}) \psi, \psi \right>.
+$$
+
+Thus the second and third summands of the righthand side of our previous equation cancel leaving us with
+
+$$
+    \left< (A - \lambda \mathbf{1}) \psi, (A - \lambda \mathbf{1}) \psi \right> = \left< (A - a\mathbf{1}) \psi, (A - a\mathbf{1}) \psi \right> + b^2 \left< \psi, \psi \right>.
+$$
+
+The definition of inner product implies
+
+$$
+    0 \le \left< (A - a\mathbf{1}) \psi, (A - a\mathbf{1}) \psi \right>.
+$$
+
+Hence, the previous equation implies
+
+$$
+    \left< (A - \lambda \mathbf{1}) \psi, (A - \lambda \mathbf{1}) \psi \right> \ge b^2 \left< \psi, \psi \right>,
+$$
+
+which is the desired result.$$\blacksquare$$
+
+Now we move onto the result
 
 > **Proposition**
 <a name="prpstn:hall-7.7"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
-> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is contained in $$\mathbb{R}$$.
+<!--  \uses{lmm:hall-7.8} -->
+<!--  \uses{prpstn:hall-7.3} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.
 
 **Proof**
-TODO!
+A statement obviously equivalent to that in this proposition is the following: For $$a,b \in \mathbb{R}$$ and $$\lambda \equiv a + ib$$ it follows that if $$b \neq 0$$, then $$\lambda$$ is in the resolvent set of $$A$$. We will prove this equivalent statement.
 
+Now the [**Lemma**](#lmm:hall-7.8) we just proved implies that
+
+$$
+    \left< (A - \lambda \mathbf{1}) \psi, (A - \lambda \mathbf{1}) \psi \right> \ge b^2 \left< \psi, \psi \right>.
+$$
+
+By hypothesis $$b \neq 0$$; this along with the previous inequality and the inner product definition imply that if $$\psi \neq 0$$, then $$(A - \lambda \mathbf{1}) \psi \ne 0$$. In other words $$(A - \lambda \mathbf{1})$$ is injective.
+
+As $$\overline{\lambda}$$ also has a non-zero imarinary part the previous argument also applies to $$(A - \overline{\lambda} \mathbf{1})$$ and thus $$(A - \overline{\lambda} \mathbf{1})$$ is also injective.
+
+Recall that as a result of the [**Proposition**](#prpstn:hall-7.3) we just proved we have
+
+$$
+    \left( \text{Range}(A) \right)^\perp = \text{Ker}(A^*).
+$$
 
 > **Definition** *(Spectral Radius)*
 <a name="def:spectral-radius"></a>
