@@ -2481,6 +2481,132 @@ $$
 
 the first desired result.
 
+Now let us begin the proof of the second desired result $$\|A^*A\| = \|A\|^2$$ by proving that operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative,
+
+$$
+    \|AB\| \le \|A\| \, \|B\|
+$$
+
+for any $$A,B \in \mathcal{B}(\mathbf{H})$$.
+
+Consider arbitrary $$A$$ and $$B$$ in $$\mathcal{B}(\mathbf{H})$$ and an arbitrary element $$\psi$$ in $$\mathbf{H}$$ such that $$\|\psi\| = 1$$.
+
+Let us first consider the case in which $$B\psi \neq 0$$. As $$B\psi \neq 0$$ it follows that $$\|B\psi\| \neq 0$$. Hence,
+
+$$
+\begin{align}
+    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\ 
+               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\|. 
+\end{align}
+$$
+
+Obviously,
+
+$$
+    \left( \frac{B\psi}{\|B\psi\|} \right)
+$$
+
+has norm $$1$$. Furthermore, by definition
+
+$$
+\begin{align}
+    \|A\| &= \sup\limits_{\|\phi\| = 1} \|A\phi\| \\
+    \|B\| &= \sup\limits_{\|\phi\| = 1} \|B\phi\|. 
+\end{align}
+$$
+
+Hence, as $$\|\psi\| = 1$$ the previous derivation can proceed as follows
+
+$$
+\begin{align}
+    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\ 
+               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\| \\
+               &\le \|B\| \, \|A\|.
+\end{align}
+$$
+
+In other words for $$\|\psi\| = 1$$ such that $$B\psi \neq 0$$
+
+$$
+    \|AB\psi\| \le \|B\| \, \|A\|.
+$$
+
+Taking the supremum of the lefthand side this gives
+
+$$
+    \sup\limits_{\|\psi\| = 1 \text{ and } B\psi \neq 0} \|AB\psi\| \le \|B\| \, \|A\|,
+$$
+
+which as
+
+$$
+    \|AB\| = \sup\limits_{\|\psi\| = 1} \|AB\psi\|
+$$
+
+is almost the desired equation $$\|AB\| \le \|A\| \,\|B\|$$. We just need to prove it holds for $$B\psi = 0$$.
+
+If $$\|\psi\| = 1$$ and $$B\psi = 0$$, then $$AB\psi = 0$$, and thus $$\|AB\psi\| = 0$$. Hence, the supremum of $$\|AB\psi\|$$ over such $$\psi$$ is $$0$$. As the supremum over such $$\psi$$ is zero, this supremum is always less than or equal to $$\|B\| \, \|A\|$$. Hence, the bound above
+
+$$
+    \sup\limits_{\|\psi\| = 1 \text{ and } B\psi \neq 0} \|AB\psi\| \le \|B\| \, \|A\|,
+$$
+
+is also satisfied for $$\psi$$ that satisfy $$B\psi = 0$$.
+
+Hence, we have proven that
+
+$$
+    \sup\limits_{\|\psi\| = 1} \|AB\psi\| \le \|B\| \, \|A\|,
+$$
+
+which as a result of the definition of operator norm implies
+
+$$
+    \|AB\| \le \|A\| \, \|B\|,
+$$
+
+the desired result, operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative.
+
+Now as operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative we have for an arbitrary $$A \in \mathcal{B}(\mathbf{H})$$
+
+$$
+    \|A^*A\| \le \|A^*\| \, \|A\| = \|A\|^2,
+$$
+
+where the equality uses the first result $$\|A^*\| = \|A\|$$ proved in this proposition.
+
+However, using the alternative means of expressing the operator norm we derived in the first part of this proposition one has
+
+$$
+\begin{align}
+    \|A^*A\| &= \sup\limits_{\|\phi\| = \|\psi\| = 1} \left| \left< \phi, A^*A\psi \right> \right| \\
+             &= \sup\limits_{\|\phi\| = \|\psi\| = 1} \left| \left< A\phi, A\psi \right> \right| \\
+             &\ge \sup\limits_{\|\psi\| = 1} \left| \left< A\psi, A\psi \right> \right| \\
+             &= \sup\limits_{\|\psi\| = 1} \left\| A\psi \right\|^2 \\
+             &= \|A\|^2,
+\end{align}
+$$
+
+where we used the definition of $$A^*$$, standard supremum properties, the norm definition, and the operator norm definition. So in summary this implies
+
+$$
+    \|A^*A\| \ge \|A\|^2.
+$$
+
+However, we have already proven
+
+$$
+    \|A^*A\| \le \|A\|^2.
+$$
+
+Together these imply
+
+$$
+    \|A^*A\| = \|A\|^2,
+$$
+
+the final desired result.$$\blacksquare$$
+
 
 > **Lemma**
 <a name="lmm:hall-8.1"></a>
