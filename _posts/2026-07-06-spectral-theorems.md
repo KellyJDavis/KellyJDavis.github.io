@@ -2612,6 +2612,8 @@ the final desired result.$$\blacksquare$$
 <a name="lmm:hall-8.1"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:spectral-radius} -->
+<!--  \uses{def:prpstn:hall-7.5} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the operator norm $$\|A\|$$ of $$A$$ is equal to the spectral radius $$R(A)$$ of $$A$$,
 >
 > $$
@@ -2619,8 +2621,30 @@ the final desired result.$$\blacksquare$$
 > $$
 
 **Proof**
+Before diving in to the details, let's present an outline of the proof. At core, the proof consists of 4 steps:
 
+1. Prove that if $$\lvert \lambda \rvert > \|A\|$$, then $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed as a series convergent in the operator norm topology.
+2. Prove that if $$\lvert \lambda \rvert \le \|A\|$$, then this series doesn't converge in the operator norm topology.
+3. Prove that if $$\lvert \lambda \rvert > R(A)$$, then this series converges in the operator norm topology.
+4. Conclude that a contradiction arises if $$R(A) < \|A\|$$, and thus $$R(A) = \|A\|$$.
 
+Let us first (1) prove that if $$\lvert \lambda \rvert > \|A\|$$, then $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed as a series convergent in the operator norm topology.
+
+This first result was established in the proof of [**Proposition**](#prpstn:hall-7.5). There we established that for $$\lvert \lambda \rvert > \|A\|$$, the following series is convergent in the operator norm topology
+
+$$
+    - \frac{1}{\lambda} \left( \mathbf{1} + \frac{A}{\lambda} + \frac{A^2}{\lambda^2} + \frac{A^3}{\lambda^3} + \cdots \right) = - \sum_{m = 0}^\infty \frac{A^m}{\lambda^{m + 1}},
+$$
+
+and in fact is equivalent to $$(A - \lambda \mathbf{1})^{-1}$$
+
+$$
+    (A - \lambda \mathbf{1})^{-1} = - \sum_{m = 0}^\infty \frac{A^m}{\lambda^{m + 1}}.
+$$
+
+This is the first desired result.
+
+Next let us (2) prove that if $$\lvert \lambda \rvert \le \|A\|$$, then this series doesn't converge in the operator norm topology.
 
 
 
