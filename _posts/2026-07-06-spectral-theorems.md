@@ -1335,7 +1335,7 @@ $$
     \left< \phi, A_s \psi \right> = \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right>.
 $$
 
-Now using the definition of a norm and applying Cauchy–Schwarz twice, first to each summand and then across the sum (viewing $$\|\mu(E_i) \phi\|$$ and $$\|\mu(E_i) \psi\|$$ as vectors in $$\mathbb{R}^n$$), one obtains
+Now using the definition of a norm and applying [**Cauchy–Schwarz**](#prpstn:hall-a.43) twice, first to each summand and then across the sum (viewing $$\|\mu(E_i) \phi\|$$ and $$\|\mu(E_i) \psi\|$$ as vectors in $$\mathbb{R}^n$$), one obtains
 
 $$
 \begin{align}
@@ -2306,14 +2306,193 @@ Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and 
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{prpstn:hall-7.5} -->
-<!--  \uses{prpstn:hall-7.7} -->
 > For any $$A \in \mathcal{B}(\mathbf{H})$$ the *spectral radius* $$R(A)$$ of $$A$$ is defined by
 >
 > $$
 >     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} |\lambda|.
 > $$
 >
-> As a result of the proved previously [**Proposition**](#prpstn:hall-7.5) and [**Proposition**](#prpstn:hall-7.7), $$\sigma(A)$$ is a nonempty, bounded subset of $$\mathbb{R}$$. Hence, $$R(A)$$ is well-defined.
+> Note that as a result of [**Proposition**](#prpstn:hall-7.5), $$\sigma(A)$$ is a closed, bounded, and nonempty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is well-defined.
+
+The first property that one can easily ascertain of the spectral radius is the following corollary:
+
+> **Corollary**
+<a name="crllr:crllr-1"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:spectral-radius} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ then the spectral radius $$R(A)$$ of $$A$$ is less than or equal to the operator norm $$\|A\|$$ of $$A$$,
+>
+> $$
+>     R(A) \le \|A\|
+> $$
+
+**Proof**
+[**Proposition**](#prpstn:hall-7.5) Part 2 implies that if $$\lvert \lambda \rvert > \|A\|$$, then $$\lambda$$ is in the resolvent set of $$A$$. The contrapositive of this statement is: if $$\lambda$$ is not in the resolvent set of $$A$$, then $$\lvert \lambda \rvert \le \|A\|$$.
+
+By definition the spectrum $$\sigma(A)$$ of $$A$$ is the complement of the resolvent set of $$A$$ in $$\mathbb{C}$$. Hence, our contrapositive is equivalent to the statement: if $$\lambda$$ is in the spectrum $$\sigma(A)$$ of $$A$$, then $$\lvert \lambda \rvert \le \|A\|$$.
+
+Hence, for all $$\lambda \in \sigma(A)$$ it follows that $$\lvert \lambda \rvert \le \|A\|$$. This then implies
+
+$$
+    R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} |\lambda| \le \|A\|,
+$$
+
+the desired result.$$\blacksquare$$
+
+The next "utility" proposition we will require details properties of the operator norm on $$\mathcal{B}(\mathbf{H})$$.
+
+> **Proposition**
+<a name="prpstn:hall-7.2"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> For any $$A \in \mathcal{B}(\mathbf{H})$$ the operator norm satisfies
+>
+> $$
+>     \|A\| = \|A^*\|
+> $$
+>
+> along with
+>
+> $$
+>     \|A^*A\| = \|A\|^2.
+> $$
+>
+> In particular if $$A$$ is self-adjoint, it satisfies $$\|A^2\| = \|A\|^2$$.
+
+**Proof**
+Let us begin the proof of the first result $$\|A\| = \|A^*\|$$ by deriving an alternative means of writing the norm of an element $$\psi \in \mathbf{H}$$ as
+
+$$
+    \|\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert.
+$$
+
+First let us prove this is true for the case $$\psi = 0$$.
+
+In this case the definition of a norm implies $$\|\psi\| = 0$$. Similarly, for all $$\chi \in \mathbf{H}$$ we have $$\lvert \left< \chi, 0 \right> \rvert = 0$$. Thus we have the trivial equality in this case, both the lefthand and righthand side of the desired equation are zero.
+
+Now we can safely assume that $$\psi \neq 0$$.
+
+Consider an arbitrary $$\psi \in \mathbf{H}$$ and an arbitrary $$\chi \in \mathbf{H}$$ such that $$\|\chi\| = 1$$. The [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43)
+
+**Proposition** *(Cauchy–Schwarz Inequality)*
+<a name="prpstn:hall-a.43"></a>
+> If $$V$$ is a space with an inner product, then for all $$\phi, \psi \in V$$, we have the *Cauchy–Schwarz inequality*
+>
+> $$
+>     \lvert \left< \phi, \psi \right> \rvert^2 \le \left< \phi, \phi \right> \left< \psi, \psi \right>.
+> $$
+
+implies that
+
+$$
+    \lvert \left< \chi, \psi \right> \rvert^2 \le \left< \chi, \chi \right> \left< \psi, \psi \right> = \|\chi\|^2 \left< \psi, \psi \right> = \left< \psi, \psi \right>.
+$$
+
+Hence, we have
+
+$$
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \le \|\psi\|.
+$$
+
+Alternatively, as $$\psi \neq 0$$ we can consider a particular $$\chi_0$$ of the form
+
+$$
+    \chi_0 = \frac{\psi}{\|\psi\|}.
+$$
+
+Obviously $$\|\chi_0\| = 1$$. With this form for $$\chi_0$$ the definitions of norm an inner product imply
+
+$$
+\begin{align}
+    \left| \left< \chi_0, \psi \right> \right| &= \left| \left< \frac{\psi}{\|\psi\|}, \psi \right> \right| \\
+                                            &= \left| \frac{1}{\|\psi\|} \left< \psi, \psi \right> \right| \\
+                                            &= \frac{1}{\|\psi\|} \left| \left< \psi, \psi \right> \right| \\
+                                            &= \frac{1}{\|\psi\|} \left| \|\psi\|^2 \right| \\
+                                            &= \frac{1}{\|\psi\|} \|\psi\|^2 \\
+                                            &= \|\psi\|.
+\end{align}
+$$
+
+Hence, the previous bound we derived
+
+$$
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \le \|\psi\|
+$$
+
+is actually attained for this specific $$\chi_0$$. Thus it must be the case that
+
+$$
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \ge \lvert \left< \chi_0, \psi \right> \rvert = \|\psi\|.
+$$
+
+Now as this point we have proven that
+
+$$
+\begin{align}
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert &\le \|\psi\| \\
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert &\ge \|\psi\|.
+\end{align}
+$$
+
+Together these imply the desired result
+
+$$
+    \|\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert.
+$$
+
+Now back to the first main path, a proof of the result $$\|A\| = \|A^*\|$$.
+
+The definition of the operator norm implies
+
+$$
+    \|A\| = \sup\limits_{\|\psi\| = 1} \|A\psi\|.
+$$
+
+Our recent result allows us to re-write the norm $$\|A\psi\|$$ as
+
+$$
+    \|A\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, A\psi \right> \rvert.
+$$
+
+Hence,
+
+$$
+    \|A\| = \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \chi, A\psi \right> \rvert.
+$$
+
+This also allows us to write the operator norm of $$A^*$$ as
+
+$$
+\begin{align}
+    \|A^*\| &= \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \chi, A^*\psi \right> \rvert \\
+            &= \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< A\chi, \psi \right> \rvert \\
+            &= \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \overline{\left< \psi, A\chi \right>} \rvert \\
+            &= \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \psi, A\chi \right> \rvert \\
+            &= \|A\|,
+\end{align}
+$$
+
+where we have used the definiton of $$A^*$$ as well as the definition of norm and inner product. This gives us
+
+$$
+    \|A^*\| = \|A\|,
+$$
+
+the first desired result.
+
+
+> **Lemma**
+<a name="lmm:hall-8.1"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:spectral-radius} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the operator norm $$\|A\|$$ of $$A$$ is equal to the spectral radius $$R(A)$$ of $$A$$,
+>
+> $$
+>     \|A\| = R(A)
+> $$
+
+**Proof**
 
 
 
