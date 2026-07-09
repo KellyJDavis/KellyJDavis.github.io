@@ -2312,7 +2312,7 @@ Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and 
 >     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} |\lambda|.
 > $$
 >
-> Note that as a result of [**Proposition**](#prpstn:hall-7.5), $$\sigma(A)$$ is a closed, bounded, and nonempty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is well-defined.
+> Note that as a result of [**Proposition**](#prpstn:hall-7.5), $$\sigma(A)$$ is a closed, bounded, and nonempty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
 
 The first property that one can easily ascertain of the spectral radius is the following corollary:
 
@@ -2607,13 +2607,15 @@ $$
 
 the final desired result.$$\blacksquare$$
 
-
 > **Lemma**
 <a name="lmm:hall-8.1"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:spectral-radius} -->
 <!--  \uses{def:prpstn:hall-7.5} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{lmm:nth-term-test} -->
+<!--  \uses{prpstn:hall-7.2} -->
+<!--  \uses{thrm:analytic-equivalence-theorem} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the operator norm $$\|A\|$$ of $$A$$ is equal to the spectral radius $$R(A)$$ of $$A$$,
 >
 > $$
@@ -2646,8 +2648,209 @@ This is the first desired result.
 
 Next let us (2) prove that if $$\lvert \lambda \rvert \le \|A\|$$, then this series doesn't converge in the operator norm topology.
 
+The first step in this proof is to derive a useful identity expressing $$\|A^{2^n}\|$$ in terms of $$\|A\|^{2^n}$$. For self-adjoint $$A$$ [**Proposition**](#prpstn:hall-7.2) states
 
+$$
+    \|A^2\| = \|A\|^2.
+$$
 
+For natural number $$n$$ iterating this identity gives 
+
+$$
+    \|A^{2^n}\| = \|A\|^{2^n}.
+$$
+
+This identity will be of use when we prove our series doesn't converge in the operator norm topology. In particular we will prove this using the [**Nth-Term Test**](#lmm:nth-term-test)
+
+> **Lemma** *(Nth-Term Test)*
+<a name="lmm:nth-term-test"></a>
+> Let $$\{a_i\}_{i \in \mathbb{N}}$$ be a series in a normed vector space. If
+> 
+> $$
+>     \lim\limits_{i \rightarrow \infty} \| a_i \| \neq 0,
+> $$
+> 
+> then this series does not converge.
+
+Consider the limit
+
+$$
+\begin{align}
+    \lim\limits_{n \rightarrow \infty} \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\|
+    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A^{2^n} \right\| \\ 
+    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A \right\|^{2^n}  \\ 
+    &= \lim\limits_{n \rightarrow \infty} \frac{1}{| \lambda |}  \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n} \\
+    &= \frac{1}{| \lambda |} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n}.
+\end{align}
+$$
+
+By hypothesis $$\lvert \lambda \rvert \le \|A\|$$. Hence
+
+$$
+    1 \le \frac{\left\| A \right\|}{\left| \lambda \right|}.
+$$
+
+This implies that our derivation continues as follows
+
+$$
+    \lim\limits_{n \rightarrow \infty} \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\|
+    = \frac{1}{| \lambda |} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n}
+    \neq 0.
+$$
+
+Hence, the [**Nth-Term Test**](#lmm:nth-term-test) implies that the series does not converge. 
+
+With that we have proven the desired result: if $$\lvert \lambda \rvert \le \|A\|$$, then our series doesn't converge in the operator norm topology.
+
+Now let us (3) prove that if $$\lvert \lambda \rvert > R(A)$$, then this series converges in the operator norm topology.
+
+Recall that in the proof of [**Proposition**](#prpstn:hall-7.5) we showed that if $$\lambda_0$$ is in the resolvent set of $$A$$ and $$\lambda \in \mathbb{C}$$ satisfies 
+
+$$
+    \lvert \lambda - \lambda_0 \rvert < \frac{1}{\|(A - \lambda_0 \mathbf{1})^{-1}\|}
+$$
+
+then $$(A - \lambda \mathbf{1})^{-1}$$ exists in $$\mathcal{B}(\mathbf{H})$$ and is expressible as the following locally convergent power series in $$ (\lambda - \lambda_0)$$
+
+$$
+    (A - \lambda \mathbf{1})^{-1} = \left( \sum_{m \in \mathbb{N}} (\lambda - \lambda_0)^m ((A - \lambda_0 \mathbf{1})^{-1})^m \right) (A - \lambda_0 \mathbf{1})^{-1},
+$$
+
+that converges in the operator norm topology. Furthermore, as $$(A - \lambda \mathbf{1})^{-1}$$ exists in $$\mathcal{B}(\mathbf{H})$$ this implies that $$\lambda$$ is also in the resolvent set of $$A$$.
+
+Consider now any element $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$. Using $$\xi$$ and the above convergent series, the map
+
+$$
+    \lambda \longmapsto \xi (A - \lambda \mathbf{1})^{-1}
+$$
+
+can be expressed as a locally convergent power series with coefficients in $$\mathbb{C}$$. Hence, it is an analytic function on the resolvent set of $$A$$, which as shown in the proof of [**Proposition**](#prpstn:hall-7.5) is open. Hence, the [**Analytic Equivalence Theorem**](#thrm:analytic-equivalence-theorem) implies that this function is holomorphic on the resolvent set of $$A$$.
+
+Now, as mentioned in [**Definition** *(Spectral Radius)*](#def:spectral-radius), the spectral radius
+
+$$
+    R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} \lvert \lambda \rvert
+$$
+
+of $$A$$ is a finite real number. Explicitly, [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
+
+The specturm $$\sigma(A)$$ of $$A$$ is defined as the complement of the resolvent set of $$A$$ in $$\mathbb{C}$$. Hence, all $$\lambda \in \mathbb{C}$$ such that $$\lvert \lambda \rvert > R(A)$$ are in the resolvent set of $$A$$. Thus, the function
+
+$$
+    \lambda \longmapsto \xi (A - \lambda \mathbf{1})^{-1}
+$$
+
+is holomorphic on the (unbounded) open annulus $$R(A) < \lvert \lambda \rvert$$.
+
+Now recall that [**Laurent's Theorem**](#thrm:laurents-theorem) states
+
+> **Theorem** *(Laurent's Theorem)*
+<a name="thrm:laurents-theorem"></a>
+> Any function holomorphic on an open annulus in $$\mathbb{C}$$ can be expanded uniquely as a Laurent series on that open annulus.
+
+Hence, the function
+
+$$
+    \lambda \longmapsto \xi (A - \lambda \mathbf{1})^{-1}
+$$
+
+can be expanded uniquely into a convergent Laurent series on the (unbounded) open annulus $$R(A) < \lvert \lambda \rvert$$.
+
+Now in part 1 of this proof we established that if $$\lvert \lambda \rvert > \|A\|$$, then $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed as the series
+
+$$
+    (A - \lambda \mathbf{1})^{-1} = - \sum_{m = 0}^\infty \frac{A^m}{\lambda^{m + 1}}.
+$$
+
+that is convergent in the operator norm topology. Acting on this series with $$\xi$$ we obtain the convergent Laurent series
+
+$$
+    \lambda \longmapsto \xi  (A - \lambda \mathbf{1})^{-1} = - \sum_{m = 0}^\infty \frac{\xi A^m}{\lambda^{m + 1}},
+$$
+
+on the (unbounded) open annulus $$\lvert \lambda \rvert > \|A\|$$.
+
+Hence, we have two convergent Laurent series expansions of $$(A - \lambda \mathbf{1})^{-1}$$ on the (unbounded) open annulus $$\max(R(A), \|A\|) < \lvert \lambda \rvert$$. The first resulting from the initial application of [**Laurent's Theorem**](#thrm:laurents-theorem) and the second from the result from part 1 of this proof. The uniqueness of [**Laurent's Theorem**](#thrm:laurents-theorem) implies that these convergent Laurent series expansions must be identical. Hence, we can write the convergent Laurent series expansion in both cases as
+
+$$
+    \lambda \longmapsto - \sum_{m = 0}^\infty \frac{\xi A^m}{\lambda^{m + 1}},
+$$
+
+which converges for $$R(A) < \lvert \lambda \rvert$$. This completes the proof of Part 2.
+
+Next let us (4) conclude that a contradiction arises if $$R(A) < \|A\|$$, and thus $$R(A) = \|A\|$$.
+
+The unique Laurent series from Part 2 converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$ such that for any natual number $$m$$
+
+$$
+    \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi
+$$
+
+for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$.
+
+Now, as we established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space), $$\mathcal{B}(\mathbf{H})$$ forms a Banach space under the operator norm. Recalling the [**Theorem on Completeness of the Dual**](#thrm:theorem-on-completeness-of-the-dual)
+
+> **Theorem** *(Theorem on Completeness of the Dual)*
+<a name="thrm:theorem-on-completeness-of-the-dual"></a>
+> If $$V$$ is a Banach space, then its dual $$V^*$$ is also a Banach space.
+
+we can conclude that the dual $$\mathcal{B}(\mathbf{H})^*$$ of $$\mathcal{B}(\mathbf{H})$$ is also a Banach space.
+
+As both $$\mathcal{B}(\mathbf{H})$$ and $$\mathcal{B}(\mathbf{H})^*$$ are Banach spaces and we have a set of bounded summands we can apply the [**Principle of Uniform Boundedness**](#thrm:hall-a.40)
+
+> **Theorem** *(Principle of Uniform Boundedness)*
+<a name="thrm:hall-a.40"></a>
+> Suppose $$\{ T_m \}$$ is any family of bounded linear maps from a Banach space $$V_1$$ to a normed space $$V_2$$. Suppose that for each $$\xi \in V_1$$, there is a real constant $$C_\psi$$ such that
+> 
+> $$
+>     \| T_m \xi \| \le C_\xi
+> $$
+> 
+> for all $$m$$. Then there exists a real constant $$C$$ such that for all $$m$$
+> 
+> $$
+>     \|T_m\| \le C,
+> $$
+> 
+> where $$\|T_m\|$$ is the operator norm of $$T_m$$.
+
+identifying $$V_1$$ with $$\mathcal{B}(\mathbf{H})^*$$ and $$V_2$$ with $$\mathbb{C}$$ while identifying the operators $$\{ T_m \}$$ with the operators
+
+$$
+    \left\{ \frac{A^m}{\lambda^{m + 1}} \right\}
+$$
+
+as well as using the bounds we derived previously. Doing so we find that there exists a real number $$C$$ such that for all natural numbers $$m$$
+
+$$
+    \left\| \frac{A^m}{\lambda^{m + 1}} \right\| \le C
+$$
+
+for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$, where here the operator norm is used.
+
+Now as one will recall, in part 2 of this proof we prover that for any natural number $$n$$ that
+
+$$
+    \left\| A^{2^n} \right\| = \left\| A \right\|^{2^n}.
+$$
+
+This implies of the bound we just derived
+
+$$
+    \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\| = \frac{\left\| A^{2^n} \right\|}{\left| \lambda \right|^{2^n + 1}} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C
+$$
+
+for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$.
+
+Recall we already established in [**Corollary**](#crllr:crllr-1) that $$R(A) \le \|A\|$$. We will now establish that $$R(A) = \|A\|$$ using proof by contradiction.
+
+Let us for the moment assume that $$R(A) < \|A\|$$, then it is possible to select a $$\lambda$$ such that $$R(A) < \lvert \lambda \rvert < \|A\|$$ and then select an $$n$$ large enough to violate the above inequality
+
+$$
+    \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C.
+$$
+
+So it can not be the case that  $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$, the only option left is $$R(A) = \|A\|$$, the desired result.$$\blacksquare$$
 
 > **Definition** *(Separates Points)*
 <a name="def:separates-points"></a>
