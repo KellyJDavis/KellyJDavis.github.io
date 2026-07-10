@@ -2869,6 +2869,274 @@ $$
 
 So it can not be the case that  $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$, the only option left is $$R(A) = \|A\|$$, the desired result.$$\blacksquare$$
 
+The next step in this **Stage 1: The Continuous Functional Calculus** is to understand how the specturm $$\sigma(A)$$ of an operator $$A \in \mathcal{B}(\mathbf{H})$$ is related to the spectrum $$\sigma(p(A))$$ of a polynomial $$p(A)$$ in $$A$$. The relation between $$\sigma(A)$$ and $$\sigma(p(A))$$ is "straightforward" and described by the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
+
+However, to prove the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) we will first have to prove this utility lemma
+
+> **Lemma**
+<a name="lmm:hall-ex-8.3.1"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> If $$A,B \in \mathcal{B}(\mathbf{H})$$ commute and $$A$$ is not invertible, then $$AB$$ is not invertible.
+
+**Proof**
+We will prove this result using proof by contradiction. We will assume that $$(AB)$$ is invertible, then derive a contradiction.
+
+Assuming $$(AB)$$ is invertible implies that there exists a $$(AB)^{-1}$$ such that
+
+$$
+    (AB)(AB)^{-1} = \mathbf{1}.
+$$
+
+This implies that
+
+$$
+\begin{align}
+    \mathbf{1} &= (AB)(AB)^{-1} \\
+               &= A(B(AB)^{-1}).
+\end{align}
+$$
+
+This is simply the statement that $$A$$ has a right inverse $$A_r$$ defined by 
+
+$$
+    (A_r)^{-1} = (B(AB)^{-1}).
+$$ 
+
+Similarly, under the assumption that $$(AB)$$ has an inverse,$$(AB)^{-1}$$ exists and satisfies
+
+$$
+    (AB)^{-1}(AB) = \mathbf{1}.
+$$
+
+As $$A$$ commutes with $$B$$ this implies
+
+$$
+\begin{align}
+    \mathbf{1} &= (AB)^{-1}(AB) \\
+               &= (AB)^{-1}(BA) \\
+               &= ((AB)^{-1}B)A.
+\end{align}
+$$
+
+This is simply the statement that $$A$$ has a left inverse $$A_l$$ defined by 
+
+$$
+    (A_l)^{-1} = ((AB)^{-1}B).
+$$
+
+Now if we let $$(A_r)^{-1}$$ act on the right of $$(A_l)^{-1}A = \mathbf{1}$$, we have
+
+$$
+    (A_l)^{-1}A(A_r)^{-1} = (A_r)^{-1}.
+$$
+
+However, $$(A_r)^{-1}$$ is the right inverse of $$A$$; so
+
+$$
+    A(A_r)^{-1} = \mathbf{1}.
+$$
+
+The last two equations then imply
+
+$$
+    (A_l)^{-1} = (A_r)^{-1}.
+$$
+
+In other words there is a single unique inverse
+
+$$
+    A^{-1} = (A_l)^{-1} = (A_r)^{-1}
+$$
+
+of $$A$$.
+
+However, by hypothesis $$A$$ is not invertible. Thus our assumption that $$AB$$ is invertible is false, and  $$AB$$ is not invertible. This is the desired result.$$\blacksquare$$
+
+With this lemma complete we may now move on to the [**Spectral Mapping Theorem**](#"lmm:spectral-mapping-theorem).
+
+> **Lemma** *(Spectral Mapping Theorem)*
+<a name="lmm:spectral-mapping-theorem"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{lmm:hall-ex-8.3.1} -->
+> For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ over formal parameter $$X$$---i.e. $$\mathbb{C}[X]$$ is the set of polynomials over formal parameter $$X$$ of the form
+> 
+> $$
+>     \alpha_0 + \alpha_1 X + \alpha_2 X^2 + \cdots + \alpha_{m - 1}X^{m - 1} + \alpha_m X^m,
+> $$
+> 
+> where the $$\alpha_i$$ take values in $$\mathbb{C}$$ and $$m$$ is a natual number---the specturm $$\sigma(p(A))$$ of $$p(A)$$ is given by
+> 
+> $$
+>     \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}.
+> $$
+> 
+> Note that in an abuse of notation this is often written as $$\sigma(p(A)) = p(\sigma(A))$$, despite the fact that $$p(X)$$ being an element in $$\mathbb{C}[X]$$ causes $$p(\sigma(A))$$ to be ill-defined.
+
+**Proof**
+Before getting into the details, let us present an outline of the 4 step proof.
+
+1. Prove that the desired result
+
+   $$
+       \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}
+   $$
+
+   holds for a constant polynomial $$p(X) = \alpha_0$$.
+2. Prove that
+
+   $$
+       \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
+   $$
+
+   for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+3. Prove that
+
+   $$
+       \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
+   $$
+
+   for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+4. Conclude that
+
+   $$
+       \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}
+   $$
+
+   as a result of the proofs of Parts 1-3.
+
+Let us begin by (1) proving that the desired result
+
+$$
+    \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}
+$$
+
+holds for a constant polynomial $$p(X) = \alpha_0$$.
+
+The resolvent set of $$p(A) = \alpha_0 \mathbf{1}$$ is defined as the set of $$\lambda \in \mathbb{C}$$ such that $$\alpha_0 \mathbf{1} - \lambda \mathbf{1}$$ has a bounded inverse in $$\mathcal{B}(\mathbf{H})$$. Obviously the resolvent set of $$p(A)$$ in this case is $$(\mathbb{C} - \alpha_0)$$, the set of all elements in $$\mathbb{C}$$ not equal to $$\alpha_0$$. The specturm $$\sigma(p(A))$$ of $$p(A)$$ is defined as the complement of the resolvent set of $$p(A)$$ in $$\mathbb{C}$$. Hence, $$\sigma(p(A)) = \{ \alpha_0 \}$$.
+
+On the other hand, by definition the specturm $$\sigma(A)$$ is some subset of $$\mathbb{C}$$. In addition, for any $$\lambda$$ in $$\mathbb{C}$$ we have $$p(\lambda) = \alpha_0$$. Hence,
+
+$$
+    \{ p(\lambda) : \lambda \in \sigma(A) \} = \{ \alpha_0 : \lambda \in \sigma(A) \} = \{ \alpha_0 \}.
+$$
+
+Thus we have proven that if $$p(X)$$ is a constant polynomial $$p(X) = \alpha_0$$, then
+
+$$
+    \sigma(p(A)) = \{ \alpha_0 \} = \{ p(\lambda) : \lambda \in \sigma(A) \},
+$$
+
+which implies $$\sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}$$, the first desired result.
+
+Next let us (2) prove that
+
+$$
+    \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
+$$
+
+for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+
+Consider an arbitrary $$\lambda$$ in the specturm $$\sigma(A)$$ of $$A$$. Linearity implies
+
+$$
+    p(A) - p(\lambda) \mathbf{1} = \alpha_0 (\mathbf{1} - \mathbf{1}) + \cdots + \alpha_{m-1} (A^{m - 1} - \lambda^{m - 1} \mathbf{1}) + \alpha_m (A^m - \lambda^m \mathbf{1}).
+$$
+
+However,
+
+$$
+    A^k - \lambda^k \mathbf{1} = (A - \lambda \mathbf{1}) (A^{k-1} + \lambda A^{k-2} + \lambda^2 A^{k-3} + \cdots + \lambda^{k-1} \mathbf{1}).
+$$
+
+This allows us to pull out a $$(A - \lambda \mathbf{1})$$ factor from each summand in our expression for $$p(A) - p(\lambda) \mathbf{1}$$ giving
+
+$$
+    p(A) - p(\lambda) \mathbf{1} = (A - \lambda \mathbf{1}) q(A),
+$$
+
+where $$q(A)$$ is a $$\lambda$$ dependent polynomial.
+
+Now as $$\lambda$$ is in $$\sigma(A)$$, by definition $$(A - \lambda \mathbf{1})$$ is not invertible in $$\mathcal{B}(\mathbf{H}))$$. Furthermore, by construction $$(A - \lambda \mathbf{1})$$ commutes with $$q(A)$$. Hence, as a result of [**Lemma**](#lmm:hall-ex-8.3.1") the left hand side $$(A - \lambda \mathbf{1}) q(A)$$ of the previous equation isn't invertible. Hence, $$p(A) - p(\lambda) \mathbf{1}$$ isn't invertible, and thus $$p(\lambda)$$ is an element of the specturm $$\sigma(p(A))$$ of $$p(A)$$.  In other words
+
+$$
+    \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A)),
+$$
+
+the second desired result.
+
+Next let us (3) prove that
+
+$$
+    \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
+$$
+
+for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+
+Consider an arbitrary $$\gamma$$ in the spectrum $$\sigma(p(A))$$ of $$p(A)$$. As $$\mathbb{C}$$ is algebraically closed, we can factor the polynomial $$p(z) - \gamma$$ as a function of $$z$$ as follows
+
+$$
+    p(z) - \gamma = c (z - b_1)(z - b_2)\cdots(z - b_m),
+$$
+
+where $$c, b_i\in \mathbb{C}$$. Thus, as $$A$$ commutes with itself we also have
+
+$$
+    p(A) - \gamma \mathbf{1} = c (A - b_1 \mathbf{1} )(A - b_2 \mathbf{1} )\cdots(A - b_m \mathbf{1} ).
+$$
+
+Now as $$\gamma \in \sigma(p(A))$$ it follows that $$p(A) - \gamma \mathbf{1}$$ is not invertible. Thus there must exist some $$j$$ such that $$(A - b_j \mathbf{1})$$ is not invertible. If no such $$j$$ existed, then $$p(A) - \gamma \mathbf{1}$$ would be invertible, which we already know is not the case.
+
+Now as $$(A - b_j \mathbf{1})$$ is not invertible, this implies that $$b_j$$ is an element in the specturm $$\sigma(A)$$ of $$A$$. However, from our equation for $$p(z)$$ we know that $$p(z)$$ evaluated at this $$b_j$$ satisfies
+
+$$
+    p(b_j) - \gamma = c (b_j - b_1)(b_j - b_2)\cdots(b_j -  b_j)\cdots(b_j - b_m) = 0.
+$$
+
+This implies that
+
+$$
+    \gamma = p(b_j),
+$$
+
+which is none other than the statement that an arbitrary $$\gamma$$ in the spectrum $$\sigma(p(A))$$ of $$p(A)$$ is of the form $$p(\lambda)$$ for a $$\lambda$$ in $$\sigma(A)$$. This is exactly the third desired result
+
+$$
+    \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
+$$
+
+for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+
+Finally we (4) conclude that
+
+$$
+    \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}
+$$
+
+as a result of the proofs of Parts 1-3.
+
+Part 1 establishes this result for a constant polynomial. Part 2 establishes that 
+
+$$
+    \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
+$$
+
+for a generic polynomial of positive degree while Part 3 establishes that
+
+$$
+    \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
+$$
+
+also for a generic polynomial of positive degree. So Part 2 and Part 3 imply that
+
+$$
+    \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}
+$$
+
+for a generic polynomial of positive degree, while Part 1 establishes the result for a polynomial of degree zero. This establishes the desired result for a generic polynomial of arbitrary finite degree.$$\blacksquare$$
+    
+
+
 > **Definition** *(Separates Points)*
 <a name="def:separates-points"></a>
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. The algebra $$\mathcal{A}$$ is said to *separate points* if for any $$x,y \in X$$ such that $$x \neq y$$ there exists a $$f \in \mathcal{A}$$ such that $$f(x) \neq f(y)$$.
@@ -2878,7 +3146,7 @@ So it can not be the case that  $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$,
 <!--  \uses{def:separates-points} -->
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
 
-#### Stage 2: An Operator-Valued Riesz Representation Theorem
+**Stage 2: An Operator-Valued Riesz Representation Theorem**
 
 > **Theorem** *(Riesz Representation)*
 <a name="thrm:riesz-representation"></a>
