@@ -2616,6 +2616,11 @@ the final desired result.$$\blacksquare$$
 <!--  \uses{lmm:nth-term-test} -->
 <!--  \uses{prpstn:hall-7.2} -->
 <!--  \uses{thrm:analytic-equivalence-theorem} -->
+<!--  \uses{thrm:laurents-theorem} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{thrm:theorem-on-completeness-of-the-dual} -->
+<!--  \uses{thrm:hall-a.40} -->
+<!--  \uses{crllr:crllr-1} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the operator norm $$\|A\|$$ of $$A$$ is equal to the spectral radius $$R(A)$$ of $$A$$,
 >
 > $$
@@ -2756,7 +2761,7 @@ $$
 
 can be expanded uniquely into a convergent Laurent series on the (unbounded) open annulus $$R(A) < \lvert \lambda \rvert$$.
 
-Now in part 1 of this proof we established that if $$\lvert \lambda \rvert > \|A\|$$, then $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed as the series
+Now in Part 1 of this proof we established that if $$\lvert \lambda \rvert > \|A\|$$, then $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed as the series
 
 $$
     (A - \lambda \mathbf{1})^{-1} = - \sum_{m = 0}^\infty \frac{A^m}{\lambda^{m + 1}}.
@@ -2770,17 +2775,17 @@ $$
 
 on the (unbounded) open annulus $$\lvert \lambda \rvert > \|A\|$$.
 
-Hence, we have two convergent Laurent series expansions of $$(A - \lambda \mathbf{1})^{-1}$$ on the (unbounded) open annulus $$\max(R(A), \|A\|) < \lvert \lambda \rvert$$. The first resulting from the initial application of [**Laurent's Theorem**](#thrm:laurents-theorem) and the second from the result from part 1 of this proof. The uniqueness of [**Laurent's Theorem**](#thrm:laurents-theorem) implies that these convergent Laurent series expansions must be identical. Hence, we can write the convergent Laurent series expansion in both cases as
+Hence, we have two convergent Laurent series expansions of $$(A - \lambda \mathbf{1})^{-1}$$ on the (unbounded) open annulus $$\max(R(A), \|A\|) < \lvert \lambda \rvert$$. The first resulting from the initial application of [**Laurent's Theorem**](#thrm:laurents-theorem) and the second from the result from Part 1 of this proof. The uniqueness of [**Laurent's Theorem**](#thrm:laurents-theorem) implies that these convergent Laurent series expansions must be identical. Hence, we can write the convergent Laurent series expansion in both cases as
 
 $$
     \lambda \longmapsto - \sum_{m = 0}^\infty \frac{\xi A^m}{\lambda^{m + 1}},
 $$
 
-which converges for $$R(A) < \lvert \lambda \rvert$$. This completes the proof of Part 2.
+which converges for $$R(A) < \lvert \lambda \rvert$$. This completes the proof of Part 3.
 
 Next let us (4) conclude that a contradiction arises if $$R(A) < \|A\|$$, and thus $$R(A) = \|A\|$$.
 
-The unique Laurent series from Part 2 converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$ such that for any natual number $$m$$
+The unique Laurent series from Part 3 converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$ such that for any natual number $$m$$
 
 $$
     \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi
@@ -2800,7 +2805,7 @@ As both $$\mathcal{B}(\mathbf{H})$$ and $$\mathcal{B}(\mathbf{H})^*$$ are Banach
 
 > **Theorem** *(Principle of Uniform Boundedness)*
 <a name="thrm:hall-a.40"></a>
-> Suppose $$\{ T_m \}$$ is any family of bounded linear maps from a Banach space $$V_1$$ to a normed space $$V_2$$. Suppose that for each $$\xi \in V_1$$, there is a real constant $$C_\psi$$ such that
+> Suppose $$\{ T_m \}$$ is any family of bounded linear maps from a Banach space $$V_1$$ to a normed space $$V_2$$. Suppose that for each $$\xi \in V_1$$, there is a real constant $$C_\xi$$ such that
 > 
 > $$
 >     \| T_m \xi \| \le C_\xi
@@ -2814,13 +2819,19 @@ As both $$\mathcal{B}(\mathbf{H})$$ and $$\mathcal{B}(\mathbf{H})^*$$ are Banach
 > 
 > where $$\|T_m\|$$ is the operator norm of $$T_m$$.
 
-identifying $$V_1$$ with $$\mathcal{B}(\mathbf{H})^*$$ and $$V_2$$ with $$\mathbb{C}$$ while identifying the operators $$\{ T_m \}$$ with the operators
+by identifying $$V_1$$ with $$\mathcal{B}(\mathbf{H})^*$$, $$V_2$$ with $$\mathbb{C}$$, the operators $$\{ T_m \}$$ with the operators
 
 $$
-    \left\{ \frac{A^m}{\lambda^{m + 1}} \right\}
+    \left\{ \frac{A^m}{\lambda^{m + 1}} \right\},
 $$
 
-as well as using the bounds we derived previously. Doing so we find that there exists a real number $$C$$ such that for all natural numbers $$m$$
+and the bounds we derived previously
+
+$$
+    \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi
+$$
+
+with those in this theorem. Doing so we find that there exists a real number $$C$$ such that for all natural numbers $$m$$
 
 $$
     \left\| \frac{A^m}{\lambda^{m + 1}} \right\| \le C
@@ -2828,7 +2839,7 @@ $$
 
 for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$, where here the operator norm is used.
 
-Now as one will recall, in part 2 of this proof we prover that for any natural number $$n$$ that
+Now, as one will recall, in Part 2 of this proof we established that for any natural number $$n$$
 
 $$
     \left\| A^{2^n} \right\| = \left\| A \right\|^{2^n}.
@@ -2844,10 +2855,16 @@ for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$.
 
 Recall we already established in [**Corollary**](#crllr:crllr-1) that $$R(A) \le \|A\|$$. We will now establish that $$R(A) = \|A\|$$ using proof by contradiction.
 
-Let us for the moment assume that $$R(A) < \|A\|$$, then it is possible to select a $$\lambda$$ such that $$R(A) < \lvert \lambda \rvert < \|A\|$$ and then select an $$n$$ large enough to violate the above inequality
+Let us for the moment assume that $$R(A) < \|A\|$$, then it is possible to select a $$\lambda$$ such that $$R(A) < \lvert \lambda \rvert < \|A\|$$. This implies that
 
 $$
-    \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C.
+    1 < \frac{\|A\|}{\lvert \lambda \rvert}.
+$$
+
+Hence, it is possible to select an $$n$$ large enough to violate the above inequality
+
+$$
+    \frac{1}{\left| \lambda \right|} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C.
 $$
 
 So it can not be the case that  $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$, the only option left is $$R(A) = \|A\|$$, the desired result.$$\blacksquare$$
