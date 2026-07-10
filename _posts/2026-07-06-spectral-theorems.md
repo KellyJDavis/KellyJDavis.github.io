@@ -3057,7 +3057,7 @@ $$
 
 where $$q(A)$$ is a $$\lambda$$ dependent polynomial.
 
-Now as $$\lambda$$ is in $$\sigma(A)$$, by definition $$(A - \lambda \mathbf{1})$$ is not invertible in $$\mathcal{B}(\mathbf{H}))$$. Furthermore, by construction $$(A - \lambda \mathbf{1})$$ commutes with $$q(A)$$. Hence, as a result of [**Lemma**](#lmm:hall-ex-8.3.1") the left hand side $$(A - \lambda \mathbf{1}) q(A)$$ of the previous equation isn't invertible. Hence, $$p(A) - p(\lambda) \mathbf{1}$$ isn't invertible, and thus $$p(\lambda)$$ is an element of the specturm $$\sigma(p(A))$$ of $$p(A)$$.  In other words
+Now as $$\lambda$$ is in $$\sigma(A)$$, by definition $$(A - \lambda \mathbf{1})$$ is not invertible in $$\mathcal{B}(\mathbf{H})$$. Furthermore, by construction $$(A - \lambda \mathbf{1})$$ commutes with $$q(A)$$. Hence, as a result of [**Lemma**](#lmm:hall-ex-8.3.1") the left hand side $$(A - \lambda \mathbf{1}) q(A)$$ of the previous equation isn't invertible. Hence, $$p(A) - p(\lambda) \mathbf{1}$$ isn't invertible, and thus $$p(\lambda)$$ is an element of the specturm $$\sigma(p(A))$$ of $$p(A)$$.  In other words
 
 $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A)),
@@ -3079,7 +3079,7 @@ $$
     p(z) - \gamma = c (z - b_1)(z - b_2)\cdots(z - b_m),
 $$
 
-where $$c, b_i\in \mathbb{C}$$. Thus, as $$A$$ commutes with itself we also have
+where $$c, b_i\in \mathbb{C}$$. Thus, as $$A$$ commutes with itself, we also have
 
 $$
     p(A) - \gamma \mathbf{1} = c (A - b_1 \mathbf{1} )(A - b_2 \mathbf{1} )\cdots(A - b_m \mathbf{1} ).
