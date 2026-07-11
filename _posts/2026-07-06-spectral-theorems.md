@@ -3152,15 +3152,15 @@ for a generic polynomial of positive degree, while Part 1 establishes the result
 The last step in **Stage 1: The Continuous Functional Calculus** is to generalize the map of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem)
 
 $$
-    p(\lambda) \longmapsto p(A),
+    p \longmapsto p(A),
 $$
 
 which takes complex-valued polynomials on the spectrum $$\sigma(A)$$ of $$A$$ to elements of $$\mathcal{B}(\mathbf{H})$$, to take real-valued continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
 
-We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. We'll then use this fact along with the [**Bounded Linear Transform Theorem**](#) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map to $$C^0(\sigma(A); \mathbb{R})$$
+We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. We'll then use this fact along with the [**Bounded Linear Transform Theorem**](#thrm:bounded-linear-transformation-theorem) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map to $$C^0(\sigma(A); \mathbb{R})$$
 
 $$
-    f(\lambda) \longmapsto f(A).
+    f \longmapsto f(A).
 $$
 
 Let's get started.
@@ -3168,6 +3168,8 @@ Let's get started.
 > **Proposition**
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{thrm:stone–weierstrass} -->
+<!--  \uses{thrm:bounded-linear-transformation-theorem} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then there exists a unique bounded linear map from $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on the spectrum $$\sigma(A)$$ of $$A$$---to $$\mathcal{B}(\mathbf{H})$$
 >
 > $$
@@ -3187,6 +3189,10 @@ Let's get started.
 <a name="thrm:stone–weierstrass"></a>
 <!--  \uses{def:separates-points} -->
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
+
+> **Theorem** *(Bounded Linear Transformation Theorem)*
+<a name="thrm:bounded-linear-transformation-theorem"></a>
+> Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.
 
 **Stage 2: An Operator-Valued Riesz Representation Theorem**
 
