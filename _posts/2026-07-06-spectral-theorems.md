@@ -2959,19 +2959,26 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-ex-8.3.1} -->
-> For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ over formal parameter $$X$$---i.e. $$\mathbb{C}[X]$$ is the set of polynomials over formal parameter $$X$$ of the form
+> For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(\lambda)$$ of degree $$m$$ on the specturm $$\sigma(A)$$ of $$A$$
 > 
 > $$
->     \alpha_0 + \alpha_1 X + \alpha_2 X^2 + \cdots + \alpha_{m - 1}X^{m - 1} + \alpha_m X^m,
+>     p(\lambda) = \alpha_0 + \alpha_1 \lambda + \alpha_2 \lambda^2 + \cdots + \alpha_{m - 1} \lambda^{m - 1} + \alpha_m \lambda^m
 > $$
 > 
-> where the $$\alpha_i$$ take values in $$\mathbb{C}$$ and $$m$$ is a natual number---the specturm $$\sigma(p(A))$$ of $$p(A)$$ is given by
+> with $$\mathbb{C}$$ valued coefficients $$\alpha_i$$, let us define a map $$p(\lambda) \mapsto p(A)$$ from such polynomials to elements of $$\mathcal{B}(\mathbf{H})$$ by
+> 
+> $$
+>     p(\lambda) \longmapsto p(A) \equiv \alpha_0 \mathbf{1} + \alpha_1 A + \alpha_2 A^2 + \cdots + \alpha_{m - 1} A^{m - 1} + \alpha_m A^m.
+> $$
+> 
+> Then the specturm $$\sigma(p(A))$$ of $$p(A)$$, the image of an arbitrary polynomial $$p(\lambda)$$ under the above map, is given by
 > 
 > $$
 >     \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}.
 > $$
 > 
-> Note that in an abuse of notation this is often written as $$\sigma(p(A)) = p(\sigma(A))$$, despite the fact that $$p(X)$$ being an element in $$\mathbb{C}[X]$$ causes $$p(\sigma(A))$$ to be ill-defined.
+> Note that in an abuse of notation this is often written as $$\sigma(p(A)) = p(\sigma(A))$$, despite the fact that $$p(\sigma(A))$$ is ill-defined.
+
 
 **Proof**
 Before getting into the details, let us present an outline of the 4 step proof.
@@ -2982,21 +2989,21 @@ Before getting into the details, let us present an outline of the 4 step proof.
        \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}
    $$
 
-   holds for a constant polynomial $$p(X) = \alpha_0$$.
+   holds for a constant polynomial $$p(\lambda) = \alpha_0$$.
 2. Prove that
 
    $$
        \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
    $$
 
-   for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+   for a generic polynomial $$p(\lambda)$$ of positive degree.
 3. Prove that
 
    $$
        \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
    $$
 
-   for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+   for a generic polynomial $$p(\lambda)$$ of positive degree.
 4. Conclude that
 
    $$
@@ -3011,7 +3018,7 @@ $$
     \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}
 $$
 
-holds for a constant polynomial $$p(X) = \alpha_0$$.
+holds for a constant polynomial $$p(\lambda) = \alpha_0$$.
 
 The resolvent set of $$p(A) = \alpha_0 \mathbf{1}$$ is defined as the set of $$\lambda \in \mathbb{C}$$ such that $$\alpha_0 \mathbf{1} - \lambda \mathbf{1}$$ has a bounded inverse in $$\mathcal{B}(\mathbf{H})$$. Obviously the resolvent set of $$p(A)$$ in this case is $$(\mathbb{C} - \alpha_0)$$, the set of all elements in $$\mathbb{C}$$ not equal to $$\alpha_0$$. The specturm $$\sigma(p(A))$$ of $$p(A)$$ is defined as the complement of the resolvent set of $$p(A)$$ in $$\mathbb{C}$$. Hence, $$\sigma(p(A)) = \{ \alpha_0 \}$$.
 
@@ -3021,7 +3028,7 @@ $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} = \{ \alpha_0 : \lambda \in \sigma(A) \} = \{ \alpha_0 \}.
 $$
 
-Thus we have proven that if $$p(X)$$ is a constant polynomial $$p(X) = \alpha_0$$, then
+Thus we have proven that if $$p(\lambda)$$ is a constant polynomial $$p(\lambda) = \alpha_0$$, then
 
 $$
     \sigma(p(A)) = \{ \alpha_0 \} = \{ p(\lambda) : \lambda \in \sigma(A) \},
@@ -3035,7 +3042,7 @@ $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
 $$
 
-for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+for a generic polynomial $$p(\lambda)$$ of positive degree.
 
 Consider an arbitrary $$\lambda$$ in the specturm $$\sigma(A)$$ of $$A$$. Linearity implies
 
@@ -3071,7 +3078,7 @@ $$
     \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
 $$
 
-for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+for a generic polynomial $$p(\lambda)$$ of positive degree.
 
 Consider an arbitrary $$\gamma$$ in the spectrum $$\sigma(p(A))$$ of $$p(A)$$. As $$\mathbb{C}$$ is algebraically closed, we can factor the polynomial $$p(z) - \gamma$$ as a function of $$z$$ as follows
 
@@ -3085,7 +3092,7 @@ $$
     p(A) - \gamma \mathbf{1} = c (A - b_1 \mathbf{1} )(A - b_2 \mathbf{1} )\cdots(A - b_m \mathbf{1} ).
 $$
 
-Now as $$\gamma \in \sigma(p(A))$$ it follows that $$p(A) - \gamma \mathbf{1}$$ is not invertible. Thus there must exist some $$j$$ such that $$(A - b_j \mathbf{1})$$ is not invertible. If no such $$j$$ existed, then $$p(A) - \gamma \mathbf{1}$$ would be invertible, which we already know is not the case.
+Now as $$\gamma \in \sigma(p(A))$$ it follows that $$p(A) - \gamma \mathbf{1}$$ is not invertible. Thus there must exist some $$j$$ such that $$(A - b_j \mathbf{1})$$ is not invertible. If no such $$j$$ existed, then all the terms on the right hand side of this equation would be invertible which would imply that $$p(A) - \gamma \mathbf{1}$$ is invertible, which we already know is not the case.
 
 Now as $$(A - b_j \mathbf{1})$$ is not invertible, this implies that $$b_j$$ is an element in the specturm $$\sigma(A)$$ of $$A$$. However, from our equation for $$p(z)$$ we know that $$p(z)$$ evaluated at this $$b_j$$ satisfies
 
@@ -3105,7 +3112,7 @@ $$
     \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
 $$
 
-for a generic polynomial $$p(X)$$ in $$\mathbb{C}[X]$$ of positive degree.
+for a generic polynomial $$p(\lambda)$$ of positive degree.
 
 Finally we (4) conclude that
 
@@ -3135,7 +3142,21 @@ $$
 
 for a generic polynomial of positive degree, while Part 1 establishes the result for a polynomial of degree zero. This establishes the desired result for a generic polynomial of arbitrary finite degree.$$\blacksquare$$
     
+The last step in **Stage 1: The Continuous Functional Calculus** is to generalize the map of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem)
 
+$$
+    p(\lambda) \longmapsto p(A),
+$$ 
+
+taking polynomials on the spectrum $$\sigma(A)$$ of $$A$$ to elements of $$\mathcal{B}(\mathbf{H})$$, such that it takes continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
+
+We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. We'll then use this fact along with the [**Bounded Linear Transform Theorem**](#) to extend this [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map to $$C^0(\sigma(A); \mathbb{R})$$
+
+$$
+    f(\lambda) \longmapsto f(A).
+$$ 
+
+Let's get started.
 
 > **Definition** *(Separates Points)*
 <a name="def:separates-points"></a>
