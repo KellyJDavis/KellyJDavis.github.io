@@ -1,10 +1,10 @@
 ---
-title:  "Spectral Theorems"
+title:  "Spectral Theorem for Bounded, Self-Adjoint Operators"
 date:   2026-07-06 07:43:42 +0200
 categories: functional-analysis
 ---
 
-Here we will state and prove two versions of the Spectral Theorem, one for bounded, self-adjoint operators and a second for unbounded, self-adjoint operators. Both sit at the core of much of AQFT. Extensive use of both will be made in subsequent work.
+Here we will state and prove the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators). This theorem sits at the core of much of AQFT, and extensive use of this theorem will be made in subsequent work.
 
 Here, we generally follow the clear, straightforward presentation of [Quantum Theory for Mathematicians](https://doi.org/10.1007/978-1-4614-7116-5).
 
@@ -1847,7 +1847,7 @@ for any bounded, measurable, complex-valued function $$f$$. This also completes 
 
 Now we are finally in the position to state the spectral theorem for bounded operators.
 
-> **Theorem** *(Spectral Theorem for Bounded Operators)*
+> **Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*
 <a name="thrm:spectral-theorem-for-bounded-operators"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:projection-valued-measure} -->
@@ -1875,9 +1875,9 @@ To facilitate the proof of this theorem, we first introduce the useful notion of
 >     f(A) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda),
 > $$
 >
-> where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
+> where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
 
-With functional calculus defined, we can now outline the proof of [**Theorem** *(Spectral Theorem for Bounded Operators)*](#thrm:spectral-theorem-for-bounded-operators). This proof consists of two main stages.
+With functional calculus defined, we can now outline the proof of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators). This proof consists of two main stages.
 
 *Stage 1:* In the first stage any self-adjoint $$A \in \mathcal{B}(\mathbf{H})$$ is used to construct a "continuous functional calculus" that associates to each continuous function $$f$$ on $$\sigma(A)$$ an operator $$f(A)$$.
 
