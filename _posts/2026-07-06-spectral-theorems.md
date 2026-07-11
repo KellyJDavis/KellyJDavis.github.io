@@ -3170,6 +3170,9 @@ Let's get started.
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:stone–weierstrass} -->
 <!--  \uses{thrm:bounded-linear-transformation-theorem} -->
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{lmm:hall-8.1} -->
+<!--  \uses{def:spectral-radius} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then there exists a unique bounded linear map from $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on the spectrum $$\sigma(A)$$ of $$A$$---to $$\mathcal{B}(\mathbf{H})$$
 >
 > $$
@@ -3204,7 +3207,32 @@ $$
 $$
 
 where we employed the fact that $$A$$ is self-adjoint, the definition of the involution $$B \mapsto B^*$$, and the fact that the $$c_i$$ are real-valued.
- 
+
+Now we can apply the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) to this real-valued polynomial to conclude that
+
+$$
+    \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}.
+$$
+
+Furthermore, as $$p(A)$$ is self-adjoint, we can apply the [**Lemma**](#lmm:hall-8.1) to conclude that
+
+$$
+    \|p(A)\| = R(p(A)).
+$$
+
+The definition of [spectral radius](#def:spectral-radius), however, implies that
+
+$$
+    R(p(A)) = \sup\limits_{\lambda \in \sigma(p(A))} |\lambda|.
+$$
+
+Putting this all together we conclude that
+
+$$
+    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} | p(\lambda |.
+$$
+
+Thus the map $$p \mapsto p(A)$$ from the set of real-valued polynomials on $$\sigma(A)$$ equipped with the supremum norm into $$\mathcal{B}(\mathbf{H})$$ equipped with the operator norm, is isometric. This map is also linear, for real-valued polynomials $$p$$ and $$q$$ we have $$(p + q) \mapsto (p + q)(A) = p(A) + q(A)$$.
 
 
 > **Definition** *(Separates Points)*
