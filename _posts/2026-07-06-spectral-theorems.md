@@ -3155,9 +3155,9 @@ $$
     p \longmapsto p(A),
 $$
 
-which takes complex-valued polynomials on the spectrum $$\sigma(A)$$ of $$A$$ to elements of $$\mathcal{B}(\mathbf{H})$$, to take real-valued continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
+taking complex-valued polynomials on $$\sigma(A)$$ to elements of $$\mathcal{B}(\mathbf{H})$$, to take real-valued, continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
 
-We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. We'll then use this fact along with the [**Bounded Linear Transform Theorem**](#thrm:bounded-linear-transformation-theorem) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map to $$C^0(\sigma(A); \mathbb{R})$$
+We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. Then we will use this fact along with the [**Bounded Linear Transform Theorem**](#thrm:bounded-linear-transformation-theorem) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$ p \mapsto p(A)$$ to all of $$C^0(\sigma(A); \mathbb{R})$$
 
 $$
     f \longmapsto f(A).
@@ -3176,9 +3176,35 @@ Let's get started.
 >     f \longmapsto f(A)
 > $$
 >
-> such that when $$f(\lambda)=\lambda^m$$, where $$m$$ is a natural number, we have $$f(A)=A^m$$. This map $$f \mapsto f(A)$$ is called the *(real-valued) functional calculus* for $$A$$.
+> such that when restricted to real-valued polynomials on $$\sigma(A)$$ it agrees with the restriction of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$p \mapsto p(A)$$. This map $$f \mapsto f(A)$$ is called the *(real-valued) functional calculus* for $$A$$.
 
 **Proof**
+Consider a real-valued polynomial on $$\sigma(A)$$ the spectrum of $$A$$. The map 
+
+$$
+    p \longmapsto p(A)
+$$
+
+of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) results in
+
+$$
+    p(A) = c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m,
+$$
+
+with $$\mathbb{R}$$ valued coefficients $$c_i$$. If $$A$$ is self-adjoint, then $$p(A)$$ is also self-adjoint. Explicitly,
+
+$$
+\begin{align}
+    p(A)^* &= \left( c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \right)^* \\
+           &= (c_0 \mathbf{1})^* + (c_1 A)^* + (c_2 A^2)^* + \cdots + (c_{m - 1} A^{m - 1})^* + (c_m A^m)^* \\
+           &= c_0^* \mathbf{1}^* + c_1^* A^* + c_2^* (A^2)^* + \cdots + c_{m - 1}^* (A^{m - 1})^* + c_m^* (A^m)^* \\
+           &= c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \\
+           &= p(A),
+\end{align}
+$$
+
+where we employed the fact that $$A$$ is self-adjoint, the definition of the involution $$B \mapsto B^*$$, and the fact that the $$c_i$$ are real-valued.
+ 
 
 
 > **Definition** *(Separates Points)*
