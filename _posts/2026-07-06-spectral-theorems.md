@@ -2959,19 +2959,20 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-ex-8.3.1} -->
+<!--  \uses{thrm:fundamental-theorem-of-algebra} -->
 > For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(\lambda)$$ of degree $$m$$ on the specturm $$\sigma(A)$$ of $$A$$
 > 
 > $$
 >     p(\lambda) = \alpha_0 + \alpha_1 \lambda + \alpha_2 \lambda^2 + \cdots + \alpha_{m - 1} \lambda^{m - 1} + \alpha_m \lambda^m
 > $$
 > 
-> with $$\mathbb{C}$$ valued coefficients $$\alpha_i$$, let us define a map $$p(\lambda) \mapsto p(A)$$ from such polynomials to elements of $$\mathcal{B}(\mathbf{H})$$ by
+> with $$\mathbb{C}$$ valued coefficients $$\alpha_i$$, let us define a map $$p \mapsto p(A)$$ from such polynomials to elements of $$\mathcal{B}(\mathbf{H})$$ by
 > 
 > $$
->     p(\lambda) \longmapsto p(A) \equiv \alpha_0 \mathbf{1} + \alpha_1 A + \alpha_2 A^2 + \cdots + \alpha_{m - 1} A^{m - 1} + \alpha_m A^m.
+>     p \longmapsto p(A) \equiv \alpha_0 \mathbf{1} + \alpha_1 A + \alpha_2 A^2 + \cdots + \alpha_{m - 1} A^{m - 1} + \alpha_m A^m.
 > $$
 > 
-> Then the specturm $$\sigma(p(A))$$ of $$p(A)$$, the image of an arbitrary polynomial $$p(\lambda)$$ under the above map, is given by
+> Then the specturm $$\sigma(p(A))$$ of $$p(A)$$ is given by
 > 
 > $$
 >     \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}.
@@ -2996,14 +2997,14 @@ Before getting into the details, let us present an outline of the 4 step proof.
        \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
    $$
 
-   for a generic polynomial $$p(\lambda)$$ of positive degree.
+   for a generic polynomial $$p$$ of positive degree.
 3. Prove that
 
    $$
        \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
    $$
 
-   for a generic polynomial $$p(\lambda)$$ of positive degree.
+   for a generic polynomial $$p$$ of positive degree.
 4. Conclude that
 
    $$
@@ -3028,7 +3029,7 @@ $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} = \{ \alpha_0 : \lambda \in \sigma(A) \} = \{ \alpha_0 \}.
 $$
 
-Thus we have proven that if $$p(\lambda)$$ is a constant polynomial $$p(\lambda) = \alpha_0$$, then
+Thus we have proven that if $$p$$ is a constant polynomial $$p(\lambda) = \alpha_0$$, then
 
 $$
     \sigma(p(A)) = \{ \alpha_0 \} = \{ p(\lambda) : \lambda \in \sigma(A) \},
@@ -3042,7 +3043,7 @@ $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
 $$
 
-for a generic polynomial $$p(\lambda)$$ of positive degree.
+for a generic polynomial $$p$$ of positive degree.
 
 Consider an arbitrary $$\lambda$$ in the specturm $$\sigma(A)$$ of $$A$$. Linearity implies
 
@@ -3078,15 +3079,21 @@ $$
     \sigma(p(A)) \subseteq \{ p(\lambda) : \lambda \in \sigma(A) \}
 $$
 
-for a generic polynomial $$p(\lambda)$$ of positive degree.
+for a generic polynomial $$p$$ of positive degree.
 
-Consider an arbitrary $$\gamma$$ in the spectrum $$\sigma(p(A))$$ of $$p(A)$$. As $$\mathbb{C}$$ is algebraically closed, we can factor the polynomial $$p(z) - \gamma$$ as a function of $$z$$ as follows
+Consider an arbitrary $$\gamma$$ in the spectrum $$\sigma(p(A))$$ of $$p(A)$$. As a result of the [**Fundamental Theorem of Algebra**](#thrm:fundamental-theorem-of-algebra)
+
+> **Theorem** *(Fundamental Theorem of Algebra)*
+<a name="thrm:fundamental-theorem-of-algebra"></a>
+> The field of complex numbers is algebraically closed.
+
+we can factor the polynomial $$p(z) - \gamma$$ as a function of $$z$$ as follows
 
 $$
     p(z) - \gamma = c (z - b_1)(z - b_2)\cdots(z - b_m),
 $$
 
-where $$c, b_i\in \mathbb{C}$$. Thus, as $$A$$ commutes with itself, we also have
+where $$c, b_i\in \mathbb{C}$$. Thus, as $$A$$ commutes with itself and $$\mathbf{1}$$, we also have
 
 $$
     p(A) - \gamma \mathbf{1} = c (A - b_1 \mathbf{1} )(A - b_2 \mathbf{1} )\cdots(A - b_m \mathbf{1} ).
@@ -3148,15 +3155,29 @@ $$
     p(\lambda) \longmapsto p(A),
 $$ 
 
-taking polynomials on the spectrum $$\sigma(A)$$ of $$A$$ to elements of $$\mathcal{B}(\mathbf{H})$$, such that it takes continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
+which takes complex-valued polynomials on the spectrum $$\sigma(A)$$ of $$A$$ to elements of $$\mathcal{B}(\mathbf{H})$$, to take real-valued continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
 
-We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. We'll then use this fact along with the [**Bounded Linear Transform Theorem**](#) to extend this [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map to $$C^0(\sigma(A); \mathbb{R})$$
+We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. We'll then use this fact along with the [**Bounded Linear Transform Theorem**](#) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map to $$C^0(\sigma(A); \mathbb{R})$$
 
 $$
     f(\lambda) \longmapsto f(A).
 $$ 
 
 Let's get started.
+
+> **Proposition**
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then there exists a unique bounded linear map from $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on the spectrum $$\sigma(A)$$ of $$A$$---to $$\mathcal{B}(\mathbf{H})$$
+> 
+> $$
+>     f \longmapsto f(A)
+> $$
+> 
+> such that when $$f(\lambda)=\lambda^m$$, where $$m$$ is a natural number, we have $$f(A)=A^m$$. This map $$f \mapsto f(A)$$ is called the *(real-valued) functional calculus* for $$A$$.
+
+**Proof**
+
 
 > **Definition** *(Separates Points)*
 <a name="def:separates-points"></a>
