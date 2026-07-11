@@ -2495,8 +2495,8 @@ Let us first consider the case in which $$B\psi \neq 0$$. As $$B\psi \neq 0$$ it
 
 $$
 \begin{align}
-    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\ 
-               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\|. 
+    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\
+               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\|.
 \end{align}
 $$
 
@@ -2511,7 +2511,7 @@ has norm $$1$$. Furthermore, by definition
 $$
 \begin{align}
     \|A\| &= \sup\limits_{\|\phi\| = 1} \|A\phi\| \\
-    \|B\| &= \sup\limits_{\|\phi\| = 1} \|B\phi\|. 
+    \|B\| &= \sup\limits_{\|\phi\| = 1} \|B\phi\|.
 \end{align}
 $$
 
@@ -2519,7 +2519,7 @@ Hence, as $$\|\psi\| = 1$$ the previous derivation can proceed as follows
 
 $$
 \begin{align}
-    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\ 
+    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\
                &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\| \\
                &\le \|B\| \, \|A\|.
 \end{align}
@@ -2659,7 +2659,7 @@ $$
     \|A^2\| = \|A\|^2.
 $$
 
-For natural number $$n$$ iterating this identity gives 
+For natural number $$n$$ iterating this identity gives
 
 $$
     \|A^{2^n}\| = \|A\|^{2^n}.
@@ -2670,11 +2670,11 @@ This identity will be of use when we prove our series doesn't converge in the op
 > **Lemma** *(Nth-Term Test)*
 <a name="lmm:nth-term-test"></a>
 > Let $$\{a_i\}_{i \in \mathbb{N}}$$ be a series in a normed vector space. If
-> 
+>
 > $$
 >     \lim\limits_{i \rightarrow \infty} \| a_i \| \neq 0,
 > $$
-> 
+>
 > then this series does not converge.
 
 Consider the limit
@@ -2682,8 +2682,8 @@ Consider the limit
 $$
 \begin{align}
     \lim\limits_{n \rightarrow \infty} \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\|
-    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A^{2^n} \right\| \\ 
-    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A \right\|^{2^n}  \\ 
+    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A^{2^n} \right\| \\
+    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A \right\|^{2^n}  \\
     &= \lim\limits_{n \rightarrow \infty} \frac{1}{| \lambda |}  \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n} \\
     &= \frac{1}{| \lambda |} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n}.
 \end{align}
@@ -2703,13 +2703,13 @@ $$
     \neq 0.
 $$
 
-Hence, the [**Nth-Term Test**](#lmm:nth-term-test) implies that the series does not converge. 
+Hence, the [**Nth-Term Test**](#lmm:nth-term-test) implies that the series does not converge.
 
 With that we have proven the desired result: if $$\lvert \lambda \rvert \le \|A\|$$, then our series doesn't converge in the operator norm topology.
 
 Now let us (3) prove that if $$\lvert \lambda \rvert > R(A)$$, then this series converges in the operator norm topology.
 
-Recall that in the proof of [**Proposition**](#prpstn:hall-7.5) we showed that if $$\lambda_0$$ is in the resolvent set of $$A$$ and $$\lambda \in \mathbb{C}$$ satisfies 
+Recall that in the proof of [**Proposition**](#prpstn:hall-7.5) we showed that if $$\lambda_0$$ is in the resolvent set of $$A$$ and $$\lambda \in \mathbb{C}$$ satisfies
 
 $$
     \lvert \lambda - \lambda_0 \rvert < \frac{1}{\|(A - \lambda_0 \mathbf{1})^{-1}\|}
@@ -2806,17 +2806,17 @@ As both $$\mathcal{B}(\mathbf{H})$$ and $$\mathcal{B}(\mathbf{H})^*$$ are Banach
 > **Theorem** *(Principle of Uniform Boundedness)*
 <a name="thrm:hall-a.40"></a>
 > Suppose $$\{ T_m \}$$ is any family of bounded linear maps from a Banach space $$V_1$$ to a normed space $$V_2$$. Suppose that for each $$\xi \in V_1$$, there is a real constant $$C_\xi$$ such that
-> 
+>
 > $$
 >     \| T_m \xi \| \le C_\xi
 > $$
-> 
+>
 > for all $$m$$. Then there exists a real constant $$C$$ such that for all $$m$$
-> 
+>
 > $$
 >     \|T_m\| \le C,
 > $$
-> 
+>
 > where $$\|T_m\|$$ is the operator norm of $$T_m$$.
 
 by identifying $$V_1$$ with $$\mathcal{B}(\mathbf{H})^*$$, $$V_2$$ with $$\mathbb{C}$$, the operators $$\{ T_m \}$$ with the operators
@@ -2896,11 +2896,11 @@ $$
 \end{align}
 $$
 
-This is simply the statement that $$A$$ has a right inverse $$A_r$$ defined by 
+This is simply the statement that $$A$$ has a right inverse $$A_r$$ defined by
 
 $$
     (A_r)^{-1} = (B(AB)^{-1}).
-$$ 
+$$
 
 Similarly, under the assumption that $$(AB)$$ has an inverse,$$(AB)^{-1}$$ exists and satisfies
 
@@ -2918,7 +2918,7 @@ $$
 \end{align}
 $$
 
-This is simply the statement that $$A$$ has a left inverse $$A_l$$ defined by 
+This is simply the statement that $$A$$ has a left inverse $$A_l$$ defined by
 
 $$
     (A_l)^{-1} = ((AB)^{-1}B).
@@ -2961,23 +2961,23 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 <!--  \uses{lmm:hall-ex-8.3.1} -->
 <!--  \uses{thrm:fundamental-theorem-of-algebra} -->
 > For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(\lambda)$$ of degree $$m$$ on the specturm $$\sigma(A)$$ of $$A$$
-> 
+>
 > $$
 >     p(\lambda) = \alpha_0 + \alpha_1 \lambda + \alpha_2 \lambda^2 + \cdots + \alpha_{m - 1} \lambda^{m - 1} + \alpha_m \lambda^m
 > $$
-> 
+>
 > with $$\mathbb{C}$$ valued coefficients $$\alpha_i$$, let us define a map $$p \mapsto p(A)$$ from such polynomials to elements of $$\mathcal{B}(\mathbf{H})$$ by
-> 
+>
 > $$
 >     p \longmapsto p(A) \equiv \alpha_0 \mathbf{1} + \alpha_1 A + \alpha_2 A^2 + \cdots + \alpha_{m - 1} A^{m - 1} + \alpha_m A^m.
 > $$
-> 
+>
 > Then the specturm $$\sigma(p(A))$$ of $$p(A)$$ is given by
-> 
+>
 > $$
 >     \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}.
 > $$
-> 
+>
 > Note that in an abuse of notation this is often written as $$\sigma(p(A)) = p(\sigma(A))$$, despite the fact that $$p(\sigma(A))$$ is ill-defined.
 
 
@@ -3129,7 +3129,7 @@ $$
 
 as a result of the proofs of Parts 1-3.
 
-Part 1 establishes this result for a constant polynomial. Part 2 establishes that 
+Part 1 establishes this result for a constant polynomial. Part 2 establishes that
 
 $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A))
@@ -3148,12 +3148,12 @@ $$
 $$
 
 for a generic polynomial of positive degree, while Part 1 establishes the result for a polynomial of degree zero. This establishes the desired result for a generic polynomial of arbitrary finite degree.$$\blacksquare$$
-    
+
 The last step in **Stage 1: The Continuous Functional Calculus** is to generalize the map of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem)
 
 $$
     p(\lambda) \longmapsto p(A),
-$$ 
+$$
 
 which takes complex-valued polynomials on the spectrum $$\sigma(A)$$ of $$A$$ to elements of $$\mathcal{B}(\mathbf{H})$$, to take real-valued continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
 
@@ -3161,7 +3161,7 @@ We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstr
 
 $$
     f(\lambda) \longmapsto f(A).
-$$ 
+$$
 
 Let's get started.
 
@@ -3169,11 +3169,11 @@ Let's get started.
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then there exists a unique bounded linear map from $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on the spectrum $$\sigma(A)$$ of $$A$$---to $$\mathcal{B}(\mathbf{H})$$
-> 
+>
 > $$
 >     f \longmapsto f(A)
 > $$
-> 
+>
 > such that when $$f(\lambda)=\lambda^m$$, where $$m$$ is a natural number, we have $$f(A)=A^m$$. This map $$f \mapsto f(A)$$ is called the *(real-valued) functional calculus* for $$A$$.
 
 **Proof**
