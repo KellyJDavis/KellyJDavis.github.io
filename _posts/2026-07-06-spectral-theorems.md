@@ -3173,6 +3173,11 @@ Let's get started.
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{lmm:hall-8.1} -->
 <!--  \uses{def:spectral-radius} -->
+<!--  \uses{thrm:heine–borel-theorem} -->
+<!--  \uses{def:separates-points} -->
+<!--  \uses{thrm:stone–weierstrass} -->
+<!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then there exists a unique bounded linear map from $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on the spectrum $$\sigma(A)$$ of $$A$$---to $$\mathcal{B}(\mathbf{H})$$
 >
 > $$
@@ -3223,30 +3228,132 @@ $$
 The definition of [spectral radius](#def:spectral-radius), however, implies that
 
 $$
-    R(p(A)) = \sup\limits_{\lambda \in \sigma(p(A))} |\lambda|.
+    R(p(A)) = \sup\limits_{\gamma \in \sigma(p(A))} |\gamma|.
 $$
 
 Putting this all together we conclude that
 
 $$
-    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} | p(\lambda |.
+\begin{align}
+    \|p(A)\| &= R(p(A)) \\
+             &= \sup\limits_{\gamma \in \sigma(p(A))} |\gamma| \\
+             &= \sup\limits_{\lambda \in \sigma(A)} | p(\lambda) |.
+\end{align}
 $$
 
-Thus the map $$p \mapsto p(A)$$ from the set of real-valued polynomials on $$\sigma(A)$$ equipped with the supremum norm into $$\mathcal{B}(\mathbf{H})$$ equipped with the operator norm, is isometric. This map is also linear, for real-valued polynomials $$p$$ and $$q$$ we have $$(p + q) \mapsto (p + q)(A) = p(A) + q(A)$$.
+Proving that
 
+$$
+    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} | p(\lambda) |,
+$$
+
+which is simply the statement that the map $$p \mapsto p(A)$$ is isometric.
+
+Explicitly, the map $$p \mapsto p(A)$$ from the set of real-valued polynomials on $$\sigma(A)$$ equipped with the supremum norm into $$\mathcal{B}(\mathbf{H})$$ equipped with the operator norm, is isometric. This map is also linear; for real-valued polynomials $$p$$ and $$q$$ we have $$(p + q) \mapsto (p + q)(A) = p(A) + q(A)$$.
+
+Now in preperation for the application of the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) let us examine explicitly some of the properties of the objects we are currently considering.
+
+As one will recall, [**Proposition**](#prpstn:hall-7.5) established that the spectrum $$\sigma(A)$$ of $$A$$ is a closed and bounded subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem)
+
+> **Theorem** *(Heine–Borel Theorem)*
+<a name="thrm:heine–borel-theorem"></a>
+> For any positive, natural number $$n$$, any subset of $$\mathbb{C}^n$$ is compact if and only if it is closed and bounded.
+
+then implies that $$\sigma(A)$$ is compact. Furthermore, as the norm $$\lvert \cdot \rvert$$ on $$\mathbb{C}$$ defines a metric
+
+$$
+  d(z_1, z_2) \equiv \lvert z_1 - z_2 \rvert
+$$ 
+
+on $$\mathbb{C}$$, the subset $$\sigma(A)$$ of $$\mathbb{C}$$ is a metric space by way of this inherited metric. Thus, $$\sigma(A)$$ is a compact metric space.
+
+In addition, any element $$p$$ in the algebra of real-valued polynomials on $$\sigma(A)$$ is continuous. Hence, the algebra of real-valued polynomials on $$\sigma(A)$$ is an algebra in $$C^0(\sigma(A); \mathbb{R})$$, the space of continuous, real-valued functions on $$\sigma(A)$$.
+
+Obviously the algebra of real-valued polynomials on $$\sigma(A)$$ contains the constant functions
+
+$$
+    p(\lambda) = c_0.
+$$
+
+In addition this algebra [separates-points](#def:separates-points)
 
 > **Definition** *(Separates Points)*
 <a name="def:separates-points"></a>
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. The algebra $$\mathcal{A}$$ is said to *separate points* if for any $$x,y \in X$$ such that $$x \neq y$$ there exists a $$f \in \mathcal{A}$$ such that $$f(x) \neq f(y)$$.
+
+Explicitly, let $$x$$ and $$y$$ be any elements in $$\sigma(A)$$ such that $$x \neq y$$. Note that [**Proposition**](#prpstn:hall-7.7) along with the hypothesis that $$A$$ is self-adjoint, imply that $$x,y \in \sigma(A) \subset \mathbb{R}$$. Hence, the polynomial
+
+$$
+    p_s(\lambda) = (\lambda - x)
+$$
+
+on $$\sigma(A)$$ is a real-valued polynomial. Evaluating $$p_s$$ at $$x$$ and $$y$$ gives
+
+$$
+\begin{align}
+    p_s(x) &= (x - x) = 0 \\
+    p_s(y) &= (y - x) \neq 0,
+\end{align}
+$$
+
+where the final $$\neq$$ follows from the fact that $$x \neq y$$. Hence, the real-valued polynomials on $$\sigma(A)$$ separates-points.
+
+With all of this in-hand we can apply the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass)
 
 > **Theorem** *(Stone–Weierstrass)*
 <a name="thrm:stone–weierstrass"></a>
 <!--  \uses{def:separates-points} -->
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
 
+to the current situation. Identifying $$X$$ with $$\sigma(A)$$ and $$\mathcal{A}$$ with the real-valued polynomials on $$\sigma(A)$$, the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) allows us to conclude that real-valued polynomials on $$\sigma(A)$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$.
+
+Next we must prepare for the application of the [**Bounded Linear Transformation Theorem**](#thrm:bounded-linear-transformation-theorem). To do so, we must establish some relatively straightforward properties of objects we are currently considering. 
+
+Consider $$C^0(\sigma(A); \mathbb{R})$$, the space of continuous, real-valued functions on $$\sigma(A)$$. As $$\sigma(A)$$ is compact the [**Boundedness Theorem**](#thrm:boundedness-theorem)
+
+> **Theorem** *(Boundedness Theorem)*
+<a name="thrm:boundedness-theorem"></a>
+> A continuous real-valued function on a compact subset $$C$$ of $$\mathbf{R}$$ is bounded on $$C$$.
+
+implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded. Hence, the supremum norm
+
+$$
+    \|f\| \equiv \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert
+$$
+
+on $$C^0(\sigma(A); \mathbb{R})$$ is finite. Furthermore, as a result of the fact that $$\lvert \cdot \rvert$$ defines a norm on $$\mathbb{R}$$, this supremum norm defines a norm on $$C^0(\sigma(A); \mathbb{R})$$. In other words $$C^0(\sigma(A); \mathbb{R})$$ is a normed space.
+
+Recall, as proven in the [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space), $$\mathcal{B}(\mathbf{H})$$ is a Banach space under the operator norm.
+
+Also recall we proved that the map $$p \mapsto p(A)$$ from the real-valued polynomials on $$\sigma(A)$$ into $$\mathcal{B}(\mathbf{H})$$ is linear and isometric satisfying
+
+$$
+    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert p(\lambda) \rvert. 
+$$
+
+This implies
+
+$$
+    \|p(A)\| \le 1 \cdot \|p\| \equiv \sup\limits_{\lambda \in \sigma(A)} \lvert p(\lambda) \rvert, 
+$$
+
+which is none other than the statement that the linear map $$p \mapsto p(A)$$ is bounded using constant $$1$$.
+
+With all of this in hand we can apply the [**Bounded Linear Transformation Theorem**](#thrm:bounded-linear-transformation-theorem) 
+
 > **Theorem** *(Bounded Linear Transformation Theorem)*
 <a name="thrm:bounded-linear-transformation-theorem"></a>
 > Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.
+
+to the current situation. Identifying $$V_1$$ with $$C^0(\sigma(A); \mathbb{R})$$, $$V_2$$ with $$\mathcal{B}(\mathbf{H})$$, $$W$$ the the real-valued polynomials on $$\sigma(A)$$, and $$T$$ with our map $$p \mapsto p(A)$$ allows us to conclude that there exists a unique, bounded, linear map
+
+$$
+    f \longmapsto f(A)
+$$
+
+from $$C^0(\sigma(A); \mathbb{R})$$ to $$\mathcal{B}(\mathbf{H})$$ that when restricted to real-valued polynomials agrees with our map $$p \mapsto p(A)$$ and that has the same norm of our map $$p \mapsto p(A)$$.
+
+This map $$f \mapsto f(A)$$ is the desired result of this proposition and is known as the *(real-valued) functional calculus* for $$A$$.$$\blacksquare$$
 
 **Stage 2: An Operator-Valued Riesz Representation Theorem**
 
