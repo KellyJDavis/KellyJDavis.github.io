@@ -309,7 +309,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 >     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi,
 > $$
 >
-> for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure) $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. This unique linear map has the following additional properties
+> for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure) and $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. This unique linear map has the following additional properties
 >
 > 1. For all $$E \in \Omega(X)$$, we have
 >
@@ -1097,7 +1097,7 @@ which implies $$Q(\psi) = \left< \psi, B^*\psi \right>$$. This in turn implies t
 
 Uniqueness of $$A \equiv B^*$$ follows from the uniqueness of the Riesz Theorem. Explicitly, as a result of the Riesz Theorem, for any fixed $$\phi$$ there exists a unique $$\chi$$ in $$\mathbf{H}$$ such that $$L(\phi, \psi) = \left< \chi, \psi \right>$$. We then defined the map $$B$$ by $$B\phi \equiv \chi$$ and the map $$A$$ by $$A \equiv B^*$$. As $$\chi$$ is unique, any other possible $$B'$$ one could choose would have to satisfy $$B'\phi = \chi$$ too. Hence, $$(B - B')\phi = 0$$ for all $$\phi \in \mathbf{H}$$. This then implies that $$B - B'$$ is the zero operator, and thus $$B = B'$$, i.e. $$B$$ and thus $$A \equiv B^*$$ is unique.
 
-Finally we must prove that it $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then the operator $$A$$ is self-adjoint.
+Finally we must prove that if $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, then the operator $$A$$ is self-adjoint.
 
 Assuming that $$Q(\psi)$$ belongs to $$\mathbb{R}$$ for all $$\psi \in \mathbf{H}$$, the last [**Proposition**](#prpstn:hall-a.61) we proved implies that $$L$$ is conjugate symmetric,
 
@@ -1694,7 +1694,7 @@ $$
     \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\| < \epsilon,
 $$
 
-in other words operator-valued integral of $$s_i$$ converges to the operator-valued integral of $$f$$. One can establish using similar logic that the operator-valued integral of $$r_i$$ converges to the operator-valued integral of $$g$$.
+in other words the operator-valued integral of $$s_i$$ converges to the operator-valued integral of $$f$$. One can establish using similar logic that the operator-valued integral of $$r_i$$ converges to the operator-valued integral of $$g$$.
 
 Similarly, uniform convergence along with linearity imply for any $$s_i$$ and $$r_j$$
 
@@ -1869,7 +1869,7 @@ To facilitate the proof of this theorem, we first introduce the useful notion of
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:spectral-theorem-for-bounded-operators} -->
 <!--  \uses{thrm:operator-valued-integration} -->
-> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$f : \sigma(A) \rightarrow \mathbb{C}$$ is a bounded measurable function on the the spectrum $$\sigma(A)$$ of $$A$$, *functional calculus* defines an operator $$f(A)$$ by
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$f : \sigma(A) \rightarrow \mathbb{C}$$ is a bounded measurable function on the spectrum $$\sigma(A)$$ of $$A$$, *functional calculus* defines an operator $$f(A)$$ by
 >
 > $$
 >     f(A) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda),
@@ -1896,7 +1896,7 @@ We begin this stage of the proof with "utility" lemmas and propositions that we 
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-inverse} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
-> Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse given by the following series
+> Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse is given by the following series
 >
 > $$
 >     (I - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots
@@ -2014,7 +2014,7 @@ Hence, $$\lambda$$ is in the resolvent set of $$A$$.
 
 This establishes that if $$\lvert \lambda \rvert > \|A\|$$, then $$\lambda$$ is in the resolvent set of $$A$$, which is the desired result of Point 2 of the proposition.
 
-Furthermore, as $$\lvert \lambda \rvert > \|A\|$$ implies that $$\lambda$$ is in the resolvent set of $$A$$ and the spectrum $$\sigma(A)$$ is the complement of the resolvent set in $$\mathbb{C}$$, this also proves that the specturm $$\sigma(A)$$ of $$A$$ is bounded. This is one of the desired results of Point 1 of the proposition.
+Furthermore, as $$\lvert \lambda \rvert > \|A\|$$ implies that $$\lambda$$ is in the resolvent set of $$A$$ and the spectrum $$\sigma(A)$$ is the complement of the resolvent set in $$\mathbb{C}$$, this also proves that the spectrum $$\sigma(A)$$ of $$A$$ is bounded. This is one of the desired results of Point 1 of the proposition.
 
 Suppose now that $$\lambda_0 \in \mathbb{C}$$ is in the resolvent set of $$A$$. For any other $$\lambda \in \mathbb{C}$$ one has
 
@@ -2037,7 +2037,7 @@ then both factors on the righthand side of the previous equation are invertible,
 
 The final result that needs to be proven in the proposition is that the spectrum $$\sigma(A)$$ is non-empty, which is in Part 1 of the proposition.
 
-Continuing on with the previous calculation where $$\lambda_0$$ is in the the resolvent set of $$A$$ but now under the additional assumption that
+Continuing on with the previous calculation where $$\lambda_0$$ is in the resolvent set of $$A$$ but now under the additional assumption that
 
 $$
     \lvert \lambda - \lambda_0 \rvert < \frac{1}{\|(A - \lambda_0 \mathbf{1})^{-1}\|},
@@ -2060,7 +2060,7 @@ $$
 
 where the second equality follows from the [**Lemma**](#lmm:hall-7.6) we just proved.
 
-This implies that in the neighborhood of any point $$\lambda_0$$ in the resolvent set of $$A$$ the resolvent $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed by this locally convergent series in powers of $$(\lambda - \lambda_0)$$ with coeﬃcients of these powers being elements of $$\mathcal{B}(\mathbf{H})$$.
+This implies that in the neighborhood of any point $$\lambda_0$$ in the resolvent set of $$A$$ the resolvent $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed by this locally convergent series in powers of $$(\lambda - \lambda_0)$$ with coefficients of these powers being elements of $$\mathcal{B}(\mathbf{H})$$.
 
 Hence, for any $$\phi, \psi \in \mathbf{H}$$ the map
 
@@ -2068,7 +2068,7 @@ $$
     \lambda \longmapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>
 $$
 
-can be expressed as a locally convergent power series with coeﬃcients in $$\mathbb{C}$$. In other words it is an analytic function on the resolvent set of $$A$$ which, as we have proven, is open. Thus, as a result of the [**Analytic Equivalence Theorem**](#thrm:analytic-equivalence-theorem)
+can be expressed as a locally convergent power series with coefficients in $$\mathbb{C}$$. In other words it is an analytic function on the resolvent set of $$A$$ which, as we have proven, is open. Thus, as a result of the [**Analytic Equivalence Theorem**](#thrm:analytic-equivalence-theorem)
 
 > **Theorem** *(Analytic Equivalence Theorem)*
 <a name="thrm:analytic-equivalence-theorem"></a>
@@ -2096,19 +2096,19 @@ $$
 
 in the same limit.
 
-Now let us assume the spectrum $$\sigma(A)$$ of $$A$$ is the empty set. Then the resolvent set of $$A$$, the complement of $$\sigma(A)$$ in $$\mathbb{C}$$,  would be all of $$\mathbb{C}$$. This would then impliy that the holomorphic function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is holomorphic on all of $$\mathbb{C}$$. In other words it is an entire function.
+Now let us assume the spectrum $$\sigma(A)$$ of $$A$$ is the empty set. Then the resolvent set of $$A$$, the complement of $$\sigma(A)$$ in $$\mathbb{C}$$,  would be all of $$\mathbb{C}$$. This would then imply that the holomorphic function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is holomorphic on all of $$\mathbb{C}$$. In other words it is an entire function.
 
 Hence, by evaluating the entire function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ on ever larger closed disks $$\overline{B}$$, the [**Maximum Modulus Principle**](#thrm:maximum-modulus-principle)
 
 > **Theorem** *(Maximum Modulus Principle)*
 <a name="thrm:maximum-modulus-principle"></a>
-> Let $$B$$ be a bounded, nonempty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains it maximum at some point on the boundary of $$B$$.
+> Let $$B$$ be a bounded, nonempty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains its maximum at some point on the boundary of $$B$$.
 
 implies that the maximum of $$\lvert \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right> \rvert$$ is zero. As a result of the definition of a norm, this in turn implies that $$\left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is identically zero.
 
 As this is true for any $$\phi, \psi \in \mathbf{H}$$, it implies that $$(A - \lambda \mathbf{1})^{-1}$$ has operator norm zero and is thus the zero operator. However, we know that $$(A - \lambda \mathbf{1})(A - \lambda \mathbf{1})^{-1} = \mathbf{1}$$. Thus, $$(A - \lambda \mathbf{1})^{-1}$$ can not be the zero operator, and we have arrived at a contradiction.
 
-Hence, our assumption that the spectrum $$\sigma(A)$$ of $$A$$ is the empty set is false. The the spectrum $$\sigma(A)$$ is non-empty. This is the final desired result of Part 1.$$\blacksquare$$
+Hence, our assumption that the spectrum $$\sigma(A)$$ of $$A$$ is the empty set is false. The spectrum $$\sigma(A)$$ is non-empty. This is the final desired result of Part 1.$$\blacksquare$$
 
 Another proposition we will have need of is
 
@@ -2225,7 +2225,7 @@ $$
 
 for arbitrary $$\psi \in \mathbf{H}$$. By hypothesis $$b \neq 0$$; this along with the previous inequality and the inner product definition imply that if $$\psi \neq 0$$, then $$(A - \lambda \mathbf{1}) \psi \ne 0$$. In other words $$(A - \lambda \mathbf{1})$$ is one-to-one.
 
-As $$\overline{\lambda}$$ also has a non-zero imarinary part the previous argument also applies to $$(A - \overline{\lambda} \mathbf{1})$$ and thus $$(A - \overline{\lambda} \mathbf{1})$$ is also one-to-one.
+As $$\overline{\lambda}$$ also has a non-zero imaginary part the previous argument also applies to $$(A - \overline{\lambda} \mathbf{1})$$ and thus $$(A - \overline{\lambda} \mathbf{1})$$ is also one-to-one.
 
 Recall that as a result of the [**Proposition**](#prpstn:hall-7.3) we just proved we have
 
@@ -2284,7 +2284,7 @@ $$
 
 As $$\phi \in \mathbf{H}$$ was arbitrary, this implies that an arbitrary $$\phi \in \mathbf{H}$$ is in $$\text{Range}(A - \lambda \mathbf{1})$$, and thus $$\text{Range}(A - \lambda \mathbf{1})$$ is all of $$\mathbf{H}$$, the desired result.
 
-Hence, we have proven that $$(A - \lambda \mathbf{1})$$ is one-to-one and onto. There is one remaining result required to to show that $$\lambda$$ is in the resolvent set of $$A$$. It remains to prove that $$(A - \lambda \mathbf{1})^{-1}$$ is bounded.
+Hence, we have proven that $$(A - \lambda \mathbf{1})$$ is one-to-one and onto. There is one remaining result required to show that $$\lambda$$ is in the resolvent set of $$A$$. It remains to prove that $$(A - \lambda \mathbf{1})^{-1}$$ is bounded.
 
 As we just proved, for an arbitrary $$\phi \in \mathbf{H}$$ there exists a $$\psi \in \mathbf{H}$$ such that $$(A - \lambda \mathbf{1}) \psi = \phi$$. In this case [**Lemma**](#lmm:hall-7.8) and the definition of norm on $$\mathbf{H}$$ imply
 
@@ -2298,7 +2298,7 @@ $$
 
 which proves that $$(A - \lambda \mathbf{1})^{-1}$$ is bounded.
 
-Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and $$\lambda$$ defined by $$\lambda \equiv a  + ib$$, then it follows that $$\lambda$$ is in the resolvent set of a self-adjoint $$A$$. This is then equivalent to the statement that if $$A$$ is self-adjoint, then the specturm $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.$$\blacksquare$$
+Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and $$\lambda$$ defined by $$\lambda \equiv a  + ib$$, then it follows that $$\lambda$$ is in the resolvent set of a self-adjoint $$A$$. This is then equivalent to the statement that if $$A$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.$$\blacksquare$$
 
 
 > **Definition** *(Spectral Radius)*
@@ -2401,7 +2401,7 @@ $$
     \chi_0 = \frac{\psi}{\|\psi\|}.
 $$
 
-Obviously $$\|\chi_0\| = 1$$. With this form for $$\chi_0$$ the definitions of norm an inner product imply
+Obviously $$\|\chi_0\| = 1$$. With this form for $$\chi_0$$ the definitions of norm and inner product imply
 
 $$
 \begin{align}
@@ -2473,7 +2473,7 @@ $$
 \end{align}
 $$
 
-where we have used the definiton of $$A^*$$ as well as the definition of norm and inner product. This gives us
+where we have used the definition of $$A^*$$ as well as the definition of norm and inner product. This gives us
 
 $$
     \|A^*\| = \|A\|,
@@ -2739,7 +2739,7 @@ $$
 
 of $$A$$ is a finite real number. Explicitly, [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
 
-The specturm $$\sigma(A)$$ of $$A$$ is defined as the complement of the resolvent set of $$A$$ in $$\mathbb{C}$$. Hence, all $$\lambda \in \mathbb{C}$$ such that $$\lvert \lambda \rvert > R(A)$$ are in the resolvent set of $$A$$. Thus, the function
+The spectrum $$\sigma(A)$$ of $$A$$ is defined as the complement of the resolvent set of $$A$$ in $$\mathbb{C}$$. Hence, all $$\lambda \in \mathbb{C}$$ such that $$\lvert \lambda \rvert > R(A)$$ are in the resolvent set of $$A$$. Thus, the function
 
 $$
     \lambda \longmapsto \xi (A - \lambda \mathbf{1})^{-1}
@@ -2785,7 +2785,7 @@ which converges for $$R(A) < \lvert \lambda \rvert$$. This completes the proof o
 
 Next let us (4) conclude that a contradiction arises if $$R(A) < \|A\|$$, and thus $$R(A) = \|A\|$$.
 
-The unique Laurent series from Part 3 converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$ such that for any natual number $$m$$
+The unique Laurent series from Part 3 converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$ such that for any natural number $$m$$
 
 $$
     \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi
@@ -2869,7 +2869,7 @@ $$
 
 So it can not be the case that  $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$, the only option left is $$R(A) = \|A\|$$, the desired result.$$\blacksquare$$
 
-The next step in this **Stage 1: The Continuous Functional Calculus** is to understand how the specturm $$\sigma(A)$$ of an operator $$A \in \mathcal{B}(\mathbf{H})$$ is related to the spectrum $$\sigma(p(A))$$ of a polynomial $$p(A)$$ in $$A$$. The relation between $$\sigma(A)$$ and $$\sigma(p(A))$$ is "straightforward" and described by the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
+The next step in this **Stage 1: The Continuous Functional Calculus** is to understand how the spectrum $$\sigma(A)$$ of an operator $$A \in \mathcal{B}(\mathbf{H})$$ is related to the spectrum $$\sigma(p(A))$$ of a polynomial $$p(A)$$ in $$A$$. The relation between $$\sigma(A)$$ and $$\sigma(p(A))$$ is "straightforward" and described by the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
 
 However, to prove the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) we will first have to prove this utility lemma
 
@@ -2952,7 +2952,7 @@ of $$A$$.
 
 However, by hypothesis $$A$$ is not invertible. Thus our assumption that $$AB$$ is invertible is false, and  $$AB$$ is not invertible. This is the desired result.$$\blacksquare$$
 
-With this lemma complete we may now move on to the [**Spectral Mapping Theorem**](#"lmm:spectral-mapping-theorem).
+With this lemma complete we may now move on to the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
 
 > **Lemma** *(Spectral Mapping Theorem)*
 <a name="lmm:spectral-mapping-theorem"></a>
@@ -2960,7 +2960,7 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-ex-8.3.1} -->
 <!--  \uses{thrm:fundamental-theorem-of-algebra} -->
-> For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(\lambda)$$ of degree $$m$$ on the specturm $$\sigma(A)$$ of $$A$$
+> For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(\lambda)$$ of degree $$m$$ on the spectrum $$\sigma(A)$$ of $$A$$
 >
 > $$
 >     p(\lambda) = \alpha_0 + \alpha_1 \lambda + \alpha_2 \lambda^2 + \cdots + \alpha_{m - 1} \lambda^{m - 1} + \alpha_m \lambda^m
@@ -2972,7 +2972,7 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 >     p \longmapsto p(A) \equiv \alpha_0 \mathbf{1} + \alpha_1 A + \alpha_2 A^2 + \cdots + \alpha_{m - 1} A^{m - 1} + \alpha_m A^m.
 > $$
 >
-> Then the specturm $$\sigma(p(A))$$ of $$p(A)$$ is given by
+> Then the spectrum $$\sigma(p(A))$$ of $$p(A)$$ is given by
 >
 > $$
 >     \sigma(p(A)) = \{ p(\lambda) : \lambda \in \sigma(A) \}.
@@ -3021,9 +3021,9 @@ $$
 
 holds for a constant polynomial $$p(\lambda) = \alpha_0$$.
 
-The resolvent set of $$p(A) = \alpha_0 \mathbf{1}$$ is defined as the set of $$\lambda \in \mathbb{C}$$ such that $$\alpha_0 \mathbf{1} - \lambda \mathbf{1}$$ has a bounded inverse in $$\mathcal{B}(\mathbf{H})$$. Obviously the resolvent set of $$p(A)$$ in this case is $$(\mathbb{C} - \alpha_0)$$, the set of all elements in $$\mathbb{C}$$ not equal to $$\alpha_0$$. The specturm $$\sigma(p(A))$$ of $$p(A)$$ is defined as the complement of the resolvent set of $$p(A)$$ in $$\mathbb{C}$$. Hence, $$\sigma(p(A)) = \{ \alpha_0 \}$$.
+The resolvent set of $$p(A) = \alpha_0 \mathbf{1}$$ is defined as the set of $$\lambda \in \mathbb{C}$$ such that $$\alpha_0 \mathbf{1} - \lambda \mathbf{1}$$ has a bounded inverse in $$\mathcal{B}(\mathbf{H})$$. Obviously the resolvent set of $$p(A)$$ in this case is $$(\mathbb{C} - \alpha_0)$$, the set of all elements in $$\mathbb{C}$$ not equal to $$\alpha_0$$. The spectrum $$\sigma(p(A))$$ of $$p(A)$$ is defined as the complement of the resolvent set of $$p(A)$$ in $$\mathbb{C}$$. Hence, $$\sigma(p(A)) = \{ \alpha_0 \}$$.
 
-On the other hand, by definition the specturm $$\sigma(A)$$ is some subset of $$\mathbb{C}$$. In addition, for any $$\lambda$$ in $$\mathbb{C}$$ we have $$p(\lambda) = \alpha_0$$. Hence,
+On the other hand, by definition the spectrum $$\sigma(A)$$ is some subset of $$\mathbb{C}$$. In addition, for any $$\lambda$$ in $$\mathbb{C}$$ we have $$p(\lambda) = \alpha_0$$. Hence,
 
 $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} = \{ \alpha_0 : \lambda \in \sigma(A) \} = \{ \alpha_0 \}.
@@ -3045,7 +3045,7 @@ $$
 
 for a generic polynomial $$p$$ of positive degree.
 
-Consider an arbitrary $$\lambda$$ in the specturm $$\sigma(A)$$ of $$A$$. Linearity implies
+Consider an arbitrary $$\lambda$$ in the spectrum $$\sigma(A)$$ of $$A$$. Linearity implies
 
 $$
     p(A) - p(\lambda) \mathbf{1} = \alpha_0 (\mathbf{1} - \mathbf{1}) + \cdots + \alpha_{m-1} (A^{m - 1} - \lambda^{m - 1} \mathbf{1}) + \alpha_m (A^m - \lambda^m \mathbf{1}).
@@ -3065,7 +3065,7 @@ $$
 
 where $$q(A)$$ is a $$\lambda$$ dependent polynomial.
 
-Now as $$\lambda$$ is in $$\sigma(A)$$, by definition $$(A - \lambda \mathbf{1})$$ is not invertible in $$\mathcal{B}(\mathbf{H})$$. Furthermore, by construction $$(A - \lambda \mathbf{1})$$ commutes with $$q(A)$$. Hence, as a result of [**Lemma**](#lmm:hall-ex-8.3.1") the left hand side $$(A - \lambda \mathbf{1}) q(A)$$ of the previous equation isn't invertible. Hence, $$p(A) - p(\lambda) \mathbf{1}$$ isn't invertible, and thus $$p(\lambda)$$ is an element of the specturm $$\sigma(p(A))$$ of $$p(A)$$.  In other words
+Now as $$\lambda$$ is in $$\sigma(A)$$, by definition $$(A - \lambda \mathbf{1})$$ is not invertible in $$\mathcal{B}(\mathbf{H})$$. Furthermore, by construction $$(A - \lambda \mathbf{1})$$ commutes with $$q(A)$$. Hence, as a result of [**Lemma**](#lmm:hall-ex-8.3.1) the left hand side $$(A - \lambda \mathbf{1}) q(A)$$ of the previous equation isn't invertible. Hence, $$p(A) - p(\lambda) \mathbf{1}$$ isn't invertible, and thus $$p(\lambda)$$ is an element of the spectrum $$\sigma(p(A))$$ of $$p(A)$$.  In other words
 
 $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A)),
@@ -3101,7 +3101,7 @@ $$
 
 Now as $$\gamma \in \sigma(p(A))$$ it follows that $$p(A) - \gamma \mathbf{1}$$ is not invertible. Thus there must exist some $$j$$ such that $$(A - b_j \mathbf{1})$$ is not invertible. If no such $$j$$ existed, then all the terms on the right hand side of this equation would be invertible which would imply that $$p(A) - \gamma \mathbf{1}$$ is invertible, which we already know is not the case.
 
-Now as $$(A - b_j \mathbf{1})$$ is not invertible, this implies that $$b_j$$ is an element in the specturm $$\sigma(A)$$ of $$A$$. However, from our equation for $$p(z)$$ we know that $$p(z)$$ evaluated at this $$b_j$$ satisfies
+Now as $$(A - b_j \mathbf{1})$$ is not invertible, this implies that $$b_j$$ is an element in the spectrum $$\sigma(A)$$ of $$A$$. However, from our equation for $$p(z)$$ we know that $$p(z)$$ evaluated at this $$b_j$$ satisfies
 
 $$
     p(b_j) - \gamma = c (b_j - b_1)(b_j - b_2)\cdots(b_j -  b_j)\cdots(b_j - b_m) = 0.
@@ -3251,7 +3251,7 @@ which is simply the statement that the map $$p \mapsto p(A)$$ is isometric.
 
 Explicitly, the map $$p \mapsto p(A)$$ from the set of real-valued polynomials on $$\sigma(A)$$ equipped with the supremum norm into $$\mathcal{B}(\mathbf{H})$$ equipped with the operator norm, is isometric. This map is also linear; for real-valued polynomials $$p$$ and $$q$$ we have $$(p + q) \mapsto (p + q)(A) = p(A) + q(A)$$.
 
-Now in preperation for the application of the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) let us examine explicitly some of the properties of the objects we are currently considering.
+Now in preparation for the application of the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) let us examine explicitly some of the properties of the objects we are currently considering.
 
 As one will recall, [**Proposition**](#prpstn:hall-7.5) established that the spectrum $$\sigma(A)$$ of $$A$$ is a closed and bounded subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem)
 
@@ -3345,7 +3345,7 @@ With all of this in hand we can apply the [**Bounded Linear Transformation Theor
 <a name="thrm:bounded-linear-transformation-theorem"></a>
 > Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.
 
-to the current situation. Identifying $$V_1$$ with $$C^0(\sigma(A); \mathbb{R})$$, $$V_2$$ with $$\mathcal{B}(\mathbf{H})$$, $$W$$ the the real-valued polynomials on $$\sigma(A)$$, and $$T$$ with our map $$p \mapsto p(A)$$ allows us to conclude that there exists a unique, bounded, linear map
+to the current situation. Identifying $$V_1$$ with $$C^0(\sigma(A); \mathbb{R})$$, $$V_2$$ with $$\mathcal{B}(\mathbf{H})$$, $$W$$ the real-valued polynomials on $$\sigma(A)$$, and $$T$$ with our map $$p \mapsto p(A)$$ allows us to conclude that there exists a unique, bounded, linear map
 
 $$
     f \longmapsto f(A)
