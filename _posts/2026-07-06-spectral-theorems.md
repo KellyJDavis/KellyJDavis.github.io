@@ -3404,6 +3404,7 @@ and are captured in the following proposition
 
 
 
+
 **Stage 2: An Operator-Valued Riesz Representation Theorem**
 
 > **Theorem** *(Riesz Representation)*
