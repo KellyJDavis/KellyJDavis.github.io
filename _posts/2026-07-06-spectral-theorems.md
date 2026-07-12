@@ -3166,6 +3166,7 @@ $$
 Let's get started.
 
 > **Proposition**
+<a name="prpstn:hall-8.3"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:stone–weierstrass} -->
@@ -3354,6 +3355,54 @@ $$
 from $$C^0(\sigma(A); \mathbb{R})$$ to $$\mathcal{B}(\mathbf{H})$$ that when restricted to real-valued polynomials agrees with our map $$p \mapsto p(A)$$ and that has the same norm of our map $$p \mapsto p(A)$$.
 
 This map $$f \mapsto f(A)$$ is the desired result of this proposition and is known as the *(real-valued) functional calculus* for $$A$$.$$\blacksquare$$
+
+As a final step in **Stage 1: The Continuous Functional Calculus**, we will derive some basic properties of the (real-valued) functional calculus of a self-adjoint operator $$A$$ in $$\mathcal{B}(\mathbf{H})$$. These properties require the following definition
+
+> **Definition** *(Non-Negative (Bounded) Operator)*
+<a name="def:non-negative-operator"></a>
+> <!--  \uses{def:bounded-operator-notation} -->
+> An operator $$A \in \mathcal{B}(\mathbf{H})$$ is called a *non-negative (bounded) operator* if
+> 
+> $$
+>     0 \le \left< \psi, A\psi \right>
+> $$
+> 
+> for all $$\psi \in \mathbf{H}$$.
+
+and are captured in the following proposition
+
+> **Proposition**
+<a name="prpstn:hall-8.4"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{def:non-negative-operator} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, the (real-valued) functional calculus for $$A$$, mapping $$C^0(\sigma(A); \mathbb{R})$$ into $$\mathcal{B}(\mathbf{H})$$, has the following properties
+> 
+> 1. **Multiplicativity:** For all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
+> 
+>    $$
+>        (fg)(A) = f(A)g(A),
+>    $$
+> 
+>    where $$(fg)$$ denotes the pointwise product of $$f$$ and $$g$$, i.e. $$(fg)(\lambda) \equiv f(\lambda)g(\lambda)$$.
+> 2. **Self-adjointness:** For any $$f \in C^0(\sigma(A); \mathbb{R})$$, the operator $$f(A)$$ is self-adjoint.
+> 3. **Non-negativity:** For any $$f \in C^0(\sigma(A); \mathbb{R})$$ such that $$f$$ is non-negative, $$f(A)$$ is a non-negative (bounded) operator.
+> 4. **Norm and spectrum properties:** For any $$f \in C^0(\sigma(A); \mathbb{R})$$, we have
+> 
+>    $$
+>        \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,
+>    $$
+> 
+>    where $$\|f(A)\|$$ is the operator norm of $$f(A)$$ and $$\sigma(A)$$ is the specturm of $$A$$, and
+> 
+>    $$
+>        \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
+>    $$
+> 
+>    where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$.
+
+
 
 **Stage 2: An Operator-Valued Riesz Representation Theorem**
 
