@@ -543,7 +543,7 @@ $$
     Q_s(\psi) = \sum_{i = 1}^n \alpha_i  Q_{1_{E_i}}(\psi)
 $$
 
-To prove that such a $$Q_s$$ is a bounded quadratic for we must prove the same three results.
+To prove that such a $$Q_s$$ is a bounded quadratic form we must prove the same three results.
 
 First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from our indicator function result
 
@@ -862,7 +862,7 @@ $$
     \left|L(\phi, \psi)\right| = \|\phi\| \, \|\psi\| \, \left| L(\widehat{\phi}, \widehat{\psi}) \right| \le 6C \|\phi\| \, \|\psi\|,
 $$
 
-where the inequality follows from our previous result. This we have proven the second desired result
+where the inequality follows from our previous result. Thus we have proven the second desired result
 
 $$
     \left|L(\phi, \psi)\right| \le 6C \|\phi\| \, \|\psi\|,
@@ -1356,7 +1356,7 @@ $$
     \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \ge \lvert \left< \chi_0, \psi \right> \rvert = \|\psi\|.
 $$
 
-Now as this point we have proven that
+Now at this point we have proven that
 
 $$
 \begin{align}
@@ -1882,7 +1882,7 @@ $$
     \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| \le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) |
 $$
 
-this implies that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
+implies that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
 
 Combining all of these results together we find
 
@@ -2053,7 +2053,7 @@ $$
     0 \le \sum\limits_{m \in \mathbb{N}} \|X^m\| \le \sum\limits_{m \in \mathbb{N}} \|X\|^m < \infty.
 $$
 
-Finally, recalling the fact established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) that $$\mathcal{B}(\mathbf{H})$$ is a Banach space with respect to the operator norm, one can from the following proposition
+Finally, recalling the fact established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) that $$\mathcal{B}(\mathbf{H})$$ is a Banach space with respect to the operator norm, one can use the following proposition to
 
 > **Proposition**
 <a name="prpstn:hall-a.34"></a>
@@ -2178,7 +2178,7 @@ $$
 
 where the second equality follows from the [**Lemma**](#lmm:hall-7.6) we just proved.
 
-This implies that in the neighborhood of any point $$\lambda_0$$ in the resolvent set of $$A$$ the resolvent $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed by this locally convergent series in powers of $$(\lambda - \lambda_0)$$ with coefficients of these powers being elements of $$\mathcal{B}(\mathbf{H})$$.
+This implies that in the neighbourhood of any point $$\lambda_0$$ in the resolvent set of $$A$$ the resolvent $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed by this locally convergent series in powers of $$(\lambda - \lambda_0)$$ with coefficients of these powers being elements of $$\mathcal{B}(\mathbf{H})$$.
 
 Hence, for any $$\phi, \psi \in \mathbf{H}$$ the map
 
@@ -2871,7 +2871,7 @@ $$
     \left\| A^{2^n} \right\| = \left\| A \right\|^{2^n}.
 $$
 
-This implies of the bound we just derived
+Applying this to the bound we just derived gives
 
 $$
     \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\| = \frac{\left\| A^{2^n} \right\|}{\left| \lambda \right|^{2^n + 1}} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C
@@ -3420,7 +3420,7 @@ and are captured in the following proposition
 >        \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,
 >    $$
 > 
->    where $$\|f(A)\|$$ is the operator norm of $$f(A)$$ and $$\sigma(A)$$ is the specturm of $$A$$, and
+>    where $$\|f(A)\|$$ is the operator norm of $$f(A)$$ and $$\sigma(A)$$ is the spectrum of $$A$$, and
 > 
 >    $$
 >        \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
