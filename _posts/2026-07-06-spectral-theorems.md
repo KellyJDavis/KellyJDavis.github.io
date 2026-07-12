@@ -1473,7 +1473,7 @@ $$
 
 for all $$\phi, \psi \in \mathbf{H}$$.
 
-Now another way one can write the operator norm of $$A_s$$, or really any element of $$\mathcal{B}(\mathbf{H})$$, is as follows
+As a result of [**Lemma**](#lmm:lemma-1) we can write the operator norm of $$A_s$$ as follows
 
 $$
     \|A_s\| = \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left| \left< \phi, A_s \psi \right> \right|.
@@ -2601,7 +2601,7 @@ $$
 
 where the equality uses the first result $$\|A^*\| = \|A\|$$ proved in this proposition.
 
-However, using the alternative means of expressing the operator norm we derived in the first part of this proposition one has
+Using the alternative means of expressing the operator norm derived in [**Lemma**](#lmm:lemma-1) one has
 
 $$
 \begin{align}
