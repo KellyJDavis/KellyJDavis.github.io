@@ -297,6 +297,8 @@ Projection-valued measures give rise to a type of integration known as "operator
 <!--  \uses{prpstn:hall-a.61} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
+<!--  \uses{prpstn:hall-a.43} -->
+<!--  \uses{lmm:lemma-1} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. Then there exists a unique linear map, denoted by
 >
 > $$
@@ -1285,6 +1287,110 @@ $$
 
 the desired result and completing the proof of our "utility" lemma.$$\blacksquare$$
 
+One more "utility" lemma we will require is
+
+> **Lemma**
+<a name="lmm:lemma-1"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> Let $$\mathcal{B}(\mathbf{H})$$ be the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$. For any $$A$$ in $$\mathcal{B}(\mathbf{H})$$ we can write the operator norm $$\|A\|$$ of $$A$$ as follows
+> 
+> $$
+>     \|A\| = \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \chi, A \psi \right> \rvert
+> $$ 
+> 
+> where $$\chi, \psi \in \mathbf{H}$$.
+
+**Proof**
+Let us begin this proof by deriving an alternative means of writing the norm of an element $$\psi \in \mathbf{H}$$ as
+
+$$
+    \|\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert.
+$$
+
+First let us prove this is true for the case $$\psi = 0$$.
+
+In this case the definition of a norm implies $$\|\psi\| = 0$$. Similarly, for all $$\chi \in \mathbf{H}$$ we have $$\lvert \left< \chi, 0 \right> \rvert = 0$$. Thus we have the trivial equality in this case, both the lefthand and righthand side of the desired equation are zero.
+
+Now we can safely assume that $$\psi \neq 0$$.
+
+Consider an arbitrary $$\psi \in \mathbf{H}$$ and an arbitrary $$\chi \in \mathbf{H}$$ such that $$\|\chi\| = 1$$. The [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43) implies that
+
+$$
+    \lvert \left< \chi, \psi \right> \rvert^2 \le \left< \chi, \chi \right> \left< \psi, \psi \right> = \|\chi\|^2 \left< \psi, \psi \right> = \left< \psi, \psi \right>.
+$$
+
+Hence, we have
+
+$$
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \le \|\psi\|.
+$$
+
+Alternatively, as $$\psi \neq 0$$ we can consider a particular $$\chi_0$$ of the form
+
+$$
+    \chi_0 = \frac{\psi}{\|\psi\|}.
+$$
+
+Obviously $$\|\chi_0\| = 1$$. With this form for $$\chi_0$$ the definitions of norm and inner product imply
+
+$$
+\begin{align}
+    \left| \left< \chi_0, \psi \right> \right| &= \left| \left< \frac{\psi}{\|\psi\|}, \psi \right> \right| \\
+                                            &= \left| \frac{1}{\|\psi\|} \left< \psi, \psi \right> \right| \\
+                                            &= \frac{1}{\|\psi\|} \left| \left< \psi, \psi \right> \right| \\
+                                            &= \frac{1}{\|\psi\|} \left| \|\psi\|^2 \right| \\
+                                            &= \frac{1}{\|\psi\|} \|\psi\|^2 \\
+                                            &= \|\psi\|.
+\end{align}
+$$
+
+Hence, the previous bound we derived
+
+$$
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \le \|\psi\|
+$$
+
+is actually attained for this specific $$\chi_0$$. Thus it must be the case that
+
+$$
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \ge \lvert \left< \chi_0, \psi \right> \rvert = \|\psi\|.
+$$
+
+Now as this point we have proven that
+
+$$
+\begin{align}
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert &\le \|\psi\| \\
+    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert &\ge \|\psi\|.
+\end{align}
+$$
+
+Together these imply the desired result
+
+$$
+    \|\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert.
+$$
+
+Now, the definition of the operator norm implies
+
+$$
+    \|A\| = \sup\limits_{\|\psi\| = 1} \|A\psi\|.
+$$
+
+Our recent result allows us to re-write the norm $$\|A\psi\|$$ as
+
+$$
+    \|A\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, A\psi \right> \rvert.
+$$
+
+Hence,
+
+$$
+    \|A\| = \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \chi, A\psi \right> \rvert.
+$$
+
+This is the final desired result of this lemma.$$\blacksquare$$
+
 With this lemma proven, we can once again continue on with our main argument.
 
 Consider, as in the lemma, a finite set of elements $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ that are pairwise disjoint and satisfy
@@ -1335,7 +1441,17 @@ $$
     \left< \phi, A_s \psi \right> = \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right>.
 $$
 
-Now using the definition of a norm and applying [**Cauchy–Schwarz**](#prpstn:hall-a.43) twice, first to each summand and then across the sum (viewing $$\|\mu(E_i) \phi\|$$ and $$\|\mu(E_i) \psi\|$$ as vectors in $$\mathbb{R}^n$$), one obtains
+Now using the definition of a norm and applying [**Cauchy–Schwarz**](#prpstn:hall-a.43)
+
+> **Proposition** *(Cauchy–Schwarz Inequality)*
+<a name="prpstn:hall-a.43"></a>
+> If $$V$$ is a space with an inner product, then for all $$\phi, \psi \in V$$, we have the *Cauchy–Schwarz inequality*
+>
+> $$
+>     \lvert \left< \phi, \psi \right> \rvert^2 \le \left< \phi, \phi \right> \left< \psi, \psi \right>.
+> $$
+
+twice, first to each summand and then across the sum (viewing $$\|\mu(E_i) \phi\|$$ and $$\|\mu(E_i) \psi\|$$ as vectors in $$\mathbb{R}^n$$), one obtains
 
 $$
 \begin{align}
@@ -1992,6 +2108,8 @@ the final desired result.$$\blacksquare$$
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-7.6} -->
+<!--  \uses{thrm:analytic-equivalence-theorem} -->
+<!--  \uses{thrm:maximum-modulus-principle} -->
 > For all $$A \in \mathcal{B}(\mathbf{H})$$, the following results hold.
 >
 > 1. The spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$.
@@ -2346,6 +2464,8 @@ The next "utility" proposition we will require details properties of the operato
 > **Proposition**
 <a name="prpstn:hall-7.2"></a>
 <!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{prpstn:hall-a.43} -->
+<!--  \uses{lmm:lemma-1} -->
 > For any $$A \in \mathcal{B}(\mathbf{H})$$ the operator norm satisfies
 >
 > $$
@@ -2361,105 +2481,11 @@ The next "utility" proposition we will require details properties of the operato
 > In particular if $$A$$ is self-adjoint, it satisfies $$\|A^2\| = \|A\|^2$$.
 
 **Proof**
-Let us begin the proof of the first result $$\|A\| = \|A^*\|$$ by deriving an alternative means of writing the norm of an element $$\psi \in \mathbf{H}$$ as
+Let us begin the proof of the first result $$\|A\| = \|A^*\|$$ by noting that as a result of our previous [**Lemma**](#lmm:lemma-1) we can write the operator norm of any $$A \in \mathcal{B}(\mathbf{H})$$ as
 
 $$
-    \|\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert.
-$$
-
-First let us prove this is true for the case $$\psi = 0$$.
-
-In this case the definition of a norm implies $$\|\psi\| = 0$$. Similarly, for all $$\chi \in \mathbf{H}$$ we have $$\lvert \left< \chi, 0 \right> \rvert = 0$$. Thus we have the trivial equality in this case, both the lefthand and righthand side of the desired equation are zero.
-
-Now we can safely assume that $$\psi \neq 0$$.
-
-Consider an arbitrary $$\psi \in \mathbf{H}$$ and an arbitrary $$\chi \in \mathbf{H}$$ such that $$\|\chi\| = 1$$. The [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43)
-
-**Proposition** *(Cauchy–Schwarz Inequality)*
-<a name="prpstn:hall-a.43"></a>
-> If $$V$$ is a space with an inner product, then for all $$\phi, \psi \in V$$, we have the *Cauchy–Schwarz inequality*
->
-> $$
->     \lvert \left< \phi, \psi \right> \rvert^2 \le \left< \phi, \phi \right> \left< \psi, \psi \right>.
-> $$
-
-implies that
-
-$$
-    \lvert \left< \chi, \psi \right> \rvert^2 \le \left< \chi, \chi \right> \left< \psi, \psi \right> = \|\chi\|^2 \left< \psi, \psi \right> = \left< \psi, \psi \right>.
-$$
-
-Hence, we have
-
-$$
-    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \le \|\psi\|.
-$$
-
-Alternatively, as $$\psi \neq 0$$ we can consider a particular $$\chi_0$$ of the form
-
-$$
-    \chi_0 = \frac{\psi}{\|\psi\|}.
-$$
-
-Obviously $$\|\chi_0\| = 1$$. With this form for $$\chi_0$$ the definitions of norm and inner product imply
-
-$$
-\begin{align}
-    \left| \left< \chi_0, \psi \right> \right| &= \left| \left< \frac{\psi}{\|\psi\|}, \psi \right> \right| \\
-                                            &= \left| \frac{1}{\|\psi\|} \left< \psi, \psi \right> \right| \\
-                                            &= \frac{1}{\|\psi\|} \left| \left< \psi, \psi \right> \right| \\
-                                            &= \frac{1}{\|\psi\|} \left| \|\psi\|^2 \right| \\
-                                            &= \frac{1}{\|\psi\|} \|\psi\|^2 \\
-                                            &= \|\psi\|.
-\end{align}
-$$
-
-Hence, the previous bound we derived
-
-$$
-    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \le \|\psi\|
-$$
-
-is actually attained for this specific $$\chi_0$$. Thus it must be the case that
-
-$$
-    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert \ge \lvert \left< \chi_0, \psi \right> \rvert = \|\psi\|.
-$$
-
-Now as this point we have proven that
-
-$$
-\begin{align}
-    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert &\le \|\psi\| \\
-    \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert &\ge \|\psi\|.
-\end{align}
-$$
-
-Together these imply the desired result
-
-$$
-    \|\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, \psi \right> \rvert.
-$$
-
-Now back to the first main path, a proof of the result $$\|A\| = \|A^*\|$$.
-
-The definition of the operator norm implies
-
-$$
-    \|A\| = \sup\limits_{\|\psi\| = 1} \|A\psi\|.
-$$
-
-Our recent result allows us to re-write the norm $$\|A\psi\|$$ as
-
-$$
-    \|A\psi\| = \sup\limits_{\|\chi\| = 1} \lvert \left< \chi, A\psi \right> \rvert.
-$$
-
-Hence,
-
-$$
-    \|A\| = \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \chi, A\psi \right> \rvert.
-$$
+    \|A\| = \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \chi, A \psi \right> \rvert.
+$$ 
 
 This also allows us to write the operator norm of $$A^*$$ as
 
@@ -2611,7 +2637,7 @@ the final desired result.$$\blacksquare$$
 <a name="lmm:hall-8.1"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:spectral-radius} -->
-<!--  \uses{def:prpstn:hall-7.5} -->
+<!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:nth-term-test} -->
 <!--  \uses{prpstn:hall-7.2} -->
@@ -3176,9 +3202,9 @@ Let's get started.
 <!--  \uses{def:spectral-radius} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{def:separates-points} -->
-<!--  \uses{thrm:stone–weierstrass} -->
 <!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{prpstn:hall-7.5} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then there exists a unique bounded linear map from $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on the spectrum $$\sigma(A)$$ of $$A$$---to $$\mathcal{B}(\mathbf{H})$$
 >
 > $$
