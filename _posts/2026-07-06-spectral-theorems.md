@@ -2095,13 +2095,25 @@ $$
 \end{align}
 $$
 
-proving
+proving the right inverse is given by
 
 $$
-    (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots,
+    (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots.
 $$
 
-the final desired result.$$\blacksquare$$
+A similar computation also proves
+
+$$
+   \left( \mathbf{1} + X + X^2 + \cdots \right) (\mathbf{1} - X) = \mathbf{1},
+$$
+
+proving the left inverse is given by the same expression
+
+$$
+    (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots.
+$$
+
+Together these imply the final desired result.$$\blacksquare$$
 
 > **Proposition**
 <a name="prpstn:hall-7.5"></a>
