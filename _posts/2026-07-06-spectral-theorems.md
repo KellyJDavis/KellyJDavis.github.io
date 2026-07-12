@@ -2107,7 +2107,7 @@ $$
    \left( \mathbf{1} + X + X^2 + \cdots \right) (\mathbf{1} - X) = \mathbf{1},
 $$
 
-proving the left inverse is given by the same expression
+establishing that the left inverse is given by the same expression
 
 $$
     (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots.
@@ -2142,9 +2142,9 @@ $$
 
 Hence, $$\lambda$$ is in the resolvent set of $$A$$.
 
-This establishes that if $$\lvert \lambda \rvert > \|A\|$$, then $$\lambda$$ is in the resolvent set of $$A$$, which is the desired result of Point 2 of the proposition.
+This establishes that if $$\lvert \lambda \rvert > \|A\|$$, then $$\lambda$$ is in the resolvent set of $$A$$, which is the desired result of Part 2 of the proposition.
 
-Furthermore, as $$\lvert \lambda \rvert > \|A\|$$ implies that $$\lambda$$ is in the resolvent set of $$A$$ and the spectrum $$\sigma(A)$$ is the complement of the resolvent set in $$\mathbb{C}$$, this also proves that the spectrum $$\sigma(A)$$ of $$A$$ is bounded. This is one of the desired results of Point 1 of the proposition.
+Furthermore, as $$\lvert \lambda \rvert > \|A\|$$ implies that $$\lambda$$ is in the resolvent set of $$A$$ and the spectrum $$\sigma(A)$$ is the complement of the resolvent set in $$\mathbb{C}$$, this also proves that the spectrum $$\sigma(A)$$ of $$A$$ is bounded. This is one of the desired results of Part 1 of the proposition.
 
 Suppose now that $$\lambda_0 \in \mathbb{C}$$ is in the resolvent set of $$A$$. For any other $$\lambda \in \mathbb{C}$$ one has
 
