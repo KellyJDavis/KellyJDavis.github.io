@@ -3431,10 +3431,10 @@ This map $$f \mapsto f(A)$$ is the desired result of this proposition and is kno
 
 As a final step in **Stage 1: The Continuous Functional Calculus**, we will derive some basic properties of the (real-valued) functional calculus of a self-adjoint operator $$A$$ in $$\mathcal{B}(\mathbf{H})$$. These properties require the following definition
 
-> **Definition** *(Non-Negative (Bounded) Operator)*
+> **Definition** *(Non-Negative Bounded Operator)*
 <a name="def:non-negative-operator"></a>
 > <!--  \uses{def:bounded-operator-notation} -->
-> An operator $$A \in \mathcal{B}(\mathbf{H})$$ is called a *non-negative (bounded) operator* if
+> An operator $$A \in \mathcal{B}(\mathbf{H})$$ is called a *non-negative bounded operator* if
 > 
 > $$
 >     0 \le \left< \psi, A\psi \right>
@@ -3450,6 +3450,12 @@ and are captured in the following proposition
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{def:non-negative-operator} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{thrm:heine–borel-theorem} -->
+<!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{thrm:composition-theorem} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, the (real-valued) functional calculus for $$A$$, mapping $$C^0(\sigma(A); \mathbb{R})$$ into $$\mathcal{B}(\mathbf{H})$$, has the following properties
 > 
 > 1. **Multiplicativity:** For all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
@@ -3460,7 +3466,7 @@ and are captured in the following proposition
 > 
 >    where $$(fg)$$ denotes the pointwise product of $$f$$ and $$g$$, i.e. $$(fg)(\lambda) \equiv f(\lambda)g(\lambda)$$.
 > 2. **Self-adjointness:** For any $$f \in C^0(\sigma(A); \mathbb{R})$$, the operator $$f(A)$$ is self-adjoint.
-> 3. **Non-negativity:** For any $$f \in C^0(\sigma(A); \mathbb{R})$$ such that $$f$$ is non-negative, $$f(A)$$ is a non-negative (bounded) operator.
+> 3. **Non-negativity:** For any $$f \in C^0(\sigma(A); \mathbb{R})$$ such that $$f$$ is non-negative, it follows that $$f(A)$$ is a non-negative bounded operator.
 > 4. **Norm and spectrum properties:** For any $$f \in C^0(\sigma(A); \mathbb{R})$$, we have
 > 
 >    $$
@@ -3474,6 +3480,125 @@ and are captured in the following proposition
 >    $$
 > 
 >    where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$.
+
+**Proof**
+**Part 1:** Let us begin with Part 1 multiplicativity and prove that for all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
+
+$$
+    (fg)(A) = f(A)g(A),
+$$
+
+where $$(fg)$$ denotes the pointwise product of $$f$$ and $$g$$, i.e. $$(fg)(\lambda) \equiv f(\lambda)g(\lambda)$$.
+
+As a result of the proof of [**Proposition**](#prpstn:hall-8.3) we know the real-valued polynomials on the specturm $$\sigma(A)$$ of $$A$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$. Hence, there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly. Similarly, there exists a sequence $$\{ r_j \}_{j \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$r_j \rightarrow g$$ uniformly.
+
+As a result of [**Proposition**](#prpstn:hall-7.5) the the specturm $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. As a result of the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) the specturm $$\sigma(A)$$ of $$A$$ is compact. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$ and $$g$$ are bounded.
+
+All of this together implies that we can apply the same argument as appeared in the proof of Property 3 of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) to prove that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
+
+$$
+    \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda) \rvert < \epsilon
+$$
+
+for all $$\lambda \in \sigma(A)$$. As this applies for all $$i,j \ge L$$ it implies in particular if $$j = i$$ and $$i \ge L$$. So, for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i \ge L$$ we have 
+
+$$
+    \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_i(\lambda) \rvert < \epsilon
+$$
+
+for all $$\lambda \in \sigma(A)$$. In other words $$s_ir_i \rightarrow fg$$ uniformly.
+
+Hence, we have
+
+$$
+\begin{align}
+    (fg)(A) &= (\lim_{i \rightarrow \infty} s_ir_i)(A) \\
+            &= \lim_{i \rightarrow \infty} s_i(A) r_i(A) \\
+            &= (\lim_{i \rightarrow \infty} s_i(A))(\lim_{i \rightarrow \infty} r_i(A)) \\
+            &= f(A) g(A),
+\end{align}
+$$
+
+which is the desired Part 1 multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
+
+**Part 2:** Next let us prove Part 2 self-adjointness, proving for any $$f \in C^0(\sigma(A); \mathbb{R})$$, the operator $$f(A)$$ is self-adjoint.
+
+As mentioned in Part 1 there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
+
+Furthermore, as any $$s_i$$ is a real-valued polynomial, the map $$s_i \mapsto s_i(A)$$ of the [**Lemma** *(Spectral Mapping Theorem)*](#lmm:spectral-mapping-theorem) gives
+
+$$
+    s_i(A) = c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m,
+$$
+
+with $$\mathbb{R}$$ valued coefficients $$c_i$$. As $$A$$ is self-adjoint, it obiously follows that $$s_i(A)$$ is also self-adjoint. Explicitly,
+
+$$
+\begin{align}
+    s_i(A)^* &= \left( c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \right)^* \\
+             &= (c_0 \mathbf{1})^* + (c_1 A)^* + (c_2 A^2)^* + \cdots + (c_{m - 1} A^{m - 1})^* + (c_m A^m)^* \\
+             &= c_0^* \mathbf{1}^* + c_1^* A^* + c_2^* (A^2)^* + \cdots + c_{m - 1}^* (A^{m - 1})^* + c_m^* (A^m)^* \\
+             &= c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \\
+             &= s_i(A).
+\end{align}
+$$
+
+This then implies
+
+$$
+\begin{align}
+    f(A)^* &= \left( \lim_{i \rightarrow \infty} s_i(A) \right)^* \\
+           &= \lim_{i \rightarrow \infty} s_i(A)^* \\
+           &= \lim_{i \rightarrow \infty} s_i(A) \\
+           &= f(A),
+\end{align}
+$$
+
+proving that $$f(A)^* = f(A)$$ and thus that $$f(A)$$ is self-adjoint, the desired Part 2 self-adjointness result.
+
+**Part 3:** Next let us prove Part 3 non-negativity, proving that for any $$f \in C^0(\sigma(A); \mathbb{R})$$ such that $$f$$ is non-negative, it follows that $$f(A)$$ is a non-negative bounded operator.
+
+If $$f \in C^0(\sigma(A); \mathbb{R})$$ is non-negative, then there exists a continuous function $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ such that $$g = \sqrt{f}$$. This follows from the fact that $$f$$ is by hypothesis continuous and the square root function
+
+$$
+\begin{align}
+    h : [0, \infty) &\longrightarrow [0, \infty) \\ 
+             t      &\longmapsto \sqrt{t}
+\end{align}
+$$
+
+is continuous. Hence, as a result of the [**Composition Theorem**](#thrm:composition-theorem)
+
+> **Theorem** *(Composition Theorem)*
+<a name="thrm:composition-theorem"></a>
+> If a function $$f$$ is continuous at $$c$$ and a function $$h$$ is continuous at $$f(c)$$, then the composition $$h \circ f$$ is continuous at $$c$$.
+
+the composition $$h \circ f = \sqrt{f}$$ is continuous on $$\sigma(A)$$ and thus an element of $$C^0(\sigma(A); \mathbb{R})$$.
+
+As $$g = \sqrt{f}$$ it follows that $$f = g^2$$. Applying the result of Part 1 we have $$f(A) = g(A)g(A)$$. Apply the result of Part 2 we know that $$g(A)$$ is self-adjoint. Hence, for any $$\psi \in \mathbf{H}$$ we have
+
+$$
+\begin{align}
+    \left< \psi, f(A)\psi \right> &= \left< \psi, g(A)g(A)\psi \right> \\
+                                  &= \left< \psi, g(A)^*g(A)\psi \right> \\
+                                  &= \left< g(A)\psi, g(A)\psi \right> \\
+                                  &\ge 0,
+\end{align}
+$$
+
+where the final inequality follows from the definition of an inner product. This implies that for any $$\psi \in \mathbf{H}$$ we have
+
+$$
+    0 \le \left< \psi, f(A)\psi \right>.
+$$
+
+As $$f(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3), this is none other than the statement that $$f(A)$$ is a bounded non-negative operator, the desired result of Part 3.
+
+
+
+
+ 
+
 
 
 
