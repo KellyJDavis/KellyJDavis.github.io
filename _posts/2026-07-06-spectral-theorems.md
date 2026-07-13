@@ -2022,11 +2022,6 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 To facilitate the proof of this theorem, we first introduce the useful notion of "Functional Calculus".
 
 > **Definition** *(Functional Calculus)*
-<a name="def:functional-calculus"></a>
-<!--  \uses{def:bounded-operator-notation} -->
-<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
-<!--  \uses{thrm:spectral-theorem-for-bounded-operators} -->
-<!--  \uses{thrm:operator-valued-integration} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$f : \sigma(A) \rightarrow \mathbb{C}$$ is a bounded measurable function on the spectrum $$\sigma(A)$$ of $$A$$, *functional calculus* defines an operator $$f(A)$$ by
 >
 > $$
@@ -3494,3 +3489,18 @@ and are captured in the following proposition
 > $$
 >
 > for all $$f \in C^0(X; \mathbb{R})$$.
+
+
+> **Definition** *(Functional Calculus)*
+<a name="def:functional-calculus"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{thrm:spectral-theorem-for-bounded-operators} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$f : \sigma(A) \rightarrow \mathbb{C}$$ is a bounded measurable function on the spectrum $$\sigma(A)$$ of $$A$$, *functional calculus* defines an operator $$f(A)$$ by
+>
+> $$
+>     f(A) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda),
+> $$
+>
+> where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
