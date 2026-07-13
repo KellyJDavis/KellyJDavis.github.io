@@ -297,7 +297,6 @@ Projection-valued measures give rise to a type of integration known as "operator
 <!--  \uses{prpstn:hall-a.61} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
-<!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{lmm:lemma-1} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. Then there exists a unique linear map, denoted by
 >
@@ -1291,6 +1290,7 @@ One more "utility" lemma we will require is
 
 > **Lemma**
 <a name="lmm:lemma-1"></a>
+<!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > Let $$\mathcal{B}(\mathbf{H})$$ be the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$. For any $$A$$ in $$\mathcal{B}(\mathbf{H})$$ we can write the operator norm $$\|A\|$$ of $$A$$ as follows
 > 
@@ -1313,7 +1313,17 @@ In this case the definition of a norm implies $$\|\psi\| = 0$$. Similarly, for a
 
 Now we can safely assume that $$\psi \neq 0$$.
 
-Consider an arbitrary $$\psi \in \mathbf{H}$$ and an arbitrary $$\chi \in \mathbf{H}$$ such that $$\|\chi\| = 1$$. The [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43) implies that
+Consider an arbitrary $$\psi \in \mathbf{H}$$ and an arbitrary $$\chi \in \mathbf{H}$$ such that $$\|\chi\| = 1$$. The [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43)
+
+> **Proposition** *(Cauchy–Schwarz Inequality)*
+<a name="prpstn:hall-a.43"></a>
+> If $$V$$ is a space with an inner product, then for all $$\phi, \psi \in V$$, we have the *Cauchy–Schwarz inequality*
+>
+> $$
+>     \lvert \left< \phi, \psi \right> \rvert^2 \le \left< \phi, \phi \right> \left< \psi, \psi \right>.
+> $$
+
+implies that
 
 $$
     \lvert \left< \chi, \psi \right> \rvert^2 \le \left< \chi, \chi \right> \left< \psi, \psi \right> = \|\chi\|^2 \left< \psi, \psi \right> = \left< \psi, \psi \right>.
@@ -1441,17 +1451,7 @@ $$
     \left< \phi, A_s \psi \right> = \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right>.
 $$
 
-Now using the definition of a norm and applying [**Cauchy–Schwarz**](#prpstn:hall-a.43)
-
-> **Proposition** *(Cauchy–Schwarz Inequality)*
-<a name="prpstn:hall-a.43"></a>
-> If $$V$$ is a space with an inner product, then for all $$\phi, \psi \in V$$, we have the *Cauchy–Schwarz inequality*
->
-> $$
->     \lvert \left< \phi, \psi \right> \rvert^2 \le \left< \phi, \phi \right> \left< \psi, \psi \right>.
-> $$
-
-twice, first to each summand and then across the sum (viewing $$\|\mu(E_i) \phi\|$$ and $$\|\mu(E_i) \psi\|$$ as vectors in $$\mathbb{R}^n$$), one obtains
+Now using the definition of a norm and applying [**Cauchy–Schwarz**](#prpstn:hall-a.43) twice, first to each summand and then across the sum (viewing $$\|\mu(E_i) \phi\|$$ and $$\|\mu(E_i) \psi\|$$ as vectors in $$\mathbb{R}^n$$), one obtains
 
 $$
 \begin{align}
@@ -1846,13 +1846,55 @@ $$
     |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)|.
 $$
 
-Now as $$s_j$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists an $$N$$ such that for all $$i \ge N$$ one has
+Now as $$g$$ is bounded there exists a real constant $$M_g$$ such that
+
+$$
+    \sup\limits_{\lambda \in X} \lvert g(\lambda) \rvert \le M_g.
+$$
+
+As $$r_j \rightarrow g$$ uniformly, for $$\epsilon = 1$$ there exists an integer $$N_1$$ such that for all $$j \ge N_1$$ and all $$\lambda \in X$$ one has
+
+$$
+    \lvert r_j(\lambda) - g(\lambda) \rvert < 1.
+$$
+
+The definition of a norm and our previous results then imply that for all $$j \ge N_1$$ and all $$\lambda \in X$$ one has
+
+$$
+\begin{align}
+    \lvert r_j(\lambda) \rvert &= \lvert r_j(\lambda) - g(\lambda) + g(\lambda)  \rvert \\
+                               &\le \lvert r_j(\lambda) - g(\lambda) \rvert + \lvert g(\lambda)  \rvert \\
+                               &< 1 + M_g.
+\end{align}
+$$
+
+Taking the supremum while still requiring $$j \ge N_1$$ gives
+
+$$
+    \sup\limits_{j \ge N_1} \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert < 1 + M_g.
+$$
+
+Now if we define
+
+$$
+    C \equiv \left\{ \sup\limits_{\lambda \in X} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in X} \lvert r_{N_1 - } (\lambda) \rvert, 1 + M_g \right\},
+$$
+
+then it obviously follows that
+
+$$
+    \sup\limits_{j \in \mathbb{N}} \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \le C.
+$$
+
+In other words there is a bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in X$$ and all $$j$$.
+    
+Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists an $$N$$ such that for all $$i \ge N$$ one has
 
 $$
     \sup\limits_{\lambda \in X} |s_i(\lambda) - f(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \right. .
 $$
 
-Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
+Note that as a result of the bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in X$$ and all $$j$$, we can arrange for $$N$$ to be independent of $$j$$. Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
     \sup\limits_{\lambda \in X} |r_j(\lambda) - g(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} |f(\lambda)| \right) \right. .
@@ -2007,11 +2049,102 @@ The [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) implies that po
 
 We begin this stage of the proof with "utility" lemmas and propositions that we will have need of later in this stage.
 
+> **Lemma** *(Bounded Operator Product is Submultiplicative)*
+<a name="lmm:lemma-2"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> Let $$A, B \in \mathcal{B}(\mathbf{H})$$, then the operator product is *submultiplicative*
+> 
+> $$
+>     \|AB\| \le \|A\| \, \|B\|.
+> $$
+
+**Proof**
+Consider arbitrary $$A$$ and $$B$$ in $$\mathcal{B}(\mathbf{H})$$ and an arbitrary element $$\psi$$ in $$\mathbf{H}$$ such that $$\|\psi\| = 1$$.
+
+Let us first consider the case in which $$B\psi \neq 0$$. As $$B\psi \neq 0$$ it follows that $$\|B\psi\| \neq 0$$. Hence,
+
+$$
+\begin{align}
+    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\
+               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\|.
+\end{align}
+$$
+
+Obviously,
+
+$$
+    \left( \frac{B\psi}{\|B\psi\|} \right)
+$$
+
+has norm $$1$$. Furthermore, by definition
+
+$$
+\begin{align}
+    \|A\| &= \sup\limits_{\|\phi\| = 1} \|A\phi\| \\
+    \|B\| &= \sup\limits_{\|\phi\| = 1} \|B\phi\|.
+\end{align}
+$$
+
+Hence, as $$\|\psi\| = 1$$ the previous derivation can proceed as follows
+
+$$
+\begin{align}
+    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\
+               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\| \\
+               &\le \|B\| \, \|A\|.
+\end{align}
+$$
+
+In other words for $$\|\psi\| = 1$$ such that $$B\psi \neq 0$$
+
+$$
+    \|AB\psi\| \le \|B\| \, \|A\|.
+$$
+
+Taking the supremum of the lefthand side this gives
+
+$$
+    \sup\limits_{\|\psi\| = 1 \text{ and } B\psi \neq 0} \|AB\psi\| \le \|B\| \, \|A\|,
+$$
+
+which as
+
+$$
+    \|AB\| = \sup\limits_{\|\psi\| = 1} \|AB\psi\|
+$$
+
+is almost the desired equation $$\|AB\| \le \|A\| \,\|B\|$$. We just need to prove it holds for $$B\psi = 0$$.
+
+If $$\|\psi\| = 1$$ and $$B\psi = 0$$, then $$AB\psi = 0$$, and thus $$\|AB\psi\| = 0$$. Hence, the supremum of $$\|AB\psi\|$$ over such $$\psi$$ is $$0$$. As the supremum over such $$\psi$$ is zero, this supremum is always less than or equal to $$\|B\| \, \|A\|$$. Hence, the bound above
+
+$$
+    \sup\limits_{\|\psi\| = 1 \text{ and } B\psi \neq 0} \|AB\psi\| \le \|B\| \, \|A\|,
+$$
+
+is also satisfied for $$\psi$$ that satisfy $$B\psi = 0$$.
+
+Hence, we have proven that
+
+$$
+    \sup\limits_{\|\psi\| = 1} \|AB\psi\| \le \|B\| \, \|A\|,
+$$
+
+which as a result of the definition of operator norm implies
+
+$$
+    \|AB\| \le \|A\| \, \|B\|,
+$$
+
+the desired result, operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative.$$\blacksquare$$
+
+The next "utility" lemma we must prove is the following
+
 > **Lemma**
 <a name="lmm:hall-7.6"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-inverse} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{lmm:lemma-2} -->
 > Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse is given by the following series
 >
 > $$
@@ -2021,13 +2154,13 @@ We begin this stage of the proof with "utility" lemmas and propositions that we 
 > that is convergent in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm.
 
 **Proof**
-As the product of operators $$A,B \in \mathcal{B}(\mathbf{H})$$ is submultiplicative,
+As a result of [**Lemma** *(Bounded Operator Product is Submultiplicative)*](#lmm:lemma-2) the product of operators $$A,B \in \mathcal{B}(\mathbf{H})$$ is submultiplicative,
 
 $$
     \|AB\| \le \|A\| \, \|B\|,
 $$
 
-for an arbitrary natural number $$m$$ one has
+thus for an arbitrary natural number $$m$$ one has
 
 $$
     \|X^m\| \le \|X^{m - 1}\| \, \|X\| \le \|X^{m-2}\| \, \|X\|^2 \le \cdots \le \|X\|^m.
@@ -2478,6 +2611,7 @@ The next "utility" proposition we will require details properties of the operato
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{lmm:lemma-1} -->
+<!--  \uses{lmm:lemma-2} -->
 > For any $$A \in \mathcal{B}(\mathbf{H})$$ the operator norm satisfies
 >
 > $$
@@ -2519,93 +2653,13 @@ $$
 
 the first desired result.
 
-Now let us begin the proof of the second desired result $$\|A^*A\| = \|A\|^2$$ by proving that operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative,
+Now let us begin the proof of the second desired result $$\|A^*A\| = \|A\|^2$$ by recalling that as a result of [**Lemma** *(Bounded Operator Product is Submultiplicative)*](#lmm:lemma-2) operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative,
 
 $$
     \|AB\| \le \|A\| \, \|B\|
 $$
 
-for any $$A,B \in \mathcal{B}(\mathbf{H})$$.
-
-Consider arbitrary $$A$$ and $$B$$ in $$\mathcal{B}(\mathbf{H})$$ and an arbitrary element $$\psi$$ in $$\mathbf{H}$$ such that $$\|\psi\| = 1$$.
-
-Let us first consider the case in which $$B\psi \neq 0$$. As $$B\psi \neq 0$$ it follows that $$\|B\psi\| \neq 0$$. Hence,
-
-$$
-\begin{align}
-    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\
-               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\|.
-\end{align}
-$$
-
-Obviously,
-
-$$
-    \left( \frac{B\psi}{\|B\psi\|} \right)
-$$
-
-has norm $$1$$. Furthermore, by definition
-
-$$
-\begin{align}
-    \|A\| &= \sup\limits_{\|\phi\| = 1} \|A\phi\| \\
-    \|B\| &= \sup\limits_{\|\phi\| = 1} \|B\phi\|.
-\end{align}
-$$
-
-Hence, as $$\|\psi\| = 1$$ the previous derivation can proceed as follows
-
-$$
-\begin{align}
-    \|AB\psi\| &= \left\| A \left( \frac{\|B\psi\|}{\|B\psi\|} \right) B\psi \right\| \\
-               &= \|B\psi\| \left\| A \left( \frac{B\psi}{\|B\psi\|} \right) \right\| \\
-               &\le \|B\| \, \|A\|.
-\end{align}
-$$
-
-In other words for $$\|\psi\| = 1$$ such that $$B\psi \neq 0$$
-
-$$
-    \|AB\psi\| \le \|B\| \, \|A\|.
-$$
-
-Taking the supremum of the lefthand side this gives
-
-$$
-    \sup\limits_{\|\psi\| = 1 \text{ and } B\psi \neq 0} \|AB\psi\| \le \|B\| \, \|A\|,
-$$
-
-which as
-
-$$
-    \|AB\| = \sup\limits_{\|\psi\| = 1} \|AB\psi\|
-$$
-
-is almost the desired equation $$\|AB\| \le \|A\| \,\|B\|$$. We just need to prove it holds for $$B\psi = 0$$.
-
-If $$\|\psi\| = 1$$ and $$B\psi = 0$$, then $$AB\psi = 0$$, and thus $$\|AB\psi\| = 0$$. Hence, the supremum of $$\|AB\psi\|$$ over such $$\psi$$ is $$0$$. As the supremum over such $$\psi$$ is zero, this supremum is always less than or equal to $$\|B\| \, \|A\|$$. Hence, the bound above
-
-$$
-    \sup\limits_{\|\psi\| = 1 \text{ and } B\psi \neq 0} \|AB\psi\| \le \|B\| \, \|A\|,
-$$
-
-is also satisfied for $$\psi$$ that satisfy $$B\psi = 0$$.
-
-Hence, we have proven that
-
-$$
-    \sup\limits_{\|\psi\| = 1} \|AB\psi\| \le \|B\| \, \|A\|,
-$$
-
-which as a result of the definition of operator norm implies
-
-$$
-    \|AB\| \le \|A\| \, \|B\|,
-$$
-
-the desired result, operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative.
-
-Now as operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative we have for an arbitrary $$A \in \mathcal{B}(\mathbf{H})$$
+for any $$A,B \in \mathcal{B}(\mathbf{H})$$. Hence, for an arbitrary $$A \in \mathcal{B}(\mathbf{H})$$ we have
 
 $$
     \|A^*A\| \le \|A^*\| \, \|A\| = \|A\|^2,
@@ -2934,11 +2988,7 @@ $$
 \end{align}
 $$
 
-This is simply the statement that $$A$$ has a right inverse $$A_r$$ defined by
-
-$$
-    (A_r)^{-1} = (B(AB)^{-1}).
-$$
+This is simply the statement that $$A$$ has a right inverse $$(B(AB)^{-1})$$.
 
 Similarly, under the assumption that $$(AB)$$ has an inverse,$$(AB)^{-1}$$ exists and satisfies
 
@@ -2956,37 +3006,27 @@ $$
 \end{align}
 $$
 
-This is simply the statement that $$A$$ has a left inverse $$A_l$$ defined by
+This is simply the statement that $$A$$ has a left inverse $$((AB)^{-1}B)$$.
+
+Now if we let the right inverse $$(B(AB)^{-1})$$ act on the right of $$((AB)^{-1}B)A = \mathbf{1}$$, we have
 
 $$
-    (A_l)^{-1} = ((AB)^{-1}B).
+    ((AB)^{-1}B)A(B(AB)^{-1}) = (B(AB)^{-1}).
 $$
 
-Now if we let $$(A_r)^{-1}$$ act on the right of $$(A_l)^{-1}A = \mathbf{1}$$, we have
+However, $$(B(AB)^{-1})$$ is the right inverse of $$A$$; so
 
 $$
-    (A_l)^{-1}A(A_r)^{-1} = (A_r)^{-1}.
-$$
-
-However, $$(A_r)^{-1}$$ is the right inverse of $$A$$; so
-
-$$
-    A(A_r)^{-1} = \mathbf{1}.
+    A(B(AB)^{-1}) = \mathbf{1}.
 $$
 
 The last two equations then imply
 
 $$
-    (A_l)^{-1} = (A_r)^{-1}.
+    ((AB)^{-1}B) = (B(AB)^{-1}).
 $$
 
-In other words there is a single unique inverse
-
-$$
-    A^{-1} = (A_l)^{-1} = (A_r)^{-1}
-$$
-
-of $$A$$.
+In other words the left inverse $$((AB)^{-1}B)$$ and the right inverse $$(B(AB)^{-1})$$ agree and there is a single unique inverse of $$A^{-1}$$.
 
 However, by hypothesis $$A$$ is not invertible. Thus our assumption that $$AB$$ is invertible is false, and  $$AB$$ is not invertible. This is the desired result.$$\blacksquare$$
 
