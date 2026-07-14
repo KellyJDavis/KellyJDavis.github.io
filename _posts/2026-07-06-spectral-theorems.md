@@ -3842,7 +3842,7 @@ $$
 
 We start by proving $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ by proving its contrapositive. In other words we will prove that any element of $$\mathbb{C}$$ not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$ is not in $$\sigma(f(A)$$.
 
-To that end consider an arbitrary element $$\lambda_0 \in \mathbb{C}$$ such that $$\lambda_0$$ is not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$. In other words, there exists no $$\lambda \in \sigma(A)$$ such that $$f(\lambda) = \lambda_0$$.
+To that end consider an arbitrary element $$\lambda_0 \in \mathbb{C}$$ such that $$\lambda_0$$ is not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$. In other words, there exists no $$\mu \in \sigma(A)$$ such that $$f(\mu) = \lambda_0$$.
 
 Such a $$\lambda_0$$ could lay in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$ or it could lay in $$\mathbb{R}$$ in $$\mathbb{C}$$. We will deal with these two cases separately.
 
@@ -3862,9 +3862,9 @@ $$
     g(\lambda) \equiv \frac{1}{f(\lambda) - \lambda_0}.
 $$
 
-As $$f(\lambda)$$ is continuous and $$f(\lambda) \neq \lambda_0$$ for all $$\lambda \in \sigma(A)$$, it follows that $$g(\lambda)$$ is continuous. Furthermore, as $$f$$ is real-valued and $$\lambda_0$$ lays in $$\mathbb{R}$$ in $$\mathbb{C}$$, it follows that $$g$$ is real-valued. So $$g$$ is an element of $$C^0(\sigma(A); \mathbb{R})$$.
+As $$f$$ is continuous and $$f(\mu) \neq \lambda_0$$ for all $$\mu \in \sigma(A)$$, it follows that $$g$$ is continuous. Furthermore, as $$f$$ is real-valued and $$\lambda_0$$ lays in $$\mathbb{R}$$ in $$\mathbb{C}$$, it follows that $$g$$ is real-valued. So $$g$$ is an element of $$C^0(\sigma(A); \mathbb{R})$$.
  
-Now obviously we have
+Now obviously for all $$\lambda \in \sigma(A)$$ we have
 
 $$
     1 = (f(\lambda) - \lambda_0) \left( \frac{1}{f(\lambda) - \lambda_0} \right) = (f(\lambda) - \lambda_0) g(\lambda).
@@ -3918,10 +3918,19 @@ This implies that $$s_i(\mu)$$ should be in the specturm of $$s_i(A)$$ which imp
 
 Hence, we have proven the second desired result $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$.
 
-Now as we have proven that $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$. and that $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$. Together these imply
+Now we have proven
 
 $$
-    \sigma(f(A) = \{ f(\lambda) : \lambda \in \sigma(A) \}
+\begin{align}
+    &\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A) \\
+    &\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}.
+\end{align}
+$$
+
+Together these imply
+
+$$
+    \sigma(f(A) = \{ f(\lambda) : \lambda \in \sigma(A) \},
 $$
 
 the final desired result.$$\blacksquare$$
