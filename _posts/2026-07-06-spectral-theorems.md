@@ -3697,6 +3697,12 @@ $$
 
 where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$.
 
+Let us first prove that
+
+$$
+    \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert.
+$$
+
 As mentioned in Part 1 there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
 
 As proven in [**Proposition**](#prpstn:hall-8.3) for a real-valued polynomials $$p$$ on $$\sigma(A)$$ the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$p \rightarrow p(A)$$ is isometric
@@ -3717,11 +3723,42 @@ $$
 \end{align}
 $$
 
-where the first equality follows from the fact that $$s_i \rightarrow f$$, the second from the fact that this convergence is uniform, the third equation from the fact that $$p \rightarrow p(A)$$ is isometric, and the final from [**Proposition**](#prpstn:hall-8.3) which proved $$s_i(A) \rightarrow f(A)$$ relative to the operator norm.
+where the first equality follows from the fact that $$s_i \rightarrow f$$, the second from the fact that this convergence is uniform, the third equation from the fact that $$p \rightarrow p(A)$$ is isometric, and the final from [**Proposition**](#prpstn:hall-8.3) which proved $$s_i(A) \rightarrow f(A)$$ relative to the operator norm. So with this we have proven the first, desired result
 
+$$
+   \| f(A) \| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert
+$$ 
 
+of Part 4.
 
+Next let us prove the remaining result of Part 4
 
+$$
+    \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
+$$
+
+where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$ and $$\sigma(A)$$ is the specturm of $$A$$.
+
+We will prove this by first proving that $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$. We will thne prove $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$. Together this will entail the desired result 
+
+$$
+    \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \}.
+$$
+
+We start by proving $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$ by proving its contrapositive. In other words we will prove that any element of $$\mathbb{C}$$ not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$ is not in $$\sigma(f(A)$$.
+
+To that end consider an arbitrary element $$\lambda_0 \in \mathbb{C}$$ such that $$\lambda_0$$ is not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$. In other words, there exists no $$\lambda \in \sigma(A)$$ such that $$f(\lambda) = \lambda_0$$.
+
+TODO: Prove that $$\lambda_0 \notin \mathbb{R}$$ trivially give the right answer so we only need to consider real $$\lambda_0$$
+
+Consider then the function $$g$$ on $$\sigma(A)$$ defined by
+
+$$
+    g(\lambda) \equiv \frac{1}{f(\lambda) - \lambda_0}.
+$$
+
+As $$f(\lambda)$$ is continuous and $$f(\lambda) \neq \lambda_0$$ for all $$\lambda \in \sigma(A)$$, it follows that $$g(\lambda)$$ is continuous. 
+    
  
 
 
