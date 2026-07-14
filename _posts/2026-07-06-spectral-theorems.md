@@ -3605,13 +3605,7 @@ $$
 \end{align}
 $$
 
-where the first equality follows from our previous derivation, the second equality from the [**Proposition**](#prpstn:hall-8.3) result that
-
-$$
-    \|p(A)\| = \sup_{\lambda \in \sigma(A)} \lvert p(A) \rvert
-$$
-
-for a real-valued polynomial, the third equality from $$(s_ir_i)(\lambda) \equiv s_i(\lambda)r_i(\lambda)$$ and the polynomial map $$p \mapsto p(A)$$ of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem), and the fourth equality follows from an argument similar to that we used to prove that $$s_ir_i \rightarrow fg$$ uniformly but in this case the argument is in $$\mathcal{B}(\mathbf{H})$$ instead of $$C^0(\sigma(A); \mathbb{R})$$.
+where the first equality follows from our previous derivation, the second equality from [**Proposition**](#prpstn:hall-8.3) proving that for real-valued polynomials $$p$$ the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$p \rightarrow p(A)$$ is isometric, the third equality from $$(s_ir_i)(\lambda) \equiv s_i(\lambda)r_i(\lambda)$$, and the fourth equality follows from [**Proposition**](#prpstn:hall-8.3) which proved $$s_i(A)r_i(A) \rightarrow f(A)g(A)$$ relative to the operator norm.
 
 
 In summary the proves this desired Part 1 multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
@@ -3688,6 +3682,42 @@ $$
 $$
 
 As $$f(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3), this is none other than the statement that $$f(A)$$ is a non-negative bounded operator, the desired result of Part 3.
+
+**Part 4:** Finally let us prove Part 4 norm and spectrum properties, proving that for any $$f \in C^0(\sigma(A); \mathbb{R})$$, we have
+
+$$
+    \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,
+$$
+
+where $$\|f(A)\|$$ is the operator norm of $$f(A)$$ and $$\sigma(A)$$ is the spectrum of $$A$$, and
+
+$$
+    \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
+$$
+
+where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$.
+
+As mentioned in Part 1 there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
+
+As proven in [**Proposition**](#prpstn:hall-8.3) for a real-valued polynomials $$p$$ on $$\sigma(A)$$ the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$p \rightarrow p(A)$$ is isometric
+
+$$
+    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert p(\lambda) \rvert.
+$$
+
+This implies
+
+$$
+\begin{align}
+    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert
+    &= \sup\limits_{\lambda \in \sigma(A)} \lvert \lim_{i \rightarrow \infty} s_i (\lambda) \rvert \\
+    &= \lim_{i \rightarrow \infty} \sup\limits_{\lambda \in \sigma(A)} \lvert s_i (\lambda) \rvert \\
+    &= \lim_{i \rightarrow \infty} \| s_i(A) \| \\
+    &= \| f(A) \|,
+\end{align}
+$$
+
+where the first equality follows from the fact that $$s_i \rightarrow f$$, the second from the fact that this convergence is uniform, the third equation from the fact that $$p \rightarrow p(A)$$ is isometric, and the final from [**Proposition**](#prpstn:hall-8.3) which proved $$s_i(A) \rightarrow f(A)$$ relative to the operator norm.
 
 
 
