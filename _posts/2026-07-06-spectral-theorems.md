@@ -3442,7 +3442,100 @@ As a final step in **Stage 1: The Continuous Functional Calculus**, we will deri
 > 
 > for all $$\psi \in \mathbf{H}$$.
 
-and are captured in the following proposition
+as well as the following lemma
+
+> **Lemma**
+<a name="lmm:hall-prblm-7.4.8"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{lmm:lemma-2} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is invertible in $$\mathcal{B}(\mathbf{H})$$, then there exists an $$\epsilon > 0$$ such that for all $$B \in \mathcal{B}(\mathbf{H})$$ that satisfy
+> 
+> $$
+>     \|B - A\| < \epsilon
+> $$
+> 
+> $$B$$ is also invertible in $$\mathcal{B}(\mathbf{H})$$.
+
+**Proof**
+We start this proof by noting that as $$A$$ is by hypothesis invertible we have
+
+$$
+\begin{align}
+    B &= A - (A - B) \\
+      &= A (\mathbf{1} - A^{-1}(A - B)),
+\end{align}
+$$
+
+where the final equation follows from factoring out a common $$A$$ at the expense of introducing $$A^{-1}$$.
+
+Now, as a result of [**Lemma**](#lmm:lemma-2), if
+
+$$
+    \|A^{-1}(A - B)\| < 1,
+$$
+
+then $$(\mathbf{1} - A^{-1}(A - B))$$ is invertible in $$\mathcal{B}(\mathbf{H})$$. As $$A$$ is also invertible in $$\mathcal{B}(\mathbf{H})$$, this condition implies that as $$B$$ is given by
+
+$$
+    B = A (\mathbf{1} - A^{-1}(A - B))
+$$
+
+it is invertible in $$\mathcal{B}(\mathbf{H})$$.
+
+As a result of [**Lemma**](#lmm:lemma-2) operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative. This along with the norm definition imply
+
+$$
+\begin{align}
+    \|A^{-1}(A - B)\| &= \|A^{-1}(B - A)\| \\
+                      &\le \|A^{-1}\| \, \|B - A\|.
+\end{align}
+$$
+
+Now if we define the $$\epsilon$$ of the hypothesis by
+
+$$
+    \epsilon \equiv \|A^{-1}\|,
+$$
+
+then if
+
+$$
+    \|B - A\| < \epsilon
+$$
+
+it follows that
+
+$$
+    \|B - A\| < \|A^{-1}\|
+$$
+
+and thus
+
+$$
+    \|B - A\| \, \|A^{-1}\| < 1.
+$$
+
+However, from submultiplicativity we already established that
+
+$$
+    \|A^{-1}(A - B)\| \le \|A^{-1}\| \, \|B - A\|.
+$$
+
+Hence, we have
+
+$$
+    \|A^{-1}(A - B)\| \le \|A^{-1}\| \, \|B - A\| < 1.
+$$
+
+This is none other than the condition
+
+$$
+    \|A^{-1}(A - B)\| < 1
+$$
+
+which we previously found is the condition required for $$B$$ to be invertible.$$\blacksquare$$
+
+The properties of the (real-valued) functional calculus are captured in the following proposition
 
 > **Proposition**
 <a name="prpstn:hall-8.4"></a>
@@ -3456,6 +3549,8 @@ and are captured in the following proposition
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{thrm:composition-theorem} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{lmm:hall-prblm-7.4.8} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, the (real-valued) functional calculus for $$A$$, mapping $$C^0(\sigma(A); \mathbb{R})$$ into $$\mathcal{B}(\mathbf{H})$$, has the following properties
 > 
 > 1. **Multiplicativity:** For all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
@@ -3739,31 +3834,97 @@ $$
 
 where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$ and $$\sigma(A)$$ is the specturm of $$A$$.
 
-We will prove this by first proving that $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$. We will thne prove $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$. Together this will entail the desired result 
+We will prove this by first proving that $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$. We will then prove $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$. Together this will entail the desired result 
 
 $$
     \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \}.
 $$
 
-We start by proving $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$ by proving its contrapositive. In other words we will prove that any element of $$\mathbb{C}$$ not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$ is not in $$\sigma(f(A)$$.
+We start by proving $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ by proving its contrapositive. In other words we will prove that any element of $$\mathbb{C}$$ not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$ is not in $$\sigma(f(A)$$.
 
 To that end consider an arbitrary element $$\lambda_0 \in \mathbb{C}$$ such that $$\lambda_0$$ is not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$. In other words, there exists no $$\lambda \in \sigma(A)$$ such that $$f(\lambda) = \lambda_0$$.
 
-TODO: Prove that $$\lambda_0 \notin \mathbb{R}$$ trivially give the right answer so we only need to consider real $$\lambda_0$$
+Such a $$\lambda_0$$ could lay in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$ or it could lay in $$\mathbb{R}$$ in $$\mathbb{C}$$. We will deal with these two cases separately.
 
-Consider then the function $$g$$ on $$\sigma(A)$$ defined by
+Assume first that $$\lambda_0$$ is in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$. This in particular implies that the imaginary component of $$\lambda_0$$ is non-zero.
+
+Now, as a result of Part 2 $$f(A)$$ is self-adjoint. As $$f(A)$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(f(A))$$ is a subset of $$\mathbb{R}$$ in $$\mathbb{C}$$.
+
+However, as the imaginary component of $$\lambda_0$$ is non-zero this implies that $$\lambda_0$$ is not in  $$\sigma(f(A))$$.
+
+This proves the contrapositive of $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds when $$\lambda_0$$ is in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$, and thus proves $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds in this case.
+
+Now let us assume that $$\lambda_0$$ lays in $$\mathbb{R}$$ in $$\mathbb{C}$$. This implies that $$\lambda_0$$ is real valued.
+
+For this case, consider then the function $$g$$ on $$\sigma(A)$$ defined by
 
 $$
     g(\lambda) \equiv \frac{1}{f(\lambda) - \lambda_0}.
 $$
 
-As $$f(\lambda)$$ is continuous and $$f(\lambda) \neq \lambda_0$$ for all $$\lambda \in \sigma(A)$$, it follows that $$g(\lambda)$$ is continuous. 
-    
+As $$f(\lambda)$$ is continuous and $$f(\lambda) \neq \lambda_0$$ for all $$\lambda \in \sigma(A)$$, it follows that $$g(\lambda)$$ is continuous. Furthermore, as $$f$$ is real-valued and $$\lambda_0$$ lays in $$\mathbb{R}$$ in $$\mathbb{C}$$, it follows that $$g$$ is real-valued. So $$g$$ is an element of $$C^0(\sigma(A); \mathbb{R})$$.
  
+Now obviously we have
 
+$$
+    1 = (f(\lambda) - \lambda_0) \left( \frac{1}{f(\lambda) - \lambda_0} \right) = (f(\lambda) - \lambda_0) g(\lambda).
+$$
 
+As a result of Part 1 this implies
 
+$$
+    \mathbf{1} = (f(A) - \lambda_0 \mathbf{1}) g(A).
+$$
 
+A similar argument using $$1 = g(\lambda) (f(\lambda) - \lambda_0)$$ implies
+
+$$
+    \mathbf{1} = g(A) (f(A) - \lambda_0 \mathbf{1}).
+$$
+
+In both cases $$g(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3). This implies that the bounded operator $$g(A)$$ is the inverse of $$(f(A) - \lambda_0 \mathbf{1})$$. This in turn implies that $$\lambda_0$$ is not in the specturm $$\sigma(f(A))$$ of $$f(A)$$.
+
+This proves the contrapositive of $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds when $$\lambda_0$$ is in $$\mathbb{R}$$ in $$\mathbb{C}$$, and thus proves $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds in this case.
+
+Next let us prove that $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$.
+
+Assume that there exists some $$\lambda_0$$ such that $$\lambda_0 = f(\mu)$$ for some $$\mu$$ in the specturm $$\sigma(A)$$ of $$A$$. Our goal is then to prove that $$f(\mu)$$ is in $$\sigma(f(A))$$. We will do so using proof by contradiction, assuming $$f(\mu)$$ is not in $$\sigma(f(A))$$ and proving this leads to a contradiction.
+
+To that end, assume that $$f(\mu)$$ is in the resolvent set of $$A$$. Hence, $$f(A) - f(\mu) \mathbf{1}$$ is invertible in $$\mathcal{B}(\mathbf{H})$$.
+
+As mentioned in Part 1 there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
+
+As $$s_i \rightarrow f$$ uniformly [**Proposition**](#prpstn:hall-8.3) implies that $$s_i(A) \rightarrow f(A)$$ relative to the operator norm. Hence, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
+
+$$
+    \|f(A) - s_i(A)\| < \epsilon.
+$$
+
+As a result of $$s_i \rightarrow f$$ uniformly and $$s_i(A) \rightarrow f(A)$$ relative to the operator norm, one can conclude that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
+
+$$
+    \|(f(A) - f(\mu)\mathbf{1}) - (s_i(A) - s_i(\mu)\mathbf{1})\| < \epsilon.
+$$
+
+Now by assumption $$f(A) - f(\mu)\mathbf{1}$$ is invertible. Thus as a result of [**Lemma**](#lmm:hall-prblm-7.4.8) we can select $$\epsilon$$ so small that for the associated $$N$$ and $$i \ge N$$ one forces $$s_i(A) - s_i(\mu)\mathbf{1}$$ to invertible. However, this contradicts the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
+
+For the polynomial $$s_i$$ the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) states
+
+$$
+    \sigma(s_i(A)) = \{ s_i(\mu) : \mu \in \sigma(A) \}.
+$$
+
+This implies that $$s_i(\mu)$$ should be in the specturm of $$s_i(A)$$ which implies $$s_i(A) - s_i(\mu)\mathbf{1}$$ is not invertible. However, we just proved that under the assumption $$f(\mu)$$ is not in $$\sigma(f(A))$$ it follows that $$s_i(A) - s_i(\mu)\mathbf{1}$$ is invertible. Hence, our assumption that  $$f(\mu)$$ is not in $$\sigma(f(A))$$ is false and  $$f(\mu)$$ is in $$\sigma(f(A))$$.
+
+Hence, we have proven the second desired result $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$.
+
+Now as we have proven that $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$. and that $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$. Together these imply
+
+$$
+    \sigma(f(A) = \{ f(\lambda) : \lambda \in \sigma(A) \}
+$$
+
+the final desired result.$$\blacksquare$$
 
 **Stage 2: An Operator-Valued Riesz Representation Theorem**
 
