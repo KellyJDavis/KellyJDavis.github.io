@@ -1836,7 +1836,7 @@ $$
 \begin{align}
     |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| &=   |s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) + f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \\
                                                       &\le |s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda)| + |f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \\
-                                                      &\le |r_j(\lambda)| \, |s_i(\lambda) - f(\lambda)| + |f(\lambda)| \, |r_j(\lambda) - g(\lambda)|.
+                                                      &= |r_j(\lambda)| \, |s_i(\lambda) - f(\lambda)| + |f(\lambda)| \, |r_j(\lambda) - g(\lambda)|.
 \end{align}
 $$
 
@@ -1874,10 +1874,10 @@ $$
     \sup\limits_{j \ge N_1} \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert < 1 + M_g.
 $$
 
-Now if we define
+Noting that the $$r_j$$ are simple functions and thus bounded we can define the real constant $$C$$ by
 
 $$
-    C \equiv \left\{ \sup\limits_{\lambda \in X} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in X} \lvert r_{N_1 - } (\lambda) \rvert, 1 + M_g \right\},
+    C \equiv \left\{ \sup\limits_{\lambda \in X} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in X} \lvert r_{N_1 - 1} (\lambda) \rvert, 1 + M_g \right\},
 $$
 
 then it obviously follows that
@@ -1906,8 +1906,8 @@ $$
 \begin{align}
     |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)|
     &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
-    &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |r_j(\lambda)|} \right)  + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |f(\lambda)|} \right) \\
-    &< \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
+    &<   \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |r_j(\lambda)|} \right)  + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |f(\lambda)|} \right) \\
+    &= \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
     &= \epsilon.
 \end{align}
 $$
@@ -3490,17 +3490,103 @@ $$
 
 where $$(fg)$$ denotes the pointwise product of $$f$$ and $$g$$, i.e. $$(fg)(\lambda) \equiv f(\lambda)g(\lambda)$$.
 
-As a result of the proof of [**Proposition**](#prpstn:hall-8.3) we know the real-valued polynomials on the specturm $$\sigma(A)$$ of $$A$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$. Hence, there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly. Similarly, there exists a sequence $$\{ r_j \}_{j \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$r_j \rightarrow g$$ uniformly.
+As a result of the proof of [**Proposition**](#prpstn:hall-8.3) we know the real-valued polynomials on the specturm $$\sigma(A)$$ of $$A$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$ with respect to the supremum norm. Hence, there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly. Similarly, there exists a sequence $$\{ r_j \}_{j \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$r_j \rightarrow g$$ uniformly.
 
-As a result of [**Proposition**](#prpstn:hall-7.5) the the specturm $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. As a result of the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) the specturm $$\sigma(A)$$ of $$A$$ is compact. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$ and $$g$$ are bounded.
+As a result of [**Proposition**](#prpstn:hall-7.5) the the specturm $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. As a result of the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) the specturm $$\sigma(A)$$ of $$A$$ is compact. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$, $$g$$, and all the $$s_i$$ and $$r_j$$ are bounded.
 
-All of this together implies that we can apply the same argument as appeared in the proof of Property 3 of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) to prove that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
+This setup will now allow us to prove that $$s_ir_i \rightarrow fg$$ uniformly. 
+
+To wit, consider any $$s_i$$ and $$r_j$$. For any $$\lambda \in \sigma(A)$$ the norm definition implies
 
 $$
-    \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda) \rvert < \epsilon
+\begin{align}
+    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
+    &=   \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) + f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert \\
+    &\le \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) \rvert + \lvert f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert \\
+    &=   \lvert r_j(\lambda) \rvert \lvert s_i(\lambda) - f(\lambda) \rvert + \lvert f(\lambda) \rvert \lvert r_j(\lambda) - g(\lambda) \rvert.
+\end{align}
 $$
 
-for all $$\lambda \in \sigma(A)$$. As this applies for all $$i,j \ge L$$ it implies in particular if $$j = i$$ and $$i \ge L$$. So, for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i \ge L$$ we have 
+As $$f$$ and $$r_j$$ are bounded, their suprema are finite numbers. Hence, we can continue this derivation as follows
+
+$$
+    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
+    \le \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert.
+$$
+
+Now as $$g$$ is bounded there exists a real constant $$M_g$$ such that
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} \lvert g(\lambda) \rvert \le M_g.
+$$
+
+As $$r_j \rightarrow g$$ uniformly, for $$\epsilon = 1$$ there exists an integer $$N_1$$such that for all $$j \ge N_1$$ and all $$\lambda \in \sigma(A)$$ one has
+
+$$
+    \lvert r_j(\lambda) - g(\lambda) \rvert < 1.
+$$
+
+The norm definition and our previous results then imply for all $$j \ge N_1$$ and all $$\lambda \in \sigma(A)$$
+
+$$
+\begin{align}
+    \lvert r_j(\lambda) \rvert &=   \lvert r_j(\lambda) - g(\lambda) + g(\lambda) \rvert \\
+                               &\le \lvert r_j(\lambda) - g(\lambda) \rvert + \lvert g(\lambda) \rvert \\
+                               &<   1 + M_g.
+\end{align}
+$$
+
+Taking the supremum while still requiring $$j \ge N_1$$ results in
+
+$$
+    \sup\limits_{j \ge N_1} \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert < 1 + M_g.
+$$
+
+Noting the $$r_j$$ are bounded we can define the real constant $$C$$ by
+
+$$
+    C \equiv \left\{ \sup\limits_{\lambda \in \sigma(A)} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in \sigma(A)} \lvert r_{N_1 - 1} (\lambda) \rvert, 1 + M_g \right\},
+$$
+
+then it is obviously the case that
+
+$$
+    \sup\limits_{j \in \mathbb{N}} \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \le C.
+$$
+
+That is to say there is a bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in \sigma(A)$$ and all $$j$$.
+
+Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists an natural number $$N$$ such that for all $$i \ge N$$ one has
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} |s_i(\lambda) - f(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) \right. .
+$$
+
+As a result of the bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in \sigma(A)$$ and all $$j$$, we can arrange for $$N$$ to be independent of $$j$$. Similarly, as $$r_j$$ converges uniformly to $$g$$ and $$f$$ is bounded, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda) - g(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) \right. .
+$$
+
+This implies that for all $$i,j \ge \max(N,M)$$ we have
+
+$$
+\begin{align}
+    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)|
+    &\le \left( \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
+    &<   \left( \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)|} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)|} \right) \\
+    &= \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
+    &= \epsilon.
+\end{align}
+$$
+
+This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda)| < \epsilon.
+$$
+
+As this applies for all $$i,j \ge L$$ it implies in particular if $$j = i$$ and $$i \ge L$$. So, for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i \ge L$$ we have 
 
 $$
     \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_i(\lambda) \rvert < \epsilon
@@ -3513,13 +3599,22 @@ Hence, we have
 $$
 \begin{align}
     (fg)(A) &= (\lim_{i \rightarrow \infty} s_ir_i)(A) \\
+            &= \lim_{i \rightarrow \infty} (s_ir_i)(A) \\
             &= \lim_{i \rightarrow \infty} s_i(A) r_i(A) \\
-            &= (\lim_{i \rightarrow \infty} s_i(A))(\lim_{i \rightarrow \infty} r_i(A)) \\
             &= f(A) g(A),
 \end{align}
 $$
 
-which is the desired Part 1 multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
+where the first equality follows from our previous derivation, the second equality from the [**Proposition**](#prpstn:hall-8.3) result that
+
+$$
+    \|p(A)\| = \sup_{\lambda \in \sigma(A)} \lvert p(A) \rvert
+$$
+
+for a real-valued polynomial, the third equality from $$(s_ir_i)(\lambda) \equiv s_i(\lambda)r_i(\lambda)$$ and the polynomial map $$p \mapsto p(A)$$ of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem), and the fourth equality follows from an argument similar to that we used to prove that $$s_ir_i \rightarrow fg$$ uniformly but in this case the argument is in $$\mathcal{B}(\mathbf{H})$$ instead of $$C^0(\sigma(A); \mathbb{R})$$.
+
+
+In summary the proves this desired Part 1 multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
 
 **Part 2:** Next let us prove Part 2 self-adjointness, proving for any $$f \in C^0(\sigma(A); \mathbb{R})$$, the operator $$f(A)$$ is self-adjoint.
 
@@ -3563,7 +3658,7 @@ If $$f \in C^0(\sigma(A); \mathbb{R})$$ is non-negative, then there exists a con
 $$
 \begin{align}
     h : [0, \infty) &\longrightarrow [0, \infty) \\ 
-             t      &\longmapsto \sqrt{t}
+             t      &\longmapsto h(t) \equiv \sqrt{t}
 \end{align}
 $$
 
@@ -3573,9 +3668,9 @@ is continuous. Hence, as a result of the [**Composition Theorem**](#thrm:composi
 <a name="thrm:composition-theorem"></a>
 > If a function $$f$$ is continuous at $$c$$ and a function $$h$$ is continuous at $$f(c)$$, then the composition $$h \circ f$$ is continuous at $$c$$.
 
-the composition $$h \circ f = \sqrt{f}$$ is continuous on $$\sigma(A)$$ and thus an element of $$C^0(\sigma(A); \mathbb{R})$$.
+we know $$h \circ f = \sqrt{f}$$ is continuous on $$\sigma(A)$$ and thus an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
-As $$g = \sqrt{f}$$ it follows that $$f = g^2$$. Applying the result of Part 1 we have $$f(A) = g(A)g(A)$$. Apply the result of Part 2 we know that $$g(A)$$ is self-adjoint. Hence, for any $$\psi \in \mathbf{H}$$ we have
+With $$g \equiv \sqrt{f}$$ it follows that $$f = g^2$$. Applying the result of Part 1 we have $$f(A) = g(A)g(A)$$. Applying the result of Part 2 we know that $$g(A)$$ is self-adjoint. Hence, for any $$\psi \in \mathbf{H}$$ we have
 
 $$
 \begin{align}
@@ -3592,7 +3687,7 @@ $$
     0 \le \left< \psi, f(A)\psi \right>.
 $$
 
-As $$f(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3), this is none other than the statement that $$f(A)$$ is a bounded non-negative operator, the desired result of Part 3.
+As $$f(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3), this is none other than the statement that $$f(A)$$ is a non-negative bounded operator, the desired result of Part 3.
 
 
 
