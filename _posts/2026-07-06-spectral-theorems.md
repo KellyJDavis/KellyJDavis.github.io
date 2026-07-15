@@ -44,7 +44,7 @@ where the final step follows from the fact that $$A, B \in \mathcal{B}(\mathbf{H
 
 Finally we must prove that $$\mathcal{B}(\mathbf{H})$$ is complete with respect to the distance function associated to the operator norm.
 
-Consider a Cauchy sequence $$\{A_i\}_{i \in \mathbb{N}}$$ in $$\mathcal{B}(\mathbf{H})$$. The definition of Cauchy sequence implies that for any $$\epsilon > 0$$ there exists a $$N \in \mathbb{N}$$ such that for all $$i,j \ge N$$ we have
+Consider a Cauchy sequence $$\{A_i\}_{i \in \mathbb{N}}$$ in $$\mathcal{B}(\mathbf{H})$$. The definition of Cauchy sequence implies that for any $$\epsilon > 0$$ there exists an $$N \in \mathbb{N}$$ such that for all $$i,j \ge N$$ we have
 
 $$
     \|A_i - A_j\| < \epsilon.
@@ -59,7 +59,7 @@ $$
 \end{align}
 $$
 
-where the first line follows from linearity and the second line follows from the operator norm definition. As $$\{A_i\}_{i \in \mathbb{N}}$$ is a Cauchy sequence, for any $$\epsilon > 0$$ there exists a $$N \in \mathbb{N}$$ such that for all $$i,j \ge N$$ we have
+where the first line follows from linearity and the second line follows from the operator norm definition. As $$\{A_i\}_{i \in \mathbb{N}}$$ is a Cauchy sequence, for any $$\epsilon > 0$$ there exists an $$N \in \mathbb{N}$$ such that for all $$i,j \ge N$$ we have
 
 $$
     \|A_i - A_j\| < \epsilon.
@@ -125,7 +125,7 @@ $$
 \end{align}
 $$
 
-If this fixed $$\psi$$ is such that $$\|\psi\| = 1$$, then for any $$\epsilon > 0$$ there exists a $$N \in \mathbb{N}$$ such that for all $$i,j \ge N$$ we have
+If this fixed $$\psi$$ is such that $$\|\psi\| = 1$$, then for any $$\epsilon > 0$$ there exists an $$N \in \mathbb{N}$$ such that for all $$i,j \ge N$$ we have
 
 $$
 \begin{align}
@@ -250,7 +250,7 @@ $$
 
 Hence, the empty set is of measure zero $$\mu_\psi(\emptyset) = 0$$ as desired.
 
-Next let us prove non-negativity, i.e. for all $$E \in \Omega(X)$$, it follows that $$\mu_\psi(E) \ge 0$$.  The definition of $$\mu_\psi$$, the projection-valued measure $$\mu$$, and of an orthogonal projection imply
+Next let us prove non-negativity, i.e. for all $$E \in \Omega(X)$$, it follows that $$\mu_\psi(E) \ge 0$$. The definition of $$\mu_\psi$$, the projection-valued measure $$\mu$$, and of an orthogonal projection imply
 
 $$
 \begin{align}
@@ -1134,7 +1134,7 @@ $$
     Q_f(\psi) = \left< \psi, A_f\psi \right>
 $$
 
-for all $$\psi \in \mathbf{H}$$. We then define the operator valued integral of $$f$$ as follows
+for all $$\psi \in \mathbf{H}$$. We then define the operator-valued integral of $$f$$ as follows
 
 $$
     f \longmapsto \int_X f d\mu \equiv A_f.
@@ -1148,7 +1148,7 @@ $$
     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi
 $$
 
-of an operator valued integral. Explicitly, the definition of the operator valued integral along with the definition of $$Q_f$$ imply
+of an operator-valued integral. Explicitly, the definition of the operator-valued integral along with the definition of $$Q_f$$ imply
 
 $$
 \begin{align}
@@ -1188,7 +1188,7 @@ $$
     Q_{1_E}(\psi) = \left< \psi, A_{1_E}\psi \right>
 $$
 
-for all $$\psi \in \mathbf{H}$$. Hence, $$A_{1_E} = \mu(E)$$. Thus the definition of the operator valued integral implies
+for all $$\psi \in \mathbf{H}$$. Hence, $$A_{1_E} = \mu(E)$$. Thus the definition of the operator-valued integral implies
 
 $$
     \int_X 1_E \, d\mu = \mu(E),
@@ -1931,8 +1931,8 @@ Combining all of these results together we find
 $$
 \begin{align}
     \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right)
-    &=  \left( \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu \right) \left( \lim\limits_{j \rightarrow \infty} \int_x r_j \, d\mu \right)   \\
-    &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \left( \int_X s_i \, d\mu \right) \left( \int_x r_j \, d\mu \right)   \\
+    &=  \left( \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu \right) \left( \lim\limits_{j \rightarrow \infty} \int_X r_j \, d\mu \right)   \\
+    &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \left( \int_X s_i \, d\mu \right) \left( \int_X r_j \, d\mu \right)   \\
     &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \int_X s_i r_j \, d\mu   \\
     &=  \int_X f g \, d\mu.
 \end{align}
@@ -2354,7 +2354,7 @@ $$
 
 in the same limit.
 
-Now let us assume the spectrum $$\sigma(A)$$ of $$A$$ is the empty set. Then the resolvent set of $$A$$, the complement of $$\sigma(A)$$ in $$\mathbb{C}$$,  would be all of $$\mathbb{C}$$. This would then imply that the holomorphic function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is holomorphic on all of $$\mathbb{C}$$. In other words it is an entire function.
+Now let us assume the spectrum $$\sigma(A)$$ of $$A$$ is the empty set. Then the resolvent set of $$A$$, the complement of $$\sigma(A)$$ in $$\mathbb{C}$$, would be all of $$\mathbb{C}$$. This would then imply that the holomorphic function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is holomorphic on all of $$\mathbb{C}$$. In other words it is an entire function.
 
 Hence, by evaluating the entire function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ on ever larger closed disks $$\overline{B}$$, the [**Maximum Modulus Principle**](#thrm:maximum-modulus-principle)
 
@@ -2556,7 +2556,7 @@ $$
 
 which proves that $$(A - \lambda \mathbf{1})^{-1}$$ is bounded.
 
-Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and $$\lambda$$ defined by $$\lambda \equiv a  + ib$$, then it follows that $$\lambda$$ is in the resolvent set of a self-adjoint $$A$$. This is then equivalent to the statement that if $$A$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.$$\blacksquare$$
+Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and $$\lambda$$ defined by $$\lambda \equiv a  + ib$$, it follows that $$\lambda$$ is in the resolvent set of a self-adjoint $$A$$. This is then equivalent to the statement that if $$A$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.$$\blacksquare$$
 
 
 > **Definition** *(Spectral Radius)*
@@ -2954,7 +2954,7 @@ $$
     \frac{1}{\left| \lambda \right|} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C.
 $$
 
-So it can not be the case that  $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$, the only option left is $$R(A) = \|A\|$$, the desired result.$$\blacksquare$$
+So it can not be the case that $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$, the only option left is $$R(A) = \|A\|$$, the desired result.$$\blacksquare$$
 
 The next step in this **Stage 1: The Continuous Functional Calculus** is to understand how the spectrum $$\sigma(A)$$ of an operator $$A \in \mathcal{B}(\mathbf{H})$$ is related to the spectrum $$\sigma(p(A))$$ of a polynomial $$p(A)$$ in $$A$$. The relation between $$\sigma(A)$$ and $$\sigma(p(A))$$ is "straightforward" and described by the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
 
@@ -2985,7 +2985,7 @@ $$
 
 This is simply the statement that $$A$$ has a right inverse $$(B(AB)^{-1})$$.
 
-Similarly, under the assumption that $$(AB)$$ has an inverse,$$(AB)^{-1}$$ exists and satisfies
+Similarly, under the assumption that $$(AB)$$ has an inverse, $$(AB)^{-1}$$ exists and satisfies
 
 $$
     (AB)^{-1}(AB) = \mathbf{1}.
@@ -3055,7 +3055,7 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 
 
 **Proof**
-Before getting into the details, let us present an outline of the 4 step proof.
+Before getting into the details, let us present an outline of the 4-step proof.
 
 1. Prove that the desired result
 
@@ -3138,7 +3138,7 @@ $$
 
 where $$q(A)$$ is a $$\lambda$$ dependent polynomial.
 
-Now as $$\lambda$$ is in $$\sigma(A)$$, by definition $$(A - \lambda \mathbf{1})$$ is not invertible in $$\mathcal{B}(\mathbf{H})$$. Furthermore, by construction $$(A - \lambda \mathbf{1})$$ commutes with $$q(A)$$. Hence, as a result of [**Lemma**](#lmm:hall-ex-8.3.1) the left hand side $$(A - \lambda \mathbf{1}) q(A)$$ of the previous equation isn't invertible. Hence, $$p(A) - p(\lambda) \mathbf{1}$$ isn't invertible, and thus $$p(\lambda)$$ is an element of the spectrum $$\sigma(p(A))$$ of $$p(A)$$.  In other words
+Now as $$\lambda$$ is in $$\sigma(A)$$, by definition $$(A - \lambda \mathbf{1})$$ is not invertible in $$\mathcal{B}(\mathbf{H})$$. Furthermore, by construction $$(A - \lambda \mathbf{1})$$ commutes with $$q(A)$$. Hence, as a result of [**Lemma**](#lmm:hall-ex-8.3.1) the lefthand side $$(A - \lambda \mathbf{1}) q(A)$$ of the previous equation isn't invertible. Hence, $$p(A) - p(\lambda) \mathbf{1}$$ isn't invertible, and thus $$p(\lambda)$$ is an element of the spectrum $$\sigma(p(A))$$ of $$p(A)$$. In other words
 
 $$
     \{ p(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(p(A)),
@@ -3172,7 +3172,7 @@ $$
     p(A) - \gamma \mathbf{1} = c (A - b_1 \mathbf{1} )(A - b_2 \mathbf{1} )\cdots(A - b_m \mathbf{1} ).
 $$
 
-Now as $$\gamma \in \sigma(p(A))$$ it follows that $$p(A) - \gamma \mathbf{1}$$ is not invertible. Thus there must exist some $$j$$ such that $$(A - b_j \mathbf{1})$$ is not invertible. If no such $$j$$ existed, then all the terms on the right hand side of this equation would be invertible which would imply that $$p(A) - \gamma \mathbf{1}$$ is invertible, which we already know is not the case.
+Now as $$\gamma \in \sigma(p(A))$$ it follows that $$p(A) - \gamma \mathbf{1}$$ is not invertible. Thus there must exist some $$j$$ such that $$(A - b_j \mathbf{1})$$ is not invertible. If no such $$j$$ existed, then all the terms on the righthand side of this equation would be invertible which would imply that $$p(A) - \gamma \mathbf{1}$$ is invertible, which we already know is not the case.
 
 Now as $$(A - b_j \mathbf{1})$$ is not invertible, this implies that $$b_j$$ is an element in the spectrum $$\sigma(A)$$ of $$A$$. However, from our equation for $$p(z)$$ we know that $$p(z)$$ evaluated at this $$b_j$$ satisfies
 
@@ -3353,7 +3353,7 @@ In addition this algebra [separates-points](#def:separates-points)
 
 > **Definition** *(Separates Points)*
 <a name="def:separates-points"></a>
-> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. The algebra $$\mathcal{A}$$ is said to *separate points* if for any $$x,y \in X$$ such that $$x \neq y$$ there exists a $$f \in \mathcal{A}$$ such that $$f(x) \neq f(y)$$.
+> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. The algebra $$\mathcal{A}$$ is said to *separate points* if for any $$x,y \in X$$ such that $$x \neq y$$ there exists an $$f \in \mathcal{A}$$ such that $$f(x) \neq f(y)$$.
 
 Explicitly, let $$x$$ and $$y$$ be any elements in $$\sigma(A)$$ such that $$x \neq y$$. Note that [**Proposition**](#prpstn:hall-7.7) along with the hypothesis that $$A$$ is self-adjoint, imply that $$x,y \in \sigma(A) \subset \mathbb{R}$$. Hence, the polynomial
 
@@ -3370,7 +3370,7 @@ $$
 \end{align}
 $$
 
-where the final $$\neq$$ follows from the fact that $$x \neq y$$. Hence, the real-valued polynomials on $$\sigma(A)$$ separates-points.
+where the final $$\neq$$ follows from the fact that $$x \neq y$$. Hence, the real-valued polynomials on $$\sigma(A)$$ separate points.
 
 With all of this in-hand we can apply the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass)
 
@@ -3585,9 +3585,9 @@ $$
 
 where $$(fg)$$ denotes the pointwise product of $$f$$ and $$g$$, i.e. $$(fg)(\lambda) \equiv f(\lambda)g(\lambda)$$.
 
-As a result of the proof of [**Proposition**](#prpstn:hall-8.3) we know the real-valued polynomials on the specturm $$\sigma(A)$$ of $$A$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$ with respect to the supremum norm. Hence, there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly. Similarly, there exists a sequence $$\{ r_j \}_{j \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$r_j \rightarrow g$$ uniformly.
+As a result of the proof of [**Proposition**](#prpstn:hall-8.3) we know the real-valued polynomials on the spectrum $$\sigma(A)$$ of $$A$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$ with respect to the supremum norm. Hence, there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly. Similarly, there exists a sequence $$\{ r_j \}_{j \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$r_j \rightarrow g$$ uniformly.
 
-As a result of [**Proposition**](#prpstn:hall-7.5) the the specturm $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. As a result of the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) the specturm $$\sigma(A)$$ of $$A$$ is compact. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$, $$g$$, and all the $$s_i$$ and $$r_j$$ are bounded.
+As a result of [**Proposition**](#prpstn:hall-7.5) the spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. As a result of the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) the spectrum $$\sigma(A)$$ of $$A$$ is compact. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$, $$g$$, and all the $$s_i$$ and $$r_j$$ are bounded.
 
 This setup will now allow us to prove that $$s_ir_i \rightarrow fg$$ uniformly. 
 
@@ -3615,7 +3615,7 @@ $$
     \sup\limits_{\lambda \in \sigma(A)} \lvert g(\lambda) \rvert \le M_g.
 $$
 
-As $$r_j \rightarrow g$$ uniformly, for $$\epsilon = 1$$ there exists an integer $$N_1$$such that for all $$j \ge N_1$$ and all $$\lambda \in \sigma(A)$$ one has
+As $$r_j \rightarrow g$$ uniformly, for $$\epsilon = 1$$ there exists an integer $$N_1$$ such that for all $$j \ge N_1$$ and all $$\lambda \in \sigma(A)$$ one has
 
 $$
     \lvert r_j(\lambda) - g(\lambda) \rvert < 1.
@@ -3651,7 +3651,7 @@ $$
 
 That is to say there is a bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in \sigma(A)$$ and all $$j$$.
 
-Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists an natural number $$N$$ such that for all $$i \ge N$$ one has
+Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
 
 $$
     \sup\limits_{\lambda \in \sigma(A)} |s_i(\lambda) - f(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) \right. .
@@ -3703,7 +3703,7 @@ $$
 where the first equality follows from our previous derivation, the second equality from [**Proposition**](#prpstn:hall-8.3) proving that for real-valued polynomials $$p$$ the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$p \rightarrow p(A)$$ is isometric, the third equality from $$(s_ir_i)(\lambda) \equiv s_i(\lambda)r_i(\lambda)$$, and the fourth equality follows from [**Proposition**](#prpstn:hall-8.3) which proved $$s_i(A)r_i(A) \rightarrow f(A)g(A)$$ relative to the operator norm.
 
 
-In summary the proves this desired Part 1 multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
+In summary this proves the desired Part 1 multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
 
 **Part 2:** Next let us prove Part 2 self-adjointness, proving for any $$f \in C^0(\sigma(A); \mathbb{R})$$, the operator $$f(A)$$ is self-adjoint.
 
@@ -3715,7 +3715,7 @@ $$
     s_i(A) = c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m,
 $$
 
-with $$\mathbb{R}$$ valued coefficients $$c_i$$. As $$A$$ is self-adjoint, it obiously follows that $$s_i(A)$$ is also self-adjoint. Explicitly,
+with $$\mathbb{R}$$ valued coefficients $$c_i$$. As $$A$$ is self-adjoint, it obviously follows that $$s_i(A)$$ is also self-adjoint. Explicitly,
 
 $$
 \begin{align}
@@ -3832,7 +3832,7 @@ $$
     \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
 $$
 
-where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$ and $$\sigma(A)$$ is the specturm of $$A$$.
+where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$ and $$\sigma(A)$$ is the spectrum of $$A$$.
 
 We will prove this by first proving that $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$. We will then prove $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$. Together this will entail the desired result 
 
@@ -3844,7 +3844,7 @@ We start by proving $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A
 
 To that end consider an arbitrary element $$\lambda_0 \in \mathbb{C}$$ such that $$\lambda_0$$ is not in $$\{ f(\lambda) : \lambda \in \sigma(A) \}$$. In other words, there exists no $$\mu \in \sigma(A)$$ such that $$f(\mu) = \lambda_0$$.
 
-Such a $$\lambda_0$$ could lay in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$ or it could lay in $$\mathbb{R}$$ in $$\mathbb{C}$$. We will deal with these two cases separately.
+Such a $$\lambda_0$$ could lie in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$ or it could lie in $$\mathbb{R}$$ in $$\mathbb{C}$$. We will deal with these two cases separately.
 
 Assume first that $$\lambda_0$$ is in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$. This in particular implies that the imaginary component of $$\lambda_0$$ is non-zero.
 
@@ -3854,7 +3854,7 @@ However, as the imaginary component of $$\lambda_0$$ is non-zero this implies th
 
 This proves the contrapositive of $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds when $$\lambda_0$$ is in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$, and thus proves $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds in this case.
 
-Now let us assume that $$\lambda_0$$ lays in $$\mathbb{R}$$ in $$\mathbb{C}$$. This implies that $$\lambda_0$$ is real valued.
+Now let us assume that $$\lambda_0$$ lies in $$\mathbb{R}$$ in $$\mathbb{C}$$. This implies that $$\lambda_0$$ is real-valued.
 
 For this case, consider then the function $$g$$ on $$\sigma(A)$$ defined by
 
@@ -3862,7 +3862,7 @@ $$
     g(\lambda) \equiv \frac{1}{f(\lambda) - \lambda_0}.
 $$
 
-As $$f$$ is continuous and $$f(\mu) \neq \lambda_0$$ for all $$\mu \in \sigma(A)$$, it follows that $$g$$ is continuous. Furthermore, as $$f$$ is real-valued and $$\lambda_0$$ lays in $$\mathbb{R}$$ in $$\mathbb{C}$$, it follows that $$g$$ is real-valued. So $$g$$ is an element of $$C^0(\sigma(A); \mathbb{R})$$.
+As $$f$$ is continuous and $$f(\mu) \neq \lambda_0$$ for all $$\mu \in \sigma(A)$$, it follows that $$g$$ is continuous. Furthermore, as $$f$$ is real-valued and $$\lambda_0$$ lies in $$\mathbb{R}$$ in $$\mathbb{C}$$, it follows that $$g$$ is real-valued. So $$g$$ is an element of $$C^0(\sigma(A); \mathbb{R})$$.
  
 Now obviously for all $$\lambda \in \sigma(A)$$ we have
 
@@ -3882,13 +3882,13 @@ $$
     \mathbf{1} = g(A) (f(A) - \lambda_0 \mathbf{1}).
 $$
 
-In both cases $$g(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3). This implies that the bounded operator $$g(A)$$ is the inverse of $$(f(A) - \lambda_0 \mathbf{1})$$. This in turn implies that $$\lambda_0$$ is not in the specturm $$\sigma(f(A))$$ of $$f(A)$$.
+In both cases $$g(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3). This implies that the bounded operator $$g(A)$$ is the inverse of $$(f(A) - \lambda_0 \mathbf{1})$$. This in turn implies that $$\lambda_0$$ is not in the spectrum $$\sigma(f(A))$$ of $$f(A)$$.
 
 This proves the contrapositive of $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds when $$\lambda_0$$ is in $$\mathbb{R}$$ in $$\mathbb{C}$$, and thus proves $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds in this case.
 
 Next let us prove that $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$.
 
-Assume that there exists some $$\lambda_0$$ such that $$\lambda_0 = f(\mu)$$ for some $$\mu$$ in the specturm $$\sigma(A)$$ of $$A$$. Our goal is then to prove that $$f(\mu)$$ is in $$\sigma(f(A))$$. We will do so using proof by contradiction, assuming $$f(\mu)$$ is not in $$\sigma(f(A))$$ and proving this leads to a contradiction.
+Assume that there exists some $$\lambda_0$$ such that $$\lambda_0 = f(\mu)$$ for some $$\mu$$ in the spectrum $$\sigma(A)$$ of $$A$$. Our goal is then to prove that $$f(\mu)$$ is in $$\sigma(f(A))$$. We will do so using proof by contradiction, assuming $$f(\mu)$$ is not in $$\sigma(f(A))$$ and proving this leads to a contradiction.
 
 To that end, assume that $$f(\mu)$$ is in the resolvent set of $$A$$. Hence, $$f(A) - f(\mu) \mathbf{1}$$ is invertible in $$\mathcal{B}(\mathbf{H})$$.
 
@@ -3914,7 +3914,7 @@ $$
     \sigma(s_i(A)) = \{ s_i(\mu) : \mu \in \sigma(A) \}.
 $$
 
-This implies that $$s_i(\mu)$$ should be in the specturm of $$s_i(A)$$ which implies $$s_i(A) - s_i(\mu)\mathbf{1}$$ is not invertible. However, we just proved that under the assumption $$f(\mu)$$ is not in $$\sigma(f(A))$$ it follows that $$s_i(A) - s_i(\mu)\mathbf{1}$$ is invertible. Hence, our assumption that  $$f(\mu)$$ is not in $$\sigma(f(A))$$ is false and  $$f(\mu)$$ is in $$\sigma(f(A))$$.
+This implies that $$s_i(\mu)$$ should be in the spectrum of $$s_i(A)$$ which implies $$s_i(A) - s_i(\mu)\mathbf{1}$$ is not invertible. However, we just proved that under the assumption $$f(\mu)$$ is not in $$\sigma(f(A))$$ it follows that $$s_i(A) - s_i(\mu)\mathbf{1}$$ is invertible. Hence, our assumption that $$f(\mu)$$ is not in $$\sigma(f(A))$$ is false and $$f(\mu)$$ is in $$\sigma(f(A))$$.
 
 Hence, we have proven the second desired result $$\{ f(\lambda) : \lambda \in \sigma(A) \} \subseteq \sigma(f(A)$$.
 
