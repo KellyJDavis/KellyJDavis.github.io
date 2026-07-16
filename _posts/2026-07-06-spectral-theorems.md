@@ -1877,7 +1877,7 @@ $$
 Noting that the $$r_j$$ are simple functions and thus bounded we can define the real constant $$C$$ by
 
 $$
-    C \equiv \left\{ \sup\limits_{\lambda \in X} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in X} \lvert r_{N_1 - 1} (\lambda) \rvert, 1 + M_g \right\},
+    C \equiv \max \left\{ \sup\limits_{\lambda \in X} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in X} \lvert r_{N_1 - 1} (\lambda) \rvert, 1 + M_g \right\},
 $$
 
 then it obviously follows that
@@ -1891,10 +1891,10 @@ In other words there is a bound $$C$$ on the $$r_j$$ that holds uniformly for al
 Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists an $$N$$ such that for all $$i \ge N$$ one has
 
 $$
-    \sup\limits_{\lambda \in X} |s_i(\lambda) - f(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \right. .
+    \sup\limits_{\lambda \in X} |s_i(\lambda) - f(\lambda)| < \left( \frac{\epsilon}{2 C} \right).
 $$
 
-Note that as a result of the bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in X$$ and all $$j$$, we can arrange for $$N$$ to be independent of $$j$$. Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
+Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
     \sup\limits_{\lambda \in X} |r_j(\lambda) - g(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} |f(\lambda)| \right) \right. .
@@ -1906,11 +1906,17 @@ $$
 \begin{align}
     |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)|
     &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
-    &<   \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |r_j(\lambda)|} \right)  + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |f(\lambda)|} \right) \\
-    &= \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
-    &= \epsilon.
+    &<   \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 C} \right) + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |f(\lambda)|} \right) \\
+    &\le \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
+    &= \epsilon,
 \end{align}
 $$
+
+where the third line follows from our previous result
+
+$$
+    \sup\limits_{j \in \mathbb{N}} \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \le C.
+$$ 
 
 This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
 
@@ -3494,7 +3500,7 @@ $$
 Now if we define the $$\epsilon$$ of the hypothesis by
 
 $$
-    \epsilon \equiv \|A^{-1}\|,
+    \epsilon \equiv \frac{1}{\|A^{-1}\|},
 $$
 
 then if
@@ -3506,7 +3512,7 @@ $$
 it follows that
 
 $$
-    \|B - A\| < \|A^{-1}\|
+    \|B - A\| < \frac{1}{\|A^{-1}\|}
 $$
 
 and thus
@@ -3640,7 +3646,7 @@ $$
 Noting the $$r_j$$ are bounded we can define the real constant $$C$$ by
 
 $$
-    C \equiv \left\{ \sup\limits_{\lambda \in \sigma(A)} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in \sigma(A)} \lvert r_{N_1 - 1} (\lambda) \rvert, 1 + M_g \right\},
+    C \equiv \max \left\{ \sup\limits_{\lambda \in \sigma(A)} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in \sigma(A)} \lvert r_{N_1 - 1} (\lambda) \rvert, 1 + M_g \right\},
 $$
 
 then it is obviously the case that
@@ -3654,10 +3660,10 @@ That is to say there is a bound $$C$$ on the $$r_j$$ that holds uniformly for al
 Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
 
 $$
-    \sup\limits_{\lambda \in \sigma(A)} |s_i(\lambda) - f(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) \right. .
+    \sup\limits_{\lambda \in \sigma(A)} |s_i(\lambda) - f(\lambda)| < \left( \frac{\epsilon}{2C} \right).
 $$
 
-As a result of the bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in \sigma(A)$$ and all $$j$$, we can arrange for $$N$$ to be independent of $$j$$. Similarly, as $$r_j$$ converges uniformly to $$g$$ and $$f$$ is bounded, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
+Similarly, as $$r_j$$ converges uniformly to $$g$$ and $$f$$ is bounded, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
     \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda) - g(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) \right. .
@@ -3669,10 +3675,16 @@ $$
 \begin{align}
     |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)|
     &\le \left( \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
-    &<   \left( \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)|} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)|} \right) \\
-    &= \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
-    &= \epsilon.
+    &<   \left( \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2C} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)|} \right) \\
+    &\le \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
+    &= \epsilon,
 \end{align}
+$$
+
+where the third line follows from our previous result
+
+$$
+    \sup\limits_{j \in \mathbb{N}} \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \le C.
 $$
 
 This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
@@ -3936,6 +3948,8 @@ $$
 the final desired result.$$\blacksquare$$
 
 **Stage 2: An Operator-Valued Riesz Representation Theorem**
+
+We are finally in a position to kick off Stage 2. In this stage we will prove that for a real-valued, continuous function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, the operator $$f(A)$$ derived using real-valued functional calculus can be represented as integration against a projection-valued measure. This will essentially amount to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation).
 
 > **Theorem** *(Riesz Representation)*
 <a name="thrm:riesz-representation"></a>
