@@ -3974,11 +3974,77 @@ $$
 satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear and is non-negative whenever all the values of $$f$$ are non-negative. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation) and conclude that for any $$\psi \in \mathbf{H}$$ there exists a measure $$\mu_\psi$$ such that
 
 $$
-    \Lambda_\psi(f) \equiv \left< \psi, f(A) \psi \right> = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi
+    \left< \psi, f(A) \psi \right> = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda)
 $$
 
-for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$.
+for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$. Note how similar this is to the equality
+
+$$
+    \left< \psi, \left( \int_{\sigma(A)} f \, d\mu \right) \psi \right> = \int_{\sigma(A)} f(\lambda) d\mu_\psi(\lambda).
+$$
+
+that appears when [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) is formulated on $$X \equiv \sigma(A)$$. This will turn out to be more than a similarity. The remainder of Stage 2 will be dedicated to proving that these are indeed the same equation.  
  
+To that end let us make the following definition
+
+> **Definition**
+<a name="def:hall-8.6"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{thrm:riesz-representation} -->
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
+> 
+> $$
+>     Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
+> $$
+> 
+> where $$\mu_\psi$$ is the measure on $$\sigma(A)$$ derived from our map $$\Lambda_\psi$$ and the [**Riesz Representation Theorem**](#thrm:riesz-representation).
+
+It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the following [**Proposition**](#)
+
+> **Proposition**
+<a name="prpstn:hall-8.7"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{def:bounded-sesquilinear-form} -->
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
+> 
+> $$
+>     Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
+> $$ 
+> 
+> via [**Definition**](#def:hall-8.6). This map $$Q_f$$ is a bounded quadratic form.
+
+**Proof**
+Let $$\mathcal{F}$$ be the set of all bounded, measurable, complex-valued functions $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
