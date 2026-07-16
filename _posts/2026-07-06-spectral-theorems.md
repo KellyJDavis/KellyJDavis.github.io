@@ -4009,6 +4009,11 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
+<!--  \uses{def:hall-7.7} -->
+<!--  \uses{def:hall-7.5} -->
+<!--  \uses{thrm:heine–borel-theorem} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:hall-a.62} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
 > $$
@@ -4154,6 +4159,49 @@ the final desired result. This completes the proof that  $$Q_{\alpha f + \beta g
 
 Next let us prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
 
+By definition $$\mathcal{F}$$ is a subset of the set of bounded, Borel-measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, where $$A$$ is self-adjoint. So, let us first prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of this set of bounded, Borel-measurable, complex-valued functions.
+
+Recall that as $$A$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R} \subset \mathbb{C}$$. In addition, [**Proposition**](#def:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) then implies that $$\sigma(A)$$ is compact. Finally, the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded.
+
+As $$C^0(\sigma(A); \mathbb{R})$$ is continuous, for any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ the pre-image of any open set in $$\mathbb{R}$$ is open in $$\sigma(A)$$. As $$\mathbb{R} \subset \mathbb{C}$$ has the subset topology, for any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ the pre-image of any open set in $$\mathbb{C}$$ is open in $$\sigma(A)$$. Hence, any element of $$C^0(\sigma(A); \mathbb{R})$$ is Borel-measurable when considered as a complex-valued function on the spectrum $$\sigma(A)$$ of $$A$$.
+
+So with that we have proven that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of the set of  bounded, Borel-measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$.
+
+The final step to prove $$C^0(\sigma(A); \mathbb{R}) \subset \mathcal{F}$$ is to prove that any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ results in a bounded quadratic form $$Q_f$$.
+
+Now tracing definitions we find that for any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ one has
+
+$$
+    Q_f(\psi) = \left< \psi, f(A)\psi \right>,
+$$
+
+where bounded operator $$f(A)$$ is the image of $$f$$ under the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3). Thus as a result of [**Proposition**](#prpstn:hall-a.62)
+
+> **Proposition**
+<a name="prpstn:hall-a.62"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{def:bounded-sesquilinear-form} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$, one can construct a bounded quadratic form $$Q_A$$ on $$\mathbf{H}$$ by setting
+> 
+> $$
+>     Q_A(\psi) \equiv \left< \psi, A\psi \right>
+> $$
+> 
+> for all $$\psi$$ in $$\mathbf{H}$$. The associated sesquilinear form $$L_A$$ is then given by
+> 
+> $$
+>     L_A(\phi, \psi) = \left< \phi, A\psi \right>
+> $$
+> 
+> for all $$\phi$$ and $$\psi$$ in $$\mathbf{H}$$.
+
+
+we can conclude that $$Q_f(\psi) = \left< \psi, f(A)\psi \right>$$ is a bounded quadratic form, the final desired result required to prove that  $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
+
+Our next step is to prove that $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits. This essentially is a result of the fact that $$Q_f(\psi)$$ is continuous with respect to such limits.
+
+Explicitly,
 
 
 
