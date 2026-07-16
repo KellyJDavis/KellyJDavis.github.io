@@ -3961,6 +3961,39 @@ We are finally in a position to kick off Stage 2. In this stage we will prove th
 >
 > for all $$f \in C^0(X; \mathbb{R})$$.
 
+However, before considering an operator-valued version, let us consider how we can apply the non-operator-valued version to the situation at hand.
+
+The hypothesis of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) presents us with an element $$A \in \mathcal{B}(\mathbf{H})$$ that is self-adjoint. For any continuous, real-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, i.e. any $$f \in C^0(\sigma(A) ; \mathbb{R})$$, the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3) defines a linear map $$f \mapsto f(A)$$ from $$C^0(\sigma(A) ; \mathbb{R})$$ into $$\mathcal{B}(\mathbf{H})$$. Furthermore, if $$f$$ is non-negative, then as a result of Part 3 of [**Proposition**](#prpstn:hall-8.4), it follows that $$f(A)$$ is a non-negative bounded operator, i.e. $$0 \le \left< \psi, f(A)\psi \right>$$ for all $$\psi \in \mathbf{H}$$.
+
+Hence, for any $$\psi \in \mathbf{H}$$ the function $$\Lambda_\psi : C^0(\sigma(A) ; \mathbb{R}) \rightarrow \mathbb{R}$$ defined by
+
+$$
+    \Lambda_\psi(f) \equiv \left< \psi, f(A) \psi \right>
+$$
+
+satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear and is non-negative whenever all the values of $$f$$ are non-negative. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation) and conclude that for any $$\psi \in \mathbf{H}$$ there exists a measure $$\mu_\psi$$ such that
+
+$$
+    \Lambda_\psi(f) \equiv \left< \psi, f(A) \psi \right> = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi
+$$
+
+for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$.
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
