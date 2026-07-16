@@ -4007,6 +4007,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{def:hall-8.6} -->
+<!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
@@ -4021,10 +4022,135 @@ Let $$\mathcal{F}$$ be the set of all bounded, Borel-measurable, complex-valued 
 
 Explicitly, consider $$f,g \in \mathcal{F}$$ and $$\alpha, \beta \in \mathbb{C}$$. To prove that $$\mathcal{F}$$ is a vector space we must prove that $$\alpha f + \beta g$$ is a member of $$\mathcal{F}$$. It is to this we now turn.
 
+The proof that $$\mathcal{F}$$ is a vector space essentially relies on the fact that $$f \mapsto Q_f$$ is linear. Explicitly,
+
+$$
+\begin{align}
+    Q_{\alpha f + \beta g}(\psi) &= \int_{\sigma(A)} (\alpha f + \beta g)(\lambda) \, d\mu_\psi(\lambda) \\
+                                 &= \int_{\sigma(A)} \alpha f(\lambda) + \beta g(\lambda) \, d\mu_\psi(\lambda) \\
+                                 &= \alpha \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) + \beta \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda) \\
+                                 &= \alpha Q_f(\psi) + \beta Q_g(\psi).
+\end{align}
+$$
+
+Now to prove that $$\mathcal{F}$$ is a vector space we must prove that
+
+$$
+    Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g
+$$
+
+is bounded quadratic form and thus an element of $$\mathcal{F}$$. 
+
+To prove that $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$ is a bounded quadratic form we must prove that
+
+1. $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+2. The map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+
+   $$
+   \begin{align}
+       L_{\alpha f + \beta g}(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_{\alpha f + \beta g}(\phi + \psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(\psi) \right] \\
+                                                       &-\frac{i}{2} \left[ Q_{\alpha f + \beta g}(\phi + i\psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(i\psi) \right]
+   \end{align}
+   $$
+
+   is a sesquilinear form on $$\mathbf{H}$$.
+
+3. That there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+   $$
+       |Q_{\alpha f + \beta g}(\phi)| \le C \|\phi\|^2,
+   $$
+
+   where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+
+Let us prove these one by one.
+
+First let us prove $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+
+This follows from the fact that $$f$$ and $$g$$ are in $$\mathcal{F}$$ and thus $$Q_f$$ and $$Q_g$$ are bounded quadratic forms. Explicitly,
+
+$$
+\begin{align}
+    Q_{\alpha f + \beta g}(\lambda\psi) &= \alpha Q_f(\lambda\psi) + \beta Q_g(\lambda\psi) \\
+                                        &= \lvert \lambda \rvert^2 \alpha Q_f(\psi) + \lvert \lambda \rvert^2 \beta Q_g(\psi) \\
+                                        &= \lvert \lambda \rvert^2 \left( \alpha Q_f(\psi) + \beta Q_g(\psi) \right) \\
+                                        &= \lvert \lambda \rvert^2 Q_{\alpha f + \beta g}(\psi),
+\end{align}
+$$
+
+which implies
+
+$$
+    Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{\alpha f + \beta g}(\psi),
+$$
+
+the first desired result.
+
+Next let us prove the map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+
+$$
+\begin{align}
+    L_{\alpha f + \beta g}(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_{\alpha f + \beta g}(\phi + \psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(\psi) \right] \\
+                                       &-\frac{i}{2} \left[ Q_{\alpha f + \beta g}(\phi + i\psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(i\psi) \right]
+\end{align}
+$$
+
+is a sesquilinear form on $$\mathbf{H}$$.
+
+Again this follows from the fact that $$f$$ and $$g$$ are in $$\mathcal{F}$$ and thus $$Q_f$$ and $$Q_g$$ are bounded quadratic forms. Explicitly, linearity implies
+
+$$
+   L_{\alpha f + \beta g}(\phi, \psi) = \alpha L_f(\phi, \psi) + \beta L_g(\phi, \psi),
+$$
+
+with the obvious definitions of $$L_f$$ in terms of $$Q_f$$ and $$L_g$$ in terms of $$Q_g$$.
+
+Now as $$Q_f$$ and $$Q_g$$ are bounded quadratic forms, $$L_f$$ and $$L_g$$ are sesquilinear forms. Hence, they are conjugate linear in the first factor and linear in the second factor. Thus $$L_{\alpha f + \beta g}$$ is conjugate linear in the first factor and linear in the second factor. Hence, $$L_{\alpha f + \beta g}$$ is a sesquilinear form, the desired result.
+
+Finally, let us prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+$$
+    |Q_{\alpha f + \beta g}(\phi)| \le C \|\phi\|^2,
+$$
+
+where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
+
+Again this follows from the fact that $$f$$ and $$g$$ are in $$\mathcal{F}$$ and thus $$Q_f$$ and $$Q_g$$ are bounded quadratic forms. Explicitly, the norm definition and linearity imply
 
 
+$$
+\begin{align}
+    \lvert Q_{\alpha f + \beta g}(\phi) \rvert &=   \lvert  \alpha Q_f(\phi) + \beta Q_g(\phi) \rvert \\
+                                               &\le \lvert  \alpha Q_f(\phi) \rvert + \lvert \beta Q_g(\phi) \rvert \\
+                                               &=   \lvert \alpha \rvert \, \lvert  Q_f(\phi) \rvert + \lvert \beta \rvert \, \lvert Q_g(\phi) \rvert \\
+                                               &\le C_f \lvert \alpha \rvert \, \| \phi \|^2 + C_g \lvert \beta \rvert \, \| \phi \|^2 \\
+                                               &=   \left( C_f \lvert \alpha \rvert + C_g \lvert \beta \rvert \right) \| \phi \|^2 \\
+                                               &=   C \| \phi \|^2, 
+\end{align}
+$$
 
+where we have used the fact that $$Q_f$$ and $$Q_g$$ are bounded quadratic forms to infer that there exist constants $$C_f$$ and $$C_g$$ in $$\mathbb{R}$$ such that
 
+$$
+\begin{align}
+    \lvert  Q_f(\phi) \rvert &\le C_f \| \phi \|^2 \\
+    \lvert  Q_g(\phi) \rvert &\le C_g \| \phi \|^2
+\end{align}
+$$
+
+along with the definition
+
+$$
+    C \equiv C_f \lvert \alpha \rvert + C_g \lvert \beta \rvert.
+$$
+
+This implies
+
+$$
+    \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \| \phi \|^2,
+$$
+
+the final desired result to prove that $$Q_{\alpha f + \beta g}$$ is a bounded quadratic form an thus that $$\alpha f + \beta g$$ is an element of $$\mathcal{F}$$, implying that $$\mathcal{F}$$ is a vector space.
 
 
 
