@@ -4150,7 +4150,7 @@ $$
     \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \| \phi \|^2,
 $$
 
-the final desired result to prove that $$Q_{\alpha f + \beta g}$$ is a bounded quadratic form an thus that $$\alpha f + \beta g$$ is an element of $$\mathcal{F}$$, implying that $$\mathcal{F}$$ is a vector space.
+the final desired result. This completes the proof that  $$Q_{\alpha f + \beta g}$$ is a bounded quadratic form. This in turn implies that $$\alpha f + \beta g$$ is an element of $$\mathcal{F}$$ which in turn implies $$\mathcal{F}$$ is a vector space.
 
 
 
