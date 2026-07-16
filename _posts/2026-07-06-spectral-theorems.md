@@ -4017,7 +4017,9 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 > via [**Definition**](#def:hall-8.6). This map $$Q_f$$ is a bounded quadratic form.
 
 **Proof**
-Let $$\mathcal{F}$$ be the set of all bounded, measurable, complex-valued functions $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form.
+Let $$\mathcal{F}$$ be the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form. It turns out that $$\mathcal{F}$$ is a vector space.
+
+Explicitly, consider $$f,g \in \mathcal{F}$$ and $$\alpha, \beta \in \mathbb{C}$$. To prove that $$\mathcal{F}$$ is a vector space we must prove that $$\alpha f + \beta g$$ is a member of $$\mathcal{F}$$. It is to this we now turn.
 
 
 
