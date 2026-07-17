@@ -4512,6 +4512,39 @@ $$
 
 where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
 
+This follows from recalling that
+
+$$
+   \mu_\psi(\sigma(A)) = \|\psi\|^2
+$$
+
+and that $$f$$ is bounded. Together these imply
+
+$$
+\begin{align}
+    \lvert Q_f(\phi) \rvert &=   \left| \int_{\sigma(A)} f(\lambda) \, d\mu_\phi(\lambda) \right| \\
+                            &\le \left| \int_{\sigma(A)} \left( \sup\limits_{\lambda' \in \sigma(A)} f(\lambda') \right) \, d\mu_\phi(\lambda) \right| \\
+                            &=   \left| \sup\limits_{\lambda' \in \sigma(A)} f(\lambda') \right| \, \left| \int_{\sigma(A)} d\mu_\phi(\lambda) \right| \\
+                            &=   \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \, \left| \|\phi\|^2 \right| \\
+                            &=   \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \, \|\phi\|^2, 
+\end{align}
+$$
+
+which gives the desired result, there exists a real constant
+
+$$
+    C \equiv \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right|
+$$
+
+such that for all $$\phi$$ in $$\mathbf{H}$$ one has
+
+$$
+    |Q_f(\phi)| \le C \|\phi\|^2.
+$$
+
+This completes our proff that $$f$$ is in $$\mathcal{F}$$ and thus our proof that $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.
+
+Finally to complete the proof of [**Proposition**](#prpstn:hall-8.7) we will prove that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
 
 
 
