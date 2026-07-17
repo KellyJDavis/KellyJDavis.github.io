@@ -4341,6 +4341,36 @@ $$
 
 is a Borel measurable set. Hence, the preimage of any set of the form $$(a, \infty)$$ under $$\text{Re}(g_i)$$ is a Borel measurable set, and thus $$\text{Re}(g_i)$$ is Borel measurable. A similar argument goes through for $$\text{Im}(g_i)$$ proving that $$g_i$$ is Borel measurable.
 
+Now let us prove that $$f$$ is Borel measurable.
+
+Recall that a real-valued function is Borel measurable if the preimage of any set of the form $$(-\infty, a)$$ is a Borel set. With this in mind consider the preimage of $$(-\infty, a)$$ under $$\text{Re}(f)$$
+
+$$
+    \left\{ \lambda \in \sigma(A) : \text{Re}(f(\lambda)) < a \right\} = \left\{ \lambda \in \sigma(A) : \inf_{i \in \mathbb{N}} \text{Re}(g_i(\lambda)) < a \right\}.
+$$
+
+Now the infimum of a sequence is strictly less than $$a$$ if and only if at least one term in the sequence is strictly less than $$a$$. Hence,
+
+$$
+    \left\{ \lambda \in \sigma(A) : \inf_{i \in \mathbb{N}} \text{Re}(g_i(\lambda)) < a \right\} = \bigcup_{i \in \mathbb{N}}  \left\{ \lambda \in \sigma(A) : \text{Re}(g_i(\lambda)) < a \right\}.
+$$
+
+However, we proved that the $$\text{Re}(g_i)$$ is Borel measurable. Thus
+
+$$
+    \left\{ \lambda \in \sigma(A) : \text{Re}(g_i(\lambda)) < a \right\}
+$$
+
+are Borel measurable sets. As the $$\sigma$$-algebra of Borel sets is closed under countable unions, it then follows that
+
+$$
+    \bigcup_{i \in \mathbb{N}}  \left\{ \lambda \in \sigma(A) : \text{Re}(g_i(\lambda)) < a \right\}
+$$
+
+is a Borel measurable set. Hence, the preimage of any set of the form $$(-\infty, a)$$ under $$\text{Re}(f)$$ is a Borel measurable set, and thus $$\text{Re}(f(\lambda))$$ is Borel measurable. A similar argument holds for $$\text{Im}(f(\lambda))$$, proving that $$f$$ is Borel measurable, the desired result.
+
+Next we have to prove that $$f$$ in in $$\mathcal{F}$$.
+
 
 
 
