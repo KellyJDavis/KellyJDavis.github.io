@@ -4015,6 +4015,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:hall-a.62} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
 > $$
@@ -4369,9 +4370,105 @@ $$
 
 is a Borel measurable set. Hence, the preimage of any set of the form $$(-\infty, a)$$ under $$\text{Re}(f)$$ is a Borel measurable set, and thus $$\text{Re}(f(\lambda))$$ is Borel measurable. A similar argument holds for $$\text{Im}(f(\lambda))$$, proving that $$f$$ is Borel measurable, the desired result.
 
-Next we have to prove that $$f$$ in in $$\mathcal{F}$$.
+Next we have to prove that $$f$$ is in $$\mathcal{F}$$. The definition of $$\mathcal{F}$$ implies that is equivalent to proving that $$Q_f$$ is a bounded quadratic form.
 
+To prove that $$Q_f$$ is a bounded quadratic form we must prove that
 
+1. $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+2. The map $$L_f : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+
+   $$
+   \begin{align}
+       L_f(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_f(\phi + \psi) - Q_f(\phi) - Q_f(\psi) \right] \\
+                                                       &-\frac{i}{2} \left[ Q_f(\phi + i\psi) - Q_f(\phi) - Q_f(i\psi) \right]
+   \end{align}
+   $$
+
+   is a sesquilinear form on $$\mathbf{H}$$.
+
+3. That there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+   $$
+       |Q_f(\phi)| \le C \|\phi\|^2,
+   $$
+
+   where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+
+The key "engine" iin proving the $$Q_f$$ is a bounded quadratic form is the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem)
+
+> **Theorem** *(Bounded Convergence Theorem)*
+<a name="thrm:bounded-convergence-theorem"></a>
+> Let $$X$$ be a set with finite measure $$\mu(X) < \infty$$ and $$\{ f_i \}_{i \in \mathbb{N}}$$ a sequence of uniformly bounded, complex valued functions on $$X$$ that converge point-wise to $$f$$, then
+> 
+> $$
+>     \int_X f \, d\mu = \lim\limits_{i \rightarrow \infty} \int_X f_i \, d\mu.
+> $$
+
+To apply this to the sequence $$\{ f_i \}_{i \in \mathbb{N}}$$ at hand in order to prove
+
+$$
+    \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) = \lim\limits_{i \rightarrow \infty} \int_{\sigma(A)} f_i(\lambda) \, d\mu_\psi(\lambda)
+$$
+
+we must prove that
+
+$$
+    \mu_\psi(\sigma(A)) \equiv \int_{\sigma(A)} d\mu_\psi(\lambda) < \infty.
+$$
+
+Doing so is relatively straight-forward.
+
+As mentiond previously, if $$f$$ is in $$C^0(\sigma(A); \mathbb{R})$$, then
+
+$$
+    Q_f(\psi) = \left< \psi, f(A)\psi \right>.
+$$
+
+The constant function $$f(\lambda) = 1$$ is obviously in $$C^0(\sigma(A); \mathbb{R})$$. Hence, one has
+
+$$
+\begin{align}
+    \mu_\psi(\sigma(A)) &\equiv \int_{\sigma(A)} d\mu_\psi(\lambda) \\
+                        &= Q_1(\psi) \\
+                        &= \left< \psi, \mathbf{1}(A) \psi \right> \\
+                        &= \left< \psi, \mathbf{1} \psi \right> \\
+                        &= \left< \psi, \psi \right> \\
+                        &= \left\| \psi \right\|^2 \\
+                        &< \infty,
+\end{align}
+$$
+
+where we have used the definition of $$Q_1(\psi)$$, the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3), and the definition of the norm on $$\mathbf{H}$$. This implies
+
+$$
+    \mu_\psi(\sigma(A)) < \infty,
+$$
+
+in other words $$\sigma(A)$$ has a finite measure $$\mu_\psi(\sigma(A))$$.
+
+That established we can apply the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem) to conclude that
+
+$$
+    \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) = \lim\limits_{i \rightarrow \infty} \int_{\sigma(A)} f_i(\lambda) \, d\mu_\psi(\lambda).
+$$
+
+This implies
+
+$$
+\begin{align}
+    Q_f(\psi) &= \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) \\
+              &= \lim\limits_{i \rightarrow \infty} \int_{\sigma(A)} f_i(\lambda) \, d\mu_\psi(\lambda \\
+              &= \lim\limits_{i \rightarrow \infty} Q_{f_i}(\psi),
+\end{align}
+$$
+
+and it is this relation
+
+$$
+    Q_f(\psi) = \lim\limits_{i \rightarrow \infty} Q_{f_i}(\psi)
+$$
+
+that will allow us to prove that $$Q_f$$ is a bounded quadratic form.
 
 
 
