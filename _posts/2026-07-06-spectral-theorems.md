@@ -4470,7 +4470,47 @@ $$
 
 that will allow us to prove that $$Q_f$$ is a bounded quadratic form.
 
+To wit, first let us prove $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 
+This follows from our previous result along with the fact that the $$Q_{f_i}(\psi)$$ are bounded quadratic forms. We have
+
+$$
+\begin{align}
+    Q_f(\lambda\psi) &= \lim\limits_{i \rightarrow \infty} Q_{f_i}(\lambda\psi) \\
+                     &= \lim\limits_{i \rightarrow \infty} \lvert\lambda\rvert^2 Q_{f_i}(\psi) \\
+                     &= \lvert\lambda\rvert^2 \left( \lim\limits_{i \rightarrow \infty} Q_{f_i}(\psi) \right) \\
+                     &= \lvert\lambda\rvert^2 Q_f(\psi),
+\end{align}
+$$
+
+which is the desired result.
+
+Now let us prove the map $$L_f : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+   
+$$
+\begin{align}
+    L_f(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_f(\phi + \psi) - Q_f(\phi) - Q_f(\psi) \right] \\
+                                                    &-\frac{i}{2} \left[ Q_f(\phi + i\psi) - Q_f(\phi) - Q_f(i\psi) \right]
+\end{align}
+$$
+
+is a sesquilinear form on $$\mathbf{H}$$.
+
+Linearity implies
+
+$$
+    L_f(\phi, \psi) = \lim\limits_{i \rightarrow \infty} L_{f_i}(\phi, \psi).
+$$
+
+As the $$L_{f_i}(\phi, \psi)$$ are conjugate linear in the first factor and linear in the second factor the same is true of $$L_f(\phi, \psi)$$ and thus it is a sesquilinear form on $$\mathbf{H}$$, the desired result.
+
+Finally, let us prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+
+$$
+    |Q_f(\phi)| \le C \|\phi\|^2,
+$$
+
+where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
 
 
 
