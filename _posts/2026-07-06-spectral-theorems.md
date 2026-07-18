@@ -4017,6 +4017,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{lmm:hall-prblm-8.3.3a} -->
+<!--  \uses{def:algebra-of-sets} -->
 <!--  \uses{lmm:hall-prblm-8.3.3b} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
@@ -4561,12 +4562,30 @@ This proof consists of two parts
 1. Prove that $$\mathcal{L}_0$$ is an algebra of sets.
 2. Prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
 
-Let us first prove Part 1 $$\mathcal{L}_0$$ is an algebra of sets.
+Let us first prove Part 1 that $$\mathcal{L}_0$$ is an algebra of sets.
 
 Recall that an algebra of sets is defined as follows:
 
-**Definition** *(Algebra of Sets)*
+> **Definition** *(Algebra of Sets)*
 <a name="def:algebra-of-sets"></a>
+> Given a set $$S$$ and a set of subsets $$\mathcal{S}$$ of $$S$$, the set of subsets $$\mathcal{S}$$ is an *algebra of sets* if it
+> 
+> 1. Contains the empty set, i.e. $$\emptyset \in \mathcal{S}$$.
+> 2. Closed under compliments, i.e. if $$s \in \mathcal{S}$$, then $$(S \backslash s) \in \mathcal{S}$$.
+> 3. Closed under finite intersection, i.e. if $$s_i \in \mathcal{S}$$ for all $$i \in \{1,2,\ldots,N\}$$, then
+>
+>    $$
+>
+>        \bigcap_{i=1}^N s_i \in \mathcal{S}.
+>    $$
+>
+> 4. Closed under finite union, i.e. if $$s_i \in \mathcal{S}$$ for all $$i \in \{1,2,\ldots,N\}$$, then
+>
+>    $$
+>        \bigcup_{i=1}^N s_i \in \mathcal{S}.
+>    $$
+
+\textbf{Item 1:} Let us start by proving that $$\emptyset \in \mathcal{L}_0$$. To prove this we must prove that: (a) $$\emptyset$$ is measurable and that (b) $$1_\emptyset$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
 
 
 
