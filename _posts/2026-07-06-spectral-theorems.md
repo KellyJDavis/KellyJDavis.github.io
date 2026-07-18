@@ -4016,6 +4016,9 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{prpstn:hall-a.62} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{lmm:hall-prblm-8.3.3a} -->
+<!--  \uses{lmm:hall-prblm-8.3.3b} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
 > $$
@@ -4546,8 +4549,24 @@ This completes our proff that $$f$$ is in $$\mathcal{F}$$ and thus our proof tha
 
 Finally to complete the proof of [**Proposition**](#prpstn:hall-8.7) we will prove that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
 
+Our proof of this result requires that we first prove some "utility" lemmas as stepping stones. The first of these "utility" lemmas is the following:
 
+> **Lemma**
+<a name="lmm:hall-prblm-8.3.3a"></a>
+> Let $$X$$ be a compact metric space with a measure $$\mu_X$$. Let $$\mathcal{L}_0$$ be the set of all measurable subsets $$E$$ of $$X$$ with indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous functions. Then $$\mathcal{L}_0$$ is an algebra and contains all open sets in $$X$$.
 
+**Proof**
+This proof consists of two parts
+
+1. Prove that $$\mathcal{L}_0$$ is an algebra of sets.
+2. Prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
+
+Let us first prove Part 1 $$\mathcal{L}_0$$ is an algebra of sets.
+
+Recall that an algebra of sets is defined as follows:
+
+**Definition** *(Algebra of Sets)*
+<a name="def:algebra-of-sets"></a>
 
 
 
