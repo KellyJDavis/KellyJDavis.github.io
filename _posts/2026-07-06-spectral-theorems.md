@@ -4020,6 +4020,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{def:algebra-of-sets} -->
 <!--  \uses{lmm:hall-prblm-8.3.3b} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{thrm:archimedean-property} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
 > $$
@@ -4559,10 +4560,11 @@ Our proof of this result requires that we first prove some "utility" lemmas as s
 **Proof**
 This proof consists of two parts
 
-1. Prove that $$\mathcal{L}_0$$ is an algebra of sets.
-2. Prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
+**Part 1:** Prove that $$\mathcal{L}_0$$ is an algebra of sets.
 
-Let us first prove Part 1 that $$\mathcal{L}_0$$ is an algebra of sets.
+**Part 2:**  Prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
+
+Let us first prove **Part 1**, that $$\mathcal{L}_0$$ is an algebra of sets.
 
 Recall that an algebra of sets is defined as follows:
 
@@ -4585,7 +4587,94 @@ Recall that an algebra of sets is defined as follows:
 >        \bigcup_{i=1}^N s_i \in \mathcal{S}.
 >    $$
 
-\textbf{Item 1:} Let us start by proving that $$\emptyset \in \mathcal{L}_0$$. To prove this we must prove that: (a) $$\emptyset$$ is measurable and that (b) $$1_\emptyset$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
+Let us one-by-one prove each of these properties holds for $$\mathcal{L}_0$$.
+
+**Property 1:** Let us start by proving that $$\emptyset \in \mathcal{L}_0$$. To prove this we must prove **Property 1.1:** that $$\emptyset$$ is measurable and **Property 1.2:** that $$1_\emptyset$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
+
+**Property 1.1:** Let us first prove that $$\emptyset$$ is measurable.
+
+The definition of a $$\sigma$$-algebra requires that the empty set $$\emptyset$$ is an element of any $$\sigma$$-algebra, in particular the empty set $$\emptyset$$ is an element of the $$\sigma$$-algebra of $$X$$.
+
+The definition of a measure implies that $$\mu_X$$ maps the $$\sigma$$-algebra of $$X$$ to the extended real numbers.
+
+These facts together imply that $$\mu_X(\emptyset)$$ is defined, which is none other than the desired result, $$\emptyset$$ is measurable.
+
+**Property 1.2:** Let us now prove that $$1_\emptyset$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
+
+To prove that $$1_\emptyset$$ is the pointwise limit of a sequence of uniformly bounded continuous functions, we must prove that **Property 1.2.1:** there exists a sequence of function $$\{ f_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$C$$ such that
+
+$$
+    \lvert f_n(x) \rvert \le C
+$$
+
+for all $$x \in X$$ and all $$n \in \mathbb{N}$$; and **Property 1.2.2:** for any real number $$\epsilon > 0$$ there exist a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \lvert f_n(x) - 1_\emptyset(x) \rvert < \epsilon
+$$
+
+for all $$x \in X$$.
+
+Below we will prove that the set of constant functions
+
+$$
+    f_n(x) \equiv \frac{1}{n + 1}
+$$
+
+on $$X$$ has all these desired properties.
+
+**Property 1.2.1:** Let us next prove that the sequence of functions $$\{ f_n \}_{n \in \mathbb{N}}$$ above is in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$C$$ exists such that
+
+$$
+    \lvert f_n(x) \rvert \le C
+$$
+
+for all $$x \in X$$ and all $$n \in \mathbb{N}$$.
+
+We begin with the obvious result that the constant functions
+
+$$
+    f_n(x) \equiv \frac{1}{n + 1}
+$$
+
+on $$X$$ are elements of $$C^0(X; \mathbb{R})$$.
+
+Also a moment's thought reveals that if we take $$C = 1$$, then we have
+
+$$
+    \lvert f_n(x) \rvert = \left| \frac{1}{n + 1} \right| \le C
+$$
+
+for all $$x \in X$$ and all $$n \in \mathbb{N}$$. Hence, the sequence satisfies all the desired properties required by **Property 1.2.1**.
+
+**Property 1.2.2:** Let us now prove that for any real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \lvert f_n(x) - 1_\emptyset(x) \rvert < \epsilon
+$$
+
+for all $$x \in X$$.
+
+Recall that the definition of an indicator function implies that
+
+$$
+    1_\emptyset(x) = 0
+$$
+
+for all $$x \in X$$. Hence, we must prove that for any real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \lvert f_n(x) \rvert < \epsilon
+$$
+
+for all $$x \in X$$. As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property)
+
+> **Theorem** *(Archimedean Property)*
+<a name="thrm:archimedean-property"></a>
+> For any real number $$\epsilon$$ such that $$\epsilon > 0$$ there exist a natural number $$N$$ such that for all $$n \ge N$$ one has $$1/n < \epsilon$$.
+
+Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof of **Property 1**.
+
 
 
 
