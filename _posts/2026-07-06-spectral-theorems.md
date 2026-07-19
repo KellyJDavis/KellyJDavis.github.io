@@ -4759,21 +4759,7 @@ Thus with this we have proven that $$1_{E^c}$$ is the pointwise limit of a seque
 In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under compliments, the desired **Property 2** result.
 
 
-**Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite intersection, i.e. if $$E_i \in \mathcal{L}_0$$ for all $$i \in \{1,2,\ldots,N\}$$, then
-
-$$
-
-    \bigcap_{i=1}^N E_i \in \mathcal{L}_0.
-$$
-
-If we introduce the notation $$E_\cap$$ defined by
-
-$$
-
-    E_\cap \equiv \bigcap_{i=1}^N E_i,
-$$
-
-then proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_\cap$$ is measurable and **Property 3.2:** that  $$1_{E_\cap}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+**Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$.  Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that  $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
 
 
