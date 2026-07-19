@@ -4675,7 +4675,99 @@ for all $$x \in X$$. As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result 
 
 Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof of **Property 1**.
 
+**Property 2:** Let us next prove that $$\mathcal{L}_0$$ is closed under compliments. In other words if $$E \in \mathcal{L}_0$$, then $$E^c \equiv (X \backslash E) \in \mathcal{L}_0$$. To prove this we must prove **Property 2.1:** that $$E^c$$ is measurable, and **Property 2.2:** that $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
+**Property 2.1:** Let us prove that if $$E \in \mathcal{L}_0$$, then $$E^c$$ is measurable
+
+By hypothesis $$E \in \mathcal{L}_0$$. The definition of $$\mathcal{L}_0$$ then implies that $$E$$ is measurable and thus in the $$\sigma$$-algebra of $$X$$. As $$E$$ is in the $$\sigma$$-algebra of $$X$$, the $$\sigma$$-algebra definition implies that $$E^c$$ is also in the $$\sigma$$-algebra of $$X$$. Hence, the definition of a measure and the fact that we have a measure $$\mu$$ on $$X$$ imply that $$E^c$$ is measurable, the desired result. 
+
+**Property 2.2:** Now let us prove hat $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+
+By hypothesis $$E \in \mathcal{L}_0$$. Hence, (1) the definition of $$\mathcal{L}_0$$ implies that there exists a sequence of functions $$\{ f_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$C$$ such that
+
+$$
+    \left| f_n(x) \right| \le C
+$$
+
+for all $$x \in X$$ and $$n \in \mathbb{N}$$ and (2) for every real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \left| f_n(x) - 1_E(x) \right| < \epsilon
+$$
+
+for all $$x \in X$$.
+
+Let us define a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$  on $$X$$ by
+
+$$
+   g_n(x) \equiv (1 - f_n(x)). 
+$$
+
+Obviously, the $$g_n$$ are in $$C^0(X; \mathbb{R})$$. The definition of the $$g_n$$, the properties of the $$f_n$$, and the norm definition imply
+
+$$
+\begin{align}
+    \left| g_n(x) \right| &=   \left| 1 - f_n(x) \right| \\
+                          &\le \left| 1 \right| + \left| f_n(x) \right| \\
+                          &\le 1 + C \\
+                          &=   D,  \\
+\end{align}
+$$
+
+where we have made the definition $$D \equiv 1 + C$$. Thus we have proven that there exists a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$D$$ such that
+
+$$
+    \left| g_n(x) \right| \le D
+$$
+
+for all $$x \in X$$ and all $$n \in \mathbb{N}$$. In other words our sequence $$\{ g_n \}_{n \in \mathbb{N}}$$ is a sequence of uniformly bounded continuous functions.
+
+Let $$\epsilon > 0$$ be an arbitrary real number and consider if we can find a natural number $$N$$ such that
+
+$$
+    \left| g_n(x) - 1_{E^c}(x) \right| < \epsilon
+$$
+
+for all $$x \in X$$ and all $$n \ge N$$.
+
+To this end for an arbitrary $$g_n$$ and arbitrary $$x \in X$$ consider
+
+$$
+\begin{align}
+    \left| g_n(x) - 1_{E^c}(x) \right| &= \left| (1 - f_n(x)) - 1_{E^c}(x) \right| \\
+                                       &= \left| (1 - f_n(x)) - (1 - 1_{E}(x)) \right| \\
+                                       &= \left| 1_{E}(x) - f_n(x) \right| \\
+                                       &= \left| f_n(x) - 1_{E}(x) \right|,
+\end{align}
+$$
+
+where in the second line we used $$1_{E^c}(x) = 1 - 1_{E}(x)$$ which follows easily from the definitions of the indicator function and the sets $$E$$ and $$E^c$$.
+
+However, as $$E \in \mathcal{L}_0$$ the definition of $$\mathcal{L}_0$$ implies that for an arbitrary real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \left| f_n(x) - 1_{E}(x) \right| < \epsilon
+$$
+
+for all $$x \in X$$.
+
+However, as we have proven that
+
+$$
+    \left| g_n(x) - 1_{E^c}(x) \right| = \left| f_n(x) - 1_{E}(x) \right|
+$$
+
+for an arbitrary $$n \in \mathbb{N}$$ and arbitrary $$x \in X$$, then it follows that for an arbitrary real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \left| g_n(x) - 1_{E^c}(x) \right| < \epsilon
+$$
+
+for all $$x \in X$$.
+
+Thus with this we have proven that $$1_{E^c}$$ is the pointwise limit of a sequence of uniformly bounded functions, the desired **Property 2.2** result.
+
+In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under compliments, the desired **Property 2** result.
 
 
 
