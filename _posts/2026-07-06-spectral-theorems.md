@@ -4927,7 +4927,7 @@ To that end assume that there exists a set $$E$$ in $$\mathcal{L}_1$$ that is no
 
 Hence, our assumption that $$E$$ isn't a Borel set leads to a contradiction and it must be the case that $$E$$ is a Borel set.
 
-So we have proven that $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$, the desired result.$$\blacksquare$$
+So with that we have proven that $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$, the desired result.$$\blacksquare$$
 
 
 
