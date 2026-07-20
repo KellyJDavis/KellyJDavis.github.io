@@ -4899,6 +4899,35 @@ for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof
 
 We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as its the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
 
+The next of these "utility" lemmas is the following:
+
+> **Lemma**
+<a name="lmm:hall-prblm-8.3.3b"></a>
+<!--  \uses{lmm:hall-prblm-8.3.3a} -->
+> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Finally let $$\mathcal{L}_1$$ be the set of all measurable sets $$E$$ in $$X$$ such that the indicator function $$1_E$$ belongs to $$\mathcal{F}$$. Then $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$.
+
+**Proof**
+By definition $$\mathcal{L}_0$$ of [**Lemma**](#lmm:hall-prblm-8.3.3a) is the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous, real-valued functions.
+
+Thus if $$E$$ is in $$\mathcal{L}_0$$ then (1) $$E$$ is measurable and (2) $$1_E$$ is the pointwise limit of a sequence of uniformly bounded continuous, real-valued functions.
+
+By hypothesis $$C^0(X; \mathbb{R})$$ is a subset of $$\mathcal{F}$$. By hypothesis $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Thus the pointwise limit of a sequence of uniformly bounded continuous, real-valued functions is also in $$\mathcal{F}$$.
+
+Hence, as for any $$E$$ in $$\mathcal{L}_0$$ its indicator function $$1_E$$ is the pointwise limit of a sequence of uniformly bounded continuous, real-valued functions, then it follows that $$1_E$$ is in $$\mathcal{F}$$.
+
+Thus for any $$E$$ in $$\mathcal{L}_0$$ it follows that (1) $$E$$ is measurable and (2) $$1_E$$ belongs to $$\mathcal{F}$$. The definition of $$\mathcal{L}_1$$ then implies that $$\mathcal{L}_0$$ is a subset of $$\mathcal{L}_1$$.
+
+We proved in [**Lemma**](#lmm:hall-prblm-8.3.3a) any open set in $$X$$ is also in $$\mathcal{L}_0$$. There we also proved that $$\mathcal{L}_0$$ is a algebra of sets. This implies via De Morgan's laws that $$\mathcal{L}_0$$ is closed under countable unions, countable intersections, and complements. Hence, the $$\mathcal{L}_0$$ contains the set of all sets obtainable from countable unions, countable intersections, and complements of open sets in $$X$$. This is exactly the statement that $$\mathcal{L}_0$$ contains the Borel set of $$X$$.
+
+Hence, we have proven that the Borel sets of $$X$$ are in $$\mathcal{L}_0$$ and $$\mathcal{L}_0$$ is a subset of $$\mathcal{L}_1$$. Thus, $$\mathcal{L}_1$$ contains all Borel sets.
+
+To complete this proof we must show that if a set is in $$\mathcal{L}_1$$, then it must be a Borel set. We will prove this using proof by contradiction.
+
+To that end assume that there exists a set $$E$$ in $$\mathcal{L}_1$$ that is not a Borel set. The definition of $$\mathcal{L}_1$$ implies that $$E$$ is measurable. If $$E$$ is measurable, then it must be in the $$\sigma$$-algebra of $$X$$. However, $$X$$ is a metric measurable space. Thus, the $$\sigma$$-algebra of $$X$$ is the Borel $$\sigma$$-algebra. This implies that any element of this $$\sigma$$-algebra is a Borel set. This implies $$E$$ is a Borel set contradicting our assumption that $$E$$ is not a Borel set.
+
+Hence, our assumption that $$E$$ isn't a Borel set leads to a contradiction and it must be the case that $$E$$ is a Borel set.
+
+So we have proven that $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$, the desired result.$$\blacksquare$$
 
 
 
