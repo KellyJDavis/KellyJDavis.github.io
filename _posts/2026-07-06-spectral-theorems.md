@@ -4017,10 +4017,8 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{lmm:hall-prblm-8.3.3a} -->
-<!--  \uses{def:algebra-of-sets} -->
 <!--  \uses{lmm:hall-prblm-8.3.3b} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
-<!--  \uses{thrm:archimedean-property} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
 > $$
@@ -4555,7 +4553,11 @@ Our proof of this result requires that we first prove some "utility" lemmas as s
 
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3a"></a>
-> Let $$X$$ be a compact metric space with a measure $$\mu_X$$. Let $$\mathcal{L}_0$$ be the set of all measurable subsets $$E$$ of $$X$$ with indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous functions. Then $$\mathcal{L}_0$$ is an algebra and contains all open sets in $$X$$.
+<!--  \uses{def:algebra-of-sets} -->
+<!--  \uses{thrm:archimedean-property} -->
+<!--  \uses{def:bump-function} -->
+<!--  \uses{thrm:existence-of-bump-functions} -->
+> Let $$X$$ be a compact metric measurable space with a measure $$\mu_X$$. Let $$\mathcal{L}_0$$ be the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous functions. Then $$\mathcal{L}_0$$ is an algebra and contains all open sets in $$X$$.
 
 **Proof**
 This proof consists of two parts
@@ -4761,8 +4763,141 @@ In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\ma
 
 **Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$.  Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that  $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
+**Property 3.1:** Let us next prove that $$E_1 \cup E_2$$ is measurable.
 
+By hypothesis $$E_1,E_2 \in \mathcal{L}_0$$. The definition of $$\mathcal{L}_0$$ implies that both $$E_1$$ and $$E_2$$ are measurable and thus in the $$\sigma$$-algebra of $$X$$. As $$E_1$$ and $$E_2$$ are in the $$\sigma$$-algebra of $$X$$, the $$\sigma$$-algebra definition implies that $$E_1 \cup E_2$$ is also in the $$\sigma$$-algebra of $$X$$. Hence, the definition of a measure and the fact that we have a measure $$\mu$$ on $$X$$ imply that $$E_1 \cup E_2$$ is also measurable, the desired result.
 
+**Property 3.2:** Finally let us prove that $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+
+By hypothesis $$E_1,E_2 \in \mathcal{L}_0$$. The definition of $$\mathcal{L}_0$$ implies that (1) there for each $$E_i$$ exists a sequence $$\{ f^i_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$C_i$$ such that
+
+$$
+    \left| f^i_n(x) \right| \le C_i
+$$
+
+for all $$n \in \mathbb{N}$$ and all $$x \in X$$ and (2) for each $$E_i$$ and any real number $$\epsilon_i > 0$$ there exists a natural number $$N_i$$ such that for all $$n \ge N_i$$ we have
+
+$$
+    \left| f^i_n(x) - 1_{E_i}(x) \right| < \epsilon_i
+$$
+
+for all $$x \in X$$.
+
+With the easily verifiable fact
+
+$$
+    1_{E_1 \cup E_2}(x) = 1_{E_1}(x) + 1_{E_2}(x) - 1_{E_1}(x) 1_{E_2}(x)
+$$
+
+in mind, let us define the sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$ on $$X$$ by
+
+$$
+    g_n(x) = f^1_n(x) + f^2_n(x) - f^1_n(x) f^2_n(x).
+$$
+
+As the $$f^i_n$$ are in $$C^0(X; \mathbb{R})$$, it obviously follows that the $$g_n$$are also in $$C^0(X; \mathbb{R})$$.
+
+The norm definition along with the fact that the $$f^i_n$$ are bounded implies
+
+$$
+\begin{align}
+    \left| g_n(x) \right| &=   \left| f^1_n(x) + f^2_n(x) - f^1_n(x) f^2_n(x) \right| \\
+                          &\le \left| f^1_n(x) \right| + \left| f^2_n(x) \right| + \left| f^1_n(x) f^2_n(x) \right| \\
+                          &=   \left| f^1_n(x) \right| + \left| f^2_n(x) \right| + \left| f^1_n(x) \right| \, \left| f^2_n(x) \right| \\
+                          &\le C_1 + C_2 + C_1 C_2 \\
+                          &=   D,
+\end{align}
+$$
+
+where we have defined $$D \equiv C_1 + C_2 + C_1 C_2$$.
+
+Thus we have proven that there exists a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$D$$ such that
+
+$$
+    \left| g_n(x) \right| \le D
+$$
+
+for all $$x \in X$$ and all $$n \in \mathbb{N}$$. In other words the $$g_n$$ are a sequence of uniformly bounded continuous functions.
+
+Let $$\epsilon > 0$$ be an arbitrary real number and consider if we can find a natural number $$N$$ such that
+
+$$
+    \left| g_n(x) - 1_{E_1 \cup E_2}(x) \right| < \epsilon
+$$
+
+for all $$x \in X$$ and all $$n \ge N$$.
+
+This is always possible as for all $$x \in X$$ the limit $$f^1_n(x) \rightarrow 1_{E_1}(x)$$  and the limt $$f^2_n \rightarrow 1_{E_2}$$ exist as real finite numbers. Hence,
+
+$$
+\begin{align}
+    \lim_{n \rightarrow \infty} g_n(x) &= \lim_{n \rightarrow \infty} \left( f^1_n(x) + f^2_n(x) - f^1_n(x) f^2_n(x) \right) \\ 
+                                       &= \lim_{n \rightarrow \infty} f^1_n(x) + \lim_{n \rightarrow \infty} f^2_n(x) - \lim_{n \rightarrow \infty} f^1_n(x) f^2_n(x) \\ 
+                                       &= \lim_{n \rightarrow \infty} f^1_n(x) + \lim_{n \rightarrow \infty} f^2_n(x) - \left( \lim_{n \rightarrow \infty} f^1_n(x) \right) \left( \lim_{n \rightarrow \infty} f^2_n(x) \right) \\ 
+                                       &= 1_{E_1}(x) + 1_{E_2}(x) - 1_{E_1}(x) 1_{E_2}(x) \\
+                                       &= 1_{E_1 \cup E_2}(x)
+\end{align}
+$$
+
+for all $$x \in X$$. Thus for an arbitrary real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \left| g_n(x) - 1_{E_1 \cup E_2}(x) \right| < \epsilon
+$$
+
+for all $$x \in X$$. This completes the proof of **Property 3.2** and the fact that $$\mathcal{L}_0$$ is an algebra of sets.
+
+Let us next prove **Part 2**, that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
+
+We will prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$ by **Step 1:** proving that $$\mathcal{L}_0$$ contains all closed sets in $$X$$, then **Step 2:** relying on the fact that any open set is the complement of a closed set along with the fact that we proved that $$\mathcal{L}_0$$ is closed under complements.
+
+**Step 1:** Let us first prove that $$\mathcal{L}_0$$ contains all closed sets in $$X$$. To prove that $$\mathcal{L}_0$$ contains all closed sets in $$X$$ we must **Step 1.1:** prove that any closed set $$\overline{E}$$ in $$X$$ is measurable and **Step 1.2:** prove that $$1_{\overline{E}}$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
+
+**Step 1.1:** Let us first prove that any closed set $$\overline{E}$$ in $$X$$ is measurable.
+
+Note that by hypothesis $$X$$ is a metric measurable space. By definition this implies that $$X$$ is a measure space with a Borel regular measure. By definition a Borel regular measure is a a measure in which any Borel set is measurable. By definition a Borel set is any set in a topological space that can be formed from open sets through the operations of countable union, countable intersection, and complement.
+
+As any closed set $$\overline{E}$$ in $$X$$ is, by definition, the complement of an open set, and all open sets are Borel sets, it follows that any closed set $$\overline{E}$$ is a Borel set and thus measurable, the desired **Step 1.1** result.
+
+**Step 1.2:** Let us next prove that $$1_{\overline{E}}$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
+
+To this end let us review a definition we will require, that of a "bump function"
+
+> **Definition** *(Bump Function)*
+<a name="def:bump-function"></a>
+> Given a topological manifold $$X$$, a closed subset $$\overline{E}$$ of $$X$$, and an open subset $$U$$ of $$X$$ that contains $$\overline{E}$$, i.e. $$\overline{E} \subset U$$, then a function $$f$$ in $$C^0(X; \mathbb{R})$$ is called a *bump function* for $$\overline{E}$$ supported in $$U$$ if
+> 
+> 1. For every $$x \in X$$ one has $$0 \le f(x) \le 1$$.
+> 2. For every $$x \in \overline{E}$$ one has $$f(x) = 1$$.
+> 3. $$f$$ is supported on $$U$$.
+
+The existence of a bump function is guaranteed by the following theorem
+
+> **Theorem** *(Existence of Bump Functions)*
+<a name="thrm:existence-of-bump-functions"></a>
+> Let $$X$$ be a normal topological space. For any closed set $$\overline{E}$$ in $$X$$ and any open set $$U$$ containing $$\overline{E}$$, there exists a bump function for $$\overline{E}$$ supported in $$U$$.
+
+With this in mind consider our $$\overline{E}$$. One can always arrange for the existence of a sequence of open sets $$\{ U_i \}_{i \in \mathbb{N}}$$ in $$X$$ such that $$U_{i + 1} \subset U_{i}$$ and $$\overline{E} \subset U_i$$ for all $$i \in \mathbb{N}$$.  By way of [**Existence of Bump Functions**](#thrm:existence-of-bump-functions) we are guaranteed the existence of s sequence of bump functions $$\{ f_i \}_{i \in \mathbb{N}}$$ with $$f_i$$ being a bump function for $$\overline{E}$$ supported in $$U_i$$.
+
+The definition of a bump function implies that for $$C \equiv 1$$ we have
+
+$$
+    \left| f_i(x) \right| \le C
+$$
+
+for all $$x \in X$$ and all $$i \in \mathbb{N}$$. Thus the sequence  $$\{ f_i \}_{i \in \mathbb{N}}$$ is uniformly bounded.
+
+Furthermore, by construction for an arbitrary real number $$\epsilon > 0$$ we can find a natural number $$N$$ such that for all $$i \ge N$$ we have
+
+$$
+    \left| f_i(x) - 1_{\overline{E}}(x) \right| < \epsilon
+$$
+
+for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof of **Step 1**. Thus we have established that $$\mathcal{L}_0$$ contains all closed sets.
+
+**Step 2:** Let us now prove that $$\mathcal{L}_0$$ contains all open sets.
+
+We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as its the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
 
 
 
