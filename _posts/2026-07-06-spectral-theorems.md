@@ -4929,7 +4929,29 @@ Hence, our assumption that $$E$$ isn't a Borel set leads to a contradiction and 
 
 So with that we have proven that $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$, the desired result.$$\blacksquare$$
 
+The final of these "utility" lemmas is the following:
 
+> **Lemma**
+<a name="lmm:hall-prblm-8.3.3c"></a>
+<!--  \uses{lmm:hall-prblm-8.3.3b} -->
+> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Then $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$X$$.
+
+**Proof**
+By hypothesis $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences.
+
+Let us first prove that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measuable.
+
+For any $$f \in \mathcal{F}$$, the definiton of $$\mathcal{F}$$ implies that $$f$$ is bounded and measurable.  As $$X$$ is a metric measurable space, its measure is a Borel regular measure. A Borel regular measure is a measure in which any Borel set is measurable. Hence, in the definition of $$\mathcal{F}$$ when we we state that $$f$$ is measurable we mean that $$f$$ is Borel-measuable. Thus, any $$f \in \mathcal{F}$$ is bounded and Borel-measurable.
+
+Let us now prove that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
+
+It clear that the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are bounded, measurable, and complex-valued and (1) form a complex vector space and (2) as $$X$$ is compact contain $$C^0(X; \mathbb{R})$$. What is not obvious is if this set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are closed under pointwise limits of uniformly bounded sequences.
+
+If this were false, i.e., the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ were not closed under pointwise limits of uniformly bounded sequences, then there would exist a subset $$E$$ in $$\mathcal{L}_1$$, defined in [**Lemma**](#lmm:hall-prblm-8.3.3b) that is not a Borel measurable set. However, we proved in [**Lemma**](#lmm:hall-prblm-8.3.3b) that there exists no such set. Thus, the setof bounded, Borel-measurable complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
+
+Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
+
+So we’ve proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we’ve proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ in in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
 
 
