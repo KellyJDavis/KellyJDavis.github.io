@@ -5022,7 +5022,22 @@ and thus $$Q_f(\psi)$$ is real-valued for any $$\psi \in \mathbf{H}$$.
 
 As $$Q_f(\psi)$$ is real-valued for all $$\psi \in \mathbf{H}$$, [**Proposition**](#prpstn:hall-a.63) implies that $$f(A)$$ is self-adjoint, the desired result.$$\blacksquare$$
 
+The next proposition proves the analog of multiplicativity from [**Proposition**](#prpstn:hall-8.4) for operators $$(fg)(A)$$, $$f(A)$$, and $$g(A)$$ that arise from bounded measurable functions $$f$$ and $$g$$ by way of [**Definition**](#def:hall-8.8).
 
+> **Proposition**
+<a name="prpstn:hall-8.9"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:hall-8.8} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the specturm $$\sigma(A)$$ of $$A$$, then
+> 
+> $$
+>     (fg)(A) = f(A) g(A),
+> $$
+> 
+> where $$(fg)(A)$$, $$f(A)$$, and $$g(A)$$ are operators that arise respectively from $$(fg)$$, $$f$$, and $$g$$ by way of [**Definition**](#def:hall-8.8).
+
+**Proof**
 
 
 > **Definition** *(Functional Calculus)*
