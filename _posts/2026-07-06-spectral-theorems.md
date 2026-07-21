@@ -4016,8 +4016,6 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{prpstn:hall-a.62} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
-<!--  \uses{lmm:hall-prblm-8.3.3a} -->
-<!--  \uses{lmm:hall-prblm-8.3.3b} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
@@ -4545,7 +4543,7 @@ $$
     |Q_f(\phi)| \le C \|\phi\|^2.
 $$
 
-This completes our proff that $$f$$ is in $$\mathcal{F}$$ and thus our proof that $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.
+This completes our proof that $$f$$ is in $$\mathcal{F}$$ and thus our proof that $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.
 
 Finally to complete the proof of [**Proposition**](#prpstn:hall-8.7) we will prove that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
 
@@ -4934,6 +4932,7 @@ The final of these "utility" lemmas is the following:
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3c"></a>
 <!--  \uses{lmm:hall-prblm-8.3.3b} -->
+<!--  \uses{thrm:boundedness-theores} -->
 > Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Then $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$X$$.
 
 **Proof**
@@ -4945,7 +4944,13 @@ For any $$f \in \mathcal{F}$$, the definiton of $$\mathcal{F}$$ implies that $$f
 
 Let us now prove that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
-It clear that the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are bounded, measurable, and complex-valued and (1) form a complex vector space and (2) as $$X$$ is compact contain $$C^0(X; \mathbb{R})$$. What is not obvious is if this set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are closed under pointwise limits of uniformly bounded sequences.
+That the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are bounded, measurable, complex-valued and (1) form a complex vector space and (2) contain $$C^0(X; \mathbb{R})$$.
+
+Explicitly, the fact (1) that they form a complex vector space is relatively clear. The addition of bounded, Borel-measurable, complex-valued functions with complex-valued coefficients results in bounded, Borel-measurable, complex-valued functions.
+
+The fact (2) that they contain $$C^0(X; \mathbb{R})$$ follows from the fact that $$X$$ is by hypothesis compact, thus a generalization of the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that elements of $$C^0(X; \mathbb{R})$$ are bounded. In addition, as $$X$$ is a metric measurable space it implies its measure is Borel, thus continuous functions are Borel-measurable, thus any element of $$C^0(X; \mathbb{R})$$ is Borel-measurable. And obviously $$C^0(X; \mathbb{R})$$ can be viewed as complex-valued functions.
+
+What is not obvious is if this set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are closed under pointwise limits of uniformly bounded sequences.
 
 If this were false, i.e., the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ were not closed under pointwise limits of uniformly bounded sequences, then there would exist a subset $$E$$ in $$\mathcal{L}_1$$, defined in [**Lemma**](#lmm:hall-prblm-8.3.3b) that is not a Borel measurable set. However, we proved in [**Lemma**](#lmm:hall-prblm-8.3.3b) that there exists no such set. Thus, the setof bounded, Borel-measurable complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
 
@@ -4953,12 +4958,69 @@ Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is i
 
 So we’ve proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we’ve proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ in in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
+With these "utility" lemmas established, we can once again consider the [**Proposition**](#prpstn:hall-8.7) we were in the process of proving.
 
+As one will recall there $$\mathcal{F}$$ was the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form.
 
+Previously we established that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Previously, we also established that $$\sigma(A)$$ is compact.
 
+Now, with the metric and measure on $$\sigma(A)$$ arising from $$\mathbb{C}$$ as $$\sigma(A) \subset \mathbb{C}$$, we find that $$\sigma(A)$$ becomes a metric measurable space.
 
+All of this together allows us apply [**Lemma**](#lmm:hall-prblm-8.3.3c), $$\sigma(A)$$ taking the place of $$X$$ and this $$\mathcal{F}$$ the palce of the identically named $$\mathcal{F}$$ of the lemma. Doing so we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
 
+As $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$, it follows that $$Q_f$$ is quadratic form not only on some subset of functions, but all bounded, Borel-measurable functions on $$\sigma(A)$$, proving that $$Q_f$$ satisfies all the properties of [**Definition**](#def:hall-8.6), the desired result of [**Proposition**](#prpstn:hall-8.7).$$\blacksquare$$
 
+With this proposition resolved, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$ this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
+
+> **Definition**
+<a name="def:hall-8.8"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{prpstn:hall-a.63} -->
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For a bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$f(A)$$ be the operator associated to the quadratic form $$Q_f$$ of [**Definition**](#def:hall-8.6) by [**Proposition**](#prpstn:hall-a.63). This means that $$f(A)$$ is the unique operator such that
+> 
+> $$
+>     \left< \psi, f(A)\psi \right> = Q_f(\psi) = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda)
+> $$
+> 
+> for all $$\psi \in \mathbf{H}$$.
+
+As a first use of this definition we can prove the following lemma
+
+> **Lemma**
+<a name="lmm:lemma-3"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{thrm:riesz-representation} -->
+<!--  \uses{prpstn:hall-8.7} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{prpstn:hall-a.63} -->
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint, $$f$$ a bounded, measurable, complex-valued function on the specturm $$\sigma(A)$$ of $$A$$, and $$f(A)$$ the operator associated to $$f$$ by way of the previous [**Definition**](#def:hall-8.8). If $$f$$ is real-valued, then $$f(A)$$ is self-adjoint.
+
+**Proof**
+By hypothesis $$f$$ is a bounded, measurable, real-valued function on the specturm $$\sigma(A)$$ of $$A$$. By definition $$Q_f$$ acting on an arbitrary $$\psi \in \mathbf{H}$$ is given by
+
+$$
+    Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
+$$
+
+where, as stated in [**Definition**](#def:hall-8.8), the measure $$\mu_\psi$$ is the measure on $$\sigma(A)$$ derived from the [**Riesz Representation Theorem**](#thrm:riesz-representation). As a result of the [**Proposition**](#prpstn:hall-8.7) we just proved, $$Q_f$$ is a  bounded quadratic form.
+
+Now, as $$\mu_\psi$$ is the measure derived from the [**Riesz Representation Theorem**](#thrm:riesz-representation), it is a real-valued, positive measure on the Borel $$\sigma$$-algebra of $$\sigma(A)$$.
+
+Furthermore, as $$A$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.
+
+Thus, $$f$$ being real-valued, $$\mu_\psi$$ being real-valued, and the spectrum $$\sigma(A)$$ of $$A$$ being a subset of $$\mathbb{R}$$ together imply that the integral defining $$Q_f(\psi)$$
+
+$$
+    Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
+$$
+
+and thus $$Q_f(\psi)$$ is real-valued for any $$\psi \in \mathbf{H}$$.
+
+As $$Q_f(\psi)$$ is real-valued for all $$\psi \in \mathbf{H}$$, [**Proposition**](#prpstn:hall-a.63) implies that $$f(A)$$ is self-adjoint, the desired result.$$\blacksquare$$
 
 
 
