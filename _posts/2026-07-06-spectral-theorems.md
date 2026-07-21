@@ -5029,6 +5029,7 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{def:hall-8.8} -->
+<!--  \uses{prpstn:hall-8.3} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the specturm $$\sigma(A)$$ of $$A$$, then
 > 
 > $$
@@ -5038,6 +5039,45 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 > where $$(fg)(A)$$, $$f(A)$$, and $$g(A)$$ are operators that arise respectively from $$(fg)$$, $$f$$, and $$g$$ by way of [**Definition**](#def:hall-8.8).
 
 **Proof**
+Let $$\mathcal{F}_1$$ be the set of bounded, measurable, complex-valued functions $$f$$ such that
+
+$$
+    (fg)(A) = f(A)g(A)
+$$
+
+for all $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$.
+
+We claim that $$\mathcal{F}_1$$ is a complex vector space. To prove this consider any $$f_1$$ and $$f_2$$ in $$\mathcal{F}_1$$ and any $$\alpha_1$$ and $$\alpha_2$$ in $$\mathbb{C}$$. Then one has
+
+$$
+\begin{align}
+    ((\alpha_1f_1 + \alpha_2f_2)g)(A) &= (\alpha_1(f_1g) + \alpha_2(f_2g))(A) \\
+                                      &= \alpha_1(f_1g)(A) + \alpha_2(f_2g)(A) \\
+                                      &= \alpha_1f_1(A)g(A) + \alpha_2f_2(A)g(A) \\
+                                      &= (\alpha_1f_1(A) + \alpha_2f_2(A))g(A),
+\end{align}
+$$
+
+where the first line is purely algebraic, the second from linearity of the integral in [**Definition**](#def:hall-8.8), the third from properties of $$\mathcal{F}_1$$ along with the fact $$f_1, f_2 \in \mathcal{F}_1$$, and the final is purely algebraic. These imply
+
+$$
+    ((\alpha_1f_1 + \alpha_2f_2)g)(A) = (\alpha_1f_1(A) + \alpha_2f_2(A))g(A)
+$$
+
+which is nothing more than the statement that $$\mathcal{F}_1$$ is a complex vector space.
+
+We further claim that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}_1$$. To prove this consider arbitrary $$f$$ and $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$. If $$f(A)$$ and $$g(A)$$ were the operators defined by [**Proposition**](#prpstn:hall-8.3) then the desired property
+
+$$
+    (fg)(A) = f(A)g(A)
+$$
+
+would follow from the multiplicativity property of [**Proposition**](#prpstn:hall-8.3). So if we can prove that in the case $$f,g \in C^0(\sigma(A); \mathbb{R})$$, the operators $$f(A)$$ and $$g(A)$$ defined by [**Definition**](#def:hall-8.8) are the same as those defined by [**Proposition**](#prpstn:hall-8.3), then we will have proven the claim.
+
+If one traces definitions, one finds this exact claim is true. If $$f,g \in C^0(\sigma(A); \mathbb{R})$$, the operators $$f(A)$$ and $$g(A)$$ defined by [**Definition**](#def:hall-8.8) are the same as those defined by [**Proposition**](#prpstn:hall-8.3). This then proves the claim that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}_1$$.
+
+
+
 
 
 > **Definition** *(Functional Calculus)*
