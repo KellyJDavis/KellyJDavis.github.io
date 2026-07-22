@@ -5200,6 +5200,9 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{lmm:lemma-3} -->
+<!--  \uses{prpstn:hall-8.9} -->
+<!--  \uses{def:bounded-orthogonal-projection} -->
 > Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
 > 
 > $$
@@ -5211,6 +5214,35 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 > $$
 >     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
 > $$
+
+**Proof**
+First let us note that as a result of [**Lemma**](#lmm:lemma-3) for any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$ the fact that $$1_E$$ is a bounded, Borel-measurable, real-valued function on $$\sigma(A)$$ allows us to conclude that $$1_E(A)$$ is self-adjoint.
+
+Next note that the fact that $$1_E 1_E = 1_E$$ allows us to conclude that
+
+$$
+    (1_E1_E)(A) = 1_E(A).
+$$
+
+At the same time the [**Proposition**](#prpstn:hall-8.9) implies
+
+$$
+    (1_E1_E)(A) = 1_E(A)1_E(A).
+$$
+
+Together these imply
+
+$$
+    1_E(A)1_E(A) = 1_E(A).
+$$
+
+By way of the orthogonal projection [**Definition**](#def:bounded-orthogonal-projection) the fact that $$1_E(A)$$ is a bounded, self-adjoint operator that satisfies $$1_E(A)1_E(A) = 1_E(A)$$ implies that $$1_E(A)$$ is an orthogonal projection. Hence,
+
+$$
+    \mu^A(E) \equiv 1_E(A)
+$$
+
+is also an orthogonal projection.
 
 
 
