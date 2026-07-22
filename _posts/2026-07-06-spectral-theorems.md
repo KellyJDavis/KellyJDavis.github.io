@@ -2018,6 +2018,7 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{thrm:hall-8.10} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then there exists a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$, the spectrum of $$A$$, with values in orthogonal projections on $$\mathbf{H}$$ such that
 >
 > $$
@@ -3973,9 +3974,13 @@ $$
 
 satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear and is non-negative whenever all the values of $$f$$ are non-negative. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation) and conclude that for any $$\psi \in \mathbf{H}$$ there exists a measure $$\mu_\psi$$ such that
 
+<div id="eqtn:hall-8.8">
+
 $$
     \left< \psi, f(A) \psi \right> = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda)
 $$
+
+</div>
 
 for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$. Note how similar this is to the equality
 
@@ -5030,6 +5035,12 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:hall-8.7} -->
+<!--  \uses{prpstn:hall-a.59} -->
+<!--  \uses{def:bounded-sesquilinear-form} -->
+<!--  \uses{prpstn:hall-a.61} -->
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{#lmm:hall-prblm-8.3.3c} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the specturm $$\sigma(A)$$ of $$A$$, then
 > 
 > $$
@@ -5058,7 +5069,7 @@ $$
 \end{align}
 $$
 
-where the first line is purely algebraic, the second from linearity of the integral in [**Definition**](#def:hall-8.8), the third from properties of $$\mathcal{F}_1$$ along with the fact $$f_1, f_2 \in \mathcal{F}_1$$, and the final is purely algebraic. These imply
+where the first line is the distributive property over functions, the second from linearity of the integral in [**Definition**](#def:hall-8.8), the third from properties of $$\mathcal{F}_1$$ along with the fact $$f_1, f_2 \in \mathcal{F}_1$$ and $$g \in C^0(\sigma(A); \mathbb{R})$$, and the final is the distributive property over operators. These imply
 
 $$
     ((\alpha_1f_1 + \alpha_2f_2)g)(A) = (\alpha_1f_1(A) + \alpha_2f_2(A))g(A)
@@ -5074,7 +5085,132 @@ $$
 
 would follow from the multiplicativity property of [**Proposition**](#prpstn:hall-8.3). So if we can prove that in the case $$f,g \in C^0(\sigma(A); \mathbb{R})$$, the operators $$f(A)$$ and $$g(A)$$ defined by [**Definition**](#def:hall-8.8) are the same as those defined by [**Proposition**](#prpstn:hall-8.3), then we will have proven the claim.
 
-If one traces definitions, one finds this exact claim is true. If $$f,g \in C^0(\sigma(A); \mathbb{R})$$, the operators $$f(A)$$ and $$g(A)$$ defined by [**Definition**](#def:hall-8.8) are the same as those defined by [**Proposition**](#prpstn:hall-8.3). This then proves the claim that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}_1$$.
+If $$f,g \in C^0(\sigma(A); \mathbb{R})$$, the operators $$f(A)$$ and $$g(A)$$ defined by [**Definition**](#def:hall-8.8) are the unique operators $$f(A)$$ and $$g(A)$$ such that
+
+$$
+\begin{align}
+    \left< \psi, f(A)\psi \right> &= \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) \\
+    \left< \psi, g(A)\psi \right> &= \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda), 
+\end{align}
+$$
+
+for all $$\psi \in \mathbf{H}$$. If $$f,g \in C^0(\sigma(A); \mathbb{R})$$, the operators $$f(A)$$ and $$g(A)$$ defined by [**Proposition**](#prpstn:hall-8.3) are the unique operators $$f(A)$$ and $$g(A)$$ such that
+
+$$
+\begin{align}
+    \left< \psi, f(A)\psi \right> &= \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) \\
+    \left< \psi, g(A)\psi \right> &= \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda), 
+\end{align}
+$$
+
+for all $$\psi \in \mathbf{H}$$. Note here we have used the [equation](#eqtn:hall-8.8) to write these operators in a form similar to that above. Hence, in both cases the operators $$f(A)$$ and $$g(A)$$ are the same. This then proves the claim that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}_1$$.
+
+Our next claim is that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$. It turns out we actually proved this as part of our [**Proposition**](#prpstn:hall-8.7) proof.
+
+In [**Proposition**](#prpstn:hall-8.7) we proved that $$\mathcal{F}$$ the space of all bounded, Borel-measurable, complex-valued functions $$f$$ such that $$Q_f$$ is a quadratic form is closed under uniformly bounded pointwise limits and that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions. Hence, $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$ when $$f$$ is a bounded, Borel-measurable, complex-valued function, the desired result.
+
+Now the [**Polarization Identity**](#prpstn:hall-a.59) states
+
+> **Proposition** *(Polarization Identity)*
+<a name="prpstn:hall-a.59"></a>
+<!--  \uses{def:bounded-sesquilinear-form} -->
+> If $$L$$ is a sesquilinear form on the Hilbert space $$\mathbf{H}$$, then for any $$\phi, \psi \in \mathbf{H}$$ the value of $$L(\phi, \psi)$$ can be determined from the values of $$L$$ "on the diagonal" (i.e. the values of $$L(\xi, \xi)$$ for various $$\xi \in \mathbf{H}$$) as follows:
+> 
+> $$
+> \begin{align}
+>     L(\phi, \psi) &= \frac{1}{2} \left[ L(\phi + \psi, \phi + \psi) - L(\phi, \phi) - L(\psi, \psi) \right] \\
+>                   &-\frac{i}{2} \left[ L(\phi + i\psi, \phi + i\psi) - L(\phi, \phi) - L(i\psi, i\psi) \right]. 
+> \end{align}
+> $$
+
+This result---along with the [**Proposition**](#prpstn:hall-a.61) which for quadratic form $$Q$$ expresses its sesquilinear form $$L$$ on the diagonal in terms of the quadratic form itself as follows
+
+$$
+   L(\psi, \psi) = Q(\psi)
+$$
+
+for all $$\psi \in \mathbf{H}$$---allows us to write a quadratic form's sesquilinear form "off the diagonal" purely in terms of the quadratic form itself.
+
+So, as [**Proposition**](#prpstn:hall-8.7) proves $$Q_f$$ is a bounded, quadratic form for any bounded, Borel-measurable, complex-valued function $$f$$, we can write the sesquilinear form $$L_f$$ associated to $$Q_f$$ purely in terms of $$Q_f$$.
+
+As we can express $$L_f$$ purely in terms of $$Q_f$$ it follows from our previous result that the map $$f \mapsto L_f(,\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\phi,\psi \in \mathbf{H}$$ when $$f$$ is a bounded, Borel-measurable, complex-valued function.
+
+Now by definition for any $$f \in \mathcal{F}_1$$ and any $$g \in C^0(\sigma(A); \mathbb{R})$$ we have
+
+$$
+    (fg)(A) = f(A)g(A).
+$$
+
+This implies that for any $$\psi \in \mathbf{H}$$ we have
+
+$$
+    \left< \psi, (fg)(A)\psi \right> = \left< \psi, f(A)g(A)\psi \right>.
+$$
+
+Now the [**Definiton**](#def:hall-8.8) implies that the operator $$(fg)(A)$$ satisfies
+
+$$
+    Q_{fg}(\psi) = \left< \psi, (fg)(A)\psi \right>
+$$
+
+for all $$\psi \in \mathbf{H}$$.
+
+In addition the [**Definiton**](#def:hall-8.8) and the previous result allowing us to express $$L_f$$ in terms of $$Q_f$$ gives
+
+$$
+    L_f(\phi, \psi) = \left< \phi, f(A)\psi\right>.
+$$
+
+Hence, we have 
+
+$$
+    \left< \psi, f(A)g(A)\psi \right> = L_f(\psi, g(A)\psi).
+$$
+
+Thus $$\left< \psi, (fg)(A)\psi \right> = \left< \psi, f(A)g(A)\psi \right>$$ implies
+
+$$
+    Q_{fg}(\psi) = L_f(\psi, g(A)\psi)
+$$
+
+for all $$\psi \in \mathbf{H}$$ and $$g \in C^0(\sigma(A); \mathbb{R})$$. As we proved $$f \mapsto L_f(\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence, this equation---which implies
+
+$$
+    (fg)(A) = f(A)g(A)
+$$
+
+holds---implies that $$\mathcal{F}_1$$ is closed under uniformly bounded pointwise limits.
+
+As $$\sigma(A)$$ is a compact metric measurable space and $$\mathcal{F}_1$$ (1) is a vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under uniformly bounded pointwise limits, we can apply [**Lemma**](#lmm:hall-prblm-8.3.3c) to conclude that $$\mathcal{F}_1$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
+
+Now let $$\mathcal{F}_2$$ be the set of all bounded, Borel-measurable, complex-valued functions $$f$$ such that $$(fg)(A) = f(A)g(A)$$ for all bounded, Borel-measurable, complex-valued functions $$g$$. Our result for $$\mathcal{F}_1$$ implies that $$\mathcal{F}_2$$ contains $$C^0(\sigma(A); \mathbb{R})$$. Hence, we can mimic the above argument for $$\mathcal{F}_1$$ to prove that $$\mathcal{F}_2$$ contains not only $$C^0(\sigma(A); \mathbb{R})$$ by all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$, giving the desired result
+
+$$
+    (fg)(A) = f(A)g(A)
+$$
+
+for all bounded, Borel-measurable, complex-valued functions $$f$$ and $$g$$ on $$\sigma(A)$$.$$\blacksquare$$
+
+In what is the penultimate result required to prove the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) we present the following theorem that covers all of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) except uniqueness of the projection-valued measure $$\mu^A$$.
+
+> **Theorem**
+<a name="thrm:hall-8.10"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+> Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
+> 
+> $$
+>     \mu^A(E) \equiv 1_E(A),
+> $$
+> 
+> where $$1_E(A)$$ is the operator associated to the indicator function $$1_E$$ on $$\sigma(A)$$ by way of [**Definition**](#def:hall-8.8). Then $$\mu^A$$ is a projection-valued measure on $$\sigma(A)$$ and satisfies
+> 
+> $$
+>     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+> $$
 
 
 
