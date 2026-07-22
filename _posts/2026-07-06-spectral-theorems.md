@@ -5242,9 +5242,86 @@ $$
     \mu^A(E) \equiv 1_E(A)
 $$
 
-is also an orthogonal projection.
+is also an orthogonal projection for any measurable subset $$E$$ of the specturm $$\sigma(A)$$.
 
+Consider any two measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. Tracing definitions one has
 
+$$
+    1_{E_1 \cap E_2} = 1_{E_1} 1_{E_2}.
+$$
+
+Using the definition of $$\mu^A$$ this implies
+
+$$
+\begin{align}
+    \mu^A(E_1 \cap E_2) &\equiv 1_{E_1 \cap E_2}(A) \\
+                         &=      (1_{E_1} 1_{E_2})(A) \\
+                         &=      1_{E_1}(A) 1_{E_2}(A) \\
+                         &=      \mu^A(E_1) \mu^A(E_2),
+\end{align}
+$$
+
+where the second line follows from the previous equation, the third from [**Proposition**](#prpstn:hall-8.9), and the final from the definition of $$\mu^A$$. Hence,
+
+$$
+    \mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2).
+$$
+
+Consider the empty set $$\emptyset$$ which is a measurable subset of the specturm $$\sigma(A)$$. Tracing definitions one has
+
+$$
+    1_\emptyset = 0.
+$$
+
+[**Definition**](#def:hall-8.8) then implies
+
+$$
+\begin{align}
+    \left< \psi, 1_\emptyset(A)\psi \right> &= \int_{\sigma(A)} 1_\emptyset(\lambda) \, d\mu_\psi(\lambda) \\
+                                            &= \int_{\sigma(A)} 0 \, d\mu_\psi(\lambda) \\
+                                            &= 0,
+\end{align}
+$$
+
+for all $$\psi \in \mathbf{H}$$. So as
+
+$$
+    \left< \psi, 1_\emptyset(A)\psi \right> = 0
+$$
+
+is true for any $$\psi$$ in $$\mathbf{H}$$ we conclude that $$1_\emptyset(A)$$ is the zero operator.
+
+Consider now any two disjoint measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. The definition of $$\mu^A$$ along with our previous result implies
+
+$$
+\begin{align}
+    \mu^A(E_1 \cap E_2) &= \mu^A(\emptyset) \\
+                        &\equiv 1_\emptyset(A) \\
+                        &= 0,
+\end{align}
+$$
+
+where the first line follows from the fact that $$E_1$$ and $$E_2$$ are disjoint and the final line follows from our previous result, $$1_\emptyset(A)$$ is the zero operator.
+
+However, previously we found that for arbitrary measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$ of $$A$$
+
+$$
+    \mu^A(E_1) \mu^A(E_2) = \mu^A(E_1 \cap E_2).
+$$
+
+So if $$E_1$$ and $$E_2$$ are disjoint, this result along with the last result imply
+
+$$
+    \mu^A(E_1) \mu^A(E_2) = \mu^A(E_1 \cap E_2) = \mu^A(\emptyset) = 0.
+$$
+
+So if $$E_1$$ and $$E_2$$ are disjoint, then
+
+$$
+    \mu^A(E_1) \mu^A(E_2) = 0.
+$$
+
+In other words, for disjoint $$E_1$$ and $$E_2$$ the ranges of $$\mu^A(E_1)$$ and $$\mu^A(E_2)$$ are orthogonal.
 
 
 
