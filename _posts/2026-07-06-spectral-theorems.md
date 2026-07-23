@@ -5346,6 +5346,7 @@ With this result as motivation, let us prove the following "utility" lemma
 <a name="lmm:lemma-4"></a>
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
+<!--  \uses{def:bounded-operator-notation} -->
 > Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be a set of bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ that satisfy $$P_iP_j = 0$$ for $$i \neq j$$. Then for all $$\psi \in \mathbf{H}$$ the sequence of partial sums
 > 
 > $$
@@ -5355,7 +5356,7 @@ With this result as motivation, let us prove the following "utility" lemma
 > converges to $$P\psi$$ where $$P$$ is a bounded orthogonal projection onto the smallest closed subspace containing the range of $$P_i$$ for all $$i \in \mathbb{N}$$.
 
 **Proof**
-This proof broadly consists of three parts (1) proving that the sequence of partial sums $$S_n\psi$$ converges and (2) proving that the limit $$P\psi$$ defines an orthognal projection operator $$P$$, and (3) proving that the range of $$P$$ is the smallest closed subspace containing the range of $$P_i$$ for all $$i \in \mathbb{N}$$. 
+This proof broadly consists of three parts (1) proving that the sequence of partial sums $$S_n\psi$$ converges and (2) proving that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$, and (3) proving that the range of $$P$$ is the smallest closed subspace containing the range of $$P_i$$ for all $$i \in \mathbb{N}$$. 
 
 **Part 1:** Let us first prove that the sequence of partial sums $$S_n\psi$$ converges.
 
@@ -5456,11 +5457,13 @@ $$
 
 In other words $$S_n\psi$$ is a Cauchy sequence.
 
-As $$S_n\psi$$ is a Cauchy sequence and $$\mathbf{H}$$ is a Hilbert, and thus Banach space, this implies that $$S_n\psi$$ converges to some element in $$\mathbf{H}$$. This and linearity allows us to define a linear operator $$P$$ by
+As $$S_n\psi$$ is a Cauchy sequence and $$\mathbf{H}$$ is a Hilbert, and thus a Banach space, this implies that $$S_n\psi$$ converges to some element in $$\mathbf{H}$$. This and linearity allows us to define a linear operator $$P$$ by
 
 $$
     P\psi \equiv \lim\limits_{n \rightarrow \infty} S_n\psi.
 $$
+
+**Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$. To prove that $$P$$ is a bounded orthognal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** that $$P$$ is self-adjoint, and **Part 2.3:** that $$PP=P$$.
 
 
 > **Definition** *(Functional Calculus)*
