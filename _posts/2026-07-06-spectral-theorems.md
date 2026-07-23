@@ -2477,6 +2477,7 @@ Now we move onto the result
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-7.8} -->
 <!--  \uses{prpstn:hall-7.3} -->
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.
 
 **Proof**
@@ -2536,9 +2537,10 @@ $$
 
 In other words $$\{ \psi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence. Furthermore, as $$\{ \psi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence and $$\mathbf{H}$$ is complete, there exists a $$\psi \in \mathbf{H}$$ such that $$\{ \psi_i \}_{i \in \mathbb{N}}$$ converges to $$\psi$$.
 
-Now as $$A \in \mathcal{B}(\mathbf{H})$$ it is a bounded linear operator from the normed space $$\mathbf{H}$$ to the normed space $$\mathbf{H}$$. Thus, as a result of the standard proposition
+Now as $$A \in \mathcal{B}(\mathbf{H})$$ it is a bounded linear operator from the normed space $$\mathbf{H}$$ to the normed space $$\mathbf{H}$$. Thus, as a result of the standard proposition [**Bounded Operators are Continuous**](#prpstn:bounded-operators-are-continuous)
 
 > **Proposition** *(Bounded Operators are Continuous)*
+<a name="prpstn:bounded-operators-are-continuous"></a>
 > A linear operator between normed spaces is bounded if and only if it is continuous.
 
 $$A$$ is continuous. As $$A$$ is continuous our definitions imply
@@ -5347,16 +5349,17 @@ With this result as motivation, let us prove the following "utility" lemma
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
 > Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be a set of bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ that satisfy $$P_iP_j = 0$$ for $$i \neq j$$. Then for all $$\psi \in \mathbf{H}$$ the sequence of partial sums
 > 
 > $$
 >     S_n\psi \equiv \sum_{i = 0}^n P_i\psi
 > $$
 > 
-> converges to $$P\psi$$ where $$P$$ is a bounded orthogonal projection onto the smallest closed subspace containing the range of $$P_i$$ for all $$i \in \mathbb{N}$$.
+> converges to $$P\psi$$ where $$P$$ is a bounded orthogonal projection onto the smallest closed subspace containing the range of the $$P_i$$.
 
 **Proof**
-This proof broadly consists of three parts (1) proving that the sequence of partial sums $$S_n\psi$$ converges and (2) proving that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$, and (3) proving that the range of $$P$$ is the smallest closed subspace containing the range of $$P_i$$ for all $$i \in \mathbb{N}$$. 
+This proof broadly consists of three parts **Part 1:** proving that the sequence of partial sums $$S_n\psi$$ converges and **Part 2:** proving that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$, and **Part 3:** proving that the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. 
 
 **Part 1:** Let us first prove that the sequence of partial sums $$S_n\psi$$ converges.
 
@@ -5463,7 +5466,7 @@ $$
     P\psi \equiv \lim\limits_{n \rightarrow \infty} S_n\psi.
 $$
 
-**Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$. To prove that $$P$$ is a bounded orthognal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** that $$P$$ is self-adjoint, and **Part 2.3:** that $$PP=P$$.
+**Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$. To prove that $$P$$ is a bounded orthognal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** prove that $$P$$ is self-adjoint, and **Part 2.3:** prove that $$PP=P$$.
 
  **Part 2.1:** Next let us prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$.
 
@@ -5540,7 +5543,7 @@ $$
 
 for arbitrary $$\phi, \psi \in \mathbf{H}$$. In other words $$P$$ is self-adjoint, the desired result of **Part 2.2**.
 
-**Part 2.3:** Now let us prove that $$P$$ satisfies $$PP=P$$. Again it turns out this follows directly from the fact that each of the $$P_i$$ satisfies $$P_iP_i = P_i$$ and $$P_iP_j = 0$$ if $$i \neq j$$.
+**Part 2.3:** Now let us prove that $$P$$ satisfies $$PP=P$$. Again it turns out this follows directly from the fact that each of the linear, bounded $$P_i$$ satisfies $$P_iP_i = P_i$$ and $$P_iP_j = 0$$ if $$i \neq j$$.
 
 
 Tracing definitions one has for arbitrary $$\psi \in \mathbf{H}$$
@@ -5563,6 +5566,87 @@ $$
 $$
 
 for arbitrary $$\psi \in \mathbf{H}$$, the desired **Part 2.3** result which concludes the proof that $$P$$ is a bounded orthognal projection.
+
+**Part 3:** Next we will prove the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. Proving this will require two parts **Part 3.1:** prove that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$ and **Part3.2:** prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
+
+**Part 3.1:** Let us begin by proving that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$.
+
+To facilitate this, let us define the notation
+
+$$
+    M \equiv \text{Range}(P)
+$$
+
+for the range of $$P$$. Similarly, let us define the notation
+
+$$
+    V \equiv \overline{\text{Span} \left( \bigcup_{i = 0}^\infty \text{Range}(P_i) \right)}
+$$
+
+for the closure of the subspace containing the range of the $$P_i$$.
+
+With this notation in hand, let us first prove that $$M$$ is closed.
+
+Let $$\{ \psi_i \}_{i \in \mathbb{N}}$$ be a sequence in $$M$$ that converges to $$\psi$$ in $$\mathbf{H}$$. As the $$\psi_i$$ are in $$M \equiv \text{Range}(P)$$, the fact that $$P$$ is a bounded orthognal projection operator implies that $$P\psi_i = \psi_i$$ for all $$i \in \mathbb{N}$$.
+
+Now, as we proved that $$P$$ is bounded the standard proposition [**Bounded Operators are Continuous**](#prpstn:bounded-operators-are-continuous) proves that $$P$$ is continuous. As $$P$$ is continuous, we can pull $$P$$ through limits; this implies
+
+$$
+\begin{align}
+    P\psi &= P \left( \lim_{i \rightarrow \infty} \psi_i \right) \\
+          &= \lim_{i \rightarrow \infty} P \psi_i \\
+          &= \lim_{i \rightarrow \infty} \psi_i \\
+          &= \psi.
+\end{align}
+$$
+
+This implies
+
+$$
+    P\psi = \psi,
+$$
+
+which implies that $$\psi$$ is in the range of $$P$$ and thus in $$M \equiv \text{Range}(P)$$, proving $$M$$ is closed.
+
+To complete the proof of **Part 3.1** we must prove that $$V \subseteq M$$.
+
+As $$P_iP_i = P_i$$ and $$P_iP_j = 0$$ for $$i \neq j$$, for any $$\psi_i$$ in $$\text{Range}(P_i)$$ we have $$P_i\psi_i = \psi_i$$ and $$P_j\psi_i = 0$$ for $$i \neq j$$. As a result we have
+
+$$
+    P\psi_i = \lim\limits_{n \rightarrow \infty} \sum_{j = 0}^n P_j\psi_i = P_i\psi_i = \psi_i.
+$$
+
+This implies $$P\psi_i = \psi_i$$ which in turn implies that $$\psi_i$$ is in $$M \equiv \text{Range}(P)$$. However, as $$\psi_i$$ is an arbitrary element in $$\text{Range}(P_i)$$, this implies that $$\text{Range}(P_i) \subseteq M$$. But, as the index $$i$$ we used was arbitrary this implies that
+
+$$
+   \bigcup_{i = 0}^\infty \text{Range}(P_i) \subseteq M.
+$$ 
+
+However, as we proved, $$M$$ is closed. Thus it must contain the closed linear span of all these ranges
+
+$$
+   \overline{\text{Span} \left( \bigcup_{i = 0}^\infty \text{Range}(P_i) \right)} \subseteq M,
+$$ 
+
+which is none other than the desired result $$V \subseteq M$$ of **Part3.1**.
+
+**Part 3.2:** Next let us prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
+
+Consider an arbitrary $$\psi \in \mathbf{H}$$. The partial sum
+
+$$
+    S_n\psi \equiv \sum_{i = 0}^n P_i\psi
+$$
+
+is a linear combination of a finite number of vectors $$P_i\psi$$ in
+
+$$
+    \bigcup_{i = 0}^n \text{Range}(P_i).
+$$
+
+Obviously, $$S_n\psi \in V$$. As $$V$$ is by construction closed and $$S_n\psi \rightarrow P\psi$$ relative to the norm on $$\mathbf{H}$$, the limit $$P\psi$$ must also live in $$V$$. Thus, $$M \subseteq V$$, the desired **Part 3.2** result.
+
+This completes the proof of [**Lemma**](#lmm:lemma-4).$$\blacksquare$$
 
 
 > **Definition** *(Functional Calculus)*
