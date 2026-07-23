@@ -5515,6 +5515,55 @@ $$
 
 Thus $$\|P\| \le 1$$, proving that $$P$$ is bounded and thus an element of $$\mathcal{B}(\mathbf{H})$$, the desired **Part 2.1** result.
 
+**Part 2.2:** Next let us prove that $$P$$ is self-adjoint. It turns out this follows directly from the fact that each of the $$P_i$$ is self-adjoint.
+
+Tracing definitions one has for arbitrary $$\phi, \psi \in \mathbf{H}$$
+
+$$
+\begin{align}
+    \left< P\phi, \psi \right> &= \left< \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n P_i\phi, \psi \right> \\
+                               &= \lim\limits_{n \rightarrow \infty} \left< \sum_{i = 0}^n P_i\phi, \psi \right> \\
+                               &= \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n \left< P_i\phi, \psi \right> \\
+                               &= \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n \left< P_i^*\phi, \psi \right> \\
+                               &= \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n \left< \phi, P_i\psi \right> \\
+                               &= \lim\limits_{n \rightarrow \infty} \left< \phi, \sum_{i = 0}^n P_i\psi \right> \\
+                               &= \left< \phi, \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n P_i\psi \right> \\
+                               &= \left< \phi, P\psi \right>,
+\end{align}
+$$
+
+proving
+
+$$
+    \left< P\phi, \psi \right> = \left< \phi, P\psi \right>
+$$
+
+for arbitrary $$\phi, \psi \in \mathbf{H}$$. In other words $$P$$ is self-adjoint, the desired result of **Part 2.2**.
+
+**Part 2.3:** Now let us prove that $$P$$ satisfies $$PP=P$$. Again it turns out this follows directly from the fact that each of the $$P_i$$ satisfies $$P_iP_i = P_i$$ and $$P_iP_j = 0$$ if $$i \neq j$$.
+
+
+Tracing definitions one has for arbitrary $$\psi \in \mathbf{H}$$
+
+$$
+\begin{align}
+    PP\psi &= \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n P_i \left( \lim\limits_{m \rightarrow \infty} \sum_{j = 0}^m P_j\psi \right) \\
+           &= \lim\limits_{n \rightarrow \infty}  \lim\limits_{m \rightarrow \infty} \sum_{i = 0}^n P_i \left( \sum_{j = 0}^m P_j\psi \right) \\
+           &= \lim\limits_{n \rightarrow \infty}  \lim\limits_{m \rightarrow \infty} \left( \sum_{i = 0}^n \sum_{j = 0}^m P_i P_j\psi \right) \\
+           &= \lim\limits_{n \rightarrow \infty}  \sum_{i = 0}^n P_i P_i\psi \\
+           &= \lim\limits_{n \rightarrow \infty}  \sum_{i = 0}^n P_i\psi \\
+           &= P\psi.
+\end{align}
+$$
+
+Proving
+
+$$
+    PP\psi = P\psi
+$$
+
+for arbitrary $$\psi \in \mathbf{H}$$, the desired **Part 2.3** result which concludes the proof that $$P$$ is a bounded orthognal projection.
+
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
