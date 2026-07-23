@@ -5465,6 +5465,56 @@ $$
 
 **Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$. To prove that $$P$$ is a bounded orthognal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** that $$P$$ is self-adjoint, and **Part 2.3:** that $$PP=P$$.
 
+ **Part 2.1:** Next let us prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$.
+
+By definition
+
+$$
+    P\psi = \lim\limits_{n \rightarrow \infty} S_n\psi = \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n P_i\psi.
+$$
+
+As the $$P_i$$ are elements in $$\mathcal{B}(\mathbf{H})$$ they are linear. This then implies that $$P$$ is linear.
+
+Recall we previously proved that for any $$n$$ in $$\mathbb{N}$$ one has
+
+$$
+    \left\| \sum_{i = 0}^n P_i\psi \right\|^2 \le \|\psi\|^2.
+$$
+
+Thus for any unit norm $$\psi$$, i.e. $$\psi$$ such that $$\|\psi\| = 1$$, we have
+
+$$
+    \left\| \sum_{i = 0}^n P_i\psi \right\|^2  \le 1
+$$
+
+and thus
+
+$$
+    \left\| \sum_{i = 0}^n P_i\psi \right\|  \le 1.
+$$
+
+for arbitrary $$n \in \mathbb{N}$$.
+
+Now the operator norm $$\|P\|$$ of $$P$$ is defined by
+
+$$
+    \|P\| \equiv \sup\limits_{\|\psi\| = 1} \|P\psi\|.
+$$
+
+Hence, the definition of $$P$$ along with our previous result implies
+
+$$
+\begin{align}
+    \|P\| &=   \sup\limits_{\|\psi\| = 1} \left\|P\psi\right\| \\
+          &=   \sup\limits_{\|\psi\| = 1} \left\|\lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n P_i\psi\right\| \\
+          &=   \sup\limits_{\|\psi\| = 1} \lim\limits_{n \rightarrow \infty} \left\|\sum_{i = 0}^n P_i\psi\right\| \\
+          &\le \sup\limits_{\|\psi\| = 1} \lim\limits_{n \rightarrow \infty} 1 \\
+          &=   1.
+\end{align}
+$$
+
+Thus $$\|P\| \le 1$$, proving that $$P$$ is bounded and thus an element of $$\mathcal{B}(\mathbf{H})$$, the desired **Part 2.1** result.
+
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
