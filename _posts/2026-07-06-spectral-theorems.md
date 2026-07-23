@@ -5040,7 +5040,7 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 <!--  \uses{def:bounded-sesquilinear-form} -->
 <!--  \uses{prpstn:hall-a.61} -->
 <!--  \uses{def:bounded-quadratic-form} -->
-<!--  \uses{#lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the specturm $$\sigma(A)$$ of $$A$$, then
 > 
 > $$
@@ -5203,6 +5203,7 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 <!--  \uses{lmm:lemma-3} -->
 <!--  \uses{prpstn:hall-8.9} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{lmm:lemma-4} -->
 > Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
 > 
 > $$
@@ -5321,8 +5322,145 @@ $$
     \mu^A(E_1) \mu^A(E_2) = 0.
 $$
 
-In other words, for disjoint $$E_1$$ and $$E_2$$ the ranges of $$\mu^A(E_1)$$ and $$\mu^A(E_2)$$ are orthogonal.
+As $$\mu^A(E_1)$$ is self-adjoint, this implies that for arbitrary $$\phi$$ and $$\psi$$ in $$\mathbf{H}$$ one has
 
+$$
+\begin{align}
+    0 &= \left< \phi, \mu^A(E_1) \mu^A(E_2)\psi \right> \\
+      &= \left< \phi, \mu^A(E_1)^* \mu^A(E_2)\psi \right> \\
+      &= \left< \mu^A(E_1)\phi, \mu^A(E_2)\psi \right>,
+\end{align}
+$$
+
+which is nothing more than the statement that for disjoint $$E_1$$ and $$E_2$$ and arbitrary $$\phi$$ and $$\psi$$ in $$\mathbf{H}$$ we have
+
+$$
+    \left< \mu^A(E_1)\phi, \mu^A(E_2)\psi \right> = 0,
+$$
+
+i.e. the ranges of $$\mu^A(E_1)$$ and $$\mu^A(E_2)$$ are orthogonal.
+
+With this result as motivation, let us prove the following "utility" lemma
+
+> **Lemma**
+<a name="lmm:lemma-4"></a>
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{thrm:monotone-convergence-theorem} -->
+> Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be a set of bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ that satisfy $$P_iP_j = 0$$ for $$i \neq j$$. Then for all $$\psi \in \mathbf{H}$$ the sequence of partial sums
+> 
+> $$
+>     S_n\psi \equiv \sum_{i = 0}^n P_i\psi
+> $$
+> 
+> converges to $$P\psi$$ where $$P$$ is a bounded orthogonal projection onto the smallest closed subspace containing the range of $$P_i$$ for all $$i \in \mathbb{N}$$.
+
+**Proof**
+This proof broadly consists of three parts (1) proving that the sequence of partial sums $$S_n\psi$$ converges and (2) proving that the limit $$P\psi$$ defines an orthognal projection operator $$P$$, and (3) proving that the range of $$P$$ is the smallest closed subspace containing the range of $$P_i$$ for all $$i \in \mathbb{N}$$. 
+
+**Part 1:** Let us first prove that the sequence of partial sums $$S_n\psi$$ converges.
+
+To this end for an arbitrary $$\psi \in \mathbf{H}$$ let us first examine the norm of the partial sum $$S_n\psi$$
+
+$$
+\begin{align}
+    \left\| S_n\psi \right\|^2 &= \left\| \sum_{i = 0}^n P_i\psi \right\|^2 \\
+                               &= \left< \sum_{i = 0}^n P_i\psi, \sum_{j = 0}^n P_j\psi \right> \\
+                               &= \sum_{i = 0}^n \left< P_i\psi, P_i\psi \right> \\
+                               &= \sum_{i = 0}^n \left\| P_i\psi \right\|^2,
+\end{align}
+$$
+
+where on the third line we made use of the fact that $$P_iP_j = 0$$ if $$i \neq j$$. So we have proven
+
+$$
+    \left\| S_n\psi \right\|^2 = \sum_{i = 0}^n \left\| P_i\psi \right\|^2.
+$$
+
+Now as the projections $$P_i$$ satisfy $$P_iP_j = 0$$ if $$i \neq j$$, the partial sum
+
+$$
+    S_n\psi \equiv \sum_{i = 0}^n P_i\psi
+$$
+
+must have a magnitude less than or equal to that of $$\psi$$, in other words
+
+$$
+    \left\| S_n\psi \right\|^2 \le \|\psi\|^2.
+$$
+
+These last two results then imply
+
+$$
+    \sum_{i = 0}^n \left\| P_i\psi \right\|^2 = \left\| S_n\psi \right\|^2 \le \|\psi\|^2.
+$$
+
+Which implies
+
+$$
+    \sum_{i = 0}^n \left\| P_i\psi \right\|^2 \le \|\psi\|^2.
+$$
+
+As $$\|\psi\|^2 < \infty$$ and $$0 \le \|P_i\psi\|^2$$ for all $$i \in \mathbb{N}$$, this implies that for any $$\psi \in \mathbf{H}$$ the sequence $$\{ a_n(\psi) \}_{n \in \mathbb{N}}$$ where $$a_n(\psi)$$ is defined by
+
+$$
+    a_n(\psi) \equiv \sum_{i = 0}^n \left\| P_i\psi \right\|^2
+$$
+
+in a bounded, monotonically increasing sequence of real numbers. Thus the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem)
+
+> **Theorem** *(Monotone Convergence Theorem)*
+<a name="thrm:monotone-convergence-theorem"></a>
+> Let $$\{ a_n \}_{n \in \mathbb{N}}$$ be a monotone sequence of real numbers (either $$a_n \le a_{n+1}$$ or $$a_n \ge a_{n+1}$$ for all $$n$$). Then the sequence $$\{ a_n \}_{n \in \mathbb{N}}$$ has a finite limit in $$\mathbb{R}$$ if and only if $$\{ a_n \}_{n \in \mathbb{N}}$$ is bounded.
+
+implies that the bounded, monotonically increasing sequence of real numbers
+
+$$
+    a_n(\psi) \equiv \sum_{i = 0}^n \left\| P_i\psi \right\|^2
+$$
+
+has a finite limit in $$\mathbb{R}$$ for any $$\psi \in \mathbf{H}$$.
+
+For an arbitrary $$\psi \in \mathbf{H}$$ consider again the seqence 
+
+$$
+    S_n\psi \equiv \sum_{i = 0}^n P_i\psi.
+$$
+
+Using the result we just established, we will now prove that this sequence converges, the desired conclusion of **Part 1**.
+
+We will do so by employing the fact that $$\mathbf{H}$$ being an Hilbert space implies that $$\mathbf{H}$$ is also a Banach space. Thus, a Cauchy sequence in $$\mathbf{H}$$ converges in $$\mathbf{H}$$. So, if we can prove the sequence $$S_n\psi$$ is a Cauchy sequence, then we can conclude it converges.
+
+To that end, consider $$n, m \in \mathbb{N}$$ and without loss of generality assume that $$n > m$$. One has
+
+$$
+    \left\| S_n\psi - S_m \psi \right\|^2 = \left\| \sum_{i=m+1}^n P_i\psi \right\|^2 = \sum_{i = m+1}^n \|P_i\psi\|^2,
+$$
+
+where the final equality follows from $$P_iP_j = 0$$ when $$i \neq j$$. Now as we proved the sequence
+
+$$
+    a_n(\psi) \equiv \sum_{i = 0}^n \left\| P_i\psi \right\|^2
+$$
+
+converges, it follows that as $$n,m \rightarrow \infty$$ the tail sum goes to zero
+
+$$
+    \sum_{i = m+1}^n \|P_i\psi\|^2 \rightarrow 0.
+$$
+
+This then implies that as $$n,m \rightarrow \infty$$ one has
+
+$$
+    \left\| S_n\psi - S_m \psi \right\| \rightarrow 0.
+$$
+
+In other words $$S_n\psi$$ is a Cauchy sequence.
+
+As $$S_n\psi$$ is a Cauchy sequence and $$\mathbf{H}$$ is a Hilbert, and thus Banach space, this implies that $$S_n\psi$$ converges to some element in $$\mathbf{H}$$. This and linearity allows us to define a linear operator $$P$$ by
+
+$$
+    P\psi \equiv \lim\limits_{n \rightarrow \infty} S_n\psi.
+$$
 
 
 > **Definition** *(Functional Calculus)*
