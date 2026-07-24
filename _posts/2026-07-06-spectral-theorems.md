@@ -5219,7 +5219,23 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 > $$
 
 **Proof**
-First let us note that as a result of [**Lemma**](#lmm:lemma-3) for any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$ the fact that $$1_E$$ is a bounded, Borel-measurable, real-valued function on $$\sigma(A)$$ allows us to conclude that $$1_E(A)$$ is self-adjoint.
+This proof broadly consists of two parts **Part 1:** prove that $$\mu^A$$ is a projection valued measure on $$\sigma(A)$$ and **Part 2:** prove that $$\mu^A$$ satisfies
+
+$$
+    \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+$$
+
+**Part 1:** Let us first prove that $$\mu^A$$ is a projection valued measure on $$\sigma(A)$$. This involves **Part 1.1:** proving for each measurable set $$E$$ on $$\sigma(A)$$ it follows that $$\mu^A(E)$$ is a bounded orthogonal projection, **Part 1.2:** proving for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$, **Part 1.3:** proving that $$\mu^A(\emptyset) = 0$$, where $$\emptyset$$ is the empty set, and $$\mu^A(\sigma(A)) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element, and finally **Part 1.4:** proving that for pairwise disjoint measurable sets $$\{ E_i \}_{i \in \mathbb{N}}$$ on $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$ we have
+
+$$
+    \mu^A \left( \bigcup_{j = 1}^{\infty} E_j \right) \psi = \sum_{j = 1}^{\infty} \mu(E_j)\psi,
+$$
+
+where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
+
+**Part 1.1:** Let us now prove that for each measurable set $$E$$ on $$\sigma(A)$$ it follows that $$\mu^A(E)$$ is a bounded orthogonal projection.
+
+To this end, first let us note that as a result of [**Lemma**](#lmm:lemma-3) for any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$ the fact that $$1_E$$ is a bounded, Borel-measurable, real-valued function on $$\sigma(A)$$ allows us to conclude that $$1_E(A)$$ is self-adjoint.
 
 Next note that the fact that $$1_E 1_E = 1_E$$ allows us to conclude that
 
@@ -5245,9 +5261,11 @@ $$
     \mu^A(E) \equiv 1_E(A)
 $$
 
-is also an orthogonal projection for any measurable subset $$E$$ of the specturm $$\sigma(A)$$.
+is also an orthogonal projection for any measurable subset $$E$$ of the specturm $$\sigma(A)$$, the desired **Part 1.1** result.
 
-Consider any two measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. Tracing definitions one has
+**Part 1.2:** Next let of prove that for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$.
+
+So to this end, consider any two measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. Tracing definitions one has
 
 $$
     1_{E_1 \cap E_2} = 1_{E_1} 1_{E_2}.
@@ -5267,10 +5285,14 @@ $$
 where the second line follows from the previous equation, the third from [**Proposition**](#prpstn:hall-8.9), and the final from the definition of $$\mu^A$$. Hence,
 
 $$
-    \mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2).
+    \mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2),
 $$
 
-Consider the empty set $$\emptyset$$ which is a measurable subset of the specturm $$\sigma(A)$$. Tracing definitions one has
+the desired **Part 1.2** result.
+
+**Part 1.3:** Now let us prove that $$\mu^A(\emptyset) = 0$$, where $$\emptyset$$ is the empty set, and $$\mu^A(\sigma(A)) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element.
+
+To this end, consider the empty set $$\emptyset$$ which is a measurable subset of the specturm $$\sigma(A)$$. Tracing definitions one has
 
 $$
     1_\emptyset = 0.
@@ -5294,7 +5316,67 @@ $$
 
 is true for any $$\psi$$ in $$\mathbf{H}$$ we conclude that $$1_\emptyset(A)$$ is the zero operator.
 
-Consider now any two disjoint measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. The definition of $$\mu^A$$ along with our previous result implies
+However, by definition
+
+$$
+    \mu^A(\emptyset) \equiv 1_\emptyset(A).
+$$
+
+This $$\mu^A(\emptyset)$$ is the zero operator, this first of the desired **Part 1.3** results.
+
+Now consider the measurable set $$\sigma(A)$$, the entire specturm. Tracing definitions
+
+$$
+    1_{\sigma(A)} = 1.
+$$
+
+[**Definition**](#def:hall-8.8) then implies for all $$\psi \in \mathbf{H}$$ that
+
+$$
+\begin{align}
+    \left< \psi, 1_{\sigma(A)}(A)\psi \right> &= \int_{\sigma(A)} 1_{\sigma(A)}(\lambda) \, d\mu_\psi(\lambda) \\
+                                              &= \int_{\sigma(A)} 1 \, d\mu_\psi(\lambda) \\
+                                              &= \mu_\psi(\sigma(A)) \\
+                                              &= \Lambda_\psi(\mathbf{1}) \\
+                                              &= \left< \psi, \psi \right>,
+\end{align}
+$$
+
+where the fourth line follows from the definition of $$\mu_\psi$$ in terms of our map $$\Lambda_\psi$$ by way of the [**Riesz Representation Theorem**](#thrm:riesz-representation) and the final line follows from the definition of $$\Lambda_\psi$$. So for any $$\psi \in \mathbf{H}$$ we have
+
+$$
+    \left< \psi, 1_{\sigma(A)}(A)\psi \right> = \left< \psi, \psi \right>,
+$$
+
+which implies that
+
+$$
+    1_{\sigma(A)}(A) = \mathbf{1}.
+$$ 
+
+By defintion
+
+$$
+    \mu^A(\sigma(A)) \equiv 1_{\sigma(A)}(A).
+$$
+
+Hence, we have proven
+
+$$
+    \mu^A(\sigma(A)) = \mathbf{1},
+$$
+
+the second and final **Part 1.3** result.
+
+**Part 1.4:** Now let us prove that for pairwise disjoint measurable sets $$\{ E_i \}_{i \in \mathbb{N}}$$ on $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$ we have
+
+$$
+    \mu^A \left( \bigcup_{j = 1}^{\infty} E_j \right) \psi = \sum_{j = 1}^{\infty} \mu(E_j)\psi,
+$$
+
+where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
+
+In order to prove this, consider now any two disjoint measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. The definition of $$\mu^A$$ along with our previous result implies
 
 $$
 \begin{align}
@@ -5543,7 +5625,7 @@ $$
 
 for arbitrary $$\phi, \psi \in \mathbf{H}$$. In other words $$P$$ is self-adjoint, the desired result of **Part 2.2**.
 
-**Part 2.3:** Now let us prove that $$P$$ satisfies $$PP=P$$. Again it turns out this follows directly from the fact that each of the linear, bounded $$P_i$$ satisfies $$P_iP_i = P_i$$ and $$P_iP_j = 0$$ if $$i \neq j$$.
+**Part 2.3:** Now let us prove that $$P$$ satisfies $$PP=P$$. Again it turns out this follows directly from the fact that for each of the linear, bounded operators $$P_i$$ we have $$P_iP_i = P_i$$ and $$P_iP_j = 0$$ if $$i \neq j$$.
 
 
 Tracing definitions one has for arbitrary $$\psi \in \mathbf{H}$$
@@ -5647,6 +5729,55 @@ $$
 Obviously, $$S_n\psi \in V$$. As $$V$$ is by construction closed and $$S_n\psi \rightarrow P\psi$$ relative to the norm on $$\mathbf{H}$$, the limit $$P\psi$$ must also live in $$V$$. Thus, $$M \subseteq V$$, the desired **Part 3.2** result.
 
 This completes the proof of [**Lemma**](#lmm:lemma-4).$$\blacksquare$$
+
+Now back on the main thread, proving **Part 1.4** of [**Theorem**](#thrm:hall-8.10), consider a series $$\{ E_i \}_{i \in \mathbb{N}}$$ of disjoint measurable subsets of the spectrum $$\sigma(A)$$ of $$A$$. We proved that the $$\mu^A(E_i)$$ are bounded orthognal projections on the separable, complex Hilbert space $$\mathbf{H}$$ and that $$\mu^A(E_i)\mu^A(E_j) = 0$$ if $$i \neq j$$.
+
+Hence, we can apply the [**Lemma**](#lmm:lemma-4) we just proved to conclude that for any $$\psi \in \mathbf{H}$$ the sequence of partial sums
+
+$$
+    S_n\psi \equiv \sum_{i = 0}^n \mu^A(E_i)\psi
+$$
+
+converges to $$P\psi$$ where $$P$$ is a bounded orthogonal projection onto the smallest closed subspace containing the range of the $$\mu^A(E_i)$$.
+
+Now with this same series $$\{ E_i \}_{i \in \mathbb{N}}$$ let us define $$E$$ by
+
+$$
+    E \equiv \bigcup_{i = 0}^\infty E_i.
+$$
+
+As the $$E_i$$ are disjoint, the sequence
+
+$$
+    f_n \equiv \sum_{i = 0}^n 1_{E_i}
+$$
+
+is uniformly bounded by $$1$$, and converges pointwise to $$1_E$$.
+
+As both the $$1_{E_i}$$ and $$1_E$$ are bounded measurable functions on the specturm $$\sigma(A)$$ of $$A$$, we can associate by way of the [**Definition**](#def:hall-8.8) the operators $$1_{E_i}(A)$$ and $$1_E(A)$$ to them.
+
+As the sequence $$f_n$$ is uniformly bounded and converges pointwise to $$1_E$$, we can use the fact, determined within the proof of [**Proposition**](#prpstn:hall-8.9), that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$ to conclude that the convergence of $$f_n$$ along with [**Definition**](#def:hall-8.8) imply
+
+$$
+\begin{align}
+   \left< \psi, 1_E(A)\psi \right> &= \left< \psi, \left( \lim\limits_{n \rightarrow \infty} \sum_{i = 0}^n 1_{E_i}(A) \right) \psi \right> \\
+                                   &= \lim\limits_{n \rightarrow \infty} \left< \psi, \left( \sum_{i = 0}^n 1_{E_i}(A) \right) \psi \right>.
+\end{align}
+$$
+
+However, by definition $$\mu^A(E) \equiv 1_E(A)$$ and $$\mu^A(E_i) \equiv 1_{E_i}(A)$$, thus the previous equation implies
+
+$$
+     \left< \psi, \mu^A\left( \bigcup_{i = 0}^\infty E_i \right) \psi \right> = \lim\limits_{n \rightarrow \infty} \left< \psi, \left( \sum_{i = 0}^n \mu^A(E_i) \right) \psi \right>,
+$$
+
+for arbitrary $$\psi \in \mathbf{H}$$. This is nothing more than the statement that $$\mu^A$$ is countable additive, the desired result of **Part 1.4**. This concludes the proof that $$\mu^A$$ is a projection-valued measure.
+
+**Part 2:** Now let us prove that $$\mu^A$$ satisfies
+
+$$
+    \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+$$
 
 
 > **Definition** *(Functional Calculus)*
