@@ -2019,6 +2019,7 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{thrm:hall-8.10} -->
+<!--  \uses{thrm:hall-prblm-8.3.4} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then there exists a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$, the spectrum of $$A$$, with values in orthogonal projections on $$\mathbf{H}$$ such that
 >
 > $$
@@ -5847,6 +5848,28 @@ $$
 $$
 
 the desired **Part 2** result which completes the proof of [**Theorem**](#thrm:hall-8.10).$$\blacksquare$$
+
+The final result we need to prove to complete our proof of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) is to prove that the projection-valued measure $$\mu^A$$ of [**Theorem**](#thrm:hall-8.1) is unique. It is to this we turn.
+
+> **Theorem**
+<a name="thrm:hall-prblm-8.3.4"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the specturm $$\sigma(A)$$ of $$A$$ such that
+> 
+> $$
+> \begin{align}
+>     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) &= A \\
+>     \int_{\sigma(A)} \lambda \, d\nu^A(\lambda) &= A.
+> \end{align}
+> $$
+> 
+> Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the specturm $$\sigma(A)$$ of $$A$$.
+
+**Proof**
+
 
 
 > **Definition** *(Functional Calculus)*
