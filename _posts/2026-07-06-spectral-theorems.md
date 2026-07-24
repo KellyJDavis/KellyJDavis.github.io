@@ -5869,6 +5869,7 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 > Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the specturm $$\sigma(A)$$ of $$A$$.
 
 **Proof**
+This proof broadly consists of four parts **Part 1:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials, **Part 2:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on continuous complex-valued functions, **Part 3:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on bounded, measurable complex-valued functions, and **Part 4** prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the specturm $$\sigma(A)$$ of $$A$$.
 
 
 
