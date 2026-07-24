@@ -5206,6 +5206,9 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 <!--  \uses{prpstn:hall-8.9} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{lmm:lemma-4} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{thrm:heine–borel-theorem} -->
+<!--  \uses{prpstn:hall-8.3} -->
 > Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
 > 
 > $$
@@ -5778,6 +5781,72 @@ for arbitrary $$\psi \in \mathbf{H}$$. This is nothing more than the statement t
 $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
 $$
+
+To this end, consider the measurable set $$E$$ on $$\sigma(A)$$ and its bounded, measurable indicator function $$1_E$$. As a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) we have the unique linear map
+
+$$
+    1_E \longmapsto \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda)
+$$
+
+from the space of bounded, measurable, complex-valued functions on $$\sigma(A)$$ into $$\mathcal{B}(\mathbf{H})$$. By definition
+
+$$
+    \mu^A(E) \equiv \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda),
+$$
+
+and by definition
+
+$$
+    \mu^A(E) \equiv 1_E(A).
+$$
+
+Hence, we have the unique linear map
+
+$$
+    1_E \longmapsto 1_E(A).
+$$
+
+Consider now any simple function $$s$$ on $$\sigma(A)$$, i.e. any finite linear combination of indicator functions $$1_{E_i}$$ on $$\sigma(A)$$
+
+$$
+    s = \sum_{i = 1}^n \alpha_i 1_{E_i},
+$$
+
+where the $$E_i$$ are pairwise disjoint measurable sets on $$\sigma(A)$$ and the $$\alpha_i$$ are in $$\mathbb{C}$$. As the map
+
+$$
+    1_E \longmapsto 1_E(A)
+$$
+
+is linear we have for the arbitrary simple function $$s$$
+
+$$
+    s \longmapsto s(A) \equiv \sum_{i = 1}^n \alpha_i 1_{E_i}(A).
+$$
+    
+Now, by taking limits of such simple functions this map extends to all bounded, Borel-measurable functions $$f$$ as follows
+
+$$
+    f \longmapsto f(A).
+$$
+
+In particular, as we have proven several times now, $$\sigma(A)$$ is compact as a result of [**Proposition**](#prpstn:hall-7.5) and [**Heine–Borel Theorem**](#thrm:heine–borel-theorem), thus the function $$f(\lambda) = \lambda$$ on $$\sigma(A)$$ is a bounded and obviously Borel-measurable function on $$\sigma(A)$$. Hence, we can apply the map above to $$f(\lambda) = \lambda$$.
+
+By construction the integral of $$f(\lambda) = \lambda$$ against $$\mu^A$$ agrees with the $$f(A)$$ of [**Definition**](#def:hall-8.8). As $$f(\lambda) = \lambda$$ is continuous, as we have previously proven, its $$f(A)$$ from [**Definition**](#def:hall-8.8) agrees with its $$f(A)$$ from [**Proposition**](#prpstn:hall-8.3). As a result of [**Proposition**](#prpstn:hall-8.3) and the fact that $$f(\lambda) = \lambda$$ is a polynomial we have that this $$f(A)$$ is given by $$f(A) = A$$.
+
+So in summary we have proven that
+
+$$
+    \lambda \longmapsto \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A,
+$$
+
+which gives
+
+$$
+    \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A,
+$$
+
+the desired **Part 2** result and completes the proof of [**Theorem**](#thrm:hall-8.10) and the majority of the Spectral Theorem for Bounded, Self-Adjoint Operators.$$\blacksquare$$
 
 
 > **Definition** *(Functional Calculus)*
