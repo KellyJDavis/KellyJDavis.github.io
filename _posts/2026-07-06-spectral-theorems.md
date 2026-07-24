@@ -5846,7 +5846,7 @@ $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A,
 $$
 
-the desired **Part 2** result and completes the proof of [**Theorem**](#thrm:hall-8.10) and the majority of the Spectral Theorem for Bounded, Self-Adjoint Operators.$$\blacksquare$$
+the desired **Part 2** result which completes the proof of [**Theorem**](#thrm:hall-8.10).$$\blacksquare$$
 
 
 > **Definition** *(Functional Calculus)*
