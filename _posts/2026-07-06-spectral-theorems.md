@@ -4000,7 +4000,7 @@ To that end let us make the following definition
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:riesz-representation} -->
-> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$ let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
 > 
 > $$
 >     Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
@@ -4025,7 +4025,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
-> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
 > $$
 >     Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
@@ -4034,7 +4034,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 > via [**Definition**](#def:hall-8.6). This map $$Q_f$$ is a bounded quadratic form.
 
 **Proof**
-Let $$\mathcal{F}$$ be the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form. It turns out that $$\mathcal{F}$$ is a vector space.
+Let $$\mathcal{F}$$ be the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form. It turns out that $$\mathcal{F}$$ is a vector space.
 
 Explicitly, consider $$f,g \in \mathcal{F}$$ and $$\alpha, \beta \in \mathbb{C}$$. To prove that $$\mathcal{F}$$ is a vector space we must prove that $$\alpha f + \beta g$$ is a member of $$\mathcal{F}$$. It is to this we now turn.
 
@@ -4276,7 +4276,7 @@ $$
     \left\{  \sup\limits_{n \ge i} f_n(\lambda) \right\}_{i \in \mathbb{N}}
 $$
 
-we see that it it non-increasing. Hence, we can apply the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem)
+we see that it is non-increasing. Hence, we can apply the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem)
 
 > **Theorem** *(Monotone Convergence Theorem)*
 <a name="thrm:monotone-convergence-theorem"></a>
@@ -4427,7 +4427,7 @@ $$
 
 Doing so is relatively straight-forward.
 
-As mentiond previously, if $$f$$ is in $$C^0(\sigma(A); \mathbb{R})$$, then
+As mentioned previously, if $$f$$ is in $$C^0(\sigma(A); \mathbb{R})$$, then
 
 $$
     Q_f(\psi) = \left< \psi, f(A)\psi \right>.
@@ -4833,7 +4833,7 @@ $$
 
 for all $$x \in X$$ and all $$n \ge N$$.
 
-This is always possible as for all $$x \in X$$ the limit $$f^1_n(x) \rightarrow 1_{E_1}(x)$$  and the limt $$f^2_n \rightarrow 1_{E_2}$$ exist as real finite numbers. Hence,
+This is always possible as for all $$x \in X$$ the limit $$f^1_n(x) \rightarrow 1_{E_1}(x)$$  and the limit $$f^2_n \rightarrow 1_{E_2}$$ exist as real finite numbers. Hence,
 
 $$
 \begin{align}
@@ -4861,7 +4861,7 @@ We will prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$ by **Step 1
 
 **Step 1.1:** Let us first prove that any closed set $$\overline{E}$$ in $$X$$ is measurable.
 
-Note that by hypothesis $$X$$ is a metric measurable space. By definition this implies that $$X$$ is a measure space with a Borel regular measure. By definition a Borel regular measure is a a measure in which any Borel set is measurable. By definition a Borel set is any set in a topological space that can be formed from open sets through the operations of countable union, countable intersection, and complement.
+Note that by hypothesis $$X$$ is a metric measurable space. By definition this implies that $$X$$ is a measure space with a Borel regular measure. By definition a Borel regular measure is a measure in which any Borel set is measurable. By definition a Borel set is any set in a topological space that can be formed from open sets through the operations of countable union, countable intersection, and complement.
 
 As any closed set $$\overline{E}$$ in $$X$$ is, by definition, the complement of an open set, and all open sets are Borel sets, it follows that any closed set $$\overline{E}$$ is a Borel set and thus measurable, the desired **Step 1.1** result.
 
@@ -4946,9 +4946,9 @@ The final of these "utility" lemmas is the following:
 **Proof**
 By hypothesis $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences.
 
-Let us first prove that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measuable.
+Let us first prove that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable.
 
-For any $$f \in \mathcal{F}$$, the definiton of $$\mathcal{F}$$ implies that $$f$$ is bounded and measurable.  As $$X$$ is a metric measurable space, its measure is a Borel regular measure. A Borel regular measure is a measure in which any Borel set is measurable. Hence, in the definition of $$\mathcal{F}$$ when we we state that $$f$$ is measurable we mean that $$f$$ is Borel-measuable. Thus, any $$f \in \mathcal{F}$$ is bounded and Borel-measurable.
+For any $$f \in \mathcal{F}$$, the definition of $$\mathcal{F}$$ implies that $$f$$ is bounded and measurable.  As $$X$$ is a metric measurable space, its measure is a Borel regular measure. A Borel regular measure is a measure in which any Borel set is measurable. Hence, in the definition of $$\mathcal{F}$$ when we state that $$f$$ is measurable we mean that $$f$$ is Borel-measurable. Thus, any $$f \in \mathcal{F}$$ is bounded and Borel-measurable.
 
 Let us now prove that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
@@ -4960,21 +4960,21 @@ The fact (2) that they contain $$C^0(X; \mathbb{R})$$ follows from the fact that
 
 What is not obvious is if this set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are closed under pointwise limits of uniformly bounded sequences.
 
-If this were false, i.e., the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ were not closed under pointwise limits of uniformly bounded sequences, then there would exist a subset $$E$$ in $$\mathcal{L}_1$$, defined in [**Lemma**](#lmm:hall-prblm-8.3.3b) that is not a Borel measurable set. However, we proved in [**Lemma**](#lmm:hall-prblm-8.3.3b) that there exists no such set. Thus, the setof bounded, Borel-measurable complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
+If this were false, i.e., the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ were not closed under pointwise limits of uniformly bounded sequences, then there would exist a subset $$E$$ in $$\mathcal{L}_1$$, defined in [**Lemma**](#lmm:hall-prblm-8.3.3b) that is not a Borel measurable set. However, we proved in [**Lemma**](#lmm:hall-prblm-8.3.3b) that there exists no such set. Thus, the set of bounded, Borel-measurable complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
 
 Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
-So we’ve proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we’ve proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ in in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
+So we’ve proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we’ve proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
 With these "utility" lemmas established, we can once again consider the [**Proposition**](#prpstn:hall-8.7) we were in the process of proving.
 
-As one will recall there $$\mathcal{F}$$ was the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the specturm $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form.
+As one will recall there $$\mathcal{F}$$ was the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form.
 
 Previously we established that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Previously, we also established that $$\sigma(A)$$ is compact.
 
 Now, with the metric and measure on $$\sigma(A)$$ arising from $$\mathbb{C}$$ as $$\sigma(A) \subset \mathbb{C}$$, we find that $$\sigma(A)$$ becomes a metric measurable space.
 
-All of this together allows us apply [**Lemma**](#lmm:hall-prblm-8.3.3c), $$\sigma(A)$$ taking the place of $$X$$ and this $$\mathcal{F}$$ the palce of the identically named $$\mathcal{F}$$ of the lemma. Doing so we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
+All of this together allows us apply [**Lemma**](#lmm:hall-prblm-8.3.3c), $$\sigma(A)$$ taking the place of $$X$$ and this $$\mathcal{F}$$ the place of the identically named $$\mathcal{F}$$ of the lemma. Doing so we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
 
 As $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$, it follows that $$Q_f$$ is quadratic form not only on some subset of functions, but all bounded, Borel-measurable functions on $$\sigma(A)$$, proving that $$Q_f$$ satisfies all the properties of [**Definition**](#def:hall-8.6), the desired result of [**Proposition**](#prpstn:hall-8.7).$$\blacksquare$$
 
@@ -4986,7 +4986,7 @@ With this proposition resolved, let us introduce another definition that will be
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:hall-a.63} -->
-> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For a bounded, measurable, complex-valued function $$f$$ on the specturm $$\sigma(A)$$ of $$A$$, let $$f(A)$$ be the operator associated to the quadratic form $$Q_f$$ of [**Definition**](#def:hall-8.6) by [**Proposition**](#prpstn:hall-a.63). This means that $$f(A)$$ is the unique operator such that
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For a bounded, measurable, complex-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, let $$f(A)$$ be the operator associated to the quadratic form $$Q_f$$ of [**Definition**](#def:hall-8.6) by [**Proposition**](#prpstn:hall-a.63). This means that $$f(A)$$ is the unique operator such that
 > 
 > $$
 >     \left< \psi, f(A)\psi \right> = Q_f(\psi) = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda)
@@ -5005,10 +5005,10 @@ As a first use of this definition we can prove the following lemma
 <!--  \uses{prpstn:hall-8.7} -->
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{prpstn:hall-a.63} -->
-> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint, $$f$$ a bounded, measurable, complex-valued function on the specturm $$\sigma(A)$$ of $$A$$, and $$f(A)$$ the operator associated to $$f$$ by way of the previous [**Definition**](#def:hall-8.8). If $$f$$ is real-valued, then $$f(A)$$ is self-adjoint.
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint, $$f$$ a bounded, measurable, complex-valued function on the spectrum $$\sigma(A)$$ of $$A$$, and $$f(A)$$ the operator associated to $$f$$ by way of the previous [**Definition**](#def:hall-8.8). If $$f$$ is real-valued, then $$f(A)$$ is self-adjoint.
 
 **Proof**
-By hypothesis $$f$$ is a bounded, measurable, real-valued function on the specturm $$\sigma(A)$$ of $$A$$. By definition $$Q_f$$ acting on an arbitrary $$\psi \in \mathbf{H}$$ is given by
+By hypothesis $$f$$ is a bounded, measurable, real-valued function on the spectrum $$\sigma(A)$$ of $$A$$. By definition $$Q_f$$ acting on an arbitrary $$\psi \in \mathbf{H}$$ is given by
 
 $$
     Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
@@ -5044,7 +5044,7 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 <!--  \uses{prpstn:hall-a.61} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the specturm $$\sigma(A)$$ of $$A$$, then
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, then
 > 
 > $$
 >     (fg)(A) = f(A) g(A),
@@ -5150,7 +5150,7 @@ $$
     \left< \psi, (fg)(A)\psi \right> = \left< \psi, f(A)g(A)\psi \right>.
 $$
 
-Now the [**Definiton**](#def:hall-8.8) implies that the operator $$(fg)(A)$$ satisfies
+Now the [**Definition**](#def:hall-8.8) implies that the operator $$(fg)(A)$$ satisfies
 
 $$
     Q_{fg}(\psi) = \left< \psi, (fg)(A)\psi \right>
@@ -5158,7 +5158,7 @@ $$
 
 for all $$\psi \in \mathbf{H}$$.
 
-In addition the [**Definiton**](#def:hall-8.8) and the previous result allowing us to express $$L_f$$ in terms of $$Q_f$$ gives
+In addition the [**Definition**](#def:hall-8.8) and the previous result allowing us to express $$L_f$$ in terms of $$Q_f$$ gives
 
 $$
     L_f(\phi, \psi) = \left< \phi, f(A)\psi\right>.
@@ -5210,7 +5210,7 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{prpstn:hall-8.3} -->
-> Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
+> Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
 > 
 > $$
 >     \mu^A(E) \equiv 1_E(A),
@@ -5239,7 +5239,7 @@ where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
 
 **Part 1.1:** Let us now prove that for each measurable set $$E$$ on $$\sigma(A)$$ it follows that $$\mu^A(E)$$ is a bounded orthogonal projection.
 
-To this end, first let us note that as a result of [**Lemma**](#lmm:lemma-3) for any measurable subset $$E$$ of the specturm $$\sigma(A)$$ of $$A$$ the fact that $$1_E$$ is a bounded, Borel-measurable, real-valued function on $$\sigma(A)$$ allows us to conclude that $$1_E(A)$$ is self-adjoint.
+To this end, first let us note that as a result of [**Lemma**](#lmm:lemma-3) for any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$ the fact that $$1_E$$ is a bounded, Borel-measurable, real-valued function on $$\sigma(A)$$ allows us to conclude that $$1_E(A)$$ is self-adjoint.
 
 Next note that the fact that $$1_E 1_E = 1_E$$ allows us to conclude that
 
@@ -5265,11 +5265,11 @@ $$
     \mu^A(E) \equiv 1_E(A)
 $$
 
-is also an orthogonal projection for any measurable subset $$E$$ of the specturm $$\sigma(A)$$, the desired **Part 1.1** result.
+is also an orthogonal projection for any measurable subset $$E$$ of the spectrum $$\sigma(A)$$, the desired **Part 1.1** result.
 
 **Part 1.2:** Next let of prove that for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$.
 
-So to this end, consider any two measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. Tracing definitions one has
+So to this end, consider any two measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$. Tracing definitions one has
 
 $$
     1_{E_1 \cap E_2} = 1_{E_1} 1_{E_2}.
@@ -5296,7 +5296,7 @@ the desired **Part 1.2** result.
 
 **Part 1.3:** Now let us prove that $$\mu^A(\emptyset) = 0$$, where $$\emptyset$$ is the empty set, and $$\mu^A(\sigma(A)) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element.
 
-To this end, consider the empty set $$\emptyset$$ which is a measurable subset of the specturm $$\sigma(A)$$. Tracing definitions one has
+To this end, consider the empty set $$\emptyset$$ which is a measurable subset of the spectrum $$\sigma(A)$$. Tracing definitions one has
 
 $$
     1_\emptyset = 0.
@@ -5328,7 +5328,7 @@ $$
 
 This $$\mu^A(\emptyset)$$ is the zero operator, this first of the desired **Part 1.3** results.
 
-Now consider the measurable set $$\sigma(A)$$, the entire specturm. Tracing definitions
+Now consider the measurable set $$\sigma(A)$$, the entire spectrum. Tracing definitions
 
 $$
     1_{\sigma(A)} = 1.
@@ -5358,7 +5358,7 @@ $$
     1_{\sigma(A)}(A) = \mathbf{1}.
 $$ 
 
-By defintion
+By definition
 
 $$
     \mu^A(\sigma(A)) \equiv 1_{\sigma(A)}(A).
@@ -5380,7 +5380,7 @@ $$
 
 where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
 
-In order to prove this, consider now any two disjoint measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$. The definition of $$\mu^A$$ along with our previous result implies
+In order to prove this, consider now any two disjoint measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$. The definition of $$\mu^A$$ along with our previous result implies
 
 $$
 \begin{align}
@@ -5392,7 +5392,7 @@ $$
 
 where the first line follows from the fact that $$E_1$$ and $$E_2$$ are disjoint and the final line follows from our previous result, $$1_\emptyset(A)$$ is the zero operator.
 
-However, previously we found that for arbitrary measurable subsets $$E_1$$ and $$E_2$$ of the specturm $$\sigma(A)$$ of $$A$$
+However, previously we found that for arbitrary measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$ of $$A$$
 
 $$
     \mu^A(E_1) \mu^A(E_2) = \mu^A(E_1 \cap E_2).
@@ -5445,7 +5445,7 @@ With this result as motivation, let us prove the following "utility" lemma
 > converges to $$P\psi$$ where $$P$$ is a bounded orthogonal projection onto the smallest closed subspace containing the range of the $$P_i$$.
 
 **Proof**
-This proof broadly consists of three parts **Part 1:** proving that the sequence of partial sums $$S_n\psi$$ converges and **Part 2:** proving that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$, and **Part 3:** proving that the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. 
+This proof broadly consists of three parts **Part 1:** proving that the sequence of partial sums $$S_n\psi$$ converges and **Part 2:** proving that the sequence limit $$P\psi$$ defines a bounded orthogonal projection operator $$P$$, and **Part 3:** proving that the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. 
 
 **Part 1:** Let us first prove that the sequence of partial sums $$S_n\psi$$ converges.
 
@@ -5510,7 +5510,7 @@ $$
 
 has a finite limit in $$\mathbb{R}$$ for any $$\psi \in \mathbf{H}$$.
 
-For an arbitrary $$\psi \in \mathbf{H}$$ consider again the seqence 
+For an arbitrary $$\psi \in \mathbf{H}$$ consider again the sequence 
 
 $$
     S_n\psi \equiv \sum_{i = 0}^n P_i\psi.
@@ -5518,7 +5518,7 @@ $$
 
 Using the result we just established, we will now prove that this sequence converges, the desired conclusion of **Part 1**.
 
-We will do so by employing the fact that $$\mathbf{H}$$ being an Hilbert space implies that $$\mathbf{H}$$ is also a Banach space. Thus, a Cauchy sequence in $$\mathbf{H}$$ converges in $$\mathbf{H}$$. So, if we can prove the sequence $$S_n\psi$$ is a Cauchy sequence, then we can conclude it converges.
+We will do so by employing the fact that $$\mathbf{H}$$ being a Hilbert space implies that $$\mathbf{H}$$ is also a Banach space. Thus, a Cauchy sequence in $$\mathbf{H}$$ converges in $$\mathbf{H}$$. So, if we can prove the sequence $$S_n\psi$$ is a Cauchy sequence, then we can conclude it converges.
 
 To that end, consider $$n, m \in \mathbb{N}$$ and without loss of generality assume that $$n > m$$. One has
 
@@ -5552,7 +5552,7 @@ $$
     P\psi \equiv \lim\limits_{n \rightarrow \infty} S_n\psi.
 $$
 
-**Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthognal projection operator $$P$$. To prove that $$P$$ is a bounded orthognal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** prove that $$P$$ is self-adjoint, and **Part 2.3:** prove that $$PP=P$$.
+**Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthogonal projection operator $$P$$. To prove that $$P$$ is a bounded orthogonal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** prove that $$P$$ is self-adjoint, and **Part 2.3:** prove that $$PP=P$$.
 
  **Part 2.1:** Next let us prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$.
 
@@ -5651,7 +5651,7 @@ $$
     PP\psi = P\psi
 $$
 
-for arbitrary $$\psi \in \mathbf{H}$$, the desired **Part 2.3** result which concludes the proof that $$P$$ is a bounded orthognal projection.
+for arbitrary $$\psi \in \mathbf{H}$$, the desired **Part 2.3** result which concludes the proof that $$P$$ is a bounded orthogonal projection.
 
 **Part 3:** Next we will prove the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. Proving this will require two parts **Part 3.1:** prove that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$ and **Part3.2:** prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
 
@@ -5673,7 +5673,7 @@ for the closure of the subspace containing the range of the $$P_i$$.
 
 With this notation in hand, let us first prove that $$M$$ is closed.
 
-Let $$\{ \psi_i \}_{i \in \mathbb{N}}$$ be a sequence in $$M$$ that converges to $$\psi$$ in $$\mathbf{H}$$. As the $$\psi_i$$ are in $$M \equiv \text{Range}(P)$$, the fact that $$P$$ is a bounded orthognal projection operator implies that $$P\psi_i = \psi_i$$ for all $$i \in \mathbb{N}$$.
+Let $$\{ \psi_i \}_{i \in \mathbb{N}}$$ be a sequence in $$M$$ that converges to $$\psi$$ in $$\mathbf{H}$$. As the $$\psi_i$$ are in $$M \equiv \text{Range}(P)$$, the fact that $$P$$ is a bounded orthogonal projection operator implies that $$P\psi_i = \psi_i$$ for all $$i \in \mathbb{N}$$.
 
 Now, as we proved that $$P$$ is bounded the standard proposition [**Bounded Operators are Continuous**](#prpstn:bounded-operators-are-continuous) proves that $$P$$ is continuous. As $$P$$ is continuous, we can pull $$P$$ through limits; this implies
 
@@ -5734,7 +5734,7 @@ Obviously, $$S_n\psi \in V$$. As $$V$$ is by construction closed and $$S_n\psi \
 
 This completes the proof of [**Lemma**](#lmm:lemma-4).$$\blacksquare$$
 
-Now back on the main thread, proving **Part 1.4** of [**Theorem**](#thrm:hall-8.10), consider a series $$\{ E_i \}_{i \in \mathbb{N}}$$ of disjoint measurable subsets of the spectrum $$\sigma(A)$$ of $$A$$. We proved that the $$\mu^A(E_i)$$ are bounded orthognal projections on the separable, complex Hilbert space $$\mathbf{H}$$ and that $$\mu^A(E_i)\mu^A(E_j) = 0$$ if $$i \neq j$$.
+Now back on the main thread, proving **Part 1.4** of [**Theorem**](#thrm:hall-8.10), consider a series $$\{ E_i \}_{i \in \mathbb{N}}$$ of disjoint measurable subsets of the spectrum $$\sigma(A)$$ of $$A$$. We proved that the $$\mu^A(E_i)$$ are bounded orthogonal projections on the separable, complex Hilbert space $$\mathbf{H}$$ and that $$\mu^A(E_i)\mu^A(E_j) = 0$$ if $$i \neq j$$.
 
 Hence, we can apply the [**Lemma**](#lmm:lemma-4) we just proved to conclude that for any $$\psi \in \mathbf{H}$$ the sequence of partial sums
 
@@ -5758,7 +5758,7 @@ $$
 
 is uniformly bounded by $$1$$, and converges pointwise to $$1_E$$.
 
-As both the $$1_{E_i}$$ and $$1_E$$ are bounded measurable functions on the specturm $$\sigma(A)$$ of $$A$$, we can associate by way of the [**Definition**](#def:hall-8.8) the operators $$1_{E_i}(A)$$ and $$1_E(A)$$ to them.
+As both the $$1_{E_i}$$ and $$1_E$$ are bounded measurable functions on the spectrum $$\sigma(A)$$ of $$A$$, we can associate by way of the [**Definition**](#def:hall-8.8) the operators $$1_{E_i}(A)$$ and $$1_E(A)$$ to them.
 
 As the sequence $$f_n$$ is uniformly bounded and converges pointwise to $$1_E$$, we can use the fact, determined within the proof of [**Proposition**](#prpstn:hall-8.9), that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$ to conclude that the convergence of $$f_n$$ along with [**Definition**](#def:hall-8.8) imply
 
@@ -5857,7 +5857,7 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:operator-valued-integration} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the specturm $$\sigma(A)$$ of $$A$$ such that
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the spectrum $$\sigma(A)$$ of $$A$$ such that
 > 
 > $$
 > \begin{align}
@@ -5866,10 +5866,10 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 > \end{align}
 > $$
 > 
-> Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the specturm $$\sigma(A)$$ of $$A$$.
+> Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
 
 **Proof**
-This proof broadly consists of four parts **Part 1:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials, **Part 2:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on continuous complex-valued functions, **Part 3:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on bounded, measurable complex-valued functions, and **Part 4** prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the specturm $$\sigma(A)$$ of $$A$$.
+This proof broadly consists of four parts **Part 1:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials, **Part 2:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on continuous complex-valued functions, **Part 3:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on bounded, measurable complex-valued functions, and **Part 4** prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
 
 
 
