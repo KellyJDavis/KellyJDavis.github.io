@@ -209,6 +209,8 @@ The notion of a bounded orthogonal projection can then be employed to define a "
 >
 >    where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
 > 4. For all $$E_1, E_2 \in \Omega(X)$$, we have $$\mu(E_1 \cap E_2) = \mu(E_1) \mu(E_2)$$.
+>
+> Two projection-valued measures $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ and $$\nu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ are said to be *equivalent* if $$\mu(E) = \nu(E)$$ for all $$E \in \Omega(X)$$.
 
 Now, we can associate a positive, real-valued measure $$\mu_\psi$$ to a projection-valued measure $$\mu$$ and any $$\psi \in \mathbf{H}$$ as follows:
 
@@ -5866,7 +5868,7 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 > \end{align}
 > $$
 > 
-> Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
+> Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. they are equivalent projection-valued measures.
 
 **Proof**
 This proof broadly consists of four parts **Part 1:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials, **Part 2:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on continuous complex-valued functions, **Part 3:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on bounded, measurable complex-valued functions, and **Part 4** prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
