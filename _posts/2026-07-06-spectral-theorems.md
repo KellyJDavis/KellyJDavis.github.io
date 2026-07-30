@@ -6105,7 +6105,7 @@ $$
 
 the existence of which proves that $$\mathcal{F}$$ is first-countable.
 
-These basic results established, we can apply [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) and prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ converge respectively to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. This is what we will now prove.
+These basic results established, we can apply [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) and prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$. We can do so by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to a $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$ converge respectively to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. This is what we will now prove.
 
 
 > **Definition** *(Functional Calculus)*
