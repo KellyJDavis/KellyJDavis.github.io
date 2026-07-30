@@ -2046,7 +2046,7 @@ With functional calculus defined, we can now outline the proof of [**Theorem** *
 
 This association is such that for any natural number $$m$$ the function $$f(\lambda) = \lambda^m$$ is associated with the operator $$f(A)=A^m$$. The full "continuous functional calculus" is then constructed by approximating arbitrary continuous functions $$f$$ on $$\sigma(A)$$ by polynomials.
 
-The [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) implies that polynomials are dense in the space of continuous functions on $$\sigma(A)$$. Hence, for any continuous function $$f$$ on $$\sigma(A)$$ there exists a sequence of polynomials $$\{p_i\}_{i \in \mathbb{N}}$$ that converge uniformly to $$f$$ on $$\sigma(A)$$. The final step of stage 1 then proves that the sequence of operators $$\{p_i(A)\}_{i \in \mathbb{N}}$$ converge to an operator denoted as $$f(A)$$.
+The [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) implies that polynomials are dense in the space of continuous functions on $$\sigma(A)$$. Hence, for any continuous function $$f$$ on $$\sigma(A)$$ there exists a sequence of polynomials $$\{p_i\}_{i \in \mathbb{N}}$$ that converge uniformly to $$f$$ on $$\sigma(A)$$. The final step of stage 1 then proves that the sequence of operators $$\{p_i(A)\}_{i \in \mathbb{N}}$$ converge to an operator denoted as $$f(A)$$.
 
 *Stage 2:* The second stage of the proof shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
 
@@ -3242,7 +3242,7 @@ $$
 
 taking complex-valued polynomials on $$\sigma(A)$$ to elements of $$\mathcal{B}(\mathbf{H})$$, to take real-valued, continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
 
-We will do so using the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. Then we will use this fact along with the [**Bounded Linear Transform Theorem**](#thrm:bounded-linear-transformation-theorem) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$ p \mapsto p(A)$$ to all of $$C^0(\sigma(A); \mathbb{R})$$
+We will do so using the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. Then we will use this fact along with the [**Bounded Linear Transform Theorem**](#thrm:bounded-linear-transformation-theorem) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$ p \mapsto p(A)$$ to all of $$C^0(\sigma(A); \mathbb{R})$$
 
 $$
     f \longmapsto f(A).
@@ -3254,7 +3254,7 @@ Let's get started.
 <a name="prpstn:hall-8.3"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
-<!--  \uses{thrm:stone–weierstrass} -->
+<!--  \uses{thrm:stone–weierstrass-real} -->
 <!--  \uses{thrm:bounded-linear-transformation-theorem} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{lmm:hall-8.1} -->
@@ -3337,7 +3337,7 @@ which is simply the statement that the map $$p \mapsto p(A)$$ is isometric.
 
 Explicitly, the map $$p \mapsto p(A)$$ from the set of real-valued polynomials on $$\sigma(A)$$ equipped with the supremum norm into $$\mathcal{B}(\mathbf{H})$$ equipped with the operator norm, is isometric. This map is also linear; for real-valued polynomials $$p$$ and $$q$$ we have $$(p + q) \mapsto (p + q)(A) = p(A) + q(A)$$.
 
-Now in preparation for the application of the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) let us examine explicitly some of the properties of the objects we are currently considering.
+Now in preparation for the application of the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) let us examine explicitly some of the properties of the objects we are currently considering.
 
 As one will recall, [**Proposition**](#prpstn:hall-7.5) established that the spectrum $$\sigma(A)$$ of $$A$$ is a closed and bounded subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem)
 
@@ -3384,14 +3384,14 @@ $$
 
 where the final $$\neq$$ follows from the fact that $$x \neq y$$. Hence, the real-valued polynomials on $$\sigma(A)$$ separate points.
 
-With all of this in-hand we can apply the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass)
+With all of this in-hand we can apply the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real)
 
-> **Theorem** *(Stone–Weierstrass)*
-<a name="thrm:stone–weierstrass"></a>
+> **Theorem** *(Stone–Weierstrass for Real Numbers)*
+<a name="thrm:stone–weierstrass-real"></a>
 <!--  \uses{def:separates-points} -->
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
 
-to the current situation. Identifying $$X$$ with $$\sigma(A)$$ and $$\mathcal{A}$$ with the real-valued polynomials on $$\sigma(A)$$, the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass) allows us to conclude that real-valued polynomials on $$\sigma(A)$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$.
+to the current situation. Identifying $$X$$ with $$\sigma(A)$$ and $$\mathcal{A}$$ with the real-valued polynomials on $$\sigma(A)$$, the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) allows us to conclude that real-valued polynomials on $$\sigma(A)$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$.
 
 Next we must prepare for the application of the [**Bounded Linear Transformation Theorem**](#thrm:bounded-linear-transformation-theorem). To do so, we must establish some relatively straightforward properties of objects we are currently considering. 
 
@@ -5859,6 +5859,9 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{lmm:lemma-5} -->
+<!--  \uses{thrm:bounded-linear-transformation-theorem} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the spectrum $$\sigma(A)$$ of $$A$$ such that
 > 
 > $$
@@ -5878,17 +5881,17 @@ This proof broadly consists of four parts **Part 1:** prove that operator-valued
 Consider an arbitrary complex valued polynomial $$p$$ on $$\sigma(A)$$ with $$\mathbb{C}$$ valued coeﬃcients. Generically $$p$$ has the form
 
 $$
-    p(\lambda) = \sum_{i=1}^n a_i\lambda^i
+    p(\lambda) = \sum_{i=0}^n a_i\lambda^i
 $$
 
 where the $$a_i$$ take values in $$\mathbb{C}$$. Operator-valued integration with respect to $$\mu^A$$ gives
 
 $$
 \begin{align}
-    \int_{\sigma(A)} p(\lambda) \, d\mu^A(\lambda) &=  \int_{\sigma(A)} \left( \sum_{i=1}^n a_i\lambda^i \right) \, d\mu^A(\lambda) \\
-                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda^i \, d\mu^A(\lambda) \right) \\
-                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) \right)^i \\
-                                                   &=  \sum_{i=1}^n a_i A^i,
+    \int_{\sigma(A)} p(\lambda) \, d\mu^A(\lambda) &=  \int_{\sigma(A)} \left( \sum_{i=0}^n a_i\lambda^i \right) \, d\mu^A(\lambda) \\
+                                                   &=  \sum_{i=0}^n a_i \left( \int_{\sigma(A)} \lambda^i \, d\mu^A(\lambda) \right) \\
+                                                   &=  \sum_{i=0}^n a_i \left( \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) \right)^i \\
+                                                   &=  \sum_{i=0}^n a_i A^i,
 \end{align}
 $$
 
@@ -5898,10 +5901,10 @@ Using the same logic, operator-valued integration with respect to $$\nu^A$$ give
 
 $$
 \begin{align}
-    \int_{\sigma(A)} p(\lambda) \, d\nu^A(\lambda) &=  \int_{\sigma(A)} \left( \sum_{i=1}^n a_i\lambda^i \right) \, d\nu^A(\lambda) \\
-                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda^i \, d\nu^A(\lambda) \right) \\
-                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda \, d\nu^A(\lambda) \right)^i \\
-                                                   &=  \sum_{i=1}^n a_i A^i.
+    \int_{\sigma(A)} p(\lambda) \, d\nu^A(\lambda) &=  \int_{\sigma(A)} \left( \sum_{i=0}^n a_i\lambda^i \right) \, d\nu^A(\lambda) \\
+                                                   &=  \sum_{i=0}^n a_i \left( \int_{\sigma(A)} \lambda^i \, d\nu^A(\lambda) \right) \\
+                                                   &=  \sum_{i=0}^n a_i \left( \int_{\sigma(A)} \lambda \, d\nu^A(\lambda) \right)^i \\
+                                                   &=  \sum_{i=0}^n a_i A^i.
 \end{align}
 $$
 
@@ -5912,6 +5915,113 @@ $$
 $$
 
 operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
+
+**Part 2:** Let us next prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of continuous, complex-valued functions on $$\sigma(A)$$.
+
+Later in **Part 2** we will have need of the fact that the set of complex-valued polynomials on $$\sigma(A)$$ is dense in the set of continuous, complex-valued functions on $$\sigma(A)$$ with respect to the supremum norm. So we begin by proving this fact.
+
+> **Lemma**
+<a name="lmm:lemma-5"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{def:separates-points} -->
+<!--  \uses{thrm:stone–weierstrass-complex} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint, then the set of complex-valued polynomials on $$\sigma(A)$$ is dense in the set of continuous, complex-valued functions on $$\sigma(A)$$ with respect to the supremum norm.
+
+**Proof**
+As $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
+
+As $$\sigma(A)$$ is a subset of $$\mathbb{C}$$, we can restrict the standard metric on $$\mathbb{C}$$
+
+$$
+    d(\lambda_1, \lambda_2) \equiv \lvert \lambda_2 - \lambda_1 \rvert,
+$$
+
+where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$, to $$\sigma(A)$$ making $$\sigma(A)$$ a metric space.
+
+Consider now $$\mathcal{P}(\sigma(A); \mathbb{C})$$ the set of complex-valued polynomials on $$\sigma(A)$$ and $$C^0(\sigma(A); \mathbb{C})$$ the set of continuous, complex-valued functions on $$\sigma(A)$$. Obviously, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of $$C^0(\sigma(A); \mathbb{C})$$ as all complex-valued polynomials on $$\sigma(A)$$ are continuous.
+
+Furthermore, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is obviously an algebra as it has the required vector space properties, e.g. closure under addition, as well as the required bilinear product properties, e.g. left distributivity.
+
+In addition it is also obvious that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ [separates points](#def:separates-points). Explicitly, consider any two distinct poinits $$\lambda_1, \lambda_2 \in \sigma(A)$$. There exists a polynomial $$p$$ in $$\mathcal{P}(\sigma(A); \mathbb{C})$$ such that $$p(\lambda_1) \neq p(\lambda_2)$$. For example the polynomial
+
+$$
+    p(\lambda) = (\lambda - \lambda_1)
+$$
+
+would suﬃce as $$p(\lambda_1) \neq p(\lambda_2)$$ follows from the fact that $$\lambda_1$$ and $$\lambda_2$$ are distinct.
+
+Another obvious point we will have need of is the fact that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ contains constant functions. Explicitly the constant function
+
+$$
+    p(\lambda) = a_0,
+$$
+
+where $$a_0 \in \mathbb{C}$$, is an element of $$\mathcal{P}(\sigma(A); \mathbb{C})$$.
+
+The final point we will have need of is the fact that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is closed under complex conjugation, i.e. if $$p(\lambda)$$ is in $$\mathcal{P}(\sigma(A); \mathbb{C})$$, then $$\overline{p(\lambda)}$$ is also in $$\mathcal{P}(\sigma(A); \mathbb{C})$$. This follows from noting that [**Proposition**](#prpstn:hall-7.7) implies that the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$. Hence, a generic $$p$$ in $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is of the form
+
+$$
+    p(\lambda) = \sum_{i=0}^n a_i \lambda^i,
+$$
+
+where the $$a_i$$ are complex-valued and $$\lambda$$ is real, and this implies
+
+$$
+\begin{align}
+    \overline{p(\lambda)} &= \overline{\sum_{i=0}^n a_i \lambda^i} \\
+                          &= \sum_{i=0}^n \overline{a_i} \lambda^i.
+\end{align}
+$$
+
+Now as the $$\overline{a_i}$$ are also in $$\mathbb{C}$$, this implies that
+
+$$
+    \overline{p(\lambda)} = \sum_{i=0}^n \overline{a_i} \lambda^i
+$$
+
+is an element in $$\mathcal{P}(\sigma(A); \mathbb{C})$$, proving that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is closed under complex conjugation.
+
+With all of this in place we are in a position to apply the [**Theorem** *(Stone–Weierstrass for Complex Numbers)*](#thrm:stone–weierstrass-complex)
+
+> **Theorem** *(Stone–Weierstrass for Complex Numbers)*
+<a name="thrm:stone–weierstrass-complex"></a>
+<!--  \uses{def:separates-points} -->
+> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{C})$$, the space of continuous, complex-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions, separates points, and is closed under complex conjugation, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{C})$$ with respect to the supremum norm.
+
+and conclude that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is dense in $$C^0(\sigma(A); \mathbb{C})$$ with respect to the supremum norm, the desired result.$$\blacksquare$$
+
+Our next long term goal is to apply the [**Bounded Linear Transformation Theorem**](#thrm:bounded-linear-transformation-theorem) to prove that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ when the integrand is an element of $$C^0(\sigma(A); \mathbb{C})$$. In other words to prove
+
+$$
+    \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda),
+$$
+
+for an arbitrary $$f$$ in $$C^0(\sigma(A); \mathbb{C})$$. Let's begin.
+
+First, as mentioned after our application of the [**Theorem** *(Stone–Weierstrass for Complex Numbers)*](#thrm:stone–weierstrass-complex), $$C^0(\sigma(A); \mathbb{C})$$ is equipped with a norm, the supremum norm, and is thus a normed space.
+
+Second, recall that as a result of [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) we know that $$\mathcal{B}(\mathbf{H})$$ is a Banach space with respect to the operator norm.
+
+Now recall that [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) implies that the maps
+
+$$
+\begin{align}
+    I_{\mu^A} : p \longmapsto \int_{\sigma(A)} p(\lambda) \, d\mu^A(\lambda) \\
+    I_{\nu^A} : p \longmapsto \int_{\sigma(A)} p(\lambda) \, d\nu^A(\lambda)
+\end{align}
+$$
+
+from the set of bounded, measurable complex-valued functions on $$\sigma(A)$$ to $$\mathcal{B}(\mathbf{H})$$ are linear. As $$\sigma(A)$$ is compact, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of the set of all bounded, measurable complex-valued functions on $$\sigma(A)$$. Hence, we may view the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ as having domain $$\mathcal{P}(\sigma(A); \mathbb{C})$$ and not all bounded, measurable complex-valued functions on $$\sigma(A)$$.
+
+With all of this established, we may make use of the [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) to uniquely extend the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\mathcal{P}(\sigma(A); \mathbb{C})$$ to $$C^0(\sigma(A); \mathbb{C})$$. (Note we will still use the same notation $$I_{\mu^A}$$ and $$I_{\nu^A}$$ for these extended maps.) As $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are extensions, $$I_{\mu^A}$$ agrees on $$\mathcal{P}(\sigma(A); \mathbb{C})$$ with its non-extended version, and a similar statement is true of $$I_{\nu^A}$$.
+
+However, as we just established in **Part 1** the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree when restricted to $$\mathcal{P}(\sigma(A); \mathbb{C})$$. Thus, as the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ obtained from [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) are unique, this implies that the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree everywhere on the domain $$C^0(\sigma(A); \mathbb{C})$$. 
+
+Hence, we have proven the desired **Part 2** result that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of continuous, complex-valued functions on $$\sigma(A)$$.
+
+**Part 3:** Now let us prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of bounded, measurable complex-valued functions.
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
