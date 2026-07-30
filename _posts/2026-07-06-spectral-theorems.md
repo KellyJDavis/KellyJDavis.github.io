@@ -6036,6 +6036,42 @@ Hence, we have proven the desired **Part 2** result that operator-valued integra
 
 **Part 3:** Now let us prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of bounded, measurable complex-valued functions.
 
+Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$.
+
+Recall that in **Part 1** we proved that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$. Similarly in **Part 2** we proved that $$C^0(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$.
+
+Also note that as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$, now viewed as having domain consisting of all bounded, measurable, complex-valued functions on $$\sigma(A)$$, are linear. This implies that $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$. Explicitly, consider arbitrary $$f_1,f_2 \in \mathcal{F}$$ and arbitrary $$\alpha_1, \alpha_2 \in \mathbb{C}$$. Linearity of $$I_{\mu^A}$$ implies
+
+$$
+    \int_{\sigma(A)} \left( \alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda) \right) \, d\mu^A(\lambda) =  
+    \alpha_1 \int_{\sigma(A)} f_1(\lambda) \, d\mu^A(\lambda) + \alpha_2 \int_{\sigma(A)} f_2(\lambda) \, d\mu^A(\lambda).
+$$
+
+Similarly linearity of $$I_{\nu^A}$$ implies
+
+$$
+    \int_{\sigma(A)} \left( \alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda) \right) \, d\nu^A(\lambda) =  
+    \alpha_1 \int_{\sigma(A)} f_1(\lambda) \, d\nu^A(\lambda) + \alpha_2 \int_{\sigma(A)} f_2(\lambda) \, d\nu^A(\lambda).
+$$
+
+However, as $$f_1,f_2 \in \mathcal{F}$$ the definition of $$\mathcal{F}$$ implies
+
+$$
+\begin{align}
+    \int_{\sigma(A)} f_1(\lambda) \, d\mu^A(\lambda) &= \int_{\sigma(A)} f_1(\lambda) \, d\nu^A(\lambda) \\
+    \int_{\sigma(A)} f_2(\lambda) \, d\mu^A(\lambda) &= \int_{\sigma(A)} f_2(\lambda) \, d\nu^A(\lambda). 
+\end{align}
+$$
+
+Hence, the last four equations imply
+
+$$
+    \int_{\sigma(A)} \left( \alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda) \right) \, d\mu^A(\lambda) = 
+    \int_{\sigma(A)} \left( \alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda) \right) \, d\nu^A(\lambda).
+$$
+
+This implies that $$\alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda)$$ is in element $$\mathcal{F}$$ and thus $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$.
+
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
 <!--  \uses{def:bounded-operator-notation} -->
