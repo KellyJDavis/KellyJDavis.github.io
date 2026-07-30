@@ -3399,7 +3399,7 @@ Consider $$C^0(\sigma(A); \mathbb{R})$$, the space of continuous, real-valued fu
 
 > **Theorem** *(Boundedness Theorem)*
 <a name="thrm:boundedness-theorem"></a>
-> A continuous real-valued function on a compact subset $$C$$ of $$\mathbf{R}$$ is bounded on $$C$$.
+> A continuous real-valued function on a non-empty compact set $$C$$ is bounded on $$C$$.
 
 implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded. Hence, the supremum norm
 
@@ -5862,6 +5862,9 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{lmm:lemma-5} -->
 <!--  \uses{thrm:bounded-linear-transformation-theorem} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{thrm:heine–borel-theorem} -->
+<!--  \uses{thrm:boundedness-theorem} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the spectrum $$\sigma(A)$$ of $$A$$ such that
 > 
 > $$
@@ -6013,9 +6016,19 @@ $$
 \end{align}
 $$
 
-from the set of bounded, measurable complex-valued functions on $$\sigma(A)$$ to $$\mathcal{B}(\mathbf{H})$$ are linear. As $$\sigma(A)$$ is compact, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of the set of all bounded, measurable complex-valued functions on $$\sigma(A)$$. Hence, we may view the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ as having domain $$\mathcal{P}(\sigma(A); \mathbb{C})$$ and not all bounded, measurable complex-valued functions on $$\sigma(A)$$.
+from the set of bounded, measurable complex-valued functions on $$\sigma(A)$$ to $$\mathcal{B}(\mathbf{H})$$ are linear. We want to prove $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$.
 
-With all of this established, we may make use of the [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) to uniquely extend the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\mathcal{P}(\sigma(A); \mathbb{C})$$ to $$C^0(\sigma(A); \mathbb{C})$$. (Note we will still use the same notation $$I_{\mu^A}$$ and $$I_{\nu^A}$$ for these extended maps.) As $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are extensions, $$I_{\mu^A}$$ agrees on $$\mathcal{P}(\sigma(A); \mathbb{C})$$ with its non-extended version, and a similar statement is true of $$I_{\nu^A}$$.
+Recall that as $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
+
+Also recall that any complex-valued polynomial $$p$$ on $$\sigma(A)$$ is continuous, i.e. $$\mathcal{P}(\sigma(A); \mathbb{C}) \subset C^0(\sigma(A); \mathbb{C})$$. Thus the norm $$\lvert p \rvert$$ of any element of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a continuous real-valued function on $$\sigma(A)$$. Hence, as a result of [**Theorem** *(Boundedness Theorem)*](#thrm:boundedness-theorem), $$\lvert p \rvert$$ is bounded on $$\sigma(A)$$. This is none other that the statement that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is bounded on $$\sigma(A)$$.
+
+Finally, note that as $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is continuous and the $$\sigma$$-algebra on $$\sigma(A)$$ is the Borel $$\sigma$$-algebra, it follows that any element of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is measurable.
+
+Hence, elements of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ are bounded, measurable, complex-valued functions on $$\sigma(A)$$. Thus, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is in the domain of the $$I_{\mu^A}$$ and $$I_{\nu^A}$$.
+
+With that established, let us restrict the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ to be $$\mathcal{P}(\sigma(A); \mathbb{C})$$ and only $$\mathcal{P}(\sigma(A); \mathbb{C})$$ while retaining the same notation $$I_{\mu^A}$$ and $$I_{\nu^A}$$. Hopefully this is not too confusing.
+
+Finally, we may make use of the [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) to uniquely extend the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\mathcal{P}(\sigma(A); \mathbb{C})$$ to all of $$C^0(\sigma(A); \mathbb{C})$$. (Note we will still use the same notation $$I_{\mu^A}$$ and $$I_{\nu^A}$$ for these extended maps.) As $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are extensions, $$I_{\mu^A}$$ agrees on $$\mathcal{P}(\sigma(A); \mathbb{C})$$ with its non-extended version, and a similar statement is true of $$I_{\nu^A}$$.
 
 However, as we just established in **Part 1** the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree when restricted to $$\mathcal{P}(\sigma(A); \mathbb{C})$$. Thus, as the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ obtained from [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) are unique, this implies that the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree everywhere on the domain $$C^0(\sigma(A); \mathbb{C})$$. 
 
