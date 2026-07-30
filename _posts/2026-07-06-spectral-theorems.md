@@ -5865,6 +5865,7 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{thrm:sequential-criterion-for-continuity} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the spectrum $$\sigma(A)$$ of $$A$$ such that
 > 
 > $$
@@ -6071,6 +6072,15 @@ $$
 $$
 
 This implies that $$\alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda)$$ is in element $$\mathcal{F}$$ and thus $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$.
+
+Next we want to prove that the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\mathcal{F}$$ to $$\mathcal{B}(\mathbf{H})$$ are continuous. We will do so using the [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity)
+
+> **Theorem** *(Sequential Criterion for Continuity)*
+<a name="thrm:sequential-criterion-for-continuity"></a>
+> If $$X$$ and $$Y$$ are topological spaces and $$X$$ is first-countable, then $$f : X \rightarrow Y$$ is continuous if and only if whenever a sequence $$x_n$$ in $$X$$ converges to a limit $$x$$, then $$f(x_n)$$ converges to $$f(x)$$.
+
+Specifically as a result of [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) we can prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to $$f$$ under pointwise limits of a uniformly bounded sequence implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ converge in $$\mathcal{B}(\mathbf{H})$$ to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ respectively.
+
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
