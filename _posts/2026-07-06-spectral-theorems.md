@@ -5868,12 +5868,50 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 > \end{align}
 > $$
 > 
-> Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. they are equivalent projection-valued measures.
+> Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.
 
 **Proof**
 This proof broadly consists of four parts **Part 1:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials, **Part 2:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on continuous complex-valued functions, **Part 3:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on bounded, measurable complex-valued functions, and **Part 4** prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
 
+**Part1:** Let us first prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
 
+Consider an arbitrary complex valued polynomial $$p$$ on $$\sigma(A)$$ with $$\mathbb{C}$$ valued coeﬃcients. Generically $$p$$ has the form
+
+$$
+    p(\lambda) = \sum_{i=1}^n a_i\lambda^i
+$$
+
+where the $$a_i$$ take values in $$\mathbb{C}$$. Operator-valued integration with respect to $$\mu^A$$ gives
+
+$$
+\begin{align}
+    \int_{\sigma(A)} p(\lambda) \, d\mu^A(\lambda) &=  \int_{\sigma(A)} \left( \sum_{i=1}^n a_i\lambda^i \right) \, d\mu^A(\lambda) \\
+                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda^i \, d\mu^A(\lambda) \right) \\
+                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) \right)^i \\
+                                                   &=  \sum_{i=1}^n a_i A^i,
+\end{align}
+$$
+
+where the first equality made use of the definition of $$p$$, the second equality made use of linearity of operator-valued integration following from [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), the third equality made use of multiplicativity of operator-valued integration also from [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), and the final equality made use of the hypothesis of this theorem.
+
+Using the same logic, operator-valued integration with respect to $$\nu^A$$ gives
+
+$$
+\begin{align}
+    \int_{\sigma(A)} p(\lambda) \, d\nu^A(\lambda) &=  \int_{\sigma(A)} \left( \sum_{i=1}^n a_i\lambda^i \right) \, d\nu^A(\lambda) \\
+                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda^i \, d\nu^A(\lambda) \right) \\
+                                                   &=  \sum_{i=1}^n a_i \left( \int_{\sigma(A)} \lambda \, d\nu^A(\lambda) \right)^i \\
+                                                   &=  \sum_{i=1}^n a_i A^i.
+\end{align}
+$$
+
+Hence, we have proven the desired result
+
+$$
+    \int_{\sigma(A)} p(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} p(\lambda) \, d\nu^A(\lambda),
+$$
+
+operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
