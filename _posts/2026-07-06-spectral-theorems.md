@@ -6079,7 +6079,33 @@ Next we want to prove that the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\math
 <a name="thrm:sequential-criterion-for-continuity"></a>
 > If $$X$$ and $$Y$$ are topological spaces and $$X$$ is first-countable, then $$f : X \rightarrow Y$$ is continuous if and only if whenever a sequence $$x_n$$ in $$X$$ converges to a limit $$x$$, then $$f(x_n)$$ converges to $$f(x)$$.
 
-Specifically as a result of [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) we can prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to $$f$$ under pointwise limits of a uniformly bounded sequence implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ converge in $$\mathcal{B}(\mathbf{H})$$ to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ respectively.
+In applying this to the case at hand we will identify $$\mathcal{F}$$ with $$X$$ and $$Y$$ with $$\mathcal{B}(\mathbf{H})$$. In order for this to be make sense, we must first must prove that $$\mathcal{F}$$ and $$\mathcal{B}(\mathbf{H})$$ are topological spaces and $$\mathcal{F}$$ is first-countable.
+
+First note that the operator norm on $$\mathcal{B}(\mathbf{H})$$ induces a metric
+
+$$
+    d(A_1,A_2) \equiv \|A_1 - A_2\|
+$$
+
+on $$\mathcal{B}(\mathbf{H})$$. This metric induces a topology through open balls
+
+$$
+    B(A,r) \equiv \{ B \in \mathcal{B}(\mathbf{H}) : \|B - A\| < r \},
+$$
+
+resulting in the norm topology $$\mathcal{B}(\mathbf{H})$$. Hence, $$\mathcal{B}(\mathbf{H})$$ is a topological space.
+
+Similarly, we can equip $$\mathcal{F}$$ with the supremum norm. This is well-defined as all elements in $$\mathcal{F}$$ are by definition bounded. As above, this results in equipping $$\mathcal{F}$$ with the norm topology and thus proving that $$\mathcal{F}$$ is a topological space.
+
+Finally we must prove that $$\mathcal{F}$$ is first-countable. A topological space is said to be first-countable if each point has a countable neighborhood basis. In the case of $$\mathcal{F}$$ a countable neighborhood base of any $$f$$ in $$\mathcal{F}$$ consists of balls of radius $$1/2^n$$ for natural number $$n$$ 
+
+$$
+    B(f, 1/2^n) \equiv \{ g \in \mathcal{F} : \sup\limits_{\lambda \in \sigma(A)} \lvert g(\lambda) - f(\lambda) \rvert < 1/2^n \},
+$$
+
+the existence of which proves that $$\mathcal{F}$$ is first-countable.
+
+These basic results established, we can apply [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) and prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ converge respectively to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. This is what we will now prove.
 
 
 > **Definition** *(Functional Calculus)*
