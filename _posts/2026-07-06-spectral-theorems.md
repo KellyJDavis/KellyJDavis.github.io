@@ -6041,7 +6041,7 @@ Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions 
 
 Recall that in **Part 1** we proved that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$. Similarly in **Part 2** we proved that $$C^0(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$.
 
-Also note that as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$, now viewed as having domain consisting of all bounded, measurable, complex-valued functions on $$\sigma(A)$$, are linear. This implies that $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$. Explicitly, consider arbitrary $$f_1,f_2 \in \mathcal{F}$$ and arbitrary $$\alpha_1, \alpha_2 \in \mathbb{C}$$. Linearity of $$I_{\mu^A}$$ implies
+Also note that as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$---now viewed as having domain consisting of all bounded, measurable, complex-valued functions on $$\sigma(A)$$---are linear. This implies that $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$. Explicitly, consider arbitrary $$f_1,f_2 \in \mathcal{F}$$ and arbitrary $$\alpha_1, \alpha_2 \in \mathbb{C}$$. Linearity of $$I_{\mu^A}$$ implies
 
 $$
     \int_{\sigma(A)} \left( \alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda) \right) \, d\mu^A(\lambda) =  
@@ -6079,7 +6079,7 @@ Next we want to prove that the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\math
 <a name="thrm:sequential-criterion-for-continuity"></a>
 > If $$X$$ and $$Y$$ are topological spaces and $$X$$ is first-countable, then $$f : X \rightarrow Y$$ is continuous if and only if whenever a sequence $$x_n$$ in $$X$$ converges to a limit $$x$$, then $$f(x_n)$$ converges to $$f(x)$$.
 
-In applying this to the case at hand we will identify $$\mathcal{F}$$ with $$X$$ and $$Y$$ with $$\mathcal{B}(\mathbf{H})$$. In order for this to be make sense, we must first must prove that $$\mathcal{F}$$ and $$\mathcal{B}(\mathbf{H})$$ are topological spaces and $$\mathcal{F}$$ is first-countable.
+In applying this to the case at hand we will identify $$X$$ of the [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) with $$\mathcal{F}$$ and $$Y$$ of the same theorem with $$\mathcal{B}(\mathbf{H})$$. In order for this to make sense, we must first must prove that $$\mathcal{F}$$ and $$\mathcal{B}(\mathbf{H})$$ are topological spaces and $$\mathcal{F}$$ is first-countable.
 
 First note that the operator norm on $$\mathcal{B}(\mathbf{H})$$ induces a metric
 
@@ -6105,8 +6105,84 @@ $$
 
 the existence of which proves that $$\mathcal{F}$$ is first-countable.
 
-These basic results established, we can apply [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) and prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$. We can do so by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to a $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$ converge respectively to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. This is what we will now prove.
+These basic results established, we can apply [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) and prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$.
 
+Explicitly, we can do so by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to an $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$ converge to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ respectively in $$\mathcal{B}(\mathbf{H})$$ in the operator norm. This is what we will now prove.
+
+Before we begin this proof, note that as the cases for $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are essentially identical. So we will only explicitly carry forward the derivation for $$I_{\mu^A}$$, but at the end of this derivation we will conclude that the same results hold for $$I_{\nu^A}$$ too.
+
+So, with that in mind, let $$f_n$$ be a sequence in $$\mathcal{F}$$ that converges to an $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm. By definition, all elements of $$\mathcal{F}$$ are bounded, this implies there exist real numbers $$C_n$$ and $$C$$ such that
+
+$$
+    \lvert f(\lambda) \rvert \le C \qquad \lvert f_n(\lambda) \rvert \le C_n
+$$
+
+for all $$\lambda$$ in $$\sigma(A)$$ and all $$n$$ in $$\mathbb{N}$$. Also, as $$f_n$$ converges to $$f$$ with respect to the supremum norm, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ we have
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) - f_n(\lambda) \rvert < \epsilon.
+$$
+
+Consider now the corresponding sequence $$I_{\mu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$. We must prove that $$I_{\mu^A}(f_n)$$ converges to $$I_{\mu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. It is to this we now turn.
+
+As the sequence $$f_n$$ is in $$\mathcal{F}$$ and every element in $$\mathcal{F}$$ is by definition a bounded, measurable, complex-valued function on $$\sigma(A)$$, it follows that all the properties of operator-valued integration listed in [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) apply to $$I_{\mu^A}(f_n)$$. From this follows
+
+$$
+\begin{align}
+    \left\| I_{\mu^A}(f) - I_{\mu^A}(f_n) \right\| &=   \left\| I_{\mu^A}(f - f_n) \right\| \\
+                                                   &=   \left\| \int_{\sigma(A)} \left( f(\lambda) - f_n(\lambda) \right) \, d\mu^A(\lambda)  \right\| \\
+                                                   &\le \sup\limits_{\lambda \in \sigma(A)} \left| f(\lambda)  - f_n(\lambda) \right|,
+\end{align}
+$$
+
+where the first equality follows from the linearity of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), the second equality from the definition of $$I_{\mu^A}$$, and the third from the multiplicative property of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration).
+
+As given any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ we have
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) - f_n(\lambda) \rvert < \epsilon,
+$$
+
+we can combine the last two results and conclude that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ we have
+
+$$
+    \left\| I_{\mu^A}(f) - I_{\mu^A}(f_n) \right\| < \epsilon.
+$$
+
+This is nothing more than the statement that $$I_{\mu^A}(f_n)$$ converges to $$I_{\mu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm, one of our desired results. The other desired result that $$I_{\nu^A}(f_n)$$ converges to $$I_{\nu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm follows using the same logic.
+
+So as we have proven that any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to an $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$ converge to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ respectively in $$\mathcal{B}(\mathbf{H})$$ in the operator norm, we can conclude as a result of [**Theorem** *(Sequential Criterion for Continuity)*](#thrm:sequential-criterion-for-continuity) that both $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are continuous when their domain is $$\mathcal{F}$$.
+
+Next we want to use the continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ to prove that $$\mathcal{F}$$ is closed.
+
+To this end assume that there exists a sequence $$f_n$$ in $$\mathcal{F}$$ that converges to $$f$$ with respect to the supremum norm. We will prove that $$f$$ is in $$\mathcal{F}$$ and thus $$\mathcal{F}$$ is closed. We will do so using proof by contradiction.
+
+By definition any element in $$\mathcal{F}$$ is a bounded, measurable, complex-valued function on $$\sigma(A)$$. Hence, there exist real-numbers $$C_n$$ such that
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} \lvert f_n(\lambda) \rvert \le C_n
+$$
+
+for all $$n$$ in $$\mathbb{N}$$. Also as the sequence $$f_n$$ converges to $$f$$ with respect to the supremum norm, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+
+$$
+    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) - f_n(\lambda) \rvert < \epsilon.
+$$
+
+As we will use proof by contradiction, let us now assume that $$f$$ is a bounded, measurable, complex-valued function on $$\sigma(A)$$ that is not in $$\mathcal{F}$$ and prove this leads to a contradiction.
+
+As we have proven that the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are continuous, we know the sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ converge to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$. Furthermore, as $$f$$ is a bounded, measurable, complex-valued function on $$\sigma(A)$$, we know as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) that $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ are elements in $$\mathcal{B}(\mathbf{H})$$.
+
+As a result of [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) $$\mathcal{B}(\mathbf{H})$$ is a Banach space and thus a vector space with a norm. Hence, for any $$\epsilon > 0$$ we can consider the open balls
+
+$$
+\begin{align}
+    B(I_{\mu^A}(f), \epsilon) &\equiv \{ B \in \mathcal{B}(\mathbf{H}) : \|B - I_{\mu^A}(f)\| < \epsilon \} \\
+    B(I_{\nu^A}(f), \epsilon) &\equiv \{ B \in \mathcal{B}(\mathbf{H}) : \|B - I_{\nu^A}(f)\| < \epsilon \},
+\end{align}
+$$
+
+about $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$.
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
