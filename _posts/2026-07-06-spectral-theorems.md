@@ -6128,7 +6128,7 @@ So with this we have proven that under the hypotheses of the [**Theorem**](#thrm
 
 This also completes the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof.$$\blacksquare$$
 
-With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) poof complete, we can finally introduce the normative definition of the "functional calculus"
+With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) poof complete, we can conclude by finally introducing the normative definition of the "functional calculus"
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
