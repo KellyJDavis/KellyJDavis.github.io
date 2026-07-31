@@ -92,7 +92,7 @@ In other words for $$\|\psi\| \neq 0$$ the sequence $$\{A_i\psi\}_{i \in \mathbb
 
 In the case $$\|\psi\| = 0$$ the sequence $$\{A_i\psi\}_{i \in \mathbb{N}}$$ consists only of zeros. Hence, it's trivially a Cauchy sequence.
 
-As $$\mathbf{H}$$ is complete, this Cauchy sequence $$\{A_i\psi\}_{i \in \mathbb{N}}$$ converges to an element of $$\mathbf{H}$$. With this knowledge, we can define a map $$A : \mathbf{H} \rightarrow \mathbf{H}$$ point-wise as follows
+As $$\mathbf{H}$$ is complete, this Cauchy sequence $$\{A_i\psi\}_{i \in \mathbb{N}}$$ converges to an element of $$\mathbf{H}$$. With this knowledge, we can define a map $$A : \mathbf{H} \rightarrow \mathbf{H}$$ pointwise as follows
 
 $$
     A\psi \equiv \lim\limits_{i \rightarrow \infty} A_i\psi.
@@ -312,7 +312,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 >     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi,
 > $$
 >
-> for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure) and $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. This unique linear map has the following additional properties
+> for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure) and $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. This unique linear map has the following additional properties
 >
 > 1. For all $$E \in \Omega(X)$$, we have
 >
@@ -395,7 +395,7 @@ $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
 $$
 
-where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure). It turns out that such a $$Q_f(\psi)$$ is a bounded quadratic form which we now prove
+where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure). It turns out that such a $$Q_f(\psi)$$ is a bounded quadratic form which we now prove
 
 > **Lemma**
 <a name="lmm:lemma1-of-operator-valued-integration"></a>
@@ -410,7 +410,7 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 >     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
 > $$
 >
-> where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure’s Associated Measure)*](#thrm:projection-valued-measures-associated-measure), is a bounded quadratic form.
+> where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure), is a bounded quadratic form.
 
 **Proof**
 To prove this result we will first prove the result for indicator functions, then for simple functions, and finally for bounded, measurable, complex-valued functions.
@@ -1311,7 +1311,7 @@ $$
 
 First let us prove this is true for the case $$\psi = 0$$.
 
-In this case the definition of a norm implies $$\|\psi\| = 0$$. Similarly, for all $$\chi \in \mathbf{H}$$ we have $$\lvert \left< \chi, 0 \right> \rvert = 0$$. Thus we have the trivial equality in this case, both the lefthand and righthand side of the desired equation are zero.
+In this case the definition of a norm implies $$\|\psi\| = 0$$. Similarly, for all $$\chi \in \mathbf{H}$$ we have $$\lvert \left< \chi, 0 \right> \rvert = 0$$. Thus we have the trivial equality in this case: both the lefthand and righthand sides of the desired equation are zero.
 
 Now we can safely assume that $$\psi \neq 0$$.
 
@@ -2262,7 +2262,7 @@ Together these imply the final desired result.$$\blacksquare$$
 <!--  \uses{thrm:maximum-modulus-principle} -->
 > For all $$A \in \mathcal{B}(\mathbf{H})$$, the following results hold.
 >
-> 1. The spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$.
+> 1. The spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$.
 > 2. If $$\lvert \lambda \rvert > \|A\|$$, where $$\|A\|$$ is the operator norm of $$A$$, then $$\lambda$$ is in the resolvent set of $$A$$.
 
 **Proof**
@@ -2328,7 +2328,7 @@ $$
 
 where the second equality follows from the [**Lemma**](#lmm:hall-7.6) we just proved.
 
-This implies that in the neighbourhood of any point $$\lambda_0$$ in the resolvent set of $$A$$ the resolvent $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed by this locally convergent series in powers of $$(\lambda - \lambda_0)$$ with coefficients of these powers being elements of $$\mathcal{B}(\mathbf{H})$$.
+This implies that in the neighborhood of any point $$\lambda_0$$ in the resolvent set of $$A$$ the resolvent $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed by this locally convergent series in powers of $$(\lambda - \lambda_0)$$ with coefficients of these powers being elements of $$\mathcal{B}(\mathbf{H})$$.
 
 Hence, for any $$\phi, \psi \in \mathbf{H}$$ the map
 
@@ -2370,7 +2370,7 @@ Hence, by evaluating the entire function $$\lambda \mapsto \left< \phi, (A - \la
 
 > **Theorem** *(Maximum Modulus Principle)*
 <a name="thrm:maximum-modulus-principle"></a>
-> Let $$B$$ be a bounded, nonempty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains its maximum at some point on the boundary of $$B$$.
+> Let $$B$$ be a bounded, non-empty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains its maximum at some point on the boundary of $$B$$.
 
 implies that the maximum of $$\lvert \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right> \rvert$$ is zero. As a result of the definition of a norm, this in turn implies that $$\left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is identically zero.
 
@@ -2582,7 +2582,7 @@ Hence, we have proven that for any $$a,b \in \mathbb{R}$$ with $$b \neq 0$$ and 
 >     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} |\lambda|.
 > $$
 >
-> Note that as a result of [**Proposition**](#prpstn:hall-7.5), $$\sigma(A)$$ is a closed, bounded, and nonempty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
+> Note that as a result of [**Proposition**](#prpstn:hall-7.5), $$\sigma(A)$$ is a closed, bounded, and non-empty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
 
 The first property that one can easily ascertain of the spectral radius is the following corollary:
 
@@ -2836,7 +2836,7 @@ $$
     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} \lvert \lambda \rvert
 $$
 
-of $$A$$ is a finite real number. Explicitly, [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
+of $$A$$ is a finite real number. Explicitly, [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
 
 The spectrum $$\sigma(A)$$ of $$A$$ is defined as the complement of the resolvent set of $$A$$ in $$\mathbb{C}$$. Hence, all $$\lambda \in \mathbb{C}$$ such that $$\lvert \lambda \rvert > R(A)$$ are in the resolvent set of $$A$$. Thus, the function
 
@@ -3035,7 +3035,7 @@ $$
 
 In other words the left inverse $$((AB)^{-1}B)$$ and the right inverse $$(B(AB)^{-1})$$ agree and there is a single unique inverse of $$A^{-1}$$.
 
-However, by hypothesis $$A$$ is not invertible. Thus our assumption that $$AB$$ is invertible is false, and  $$AB$$ is not invertible. This is the desired result.$$\blacksquare$$
+However, by hypothesis $$A$$ is not invertible. Thus our assumption that $$AB$$ is invertible is false, and $$AB$$ is not invertible. This is the desired result.$$\blacksquare$$
 
 With this lemma complete we may now move on to the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
 
@@ -3242,7 +3242,7 @@ $$
 
 taking complex-valued polynomials on $$\sigma(A)$$ to elements of $$\mathcal{B}(\mathbf{H})$$, to take real-valued, continuous functions $$f$$ on $$\sigma(A)$$ to elements $$f(A)$$ of $$\mathcal{B}(\mathbf{H})$$.
 
-We will do so using the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. Then we will use this fact along with the [**Bounded Linear Transform Theorem**](#thrm:bounded-linear-transformation-theorem) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$ p \mapsto p(A)$$ to all of $$C^0(\sigma(A); \mathbb{R})$$
+We will do so using the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) to prove that the set of polynomials on $$\sigma(A)$$ is dense in $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on $$\sigma(A)$$. Then we will use this fact along with the [**Bounded Linear Transformation Theorem**](#thrm:bounded-linear-transformation-theorem) to extend the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$ p \mapsto p(A)$$ to all of $$C^0(\sigma(A); \mathbb{R})$$
 
 $$
     f \longmapsto f(A).
@@ -3323,11 +3323,11 @@ $$
 \begin{align}
     \|p(A)\| &= R(p(A)) \\
              &= \sup\limits_{\gamma \in \sigma(p(A))} |\gamma| \\
-             &= \sup\limits_{\lambda \in \sigma(A)} | p(\lambda) |.
+             &= \sup\limits_{\lambda \in \sigma(A)} | p(\lambda) |,
 \end{align}
 $$
 
-Proving that
+proving that
 
 $$
     \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} | p(\lambda) |,
@@ -3599,7 +3599,7 @@ where $$(fg)$$ denotes the pointwise product of $$f$$ and $$g$$, i.e. $$(fg)(\la
 
 As a result of the proof of [**Proposition**](#prpstn:hall-8.3) we know the real-valued polynomials on the spectrum $$\sigma(A)$$ of $$A$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$ with respect to the supremum norm. Hence, there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly. Similarly, there exists a sequence $$\{ r_j \}_{j \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$r_j \rightarrow g$$ uniformly.
 
-As a result of [**Proposition**](#prpstn:hall-7.5) the spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. As a result of the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) the spectrum $$\sigma(A)$$ of $$A$$ is compact. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$, $$g$$, and all the $$s_i$$ and $$r_j$$ are bounded.
+As a result of [**Proposition**](#prpstn:hall-7.5) the spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. As a result of the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) the spectrum $$\sigma(A)$$ of $$A$$ is compact. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$, $$g$$, and all the $$s_i$$ and $$r_j$$ are bounded.
 
 This setup will now allow us to prove that $$s_ir_i \rightarrow fg$$ uniformly. 
 
@@ -4010,7 +4010,7 @@ To that end let us make the following definition
 > 
 > where $$\mu_\psi$$ is the measure on $$\sigma(A)$$ derived from our map $$\Lambda_\psi$$ and the [**Riesz Representation Theorem**](#thrm:riesz-representation).
 
-It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the following [**Proposition**](#)
+It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the following [**Proposition**](#prpstn:hall-8.7)
 
 > **Proposition**
 <a name="prpstn:hall-8.7"></a>
@@ -4174,11 +4174,11 @@ Next let us prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{
 
 By definition $$\mathcal{F}$$ is a subset of the set of bounded, Borel-measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, where $$A$$ is self-adjoint. So, let us first prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of this set of bounded, Borel-measurable, complex-valued functions.
 
-Recall that as $$A$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R} \subset \mathbb{C}$$. In addition, [**Proposition**](#def:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) then implies that $$\sigma(A)$$ is compact. Finally, the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded.
+Recall that as $$A$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R} \subset \mathbb{C}$$. In addition, [**Proposition**](#def:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) then implies that $$\sigma(A)$$ is compact. Finally, the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded.
 
 As $$C^0(\sigma(A); \mathbb{R})$$ is continuous, for any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ the pre-image of any open set in $$\mathbb{R}$$ is open in $$\sigma(A)$$. As $$\mathbb{R} \subset \mathbb{C}$$ has the subset topology, for any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ the pre-image of any open set in $$\mathbb{C}$$ is open in $$\sigma(A)$$. Hence, any element of $$C^0(\sigma(A); \mathbb{R})$$ is Borel-measurable when considered as a complex-valued function on the spectrum $$\sigma(A)$$ of $$A$$.
 
-So with that we have proven that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of the set of  bounded, Borel-measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$.
+So with that we have proven that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of the set of bounded, Borel-measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$.
 
 The final step to prove $$C^0(\sigma(A); \mathbb{R}) \subset \mathcal{F}$$ is to prove that any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ results in a bounded quadratic form $$Q_f$$.
 
@@ -4220,13 +4220,13 @@ $$
     \lvert f_i(\lambda) \rvert \le M
 $$
 
-for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, and that converge point-wise, i.e. there exists a map $$f : \sigma(A) \rightarrow \mathbb{C}$$ that satisfies
+for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, and that converge pointwise, i.e. there exists a map $$f : \sigma(A) \rightarrow \mathbb{C}$$ that satisfies
 
 $$
     \lim\limits_{i \rightarrow \infty} f_i(\lambda) = f(\lambda)
 $$
 
-point-wise for each $$\lambda \in \sigma(A)$$ relative to the standard norm $$\lvert \cdot \rvert$$ on $$\mathbb{C}$$. Our goal is then to prove that $$f$$ is in $$\mathcal{F}$$.
+pointwise for each $$\lambda \in \sigma(A)$$ relative to the standard norm $$\lvert \cdot \rvert$$ on $$\mathbb{C}$$. Our goal is then to prove that $$f$$ is in $$\mathcal{F}$$.
 
 
 As $$\mathcal{F}$$ is a subset of the set of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$, our first task is to prove that $$f$$ is a bounded, Borel-measurable, complex-valued function.
@@ -4254,7 +4254,7 @@ for all $$\lambda \in \sigma(A)$$. In other words this proves that $$f$$ is boun
 
 Next let us prove that $$f$$ is Borel-measurable.
 
-As $$\{ f_i \}_{i \in \mathbb{N}}$$ converges to $$f$$ point-wise, for any $$\lambda \in \sigma(A)$$ and any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for $$i \ge N$$ one has
+As $$\{ f_i \}_{i \in \mathbb{N}}$$ converges to $$f$$ pointwise, for any $$\lambda \in \sigma(A)$$ and any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for $$i \ge N$$ one has
 
 $$
     \lvert f(\lambda) - f_i(\lambda) \rvert < \epsilon.
@@ -4381,7 +4381,7 @@ $$
 
 is a Borel measurable set. Hence, the preimage of any set of the form $$(-\infty, a)$$ under $$\text{Re}(f)$$ is a Borel measurable set, and thus $$\text{Re}(f(\lambda))$$ is Borel measurable. A similar argument holds for $$\text{Im}(f(\lambda))$$, proving that $$f$$ is Borel measurable, the desired result.
 
-Next we have to prove that $$f$$ is in $$\mathcal{F}$$. The definition of $$\mathcal{F}$$ implies that is equivalent to proving that $$Q_f$$ is a bounded quadratic form.
+Next we have to prove that $$f$$ is in $$\mathcal{F}$$. The definition of $$\mathcal{F}$$ implies that this is equivalent to proving that $$Q_f$$ is a bounded quadratic form.
 
 To prove that $$Q_f$$ is a bounded quadratic form we must prove that
 
@@ -4405,11 +4405,11 @@ To prove that $$Q_f$$ is a bounded quadratic form we must prove that
 
    where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
-The key "engine" iin proving the $$Q_f$$ is a bounded quadratic form is the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem)
+The key "engine" in proving the $$Q_f$$ is a bounded quadratic form is the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem)
 
 > **Theorem** *(Bounded Convergence Theorem)*
 <a name="thrm:bounded-convergence-theorem"></a>
-> Let $$X$$ be a set with finite measure $$\mu(X) < \infty$$ and $$\{ f_i \}_{i \in \mathbb{N}}$$ a sequence of uniformly bounded, complex valued functions on $$X$$ that converge point-wise to $$f$$, then
+> Let $$X$$ be a set with finite measure $$\mu(X) < \infty$$ and $$\{ f_i \}_{i \in \mathbb{N}}$$ a sequence of uniformly bounded, complex valued functions on $$X$$ that converge pointwise to $$f$$, then
 > 
 > $$
 >     \int_X f \, d\mu = \lim\limits_{i \rightarrow \infty} \int_X f_i \, d\mu.
@@ -4572,7 +4572,7 @@ This proof consists of two parts
 
 **Part 1:** Prove that $$\mathcal{L}_0$$ is an algebra of sets.
 
-**Part 2:**  Prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
+**Part 2:** Prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
 
 Let us first prove **Part 1**, that $$\mathcal{L}_0$$ is an algebra of sets.
 
@@ -4583,7 +4583,7 @@ Recall that an algebra of sets is defined as follows:
 > Given a set $$S$$ and a set of subsets $$\mathcal{S}$$ of $$S$$, the set of subsets $$\mathcal{S}$$ is an *algebra of sets* if it
 > 
 > 1. Contains the empty set, i.e. $$\emptyset \in \mathcal{S}$$.
-> 2. Closed under compliments, i.e. if $$s \in \mathcal{S}$$, then $$(S \backslash s) \in \mathcal{S}$$.
+> 2. Closed under complements, i.e. if $$s \in \mathcal{S}$$, then $$(S \backslash s) \in \mathcal{S}$$.
 > 3. Closed under finite union, i.e. if $$r,s \in \mathcal{S}$$, then $$s \cup r \in \mathcal{S}$$.
 
 Let us one-by-one prove each of these properties holds for $$\mathcal{L}_0$$.
@@ -4674,13 +4674,13 @@ for all $$x \in X$$. As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result 
 
 Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof of **Property 1**.
 
-**Property 2:** Let us next prove that $$\mathcal{L}_0$$ is closed under compliments. In other words if $$E \in \mathcal{L}_0$$, then $$E^c \equiv (X \backslash E) \in \mathcal{L}_0$$. To prove this we must prove **Property 2.1:** that $$E^c$$ is measurable, and **Property 2.2:** that $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+**Property 2:** Let us next prove that $$\mathcal{L}_0$$ is closed under complements. In other words if $$E \in \mathcal{L}_0$$, then $$E^c \equiv (X \backslash E) \in \mathcal{L}_0$$. To prove this we must prove **Property 2.1:** that $$E^c$$ is measurable, and **Property 2.2:** that $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
 **Property 2.1:** Let us prove that if $$E \in \mathcal{L}_0$$, then $$E^c$$ is measurable
 
 By hypothesis $$E \in \mathcal{L}_0$$. The definition of $$\mathcal{L}_0$$ then implies that $$E$$ is measurable and thus in the $$\sigma$$-algebra of $$X$$. As $$E$$ is in the $$\sigma$$-algebra of $$X$$, the $$\sigma$$-algebra definition implies that $$E^c$$ is also in the $$\sigma$$-algebra of $$X$$. Hence, the definition of a measure and the fact that we have a measure $$\mu$$ on $$X$$ imply that $$E^c$$ is measurable, the desired result. 
 
-**Property 2.2:** Now let us prove hat $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+**Property 2.2:** Now let us prove that $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
 By hypothesis $$E \in \mathcal{L}_0$$. Hence, (1) the definition of $$\mathcal{L}_0$$ implies that there exists a sequence of functions $$\{ f_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$C$$ such that
 
@@ -4696,7 +4696,7 @@ $$
 
 for all $$x \in X$$.
 
-Let us define a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$  on $$X$$ by
+Let us define a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$ on $$X$$ by
 
 $$
    g_n(x) \equiv (1 - f_n(x)). 
@@ -4766,10 +4766,10 @@ for all $$x \in X$$.
 
 Thus with this we have proven that $$1_{E^c}$$ is the pointwise limit of a sequence of uniformly bounded functions, the desired **Property 2.2** result.
 
-In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under compliments, the desired **Property 2** result.
+In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under complements, the desired **Property 2** result.
 
 
-**Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$.  Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that  $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+**Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$. Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that  $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
 **Property 3.1:** Let us next prove that $$E_1 \cup E_2$$ is measurable.
 
@@ -4803,7 +4803,7 @@ $$
     g_n(x) = f^1_n(x) + f^2_n(x) - f^1_n(x) f^2_n(x).
 $$
 
-As the $$f^i_n$$ are in $$C^0(X; \mathbb{R})$$, it obviously follows that the $$g_n$$are also in $$C^0(X; \mathbb{R})$$.
+As the $$f^i_n$$ are in $$C^0(X; \mathbb{R})$$, it obviously follows that the $$g_n$$ are also in $$C^0(X; \mathbb{R})$$.
 
 The norm definition along with the fact that the $$f^i_n$$ are bounded implies
 
@@ -4835,7 +4835,7 @@ $$
 
 for all $$x \in X$$ and all $$n \ge N$$.
 
-This is always possible as for all $$x \in X$$ the limit $$f^1_n(x) \rightarrow 1_{E_1}(x)$$  and the limit $$f^2_n \rightarrow 1_{E_2}$$ exist as real finite numbers. Hence,
+This is always possible as for all $$x \in X$$ the limit $$f^1_n(x) \rightarrow 1_{E_1}(x)$$ and the limit $$f^2_n \rightarrow 1_{E_2}$$ exist as real finite numbers. Hence,
 
 $$
 \begin{align}
@@ -4885,7 +4885,7 @@ The existence of a bump function is guaranteed by the following theorem
 <a name="thrm:existence-of-bump-functions"></a>
 > Let $$X$$ be a normal topological space. For any closed set $$\overline{E}$$ in $$X$$ and any open set $$U$$ containing $$\overline{E}$$, there exists a bump function for $$\overline{E}$$ supported in $$U$$.
 
-With this in mind consider our $$\overline{E}$$. One can always arrange for the existence of a sequence of open sets $$\{ U_i \}_{i \in \mathbb{N}}$$ in $$X$$ such that $$U_{i + 1} \subset U_{i}$$ and $$\overline{E} \subset U_i$$ for all $$i \in \mathbb{N}$$.  By way of [**Existence of Bump Functions**](#thrm:existence-of-bump-functions) we are guaranteed the existence of s sequence of bump functions $$\{ f_i \}_{i \in \mathbb{N}}$$ with $$f_i$$ being a bump function for $$\overline{E}$$ supported in $$U_i$$.
+With this in mind consider our $$\overline{E}$$. One can always arrange for the existence of a sequence of open sets $$\{ U_i \}_{i \in \mathbb{N}}$$ in $$X$$ such that $$U_{i + 1} \subset U_{i}$$ and $$\overline{E} \subset U_i$$ for all $$i \in \mathbb{N}$$. By way of [**Existence of Bump Functions**](#thrm:existence-of-bump-functions) we are guaranteed the existence of a sequence of bump functions $$\{ f_i \}_{i \in \mathbb{N}}$$ with $$f_i$$ being a bump function for $$\overline{E}$$ supported in $$U_i$$.
 
 The definition of a bump function implies that for $$C \equiv 1$$ we have
 
@@ -4893,7 +4893,7 @@ $$
     \left| f_i(x) \right| \le C
 $$
 
-for all $$x \in X$$ and all $$i \in \mathbb{N}$$. Thus the sequence  $$\{ f_i \}_{i \in \mathbb{N}}$$ is uniformly bounded.
+for all $$x \in X$$ and all $$i \in \mathbb{N}$$. Thus the sequence $$\{ f_i \}_{i \in \mathbb{N}}$$ is uniformly bounded.
 
 Furthermore, by construction for an arbitrary real number $$\epsilon > 0$$ we can find a natural number $$N$$ such that for all $$i \ge N$$ we have
 
@@ -4905,7 +4905,7 @@ for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof
 
 **Step 2:** Let us now prove that $$\mathcal{L}_0$$ contains all open sets.
 
-We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as its the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
+We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as it's the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
 
 The next of these "utility" lemmas is the following:
 
@@ -4925,7 +4925,7 @@ Hence, as for any $$E$$ in $$\mathcal{L}_0$$ its indicator function $$1_E$$ is t
 
 Thus for any $$E$$ in $$\mathcal{L}_0$$ it follows that (1) $$E$$ is measurable and (2) $$1_E$$ belongs to $$\mathcal{F}$$. The definition of $$\mathcal{L}_1$$ then implies that $$\mathcal{L}_0$$ is a subset of $$\mathcal{L}_1$$.
 
-We proved in [**Lemma**](#lmm:hall-prblm-8.3.3a) any open set in $$X$$ is also in $$\mathcal{L}_0$$. There we also proved that $$\mathcal{L}_0$$ is a algebra of sets. This implies via De Morgan's laws that $$\mathcal{L}_0$$ is closed under countable unions, countable intersections, and complements. Hence, the $$\mathcal{L}_0$$ contains the set of all sets obtainable from countable unions, countable intersections, and complements of open sets in $$X$$. This is exactly the statement that $$\mathcal{L}_0$$ contains the Borel set of $$X$$.
+We proved in [**Lemma**](#lmm:hall-prblm-8.3.3a) that any open set in $$X$$ is also in $$\mathcal{L}_0$$. There we also proved that $$\mathcal{L}_0$$ is an algebra of sets. This implies via De Morgan's laws that $$\mathcal{L}_0$$ is closed under countable unions, countable intersections, and complements. Hence, $$\mathcal{L}_0$$ contains the set of all sets obtainable from countable unions, countable intersections, and complements of open sets in $$X$$. This is exactly the statement that $$\mathcal{L}_0$$ contains the Borel sets of $$X$$.
 
 Hence, we have proven that the Borel sets of $$X$$ are in $$\mathcal{L}_0$$ and $$\mathcal{L}_0$$ is a subset of $$\mathcal{L}_1$$. Thus, $$\mathcal{L}_1$$ contains all Borel sets.
 
@@ -4942,7 +4942,7 @@ The final of these "utility" lemmas is the following:
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3c"></a>
 <!--  \uses{lmm:hall-prblm-8.3.3b} -->
-<!--  \uses{thrm:boundedness-theores} -->
+<!--  \uses{thrm:boundedness-theorem} -->
 > Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Then $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$X$$.
 
 **Proof**
@@ -4950,11 +4950,11 @@ By hypothesis $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued 
 
 Let us first prove that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable.
 
-For any $$f \in \mathcal{F}$$, the definition of $$\mathcal{F}$$ implies that $$f$$ is bounded and measurable.  As $$X$$ is a metric measurable space, its measure is a Borel regular measure. A Borel regular measure is a measure in which any Borel set is measurable. Hence, in the definition of $$\mathcal{F}$$ when we state that $$f$$ is measurable we mean that $$f$$ is Borel-measurable. Thus, any $$f \in \mathcal{F}$$ is bounded and Borel-measurable.
+For any $$f \in \mathcal{F}$$, the definition of $$\mathcal{F}$$ implies that $$f$$ is bounded and measurable. As $$X$$ is a metric measurable space, its measure is a Borel regular measure. A Borel regular measure is a measure in which any Borel set is measurable. Hence, in the definition of $$\mathcal{F}$$ when we state that $$f$$ is measurable we mean that $$f$$ is Borel-measurable. Thus, any $$f \in \mathcal{F}$$ is bounded and Borel-measurable.
 
 Let us now prove that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
-That the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are bounded, measurable, complex-valued and (1) form a complex vector space and (2) contain $$C^0(X; \mathbb{R})$$.
+The set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are bounded, measurable, complex-valued and (1) form a complex vector space and (2) contain $$C^0(X; \mathbb{R})$$.
 
 Explicitly, the fact (1) that they form a complex vector space is relatively clear. The addition of bounded, Borel-measurable, complex-valued functions with complex-valued coefficients results in bounded, Borel-measurable, complex-valued functions.
 
@@ -4966,7 +4966,7 @@ If this were false, i.e., the set of bounded, Borel-measurable, complex-valued f
 
 Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
-So we’ve proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we’ve proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
+So we've proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we've proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
 With these "utility" lemmas established, we can once again consider the [**Proposition**](#prpstn:hall-8.7) we were in the process of proving.
 
@@ -4980,7 +4980,7 @@ All of this together allows us apply [**Lemma**](#lmm:hall-prblm-8.3.3c), $$\sig
 
 As $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$, it follows that $$Q_f$$ is quadratic form not only on some subset of functions, but all bounded, Borel-measurable functions on $$\sigma(A)$$, proving that $$Q_f$$ satisfies all the properties of [**Definition**](#def:hall-8.6), the desired result of [**Proposition**](#prpstn:hall-8.7).$$\blacksquare$$
 
-With this proposition resolved, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$ this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
+With this proposition resolved, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$; this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
 > **Definition**
 <a name="def:hall-8.8"></a>
@@ -5269,7 +5269,7 @@ $$
 
 is also an orthogonal projection for any measurable subset $$E$$ of the spectrum $$\sigma(A)$$, the desired **Part 1.1** result.
 
-**Part 1.2:** Next let of prove that for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$.
+**Part 1.2:** Next let us prove that for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$.
 
 So to this end, consider any two measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$. Tracing definitions one has
 
@@ -5328,7 +5328,7 @@ $$
     \mu^A(\emptyset) \equiv 1_\emptyset(A).
 $$
 
-This $$\mu^A(\emptyset)$$ is the zero operator, this first of the desired **Part 1.3** results.
+Thus, $$\mu^A(\emptyset)$$ is the zero operator, the first of the desired **Part 1.3** results.
 
 Now consider the measurable set $$\sigma(A)$$, the entire spectrum. Tracing definitions
 
@@ -5556,7 +5556,7 @@ $$
 
 **Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthogonal projection operator $$P$$. To prove that $$P$$ is a bounded orthogonal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** prove that $$P$$ is self-adjoint, and **Part 2.3:** prove that $$PP=P$$.
 
- **Part 2.1:** Next let us prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$.
+**Part 2.1:** Next let us prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$.
 
 By definition
 
@@ -5851,7 +5851,7 @@ $$
 
 the desired **Part 2** result which completes the proof of [**Theorem**](#thrm:hall-8.10).$$\blacksquare$$
 
-The final result we need to prove to complete our proof of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) is to prove that the projection-valued measure $$\mu^A$$ of [**Theorem**](#thrm:hall-8.1) is unique. It is to this we turn.
+The final result we need to prove to complete our proof of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) is to prove that the projection-valued measure $$\mu^A$$ of [**Theorem**](#thrm:hall-8.10) is unique. It is to this we turn.
 
 > **Theorem**
 <a name="thrm:hall-prblm-8.3.4"></a>
@@ -5880,9 +5880,9 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 **Proof**
 This proof broadly consists of four parts **Part 1:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials, **Part 2:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on continuous complex-valued functions, **Part 3:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on bounded, measurable complex-valued functions, and **Part 4** prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
 
-**Part1:** Let us first prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
+**Part 1:** Let us first prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
 
-Consider an arbitrary complex valued polynomial $$p$$ on $$\sigma(A)$$ with $$\mathbb{C}$$ valued coeﬃcients. Generically $$p$$ has the form
+Consider an arbitrary complex valued polynomial $$p$$ on $$\sigma(A)$$ with $$\mathbb{C}$$ valued coefficients. Generically $$p$$ has the form
 
 $$
     p(\lambda) = \sum_{i=0}^n a_i\lambda^i
@@ -5934,7 +5934,7 @@ Later in **Part 2** we will have need of the fact that the set of complex-valued
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint, then the set of complex-valued polynomials on $$\sigma(A)$$ is dense in the set of continuous, complex-valued functions on $$\sigma(A)$$ with respect to the supremum norm.
 
 **Proof**
-As $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
+As $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
 
 As $$\sigma(A)$$ is a subset of $$\mathbb{C}$$, we can restrict the standard metric on $$\mathbb{C}$$
 
@@ -5948,13 +5948,13 @@ Consider now $$\mathcal{P}(\sigma(A); \mathbb{C})$$ the set of complex-valued po
 
 Furthermore, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is obviously an algebra as it has the required vector space properties, e.g. closure under addition, as well as the required bilinear product properties, e.g. left distributivity.
 
-In addition it is also obvious that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ [separates points](#def:separates-points). Explicitly, consider any two distinct poinits $$\lambda_1, \lambda_2 \in \sigma(A)$$. There exists a polynomial $$p$$ in $$\mathcal{P}(\sigma(A); \mathbb{C})$$ such that $$p(\lambda_1) \neq p(\lambda_2)$$. For example the polynomial
+In addition it is also obvious that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ [separates points](#def:separates-points). Explicitly, consider any two distinct points $$\lambda_1, \lambda_2 \in \sigma(A)$$. There exists a polynomial $$p$$ in $$\mathcal{P}(\sigma(A); \mathbb{C})$$ such that $$p(\lambda_1) \neq p(\lambda_2)$$. For example the polynomial
 
 $$
     p(\lambda) = (\lambda - \lambda_1)
 $$
 
-would suﬃce as $$p(\lambda_1) \neq p(\lambda_2)$$ follows from the fact that $$\lambda_1$$ and $$\lambda_2$$ are distinct.
+would suffice as $$p(\lambda_1) \neq p(\lambda_2)$$ follows from the fact that $$\lambda_1$$ and $$\lambda_2$$ are distinct.
 
 Another obvious point we will have need of is the fact that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ contains constant functions. Explicitly the constant function
 
@@ -5999,7 +5999,7 @@ and conclude that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is dense in $$C^0(\sigm
 Our next long term goal is to apply the [**Bounded Linear Transformation Theorem**](#thrm:bounded-linear-transformation-theorem) to prove that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ when the integrand is an element of $$C^0(\sigma(A); \mathbb{C})$$. In other words to prove
 
 $$
-    \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda),
+    \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} f(\lambda) \, d\nu^A(\lambda),
 $$
 
 for an arbitrary $$f$$ in $$C^0(\sigma(A); \mathbb{C})$$. Let's begin.
@@ -6019,9 +6019,9 @@ $$
 
 from the set of bounded, measurable complex-valued functions on $$\sigma(A)$$ to $$\mathcal{B}(\mathbf{H})$$ are linear. We want to prove $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$.
 
-Recall that as $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
+Recall that as $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
 
-Also recall that any complex-valued polynomial $$p$$ on $$\sigma(A)$$ is continuous, i.e. $$\mathcal{P}(\sigma(A); \mathbb{C}) \subset C^0(\sigma(A); \mathbb{C})$$. Thus the norm $$\lvert p \rvert$$ of any element of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a continuous real-valued function on $$\sigma(A)$$. Hence, as a result of [**Theorem** *(Boundedness Theorem)*](#thrm:boundedness-theorem), $$\lvert p \rvert$$ is bounded on $$\sigma(A)$$. This is none other that the statement that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is bounded on $$\sigma(A)$$.
+Also recall that any complex-valued polynomial $$p$$ on $$\sigma(A)$$ is continuous, i.e. $$\mathcal{P}(\sigma(A); \mathbb{C}) \subset C^0(\sigma(A); \mathbb{C})$$. Thus the norm $$\lvert p \rvert$$ of any element of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a continuous real-valued function on $$\sigma(A)$$. Hence, as a result of [**Theorem** *(Boundedness Theorem)*](#thrm:boundedness-theorem), $$\lvert p \rvert$$ is bounded on $$\sigma(A)$$. This is none other than the statement that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is bounded on $$\sigma(A)$$.
 
 Finally, note that as $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is continuous and the $$\sigma$$-algebra on $$\sigma(A)$$ is the Borel $$\sigma$$-algebra, it follows that any element of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is measurable.
 
@@ -6075,19 +6075,19 @@ This implies that $$\alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda)$$ is in elemen
 
 Next we want to prove that $$\mathcal{F}$$ is closed with respect to the supremum norm. We will do so using proof by contradiction, assuming that $$\mathcal{F}$$ is not closed, then proving that this leads to a contradiction.
 
-To wit let $$f_n$$ be a sequence in $$\mathcal{F}$$ that converges to $$f$$ with respect to the supremem norm and, as we are using proof by contradiction, assume that $$f$$ is not an element of $$\mathcal{F}$$ but is a bounded, measurable, complex-valued function on $$\sigma(A)$$.
+To wit let $$f_n$$ be a sequence in $$\mathcal{F}$$ that converges to $$f$$ with respect to the supremum norm and, as we are using proof by contradiction, assume that $$f$$ is not an element of $$\mathcal{F}$$ but is a bounded, measurable, complex-valued function on $$\sigma(A)$$.
 
-As $$f$$ is measurable and complex valued, the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$. However, both $$\mathbb{C}$$ and $$\sigma(A)$$ are using Borel $$\sigma$$-algebras. Hence, the statement that the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$ is equivalent to the statement that the inverse image of any open set in $$\mathbb{C}$$ under $$f$$ is a open set in $$\sigma(A)$$. This is none other than the statement that $$f$$ is continuous. Hence, $$f$$ is a continuous, bounded, measurable, complex-valued function on $$\sigma(A)$$
+As $$f$$ is measurable and complex valued, the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$. However, both $$\mathbb{C}$$ and $$\sigma(A)$$ are using Borel $$\sigma$$-algebras. Hence, the statement that the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$ is equivalent to the statement that the inverse image of any open set in $$\mathbb{C}$$ under $$f$$ is an open set in $$\sigma(A)$$. This is none other than the statement that $$f$$ is continuous. Hence, $$f$$ is a continuous, bounded, measurable, complex-valued function on $$\sigma(A)$$.
 
 Recall that in **Part 2** we proved that the set $$C^0(\sigma(A); \mathbb{C})$$ of continuous, complex-valued functions on $$\sigma(A)$$ is a subset of $$\mathcal{F}$$. However, we just proved that the limit $$f$$ of the sequence $$f_n$$ in $$\mathcal{F}$$ is a continuous, complex-valued function on $$\sigma(A)$$. Thus $$f$$ is in $$C^0(\sigma(A); \mathbb{C})$$ and hence, in $$\mathcal{F}$$. This contradicts our assumption that $$f$$ was not in $$\mathcal{F}$$, and thus proves that $$\mathcal{F}$$ is closed with respect to the supremum norm, the desired result.
 
-Recall that as $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
+Recall that as $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
 
 Furthermore, as $$\sigma(A)$$ is a subset of $$\mathbb{C}$$ it inherits the metric from $$\mathbb{C}$$. Thus $$\sigma(A)$$ is also a metric space.
 
 Finally recall, as we have noted many times, $$\sigma(A)$$ is also a measurable space as it is equipped with the Borel $$\sigma$$-algebra.
 
-So we have $$\sigma(A)$$ a compact metric measurable space, $$\mathcal{F}$$ a set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed with respect to the supremem norm, i.e. is closed under pointwise limits of uniformly bounded sequences. These are the exact conditions we require to apply the [**Lemma**](#lmm:hall-prblm-8.3.3c) we previously proved.
+So we have $$\sigma(A)$$ a compact metric measurable space, $$\mathcal{F}$$ a set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed with respect to the supremum norm, i.e. is closed under pointwise limits of uniformly bounded sequences. These are the exact conditions we require to apply the [**Lemma**](#lmm:hall-prblm-8.3.3c) we previously proved.
 
 Applying this [**Lemma**](#lmm:hall-prblm-8.3.3c) to the case at hand, we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$. However, by definition $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$. Thus, these last two facts imply that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$, the desired result of **Part 3**.
 
@@ -6128,7 +6128,7 @@ So with this we have proven that under the hypotheses of the [**Theorem**](#thrm
 
 This also completes the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof.$$\blacksquare$$
 
-With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) poof complete, we can conclude by finally introducing the normative definition of the "functional calculus"
+With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof complete, we can conclude by finally introducing the normative definition of the "functional calculus"
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
@@ -6144,4 +6144,4 @@ With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectr
 >
 > where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
 
-a tool which will be often used.
+a tool which will often be used.
