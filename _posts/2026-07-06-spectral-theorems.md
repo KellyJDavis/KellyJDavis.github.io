@@ -5865,7 +5865,6 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{thrm:boundedness-theorem} -->
-<!--  \uses{thrm:sequential-criterion-for-continuity} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the spectrum $$\sigma(A)$$ of $$A$$ such that
 > 
 > $$
@@ -6039,7 +6038,7 @@ Hence, we have proven the desired **Part 2** result that operator-valued integra
 
 Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$.
 
-Recall that in **Part 1** we proved that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$. Similarly in **Part 2** we proved that $$C^0(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$.
+Recall that in **Part 2** we proved that $$C^0(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$. Now, as $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$C^0(\sigma(A); \mathbb{C})$$, it obviously follows that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$ too.
 
 Also note that as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$---now viewed as having domain consisting of all bounded, measurable, complex-valued functions on $$\sigma(A)$$---are linear. This implies that $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$. Explicitly, consider arbitrary $$f_1,f_2 \in \mathcal{F}$$ and arbitrary $$\alpha_1, \alpha_2 \in \mathbb{C}$$. Linearity of $$I_{\mu^A}$$ implies
 
@@ -6073,116 +6072,13 @@ $$
 
 This implies that $$\alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda)$$ is in element $$\mathcal{F}$$ and thus $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$.
 
-Next we want to prove that the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\mathcal{F}$$ to $$\mathcal{B}(\mathbf{H})$$ are continuous. We will do so using the [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity)
+Next we want to prove that $$\mathcal{F}$$ is closed with respect to the supremum norm. We will do so using proof by contradiction, assuming that $$\mathcal{F}$$ is not closed, then proving that this leads to a contradiction.
 
-> **Theorem** *(Sequential Criterion for Continuity)*
-<a name="thrm:sequential-criterion-for-continuity"></a>
-> If $$X$$ and $$Y$$ are topological spaces and $$X$$ is first-countable, then $$f : X \rightarrow Y$$ is continuous if and only if whenever a sequence $$x_n$$ in $$X$$ converges to a limit $$x$$, then $$f(x_n)$$ converges to $$f(x)$$.
+To wit let $$f_n$$ be a sequence in $$\mathcal{F}$$ that converges to $$f$$ with respect to the supremem norm and, as we are using proof by contradiction, assume that $$f$$ is not an element of $$\mathcal{F}$$ but is a bounded, measurable, complex-valued function on $$\sigma(A)$$.
 
-In applying this to the case at hand we will identify $$X$$ of the [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) with $$\mathcal{F}$$ and $$Y$$ of the same theorem with $$\mathcal{B}(\mathbf{H})$$. In order for this to make sense, we must first must prove that $$\mathcal{F}$$ and $$\mathcal{B}(\mathbf{H})$$ are topological spaces and $$\mathcal{F}$$ is first-countable.
+As $$f$$ is measurable and complex valued, the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$. However, both $$\mathbb{C}$$ and $$\sigma(A)$$ are using Borel $$\sigma$$-algebras. Hence, the statement that the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$ is equivalent to the statement that the inverse image of any open set in $$\mathbb{C}$$ under $$f$$ is a open set in $$\sigma(A)$$. This is none other than the statement that $$f$$ is continuous. Hence, $$f$$ is a continuous, bounded, measurable, complex-valued function on $$\sigma(A)$$
 
-First note that the operator norm on $$\mathcal{B}(\mathbf{H})$$ induces a metric
-
-$$
-    d(A_1,A_2) \equiv \|A_1 - A_2\|
-$$
-
-on $$\mathcal{B}(\mathbf{H})$$. This metric induces a topology through open balls
-
-$$
-    B(A,r) \equiv \{ B \in \mathcal{B}(\mathbf{H}) : \|B - A\| < r \},
-$$
-
-resulting in the norm topology $$\mathcal{B}(\mathbf{H})$$. Hence, $$\mathcal{B}(\mathbf{H})$$ is a topological space.
-
-Similarly, we can equip $$\mathcal{F}$$ with the supremum norm. This is well-defined as all elements in $$\mathcal{F}$$ are by definition bounded. As above, this results in equipping $$\mathcal{F}$$ with the norm topology and thus proving that $$\mathcal{F}$$ is a topological space.
-
-Finally we must prove that $$\mathcal{F}$$ is first-countable. A topological space is said to be first-countable if each point has a countable neighborhood basis. In the case of $$\mathcal{F}$$ a countable neighborhood base of any $$f$$ in $$\mathcal{F}$$ consists of balls of radius $$1/2^n$$ for natural number $$n$$ 
-
-$$
-    B(f, 1/2^n) \equiv \{ g \in \mathcal{F} : \sup\limits_{\lambda \in \sigma(A)} \lvert g(\lambda) - f(\lambda) \rvert < 1/2^n \},
-$$
-
-the existence of which proves that $$\mathcal{F}$$ is first-countable.
-
-These basic results established, we can apply [**Sequential Criterion for Continuity**](#thrm:sequential-criterion-for-continuity) and prove continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$.
-
-Explicitly, we can do so by proving any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to an $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$ converge to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ respectively in $$\mathcal{B}(\mathbf{H})$$ in the operator norm. This is what we will now prove.
-
-Before we begin this proof, note that as the cases for $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are essentially identical. So we will only explicitly carry forward the derivation for $$I_{\mu^A}$$, but at the end of this derivation we will conclude that the same results hold for $$I_{\nu^A}$$ too.
-
-So, with that in mind, let $$f_n$$ be a sequence in $$\mathcal{F}$$ that converges to an $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm. By definition, all elements of $$\mathcal{F}$$ are bounded, this implies there exist real numbers $$C_n$$ and $$C$$ such that
-
-$$
-    \lvert f(\lambda) \rvert \le C \qquad \lvert f_n(\lambda) \rvert \le C_n
-$$
-
-for all $$\lambda$$ in $$\sigma(A)$$ and all $$n$$ in $$\mathbb{N}$$. Also, as $$f_n$$ converges to $$f$$ with respect to the supremum norm, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ we have
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) - f_n(\lambda) \rvert < \epsilon.
-$$
-
-Consider now the corresponding sequence $$I_{\mu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$. We must prove that $$I_{\mu^A}(f_n)$$ converges to $$I_{\mu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. It is to this we now turn.
-
-As the sequence $$f_n$$ is in $$\mathcal{F}$$ and every element in $$\mathcal{F}$$ is by definition a bounded, measurable, complex-valued function on $$\sigma(A)$$, it follows that all the properties of operator-valued integration listed in [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) apply to $$I_{\mu^A}(f_n)$$. From this follows
-
-$$
-\begin{align}
-    \left\| I_{\mu^A}(f) - I_{\mu^A}(f_n) \right\| &=   \left\| I_{\mu^A}(f - f_n) \right\| \\
-                                                   &=   \left\| \int_{\sigma(A)} \left( f(\lambda) - f_n(\lambda) \right) \, d\mu^A(\lambda)  \right\| \\
-                                                   &\le \sup\limits_{\lambda \in \sigma(A)} \left| f(\lambda)  - f_n(\lambda) \right|,
-\end{align}
-$$
-
-where the first equality follows from the linearity of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), the second equality from the definition of $$I_{\mu^A}$$, and the third from the multiplicative property of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration).
-
-As given any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ we have
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) - f_n(\lambda) \rvert < \epsilon,
-$$
-
-we can combine the last two results and conclude that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ we have
-
-$$
-    \left\| I_{\mu^A}(f) - I_{\mu^A}(f_n) \right\| < \epsilon.
-$$
-
-This is nothing more than the statement that $$I_{\mu^A}(f_n)$$ converges to $$I_{\mu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm, one of our desired results. The other desired result that $$I_{\nu^A}(f_n)$$ converges to $$I_{\nu^A}(f)$$ in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm follows using the same logic.
-
-So as we have proven that any sequence $$f_n$$ in $$\mathcal{F}$$ that converges to an $$f$$ in $$\mathcal{F}$$ with respect to the supremum norm implies that the corresponding sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ in $$\mathcal{B}(\mathbf{H})$$ converge to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ respectively in $$\mathcal{B}(\mathbf{H})$$ in the operator norm, we can conclude as a result of [**Theorem** *(Sequential Criterion for Continuity)*](#thrm:sequential-criterion-for-continuity) that both $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are continuous when their domain is $$\mathcal{F}$$.
-
-Next we want to use the continuity of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ to prove that $$\mathcal{F}$$ is closed.
-
-To this end assume that there exists a sequence $$f_n$$ in $$\mathcal{F}$$ that converges to $$f$$ with respect to the supremum norm. We will prove that $$f$$ is in $$\mathcal{F}$$ and thus $$\mathcal{F}$$ is closed. We will do so using proof by contradiction.
-
-By definition any element in $$\mathcal{F}$$ is a bounded, measurable, complex-valued function on $$\sigma(A)$$. Hence, there exist real-numbers $$C_n$$ such that
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert f_n(\lambda) \rvert \le C_n
-$$
-
-for all $$n$$ in $$\mathbb{N}$$. Also as the sequence $$f_n$$ converges to $$f$$ with respect to the supremum norm, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) - f_n(\lambda) \rvert < \epsilon.
-$$
-
-As we will use proof by contradiction, let us now assume that $$f$$ is a bounded, measurable, complex-valued function on $$\sigma(A)$$ that is not in $$\mathcal{F}$$ and prove this leads to a contradiction.
-
-As we have proven that the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are continuous, we know the sequences $$I_{\mu^A}(f_n)$$ and $$I_{\nu^A}(f_n)$$ converge to $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$. Furthermore, as $$f$$ is a bounded, measurable, complex-valued function on $$\sigma(A)$$, we know as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) that $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$ are elements in $$\mathcal{B}(\mathbf{H})$$.
-
-As a result of [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) $$\mathcal{B}(\mathbf{H})$$ is a Banach space and thus a vector space with a norm. Hence, for any $$\epsilon > 0$$ we can consider the open balls
-
-$$
-\begin{align}
-    B(I_{\mu^A}(f), \epsilon) &\equiv \{ B \in \mathcal{B}(\mathbf{H}) : \|B - I_{\mu^A}(f)\| < \epsilon \} \\
-    B(I_{\nu^A}(f), \epsilon) &\equiv \{ B \in \mathcal{B}(\mathbf{H}) : \|B - I_{\nu^A}(f)\| < \epsilon \},
-\end{align}
-$$
-
-about $$I_{\mu^A}(f)$$ and $$I_{\nu^A}(f)$$.
+Recall that in **Part 2** we proved that the set $$C^0(\sigma(A); \mathbb{C})$$ of continuous, complex-valued functions on $$\sigma(A)$$ is a subset of $$\mathcal{F}$$. However, we just proved that the limit $$f$$ of the sequence $$f_n$$ in $$\mathcal{F}$$ is a continuous, complex-valued function on $$\sigma(A)$$. Thus $$f$$ is in $$C^0(\sigma(A); \mathbb{C})$$ and hence, in $$\mathcal{F}$$. This contradicts our assumption that $$f$$ was not in $$\mathcal{F}$$, and thus proves that $$\mathcal{F}$$ is closed with respect to the supremum norm, the desired result.
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
