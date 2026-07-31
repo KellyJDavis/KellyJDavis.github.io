@@ -5865,6 +5865,7 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the spectrum $$\sigma(A)$$ of $$A$$ such that
 > 
 > $$
@@ -6080,6 +6081,55 @@ As $$f$$ is measurable and complex valued, the inverse image of any measurable s
 
 Recall that in **Part 2** we proved that the set $$C^0(\sigma(A); \mathbb{C})$$ of continuous, complex-valued functions on $$\sigma(A)$$ is a subset of $$\mathcal{F}$$. However, we just proved that the limit $$f$$ of the sequence $$f_n$$ in $$\mathcal{F}$$ is a continuous, complex-valued function on $$\sigma(A)$$. Thus $$f$$ is in $$C^0(\sigma(A); \mathbb{C})$$ and hence, in $$\mathcal{F}$$. This contradicts our assumption that $$f$$ was not in $$\mathcal{F}$$, and thus proves that $$\mathcal{F}$$ is closed with respect to the supremum norm, the desired result.
 
+Recall that as $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and nonempty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
+
+Furthermore, as $$\sigma(A)$$ is a subset of $$\mathbb{C}$$ it inherits the metric from $$\mathbb{C}$$. Thus $$\sigma(A)$$ is also a metric space.
+
+Finally recall, as we have noted many times, $$\sigma(A)$$ is also a measurable space as it is equipped with the Borel $$\sigma$$-algebra.
+
+So we have $$\sigma(A)$$ a compact metric measurable space, $$\mathcal{F}$$ a set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed with respect to the supremem norm, i.e. is closed under pointwise limits of uniformly bounded sequences. These are the exact conditions we require to apply the [**Lemma**](#lmm:hall-prblm-8.3.3c) we previously proved.
+
+Applying this [**Lemma**](#lmm:hall-prblm-8.3.3c) to the case at hand, we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$. However, by definition $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$. Thus, these last two facts imply that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$, the desired result of **Part 3**.
+
+**Part 4:** Finally let us prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
+
+Consider any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$ along with its indicator function $$1_E$$. As a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) we have
+
+$$
+\begin{align}
+    \mu^A(E) &= \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda) \\
+    \nu^A(E) &= \int_{\sigma(A)} 1_E(\lambda) \, d\nu^A(\lambda). 
+\end{align}
+$$
+
+Now the indicator function $$1_E$$ is obviously bounded, as
+
+$$
+    \lvert 1_E(\lambda) \rvert \le 1
+$$
+
+for all $$\lambda$$ in $$\sigma(A)$$; measurable, as the inverse image of any measurable set in $$\mathbb{C}$$ is either the empty set or $$E$$; and also complex-valued, as $$\mathbb{R}$$ is a subset of $$\mathbb{C}$$. Hence, the indicator function $$1_E$$ is a bounded, Borel-measurable function on $$\sigma(A)$$.
+
+Now, as we proved in **Part 3**, operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$. So in the case of $$1_E$$ this implies that
+
+$$
+    \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} 1_E(\lambda) \, d\nu^A(\lambda).
+$$
+
+This along with our previous expressions for $$\mu^A(E)$$ and $$\nu^A(E)$$ then imply
+
+$$
+    \mu^A(E) = \nu^A(E),
+$$
+
+the desired result of this final part.
+
+So with this we have proven that under the hypotheses of the [**Theorem**](#thrm:hall-prblm-8.3.4) $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.$$\blacksquare$$
+
+This also completes the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof.$$\blacksquare$$
+
+With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) poof complete, we can finally introduce the normative definition of the "functional calculus"
+
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
 <!--  \uses{def:bounded-operator-notation} -->
@@ -6093,3 +6143,5 @@ Recall that in **Part 2** we proved that the set $$C^0(\sigma(A); \mathbb{C})$$ 
 > $$
 >
 > where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
+
+a tool which will be often used.
