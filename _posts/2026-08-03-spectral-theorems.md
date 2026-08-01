@@ -6193,6 +6193,9 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ and $$\nu^A$$ be two projection-valued measures on the spectrum $$\sigma(A)$$ of $$A$$ such that
 > 
 > $$
@@ -6414,13 +6417,73 @@ $$
 
 This implies that $$\alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda)$$ is in element $$\mathcal{F}$$ and thus $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$.
 
-Next we want to prove that $$\mathcal{F}$$ is closed with respect to the supremum norm. We will do so using proof by contradiction, assuming that $$\mathcal{F}$$ is not closed, then proving that this leads to a contradiction.
+Next we want to prove that $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences.
 
-To wit let $$f_n$$ be a sequence in $$\mathcal{F}$$ that converges to $$f$$ with respect to the supremum norm and, as we are using proof by contradiction, assume that $$f$$ is not an element of $$\mathcal{F}$$ but is a bounded, measurable, complex-valued function on $$\sigma(A)$$.
+To this end let $$\{ f_i \}_{i \in \mathbb{N}}$$ be a sequence in $$\mathcal{F}$$, uniformly bounded by some $$M \in \mathbb{R}$$, that converges pointwise to a function $$f$$ on $$\sigma(A)$$. By [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions), $$f$$ is itself a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$, and so is a candidate for membership in $$\mathcal{F}$$. Let $$\psi \in \mathbf{H}$$ be arbitrary.
 
-As $$f$$ is measurable and complex valued, the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$. However, both $$\mathbb{C}$$ and $$\sigma(A)$$ are using Borel $$\sigma$$-algebras. Hence, the statement that the inverse image of any measurable set in $$\mathbb{C}$$ under $$f$$ is a measurable set in $$\sigma(A)$$ is equivalent to the statement that the inverse image of any open set in $$\mathbb{C}$$ under $$f$$ is an open set in $$\sigma(A)$$. This is none other than the statement that $$f$$ is continuous. Hence, $$f$$ is a continuous, bounded, measurable, complex-valued function on $$\sigma(A)$$.
+By the defining property of the map of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), applied to the projection-valued measure $$\mu^A$$, we have for every $$i \in \mathbb{N}$$
 
-Recall that in **Part 2** we proved that the set $$C^0(\sigma(A); \mathbb{C})$$ of continuous, complex-valued functions on $$\sigma(A)$$ is a subset of $$\mathcal{F}$$. However, we just proved that the limit $$f$$ of the sequence $$f_n$$ in $$\mathcal{F}$$ is a continuous, complex-valued function on $$\sigma(A)$$. Thus $$f$$ is in $$C^0(\sigma(A); \mathbb{C})$$ and hence, in $$\mathcal{F}$$. This contradicts our assumption that $$f$$ was not in $$\mathcal{F}$$, and thus proves that $$\mathcal{F}$$ is closed with respect to the supremum norm, the desired result.
+$$
+    \left< \psi, \left( \int_{\sigma(A)} f_i(\lambda) \, d\mu^A(\lambda) \right) \psi \right> = \int_{\sigma(A)} f_i(\lambda) \, d(\mu^A)_\psi(\lambda),
+$$
+
+where $$(\mu^A)_\psi$$ is the positive real-valued measure associated to $$\mu^A$$ and $$\psi$$ by way of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure). Note that $$(\mu^A)_\psi$$ is a finite measure, as
+
+$$
+    (\mu^A)_\psi(\sigma(A)) = \left< \psi, \mu^A(\sigma(A)) \psi \right> = \left< \psi, \mathbf{1} \psi \right> = \|\psi\|^2 < \infty.
+$$
+
+As $$f_i \rightarrow f$$ pointwise with $$\lvert f_i(\lambda) \rvert \le M$$ for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem), applied to the finite measure $$(\mu^A)_\psi$$, gives
+
+$$
+    \int_{\sigma(A)} f_i(\lambda) \, d(\mu^A)_\psi(\lambda) \longrightarrow \int_{\sigma(A)} f(\lambda) \, d(\mu^A)_\psi(\lambda) = \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) \right) \psi \right>.
+$$
+
+Combining the last two results we obtain
+
+$$
+    \left< \psi, \left( \int_{\sigma(A)} f_i(\lambda) \, d\mu^A(\lambda) \right) \psi \right> \longrightarrow \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) \right) \psi \right>.
+$$
+
+An entirely identical argument, with $$\mu^A$$ replaced by $$\nu^A$$ throughout, gives
+
+$$
+    \left< \psi, \left( \int_{\sigma(A)} f_i(\lambda) \, d\nu^A(\lambda) \right) \psi \right> \longrightarrow \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\nu^A(\lambda) \right) \psi \right>.
+$$
+
+However, as each $$f_i$$ is an element of $$\mathcal{F}$$, the definition of $$\mathcal{F}$$ gives
+
+$$
+    \int_{\sigma(A)} f_i(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} f_i(\lambda) \, d\nu^A(\lambda)
+$$
+
+for every $$i \in \mathbb{N}$$, and hence
+
+$$
+    \left< \psi, \left( \int_{\sigma(A)} f_i(\lambda) \, d\mu^A(\lambda) \right) \psi \right> = \left< \psi, \left( \int_{\sigma(A)} f_i(\lambda) \, d\nu^A(\lambda) \right) \psi \right>
+$$
+
+for every $$i \in \mathbb{N}$$. So the two convergent sequences displayed above are in fact the same sequence of complex numbers. As a sequence in $$\mathbb{C}$$ has at most one limit, their limits coincide, giving
+
+$$
+    \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) \right) \psi \right> = \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\nu^A(\lambda) \right) \psi \right>
+$$
+
+for all $$\psi \in \mathbf{H}$$.
+
+Now, as $$f$$ is a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$, [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) implies that both $$\int_{\sigma(A)} f \, d\mu^A$$ and $$\int_{\sigma(A)} f \, d\nu^A$$ are elements of $$\mathcal{B}(\mathbf{H})$$. Hence the map
+
+$$
+    Q(\psi) \equiv \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) \right) \psi \right>
+$$
+
+is a bounded quadratic form on $$\mathbf{H}$$, and the equation above states that both $$\int_{\sigma(A)} f \, d\mu^A$$ and $$\int_{\sigma(A)} f \, d\nu^A$$ represent $$Q$$. Thus, the uniqueness clause of [**Proposition**](#prpstn:hall-a.63) implies
+
+$$
+    \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} f(\lambda) \, d\nu^A(\lambda),
+$$
+
+which is precisely the statement that $$f \in \mathcal{F}$$. Thus $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences, the desired result.
 
 Recall that as $$A$$ is self-adjoint [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. Hence, as a result of [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) we find that $$\sigma(A)$$ is compact.
 
@@ -6428,7 +6491,7 @@ Furthermore, as $$\sigma(A)$$ is a subset of $$\mathbb{C}$$ it inherits the metr
 
 Finally recall, as we have noted many times, $$\sigma(A)$$ is also a measurable space as it is equipped with the Borel $$\sigma$$-algebra.
 
-So we have $$\sigma(A)$$ a compact metric measurable space, $$\mathcal{F}$$ a set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed with respect to the supremum norm, i.e. is closed under pointwise limits of uniformly bounded sequences. These are the exact conditions we require to apply the [**Lemma**](#lmm:hall-prblm-8.3.3c) we previously proved.
+So we have $$\sigma(A)$$ a compact metric measurable space, $$\mathcal{F}$$ a set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. These are the exact conditions we require to apply the [**Lemma**](#lmm:hall-prblm-8.3.3c) we previously proved.
 
 Applying this [**Lemma**](#lmm:hall-prblm-8.3.3c) to the case at hand, we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$. However, by definition $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$. Thus, these last two facts imply that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$, the desired result of **Part 3**.
 
