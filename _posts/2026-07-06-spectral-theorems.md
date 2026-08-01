@@ -5216,6 +5216,10 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{thrm:riesz-representation} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{lmm:spectral-mapping-theorem} -->
 > Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
 > 
 > $$
@@ -5839,7 +5843,9 @@ $$
 
 In particular, as we have proven several times now, $$\sigma(A)$$ is compact as a result of [**Proposition**](#prpstn:hall-7.5) and [**Heine–Borel Theorem**](#thrm:heine–borel-theorem), thus the function $$f(\lambda) = \lambda$$ on $$\sigma(A)$$ is a bounded and obviously Borel-measurable function on $$\sigma(A)$$. Hence, we can apply the map above to $$f(\lambda) = \lambda$$.
 
-We claim that the integral of $$f(\lambda) = \lambda$$ against $$\mu^A$$ agrees with the $$f(A)$$ of [**Definition**](#def:hall-8.8). Proving this explicitly follows from (1) proving that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree, (2) proving that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$, (3) proving that for continuous $$f$$ the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$f(A)$$ of [**Definition**](#def:hall-8.3), and (4) finally specializing to the continuous function $$f(\lambda) = \lambda$$ for the final result.
+We claim that the integral of $$f(\lambda) = \lambda$$ against $$\mu^A$$ is $$A$$.
+
+Proving this claim explicitly follows from (1) proving that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree, (2) proving that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$, (3) proving that for continuous $$g$$ the operator $$g(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$g(A)$$ of [**Proposition**](#prpstn:hall-8.3), and (4) finally specializing to the continuous function $$f(\lambda) = \lambda$$ for the final result.
 
 To (1) prove that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree we can unroll definitions. For any measurable $$E$$ on $$\sigma(A)$$ we have
 
@@ -5861,7 +5867,9 @@ $$
 
 which, as $$E$$ is arbitrary, is none other than the statement that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree.
 
-Next let us (2) prove that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$. For any bounded, Borel-measurable, complex-valued function $$f$$ on $$\sigma(A)$$ as a result of [**Definition**](#def:hall-8.8) and [**Definition**](#def:hall-8.6) we have
+Next let us (2) prove that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$.
+
+For any bounded, Borel-measurable, complex-valued function $$f$$ on $$\sigma(A)$$ as a result of [**Definition**](#def:hall-8.8) and [**Definition**](#def:hall-8.6) we have
 
 $$
     \left< \psi, f(A) \psi \right> = Q_f(\psi) = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) 
@@ -5885,26 +5893,61 @@ $$
     f(A) \quad \text{and} \quad \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda)
 $$
 
-both represent the same bounded quadratic form $$Q_f$$. However,by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63) the operator representing a given bounded quadratic form $$Q_f$$ is unique. Thus
+both represent the same bounded quadratic form $$Q_f$$.
+
+However, by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63) the operator representing a given bounded quadratic form $$Q_f$$ is unique. Thus
 
 $$
     f(A) = \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda).
 $$
 
-Next we want to (3) prove that for continuous $$f$$ the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$f(A)$$ of [**Definition**](#def:hall-8.3).
+Next we want to (3) prove that for continuous $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ the operator $$g(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$g(A)$$ of [**Proposition**](#prpstn:hall-8.3).
 
+Directly before the statement of [**Definition**](#def:hall-8.6) we established that for any $$\psi$$ in $$\mathbf{H}$$ we can construct a map $$\Lambda_\psi : C^0(\sigma(A); \mathbb{R}) \rightarrow \mathbb{R}$$ defined by
 
------
+$$
+   \Lambda_\psi(g ) \equiv \left< \psi, g(A) \right>,
+$$
 
-As $$f(\lambda) = \lambda$$ is continuous, as we have previously proven, its $$f(A)$$ from [**Definition**](#def:hall-8.8) agrees with its $$f(A)$$ from [**Proposition**](#prpstn:hall-8.3). As a result of [**Proposition**](#prpstn:hall-8.3) and the fact that $$f(\lambda) = \lambda$$ is a polynomial we have that this $$f(A)$$ is given by $$f(A) = A$$.
+where $$g(A)$$ arises from the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3), such that the application of [**Theorem** *(Riesz Representation)*](#thrm:riesz-representation) implies
+
+$$
+    \Lambda_\psi(g ) \equiv \left< \psi, g(A)\psi \right> = \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda) = Q_g(\psi),
+$$
+
+where the measure $$\mu_\psi$$ arises from the [**Theorem** *(Riesz Representation)*](#thrm:riesz-representation) and $$Q_g(\psi)$$ arises from [**Definition**](#def:hall-8.6).
+
+However, the $$g(A)$$ from [**Definition**](#def:hall-8.8) satisfies
+
+$$
+    \left< \psi, g(A)\psi \right> = Q_g(\psi) = \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda).
+$$
+
+So both the $$g(A)$$ from [**Proposition**](#prpstn:hall-8.3) and the $$g(A)$$ from [**Definition**](#def:hall-8.8) both give rise to the same bounded quadradic form $$Q_g$$. However, by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63), the operator representing a given bounded quadratic form $$Q_g$$ is unique. Thus, for $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ the $$g(A)$$ from [**Proposition**](#prpstn:hall-8.3) agrees with the $$g(A)$$ from [**Definition**](#def:hall-8.8), the desired result.
+
+Finally, let us (4) prove that specializing to the continuous function $$f(\lambda) = \lambda$$ we obtain the desired result, that the integral of $$f(\lambda) = \lambda$$ against $$\mu^A$$ is $$A$$.
+
+Recall that [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R}$$. Thus, $$f(\lambda) = \lambda$$ is real-valued. Furthermore, as $$f(\lambda) = \lambda$$ is a polynomial it is continuous. Also note that as a result of [**Proposition**](#prpstn:hall-7.5) and [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) $$\sigma(A)$$ is compact. Hence, as a result of [**Theorem** *(Boundedness Theorem)*](#thrm:boundedness-theorem), $$f(\lambda) = \lambda$$ is bounded.
+
+So the result of the last section on continuous functions applies to $$f(\lambda) = \lambda$$ and the the $$f(A)$$ from [**Proposition**](#prpstn:hall-8.3) agrees with the $$f(A)$$ from [**Definition**](#def:hall-8.8).
+
+Now by way of the map defined in the [**Lemma** *(Spectral Mapping Theorem)*](#lmm:spectral-mapping-theorem) the polynomial $$f(\lambda) = \lambda$$ is mapped to the operator $$f(A) = A$$. Recall also that the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) is constructed such that when $$f$$ is a polynomial it agrees with the $$f(A)$$ of [**Lemma** *(Spectral Mapping Theorem)*](#lmm:spectral-mapping-theorem). Hence, as $$f(\lambda) = \lambda$$ is a polynomial the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) is given by $$f(A) = A$$.
+
+So putting this all together we have from our second step that
+
+$$
+    \int_{sigma(A)} \lambda \, d\mu^A(\lambda) = f(A),
+$$
+
+where $$f(A)$$ is the $$f(A)$$ of [**Definition**](#def:hall-8.8). Now using the results of this step we know that for $$f(\lambda) = \lambda$$ the $$f(A)$$ of [**Definition**](#def:hall-8.8) is equal to the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) and the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) is equal to $$A$$, giving in full
+
+$$
+    \int_{sigma(A)} \lambda \, d\mu^A(\lambda) = f(A) = A,
+$$
+
+the desired result.
 
 So in summary we have proven that
-
-$$
-    \lambda \longmapsto \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A,
-$$
-
-which gives
 
 $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A,
