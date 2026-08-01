@@ -4975,68 +4975,152 @@ We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we
 
 The next of these "utility" lemmas is the following:
 
-> **Lemma**
-<a name="lmm:hall-prblm-8.3.3b"></a>
-<!--  \uses{lmm:hall-prblm-8.3.3a} -->
-<!--  \uses{thrm:monotone-class-theorem} -->
-> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Finally let $$\mathcal{L}_1$$ be the set of all measurable sets $$E$$ in $$X$$ such that the indicator function $$1_E$$ belongs to $$\mathcal{F}$$. Then $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$.
+Before proving the final of these "utility" lemmas, we isolate the following elementary fact about pointwise limits of Borel-measurable functions, which we will have need of shortly.
+
+> **Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*
+<a name="lmm:pointwise-limits-of-borel-measurable-functions"></a>
+<!--  \uses{thrm:monotone-convergence-theorem} -->
+> Let $$X$$ be a compact metric measurable space. Let $$\{ f_i \}_{i \in \mathbb{N}}$$ be a sequence of bounded, Borel-measurable, complex-valued functions on $$X$$ that are uniformly bounded, i.e. there exists a real-valued constant $$M$$ such that
+>
+> $$
+>     \lvert f_i(x) \rvert \le M
+> $$
+>
+> for all $$i \in \mathbb{N}$$ and all $$x \in X$$, and that converge pointwise to a function $$f : X \rightarrow \mathbb{C}$$. Then $$f$$ is bounded and Borel-measurable.
 
 **Proof**
-By definition $$\mathcal{L}_0$$ of [**Lemma**](#lmm:hall-prblm-8.3.3a) is the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous, real-valued functions.
-
-Thus if $$E$$ is in $$\mathcal{L}_0$$ then (1) $$E$$ is measurable and (2) $$1_E$$ is the pointwise limit of a sequence of uniformly bounded continuous, real-valued functions.
-
-By hypothesis $$C^0(X; \mathbb{R})$$ is a subset of $$\mathcal{F}$$. By hypothesis $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Thus the pointwise limit of a sequence of uniformly bounded continuous, real-valued functions is also in $$\mathcal{F}$$.
-
-Hence, as for any $$E$$ in $$\mathcal{L}_0$$ its indicator function $$1_E$$ is the pointwise limit of a sequence of uniformly bounded continuous, real-valued functions, then it follows that $$1_E$$ is in $$\mathcal{F}$$.
-
-Thus for any $$E$$ in $$\mathcal{L}_0$$ it follows that (1) $$E$$ is measurable and (2) $$1_E$$ belongs to $$\mathcal{F}$$. The definition of $$\mathcal{L}_1$$ then implies that $$\mathcal{L}_0$$ is a subset of $$\mathcal{L}_1$$.
-
-We proved in [**Lemma**](#lmm:hall-prblm-8.3.3a) that any open set in $$X$$ is also in $$\mathcal{L}_0$$, and that $$\mathcal{L}_0$$ is an algebra of sets. We will use these two facts, together with property (3) of $$\mathcal{F}$$, to show that $$\mathcal{L}_1$$ contains all Borel sets of $$X$$.
-
-To this end, let us first prove that $$\mathcal{L}_1$$ is a *monotone class*, i.e. that $$\mathcal{L}_1$$ is closed under countable increasing unions and countable decreasing intersections.
-
-Let $$\{ E_n \}_{n \in \mathbb{N}}$$ be an increasing sequence of sets in $$\mathcal{L}_1$$, i.e. $$E_1 \subseteq E_2 \subseteq \cdots$$ with each $$1_{E_n} \in \mathcal{F}$$, and let $$E \equiv \bigcup_{n \in \mathbb{N}} E_n$$. For any $$x \in X$$, if $$x \in E$$ then $$x \in E_{n_0}$$ for some $$n_0$$, and since the $$E_n$$ are increasing, $$1_{E_n}(x) = 1$$ for all $$n \ge n_0$$; if $$x \notin E$$ then $$1_{E_n}(x) = 0$$ for all $$n$$. Hence $$1_{E_n}(x) \rightarrow 1_E(x)$$ for every $$x \in X$$, i.e. $$1_{E_n} \rightarrow 1_E$$ pointwise. Furthermore this convergence is uniformly bounded, as $$\lvert 1_{E_n}(x) \rvert \le 1$$ for all $$n$$ and $$x$$. As $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits (property (3) of $$\mathcal{F}$$), we conclude $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
-
-An entirely analogous argument applies to a decreasing sequence $$\{ E_n \}_{n \in \mathbb{N}}$$ in $$\mathcal{L}_1$$, i.e. $$E_1 \supseteq E_2 \supseteq \cdots$$: with $$E \equiv \bigcap_{n \in \mathbb{N}} E_n$$, one again has $$1_{E_n} \rightarrow 1_E$$ pointwise and uniformly bounded by $$1$$, so property (3) of $$\mathcal{F}$$ gives $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
-
-Together these prove that $$\mathcal{L}_1$$ is a monotone class.
-
-With this established, we can apply the [**Monotone Class Theorem**](#thrm:monotone-class-theorem)
-
-> **Theorem** *(Monotone Class Theorem)*
-<a name="thrm:monotone-class-theorem"></a>
-> Let $$\mathcal{A}$$ be an algebra of subsets of a set $$X$$, and let $$\mathcal{M}$$ be a monotone class, i.e. a collection of subsets of $$X$$ closed under countable increasing unions and countable decreasing intersections, such that $$\mathcal{A} \subseteq \mathcal{M}$$. Then $$\sigma(\mathcal{A}) \subseteq \mathcal{M}$$, where $$\sigma(\mathcal{A})$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{A}$$.
-
-Identifying $$\mathcal{A}$$ with $$\mathcal{L}_0$$---an algebra, as established in [**Lemma**](#lmm:hall-prblm-8.3.3a)---and $$\mathcal{M}$$ with $$\mathcal{L}_1$$---a monotone class containing $$\mathcal{L}_0$$, as we just proved---the [**Monotone Class Theorem**](#thrm:monotone-class-theorem) implies
+Let us first prove that $$f$$ is bounded. For any $$x \in X$$ we have
 
 $$
-    \sigma(\mathcal{L}_0) \subseteq \mathcal{L}_1,
+\begin{align}
+    \lvert f(x) \rvert &= \lim\limits_{i \rightarrow \infty} \lvert f(x) - f_i(x) + f_i(x) \rvert \\
+                        &\le \lim\limits_{i \rightarrow \infty} \lvert f(x) - f_i(x) \rvert + \lvert f_i(x) \rvert \\
+                        &=   \lim\limits_{i \rightarrow \infty} \lvert f(x) - f_i(x) \rvert + \lim\limits_{i \rightarrow \infty} \lvert f_i(x) \rvert \\
+                        &=   \lim\limits_{i \rightarrow \infty} \lvert f_i(x) \rvert \\
+                        &\le \lim\limits_{i \rightarrow \infty} M \\
+                        &=   M,
+\end{align}
 $$
 
-where $$\sigma(\mathcal{L}_0)$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{L}_0$$.
+where we have used that $$f_i(x) \rightarrow f(x)$$ and the definition of a norm. This proves $$\lvert f(x) \rvert \le M$$ for all $$x \in X$$, i.e. $$f$$ is bounded.
 
-However, as $$\mathcal{L}_0$$ contains all open sets in $$X$$, and the Borel $$\sigma$$-algebra of $$X$$ is by definition the smallest $$\sigma$$-algebra containing all open sets in $$X$$, it follows that the Borel $$\sigma$$-algebra of $$X$$ is contained in $$\sigma(\mathcal{L}_0)$$. Combined with our previous result this gives
+Next let us prove that $$f$$ is Borel-measurable.
+
+As $$\{ f_i \}_{i \in \mathbb{N}}$$ converges to $$f$$ pointwise, and as taking real and imaginary parts is continuous, the real-valued sequences $$\{ \text{Re}(f_i) \}_{i \in \mathbb{N}}$$ and $$\{ \text{Im}(f_i) \}_{i \in \mathbb{N}}$$ converge pointwise to $$\text{Re}(f)$$ and $$\text{Im}(f)$$ respectively. Explicitly, for any $$x \in X$$,
 
 $$
-    \text{(Borel sets of } X\text{)} \subseteq \sigma(\mathcal{L}_0) \subseteq \mathcal{L}_1.
+    \lvert \text{Re}(f(x)) - \text{Re}(f_i(x)) \rvert \le \lvert f(x) - f_i(x) \rvert \rightarrow 0
 $$
 
-Hence, $$\mathcal{L}_1$$ contains all Borel sets.
+as $$i \rightarrow \infty$$, and similarly
 
-To complete this proof we must show that if a set is in $$\mathcal{L}_1$$, then it must be a Borel set. We will prove this using proof by contradiction.
+$$
+    \lvert \text{Im}(f(x)) - \text{Im}(f_i(x)) \rvert \le \lvert f(x) - f_i(x) \rvert \rightarrow 0.
+$$
 
-To that end assume that there exists a set $$E$$ in $$\mathcal{L}_1$$ that is not a Borel set. The definition of $$\mathcal{L}_1$$ implies that $$E$$ is measurable. If $$E$$ is measurable, then it must be in the $$\sigma$$-algebra of $$X$$. However, $$X$$ is a metric measurable space. Thus, the $$\sigma$$-algebra of $$X$$ is the Borel $$\sigma$$-algebra. This implies that any element of this $$\sigma$$-algebra is a Borel set. This implies $$E$$ is a Borel set contradicting our assumption that $$E$$ is not a Borel set.
+As $$\{ f_i \}_{i \in \mathbb{N}}$$ is uniformly bounded by $$M$$, so too are $$\{ \text{Re}(f_i) \}_{i \in \mathbb{N}}$$ and $$\{ \text{Im}(f_i) \}_{i \in \mathbb{N}}$$, since $$\lvert \text{Re}(f_i(x)) \rvert \le \lvert f_i(x) \rvert \le M$$ and likewise for the imaginary part. This allows us to define, for each $$i \in \mathbb{N}$$, the real numbers
 
-Hence, our assumption that $$E$$ isn't a Borel set leads to a contradiction and it must be the case that $$E$$ is a Borel set.
+$$
+    g_i(x) \equiv \sup\limits_{n \ge i} \text{Re}(f_n(x)), \qquad h_i(x) \equiv \sup\limits_{n \ge i} \text{Im}(f_n(x)),
+$$
 
-So with that we have proven that $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$, the desired result.$$\blacksquare$$
+both of which are well-defined, as suprema of bounded sets of real numbers.
+
+By an identical argument to before---now applied to the real-valued sequence $$\{ \text{Re}(f_n(x)) \}_{n \in \mathbb{N}}$$ converging to $$\text{Re}(f(x))$$---for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for $$i \ge N$$ one has
+
+$$
+    \lvert \text{Re}(f(x)) - g_i(x) \rvert < \epsilon,
+$$
+
+which implies
+
+$$
+    \text{Re}(f(x)) = \lim\limits_{i \rightarrow \infty} g_i(x).
+$$
+
+An identical argument applied to the real-valued sequence $$\{ \text{Im}(f_n(x)) \}_{n \in \mathbb{N}}$$ converging to $$\text{Im}(f(x))$$ gives
+
+$$
+    \text{Im}(f(x)) = \lim\limits_{i \rightarrow \infty} h_i(x).
+$$
+
+Now looking at the sequences
+
+$$
+    \left\{  g_i(x) \right\}_{i \in \mathbb{N}} \quad \text{and} \quad \left\{  h_i(x) \right\}_{i \in \mathbb{N}}
+$$
+
+we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Hence, we can apply the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem) to each of these sequences, giving
+
+$$
+    \text{Re}(f(x)) = \lim\limits_{i \rightarrow \infty} g_i(x) = \inf_{i \in \mathbb{N}} g_i(x), \qquad \text{Im}(f(x)) = \lim\limits_{i \rightarrow \infty} h_i(x) = \inf_{i \in \mathbb{N}} h_i(x).
+$$
+
+We will next prove that $$g_i$$ and $$h_i$$ are Borel-measurable, and use this and the two equations above to prove that $$\text{Re}(f)$$ and $$\text{Im}(f)$$---and hence $$f$$ itself---are Borel-measurable.
+
+Note that a real-valued function is Borel-measurable if the preimage of any set of the form $$(a, \infty)$$ is a Borel set. With that in mind consider the preimage of $$(a, \infty)$$ under $$g_i$$
+
+$$
+    \left\{ x \in X : g_i(x) > a \right\} = \left\{ x \in X : \sup\limits_{n \ge i} \text{Re}(f_n(x)) > a \right\}.
+$$
+
+The supremum of a set of numbers is strictly greater than $$a$$ if and only if at least one of the numbers in the sequence is strictly greater than $$a$$. Hence,
+
+$$
+    \left\{ x \in X : \sup\limits_{n \ge i} \text{Re}(f_n(x)) > a \right\} = \bigcup_{n=i}^\infty  \left\{ x \in X : \text{Re}( f_n(x) ) > a \right\}.
+$$
+
+As each $$f_n$$ is by hypothesis Borel measurable, and the Borel $$\sigma$$-algebra on $$\mathbb{C}$$ is generated by the Cartesian product of Borel sets on $$\mathbb{R}$$, each $$\text{Re}( f_n(x) )$$ is Borel measurable. Hence, sets of the form
+
+$$
+    \left\{ x \in X : \text{Re}( f_n(x) ) > a \right\}
+$$
+
+are Borel measurable sets. As the $$\sigma$$-algebra of Borel sets is closed under countable unions, it then follows that
+
+$$
+    \bigcup_{n=i}^\infty  \left\{ x \in X : \text{Re}( f_n(x) ) > a \right\}
+$$
+
+is a Borel measurable set. Hence, the preimage of any set of the form $$(a, \infty)$$ under $$g_i$$ is a Borel measurable set, and thus $$g_i$$ is Borel measurable. An identical argument, with $$\text{Im}(f_n)$$ in place of $$\text{Re}(f_n)$$, proves that $$h_i$$ is Borel measurable.
+
+Now let us prove that $$\text{Re}(f)$$ and $$\text{Im}(f)$$ are Borel measurable.
+
+Recall that a real-valued function is Borel measurable if the preimage of any set of the form $$(-\infty, a)$$ is a Borel set. With this in mind consider the preimage of $$(-\infty, a)$$ under $$\text{Re}(f)$$
+
+$$
+    \left\{ x \in X : \text{Re}(f(x)) < a \right\} = \left\{ x \in X : \inf_{i \in \mathbb{N}} g_i(x) < a \right\}.
+$$
+
+Now the infimum of a sequence is strictly less than $$a$$ if and only if at least one term in the sequence is strictly less than $$a$$. Hence,
+
+$$
+    \left\{ x \in X : \inf_{i \in \mathbb{N}} g_i(x) < a \right\} = \bigcup_{i \in \mathbb{N}}  \left\{ x \in X : g_i(x) < a \right\}.
+$$
+
+However, we proved that $$g_i$$ is Borel measurable. Thus
+
+$$
+    \left\{ x \in X : g_i(x) < a \right\}
+$$
+
+are Borel measurable sets. As the $$\sigma$$-algebra of Borel sets is closed under countable unions, it then follows that
+
+$$
+    \bigcup_{i \in \mathbb{N}}  \left\{ x \in X : g_i(x) < a \right\}
+$$
+
+is a Borel measurable set. Hence, the preimage of any set of the form $$(-\infty, a)$$ under $$\text{Re}(f)$$ is a Borel measurable set, and thus $$\text{Re}(f(x))$$ is Borel measurable. An identical argument, with $$h_i$$ in place of $$g_i$$, proves that $$\text{Im}(f(x))$$ is Borel measurable.
+
+As the Borel $$\sigma$$-algebra on $$\mathbb{C}$$ is generated by the Cartesian product of Borel sets on $$\mathbb{R}$$, a complex valued function is Borel-measurable if and only if both its real part and its imaginary part are real-valued Borel measurable functions. As we have just shown $$\text{Re}(f)$$ and $$\text{Im}(f)$$ are both real-valued Borel measurable functions, it follows that $$f$$ is Borel-measurable.
+
+Together, boundedness and Borel-measurability of $$f$$ give the desired result.$$\blacksquare$$
 
 The final of these "utility" lemmas is the following:
 
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3c"></a>
-<!--  \uses{lmm:hall-prblm-8.3.3b} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
 <!--  \uses{thrm:boundedness-theorem} -->
 > Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Then $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$X$$.
 
@@ -5055,9 +5139,9 @@ Explicitly, the fact (1) that they form a complex vector space is relatively cle
 
 The fact (2) that they contain $$C^0(X; \mathbb{R})$$ follows from the fact that $$X$$ is by hypothesis compact, thus a generalization of the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that elements of $$C^0(X; \mathbb{R})$$ are bounded. In addition, as $$X$$ is a metric measurable space it implies its measure is Borel, thus continuous functions are Borel-measurable, thus any element of $$C^0(X; \mathbb{R})$$ is Borel-measurable. And obviously $$C^0(X; \mathbb{R})$$ can be viewed as complex-valued functions.
 
-What is not obvious is if this set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are closed under pointwise limits of uniformly bounded sequences.
+What remains is to prove that this set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
 
-If this were false, i.e., the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ were not closed under pointwise limits of uniformly bounded sequences, then there would exist a subset $$E$$ in $$\mathcal{L}_1$$, defined in [**Lemma**](#lmm:hall-prblm-8.3.3b) that is not a Borel measurable set. However, we proved in [**Lemma**](#lmm:hall-prblm-8.3.3b) that there exists no such set. Thus, the set of bounded, Borel-measurable complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
+This is precisely the content of [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions): if $$\{ f_i \}_{i \in \mathbb{N}}$$ is a uniformly bounded sequence of bounded, Borel-measurable, complex-valued functions on $$X$$ that converges pointwise to some $$f : X \rightarrow \mathbb{C}$$, that lemma directly establishes that $$f$$ is bounded and Borel-measurable, i.e. that $$f$$ is again a member of the set of bounded, Borel-measurable, complex-valued functions on $$X$$. Thus, the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
 
 Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
