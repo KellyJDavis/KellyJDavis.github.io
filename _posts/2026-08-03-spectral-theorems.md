@@ -4090,8 +4090,8 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
-<!--  \uses{def:hall-7.7} -->
-<!--  \uses{def:hall-7.5} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:hall-a.62} -->
