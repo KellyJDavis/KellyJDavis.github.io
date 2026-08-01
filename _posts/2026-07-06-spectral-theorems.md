@@ -4096,7 +4096,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:hall-a.62} -->
-<!--  \uses{thrm:monotone-convergence-theorem} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
@@ -4300,152 +4300,9 @@ $$
 
 pointwise for each $$\lambda \in \sigma(A)$$ relative to the standard norm $$\lvert \cdot \rvert$$ on $$\mathbb{C}$$. Our goal is then to prove that $$f$$ is in $$\mathcal{F}$$.
 
-
 As $$\mathcal{F}$$ is a subset of the set of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$, our first task is to prove that $$f$$ is a bounded, Borel-measurable, complex-valued function.
 
-Let us first prove that $$f$$ is bounded. This follows from the following derivation. For any $$\lambda \in \sigma(A)$$ we have
-
-$$
-\begin{align}
-    \lvert f(\lambda) \rvert &= \lim\limits_{i \rightarrow \infty} \lvert f(\lambda) - f_i(\lambda) + f_i(\lambda) \rvert \\
-                             &\le \lim\limits_{i \rightarrow \infty} \lvert f(\lambda) - f_i(\lambda) \rvert + \lvert f_i(\lambda) \rvert \\
-                             &=   \lim\limits_{i \rightarrow \infty} \lvert f(\lambda) - f_i(\lambda) \rvert + \lim\limits_{i \rightarrow \infty} \lvert f_i(\lambda) \rvert \\
-                             &=   \lim\limits_{i \rightarrow \infty} \lvert f_i(\lambda) \rvert \\
-                             &\le \lim\limits_{i \rightarrow \infty} M \\
-                             &=   M,
-\end{align}
-$$
-
-where we have, in addition to the previous properties of the $$f_i$$, used the definition of a norm. This proves
-
-$$
-   \lvert f(\lambda) \rvert \le M
-$$
-
-for all $$\lambda \in \sigma(A)$$. In other words this proves that $$f$$ is bounded.
-
-Next let us prove that $$f$$ is Borel-measurable.
-
-As $$\{ f_i \}_{i \in \mathbb{N}}$$ converges to $$f$$ pointwise, and as taking real and imaginary parts is continuous, the real-valued sequences $$\{ \text{Re}(f_i) \}_{i \in \mathbb{N}}$$ and $$\{ \text{Im}(f_i) \}_{i \in \mathbb{N}}$$ converge pointwise to $$\text{Re}(f)$$ and $$\text{Im}(f)$$ respectively. Explicitly, for any $$\lambda \in \sigma(A)$$,
-
-$$
-    \lvert \text{Re}(f(\lambda)) - \text{Re}(f_i(\lambda)) \rvert \le \lvert f(\lambda) - f_i(\lambda) \rvert \rightarrow 0
-$$
-
-as $$i \rightarrow \infty$$, and similarly
-
-$$
-    \lvert \text{Im}(f(\lambda)) - \text{Im}(f_i(\lambda)) \rvert \le \lvert f(\lambda) - f_i(\lambda) \rvert \rightarrow 0.
-$$
-
-As $$\{ f_i \}_{i \in \mathbb{N}}$$ is uniformly bounded by $$M$$, so too are $$\{ \text{Re}(f_i) \}_{i \in \mathbb{N}}$$ and $$\{ \text{Im}(f_i) \}_{i \in \mathbb{N}}$$, since $$\lvert \text{Re}(f_i(\lambda)) \rvert \le \lvert f_i(\lambda) \rvert \le M$$ and likewise for the imaginary part. This allows us to define, for each $$i \in \mathbb{N}$$, the real numbers
-
-$$
-    g_i(\lambda) \equiv \sup\limits_{n \ge i} \text{Re}(f_n(\lambda)), \qquad h_i(\lambda) \equiv \sup\limits_{n \ge i} \text{Im}(f_n(\lambda)),
-$$
-
-both of which are well-defined, as suprema of bounded sets of real numbers.
-
-By an identical argument to before, now applied to the real-valued sequence $$\{ \text{Re}(f_n(\lambda)) \}_{n \in \mathbb{N}}$$ converging to $$\text{Re}(f(\lambda))$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for $$i \ge N$$ one has
-
-$$
-    \lvert \text{Re}(f(\lambda)) - g_i(\lambda) \rvert < \epsilon,
-$$
-
-which implies
-
-$$
-    \text{Re}(f(\lambda)) = \lim\limits_{i \rightarrow \infty} g_i(\lambda).
-$$
-
-An identical argument applied to the real-valued sequence $$\{ \text{Im}(f_n(\lambda)) \}_{n \in \mathbb{N}}$$ converging to $$\text{Im}(f(\lambda))$$ gives
-
-$$
-    \text{Im}(f(\lambda)) = \lim\limits_{i \rightarrow \infty} h_i(\lambda).
-$$
-
-Now looking at the sequences
-
-$$
-    \left\{  g_i(\lambda) \right\}_{i \in \mathbb{N}} \quad \text{and} \quad \left\{  h_i(\lambda) \right\}_{i \in \mathbb{N}}
-$$
-
-we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Hence, we can apply the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem)
-
-> **Theorem** *(Monotone Convergence Theorem)*
-<a name="thrm:monotone-convergence-theorem"></a>
-> If $$\{ a_i \}_{i \in \mathbb{N}}$$ is a non-increasing sequence, i.e. $$a_i \ge a_{i + 1}$$ for all $$i \in \mathbb{N}$$, then 
-> 
-> $$
->     \lim\limits_{i \rightarrow \infty} a_i = \inf_{i \in \mathbb{N}} a_i.
-> $$
-
-to each of these sequences, giving
-
-$$
-\begin{align}
-    \text{Re}(f(\lambda)) &= \lim\limits_{i \rightarrow \infty} g_i(\lambda) = \inf_{i \in \mathbb{N}} g_i(\lambda) \\
-    \text{Im}(f(\lambda)) &= \lim\limits_{i \rightarrow \infty} h_i(\lambda) = \inf_{i \in \mathbb{N}} h_i(\lambda).
-\end{align}
-$$
-
-We will next prove that $$g_i$$ and $$h_i$$ are Borel-measurable, and use this and the two equations above to prove that $$\text{Re}(f)$$ and $$\text{Im}(f)$$, and hence $$f$$ itself, are Borel-measurable.
-
-Note that a real-valued function is Borel-measurable if the preimage of any set of the form $$(a, \infty)$$ is a Borel set. With that in mind consider the preimage of $$(a, \infty)$$ under $$g_i$$
-
-$$
-    \left\{ \lambda \in \sigma(A) : g_i(\lambda) > a \right\} = \left\{ \lambda \in \sigma(A) : \sup\limits_{n \ge i} \text{Re}(f_n(\lambda)) > a \right\}.
-$$
-
-The supremum of a set of numbers is strictly greater than $$a$$ if and only if at least one of the numbers in the sequence is strictly greater than $$a$$. Hence,
-
-$$
-    \left\{ \lambda \in \sigma(A) : \sup\limits_{n \ge i} \text{Re}(f_n(\lambda)) > a \right\} = \bigcup_{n=i}^\infty  \left\{ \lambda \in \sigma(A) : \text{Re}( f_n(\lambda) ) > a \right\}.
-$$
-
-As each $$f_n$$ is by hypothesis Borel measurable, and the Borel $$\sigma$$-algebra on $$\mathbb{C}$$ is generated by the Cartesian product of Borel sets on $$\mathbb{R}$$, each $$\text{Re}( f_n(\lambda) )$$ is Borel measurable. Hence, sets of the form
-
-$$
-    \left\{ \lambda \in \sigma(A) : \text{Re}( f_n(\lambda) ) > a \right\}
-$$
-
-are Borel measurable sets. As the $$\sigma$$-algebra of Borel sets is closed under countable unions, it then follows that
-
-$$
-    \bigcup_{n=i}^\infty  \left\{ \lambda \in \sigma(A) : \text{Re}( f_n(\lambda) ) > a \right\}
-$$
-
-is a Borel measurable set. Hence, the preimage of any set of the form $$(a, \infty)$$ under $$g_i$$ is a Borel measurable set, and thus $$g_i$$ is Borel measurable. An identical argument, with $$\text{Im}(f_n)$$ in place of $$\text{Re}(f_n)$$, proves that $$h_i$$ is Borel measurable.
-
-Now let us prove that $$\text{Re}(f)$$ and $$\text{Im}(f)$$ are Borel measurable.
-
-Recall that a real-valued function is Borel measurable if the preimage of any set of the form $$(-\infty, a)$$ is a Borel set. With this in mind consider the preimage of $$(-\infty, a)$$ under $$\text{Re}(f)$$
-
-$$
-    \left\{ \lambda \in \sigma(A) : \text{Re}(f(\lambda)) < a \right\} = \left\{ \lambda \in \sigma(A) : \inf_{i \in \mathbb{N}} g_i(\lambda) < a \right\}.
-$$
-
-Now the infimum of a sequence is strictly less than $$a$$ if and only if at least one term in the sequence is strictly less than $$a$$. Hence,
-
-$$
-    \left\{ \lambda \in \sigma(A) : \inf_{i \in \mathbb{N}} g_i(\lambda) < a \right\} = \bigcup_{i \in \mathbb{N}}  \left\{ \lambda \in \sigma(A) : g_i(\lambda) < a \right\}.
-$$
-
-However, we proved that $$g_i$$ is Borel measurable. Thus
-
-$$
-    \left\{ \lambda \in \sigma(A) : g_i(\lambda) < a \right\}
-$$
-
-are Borel measurable sets. As the $$\sigma$$-algebra of Borel sets is closed under countable unions, it then follows that
-
-$$
-    \bigcup_{i \in \mathbb{N}}  \left\{ \lambda \in \sigma(A) : g_i(\lambda) < a \right\}
-$$
-
-is a Borel measurable set. Hence, the preimage of any set of the form $$(-\infty, a)$$ under $$\text{Re}(f)$$ is a Borel measurable set, and thus $$\text{Re}(f(\lambda))$$ is Borel measurable. An identical argument, with $$h_i$$ in place of $$g_i$$, proves that $$\text{Im}(f(\lambda))$$ is Borel measurable.
-
-As the Borel $$\sigma$$-algebra on $$\mathbb{C}$$ is generated by the Cartesian product of Borel sets on $$\mathbb{R}$$, a complex valued function is Borel-measurable if and only if both its real part and its imaginary part are real-valued Borel measurable functions. As we have just shown $$\text{Re}(f)$$ and $$\text{Im}(f)$$ are both real-valued Borel measurable functions, it follows that $$f$$ is Borel-measurable, the desired result.
+Each $$f_i$$ is an element of $$\mathcal{F}$$, and thus a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$. As established earlier in this proof, $$\sigma(A)$$ is a compact metric measurable space. Hence, identifying $$X$$ with $$\sigma(A)$$, the sequence $$\{ f_i \}_{i \in \mathbb{N}}$$ and its pointwise limit $$f$$ satisfy the hypotheses of [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions). That [**Lemma**](#lmm:pointwise-limits-of-borel-measurable-functions) directly implies that $$f$$ is bounded and Borel-measurable, the desired result.
 
 Next we have to prove that $$f$$ is in $$\mathcal{F}$$. The definition of $$\mathcal{F}$$ implies that this is equivalent to proving that $$Q_f$$ is a bounded quadratic form.
 
@@ -5050,7 +4907,17 @@ $$
     \left\{  g_i(x) \right\}_{i \in \mathbb{N}} \quad \text{and} \quad \left\{  h_i(x) \right\}_{i \in \mathbb{N}}
 $$
 
-we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Hence, we can apply the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem) to each of these sequences, giving
+we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Hence, we can apply the [**Monotone Convergence Theorem (Non-Increasing Case)**](#thrm:monotone-convergence-theorem-nonincreasing)
+
+> **Theorem** *(Monotone Convergence Theorem, Non-Increasing Case)*
+<a name="thrm:monotone-convergence-theorem-nonincreasing"></a>
+> If $$\{ a_i \}_{i \in \mathbb{N}}$$ is a non-increasing sequence, i.e. $$a_i \ge a_{i + 1}$$ for all $$i \in \mathbb{N}$$, then 
+> 
+> $$
+>     \lim\limits_{i \rightarrow \infty} a_i = \inf_{i \in \mathbb{N}} a_i.
+> $$
+
+to each of these sequences, giving
 
 $$
     \text{Re}(f(x)) = \lim\limits_{i \rightarrow \infty} g_i(x) = \inf_{i \in \mathbb{N}} g_i(x), \qquad \text{Im}(f(x)) = \lim\limits_{i \rightarrow \infty} h_i(x) = \inf_{i \in \mathbb{N}} h_i(x).
@@ -5621,7 +5488,7 @@ With this result as motivation, let us prove the following "utility" lemma
 > **Lemma**
 <a name="lmm:lemma-4"></a>
 <!--  \uses{def:bounded-orthogonal-projection} -->
-<!--  \uses{thrm:monotone-convergence-theorem} -->
+<!--  \uses{thrm:monotone-convergence-theorem-nonincreasing} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:bounded-operators-are-continuous} -->
 > Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be a set of bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ that satisfy $$P_iP_j = 0$$ for $$i \neq j$$. Then for all $$\psi \in \mathbf{H}$$ the sequence of partial sums
