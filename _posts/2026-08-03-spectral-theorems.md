@@ -5150,6 +5150,8 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 <!--  \uses{prpstn:hall-a.61} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{prpstn:hall-a.63} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, then
 > 
 > $$
@@ -5181,7 +5183,16 @@ $$
 where the first line is the distributive property over functions, the second from linearity of the integral in [**Definition**](#def:hall-8.8), the third from properties of $$\mathcal{F}_1$$ along with the fact $$f_1, f_2 \in \mathcal{F}_1$$ and $$g \in C^0(\sigma(A); \mathbb{R})$$, and the final is the distributive property over operators. These imply
 
 $$
-    ((\alpha_1f_1 + \alpha_2f_2)g)(A) = (\alpha_1f_1(A) + \alpha_2f_2(A))g(A)
+\begin{align}
+    ((\alpha_1f_1 + \alpha_2f_2)g)(A) &= (\alpha_1f_1(A) + \alpha_2f_2(A))g(A) \\
+                                      &= (\alpha_1f_1 + \alpha_2f_2)(A)g(A),
+\end{align}
+$$
+
+where the second equality follows from linearity. This implies
+
+$$
+    ((\alpha_1f_1 + \alpha_2f_2)g)(A) = (\alpha_1f_1 + \alpha_2f_2)(A)g(A)
 $$
 
 which is nothing more than the statement that $$\mathcal{F}_1$$ is a complex vector space.
@@ -5242,7 +5253,7 @@ for all $$\psi \in \mathbf{H}$$---allows us to write a quadratic form's sesquili
 
 So, as [**Proposition**](#prpstn:hall-8.7) proves $$Q_f$$ is a bounded, quadratic form for any bounded, Borel-measurable, complex-valued function $$f$$, we can write the sesquilinear form $$L_f$$ associated to $$Q_f$$ purely in terms of $$Q_f$$.
 
-As we can express $$L_f$$ purely in terms of $$Q_f$$ it follows from our previous result that the map $$f \mapsto L_f(,\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\phi,\psi \in \mathbf{H}$$ when $$f$$ is a bounded, Borel-measurable, complex-valued function.
+As we can express $$L_f$$ purely in terms of $$Q_f$$ it follows from our previous result that the map $$f \mapsto L_f(\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\phi,\psi \in \mathbf{H}$$ when $$f$$ is a bounded, Borel-measurable, complex-valued function.
 
 Now by definition for any $$f \in \mathcal{F}_1$$ and any $$g \in C^0(\sigma(A); \mathbb{R})$$ we have
 
@@ -5292,7 +5303,71 @@ holds---implies that $$\mathcal{F}_1$$ is closed under uniformly bounded pointwi
 
 As $$\sigma(A)$$ is a compact metric measurable space and $$\mathcal{F}_1$$ (1) is a vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under uniformly bounded pointwise limits, we can apply [**Lemma**](#lmm:hall-prblm-8.3.3c) to conclude that $$\mathcal{F}_1$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
 
-Now let $$\mathcal{F}_2$$ be the set of all bounded, Borel-measurable, complex-valued functions $$f$$ such that $$(fg)(A) = f(A)g(A)$$ for all bounded, Borel-measurable, complex-valued functions $$g$$. Our result for $$\mathcal{F}_1$$ implies that $$\mathcal{F}_2$$ contains $$C^0(\sigma(A); \mathbb{R})$$. Hence, we can mimic the above argument for $$\mathcal{F}_1$$ to prove that $$\mathcal{F}_2$$ contains not only $$C^0(\sigma(A); \mathbb{R})$$ by all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$, giving the desired result
+The result just obtained for $$\mathcal{F}_1$$ is multiplicativity for an arbitrary bounded, Borel-measurable $$f$$ paired with a *continuous* $$g$$. To obtain the full result we must also allow $$g$$ to be an arbitrary bounded, Borel-measurable function. To this end let $$\mathcal{F}_2$$ be the set of all bounded, Borel-measurable, complex-valued functions $$g$$---note that here it is the *second* argument that varies---such that
+
+$$
+    (fg)(A) = f(A)g(A)
+$$
+
+for all bounded, Borel-measurable, complex-valued functions $$f$$ on $$\sigma(A)$$. We will prove that $$\mathcal{F}_2$$ (1) is a complex vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under pointwise limits of uniformly bounded sequences, so that [**Lemma**](#lmm:hall-prblm-8.3.3c) applies.
+
+**(1)** Consider any $$g_1$$ and $$g_2$$ in $$\mathcal{F}_2$$, any $$\alpha_1$$ and $$\alpha_2$$ in $$\mathbb{C}$$, and any bounded, Borel-measurable $$f$$. Then
+
+$$
+\begin{align}
+    (f(\alpha_1g_1 + \alpha_2g_2))(A) &= (\alpha_1(fg_1) + \alpha_2(fg_2))(A) \\
+                                      &= \alpha_1(fg_1)(A) + \alpha_2(fg_2)(A) \\
+                                      &= \alpha_1f(A)g_1(A) + \alpha_2f(A)g_2(A) \\
+                                      &= f(A)\left( \alpha_1g_1(A) + \alpha_2g_2(A) \right) \\
+                                      &= f(A)(\alpha_1g_1 + \alpha_2g_2)(A),
+\end{align}
+$$
+
+where the first line is the distributive property over functions, the second and fifth follow from linearity of the map of [**Definition**](#def:hall-8.8), the third from $$g_1, g_2 \in \mathcal{F}_2$$, and the fourth is the distributive property over operators. Hence $$\alpha_1g_1 + \alpha_2g_2 \in \mathcal{F}_2$$, i.e. $$\mathcal{F}_2$$ is a complex vector space.
+
+**(2)** Let $$g \in C^0(\sigma(A); \mathbb{R})$$. Membership of $$g$$ in $$\mathcal{F}_2$$ requires that $$(fg)(A) = f(A)g(A)$$ for every bounded, Borel-measurable $$f$$. This is precisely the statement that every such $$f$$ belongs to $$\mathcal{F}_1$$, which we established above. Hence $$C^0(\sigma(A); \mathbb{R}) \subseteq \mathcal{F}_2$$.
+
+**(3)** Let $$\{ g_i \}_{i \in \mathbb{N}}$$ be a sequence in $$\mathcal{F}_2$$, uniformly bounded by some $$M \in \mathbb{R}$$, converging pointwise to $$g$$. Let $$f$$ be an arbitrary bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$, bounded by $$M_f \in \mathbb{R}$$, and let $$\psi \in \mathbf{H}$$ be arbitrary.
+
+As $$g_i \rightarrow g$$ pointwise, we have $$fg_i \rightarrow fg$$ pointwise, and
+
+$$
+    \lvert f(\lambda)g_i(\lambda) \rvert \le M_f M
+$$
+
+for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, so the sequence $$\{ fg_i \}_{i \in \mathbb{N}}$$ is uniformly bounded. Hence, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem) applied to the finite measure $$\mu_\psi$$ gives
+
+$$
+    \left< \psi, (fg_i)(A)\psi \right> = Q_{fg_i}(\psi) = \int_{\sigma(A)} fg_i \, d\mu_\psi \longrightarrow \int_{\sigma(A)} fg \, d\mu_\psi = Q_{fg}(\psi) = \left< \psi, (fg)(A)\psi \right>.
+$$
+
+On the other hand, as each $$g_i$$ is in $$\mathcal{F}_2$$ we have $$(fg_i)(A) = f(A)g_i(A)$$, and thus
+
+$$
+    \left< \psi, (fg_i)(A)\psi \right> = \left< \psi, f(A)g_i(A)\psi \right> = \left< f(A)^*\psi, g_i(A)\psi \right>,
+$$
+
+where $$f(A)^*$$ is the adjoint of the bounded operator $$f(A)$$. Recall we established above that for any bounded, Borel-measurable, complex-valued function $$h$$ the sesquilinear form $$L_h$$ associated to $$Q_h$$ satisfies $$L_h(\phi, \psi) = \left< \phi, h(A)\psi \right>$$, and that the map $$h \mapsto L_h(\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\phi, \psi \in \mathbf{H}$$. Applying this with $$\phi = f(A)^*\psi$$ to the uniformly bounded sequence $$\{ g_i \}_{i \in \mathbb{N}}$$ converging pointwise to $$g$$ gives
+
+$$
+    \left< f(A)^*\psi, g_i(A)\psi \right> = L_{g_i}(f(A)^*\psi, \psi) \longrightarrow L_g(f(A)^*\psi, \psi) = \left< f(A)^*\psi, g(A)\psi \right> = \left< \psi, f(A)g(A)\psi \right>.
+$$
+
+As a sequence in $$\mathbb{C}$$ has at most one limit, the two computations give
+
+$$
+    \left< \psi, (fg)(A)\psi \right> = \left< \psi, f(A)g(A)\psi \right>
+$$
+
+for all $$\psi \in \mathbf{H}$$. Both $$(fg)(A)$$ and $$f(A)g(A)$$ are elements of $$\mathcal{B}(\mathbf{H})$$, so by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63) applied to the bounded quadratic form $$Q_{fg}$$ we conclude
+
+$$
+    (fg)(A) = f(A)g(A).
+$$
+
+As $$f$$ was arbitrary, $$g \in \mathcal{F}_2$$, and thus $$\mathcal{F}_2$$ is closed under pointwise limits of uniformly bounded sequences.
+
+As $$\sigma(A)$$ is a compact metric measurable space and $$\mathcal{F}_2$$ (1) is a vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under uniformly bounded pointwise limits, we can apply [**Lemma**](#lmm:hall-prblm-8.3.3c) to conclude that $$\mathcal{F}_2$$ consists of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$. This is none other than the desired result
 
 $$
     (fg)(A) = f(A)g(A)
