@@ -4244,7 +4244,7 @@ Next let us prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{
 
 By definition $$\mathcal{F}$$ is a subset of the set of bounded, Borel-measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, where $$A$$ is self-adjoint. So, let us first prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of this set of bounded, Borel-measurable, complex-valued functions.
 
-Recall that as $$A$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R} \subset \mathbb{C}$$. In addition, [**Proposition**](#def:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) then implies that $$\sigma(A)$$ is compact. Finally, the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded.
+Recall that as $$A$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R} \subset \mathbb{C}$$. In addition, [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) then implies that $$\sigma(A)$$ is compact. Finally, the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded.
 
 As $$C^0(\sigma(A); \mathbb{R})$$ is continuous, for any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ the pre-image of any open set in $$\mathbb{R}$$ is open in $$\sigma(A)$$. As $$\mathbb{R} \subset \mathbb{C}$$ has the subset topology, for any $$f$$ in $$C^0(\sigma(A); \mathbb{R})$$ the pre-image of any open set in $$\mathbb{C}$$ is open in $$\sigma(A)$$. Hence, any element of $$C^0(\sigma(A); \mathbb{R})$$ is Borel-measurable when considered as a complex-valued function on the spectrum $$\sigma(A)$$ of $$A$$.
 
@@ -6233,6 +6233,20 @@ Also recall that any complex-valued polynomial $$p$$ on $$\sigma(A)$$ is continu
 Finally, note that as $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is continuous and the $$\sigma$$-algebra on $$\sigma(A)$$ is the Borel $$\sigma$$-algebra, it follows that any element of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is measurable.
 
 Hence, elements of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ are bounded, measurable, complex-valued functions on $$\sigma(A)$$. Thus, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is in the domain of the $$I_{\mu^A}$$ and $$I_{\nu^A}$$.
+
+Furthermore, Property 2 of the [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) implies that for any bounded, measurable, complex-valued function $$f$$ on $$\sigma(A)$$
+
+$$
+    \left\| \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) \right\| \le \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,
+$$
+
+and similarly with $$\mu^A$$ replaced by $$\nu^A$$. Applying this to an arbitrary $$p$$ in $$\mathcal{P}(\sigma(A); \mathbb{C})$$, which we have just shown is bounded and measurable, gives
+
+$$
+    \| I_{\mu^A}(p) \| \le \sup\limits_{\lambda \in \sigma(A)} \lvert p(\lambda) \rvert \equiv \|p\|,
+$$
+
+and similarly $$\| I_{\nu^A}(p) \| \le \|p\|$$, where $$\|p\|$$ denotes the supremum norm of $$p$$. This is none other than the statement that the linear maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$, restricted to $$\mathcal{P}(\sigma(A); \mathbb{C})$$, are bounded using constant $$1$$.
 
 With that established, let us restrict the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ to be $$\mathcal{P}(\sigma(A); \mathbb{C})$$ and only $$\mathcal{P}(\sigma(A); \mathbb{C})$$ while retaining the same notation $$I_{\mu^A}$$ and $$I_{\nu^A}$$. Hopefully this is not too confusing.
 
