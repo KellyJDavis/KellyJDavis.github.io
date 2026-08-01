@@ -4909,6 +4909,7 @@ The next of these "utility" lemmas is the following:
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3b"></a>
 <!--  \uses{lmm:hall-prblm-8.3.3a} -->
+<!--  \uses{thrm:monotone-class-theorem} -->
 > Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Finally let $$\mathcal{L}_1$$ be the set of all measurable sets $$E$$ in $$X$$ such that the indicator function $$1_E$$ belongs to $$\mathcal{F}$$. Then $$\mathcal{L}_1$$ consists of all Borel sets in $$X$$.
 
 **Proof**
@@ -4922,9 +4923,37 @@ Hence, as for any $$E$$ in $$\mathcal{L}_0$$ its indicator function $$1_E$$ is t
 
 Thus for any $$E$$ in $$\mathcal{L}_0$$ it follows that (1) $$E$$ is measurable and (2) $$1_E$$ belongs to $$\mathcal{F}$$. The definition of $$\mathcal{L}_1$$ then implies that $$\mathcal{L}_0$$ is a subset of $$\mathcal{L}_1$$.
 
-We proved in [**Lemma**](#lmm:hall-prblm-8.3.3a) that any open set in $$X$$ is also in $$\mathcal{L}_0$$. There we also proved that $$\mathcal{L}_0$$ is an algebra of sets. This implies via De Morgan's laws that $$\mathcal{L}_0$$ is closed under countable unions, countable intersections, and complements. Hence, $$\mathcal{L}_0$$ contains the set of all sets obtainable from countable unions, countable intersections, and complements of open sets in $$X$$. This is exactly the statement that $$\mathcal{L}_0$$ contains the Borel sets of $$X$$.
+We proved in [**Lemma**](#lmm:hall-prblm-8.3.3a) that any open set in $$X$$ is also in $$\mathcal{L}_0$$, and that $$\mathcal{L}_0$$ is an algebra of sets. We will use these two facts, together with property (3) of $$\mathcal{F}$$, to show that $$\mathcal{L}_1$$ contains all Borel sets of $$X$$.
 
-Hence, we have proven that the Borel sets of $$X$$ are in $$\mathcal{L}_0$$ and $$\mathcal{L}_0$$ is a subset of $$\mathcal{L}_1$$. Thus, $$\mathcal{L}_1$$ contains all Borel sets.
+To this end, let us first prove that $$\mathcal{L}_1$$ is a *monotone class*, i.e. that $$\mathcal{L}_1$$ is closed under countable increasing unions and countable decreasing intersections.
+
+Let $$\{ E_n \}_{n \in \mathbb{N}}$$ be an increasing sequence of sets in $$\mathcal{L}_1$$, i.e. $$E_1 \subseteq E_2 \subseteq \cdots$$ with each $$1_{E_n} \in \mathcal{F}$$, and let $$E \equiv \bigcup_{n \in \mathbb{N}} E_n$$. For any $$x \in X$$, if $$x \in E$$ then $$x \in E_{n_0}$$ for some $$n_0$$, and since the $$E_n$$ are increasing, $$1_{E_n}(x) = 1$$ for all $$n \ge n_0$$; if $$x \notin E$$ then $$1_{E_n}(x) = 0$$ for all $$n$$. Hence $$1_{E_n}(x) \rightarrow 1_E(x)$$ for every $$x \in X$$, i.e. $$1_{E_n} \rightarrow 1_E$$ pointwise. Furthermore this convergence is uniformly bounded, as $$\lvert 1_{E_n}(x) \rvert \le 1$$ for all $$n$$ and $$x$$. As $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits (property (3) of $$\mathcal{F}$$), we conclude $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+
+An entirely analogous argument applies to a decreasing sequence $$\{ E_n \}_{n \in \mathbb{N}}$$ in $$\mathcal{L}_1$$, i.e. $$E_1 \supseteq E_2 \supseteq \cdots$$: with $$E \equiv \bigcap_{n \in \mathbb{N}} E_n$$, one again has $$1_{E_n} \rightarrow 1_E$$ pointwise and uniformly bounded by $$1$$, so property (3) of $$\mathcal{F}$$ gives $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+
+Together these prove that $$\mathcal{L}_1$$ is a monotone class.
+
+With this established, we can apply the [**Monotone Class Theorem**](#thrm:monotone-class-theorem)
+
+> **Theorem** *(Monotone Class Theorem)*
+<a name="thrm:monotone-class-theorem"></a>
+> Let $$\mathcal{A}$$ be an algebra of subsets of a set $$X$$, and let $$\mathcal{M}$$ be a monotone class, i.e. a collection of subsets of $$X$$ closed under countable increasing unions and countable decreasing intersections, such that $$\mathcal{A} \subseteq \mathcal{M}$$. Then $$\sigma(\mathcal{A}) \subseteq \mathcal{M}$$, where $$\sigma(\mathcal{A})$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{A}$$.
+
+Identifying $$\mathcal{A}$$ with $$\mathcal{L}_0$$---an algebra, as established in [**Lemma**](#lmm:hall-prblm-8.3.3a)---and $$\mathcal{M}$$ with $$\mathcal{L}_1$$---a monotone class containing $$\mathcal{L}_0$$, as we just proved---the [**Monotone Class Theorem**](#thrm:monotone-class-theorem) implies
+
+$$
+    \sigma(\mathcal{L}_0) \subseteq \mathcal{L}_1,
+$$
+
+where $$\sigma(\mathcal{L}_0)$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{L}_0$$.
+
+However, as $$\mathcal{L}_0$$ contains all open sets in $$X$$, and the Borel $$\sigma$$-algebra of $$X$$ is by definition the smallest $$\sigma$$-algebra containing all open sets in $$X$$, it follows that the Borel $$\sigma$$-algebra of $$X$$ is contained in $$\sigma(\mathcal{L}_0)$$. Combined with our previous result this gives
+
+$$
+    \text{(Borel sets of } X\text{)} \subseteq \sigma(\mathcal{L}_0) \subseteq \mathcal{L}_1.
+$$
+
+Hence, $$\mathcal{L}_1$$ contains all Borel sets.
 
 To complete this proof we must show that if a set is in $$\mathcal{L}_1$$, then it must be a Borel set. We will prove this using proof by contradiction.
 
