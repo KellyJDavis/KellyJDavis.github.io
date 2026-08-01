@@ -1926,33 +1926,106 @@ $$
     \sup\limits_{\lambda \in X} |f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda)| < \epsilon.
 $$
 
+----
+
 This along with our previous result
 
 $$
     \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| \le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) |
 $$
 
-implies that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
+implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
 
-Combining all of these results together we find
+$$
+    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| < \epsilon.
+$$
+
+In particular, this holds when $$j = i$$: for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i \ge L$$ we have
+
+$$
+    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_i \, d\mu \right) \right\| < \epsilon.
+$$
+
+In other words, the single-indexed sequence of operator-valued integrals of $$s_i r_i$$ converges, in the operator norm, to the operator-valued integral of $$fg$$
+
+$$
+    \int_X s_i r_i \, d\mu \longrightarrow \int_X fg \, d\mu.
+$$
+
+Now recall from our simple function result that for every $$i$$, as $$s_i$$ and $$r_i$$ are both simple functions,
+
+$$
+    \left( \int_X s_i \, d\mu \right) \left( \int_X r_i \, d\mu \right) = \int_X s_i r_i \, d\mu
+$$
+
+exactly, with no limit involved. Combining this exact identity with the convergence just established gives
+
+$$
+    \left( \int_X s_i \, d\mu \right) \left( \int_X r_i \, d\mu \right) \longrightarrow \int_X fg \, d\mu
+$$
+
+as $$i \rightarrow \infty$$.
+
+On the other hand, as we established earlier in this proof,
 
 $$
 \begin{align}
-    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right)
-    &=  \left( \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu \right) \left( \lim\limits_{j \rightarrow \infty} \int_X r_j \, d\mu \right)   \\
-    &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \left( \int_X s_i \, d\mu \right) \left( \int_X r_j \, d\mu \right)   \\
-    &= \lim\limits_{i \rightarrow \infty} \lim\limits_{j \rightarrow \infty}  \int_X s_i r_j \, d\mu   \\
-    &=  \int_X f g \, d\mu.
+    \int_X s_i \, d\mu &\rightarrow \int_X f \, d\mu \\
+    \int_X r_i \, d\mu &\rightarrow \int_X g \, d\mu
 \end{align}
 $$
 
-This leads to the desired result
+in the operator norm. Operator multiplication is jointly continuous with respect to the operator norm: for any $$X_i \rightarrow X$$ and $$Y_i \rightarrow Y$$ in $$\mathcal{B}(\mathbf{H})$$, submultiplicativity gives
 
 $$
-    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right) = \int_X f g \, d\mu
+\begin{align}
+    \left\| X_iY_i - XY \right\| &=   \left\| X_i(Y_i - Y) + (X_i - X)Y \right\| \\
+                                 &\le \left\| X_i \right\| \left\| Y_i - Y \right\| + \left\| X_i - X \right\| \left\| Y \right\| \longrightarrow 0,
+\end{align}
 $$
 
-for bounded, measurable, complex-valued functions $$f$$ and $$g$$.
+where we have used that $$\{ \|X_i\| \}_{i \in \mathbb{N}}$$ is bounded, being a convergent sequence of real numbers. Applying this with
+
+$$
+\begin{align}
+    X_i = \int_X s_i \, d\mu &\qquad \qquad X   = \int_X f \, d\mu \\
+    Y_i = \int_X r_i \, d\mu &\qquad \qquad Y   = \int_X g \, d\mu
+\end{align}
+$$
+
+gives
+
+$$
+    \left( \int_X s_i \, d\mu \right) \left( \int_X r_i \, d\mu \right) \longrightarrow \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right)
+$$
+
+as $$i \rightarrow \infty$$.
+
+We have thus shown that the single sequence
+
+$$
+    \left\{ \left( \int_X s_i \, d\mu \right) \left( \int_X r_i \, d\mu \right) \right\}_{i \in \mathbb{N}}
+$$
+
+converges, in the operator norm, to both
+
+$$
+    \int_X fg \, d\mu
+$$
+
+and
+
+$$
+    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
+$$
+
+As limits in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm are unique, this implies
+
+$$
+    \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right) = \int_X fg \, d\mu,
+$$
+
+the desired result of **Property 3**, integration is multiplicative for bounded, measurable, complex-valued functions $$f$$ and $$g$$.
 
 **Property 4:** Finally we must prove that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 
