@@ -5152,6 +5152,7 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{thrm:boundedness-theorem} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, then
 > 
 > $$
@@ -5293,13 +5294,57 @@ $$
     Q_{fg}(\psi) = L_f(\psi, g(A)\psi)
 $$
 
-for all $$\psi \in \mathbf{H}$$ and $$g \in C^0(\sigma(A); \mathbb{R})$$. As we proved $$f \mapsto L_f(\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence, this equation---which implies
+for all $$\psi \in \mathbf{H}$$, all $$f \in \mathcal{F}_1$$, and all $$g \in C^0(\sigma(A); \mathbb{R})$$.
+
+With this identity in hand let us now prove that $$\mathcal{F}_1$$ is closed under pointwise limits of uniformly bounded sequences.
+
+To this end let $$\{ f_i \}_{i \in \mathbb{N}}$$ be a sequence in $$\mathcal{F}_1$$, uniformly bounded by some $$M \in \mathbb{R}$$, that converges pointwise to a function $$f$$ on $$\sigma(A)$$. By [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions), $$f$$ is itself a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$, and so is a candidate for membership in $$\mathcal{F}_1$$. Let $$g \in C^0(\sigma(A); \mathbb{R})$$ and $$\psi \in \mathbf{H}$$ be arbitrary.
+
+As each $$f_i$$ belongs to $$\mathcal{F}_1$$, the identity established above gives
 
 $$
-    (fg)(A) = f(A)g(A)
+    Q_{f_i g}(\psi) = L_{f_i}(\psi, g(A)\psi)
 $$
 
-holds---implies that $$\mathcal{F}_1$$ is closed under uniformly bounded pointwise limits.
+for every $$i \in \mathbb{N}$$. We now take the limit $$i \rightarrow \infty$$ of each side separately.
+
+For the lefthand side, note first that as $$\sigma(A)$$ is compact and $$g$$ is continuous, the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies $$g$$ is bounded, say by $$M_g \in \mathbb{R}$$. As $$f_i \rightarrow f$$ pointwise we have $$f_i g \rightarrow fg$$ pointwise, and
+
+$$
+    \lvert f_i(\lambda) g(\lambda) \rvert \le M M_g
+$$
+
+for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, so the sequence $$\{ f_i g \}_{i \in \mathbb{N}}$$ is uniformly bounded. Hence, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem), applied to the finite measure $$\mu_\psi$$, gives
+
+$$
+    Q_{f_i g}(\psi) = \int_{\sigma(A)} f_i g \, d\mu_\psi \longrightarrow \int_{\sigma(A)} fg \, d\mu_\psi = Q_{fg}(\psi).
+$$
+
+For the righthand side, recall we proved above that the map $$h \mapsto L_h(\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\phi, \psi \in \mathbf{H}$$. Applying this to the uniformly bounded sequence $$\{ f_i \}_{i \in \mathbb{N}}$$ converging pointwise to $$f$$, with the fixed vectors $$\psi$$ and $$g(A)\psi$$, gives
+
+$$
+    L_{f_i}(\psi, g(A)\psi) \longrightarrow L_f(\psi, g(A)\psi).
+$$
+
+As a sequence in $$\mathbb{C}$$ has at most one limit, these two computations give
+
+$$
+    Q_{fg}(\psi) = L_f(\psi, g(A)\psi).
+$$
+
+Now, by [**Definition**](#def:hall-8.8) the lefthand side satisfies $$Q_{fg}(\psi) = \left< \psi, (fg)(A)\psi \right>$$, while the righthand side satisfies $$L_f(\psi, g(A)\psi) = \left< \psi, f(A)g(A)\psi \right>$$ by the expression for $$L_f$$ obtained above. Hence,
+
+$$
+    \left< \psi, (fg)(A)\psi \right> = \left< \psi, f(A)g(A)\psi \right>
+$$
+
+for all $$\psi \in \mathbf{H}$$. As both $$(fg)(A)$$ and $$f(A)g(A)$$ are elements of $$\mathcal{B}(\mathbf{H})$$, the uniqueness clause of [**Proposition**](#prpstn:hall-a.63), applied to the bounded quadratic form $$Q_{fg}$$, implies
+
+$$
+    (fg)(A) = f(A)g(A).
+$$
+
+As $$g$$ was an arbitrary element of $$C^0(\sigma(A); \mathbb{R})$$, this is precisely the statement that $$f \in \mathcal{F}_1$$. Thus $$\mathcal{F}_1$$ is closed under pointwise limits of uniformly bounded sequences.
 
 As $$\sigma(A)$$ is a compact metric measurable space and $$\mathcal{F}_1$$ (1) is a vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under uniformly bounded pointwise limits, we can apply [**Lemma**](#lmm:hall-prblm-8.3.3c) to conclude that $$\mathcal{F}_1$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
 
