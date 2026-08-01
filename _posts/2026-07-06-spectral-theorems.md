@@ -1065,13 +1065,13 @@ $$
 Hence, for any $$\psi \in \mathbf{H}$$
 
 $$
-    \left< B(\alpha_1 \phi_1 + \alpha_2 \phi_1), \psi \right> = \overline{\alpha_1} \left< B\phi_1, \psi \right> + \overline{\alpha_2}  \left< B\phi_2, \psi \right> = \left< \alpha_1 B\phi_1 + \alpha_2 B\phi_2, \psi \right>
+    \left< B(\alpha_1 \phi_1 + \alpha_2 \phi_2), \psi \right> = \overline{\alpha_1} \left< B\phi_1, \psi \right> + \overline{\alpha_2}  \left< B\phi_2, \psi \right> = \left< \alpha_1 B\phi_1 + \alpha_2 B\phi_2, \psi \right>
 $$
 
 where the final equality uses the fact that the inner product is conjugate-linear in its first argument. As this is true for any $$\psi \in \mathbf{H}$$ it implies
 
 $$
-    B(\alpha_1 \phi_1 + \alpha_2 \phi_1) =  \alpha_1 B\phi_1 + \alpha_2 B\phi_2,
+    B(\alpha_1 \phi_1 + \alpha_2 \phi_2) =  \alpha_1 B\phi_1 + \alpha_2 B\phi_2,
 $$
 
 which is none other than the statement of linearity.
@@ -4828,6 +4828,49 @@ for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof
 
 We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as it's the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
 
+The next of these "utility" lemmas is the following:
+
+> **Lemma**
+<a name="lmm:hall-prblm-8.3.3b"></a>
+<!--  \uses{lmm:hall-prblm-8.3.3a} -->
+<!--  \uses{thrm:monotone-class-theorem} -->
+> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Finally let $$\mathcal{L}_1$$ be the set of all measurable sets $$E$$ in $$X$$ such that the indicator function $$1_E$$ belongs to $$\mathcal{F}$$. Then $$\mathcal{L}_1$$ contains all Borel sets in $$X$$.
+
+**Proof**
+By definition $$\mathcal{L}_0$$ of [**Lemma**](#lmm:hall-prblm-8.3.3a) is the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous, real-valued functions.
+
+Let us first prove that $$\mathcal{L}_0 \subseteq \mathcal{L}_1$$. Consider any $$E$$ in $$\mathcal{L}_0$$. Then there exists a sequence $$\{ f_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$, uniformly bounded, that converges pointwise to $$1_E$$. By hypothesis $$C^0(X; \mathbb{R})$$ is a subset of $$\mathcal{F}$$, so each $$f_n$$ is in $$\mathcal{F}$$. By hypothesis $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences, so $$1_E$$, being such a limit, is in $$\mathcal{F}$$. Hence $$E$$ is in $$\mathcal{L}_1$$, the desired result $$\mathcal{L}_0 \subseteq \mathcal{L}_1$$.
+
+Next let us prove that $$\mathcal{L}_1$$ is a monotone class, i.e. that $$\mathcal{L}_1$$ is closed under countable increasing unions and countable decreasing intersections.
+
+Let $$\{ E_n \}_{n \in \mathbb{N}}$$ be an increasing sequence of sets in $$\mathcal{L}_1$$, i.e. $$E_1 \subseteq E_2 \subseteq \cdots$$ with each $$1_{E_n} \in \mathcal{F}$$, and let $$E \equiv \bigcup_{n \in \mathbb{N}} E_n$$. For any $$x \in X$$, if $$x \in E$$ then $$x \in E_{n_0}$$ for some $$n_0$$, and since the $$E_n$$ are increasing, $$1_{E_n}(x) = 1$$ for all $$n \ge n_0$$; if $$x \notin E$$ then $$1_{E_n}(x) = 0$$ for all $$n$$. Hence $$1_{E_n}(x) \rightarrow 1_E(x)$$ for every $$x \in X$$, i.e. $$1_{E_n} \rightarrow 1_E$$ pointwise. Furthermore this convergence is uniformly bounded, as $$\lvert 1_{E_n}(x) \rvert \le 1$$ for all $$n$$ and $$x$$. As $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits (property (3) of $$\mathcal{F}$$), we conclude $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+
+An entirely analogous argument applies to a decreasing sequence $$\{ E_n \}_{n \in \mathbb{N}}$$ in $$\mathcal{L}_1$$, i.e. $$E_1 \supseteq E_2 \supseteq \cdots$$: with $$E \equiv \bigcap_{n \in \mathbb{N}} E_n$$, one again has $$1_{E_n} \rightarrow 1_E$$ pointwise and uniformly bounded by $$1$$, so property (3) of $$\mathcal{F}$$ gives $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+
+Together these prove that $$\mathcal{L}_1$$ is a monotone class.
+
+With this established, we can apply the [**Monotone Class Theorem**](#thrm:monotone-class-theorem)
+
+> **Theorem** *(Monotone Class Theorem)*
+<a name="thrm:monotone-class-theorem"></a>
+> Let $$\mathcal{A}$$ be an algebra of subsets of a set $$X$$, and let $$\mathcal{M}$$ be a monotone class, i.e. a collection of subsets of $$X$$ closed under countable increasing unions and countable decreasing intersections, such that $$\mathcal{A} \subseteq \mathcal{M}$$. Then $$\sigma(\mathcal{A}) \subseteq \mathcal{M}$$, where $$\sigma(\mathcal{A})$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{A}$$.
+
+Identifying $$\mathcal{A}$$ with $$\mathcal{L}_0$$---an algebra, as established in [**Lemma**](#lmm:hall-prblm-8.3.3a)---and $$\mathcal{M}$$ with $$\mathcal{L}_1$$---a monotone class containing $$\mathcal{L}_0$$, as we just proved---the [**Monotone Class Theorem**](#thrm:monotone-class-theorem) implies
+
+$$
+    \sigma(\mathcal{L}_0) \subseteq \mathcal{L}_1,
+$$
+
+where $$\sigma(\mathcal{L}_0)$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{L}_0$$.
+
+However, as $$\mathcal{L}_0$$ contains all open sets in $$X$$ ([**Lemma**](#lmm:hall-prblm-8.3.3a)), and the Borel $$\sigma$$-algebra of $$X$$ is by definition the smallest $$\sigma$$-algebra containing all open sets in $$X$$, it follows that the Borel $$\sigma$$-algebra of $$X$$ is contained in $$\sigma(\mathcal{L}_0)$$. Combined with our previous result this gives
+
+$$
+    \text{(Borel sets of } X\text{)} \subseteq \sigma(\mathcal{L}_0) \subseteq \mathcal{L}_1.
+$$
+
+Hence, $$\mathcal{L}_1$$ contains all Borel sets, the desired result.$$\blacksquare$$
+
 Before proving the final of these "utility" lemmas, we isolate the following elementary fact about pointwise limits of Borel-measurable functions, which we will have need of shortly.
 
 > **Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*
@@ -4983,8 +5026,9 @@ The final of these "utility" lemmas is the following:
 
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3c"></a>
-<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
+<!--  \uses{lmm:hall-prblm-8.3.3b} -->
 <!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 > Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Then $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$X$$.
 
 **Proof**
@@ -4996,15 +5040,33 @@ For any $$f \in \mathcal{F}$$, the definition of $$\mathcal{F}$$ implies that $$
 
 Let us now prove that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
-The set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ are bounded, measurable, complex-valued and (1) form a complex vector space and (2) contain $$C^0(X; \mathbb{R})$$.
+By [**Lemma**](#lmm:hall-prblm-8.3.3b), the set $$\mathcal{L}_1 \equiv \{ E \subseteq X \text{ measurable} : 1_E \in \mathcal{F} \}$$ contains all Borel sets of $$X$$. As noted above, on $$X$$ "measurable" and "Borel-measurable" coincide; hence every measurable set of $$X$$ is a Borel set, and so for any measurable set $$E$$ of $$X$$, $$1_E \in \mathcal{F}$$.
 
-Explicitly, the fact (1) that they form a complex vector space is relatively clear. The addition of bounded, Borel-measurable, complex-valued functions with complex-valued coefficients results in bounded, Borel-measurable, complex-valued functions.
+Consider now an arbitrary simple function $$s$$ on $$X$$, i.e.
 
-The fact (2) that they contain $$C^0(X; \mathbb{R})$$ follows from the fact that $$X$$ is by hypothesis compact, thus a generalization of the [**Boundedness Theorem**](#thrm:boundedness-theorem) implies that elements of $$C^0(X; \mathbb{R})$$ are bounded. In addition, as $$X$$ is a metric measurable space it implies its measure is Borel, thus continuous functions are Borel-measurable, thus any element of $$C^0(X; \mathbb{R})$$ is Borel-measurable. And obviously $$C^0(X; \mathbb{R})$$ can be viewed as complex-valued functions.
+$$
+    s = \sum_{i = 1}^n \alpha_i 1_{E_i},
+$$
 
-What remains is to prove that this set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
+where $$\alpha_i \in \mathbb{C}$$ and the $$E_i$$ are pairwise disjoint measurable sets of $$X$$. By the previous paragraph, each $$1_{E_i}$$ is in $$\mathcal{F}$$. As $$\mathcal{F}$$ is by hypothesis a complex vector space, it is closed under finite linear combinations, so $$s \in \mathcal{F}$$. Hence every simple function on $$X$$ is in $$\mathcal{F}$$.
 
-This is precisely the content of [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions): if $$\{ f_i \}_{i \in \mathbb{N}}$$ is a uniformly bounded sequence of bounded, Borel-measurable, complex-valued functions on $$X$$ that converges pointwise to some $$f : X \rightarrow \mathbb{C}$$, that lemma directly establishes that $$f$$ is bounded and Borel-measurable, i.e. that $$f$$ is again a member of the set of bounded, Borel-measurable, complex-valued functions on $$X$$. Thus, the set of bounded, Borel-measurable, complex-valued functions $$f$$ on $$X$$ is closed under pointwise limits of uniformly bounded sequences.
+Now consider our arbitrary bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$. By the [**Complex-Valued Simple Approximation Theorem**](#thrm:complex-valued-simple-approximation-theorem), there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ of complex-valued simple functions on $$X$$ that converges uniformly to $$f$$ on $$X$$. By the previous paragraph, each $$s_i$$ is in $$\mathcal{F}$$.
+
+We claim the $$s_i$$ are uniformly bounded. As $$f$$ is bounded, there exists $$M_f \in \mathbb{R}$$ such that $$\lvert f(x) \rvert \le M_f$$ for all $$x \in X$$. As $$s_i \rightarrow f$$ uniformly, there exists $$N \in \mathbb{N}$$ such that for all $$i \ge N$$ and all $$x \in X$$
+
+$$
+    \lvert s_i(x) - f(x) \rvert < 1,
+$$
+
+so that $$\lvert s_i(x) \rvert < M_f + 1$$ for all $$i \ge N$$ and all $$x \in X$$. Each of the finitely many remaining $$s_1, \ldots, s_{N-1}$$ is individually a simple function, hence bounded. Setting
+
+$$
+    M \equiv \max \left\{ \sup_{x \in X} \lvert s_1(x) \rvert, \ldots, \sup_{x \in X} \lvert s_{N-1}(x) \rvert, M_f + 1 \right\},
+$$
+
+we have $$\lvert s_i(x) \rvert \le M$$ for all $$i \in \mathbb{N}$$ and all $$x \in X$$, i.e. the $$s_i$$ are uniformly bounded.
+
+As $$s_i \rightarrow f$$ uniformly, in particular $$s_i \rightarrow f$$ pointwise. Thus $$\{ s_i \}_{i \in \mathbb{N}}$$ is a uniformly bounded sequence in $$\mathcal{F}$$ that converges pointwise to $$f$$. As $$\mathcal{F}$$ is by hypothesis closed under pointwise limits of uniformly bounded sequences, $$f \in \mathcal{F}$$.
 
 Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
 
