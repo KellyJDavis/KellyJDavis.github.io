@@ -2884,13 +2884,15 @@ which converges for $$R(A) < \lvert \lambda \rvert$$. This completes the proof o
 
 Next let us (4) conclude that a contradiction arises if $$R(A) < \|A\|$$, and thus $$R(A) = \|A\|$$.
 
-The unique Laurent series from Part 3 converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$ such that for any natural number $$m$$
+Recall we already established in [**Corollary**](#crllr:crllr-1) that $$R(A) \le \|A\|$$. We will now establish that $$R(A) = \|A\|$$ using proof by contradiction.
+
+Let us for the moment assume that $$R(A) < \|A\|$$. Then it is possible to select a $$\lambda$$ such that $$R(A) < \lvert \lambda \rvert < \|A\|$$. Let us fix this $$\lambda$$ for the remainder of the proof.
+
+The unique Laurent series from Part 3, evaluated at this fixed $$\lambda$$, converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$---which may depend on $$\xi$$ and on our now-fixed $$\lambda$$---such that for any natural number $$m$$
 
 $$
-    \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi
+    \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi.
 $$
-
-for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$.
 
 Now, as we established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space), $$\mathcal{B}(\mathbf{H})$$ forms a Banach space under the operator norm. Recalling the [**Theorem on Completeness of the Dual**](#thrm:theorem-on-completeness-of-the-dual)
 
@@ -2905,17 +2907,17 @@ As both $$\mathcal{B}(\mathbf{H})$$ and $$\mathcal{B}(\mathbf{H})^*$$ are Banach
 > **Theorem** *(Principle of Uniform Boundedness)*
 <a name="thrm:hall-a.40"></a>
 > Suppose $$\{ T_m \}$$ is any family of bounded linear maps from a Banach space $$V_1$$ to a normed space $$V_2$$. Suppose that for each $$\xi \in V_1$$, there is a real constant $$C_\xi$$ such that
->
+> 
 > $$
 >     \| T_m \xi \| \le C_\xi
 > $$
->
+> 
 > for all $$m$$. Then there exists a real constant $$C$$ such that for all $$m$$
->
+> 
 > $$
 >     \|T_m\| \le C,
 > $$
->
+> 
 > where $$\|T_m\|$$ is the operator norm of $$T_m$$.
 
 by identifying $$V_1$$ with $$\mathcal{B}(\mathbf{H})^*$$, $$V_2$$ with $$\mathbb{C}$$, the operators $$\{ T_m \}$$ with the operators
@@ -2924,19 +2926,19 @@ $$
     \left\{ \frac{A^m}{\lambda^{m + 1}} \right\},
 $$
 
-and the bounds we derived previously
+evaluated at our fixed $$\lambda$$, and the bounds we derived previously
 
 $$
     \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi
 $$
 
-with those in this theorem. Doing so we find that there exists a real number $$C$$ such that for all natural numbers $$m$$
+with those in this theorem. Doing so we find that there exists a real number $$C$$---which may depend on our fixed $$\lambda$$---such that for all natural numbers $$m$$
 
 $$
-    \left\| \frac{A^m}{\lambda^{m + 1}} \right\| \le C
+    \left\| \frac{A^m}{\lambda^{m + 1}} \right\| \le C,
 $$
 
-for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$, where here the operator norm is used.
+where here the operator norm is used.
 
 Now, as one will recall, in Part 2 of this proof we established that for any natural number $$n$$
 
@@ -2944,17 +2946,13 @@ $$
     \left\| A^{2^n} \right\| = \left\| A \right\|^{2^n}.
 $$
 
-Applying this to the bound we just derived gives
+Applying this to the bound we just derived, at our fixed $$\lambda$$, gives
 
 $$
-    \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\| = \frac{\left\| A^{2^n} \right\|}{\left| \lambda \right|^{2^n + 1}} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C
+    \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\| = \frac{\left\| A^{2^n} \right\|}{\left| \lambda \right|^{2^n + 1}} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C.
 $$
 
-for all complex $$\lambda$$ that satisfy $$R(A) < \lvert \lambda \rvert$$.
-
-Recall we already established in [**Corollary**](#crllr:crllr-1) that $$R(A) \le \|A\|$$. We will now establish that $$R(A) = \|A\|$$ using proof by contradiction.
-
-Let us for the moment assume that $$R(A) < \|A\|$$, then it is possible to select a $$\lambda$$ such that $$R(A) < \lvert \lambda \rvert < \|A\|$$. This implies that
+Now, as $$R(A) < \lvert \lambda \rvert < \|A\|$$, we have
 
 $$
     1 < \frac{\|A\|}{\lvert \lambda \rvert}.
@@ -4254,8 +4252,6 @@ $$
 for all $$\lambda \in \sigma(A)$$. In other words this proves that $$f$$ is bounded.
 
 Next let us prove that $$f$$ is Borel-measurable.
-
-----
 
 As $$\{ f_i \}_{i \in \mathbb{N}}$$ converges to $$f$$ pointwise, and as taking real and imaginary parts is continuous, the real-valued sequences $$\{ \text{Re}(f_i) \}_{i \in \mathbb{N}}$$ and $$\{ \text{Im}(f_i) \}_{i \in \mathbb{N}}$$ converge pointwise to $$\text{Re}(f)$$ and $$\text{Im}(f)$$ respectively. Explicitly, for any $$\lambda \in \sigma(A)$$,
 
