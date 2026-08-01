@@ -2221,6 +2221,7 @@ The next "utility" lemma we must prove is the following
 <!--  \uses{def:bounded-inverse} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{lmm:lemma-2} -->
+<!--  \uses{prpstn:hall-a.34} -->
 > Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse is given by the following series
 >
 > $$
@@ -2262,7 +2263,7 @@ $$
     0 \le \sum\limits_{m \in \mathbb{N}} \|X^m\| \le \sum\limits_{m \in \mathbb{N}} \|X\|^m < \infty.
 $$
 
-Finally, recalling the fact established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) that $$\mathcal{B}(\mathbf{H})$$ is a Banach space with respect to the operator norm, one can use the following proposition to
+Finally, recalling the fact established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) that $$\mathcal{B}(\mathbf{H})$$ is a Banach space with respect to the operator norm, one can use the [**Proposition**](#prpstn:hall-a.34)
 
 > **Proposition**
 <a name="prpstn:hall-a.34"></a>
@@ -2280,7 +2281,7 @@ Finally, recalling the fact established in [**Lemma** *(Bounded Operators form a
 >
 > converges in $$V$$.
 
-conclude that the series $$\{X^m\}_{m \in \mathbb{N}}$$ converges in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. In other words the series
+to conclude that the series $$\{X^m\}_{m \in \mathbb{N}}$$ converges in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. In other words the series
 
 $$
     \mathbf{1} + X + X^2 + X^3 + \cdots
@@ -5666,7 +5667,7 @@ With this result as motivation, let us prove the following "utility" lemma
 > **Lemma**
 <a name="lmm:lemma-4"></a>
 <!--  \uses{def:bounded-orthogonal-projection} -->
-<!--  \uses{thrm:monotone-convergence-theorem-nonincreasing} -->
+<!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:bounded-operators-are-continuous} -->
 > Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be a set of bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ that satisfy $$P_iP_j = 0$$ for $$i \neq j$$. Then for all $$\psi \in \mathbf{H}$$ the sequence of partial sums
