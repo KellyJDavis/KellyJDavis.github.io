@@ -1053,7 +1053,7 @@ $$
 for any $$\psi \in \mathbf{H}$$. Similarly, for any $$\alpha_1, \alpha_2 \in \mathbb{C}$$ we have by definition
 
 $$
-    L(\alpha_1 \phi_1 + \alpha_2 \phi_1 , \psi) = \left< B(\alpha_1 \phi_1 + \alpha_2 \phi_1), \psi \right>.
+    L(\alpha_1 \phi_1 + \alpha_2 \phi_2 , \psi) = \left< B(\alpha_1 \phi_1 + \alpha_2 \phi_2), \psi \right>.
 $$
 
 As $$L$$ is a sesquilinear form and thus conjugate-linear in its first argument
@@ -2522,7 +2522,7 @@ As a result of the fact that $$\{ \phi_i \}_{i \in \mathbb{N}}$$ converges to $$
 Hence, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
 
 $$
-    \| (A - \lambda \mathbf{1}) \psi_j - (A - \lambda \mathbf{1}) \psi_i \| < \epsilon b.
+    \| (A - \lambda \mathbf{1}) \psi_j - (A - \lambda \mathbf{1}) \psi_i \| < \epsilon \lvert b \rvert.
 $$
 
 As a result of the previous inequality involving $$b^2$$ this, along with the definition of the norm on $$\mathbf{H}$$, implies that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
@@ -3460,6 +3460,7 @@ as well as the following lemma
 <a name="lmm:hall-prblm-7.4.8"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{lmm:lemma-2} -->
+<!--  \uses{lmm:hall-7.6} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is invertible in $$\mathcal{B}(\mathbf{H})$$, then there exists an $$\epsilon > 0$$ such that for all $$B \in \mathcal{B}(\mathbf{H})$$ that satisfy
 > 
 > $$
@@ -3480,7 +3481,7 @@ $$
 
 where the final equation follows from factoring out a common $$A$$ at the expense of introducing $$A^{-1}$$.
 
-Now, as a result of [**Lemma**](#lmm:lemma-2), if
+Now, as a result of [**Lemma**](#lmm:hall-7.6), if
 
 $$
     \|A^{-1}(A - B)\| < 1,
@@ -4297,7 +4298,7 @@ $$
 With this in mind, let us define
 
 $$
-    g_i(\lambda) \equiv \sup\limits_{n \ge i} f_n(\lambda).
+    g_i(\lambda) \equiv \sup\limits_{n \ge i} f_n(\lambda) \\
 $$
 
 We thus have
@@ -4534,10 +4535,10 @@ and that $$f$$ is bounded. Together these imply
 $$
 \begin{align}
     \lvert Q_f(\phi) \rvert &=   \left| \int_{\sigma(A)} f(\lambda) \, d\mu_\phi(\lambda) \right| \\
-                            &\le \left| \int_{\sigma(A)} \left( \sup\limits_{\lambda' \in \sigma(A)} f(\lambda') \right) \, d\mu_\phi(\lambda) \right| \\
-                            &=   \left| \sup\limits_{\lambda' \in \sigma(A)} f(\lambda') \right| \, \left| \int_{\sigma(A)} d\mu_\phi(\lambda) \right| \\
-                            &=   \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \, \left| \|\phi\|^2 \right| \\
-                            &=   \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \, \|\phi\|^2, 
+                            &\le \int_{\sigma(A)} \left| f(\lambda) \right| \, d\mu_\phi(\lambda) \\
+                            &\le \int_{\sigma(A)} \left( \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \right) \, d\mu_\phi(\lambda) \\
+                            &=   \left( \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \right) \int_{\sigma(A)} \, d\mu_\phi(\lambda) \\
+                            &=   \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \|\phi\|^2 \\
 \end{align}
 $$
 
@@ -5212,6 +5213,9 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
 <!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{prpstn:hall-a.63} -->
 > Suppose $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint. For any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, define the operator $$\mu^A(E)$$ by
 > 
 > $$
@@ -5835,7 +5839,64 @@ $$
 
 In particular, as we have proven several times now, $$\sigma(A)$$ is compact as a result of [**Proposition**](#prpstn:hall-7.5) and [**Heine–Borel Theorem**](#thrm:heine–borel-theorem), thus the function $$f(\lambda) = \lambda$$ on $$\sigma(A)$$ is a bounded and obviously Borel-measurable function on $$\sigma(A)$$. Hence, we can apply the map above to $$f(\lambda) = \lambda$$.
 
-By construction the integral of $$f(\lambda) = \lambda$$ against $$\mu^A$$ agrees with the $$f(A)$$ of [**Definition**](#def:hall-8.8). As $$f(\lambda) = \lambda$$ is continuous, as we have previously proven, its $$f(A)$$ from [**Definition**](#def:hall-8.8) agrees with its $$f(A)$$ from [**Proposition**](#prpstn:hall-8.3). As a result of [**Proposition**](#prpstn:hall-8.3) and the fact that $$f(\lambda) = \lambda$$ is a polynomial we have that this $$f(A)$$ is given by $$f(A) = A$$.
+We claim that the integral of $$f(\lambda) = \lambda$$ against $$\mu^A$$ agrees with the $$f(A)$$ of [**Definition**](#def:hall-8.8). Proving this explicitly follows from (1) proving that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree, (2) proving that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$, (3) proving that for continuous $$f$$ the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$f(A)$$ of [**Definition**](#def:hall-8.3), and (4) finally specializing to the continuous function $$f(\lambda) = \lambda$$ for the final result.
+
+To (1) prove that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree we can unroll definitions. For any measurable $$E$$ on $$\sigma(A)$$ we have
+
+$$
+\begin{align}
+    \mu^A_\psi(E) &\equiv \left< \psi, \mu^A(E) \psi \right> \\
+                  &=      \left< \psi, 1_E(A) \psi \right> \\
+                  &=      Q_{1_E}(\psi) \\
+                  &=      \int_{\sigma(A)} 1_E(\lambda) \, d\mu_\psi(\lambda) \\
+                  &=      \mu_\psi(E),
+\end{align}
+$$
+
+where the first equality follows from the definition of $$\mu^A_\psi$$ in [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure), the second from the definition of the operator $$\mu^A(E)$$, the third from the characterization of $$1_E(A)$$ in [**Definition**](#def:hall-8.8), and the fourth from the [**Definition**](#def:hall-8.6) of $$Q_{1_E}(\psi)$$. This implies
+
+$$
+    \mu^A_\psi(E) = \mu_\psi(E)
+$$
+
+which, as $$E$$ is arbitrary, is none other than the statement that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree.
+
+Next let us (2) prove that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$. For any bounded, Borel-measurable, complex-valued function $$f$$ on $$\sigma(A)$$ as a result of [**Definition**](#def:hall-8.8) and [**Definition**](#def:hall-8.6) we have
+
+$$
+    \left< \psi, f(A) \psi \right> = Q_f(\psi) = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) 
+$$
+
+for any $$\psi$$ in $$\mathbf{H}$$. Also, as a result of the defining property of a projection-valued measure $$\mu^A$$, we have
+
+$$
+    \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) \right) \psi \right> = \int_{\sigma(A)} f(\lambda) \, d\mu^A_\psi(\lambda)
+$$
+
+from [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration). However, we just proved the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree. Thus
+
+$$
+    \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) = \int_{\sigma(A)} f(\lambda) \, d\mu^A_\psi(\lambda).
+$$ 
+
+From our previous equations, this implies that the operators
+
+$$
+    f(A) \quad \text{and} \quad \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda)
+$$
+
+both represent the same bounded quadratic form $$Q_f$$. However,by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63) the operator representing a given bounded quadratic form $$Q_f$$ is unique. Thus
+
+$$
+    f(A) = \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda).
+$$
+
+Next we want to (3) prove that for continuous $$f$$ the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$f(A)$$ of [**Definition**](#def:hall-8.3).
+
+
+-----
+
+As $$f(\lambda) = \lambda$$ is continuous, as we have previously proven, its $$f(A)$$ from [**Definition**](#def:hall-8.8) agrees with its $$f(A)$$ from [**Proposition**](#prpstn:hall-8.3). As a result of [**Proposition**](#prpstn:hall-8.3) and the fact that $$f(\lambda) = \lambda$$ is a polynomial we have that this $$f(A)$$ is given by $$f(A) = A$$.
 
 So in summary we have proven that
 
