@@ -354,7 +354,7 @@ To streamline the proof of this theorem, we will introduce a few new terms
 
 > **Definition** *((Bounded) Sesquilinear Form)*
 <a name="def:bounded-sesquilinear-form"></a>
-> A *sesquilinear form* on a Hilbert space $$\mathbf{H}$$ is a map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ that is conjugate linear in the first factor and linear in the second factor. A sesquilinear form  $$L$$ is a *bounded sesquilinear form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi, \psi \in \mathbf{H}$$
+> A *sesquilinear form* on a Hilbert space $$\mathbf{H}$$ is a map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ that is conjugate linear in the first factor and linear in the second factor. A sesquilinear form $$L$$ is a *bounded sesquilinear form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi, \psi \in \mathbf{H}$$
 >
 > $$
 >     |L(\phi, \psi)| \le C \|\phi\| \, \|\psi\|,
@@ -1925,8 +1925,6 @@ This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ s
 $$
     \sup\limits_{\lambda \in X} |f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda)| < \epsilon.
 $$
-
-----
 
 This along with our previous result
 
@@ -3940,7 +3938,7 @@ Assume first that $$\lambda_0$$ is in the complement of $$\mathbb{R}$$ in $$\mat
 
 Now, as a result of Part 2 $$f(A)$$ is self-adjoint. As $$f(A)$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(f(A))$$ is a subset of $$\mathbb{R}$$ in $$\mathbb{C}$$.
 
-However, as the imaginary component of $$\lambda_0$$ is non-zero this implies that $$\lambda_0$$ is not in  $$\sigma(f(A))$$.
+However, as the imaginary component of $$\lambda_0$$ is non-zero this implies that $$\lambda_0$$ is not in $$\sigma(f(A))$$.
 
 This proves the contrapositive of $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds when $$\lambda_0$$ is in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$, and thus proves $$\sigma(f(A) \subseteq \{ f(\lambda) : \lambda \in \sigma(A) \}$$ holds in this case.
 
@@ -4240,7 +4238,7 @@ $$
     \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \| \phi \|^2,
 $$
 
-the final desired result. This completes the proof that  $$Q_{\alpha f + \beta g}$$ is a bounded quadratic form. This in turn implies that $$\alpha f + \beta g$$ is an element of $$\mathcal{F}$$ which in turn implies $$\mathcal{F}$$ is a vector space.
+the final desired result. This completes the proof that $$Q_{\alpha f + \beta g}$$ is a bounded quadratic form. This in turn implies that $$\alpha f + \beta g$$ is an element of $$\mathcal{F}$$ which in turn implies $$\mathcal{F}$$ is a vector space.
 
 Next let us prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
 
@@ -4282,7 +4280,7 @@ where bounded operator $$f(A)$$ is the image of $$f$$ under the real-valued func
 > for all $$\phi$$ and $$\psi$$ in $$\mathbf{H}$$.
 
 
-we can conclude that $$Q_f(\psi) = \left< \psi, f(A)\psi \right>$$ is a bounded quadratic form, the final desired result required to prove that  $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
+we can conclude that $$Q_f(\psi) = \left< \psi, f(A)\psi \right>$$ is a bounded quadratic form, the final desired result required to prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
 
 Our next step is to prove that $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits. This essentially is a result of the fact that $$Q_f(\psi)$$ is continuous with respect to such limits.
 
@@ -4692,7 +4690,7 @@ Thus with this we have proven that $$1_{E^c}$$ is the pointwise limit of a seque
 In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under complements, the desired **Property 2** result.
 
 
-**Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$. Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that  $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+**Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$. Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
 **Property 3.1:** Let us next prove that $$E_1 \cup E_2$$ is measurable.
 
@@ -4830,13 +4828,11 @@ for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof
 
 We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as it's the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
 
-The next of these "utility" lemmas is the following:
-
 Before proving the final of these "utility" lemmas, we isolate the following elementary fact about pointwise limits of Borel-measurable functions, which we will have need of shortly.
 
 > **Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*
 <a name="lmm:pointwise-limits-of-borel-measurable-functions"></a>
-<!--  \uses{thrm:monotone-convergence-theorem} -->
+<!--  \uses{thrm:monotone-convergence-theorem-nonincreasing} -->
 > Let $$X$$ be a compact metric measurable space. Let $$\{ f_i \}_{i \in \mathbb{N}}$$ be a sequence of bounded, Borel-measurable, complex-valued functions on $$X$$ that are uniformly bounded, i.e. there exists a real-valued constant $$M$$ such that
 >
 > $$
@@ -5062,7 +5058,7 @@ $$
     Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda),
 $$
 
-where, as stated in [**Definition**](#def:hall-8.8), the measure $$\mu_\psi$$ is the measure on $$\sigma(A)$$ derived from the [**Riesz Representation Theorem**](#thrm:riesz-representation). As a result of the [**Proposition**](#prpstn:hall-8.7) we just proved, $$Q_f$$ is a  bounded quadratic form.
+where, as stated in [**Definition**](#def:hall-8.8), the measure $$\mu_\psi$$ is the measure on $$\sigma(A)$$ derived from the [**Riesz Representation Theorem**](#thrm:riesz-representation). As a result of the [**Proposition**](#prpstn:hall-8.7) we just proved, $$Q_f$$ is a bounded quadratic form.
 
 Now, as $$\mu_\psi$$ is the measure derived from the [**Riesz Representation Theorem**](#thrm:riesz-representation), it is a real-valued, positive measure on the Borel $$\sigma$$-algebra of $$\sigma(A)$$.
 
@@ -5708,7 +5704,7 @@ $$
 
 for arbitrary $$\psi \in \mathbf{H}$$, the desired **Part 2.3** result which concludes the proof that $$P$$ is a bounded orthogonal projection.
 
-**Part 3:** Next we will prove the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. Proving this will require two parts **Part 3.1:** prove that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$ and **Part3.2:** prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
+**Part 3:** Next we will prove the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. Proving this will require two parts **Part 3.1:** prove that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$ and **Part 3.2:** prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
 
 **Part 3.1:** Let us begin by proving that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$.
 
@@ -5769,7 +5765,7 @@ $$
    \overline{\text{Span} \left( \bigcup_{i = 0}^\infty \text{Range}(P_i) \right)} \subseteq M,
 $$ 
 
-which is none other than the desired result $$V \subseteq M$$ of **Part3.1**.
+which is none other than the desired result $$V \subseteq M$$ of **Part 3.1**.
 
 **Part 3.2:** Next let us prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
 
@@ -5951,13 +5947,13 @@ Next we want to (3) prove that for continuous $$g$$ in $$C^0(\sigma(A); \mathbb{
 Directly before the statement of [**Definition**](#def:hall-8.6) we established that for any $$\psi$$ in $$\mathbf{H}$$ we can construct a map $$\Lambda_\psi : C^0(\sigma(A); \mathbb{R}) \rightarrow \mathbb{R}$$ defined by
 
 $$
-   \Lambda_\psi(g ) \equiv \left< \psi, g(A) \right>,
+   \Lambda_\psi(g) \equiv \left< \psi, g(A)\psi \right>,
 $$
 
 where $$g(A)$$ arises from the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3), such that the application of [**Theorem** *(Riesz Representation)*](#thrm:riesz-representation) implies
 
 $$
-    \Lambda_\psi(g ) \equiv \left< \psi, g(A)\psi \right> = \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda) = Q_g(\psi),
+    \Lambda_\psi(g) \equiv \left< \psi, g(A)\psi \right> = \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda) = Q_g(\psi),
 $$
 
 where the measure $$\mu_\psi$$ arises from the [**Theorem** *(Riesz Representation)*](#thrm:riesz-representation) and $$Q_g(\psi)$$ arises from [**Definition**](#def:hall-8.6).
@@ -5968,26 +5964,26 @@ $$
     \left< \psi, g(A)\psi \right> = Q_g(\psi) = \int_{\sigma(A)} g(\lambda) \, d\mu_\psi(\lambda).
 $$
 
-So both the $$g(A)$$ from [**Proposition**](#prpstn:hall-8.3) and the $$g(A)$$ from [**Definition**](#def:hall-8.8) both give rise to the same bounded quadradic form $$Q_g$$. However, by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63), the operator representing a given bounded quadratic form $$Q_g$$ is unique. Thus, for $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ the $$g(A)$$ from [**Proposition**](#prpstn:hall-8.3) agrees with the $$g(A)$$ from [**Definition**](#def:hall-8.8), the desired result.
+So both the $$g(A)$$ from [**Proposition**](#prpstn:hall-8.3) and the $$g(A)$$ from [**Definition**](#def:hall-8.8) both give rise to the same bounded quadratic form $$Q_g$$. However, by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63), the operator representing a given bounded quadratic form $$Q_g$$ is unique. Thus, for $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ the $$g(A)$$ from [**Proposition**](#prpstn:hall-8.3) agrees with the $$g(A)$$ from [**Definition**](#def:hall-8.8), the desired result.
 
 Finally, let us (4) prove that specializing to the continuous function $$f(\lambda) = \lambda$$ we obtain the desired result, that the integral of $$f(\lambda) = \lambda$$ against $$\mu^A$$ is $$A$$.
 
 Recall that [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R}$$. Thus, $$f(\lambda) = \lambda$$ is real-valued. Furthermore, as $$f(\lambda) = \lambda$$ is a polynomial it is continuous. Also note that as a result of [**Proposition**](#prpstn:hall-7.5) and [**Theorem** *(Heine–Borel Theorem)*](#thrm:heine–borel-theorem) $$\sigma(A)$$ is compact. Hence, as a result of [**Theorem** *(Boundedness Theorem)*](#thrm:boundedness-theorem), $$f(\lambda) = \lambda$$ is bounded.
 
-So the result of the last section on continuous functions applies to $$f(\lambda) = \lambda$$ and the the $$f(A)$$ from [**Proposition**](#prpstn:hall-8.3) agrees with the $$f(A)$$ from [**Definition**](#def:hall-8.8).
+So the result of the last section on continuous functions applies to $$f(\lambda) = \lambda$$ and the $$f(A)$$ from [**Proposition**](#prpstn:hall-8.3) agrees with the $$f(A)$$ from [**Definition**](#def:hall-8.8).
 
 Now by way of the map defined in the [**Lemma** *(Spectral Mapping Theorem)*](#lmm:spectral-mapping-theorem) the polynomial $$f(\lambda) = \lambda$$ is mapped to the operator $$f(A) = A$$. Recall also that the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) is constructed such that when $$f$$ is a polynomial it agrees with the $$f(A)$$ of [**Lemma** *(Spectral Mapping Theorem)*](#lmm:spectral-mapping-theorem). Hence, as $$f(\lambda) = \lambda$$ is a polynomial the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) is given by $$f(A) = A$$.
 
 So putting this all together we have from our second step that
 
 $$
-    \int_{sigma(A)} \lambda \, d\mu^A(\lambda) = f(A),
+    \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = f(A),
 $$
 
 where $$f(A)$$ is the $$f(A)$$ of [**Definition**](#def:hall-8.8). Now using the results of this step we know that for $$f(\lambda) = \lambda$$ the $$f(A)$$ of [**Definition**](#def:hall-8.8) is equal to the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) and the $$f(A)$$ of [**Proposition**](#prpstn:hall-8.3) is equal to $$A$$, giving in full
 
 $$
-    \int_{sigma(A)} \lambda \, d\mu^A(\lambda) = f(A) = A,
+    \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = f(A) = A,
 $$
 
 the desired result.
