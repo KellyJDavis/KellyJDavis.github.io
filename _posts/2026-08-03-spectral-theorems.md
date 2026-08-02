@@ -20,12 +20,40 @@ In this section we will introduce and prove some relatively "elementary" propert
 <a name="def:bounded-operator-notation"></a>
 > We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
 
-along with an "elementary" lemma that proves $$\mathcal{B}(\mathbf{H})$$ is a Banach space
+Before proceeding we record two elementary continuity properties of the Hilbert space norm and inner product. Both are used repeatedly throughout this post, and so we state them once here rather than re-deriving them at each point of use.
+
+> **Proposition** *(Continuity of the Norm and Inner Product)*
+<a name="prpstn:continuity-of-norm-and-inner-product"></a>
+> Let $$\mathbf{H}$$ be a Hilbert space and let $$\{ \psi_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathbf{H}$$ converging to $$\psi \in \mathbf{H}$$. Then
+>
+> 1. *(Continuity of the norm)* $$\left\| \psi \right\| = \lim\limits_{n \rightarrow \infty} \left\| \psi_n \right\|$$.
+> 2. *(Continuity of the inner product)* For any fixed $$\phi \in \mathbf{H}$$, $$\left< \psi, \phi \right> = \lim\limits_{n \rightarrow \infty} \left< \psi_n, \phi \right>$$ and $$\left< \phi, \psi \right> = \lim\limits_{n \rightarrow \infty} \left< \phi, \psi_n \right>$$.
+
+**Proof**
+**Part 1:** By the reverse triangle inequality, for any $$n \in \mathbb{N}$$
+
+$$
+    \left| \left\| \psi_n \right\| - \left\| \psi \right\| \right| \le \left\| \psi_n - \psi \right\|.
+$$
+
+As $$\psi_n \rightarrow \psi$$ the righthand side tends to $$0$$, and hence $$\left\| \psi_n \right\| \rightarrow \left\| \psi \right\|$$, the desired **Part 1** result.
+
+**Part 2:** By the Cauchy–Schwarz inequality, for any $$n \in \mathbb{N}$$
+
+$$
+    \left| \left< \psi_n, \phi \right> - \left< \psi, \phi \right> \right| = \left| \left< \psi_n - \psi, \phi \right> \right| \le \left\| \psi_n - \psi \right\| \left\| \phi \right\|,
+$$
+
+where we have used the additivity of the inner product in its first argument. As $$\psi_n \rightarrow \psi$$ and $$\left\| \phi \right\|$$ is a fixed finite real number, the righthand side tends to $$0$$, giving the first claim. An identical argument, using additivity in the second argument, gives the second claim. This is the desired **Part 2** result.
+
+Combining **Part 1** and **Part 2** gives the desired result.$$\blacksquare$$
+
+With that stated, we now give an "elementary" lemma that proves $$\mathcal{B}(\mathbf{H})$$ is a Banach space
 
 > **Lemma** *(Bounded Operators form a Banach Space)*
 <a name="lmm:bounded-operators-form-a-banach-space"></a>
 <!--  \uses{def:bounded-operator-notation} -->
-<!--  \uses{prpstn:continuity-of-norm-inner-product-adjoint} -->
+<!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
 > $$\mathcal{B}(\mathbf{H})$$ forms a Banach space under the operator norm.
 
 **Proof**
@@ -138,7 +166,7 @@ $$
 \end{align}
 $$
 
-Fixing an $$i \ge N$$ and taking the limit as $$j \rightarrow \infty$$ we have, as a result of Part 1 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint) and our previous result
+Fixing an $$i \ge N$$, recall that $$A$$ was defined pointwise by $$A\psi \equiv \lim\limits_{j \rightarrow \infty} A_j\psi$$, so that the sequence $$\{ A_i\psi - A_j\psi \}_{j \in \mathbb{N}}$$ converges in $$\mathbf{H}$$ to $$A_i\psi - A\psi$$. Hence, taking the limit as $$j \rightarrow \infty$$ we have, as a result of Part 1 of [**Proposition** *(Continuity of the Norm and Inner Product)*](#prpstn:continuity-of-norm-and-inner-product) and our previous result
 
 $$
     \lim\limits_{j \rightarrow \infty} \|A_i\psi - A_j\psi\| = \|A_i\psi - A\psi\| \le \epsilon.
@@ -2621,45 +2649,9 @@ Now as $$A \in \mathcal{B}(\mathbf{H})$$ it is a bounded linear operator from th
 <a name="prpstn:bounded-operators-are-continuous"></a>
 > A linear operator between normed spaces is bounded if and only if it is continuous.
 
-Closely related, and used repeatedly in what follows, are the corresponding continuity properties of the norm, the inner product, and the adjoint. We state them here so that they may be cited rather than re-derived at each point of use.
+$$A$$ is continuous.
 
-> **Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*
-<a name="prpstn:continuity-of-norm-inner-product-adjoint"></a>
-<!--  \uses{def:bounded-operator-notation} -->
-> Let $$\mathbf{H}$$ be a Hilbert space, let $$\{ \psi_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathbf{H}$$ converging to $$\psi \in \mathbf{H}$$, and let $$\{ B_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathcal{B}(\mathbf{H})$$ converging in the operator norm to $$B \in \mathcal{B}(\mathbf{H})$$. Then
->
-> 1. *(Continuity of the norm)* $$\left\| \psi \right\| = \lim\limits_{n \rightarrow \infty} \left\| \psi_n \right\|$$.
-> 2. *(Continuity of the inner product)* For any fixed $$\phi \in \mathbf{H}$$, $$\left< \psi, \phi \right> = \lim\limits_{n \rightarrow \infty} \left< \psi_n, \phi \right>$$ and $$\left< \phi, \psi \right> = \lim\limits_{n \rightarrow \infty} \left< \phi, \psi_n \right>$$.
-> 3. *(Continuity of the adjoint)* $$B^* = \lim\limits_{n \rightarrow \infty} B_n^*$$, the limit again being taken in the operator norm.
-
-**Proof**
-**Part 1:** By the reverse triangle inequality, for any $$n \in \mathbb{N}$$
-
-$$
-    \left| \left\| \psi_n \right\| - \left\| \psi \right\| \right| \le \left\| \psi_n - \psi \right\|.
-$$
-
-As $$\psi_n \rightarrow \psi$$ the righthand side tends to $$0$$, and hence $$\left\| \psi_n \right\| \rightarrow \left\| \psi \right\|$$, the desired **Part 1** result.
-
-**Part 2:** By the Cauchy–Schwarz inequality, for any $$n \in \mathbb{N}$$
-
-$$
-    \left| \left< \psi_n, \phi \right> - \left< \psi, \phi \right> \right| = \left| \left< \psi_n - \psi, \phi \right> \right| \le \left\| \psi_n - \psi \right\| \left\| \phi \right\|,
-$$
-
-where we have used the additivity of the inner product in its first argument. As $$\psi_n \rightarrow \psi$$ and $$\left\| \phi \right\|$$ is a fixed finite real number, the righthand side tends to $$0$$, giving the first claim. An identical argument, using additivity in the second argument, gives the second claim. This is the desired **Part 2** result.
-
-**Part 3:** As the adjoint satisfies $$\left\| C^* \right\| = \left\| C \right\|$$ for any $$C \in \mathcal{B}(\mathbf{H})$$, and as the adjoint is additive, i.e. $$(C - D)^* = C^* - D^*$$, we have for any $$n \in \mathbb{N}$$
-
-$$
-    \left\| B_n^* - B^* \right\| = \left\| (B_n - B)^* \right\| = \left\| B_n - B \right\|.
-$$
-
-As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$, and hence $$B_n^* \rightarrow B^*$$ in the operator norm, the desired **Part 3** result.
-
-Combining **Part 1** through **Part 3** gives the desired result.$$\blacksquare$$
-
-$$A$$ is continuous. As $$A$$ is continuous our definitions imply
+As $$A$$ is continuous our definitions imply
 
 $$
     (A - \lambda \mathbf{1}) \psi = \lim\limits_{i \rightarrow \infty} (A - \lambda \mathbf{1}) \psi_i = \lim\limits_{i \rightarrow \infty} \phi_i = \phi.
@@ -2861,6 +2853,40 @@ $$
 $$
 
 the final desired result.$$\blacksquare$$
+
+As a consequence of the first result of the [**Proposition**](#prpstn:hall-7.2) just proven, we record the following continuity property of the adjoint, which we will have need of later.
+
+> **Proposition** *(Continuity of the Adjoint)*
+<a name="prpstn:continuity-of-the-adjoint"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{prpstn:hall-7.2} -->
+> Let $$\mathbf{H}$$ be a Hilbert space and let $$\{ B_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathcal{B}(\mathbf{H})$$ converging in the operator norm to $$B \in \mathcal{B}(\mathbf{H})$$. Then $$\{ B_n^* \}_{n \in \mathbb{N}}$$ converges in the operator norm to $$B^*$$, i.e.
+>
+> $$
+>     B^* = \lim\limits_{n \rightarrow \infty} B_n^*.
+> $$
+
+**Proof**
+Let us first prove that the adjoint is additive, i.e. that $$(C - D)^* = C^* - D^*$$ for any $$C, D \in \mathcal{B}(\mathbf{H})$$. For any $$\chi, \psi \in \mathbf{H}$$ one has
+
+$$
+\begin{align}
+    \left< \chi, (C - D)^* \psi \right> &= \left< (C - D)\chi, \psi \right> \\
+                                        &= \left< C\chi, \psi \right> - \left< D\chi, \psi \right> \\
+                                        &= \left< \chi, C^* \psi \right> - \left< \chi, D^* \psi \right> \\
+                                        &= \left< \chi, (C^* - D^*) \psi \right>,
+\end{align}
+$$
+
+where the first and third lines follow from the definition of the adjoint and the second and fourth from the additivity of the inner product. As this holds for all $$\chi \in \mathbf{H}$$, it follows that $$(C - D)^* \psi = (C^* - D^*)\psi$$ for all $$\psi \in \mathbf{H}$$, and hence $$(C - D)^* = C^* - D^*$$.
+
+Now, as a result of the first result of [**Proposition**](#prpstn:hall-7.2), the operator norm satisfies $$\|C\| = \|C^*\|$$ for any $$C \in \mathcal{B}(\mathbf{H})$$. Combining this with the additivity just proven gives, for any $$n \in \mathbb{N}$$,
+
+$$
+    \left\| B_n^* - B^* \right\| = \left\| (B_n - B)^* \right\| = \left\| B_n - B \right\|.
+$$
+
+As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$, and hence $$B_n^* \rightarrow B^*$$ in the operator norm, the desired result.$$\blacksquare$$
 
 > **Lemma**
 <a name="lmm:hall-8.1"></a>
@@ -3734,7 +3760,7 @@ The properties of the (real-valued) functional calculus are captured in the foll
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{lmm:hall-prblm-7.4.8} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-<!--  \uses{prpstn:continuity-of-norm-inner-product-adjoint} -->
+<!--  \uses{prpstn:continuity-of-the-adjoint} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, the (real-valued) functional calculus for $$A$$, mapping $$C^0(\sigma(A); \mathbb{R})$$ into $$\mathcal{B}(\mathbf{H})$$, has the following properties
 > 
 > 1. **Multiplicativity:** For all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
@@ -3917,7 +3943,7 @@ $$
 \end{align}
 $$
 
-This then implies, using Part 3 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint) to exchange the adjoint with the limit,
+This then implies, using [**Proposition** *(Continuity of the Adjoint)*](#prpstn:continuity-of-the-adjoint) to exchange the adjoint with the limit,
 
 $$
 \begin{align}
@@ -5807,7 +5833,7 @@ With this result as motivation, let us prove the following "utility" lemma
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:bounded-operators-are-continuous} -->
-<!--  \uses{prpstn:continuity-of-norm-inner-product-adjoint} -->
+<!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
 > Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be a set of bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ that satisfy $$P_iP_j = 0$$ for $$i \neq j$$. Then for all $$\psi \in \mathbf{H}$$ the sequence of partial sums
 > 
 > $$
@@ -5962,7 +5988,7 @@ $$
     \|P\| \equiv \sup\limits_{\|\psi\| = 1} \|P\psi\|.
 $$
 
-Hence, the definition of $$P$$ along with our previous result and Part 1 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint), which permits the exchange of the norm with the limit, implies
+Hence, the definition of $$P$$ along with our previous result and Part 1 of [**Proposition** *(Continuity of the Norm and Inner Product)*](#prpstn:continuity-of-norm-and-inner-product), which permits the exchange of the norm with the limit, implies
 
 $$
 \begin{align}
@@ -5978,7 +6004,7 @@ Thus $$\|P\| \le 1$$, proving that $$P$$ is bounded and thus an element of $$\ma
 
 **Part 2.2:** Next let us prove that $$P$$ is self-adjoint. It turns out this follows directly from the fact that each of the $$P_i$$ is self-adjoint.
 
-Tracing definitions, and using Part 2 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint) to exchange the inner product with the limit, one has for arbitrary $$\phi, \psi \in \mathbf{H}$$
+Tracing definitions, and using Part 2 of [**Proposition** *(Continuity of the Norm and Inner Product)*](#prpstn:continuity-of-norm-and-inner-product) to exchange the inner product with the limit, one has for arbitrary $$\phi, \psi \in \mathbf{H}$$
 
 $$
 \begin{align}
