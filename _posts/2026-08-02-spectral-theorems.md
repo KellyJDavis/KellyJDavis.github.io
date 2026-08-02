@@ -1,6 +1,6 @@
 ---
 title:  "Spectral Theorem for Bounded, Self-Adjoint Operators"
-date:   2026-08-03 07:43:42 +0200
+date:   2026-08-02 11:20:00 +0200
 categories: functional-analysis
 ---
 
