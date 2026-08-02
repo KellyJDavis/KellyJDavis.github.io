@@ -4069,13 +4069,31 @@ However, before considering an operator-valued version, let us consider how we c
 
 The hypothesis of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) presents us with an element $$A \in \mathcal{B}(\mathbf{H})$$ that is self-adjoint. For any continuous, real-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, i.e. any $$f \in C^0(\sigma(A) ; \mathbb{R})$$, the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3) defines a linear map $$f \mapsto f(A)$$ from $$C^0(\sigma(A) ; \mathbb{R})$$ into $$\mathcal{B}(\mathbf{H})$$. Furthermore, if $$f$$ is non-negative, then as a result of Part 3 of [**Proposition**](#prpstn:hall-8.4), it follows that $$f(A)$$ is a non-negative bounded operator, i.e. $$0 \le \left< \psi, f(A)\psi \right>$$ for all $$\psi \in \mathbf{H}$$.
 
+Before defining our candidate functional, let us verify that the quantity $$\left< \psi, f(A) \psi \right>$$ is in fact a real number for any $$f \in C^0(\sigma(A) ; \mathbb{R})$$ and any $$\psi \in \mathbf{H}$$. As a result of Part 2 of [**Proposition**](#prpstn:hall-8.4), for any $$f \in C^0(\sigma(A) ; \mathbb{R})$$ the operator $$f(A)$$ is self-adjoint, i.e. $$f(A)^* = f(A)$$. Hence, for any $$\psi \in \mathbf{H}$$
+
+$$
+\begin{align}
+    \overline{\left< \psi, f(A) \psi \right>} &= \left< f(A) \psi, \psi \right> \\
+                                              &= \left< \psi, f(A)^* \psi \right> \\
+                                              &= \left< \psi, f(A) \psi \right>,
+\end{align}
+$$
+
+where the first line follows from the conjugate symmetry of the Hilbert space inner product, the second from the definition of the adjoint, and the third from the self-adjointness of $$f(A)$$. As a complex number equal to its own complex conjugate is real, we conclude
+
+$$
+    \left< \psi, f(A) \psi \right> \in \mathbb{R}
+$$
+
+for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$ and all $$\psi \in \mathbf{H}$$.
+
 Hence, for any $$\psi \in \mathbf{H}$$ the function $$\Lambda_\psi : C^0(\sigma(A) ; \mathbb{R}) \rightarrow \mathbb{R}$$ defined by
 
 $$
     \Lambda_\psi(f) \equiv \left< \psi, f(A) \psi \right>
 $$
 
-satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear and is non-negative whenever all the values of $$f$$ are non-negative. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation) and conclude that for any $$\psi \in \mathbf{H}$$ there exists a measure $$\mu_\psi$$ such that
+is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$, and satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear, as $$f \mapsto f(A)$$ is linear by [**Proposition**](#prpstn:hall-8.3) and the inner product is linear in its second argument, and it is non-negative whenever all the values of $$f$$ are non-negative, as established in the first paragraph above. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation) and conclude that for any $$\psi \in \mathbf{H}$$ there exists a measure $$\mu_\psi$$ such that
 
 <div id="eqtn:hall-8.8">
 
@@ -4100,6 +4118,8 @@ To that end let us make the following definition
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:riesz-representation} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:hall-8.4} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$ let us define a map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ by
 > 
 > $$
