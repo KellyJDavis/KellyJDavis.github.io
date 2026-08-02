@@ -8,6 +8,8 @@ Here we will state and prove the [**Spectral Theorem for Bounded, Self-Adjoint O
 
 Here, we generally follow the clear, straightforward presentation of [Quantum Theory for Mathematicians](https://doi.org/10.1007/978-1-4614-7116-5).
 
+A note on conventions. Throughout this post, results that are standard and whose proofs lie outside the scope of the development---for instance the [**Heine–Borel Theorem**](#thrm:heine–borel-theorem), the [**Riesz Representation Theorem**](#thrm:riesz-representation), the [**Stone–Weierstrass Theorem**](#thrm:stone–weierstrass-real), and the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem)---are stated in full but not proven. They are marked as such by the absence of an accompanying **Proof**. Every other result stated here is proven in full.
+
 # Spectral Theorem: Bounded Self-Adjoint Operators
 In this section we will state and prove the Spectral Theorem for bounded, self-adjoint operators. However, we must introduce "extensive machinery" before we are able to state and prove the theorem. To that end we begin by examining some properties of bounded operators.
 
@@ -23,6 +25,7 @@ along with an "elementary" lemma that proves $$\mathcal{B}(\mathbf{H})$$ is a Ba
 > **Lemma** *(Bounded Operators form a Banach Space)*
 <a name="lmm:bounded-operators-form-a-banach-space"></a>
 <!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{prpstn:continuity-of-norm-inner-product-adjoint} -->
 > $$\mathcal{B}(\mathbf{H})$$ forms a Banach space under the operator norm.
 
 **Proof**
@@ -135,7 +138,7 @@ $$
 \end{align}
 $$
 
-Fixing an $$i \ge N$$ and taking the limit as $$j \rightarrow \infty$$ we have, as a result of continuity of the norm and our previous result
+Fixing an $$i \ge N$$ and taking the limit as $$j \rightarrow \infty$$ we have, as a result of Part 1 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint) and our previous result
 
 $$
     \lim\limits_{j \rightarrow \infty} \|A_i\psi - A_j\psi\| = \|A_i\psi - A\psi\| \le \epsilon.
@@ -626,7 +629,7 @@ is a bounded quadratic form. This proof relies upon our previous simple function
 
 > **Theorem** *(Complex-Valued Simple Approximation Theorem)*
 <a name="thrm:complex-valued-simple-approximation-theorem"></a>
-> Given any bounded, measurable, complex-valued function $$f$$ on a measurable set $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
+> Let $$X$$ be a measurable space, i.e. a set equipped with a $$\sigma$$-algebra $$\Omega(X)$$. Given any bounded, measurable, complex-valued function $$f$$ on $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$---i.e. functions of the form $$s_i = \sum_{j = 1}^{n_i} \alpha_{ij} 1_{E_{ij}}$$ with $$\alpha_{ij} \in \mathbb{C}$$ and $$E_{ij} \in \Omega(X)$$ pairwise disjoint---such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
 To wit we must first prove that $$Q_f(\lambda\psi) = \mid\lambda\mid^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
 
@@ -2618,6 +2621,44 @@ Now as $$A \in \mathcal{B}(\mathbf{H})$$ it is a bounded linear operator from th
 <a name="prpstn:bounded-operators-are-continuous"></a>
 > A linear operator between normed spaces is bounded if and only if it is continuous.
 
+Closely related, and used repeatedly in what follows, are the corresponding continuity properties of the norm, the inner product, and the adjoint. We state them here so that they may be cited rather than re-derived at each point of use.
+
+> **Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*
+<a name="prpstn:continuity-of-norm-inner-product-adjoint"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> Let $$\mathbf{H}$$ be a Hilbert space, let $$\{ \psi_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathbf{H}$$ converging to $$\psi \in \mathbf{H}$$, and let $$\{ B_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathcal{B}(\mathbf{H})$$ converging in the operator norm to $$B \in \mathcal{B}(\mathbf{H})$$. Then
+>
+> 1. *(Continuity of the norm)* $$\left\| \psi \right\| = \lim\limits_{n \rightarrow \infty} \left\| \psi_n \right\|$$.
+> 2. *(Continuity of the inner product)* For any fixed $$\phi \in \mathbf{H}$$, $$\left< \psi, \phi \right> = \lim\limits_{n \rightarrow \infty} \left< \psi_n, \phi \right>$$ and $$\left< \phi, \psi \right> = \lim\limits_{n \rightarrow \infty} \left< \phi, \psi_n \right>$$.
+> 3. *(Continuity of the adjoint)* $$B^* = \lim\limits_{n \rightarrow \infty} B_n^*$$, the limit again being taken in the operator norm.
+
+**Proof**
+**Part 1:** By the reverse triangle inequality, for any $$n \in \mathbb{N}$$
+
+$$
+    \left| \left\| \psi_n \right\| - \left\| \psi \right\| \right| \le \left\| \psi_n - \psi \right\|.
+$$
+
+As $$\psi_n \rightarrow \psi$$ the righthand side tends to $$0$$, and hence $$\left\| \psi_n \right\| \rightarrow \left\| \psi \right\|$$, the desired **Part 1** result.
+
+**Part 2:** By the Cauchy–Schwarz inequality, for any $$n \in \mathbb{N}$$
+
+$$
+    \left| \left< \psi_n, \phi \right> - \left< \psi, \phi \right> \right| = \left| \left< \psi_n - \psi, \phi \right> \right| \le \left\| \psi_n - \psi \right\| \left\| \phi \right\|,
+$$
+
+where we have used the additivity of the inner product in its first argument. As $$\psi_n \rightarrow \psi$$ and $$\left\| \phi \right\|$$ is a fixed finite real number, the righthand side tends to $$0$$, giving the first claim. An identical argument, using additivity in the second argument, gives the second claim. This is the desired **Part 2** result.
+
+**Part 3:** As the adjoint satisfies $$\left\| C^* \right\| = \left\| C \right\|$$ for any $$C \in \mathcal{B}(\mathbf{H})$$, and as the adjoint is additive, i.e. $$(C - D)^* = C^* - D^*$$, we have for any $$n \in \mathbb{N}$$
+
+$$
+    \left\| B_n^* - B^* \right\| = \left\| (B_n - B)^* \right\| = \left\| B_n - B \right\|.
+$$
+
+As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$, and hence $$B_n^* \rightarrow B^*$$ in the operator norm, the desired **Part 3** result.
+
+Combining **Part 1** through **Part 3** gives the desired result.$$\blacksquare$$
+
 $$A$$ is continuous. As $$A$$ is continuous our definitions imply
 
 $$
@@ -3693,6 +3734,7 @@ The properties of the (real-valued) functional calculus are captured in the foll
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{lmm:hall-prblm-7.4.8} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{prpstn:continuity-of-norm-inner-product-adjoint} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, the (real-valued) functional calculus for $$A$$, mapping $$C^0(\sigma(A); \mathbb{R})$$ into $$\mathcal{B}(\mathbf{H})$$, has the following properties
 > 
 > 1. **Multiplicativity:** For all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
@@ -3875,7 +3917,7 @@ $$
 \end{align}
 $$
 
-This then implies
+This then implies, using Part 3 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint) to exchange the adjoint with the limit,
 
 $$
 \begin{align}
@@ -4160,6 +4202,49 @@ To that end let us make the following definition
 > 
 > where $$\mu_\psi$$ is the measure on $$\sigma(A)$$ derived from our map $$\Lambda_\psi$$ and the [**Riesz Representation Theorem**](#thrm:riesz-representation).
 
+Before proceeding, let us record a basic property of the measures $$\mu_\psi$$ just defined. This property is used repeatedly in what follows---in particular it is the hypothesis required to apply the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem) to $$\mu_\psi$$---and so we isolate it here rather than re-deriving it at each point of use.
+
+> **Lemma** *(The Associated Measures are Finite)*
+<a name="lmm:associated-measures-are-finite"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{prpstn:hall-8.3} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and, for any $$\psi \in \mathbf{H}$$, let $$\mu_\psi$$ be the measure on $$\sigma(A)$$ of [**Definition**](#def:hall-8.6). Then
+>
+> $$
+>     \mu_\psi(\sigma(A)) = \left\| \psi \right\|^2.
+> $$
+>
+> In particular $$\mu_\psi(\sigma(A)) < \infty$$, i.e. $$\mu_\psi$$ is a finite measure on $$\sigma(A)$$.
+
+**Proof**
+Recall from [**Definition**](#def:hall-8.6) that for any $$f \in C^0(\sigma(A); \mathbb{R})$$ one has
+
+$$
+    Q_f(\psi) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda) = \left< \psi, f(A)\psi \right>.
+$$
+
+The constant function $$f(\lambda) = 1$$ is continuous and real-valued on $$\sigma(A)$$, and so is an element of $$C^0(\sigma(A); \mathbb{R})$$. Furthermore, viewing $$f(\lambda) = 1$$ as the constant polynomial $$p(\lambda) = 1$$, the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3) gives $$f(A) = \mathbf{1}$$, the identity operator on $$\mathbf{H}$$. Hence, one has
+
+$$
+\begin{align}
+    \mu_\psi(\sigma(A)) &\equiv \int_{\sigma(A)} d\mu_\psi(\lambda) \\
+                        &= \int_{\sigma(A)} 1 \, d\mu_\psi(\lambda) \\
+                        &= Q_1(\psi) \\
+                        &= \left< \psi, \mathbf{1} \psi \right> \\
+                        &= \left< \psi, \psi \right> \\
+                        &= \left\| \psi \right\|^2,
+\end{align}
+$$
+
+where the final line follows from the definition of the norm on $$\mathbf{H}$$. As $$\psi$$ is an element of the Hilbert space $$\mathbf{H}$$, its norm $$\left\| \psi \right\|$$ is a finite real number, and thus
+
+$$
+    \mu_\psi(\sigma(A)) = \left\| \psi \right\|^2 < \infty,
+$$
+
+i.e. $$\mu_\psi$$ is a finite measure on $$\sigma(A)$$, the desired result.$$\blacksquare$$
+
 It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the following [**Proposition**](#prpstn:hall-8.7)
 
 > **Proposition**
@@ -4175,6 +4260,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
 > Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For any bounded, measurable, complex-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, let $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ be its associated map
 > 
 > $$
@@ -4426,35 +4512,7 @@ $$
     \mu_\psi(\sigma(A)) \equiv \int_{\sigma(A)} d\mu_\psi(\lambda) < \infty.
 $$
 
-Doing so is relatively straight-forward.
-
-As mentioned previously, if $$f$$ is in $$C^0(\sigma(A); \mathbb{R})$$, then
-
-$$
-    Q_f(\psi) = \left< \psi, f(A)\psi \right>.
-$$
-
-The constant function $$f(\lambda) = 1$$ is obviously in $$C^0(\sigma(A); \mathbb{R})$$. Hence, one has
-
-$$
-\begin{align}
-    \mu_\psi(\sigma(A)) &\equiv \int_{\sigma(A)} d\mu_\psi(\lambda) \\
-                        &= Q_1(\psi) \\
-                        &= \left< \psi, \mathbf{1}(A) \psi \right> \\
-                        &= \left< \psi, \mathbf{1} \psi \right> \\
-                        &= \left< \psi, \psi \right> \\
-                        &= \left\| \psi \right\|^2 \\
-                        &< \infty,
-\end{align}
-$$
-
-where we have used the definition of $$Q_1(\psi)$$, the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3), and the definition of the norm on $$\mathbf{H}$$. This implies
-
-$$
-    \mu_\psi(\sigma(A)) < \infty,
-$$
-
-in other words $$\sigma(A)$$ has a finite measure $$\mu_\psi(\sigma(A))$$.
+This is precisely the content of [**Lemma** *(The Associated Measures are Finite)*](#lmm:associated-measures-are-finite), which gives $$\mu_\psi(\sigma(A)) = \left\| \psi \right\|^2 < \infty$$. In other words $$\sigma(A)$$ has a finite measure $$\mu_\psi(\sigma(A))$$.
 
 That established we can apply the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem) to conclude that
 
@@ -4522,13 +4580,13 @@ $$
 
 where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
 
-This follows from recalling that
+This follows from [**Lemma** *(The Associated Measures are Finite)*](#lmm:associated-measures-are-finite), which gives
 
 $$
-   \mu_\psi(\sigma(A)) = \|\psi\|^2
+   \mu_\phi(\sigma(A)) = \|\phi\|^2
 $$
 
-and that $$f$$ is bounded. Together these imply
+for any $$\phi \in \mathbf{H}$$, together with the fact that $$f$$ is bounded. Together these imply
 
 $$
 \begin{align}
@@ -5233,6 +5291,7 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$f$$ and $$g$$ be bounded, measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, then
 > 
 > $$
@@ -5394,7 +5453,7 @@ $$
     \lvert f_i(\lambda) g(\lambda) \rvert \le M M_g
 $$
 
-for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, so the sequence $$\{ f_i g \}_{i \in \mathbb{N}}$$ is uniformly bounded. Hence, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem), applied to the finite measure $$\mu_\psi$$, gives
+for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, so the sequence $$\{ f_i g \}_{i \in \mathbb{N}}$$ is uniformly bounded. Hence, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem), applied to the measure $$\mu_\psi$$, which is finite by [**Lemma** *(The Associated Measures are Finite)*](#lmm:associated-measures-are-finite), gives 
 
 $$
     Q_{f_i g}(\psi) = \int_{\sigma(A)} f_i g \, d\mu_\psi \longrightarrow \int_{\sigma(A)} fg \, d\mu_\psi = Q_{fg}(\psi).
@@ -5460,7 +5519,7 @@ $$
     \lvert f(\lambda)g_i(\lambda) \rvert \le M_f M
 $$
 
-for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, so the sequence $$\{ fg_i \}_{i \in \mathbb{N}}$$ is uniformly bounded. Hence, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem) applied to the finite measure $$\mu_\psi$$ gives
+for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, so the sequence $$\{ fg_i \}_{i \in \mathbb{N}}$$ is uniformly bounded. Hence, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem), applied to the measure $$\mu_\psi$$, which is finite by [**Lemma** *(The Associated Measures are Finite)*](#lmm:associated-measures-are-finite), gives 
 
 $$
     \left< \psi, (fg_i)(A)\psi \right> = Q_{fg_i}(\psi) = \int_{\sigma(A)} fg_i \, d\mu_\psi \longrightarrow \int_{\sigma(A)} fg \, d\mu_\psi = Q_{fg}(\psi) = \left< \psi, (fg)(A)\psi \right>.
@@ -5748,6 +5807,7 @@ With this result as motivation, let us prove the following "utility" lemma
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:bounded-operators-are-continuous} -->
+<!--  \uses{prpstn:continuity-of-norm-inner-product-adjoint} -->
 > Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be a set of bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ that satisfy $$P_iP_j = 0$$ for $$i \neq j$$. Then for all $$\psi \in \mathbf{H}$$ the sequence of partial sums
 > 
 > $$
@@ -5902,7 +5962,7 @@ $$
     \|P\| \equiv \sup\limits_{\|\psi\| = 1} \|P\psi\|.
 $$
 
-Hence, the definition of $$P$$ along with our previous result implies
+Hence, the definition of $$P$$ along with our previous result and Part 1 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint), which permits the exchange of the norm with the limit, implies
 
 $$
 \begin{align}
@@ -5918,7 +5978,7 @@ Thus $$\|P\| \le 1$$, proving that $$P$$ is bounded and thus an element of $$\ma
 
 **Part 2.2:** Next let us prove that $$P$$ is self-adjoint. It turns out this follows directly from the fact that each of the $$P_i$$ is self-adjoint.
 
-Tracing definitions one has for arbitrary $$\phi, \psi \in \mathbf{H}$$
+Tracing definitions, and using Part 2 of [**Proposition** *(Continuity of the Norm, Inner Product, and Adjoint)*](#prpstn:continuity-of-norm-inner-product-adjoint) to exchange the inner product with the limit, one has for arbitrary $$\phi, \psi \in \mathbf{H}$$
 
 $$
 \begin{align}
