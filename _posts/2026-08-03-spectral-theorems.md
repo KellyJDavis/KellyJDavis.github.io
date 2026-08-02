@@ -20,17 +20,43 @@ In this section we will introduce and prove some relatively "elementary" propert
 <a name="def:bounded-operator-notation"></a>
 > We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
 
-Before proceeding we record two elementary continuity properties of the Hilbert space norm and inner product. Both are used repeatedly throughout this post, and so we state them once here rather than re-deriving them at each point of use.
+Before proceeding we record two elementary continuity properties of the Hilbert space norm and inner product. Both are used repeatedly throughout this post, and so we state them once here rather than re-deriving them at each point of use. Their proofs rest on two standard inequalities, which we state first.
+
+> **Proposition** *(Cauchy–Schwarz Inequality)*
+<a name="prpstn:hall-a.43"></a>
+> If $$V$$ is a space with an inner product, then for all $$\phi, \psi \in V$$, we have the *Cauchy–Schwarz inequality*
+>
+> $$
+>     \lvert \left< \phi, \psi \right> \rvert^2 \le \left< \phi, \phi \right> \left< \psi, \psi \right>.
+> $$
+>
+> Equivalently, writing $$\left\| \phi \right\| \equiv \sqrt{\left< \phi, \phi \right>}$$ for the norm induced by the inner product, one has
+>
+> $$
+>     \lvert \left< \phi, \psi \right> \rvert \le \left\| \phi \right\| \left\| \psi \right\|.
+> $$
+
+> **Proposition** *(Reverse Triangle Inequality)*
+<a name="prpstn:reverse-triangle-inequality"></a>
+> Let $$V$$ be a normed space. Then for all $$\phi, \psi \in V$$
+>
+> $$
+>     \left| \left\| \phi \right\| - \left\| \psi \right\| \right| \le \left\| \phi - \psi \right\|.
+> $$
+
+With these stated, we turn to the continuity properties themselves.
 
 > **Proposition** *(Continuity of the Norm and Inner Product)*
 <a name="prpstn:continuity-of-norm-and-inner-product"></a>
+<!--  \uses{prpstn:hall-a.43} -->
+<!--  \uses{prpstn:reverse-triangle-inequality} -->
 > Let $$\mathbf{H}$$ be a Hilbert space and let $$\{ \psi_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathbf{H}$$ converging to $$\psi \in \mathbf{H}$$. Then
 >
 > 1. *(Continuity of the norm)* $$\left\| \psi \right\| = \lim\limits_{n \rightarrow \infty} \left\| \psi_n \right\|$$.
 > 2. *(Continuity of the inner product)* For any fixed $$\phi \in \mathbf{H}$$, $$\left< \psi, \phi \right> = \lim\limits_{n \rightarrow \infty} \left< \psi_n, \phi \right>$$ and $$\left< \phi, \psi \right> = \lim\limits_{n \rightarrow \infty} \left< \phi, \psi_n \right>$$.
 
 **Proof**
-**Part 1:** By the reverse triangle inequality, for any $$n \in \mathbb{N}$$
+**Part 1:** By the [**Reverse Triangle Inequality**](#prpstn:reverse-triangle-inequality), for any $$n \in \mathbb{N}$$
 
 $$
     \left| \left\| \psi_n \right\| - \left\| \psi \right\| \right| \le \left\| \psi_n - \psi \right\|.
@@ -38,7 +64,7 @@ $$
 
 As $$\psi_n \rightarrow \psi$$ the righthand side tends to $$0$$, and hence $$\left\| \psi_n \right\| \rightarrow \left\| \psi \right\|$$, the desired **Part 1** result.
 
-**Part 2:** By the Cauchy–Schwarz inequality, for any $$n \in \mathbb{N}$$
+**Part 2:** By the [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43), for any $$n \in \mathbb{N}$$
 
 $$
     \left| \left< \psi_n, \phi \right> - \left< \psi, \phi \right> \right| = \left| \left< \psi_n - \psi, \phi \right> \right| \le \left\| \psi_n - \psi \right\| \left\| \phi \right\|,
@@ -1346,17 +1372,7 @@ In this case the definition of a norm implies $$\|\psi\| = 0$$. Similarly, for a
 
 Now we can safely assume that $$\psi \neq 0$$.
 
-Consider an arbitrary $$\psi \in \mathbf{H}$$ and an arbitrary $$\chi \in \mathbf{H}$$ such that $$\|\chi\| = 1$$. The [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43)
-
-> **Proposition** *(Cauchy–Schwarz Inequality)*
-<a name="prpstn:hall-a.43"></a>
-> If $$V$$ is a space with an inner product, then for all $$\phi, \psi \in V$$, we have the *Cauchy–Schwarz inequality*
->
-> $$
->     \lvert \left< \phi, \psi \right> \rvert^2 \le \left< \phi, \phi \right> \left< \psi, \psi \right>.
-> $$
-
-implies that
+Consider an arbitrary $$\psi \in \mathbf{H}$$ and an arbitrary $$\chi \in \mathbf{H}$$ such that $$\|\chi\| = 1$$. The [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43) implies that
 
 $$
     \lvert \left< \chi, \psi \right> \rvert^2 \le \left< \chi, \chi \right> \left< \psi, \psi \right> = \|\chi\|^2 \left< \psi, \psi \right> = \left< \psi, \psi \right>.
