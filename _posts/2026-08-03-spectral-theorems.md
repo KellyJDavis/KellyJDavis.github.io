@@ -3407,6 +3407,33 @@ which is simply the statement that the map $$p \mapsto p(A)$$ is isometric.
 
 Explicitly, the map $$p \mapsto p(A)$$ from the set of real-valued polynomials on $$\sigma(A)$$ equipped with the supremum norm into $$\mathcal{B}(\mathbf{H})$$ equipped with the operator norm, is isometric. This map is also linear; for real-valued polynomials $$p$$ and $$q$$ we have $$(p + q) \mapsto (p + q)(A) = p(A) + q(A)$$.
 
+Before proceeding, we pause to address a subtlety in the definition of this map. The map $$p \mapsto p(A)$$ has been described as a map on the set of real-valued polynomials *on* $$\sigma(A)$$, i.e. on polynomial *functions* with domain $$\sigma(A)$$, whereas the operator
+
+$$
+    p(A) = c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m
+$$
+
+is computed from the *coefficients* $$c_0, c_1, \ldots, c_m$$. These are not the same datum: distinct coefficient tuples can determine the same function on $$\sigma(A)$$. For instance, if $$\sigma(A) = \{ 0, 1 \}$$, then the polynomials $$p(\lambda) = \lambda$$ and $$q(\lambda) = \lambda^2$$ agree at every point of $$\sigma(A)$$ while having different coefficients. For the map $$p \mapsto p(A)$$ to be well-defined on polynomial functions we must therefore verify that whenever two real-valued polynomials $$p$$ and $$q$$ agree at every point of $$\sigma(A)$$, the operators $$p(A)$$ and $$q(A)$$ coincide.
+
+This follows from the isometry just established. Let $$p$$ and $$q$$ be real-valued polynomials with $$p(\lambda) = q(\lambda)$$ for all $$\lambda \in \sigma(A)$$. Then $$p - q$$ is a real-valued polynomial satisfying $$(p - q)(\lambda) = 0$$ for all $$\lambda \in \sigma(A)$$. Applying the isometry to $$p - q$$ and using the linearity of the map noted above gives
+
+$$
+\begin{align}
+    \left\| p(A) - q(A) \right\| &= \left\| (p - q)(A) \right\| \\
+                                 &= \sup\limits_{\lambda \in \sigma(A)} \lvert (p - q)(\lambda) \rvert \\
+                                 &= \sup\limits_{\lambda \in \sigma(A)} 0 \\
+                                 &= 0.
+\end{align}
+$$
+
+As $$\| \cdot \|$$ is a norm on $$\mathcal{B}(\mathbf{H})$$, the fact that $$\left\| p(A) - q(A) \right\| = 0$$ implies $$p(A) - q(A)$$ is the zero operator, i.e.
+
+$$
+    p(A) = q(A).
+$$
+
+Hence, the operator $$p(A)$$ depends only on the function $$p$$ restricted to $$\sigma(A)$$, and not on the particular choice of coefficients representing it. Thus the map $$p \mapsto p(A)$$ is well-defined as a map on the set of real-valued polynomial functions on $$\sigma(A)$$.
+
 Now in preparation for the application of the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) let us examine explicitly some of the properties of the objects we are currently considering.
 
 As one will recall, [**Proposition**](#prpstn:hall-7.5) established that the spectrum $$\sigma(A)$$ of $$A$$ is a closed and bounded subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem)
