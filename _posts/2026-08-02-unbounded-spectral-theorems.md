@@ -1209,3 +1209,133 @@ the second equality using that $$\psi \in \mathbf{H}$$ already forces $$\sum_n \
 
 We have shown: $$\mathbf{H}$$ is a Hilbert space direct sum of the $$\mathbf{H}_n$$'s, each $$A_n$$ is a bounded self-adjoint operator on $$\mathbf{H}_n$$, and $$A_f$$ is a symmetric operator (we check this directly: for $$\phi, \psi \in W_f$$, $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi)$$ and $$\left< A_f\phi, \psi \right> = \overline{\left< \psi, A_f\phi \right>} = \overline{L_f(\psi,\phi)}$$; Part 2 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties), applicable since $$Q_f$$ is real-valued, gives $$L_f(\phi,\psi) = \overline{L_f(\psi,\phi)}$$, so $$\left< \phi, A_f\psi \right> = \left< A_f\phi, \psi \right>$$) whose domain contains the finite direct sum $$W_0 \equiv \bigoplus_{n} \mathbf{H}_n$$ (finite sums) of the $$\mathbf{H}_n$$'s, and which acts as $$A_n$$ on each $$\mathbf{H}_n$$. This is exactly the hypothesis of [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26), which concludes that $$A_f$$ is essentially self-adjoint with $$\text{Dom}(A_f^{\text{cl}}) = \text{Dom}(A_f^*)$$ equal to the space identified above — which we showed coincides with $$W_f = \text{Dom}(A_f)$$. Since $$A_f$$ is symmetric, [**Proposition** *(Symmetric Operators and the Adjoint)*](#prpstn:hall-9.4) shows $$A_f^*$$ is an extension of $$A_f$$, and having just shown $$\text{Dom}(A_f^*) = \text{Dom}(A_f)$$, this extension is trivial: $$A_f^* = A_f$$, i.e. $$A_f$$ is self-adjoint.$$\blacksquare$$
 
+## The Spectral Theorem for Bounded Normal Operators
+
+Every bounded self-adjoint operator is a special case of a broader, and for our purposes essential, class: the *normal* operators. The Cayley transform, developed in the next section, produces from a self-adjoint (possibly unbounded) operator a bounded operator that is generally not self-adjoint but is always normal — so to make the reduction work, we need the spectral theorem for bounded normal operators, not just bounded self-adjoint ones.
+
+> **Definition** *(Normal Operator)*
+<a name="def:hall-10.19"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> A bounded operator $$A$$ on $$\mathbf{H}$$ is *normal* if $$A$$ commutes with its adjoint: $$AA^* = A^*A$$.
+
+Every bounded self-adjoint operator is normal (trivially, $$A A^* = A^2 = A^*A$$), but the class is genuinely larger — for instance every unitary operator is normal ($$UU^* = U^*U = \mathbf{1}$$), and unitary operators are generally not self-adjoint. Unlike the self-adjoint case, the spectrum of a normal operator need not lie on the real line at all.
+
+Hall's proof that the bounded self-adjoint spectral theorem extends to normal operators proceeds in two stages, mirroring the two-stage proof of the self-adjoint case itself. The first stage builds a continuous functional calculus for $$A$$; the second turns that functional calculus into a projection-valued measure. Hall's own remark on this second stage is worth quoting in substance: the construction of a projection-valued measure from a continuous functional calculus, once that functional calculus is in hand, uses nothing about the operator beyond the functional calculus itself — not self-adjointness, not realness of the spectrum — so the argument already given for the bounded self-adjoint case carries over unchanged once we have built an analogous functional calculus for normal operators. We will make this precise once we reach that point; for now, our task is the first stage: building the continuous functional calculus.
+
+For a self-adjoint operator, this calculus was built by approximating continuous *real-valued* functions on the (real) spectrum by real polynomials in $$\lambda$$, using the real Stone–Weierstrass theorem. For a normal operator, $$\sigma(A)$$ is a general compact subset of $$\mathbb{C}$$, and we need to approximate *complex-valued* functions; the complex-valued Stone–Weierstrass theorem requires an algebra of functions closed under complex conjugation, so plain polynomials in $$\lambda$$ no longer suffice — we need polynomials in $$\lambda$$ *and* $$\overline{\lambda}$$. On the operator side, the counterpart to conjugation is the adjoint, so a polynomial $$p(\lambda,\overline\lambda)$$ should correspond to the operator $$p(A,A^*)$$ obtained by substituting $$A$$ for $$\lambda$$ and $$A^*$$ for $$\overline\lambda$$ — and the algebra structure survives the substitution only because $$A$$ and $$A^*$$ commute (this is exactly where normality is used): if $$AA^*\ne A^*A$$, the substitution $$\lambda\mapsto A,\ \overline\lambda\mapsto A^*$$ would not even be well defined as an algebra homomorphism, since a single function $$p(\lambda,\overline\lambda)$$ can be written as a polynomial in $$\lambda,\overline\lambda$$ in more than one way (e.g. $$\lambda\overline\lambda = \overline\lambda\lambda$$), and these would have to agree once $$A,A^*$$ are substituted.
+
+The key technical result we are aiming for is a version of the spectral mapping theorem for this two-variable substitution: $$\sigma\big(p(A,A^*)\big) = \big\{ p(\lambda,\overline\lambda) \mid \lambda \in \sigma(A) \big\}$$. Unlike the ordinary (one-variable) spectral mapping theorem, this is genuinely harder to prove, and the route we follow — matching Hall's — uses the bounded self-adjoint spectral theorem itself, applied to an auxiliary self-adjoint operator, together with the notion of an *almost eigenvector*.
+
+We start with a fact that will let us compute the norm of $$p(A,A^*)$$ once we know its spectrum: for normal operators, the operator norm equals the spectral radius, exactly as for self-adjoint operators. Proving this needs one general fact about spectral radii of commuting operators that is not yet available to us, and whose proof requires knowing that the powers of a bounded operator cannot grow faster than the spectral radius suggests.
+
+We can establish the growth bound on powers of a bounded operator that Lemma 10.22 below will need using exactly the tools already assembled in the previous post's proof of the bounded self-adjoint case of norm-equals-spectral-radius — that proof, in fact, establishes a fact about *any* bounded operator (self-adjointness enters only in its final step, where it is used for a sharper conclusion we do not need here). We extract that general fact as its own lemma, citing the same tools directly, rather than repeating "self-adjoint" hypotheses we will not use.
+
+> **Lemma** *(Power Growth is Controlled by the Spectral Radius)*
+<a name="lmm:power-growth-controlled-by-spectral-radius"></a>
+<!--  \uses{../spectral-theorems/#def:spectral-radius} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+<!--  \uses{../spectral-theorems/#thrm:laurents-theorem} -->
+<!--  \uses{../spectral-theorems/#lmm:nth-term-test} -->
+<!--  \uses{../spectral-theorems/#thrm:hall-a.40} -->
+<!--  \uses{../spectral-theorems/#thrm:theorem-on-completeness-of-the-dual} -->
+<!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
+> Suppose $$A \in \mathcal{B}(\mathbf{H})$$ and $$T \in \mathbb{R}$$ with $$T > R(A)$$. Then
+>
+> $$
+>     \lim_{m \to \infty} \frac{\|A^m\|}{T^m} = 0.
+> $$
+
+**Proof**
+Fix $$\lambda_1 \in \mathbb{C}$$ with $$R(A) < |\lambda_1| < T$$ (possible since $$R(A) < T$$). We first show there is a constant $$C < \infty$$ with $$\|A^m\| \le C|\lambda_1|^{m+1}$$ for all $$m$$.
+
+By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), the resolvent $$\lambda \mapsto (A-\lambda\mathbf{1})^{-1}$$ is holomorphic on the resolvent set of $$A$$, which contains $$\{ \lambda : |\lambda| > R(A) \}$$ (since $$\sigma(A) \subset \{ |\lambda| \le R(A) \}$$, by the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius)); and, for $$|\lambda| > \|A\|$$,
+
+$$
+    (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},
+$$
+
+convergent in operator norm. Fix a bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$. Then $$\lambda \mapsto \xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ is holomorphic on the open annulus $$R(A) < |\lambda|$$ (boundedness and linearity of $$\xi$$, composed with the holomorphic resolvent), so by [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) it has a unique Laurent series expansion there. Applying $$\xi$$ termwise to the operator-norm-convergent series above gives a second Laurent-type expansion, $$-\sum_m \xi(A^m)/\lambda^{m+1}$$, valid (a priori) only on the smaller annulus $$\|A\| < |\lambda|$$; on the overlap $$\max(R(A),\|A\|) < |\lambda|$$, this must coincide with the unique Laurent series just cited. By uniqueness, the series $$-\sum_m \xi(A^m)/\lambda^{m+1}$$ is *that same* Laurent series, and so — this being exactly what [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) asserts about a Laurent series on its annulus of holomorphicity — it converges throughout the full annulus $$R(A) < |\lambda|$$, in particular at $$\lambda = \lambda_1$$.
+
+By the [**Nth-Term Test**](../spectral-theorems/#lmm:nth-term-test), convergence of $$\sum_m \xi(A^m)/\lambda_1^{m+1}$$ forces its terms to tend to $$0$$, so in particular $$\{ \xi(A^m/\lambda_1^{m+1}) \}_m$$ is a bounded subset of $$\mathbb{C}$$, with some bound $$C_\xi$$ depending on $$\xi$$ (and on $$\lambda_1$$). As $$\xi$$ ranges over all bounded linear functionals on $$\mathcal{B}(\mathbf{H})$$ — a Banach space, by [**Lemma** *(Bounded Operators form a Banach Space)*](../spectral-theorems/#lmm:bounded-operators-form-a-banach-space), and so, by the [**Theorem on Completeness of the Dual**](../spectral-theorems/#thrm:theorem-on-completeness-of-the-dual), its dual $$\mathcal{B}(\mathbf{H})^*$$ is itself a Banach space — the [**Principle of Uniform Boundedness**](../spectral-theorems/#thrm:hall-a.40), applied with $$V_1 = \mathcal{B}(\mathbf{H})^*$$, $$V_2 = \mathbb{C}$$, and the family of evaluation maps $$\xi \mapsto \xi(A^m/\lambda_1^{m+1})$$ (each pointwise-bounded in $$m$$ by $$C_\xi$$, just shown), gives a constant $$C < \infty$$, independent of $$\xi$$, with $$\|A^m/\lambda_1^{m+1}\| \le C$$ for all $$m$$ — identifying the operator norm of $$A^m/\lambda_1^{m+1}$$ with the norm of its image under the canonical (isometric) embedding of $$\mathcal{B}(\mathbf{H})$$ into its double dual. That is, $$\|A^m\| \le C|\lambda_1|^{m+1}$$ for all $$m$$, as claimed.
+
+Finally, since $$|\lambda_1| < T$$,
+
+$$
+    \frac{\|A^m\|}{T^m} \le C|\lambda_1| \left( \frac{|\lambda_1|}{T} \right)^m \longrightarrow 0
+$$
+
+as $$m \to \infty$$, since $$|\lambda_1|/T < 1$$. This is the desired result.$$\blacksquare$$
+
+We now use this growth bound to establish submultiplicativity of the spectral radius for commuting operators.
+
+> **Lemma**
+<a name="lmm:hall-10.22"></a>
+<!--  \uses{lmm:power-growth-controlled-by-spectral-radius} -->
+<!--  \uses{../spectral-theorems/#def:spectral-radius} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+> If $$A$$ and $$B$$ are commuting elements of $$\mathcal{B}(\mathbf{H})$$, then
+>
+> $$
+>     R(AB) \le R(A)R(B).
+> $$
+
+**Proof**
+Fix real numbers $$S > R(A)$$ and $$T > R(B)$$. Since $$A$$ and $$B$$ commute, $$(AB)^m = A^mB^m$$ for every $$m$$ (by induction: trivial for $$m=0,1$$, and if $$(AB)^m = A^mB^m$$ then $$(AB)^{m+1} = (AB)^mAB = A^mB^mAB = A^m(B^mA)B = A^m(AB^m)B = A^{m+1}B^{m+1}$$, using $$B^mA = AB^m$$, itself immediate by induction on $$m$$ from $$AB=BA$$). By submultiplicativity of the operator norm,
+
+$$
+    \frac{\|(AB)^m\|}{S^mT^m} = \frac{\|A^mB^m\|}{S^mT^m} \le \frac{\|A^m\|\|B^m\|}{S^mT^m} = \frac{\|A^m\|}{S^m}\cdot\frac{\|B^m\|}{T^m}.
+$$
+
+By [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius), applied to $$A$$ with $$T$$ there taken to be $$S$$, and to $$B$$ with $$T$$ there taken to be $$T$$, both factors on the right tend to $$0$$ as $$m \to \infty$$, so
+
+$$
+    \lim_{m \to \infty} \frac{\|(AB)^m\|}{S^mT^m} = 0. \tag{$\P$}
+$$
+
+Now fix any $$\lambda_1 \in \mathbb{C}$$ with $$|\lambda_1| > ST$$, and fix $$\lambda_2$$ with $$|\lambda_1| > |\lambda_2| > ST$$. By $$(\P)$$ applied with $$S,T$$ replaced by any pair of positive reals whose product is $$|\lambda_2|$$ — for instance $$S' = S \cdot |\lambda_2|/(ST) $$ and $$T' = T$$, so $$S'T' = |\lambda_2|$$, and $$S' > R(A)$$ since $$|\lambda_2| > ST$$ gives $$S' = S|\lambda_2|/(ST) = |\lambda_2|/T > S > R(A)$$ — the sequence $$\|(AB)^m\|/|\lambda_2|^m$$ tends to $$0$$, so in particular is bounded: there is a constant $$C$$ with $$\|(AB)^m\| \le C|\lambda_2|^m$$ for all $$m$$.
+
+By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) applied to $$AB$$, for $$|\lambda| > \|AB\|$$,
+
+$$
+    (AB - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{(AB)^m}{\lambda^{m+1}}, \tag{$\P\P$}
+$$
+
+convergent in operator norm. We claim this series also converges (in operator norm) at $$\lambda = \lambda_1$$, which will show $$\lambda_1$$ is in the resolvent set of $$AB$$ (the series, if convergent, is readily checked — exactly as in the proof of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) — to give a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$). Indeed, the $$m$$-th term has norm
+
+$$
+    \left\| \frac{(AB)^m}{\lambda_1^{m+1}} \right\| = \frac{\|(AB)^m\|}{|\lambda_1|^{m+1}} \le \frac{C|\lambda_2|^m}{|\lambda_1|^{m+1}} = \frac{C}{|\lambda_1|}\left( \frac{|\lambda_2|}{|\lambda_1|} \right)^m,
+$$
+
+and $$|\lambda_2|/|\lambda_1| < 1$$ by choice of $$\lambda_2$$, so the terms are dominated by a convergent geometric series; by completeness of $$\mathcal{B}(\mathbf{H})$$, the series $$(\P\P)$$ converges in operator norm at $$\lambda = \lambda_1$$. Thus $$\lambda_1$$ is in the resolvent set of $$AB$$.
+
+Since $$\lambda_1$$ with $$|\lambda_1| > ST$$ was arbitrary, every such $$\lambda_1$$ is in the resolvent set of $$AB$$, so $$\sigma(AB) \subset \{ |\lambda| \le ST \}$$, giving $$R(AB) \le ST$$. As $$S > R(A)$$ and $$T > R(B)$$ were arbitrary, $$R(AB) \le R(A)R(B)$$.$$\blacksquare$$
+
+We can now prove the equality of norm and spectral radius for normal operators, exactly as for self-adjoint operators.
+
+> **Proposition** *(Norm Equals Spectral Radius for Normal Operators)*
+<a name="prpstn:hall-10.21"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{lmm:hall-10.22} -->
+<!--  \uses{../spectral-theorems/#def:spectral-radius} -->
+<!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.2} -->
+<!--  \uses{../spectral-theorems/#lmm:hall-8.1} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is normal, then $$\|A\| = R(A)$$.
+
+**Proof**
+By [**Corollary**](../spectral-theorems/#crllr:crllr-1), $$R(A) \le \|A\|$$ for any bounded operator. It remains to show $$\|A\| \le R(A)$$.
+
+By [**Proposition** *(hall-7.2)*](../spectral-theorems/#prpstn:hall-7.2), $$\|A\|^2 = \|A^*A\|$$. Since $$A$$ is normal, $$A^*A = AA^*$$; note $$A^*A$$ is self-adjoint regardless of normality, since $$(A^*A)^* = A^*A^{**} = A^*A$$. Since $$A$$ commutes with $$A^*$$ (normality), [**Lemma**](#lmm:hall-10.22) applies with the pair $$(A^*, A)$$ to give
+
+$$
+    R(A^*A) \le R(A^*)R(A).
+$$
+
+Also, since $$A^*A$$ is self-adjoint, [**Lemma** *(hall-8.1)*](../spectral-theorems/#lmm:hall-8.1) — the self-adjoint case of norm equals spectral radius, already established in the previous post — gives $$\|A^*A\| = R(A^*A)$$. Combining,
+
+$$
+    \|A\|^2 = \|A^*A\| = R(A^*A) \le R(A^*)R(A) \le \|A^*\|R(A) = \|A\|R(A),
+$$
+
+where the last equality is $$\|A^*\| = \|A\|$$, also from [**Proposition** *(hall-7.2)*](../spectral-theorems/#prpstn:hall-7.2), and $$R(A^*) \le \|A^*\|$$ is [**Corollary**](../spectral-theorems/#crllr:crllr-1) applied to $$A^*$$. If $$\|A\| \ne 0$$, dividing both sides by $$\|A\|$$ gives $$\|A\| \le R(A)$$, as desired; if $$\|A\| = 0$$ the inequality $$\|A\| \le R(A)$$ holds trivially, since $$R(A) \ge 0$$ always.$$\blacksquare$$
+
