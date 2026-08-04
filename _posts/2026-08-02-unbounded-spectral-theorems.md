@@ -99,7 +99,7 @@ $$
     \left< \phi, A\psi \right> = T\psi = \tilde{T}\psi = \left< \chi, \psi \right> \quad \text{for all } \psi \in \text{Dom}(A).
 $$
 
-So $$\chi$$ satisfies the defining equation of $$A^*\phi$$ in [Definition (Adjoint of an Unbounded Operator)](#def:hall-9.1). For uniqueness: if $$\chi'$$ also satisfied $$\left< \phi, A\psi \right> = \left< \chi', \psi \right>$$ for all $$\psi \in \text{Dom}(A)$$, then $$\chi$$ and $$\chi'$$ would agree in inner product against every element of the dense subset $$\text{Dom}(A)$$, so $$\chi = \chi'$$ by [Lemma (Equality Testing on a Dense Subspace)](#lmm:hall-dense-testing). We may therefore unambiguously set $$A^*\phi \equiv \chi$$.
+So $$\chi$$ satisfies the defining equation of $$A^*\phi$$ in [Definition (Adjoint of an Unbounded Operator)](#def:hall-9.1). For uniqueness: if $$\chi'$$ also satisfied $$\left< \phi, A\psi \right> = \left< \chi', \psi \right>$$ for all $$\psi \in \text{Dom}(A)$$, then $$\chi$$ and $$\chi'$$ would agree in inner product against every element of the dense subset $$\text{Dom}(A)$$, so $$\chi = \chi'$$ by [Lemma (Equality Testing on a Dense Subspace, First Slot)](#lmm:hall-dense-testing). We may therefore unambiguously set $$A^*\phi \equiv \chi$$.
 
 Before proceeding, we check that $$A^*$$, as just constructed, is again a linear operator on its domain — a fact used implicitly throughout the rest of this post.
 
@@ -265,6 +265,7 @@ Our first observation is that the adjoint's graph is always closed, regardless o
 > **Proposition** *(Closedness of the Adjoint's Graph; Closability of Symmetric Operators)*
 <a name="prpstn:hall-9.8"></a>
 <!--  \uses{def:hall-9.1} -->
+<!--  \uses{lmm:characterizing-adjoint-domain-membership} -->
 <!--  \uses{def:closed-linear-map-on-a-subspace} -->
 <!--  \uses{def:hall-9.2} -->
 <!--  \uses{def:hall-9.6} -->
@@ -386,6 +387,8 @@ Conversely, suppose $$V$$ is dense, i.e. $$\overline{V} = \mathbf{H}$$. Let $$\p
 > **Proposition** *(Orthogonal Complement of the Range)*
 <a name="prpstn:hall-9.12"></a>
 <!--  \uses{def:hall-9.1} -->
+<!--  \uses{def:orthogonal-complement} -->
+<!--  \uses{lmm:characterizing-adjoint-domain-membership} -->
 <!--  \uses{def:range-of-an-unbounded-operator} -->
 > If $$A$$ is an unbounded operator on $$\mathbf{H}$$, then
 >
@@ -461,7 +464,7 @@ $$
 \end{align}
 $$
 
-where the third equality used the [definition of the adjoint](#def:hall-9.1) applied to $$A$$ and, separately, applied to the everywhere-defined bounded operator $$B$$, and the last equality used linearity of the inner product in its second argument. So $$\left< (A+B)^*\phi, \psi \right> = \left< A^*\phi + B^*\phi, \psi \right>$$ for all $$\psi \in \text{Dom}(A)$$, a dense subset of $$\mathbf{H}$$ by the [definition of an unbounded operator](#def:hall-3.1); by [Lemma (Equality Testing on a Dense Subspace)](#lmm:hall-dense-testing), $$(A+B)^*\phi = A^*\phi + B^*\phi$$.
+where the third equality used the [definition of the adjoint](#def:hall-9.1) applied to $$A$$ and, separately, applied to the everywhere-defined bounded operator $$B$$, and the last equality used linearity of the inner product in its second argument. So $$\left< (A+B)^*\phi, \psi \right> = \left< A^*\phi + B^*\phi, \psi \right>$$ for all $$\psi \in \text{Dom}(A)$$, a dense subset of $$\mathbf{H}$$ by the [definition of an unbounded operator](#def:hall-3.1); by [Lemma (Equality Testing on a Dense Subspace, First Slot)](#lmm:hall-dense-testing), $$(A+B)^*\phi = A^*\phi + B^*\phi$$.
 
 Finally, suppose $$A$$ is self-adjoint and $$B$$ is bounded and self-adjoint on all of $$\mathbf{H}$$. Then $$\text{Dom}\big( (A+B)^* \big) = \text{Dom}(A^*) = \text{Dom}(A) = \text{Dom}(A+B)$$, using self-adjointness of $$A$$ for the middle equality; and for $$\psi$$ in this common domain, $$(A+B)^*\psi = A^*\psi + B^*\psi = A\psi + B\psi = (A+B)\psi$$, using self-adjointness of $$A$$ and of $$B$$. So $$A+B$$ is self-adjoint.$$\blacksquare$$
 
@@ -556,11 +559,11 @@ $$
 \begin{align}
     \left< (A-\lambda\mathbf{1})\psi, (A-\lambda\mathbf{1})\psi \right>
         &= \left< (A-a\mathbf{1})\psi - ib\psi,\ (A-a\mathbf{1})\psi - ib\psi \right> \\
-        &= \left< (A-a\mathbf{1})\psi, (A-a\mathbf{1})\psi \right> - ib\left< \psi, (A-a\mathbf{1})\psi \right> + ib \left< (A-a\mathbf{1})\psi, \psi \right> + b^2 \left< \psi, \psi \right>.
+        &= \left< (A-a\mathbf{1})\psi, (A-a\mathbf{1})\psi \right> - ib\left< (A-a\mathbf{1})\psi, \psi \right> + ib \left< \psi, (A-a\mathbf{1})\psi \right> + b^2 \left< \psi, \psi \right>.
 \end{align}
 $$
 
-By the symmetry identity just established, the middle two terms cancel: $$-ib\left< \psi, (A-a\mathbf{1})\psi \right> + ib \left< (A-a\mathbf{1})\psi, \psi \right> = -ib\left< \psi, (A-a\mathbf{1})\psi \right> + ib \left< \psi, (A-a\mathbf{1})\psi \right> = 0$$. So
+Here the cross terms arise as follows: expanding the first argument by conjugate-linearity contributes $$\overline{(-ib)} = ib$$ to the $$\psi$$-term, and expanding the second by linearity contributes $$-ib$$; the final term is $$\overline{(-ib)}(-ib)\left< \psi,\psi \right> = (ib)(-ib)\left< \psi,\psi\right> = b^2\left<\psi,\psi\right>$$. By the symmetry identity just established, $$\left< (A-a\mathbf{1})\psi, \psi \right> = \left< \psi, (A-a\mathbf{1})\psi \right>$$, so the middle two terms cancel: $$-ib\left< (A-a\mathbf{1})\psi, \psi \right> + ib \left< \psi, (A-a\mathbf{1})\psi \right> = -ib\left< \psi, (A-a\mathbf{1})\psi \right> + ib \left< \psi, (A-a\mathbf{1})\psi \right> = 0$$. So
 
 $$
     \left< (A-\lambda\mathbf{1})\psi, (A-\lambda\mathbf{1})\psi \right> = \left< (A-a\mathbf{1})\psi, (A-a\mathbf{1})\psi \right> + b^2 \left< \psi, \psi \right> \ge b^2 \left< \psi, \psi \right>,
@@ -600,7 +603,7 @@ $$
     \left( \text{Range}(A - \lambda \mathbf{1}) \right)^\perp = \text{Ker}\left( (A - \lambda \mathbf{1})^* \right).
 $$
 
-By [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) with $$B = -\lambda \mathbf{1}$$ — a bounded operator on all of $$\mathbf{H}$$ — combined with [Lemma (Adjoint of a Scalar Multiple of the Identity)](#lmm:adjoint-of-scalar-multiple-of-identity) giving $$(-\lambda\mathbf{1})^* = -\overline{\lambda}\mathbf{1}$$, we get $$(A - \lambda\mathbf{1})^* = A^* + (-\lambda\mathbf{1})^* = A^* - \overline{\lambda}\mathbf{1} = A - \overline{\lambda}\mathbf{1}$$, using $$A^* = A$$. Since $$\overline{\lambda} = a - ib$$ also has $$b \ne 0$$ as its (negated) imaginary part, the argument of the previous paragraph applies verbatim with $$\overline{\lambda}$$ in place of $$\lambda$$ and shows $$A - \overline{\lambda}\mathbf{1}$$ is injective, i.e. $$\text{Ker}(A - \overline{\lambda}\mathbf{1}) = \{0\}$$. Hence
+By [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) with $$B = -\lambda \mathbf{1}$$ — a bounded operator on all of $$\mathbf{H}$$ — combined with [Lemma (Adjoint of a Scalar Multiple of the Identity)](#lmm:adjoint-of-scalar-multiple-of-identity) giving $$(-\lambda\mathbf{1})^* = -\overline{\lambda}\mathbf{1}$$, we get $$(A - \lambda\mathbf{1})^* = A^* + (-\lambda\mathbf{1})^* = A^* - \overline{\lambda}\mathbf{1} = A - \overline{\lambda}\mathbf{1}$$, using $$A^* = A$$. Write $$\overline{\lambda} = a + i(-b)$$, so that [**Lemma (The $$b^2$$ Inequality for Symmetric Operators)**](#lmm:b-squared-inequality-symmetric), applied to the symmetric $$A$$ with the pair $$(a, -b)$$ in place of $$(a,b)$$, gives $$(-b)^2\left< \psi,\psi \right> \le \left< (A - \overline{\lambda}\mathbf{1})\psi, (A-\overline{\lambda}\mathbf{1})\psi \right>$$ for all $$\psi \in \text{Dom}(A)$$. Since $$(-b)^2 = b^2 \ne 0$$, the injectivity argument of the previous paragraph applies verbatim with $$\overline{\lambda}$$ in place of $$\lambda$$: $$\text{Ker}(A - \overline{\lambda}\mathbf{1}) = \{0\}$$. Hence
 
 $$
     \left( \text{Range}(A - \lambda \mathbf{1}) \right)^\perp = \text{Ker}(A - \overline{\lambda}\mathbf{1}) = \{0\},
@@ -657,7 +660,7 @@ We conclude this part of the development with a criterion for essential self-adj
 > If $$A$$ is a symmetric operator on $$\mathbf{H}$$, then $$A$$ is essentially self-adjoint if and only if $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense subspaces of $$\mathbf{H}$$.
 
 **Proof**
-We first prove the forward direction, i.e. that if $$A$$ is essentially self-adjoint, then $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense in $$\mathbf{H}$$. Since $$A$$ is essentially self-adjoint, $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$A^* = (A^{\text{cl}})^* = A^{\text{cl}}$$, the last equality because $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (Orthogonal Complement of the Range)](#prpstn:hall-9.12) and [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) (with $$B = i\mathbf{1}$$, so $$B^* = -i\mathbf{1}$$ by [Lemma (Adjoint of a Scalar Multiple of the Identity)](#lmm:adjoint-of-scalar-multiple-of-identity)),
+We first prove the forward direction, i.e. that if $$A$$ is essentially self-adjoint, then $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense in $$\mathbf{H}$$. Since $$A$$ is essentially self-adjoint, $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$A^* = (A^{\text{cl}})^* = A^{\text{cl}}$$, the last equality because $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (Orthogonal Complement of the Range)](#prpstn:hall-9.12) and [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) (applied to $$A - i\mathbf{1}$$, i.e. with $$B = -i\mathbf{1}$$, so that $$B^* = \overline{(-i)}\mathbf{1} = i\mathbf{1}$$ by [Lemma (Adjoint of a Scalar Multiple of the Identity)](#lmm:adjoint-of-scalar-multiple-of-identity)),
 
 $$
     \left( \text{Range}(A - i\mathbf{1}) \right)^\perp = \text{Ker}\left( (A - i\mathbf{1})^* \right) = \text{Ker}(A^* + i\mathbf{1}) = \text{Ker}(A^{\text{cl}} + i\mathbf{1}).
@@ -1016,7 +1019,7 @@ Since our forms are now defined on arbitrary subspaces, restriction to a smaller
 **Proof**
 Property 1 of the [definition of a quadratic form](#def:hall-quadratic-form-on-a-subspace) is inherited immediately: for $$\psi \in D' \subset D$$ and $$\lambda \in \mathbb{C}$$, $$\lambda\psi \in D'$$ ($$D'$$ being a subspace) and $$Q(\lambda\psi) = \lvert\lambda\rvert^2 Q(\psi)$$ holds because it holds in $$D$$. For property 2, note that the polarization formula defining the associated form involves only the values of $$Q$$ at $$\phi+\psi$$, $$\phi$$, $$\psi$$, $$\phi+i\psi$$, $$i\psi$$, all of which lie in $$D'$$ when $$\phi,\psi \in D'$$ ($$D'$$ being a subspace); so the form associated to $$Q\vert_{D'}$$ is given by the same formula with the same values, i.e. is the restriction $$L\vert_{D'\times D'}$$ of the form $$L$$ associated to $$Q$$. A restriction of a map that is conjugate-linear in its first and linear in its second argument, to a product of subspaces, retains those properties; so $$L\vert_{D'\times D'}$$ is a sesquilinear form on $$D'$$, verifying property 2.$$\blacksquare$$
 
-The proof of Proposition (hall-10.2) below draws on three standard facts of Lebesgue integration that neither this post nor the previous one has needed until now. [Hall](https://doi.org/10.1007/978-1-4614-7116-5) explicitly assumes these as background (Appendix A.2: "we assume those parts of measure theory that are entirely standard: the monotone convergence and dominated convergence theorems, $$L^p$$ spaces, and Fubini's theorem"), so, exactly as with Cauchy–Schwarz or the Bounded Linear Transformation Theorem, we state them here without proof.
+The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3) below draw on several standard facts of Lebesgue integration that neither this post nor the previous one has needed until now. [Hall](https://doi.org/10.1007/978-1-4614-7116-5) explicitly assumes these as background (Appendix A.2: "we assume those parts of measure theory that are entirely standard: the monotone convergence and dominated convergence theorems, $$L^p$$ spaces, and Fubini's theorem"), so, exactly as with Cauchy–Schwarz or the Bounded Linear Transformation Theorem, we state them here without proof.
 
 > **Theorem** *(Monotone Convergence Theorem, for Integrals)*
 <a name="thrm:monotone-convergence-theorem-for-integrals"></a>
@@ -1783,6 +1786,9 @@ The last property we need is that an operator commuting with $$A$$ preserves eve
 > **Proposition** *(Commuting Operators Preserve Spectral Subspaces)*
 <a name="prpstn:hall-7.16"></a>
 <!--  \uses{def:hall-7.14} -->
+<!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
+<!--  \uses{def:hall-9.1} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#def:functional-calculus} -->
 <!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
 <!--  \uses{../spectral-theorems/#thrm:stone–weierstrass-complex} -->
@@ -1800,14 +1806,21 @@ The last property we need is that an operator commuting with $$A$$ preserves eve
 
 *Continuous functions.* If $$f$$ is continuous on $$\sigma(A)$$, the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) supplies polynomials $$p_n \to f$$ uniformly on $$\sigma(A)$$; the functional calculus is isometric on continuous functions, so $$p_n(A) \to f(A)$$ in operator norm. Since multiplication by the fixed bounded operator $$B$$ is continuous in the operator norm (on either side, by submultiplicativity), passing to the limit in $$Bp_n(A) = p_n(A)B$$ gives $$Bf(A) = f(A)B$$. So $$\mathcal{F}$$ contains $$C^0(\sigma(A);\mathbb{C})$$.
 
-*Bounded measurable functions.* Fix $$\phi,\psi \in \mathbf{H}$$. For bounded measurable $$f$$, the condition $$Bf(A) = f(A)B$$ is equivalent, by [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) applied with $$D = \mathbf{H}$$, to
+*Bounded measurable functions.* We show $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits. The key is the following convergence fact, which we establish first: if $$\{f_i\}$$ are bounded measurable with $$\lvert f_i \rvert \le M$$ and $$f_i \to f$$ pointwise on $$\sigma(A)$$, then
 
 $$
-    \left< \phi, f(A)B\psi \right> = \left< \phi, Bf(A)\psi \right> = \left< B^*\phi, f(A)\psi \right>
-    \qquad\text{for all } \phi,\psi \in \mathbf{H},
+    \left< \phi, f_i(A)\psi \right> \longrightarrow \left< \phi, f(A)\psi \right> \qquad \text{for all } \phi,\psi \in \mathbf{H}. \tag{$\dagger\dagger$}
 $$
 
-i.e. to $$\int_{\sigma(A)} f \, d\mu^A_{\phi, B\psi} = \int_{\sigma(A)} f \, d\mu^A_{B^*\phi, \psi}$$, where $$\mu^A_{\phi_1,\phi_2}$$ denotes the complex measure $$E \mapsto \left< \phi_1, \mu^A(E)\phi_2 \right>$$. Both sides are integrals of $$f$$ against fixed finite measures, so by the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) both sides are continuous under uniformly bounded pointwise limits of $$f$$. Hence $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.
+Indeed, writing $$Q_g(\xi) \equiv \left< \xi, g(A)\xi \right> = \int_{\sigma(A)} g \, d\mu^A_\xi$$ for the quadratic form attached to a bounded measurable $$g$$ — the second equality being the defining property of the [functional calculus](../spectral-theorems/#def:functional-calculus) — the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) applies to each fixed $$\xi$$ (the measure $$\mu^A_\xi$$ being finite, with total mass $$\left\| \xi \right\|^2$$) and gives $$Q_{f_i}(\xi) \to Q_f(\xi)$$ for every $$\xi \in \mathbf{H}$$. By Part 1 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties), applied with $$D = \mathbf{H}$$ and $$T = g(A)$$, the sesquilinear form associated to $$Q_g$$ is $$(\phi,\psi) \mapsto \left< \phi, g(A)\psi \right>$$; and that form is given by the polarization formula as a fixed finite linear combination of the five values $$Q_g(\phi+\psi), Q_g(\phi), Q_g(\psi), Q_g(\phi+i\psi), Q_g(i\psi)$$. Each of those five converges as $$i \to \infty$$ by the previous sentence, so the linear combinations converge too, which is exactly $$(\dagger\dagger)$$.
+
+Now let $$\{f_i\}$$ be as above with each $$f_i \in \mathcal{F}$$. For all $$\phi,\psi \in \mathbf{H}$$, applying $$(\dagger\dagger)$$ twice — once with the fixed vector $$B\psi$$ in the second slot, once with the fixed vector $$B^*\phi$$ in the first —
+
+$$
+    \left< \phi, f(A)B\psi \right> = \lim_{i\to\infty} \left< \phi, f_i(A)B\psi \right> = \lim_{i\to\infty} \left< \phi, Bf_i(A)\psi \right> = \lim_{i\to\infty} \left< B^*\phi, f_i(A)\psi \right> = \left< B^*\phi, f(A)\psi \right> = \left< \phi, Bf(A)\psi \right>,
+$$
+
+where the second equality used $$f_i \in \mathcal{F}$$ and the third and last used the [definition of the adjoint](#def:hall-9.1) for the bounded operator $$B$$. Since this holds for all $$\phi \in \mathbf{H}$$, [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D = \mathbf{H}$$ gives $$f(A)B\psi = Bf(A)\psi$$ for every $$\psi$$, i.e. $$f \in \mathcal{F}$$.
 
 A collection of bounded measurable functions containing the continuous functions and closed under uniformly bounded pointwise limits contains all bounded Borel-measurable functions: the collection $$\mathcal{L}$$ of Borel sets $$E$$ with $$1_E \in \mathcal{F}$$ contains every set whose indicator is a uniformly bounded pointwise limit of continuous functions — in particular, by the argument of the previous post, every open set — and is a monotone class, being closed under increasing unions and decreasing intersections (the corresponding indicators converge pointwise and are uniformly bounded by $$1$$); so by the [**Monotone Class Theorem**](../spectral-theorems/#thrm:monotone-class-theorem), $$\mathcal{L}$$ contains the Borel $$\sigma$$-algebra. Every bounded measurable $$f$$ is a uniformly bounded pointwise limit of simple functions built from such indicators, and $$\mathcal{F}$$ is a vector space (immediate from linearity of the functional calculus) closed under those limits, so $$f \in \mathcal{F}$$.
 
@@ -1941,7 +1954,7 @@ $$
       + \lambda\big( A^{k-1}(A^*)^l - \lambda^{k-1}\overline\lambda^{\,l}\mathbf{1} \big)\psi
 $$
 
-holds (expand the right-hand side: the two $$\lambda A^{k-1}(A^*)^l\psi$$ terms cancel). The first term has norm at most $$\left\| A \right\|^{k-1}\left\| A^* \right\|^l \left\| (A-\lambda\mathbf{1})\psi \right\| \le \left\| A \right\|^{k-1}\left\| A^* \right\|^l \varepsilon \left\| \psi \right\|$$, by submultiplicativity of the operator norm and the hypothesis on $$\psi$$. The second has norm at most $$\lvert \lambda \rvert c_{k-1,l}\varepsilon\left\| \psi \right\|$$, by the inductive hypothesis (applicable since $$(k-1)+l = N$$). So $$c_{kl} = \left\| A \right\|^{k-1}\left\| A^* \right\|^l + \lvert \lambda \rvert c_{k-1,l}$$ works. If $$k = 0$$, then $$l > 0$$, and the symmetric identity
+holds. Indeed, expanding the right-hand side, the two $$\lambda A^{k-1}(A^*)^l\psi$$ terms cancel, leaving $$A^{k-1}(A^*)^lA\psi - \lambda^k\overline\lambda^{\,l}\psi$$; and $$A^{k-1}(A^*)^lA = A^k(A^*)^l$$, since $$A$$ commutes with $$A^*$$ by normality (so $$A$$ may be moved leftwards past each of the $$l$$ factors of $$A^*$$), giving the left-hand side. The first term has norm at most $$\left\| A \right\|^{k-1}\left\| A^* \right\|^l \left\| (A-\lambda\mathbf{1})\psi \right\| \le \left\| A \right\|^{k-1}\left\| A^* \right\|^l \varepsilon \left\| \psi \right\|$$, by submultiplicativity of the operator norm and the hypothesis on $$\psi$$. The second has norm at most $$\lvert \lambda \rvert c_{k-1,l}\varepsilon\left\| \psi \right\|$$, by the inductive hypothesis (applicable since $$(k-1)+l = N$$). So $$c_{kl} = \left\| A \right\|^{k-1}\left\| A^* \right\|^l + \lvert \lambda \rvert c_{k-1,l}$$ works. If $$k = 0$$, then $$l > 0$$, and the symmetric identity
 
 $$
     \big( (A^*)^l - \overline\lambda^{\,l}\mathbf{1} \big)\psi
