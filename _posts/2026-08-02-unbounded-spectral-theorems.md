@@ -1349,6 +1349,24 @@ The next proposition records a natural compatibility check, confirming that [**P
 **Proof**
 If $$f$$ is bounded, $$\mu_\psi$$ is a finite measure for every $$\psi$$ (as always), so $$\int_X \lvert f \rvert^2 \, d\mu_\psi < \infty$$ automatically and $$W_f = \mathbf{H}$$. Let $$A_2$$ denote the [bounded integral](../spectral-theorems/#thrm:operator-valued-integration) of the previous post, an element of $$\mathcal{B}(\mathbf{H})$$, so in particular an unbounded operator on $$\mathbf{H}$$ with domain $$\mathbf{H} = W_f$$. Its defining property is exactly $$\left< \psi, A_2\psi \right> = \int_X f \, d\mu_\psi$$ for all $$\psi \in \mathbf{H}$$ — that is, $$A_2$$ satisfies the diagonal identity of the strengthened uniqueness clause of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1). That clause therefore gives $$A_2 = \int_X f \, d\mu$$ directly, which is the claim.$$\blacksquare$$
 
+The integral is insensitive to changing the integrand on a set the projection-valued measure annihilates; we record this, as the Cayley transform below produces exactly such a situation (the function $$D$$ is undefined at one point, which carries no mass).
+
+> **Lemma** *(The Integral Ignores Null Sets)*
+<a name="lmm:integral-ignores-null-sets"></a>
+<!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{prpstn:hall-10.2} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and let $$f, g$$ be measurable functions on $$X$$ agreeing off a set $$N \in \Omega(X)$$ with $$\mu(N) = 0$$. Then $$W_f = W_g$$ and $$\int_X f \, d\mu = \int_X g \, d\mu$$ (as operators, with equal domains).
+
+**Proof**
+Since $$\mu(N) = 0$$, $$\mu_\psi(N) = \left< \psi, \mu(N)\psi \right> = 0$$ for every $$\psi \in \mathbf{H}$$; that is, $$N$$ is $$\mu_\psi$$-null for every $$\psi$$. Two measurable functions agreeing off a $$\nu$$-null set have the same $$\nu$$-integral whenever either is defined, and the same is true of their moduli squared. Hence, for every $$\psi$$,
+
+$$
+    \int_X \lvert f \rvert^2 \, d\mu_\psi = \int_X \lvert g \rvert^2 \, d\mu_\psi,
+$$
+
+so the defining condition of $$W_f$$ and of $$W_g$$ in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) select the same set of $$\psi$$: $$W_f = W_g$$. Likewise $$\int_X f \, d\mu_\psi = \int_X g \, d\mu_\psi$$ for $$\psi$$ in this common domain, i.e. the two operators $$\int_X f \, d\mu$$ and $$\int_X g \, d\mu$$ have the same domain and satisfy the same diagonal identity. By the strengthened uniqueness clause of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), they are equal.$$\blacksquare$$
+
 Two further facts about the unbounded integral will be needed when we come to the Cayley transform. The first says that the operator may be computed as a norm limit of its bounded truncations; the second computes the associated measure of a vector in the image of the bounded calculus.
 
 > **Lemma** *(Truncations Converge to the Unbounded Integral)*
@@ -1554,6 +1572,16 @@ The key technical result we are aiming for is a version of the spectral mapping 
 
 We start with a fact that will let us compute the norm of $$p(A,A^*)$$ once we know its spectrum: for normal operators, the operator norm equals the spectral radius, exactly as for self-adjoint operators. Proving this needs one general fact about spectral radii of commuting operators that is not yet available to us, and whose proof requires knowing that the powers of a bounded operator cannot grow faster than the spectral radius suggests.
 
+We will also need the standard corollary of the Hahn–Banach theorem identifying the norm of an element of a normed space with the supremum of its image under unit-norm functionals; like the other classical facts imported here, we state it without proof.
+
+> **Theorem** *(Norm via Dual Pairing)*
+<a name="thrm:norm-via-dual-pairing"></a>
+> If $$x$$ is an element of a normed vector space $$V$$, then
+>
+> $$
+>     \|x\| = \sup \{ \lvert \xi(x) \rvert : \xi \in V^*,\ \|\xi\| \le 1 \}.
+> $$
+
 We can establish the growth bound on powers of a bounded operator that Lemma 10.22 below will need using exactly the tools already assembled in the previous post's proof of the bounded self-adjoint case of norm-equals-spectral-radius — that proof, in fact, establishes a fact about *any* bounded operator (self-adjointness enters only in its final step, where it is used for a sharper conclusion we do not need here). We extract that general fact as its own lemma, citing the same tools directly, rather than repeating "self-adjoint" hypotheses we will not use. First, though, we need three facts about the resolvent that are established along the way in the previous post's proof of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), but do not appear in that proposition's own statement; we extract them here as their own citable facts.
 
 > **Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*
@@ -1616,15 +1644,7 @@ Fix a bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$. As just 
 
 By the [**Nth-Term Test**](../spectral-theorems/#lmm:nth-term-test), convergence of $$\sum_m \xi(A^m)/\lambda_1^{m+1}$$ forces its terms to tend to $$0$$, so in particular $$\{ \xi(A^m/\lambda_1^{m+1}) \}_m$$ is a bounded subset of $$\mathbb{C}$$, with some bound $$C_\xi$$ depending on $$\xi$$ (and on $$\lambda_1$$). As $$\xi$$ ranges over all bounded linear functionals on $$\mathcal{B}(\mathbf{H})$$ — a Banach space, by [**Lemma** *(Bounded Operators form a Banach Space)*](../spectral-theorems/#lmm:bounded-operators-form-a-banach-space), and so, by the [**Theorem on Completeness of the Dual**](../spectral-theorems/#thrm:theorem-on-completeness-of-the-dual), its dual $$\mathcal{B}(\mathbf{H})^*$$ is itself a Banach space — the [**Principle of Uniform Boundedness**](../spectral-theorems/#thrm:hall-a.40), applied with $$V_1 = \mathcal{B}(\mathbf{H})^*$$, $$V_2 = \mathbb{C}$$, and the family of evaluation maps $$\xi \mapsto \xi(A^m/\lambda_1^{m+1})$$ (each pointwise-bounded in $$m$$ by $$C_\xi$$, just shown), gives a constant $$C < \infty$$, independent of $$\xi$$, such that these evaluation maps have norm at most $$C$$ as elements of $$\mathcal{B}(\mathbf{H})^{**}$$: $$\lvert \xi(A^m/\lambda_1^{m+1}) \rvert \le C \left\| \xi \right\|$$ for every $$\xi \in \mathcal{B}(\mathbf{H})^*$$ and every $$m$$.
 
-To convert this into a bound on $$\|A^m/\lambda_1^{m+1}\|$$ itself, we use the standard corollary of the Hahn–Banach theorem identifying the norm of an element of a normed space with the supremum of its image under unit-norm functionals.
-
-> **Theorem** *(Norm via Dual Pairing)*
-<a name="thrm:norm-via-dual-pairing"></a>
-> If $$x$$ is an element of a normed vector space $$V$$, then
->
-> $$
->     \|x\| = \sup \{ \lvert \xi(x) \rvert : \xi \in V^*,\ \|\xi\| \le 1 \}.
-> $$
+To convert this into a bound on $$\|A^m/\lambda_1^{m+1}\|$$ itself, we use [**Theorem** *(Norm via Dual Pairing)*](#thrm:norm-via-dual-pairing).
 
 Applying [**Theorem** *(Norm via Dual Pairing)*](#thrm:norm-via-dual-pairing) with $$V = \mathcal{B}(\mathbf{H})$$ and $$x = A^m/\lambda_1^{m+1}$$: since $$\lvert \xi(A^m/\lambda_1^{m+1}) \rvert \le C\|\xi\|$$ for every $$\xi$$, taking the supremum over $$\|\xi\|\le 1$$ gives $$\|A^m/\lambda_1^{m+1}\| \le C$$, for every $$m$$. That is, $$\|A^m\| \le C\lvert \lambda_1 \rvert^{m+1}$$ for all $$m$$, as claimed.
 
@@ -1770,6 +1790,10 @@ We need three properties of these subspaces. The first two follow directly from 
 > **Proposition** *(Properties of Spectral Subspaces)*
 <a name="prpstn:hall-7.15"></a>
 <!--  \uses{def:hall-7.14} -->
+<!--  \uses{lmm:integral-ignores-null-sets} -->
+<!--  \uses{prpstn:coincidence-with-the-bounded-integral} -->
+<!--  \uses{lmm:range-of-projection-is-kernel} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#def:functional-calculus} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
@@ -1796,13 +1820,13 @@ $$
 
 Since $$E \subset [\lambda_0-\varepsilon, \lambda_0+\varepsilon]$$, the function $$f 1_E$$ satisfies $$\lvert f(\lambda)1_E(\lambda) \rvert \le \varepsilon$$ for every $$\lambda$$. By the norm bound of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) (the integral of a function of supremum norm at most $$\varepsilon$$ has operator norm at most $$\varepsilon$$), $$\left\| (f1_E)(A) \right\| \le \varepsilon$$, so $$\left\| (A-\lambda_0\mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$.
 
-**Part 3.** Suppose, for contradiction, that $$\lambda_0 \in \sigma(A)$$ but $$V_U = \{0\}$$ for some open neighbourhood $$U$$ of $$\lambda_0$$; shrinking $$U$$, we may assume $$U \supset (\lambda_0-\varepsilon,\lambda_0+\varepsilon)$$ for some $$\varepsilon>0$$, and it suffices to treat $$U_\varepsilon \equiv (\lambda_0-\varepsilon,\lambda_0+\varepsilon)$$, since $$V_{U_\varepsilon} \subset V_U = \{0\}$$. Now $$V_{U_\varepsilon} = \{0\}$$ means $$\mu^A(U_\varepsilon) = 0$$ as an operator, hence $$\mu^A_\psi(U_\varepsilon) = \left< \psi, \mu^A(U_\varepsilon)\psi \right> = 0$$ for every $$\psi$$: the set $$U_\varepsilon$$ is $$\mu^A_\psi$$-null for every $$\psi$$. Define the bounded measurable function
+**Part 3.** Suppose, for contradiction, that $$\lambda_0 \in \sigma(A)$$ but $$V_U = \{0\}$$ for some open neighbourhood $$U$$ of $$\lambda_0$$. Since $$U$$ is open and contains $$\lambda_0$$, there is $$\varepsilon > 0$$ with $$U_\varepsilon \equiv (\lambda_0-\varepsilon,\lambda_0+\varepsilon) \subset U$$. Then $$V_{U_\varepsilon} \subset V_U$$: for $$E \subset F$$ measurable, property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) gives $$\mu^A(F)\mu^A(E) = \mu^A(E \cap F) = \mu^A(E)$$, so every $$\eta = \mu^A(E)\xi$$ satisfies $$\mu^A(F)\eta = \eta$$ and hence lies in $$\text{Range}(\mu^A(F))$$ by [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel). So $$V_{U_\varepsilon} \subset V_U = \{0\}$$, and it suffices to derive a contradiction from $$V_{U_\varepsilon} = \{0\}$$. Now $$V_{U_\varepsilon} = \{0\}$$ means $$\mu^A(U_\varepsilon) = 0$$ as an operator, hence $$\mu^A_\psi(U_\varepsilon) = \left< \psi, \mu^A(U_\varepsilon)\psi \right> = 0$$ for every $$\psi$$: the set $$U_\varepsilon$$ is $$\mu^A_\psi$$-null for every $$\psi$$. Define the bounded measurable function
 
 $$
     g(\lambda) \equiv \begin{cases} \dfrac{1}{\lambda-\lambda_0} & \lvert \lambda-\lambda_0 \rvert \ge \varepsilon \\[4pt] 0 & \lvert \lambda-\lambda_0 \rvert < \varepsilon \end{cases}
 $$
 
-(bounded by $$1/\varepsilon$$). The function $$\lambda \mapsto g(\lambda)(\lambda-\lambda_0)$$ equals $$1$$ off $$U_\varepsilon$$ and $$0$$ on $$U_\varepsilon$$, so it agrees with the constant function $$1$$ except on $$U_\varepsilon$$, a null set for every $$\mu^A_\psi$$. Two bounded measurable functions agreeing off a set that is null for every $$\mu^A_\psi$$ have the same integral against $$\mu^A$$ — since the defining property of the integral determines it through the scalar integrals $$\int f \, d\mu^A_\psi$$, which are unchanged by modification on a $$\mu^A_\psi$$-null set. Hence, using multiplicativity,
+(bounded by $$1/\varepsilon$$). The function $$\lambda \mapsto g(\lambda)(\lambda-\lambda_0)$$ equals $$1$$ off $$U_\varepsilon$$ and $$0$$ on $$U_\varepsilon$$, so it agrees with the constant function $$1$$ except on $$U_\varepsilon$$, a null set for every $$\mu^A_\psi$$. Since $$\mu^A(U_\varepsilon) = 0$$, [**Lemma** *(The Integral Ignores Null Sets)*](#lmm:integral-ignores-null-sets) — applied with $$N = U_\varepsilon$$, and transferred to the bounded integral by [**Proposition** *(Coincidence with the Bounded Integral)*](#prpstn:coincidence-with-the-bounded-integral) — gives that $$\lambda \mapsto g(\lambda)(\lambda-\lambda_0)$$ and the constant function $$1$$ have the same integral against $$\mu^A$$, namely $$\mathbf{1}$$. Hence, using multiplicativity,
 
 $$
     g(A)(A - \lambda_0\mathbf{1}) = (A-\lambda_0\mathbf{1})g(A) = \mathbf{1},
@@ -2415,11 +2439,13 @@ We can now assemble the projection-valued measure. This is the abstract form of 
 >     \mu^\Phi(E) \equiv \widetilde\Phi(1_E).
 > $$
 >
-> Then $$\mu^\Phi$$ is a projection-valued measure on $$X$$, and for every $$f \in C^0(X;\mathbb{C})$$,
+> Then $$\mu^\Phi$$ is a projection-valued measure on $$X$$, and for every *bounded measurable* $$f$$ on $$X$$,
 >
 > $$
->     \int_X f \, d\mu^\Phi = \Phi(f).
+>     \int_X f \, d\mu^\Phi = \widetilde\Phi(f);
 > $$
+>
+> in particular, for $$f \in C^0(X;\mathbb{C})$$, $$\int_X f \, d\mu^\Phi = \Phi(f)$$.
 
 **Proof**
 We verify the four properties of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) in turn, then the integral formula.
@@ -2446,13 +2472,13 @@ $$
     \mu^\Phi_\psi(E) = \left< \psi, \widetilde\Phi(1_E)\psi \right> = Q_{1_E}(\psi) = \int_X 1_E \, d\mu_\psi = \mu_\psi(E),
 $$
 
-using [Definition (The Extended Calculus)](#def:abstract-extended-calculus). So $$\mu^\Phi_\psi = \mu_\psi$$ as measures, and therefore, for continuous $$f$$,
+using [Definition (The Extended Calculus)](#def:abstract-extended-calculus). So $$\mu^\Phi_\psi = \mu_\psi$$ as measures. Therefore, for *any* bounded measurable $$f$$,
 
 $$
-    \left< \psi, \left( \int_X f \, d\mu^\Phi \right)\psi \right> = \int_X f \, d\mu_\psi = Q_f(\psi) = \left< \psi, \Phi(f)\psi \right>,
+    \left< \psi, \left( \int_X f \, d\mu^\Phi \right)\psi \right> = \int_X f \, d\mu^\Phi_\psi = \int_X f \, d\mu_\psi = Q_f(\psi) = \left< \psi, \widetilde\Phi(f)\psi \right>,
 $$
 
-the last two equalities by [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded) and [Definition (The Extended Calculus)](#def:abstract-extended-calculus) (which give $$Q_f(\psi) = \left<\psi,\Phi(f)\psi\right>$$ for continuous $$f$$). Two bounded operators inducing the same quadratic form are equal, by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63); hence $$\int_X f \, d\mu^\Phi = \Phi(f)$$.$$\blacksquare$$
+the last equality being [Definition (The Extended Calculus)](#def:abstract-extended-calculus). Two bounded operators inducing the same quadratic form are equal, by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63); hence $$\int_X f \, d\mu^\Phi = \widetilde\Phi(f)$$. When $$f$$ is continuous, $$\widetilde\Phi(f) = \Phi(f)$$ (the final clause of [Definition (The Extended Calculus)](#def:abstract-extended-calculus)), giving the stated special case.$$\blacksquare$$
 
 ### The Spectral Theorem for Bounded Normal Operators
 
@@ -2461,12 +2487,17 @@ Assembling the two stages gives the result this section was aiming at.
 > **Theorem** *(Spectral Theorem for Bounded Normal Operators)*
 <a name="thrm:hall-10.20"></a>
 <!--  \uses{def:hall-10.19} -->
+<!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
+<!--  \uses{../spectral-theorems/#thrm:riesz-representation} -->
+<!--  \uses{../spectral-theorems/#thrm:stone–weierstrass-complex} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
+<!--  \uses{lmm:polynomials-in-normal-are-normal} -->
 <!--  \uses{thrm:continuous-functional-calculus-normal} -->
 <!--  \uses{thrm:abstract-calculus-yields-pvm} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$. Then there is a projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$. Then there is a *unique* projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with
 >
 > $$
 >     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
@@ -2475,13 +2506,27 @@ Assembling the two stages gives the result this section was aiming at.
 **Proof**
 By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable), $$X \equiv \sigma(A)$$ is a compact metric space. By [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), the map $$\Phi_A$$ constructed there satisfies properties 1–5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus), so it *is* an abstract continuous functional calculus on $$X$$.
 
-Applying [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm) to $$\Phi_A$$ gives a projection-valued measure $$\mu^A \equiv \mu^{\Phi_A}$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with $$\int_{\sigma(A)} f \, d\mu^A = \Phi_A(f)$$ for every continuous $$f$$. Taking $$f = \iota$$, the (continuous) function $$\iota(\lambda) = \lambda$$, and using property 5 of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), which gives $$\Phi_A(\iota) = A$$,
+Applying [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm) to $$\Phi_A$$ gives a projection-valued measure $$\mu^A \equiv \mu^{\Phi_A}$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with $$\int_{\sigma(A)} f \, d\mu^A = \Phi_A(f)$$ for every continuous $$f$$ (and $$= \widetilde{\Phi_A}(f)$$ for every bounded measurable $$f$$). Taking $$f = \iota$$, the (continuous) function $$\iota(\lambda) = \lambda$$, and using property 5 of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), which gives $$\Phi_A(\iota) = A$$,
 
 $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = \Phi_A(\iota) = A,
 $$
 
-the desired result.$$\blacksquare$$
+which is existence.
+
+*Uniqueness.* Suppose $$\nu$$ is a projection-valued measure on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with $$\int_{\sigma(A)} \iota \, d\nu = A$$, where $$\iota(\lambda) = \lambda$$ (a bounded function on the compact $$\sigma(A)$$, so this is the bounded integral). Write $$\Psi(f) \equiv \int_{\sigma(A)} f \, d\nu$$ for bounded measurable $$f$$.
+
+By property 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — integration intertwines complex conjugation with the adjoint — $$\Psi(\overline\iota) = \Psi(\iota)^* = A^*$$. By property 3 (multiplicativity) and linearity, it follows by induction on $$k+l$$ that $$\Psi(\iota^k\overline\iota^{\,l}) = A^k(A^*)^l$$ for all $$k,l \ge 0$$, and hence, by linearity again, $$\Psi(p) = p(A,A^*)$$ for every polynomial $$p$$ in $$\lambda$$ and $$\overline\lambda$$. The same identity holds for $$\Phi_A$$, by the defining property in [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal). So $$\Psi$$ and $$\Phi_A$$ agree on the algebra $$\mathcal{P}$$ of such polynomial functions on $$\sigma(A)$$.
+
+Now fix $$\psi \in \mathbf{H}$$ and consider the two finite positive Borel measures $$\nu_\psi$$ and $$\mu^A_\psi$$ on $$\sigma(A)$$. For $$p \in \mathcal{P}$$,
+
+$$
+    \int_{\sigma(A)} p \, d\nu_\psi = \left< \psi, \Psi(p)\psi \right> = \left< \psi, \Phi_A(p)\psi \right> = \int_{\sigma(A)} p \, d\mu^A_\psi,
+$$
+
+using the defining property of each bounded integral at the two ends. Both sides are continuous in $$p$$ with respect to the supremum norm (each is bounded in modulus by $$\left\| p \right\|_\infty$$ times the total mass $$\left\| \psi \right\|^2$$), and $$\mathcal{P}$$ is dense in $$C^0(\sigma(A);\mathbb{C})$$ by the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) (as verified in the proof of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal)), so $$\int f \, d\nu_\psi = \int f \, d\mu^A_\psi$$ for every $$f \in C^0(\sigma(A);\mathbb{C})$$, in particular for every real-valued continuous $$f$$.
+
+Two finite positive Borel measures on the compact metric space $$\sigma(A)$$ that assign the same integral to every $$f \in C^0(\sigma(A);\mathbb{R})$$ are equal — this is exactly the uniqueness clause of the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation), both measures representing the same positive linear functional. Hence $$\nu_\psi = \mu^A_\psi$$, i.e. $$\left< \psi, \nu(E)\psi \right> = \left< \psi, \mu^A(E)\psi \right>$$ for every Borel $$E \subset \sigma(A)$$ and every $$\psi \in \mathbf{H}$$. For fixed $$E$$, the two bounded operators $$\nu(E)$$ and $$\mu^A(E)$$ therefore induce the same quadratic form, so are equal by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63). As $$E$$ was arbitrary, $$\nu = \mu^A$$.$$\blacksquare$$
 
 ## The Cayley Transform
 
@@ -2584,7 +2629,7 @@ Note that Point 2 and Point 3 together say that $$U - \mathbf{1}$$ is a bijectio
 
 From (i), $$(A-i\mathbf{1})^{-1}$$ is injective: if $$(A-i\mathbf{1})^{-1}\psi = 0$$ then $$\psi = (A-i\mathbf{1})0 = 0$$. From (ii), $$(A-i\mathbf{1})^{-1}$$ maps $$\mathbf{H}$$ *onto* $$\text{Dom}(A)$$: every $$\phi \in \text{Dom}(A)$$ equals $$(A-i\mathbf{1})^{-1}\chi$$ for $$\chi = (A-i\mathbf{1})\phi \in \mathbf{H}$$. Combining, $$(A-i\mathbf{1})^{-1}$$ is a bijection of $$\mathbf{H}$$ onto $$\text{Dom}(A)$$; and (i), (ii) show $$A - i\mathbf{1}$$ is the inverse bijection, from $$\text{Dom}(A)$$ onto $$\mathbf{H}$$. The identical reasoning with $$-i$$ in place of $$i$$ shows $$A + i\mathbf{1}$$ is a bijection of $$\text{Dom}(A)$$ onto $$\mathbf{H}$$.
 
-**Part 1.** As a composition of a bijection $$\mathbf{H} \to \text{Dom}(A)$$ with a bijection $$\text{Dom}(A) \to \mathbf{H}$$, $$U$$ is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$. It is bounded: $$(A-i\mathbf{1})^{-1}$$ is bounded, and we check below that $$U$$ preserves norms, which gives $$\left\| U\psi \right\| = \left\| \psi \right\|$$ directly.
+**Part 1.** As a composition of a bijection $$\mathbf{H} \to \text{Dom}(A)$$ with a bijection $$\text{Dom}(A) \to \mathbf{H}$$, $$U$$ is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$. It is linear, being a composition of the linear maps $$(A-i\mathbf{1})^{-1}$$ and $$A+i\mathbf{1}$$. Boundedness will follow from the norm identity established next, so we turn to that first.
 
 For the inner product, first note that $$A$$ is symmetric, by [**Proposition** *(Symmetric Operators and the Adjoint)*](#prpstn:hall-9.4) applied to the self-adjoint $$A$$. Hence for $$\phi \in \text{Dom}(A)$$, expanding and using symmetry to cancel the cross terms ($$\left< A\phi, i\phi \right> + \left< i\phi, A\phi \right> = i\left< A\phi,\phi \right> - i\left< \phi, A\phi \right> = 0$$),
 
@@ -2712,6 +2757,10 @@ The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ b
 > **Proposition**
 <a name="prpstn:hall-10.29"></a>
 <!--  \uses{thrm:hall-10.28} -->
+<!--  \uses{lmm:integral-ignores-null-sets} -->
+<!--  \uses{thrm:abstract-calculus-yields-pvm} -->
+<!--  \uses{lmm:integral-preserves-spectral-subspaces} -->
+<!--  \uses{lmm:range-of-projection-is-kernel} -->
 <!--  \uses{thrm:hall-10.20} -->
 <!--  \uses{lmm:cayley-map} -->
 <!--  \uses{lmm:cayley-omits-one} -->
@@ -2759,7 +2808,7 @@ $$
 
 *Step 2: $$\mathbf{H}_n \subset W_D$$, and $$\widehat{D}$$ agrees with $$A$$ there.* By [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain), applied with $$E = F_n$$ and $$c = 2n$$, $$\mathbf{H}_n \subset W_D$$.
 
-Fix $$n$$ and let $$\psi \in \mathbf{H}_n$$. Let $$g \equiv 1_{F_n}\cdot D$$ and $$h \equiv 1_{F_n}\cdot (\iota - 1)$$, where $$\iota(u) = u$$; both are bounded measurable functions on $$\sigma(U)$$, so the extended calculus $$\widetilde\Phi$$ of [Definition (The Extended Calculus)](#def:abstract-extended-calculus) applies to them. Since $$D(u)(u-1) = i(u+1)$$ for $$u \ne 1$$, we have $$g\,h = 1_{F_n}\cdot i(\iota+1)$$ pointwise, so by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative),
+Fix $$n$$ and let $$\psi \in \mathbf{H}_n$$. Let $$g \equiv 1_{F_n}\cdot D$$ and $$h \equiv 1_{F_n}\cdot (\iota - 1)$$, where $$\iota(u) = u$$; both are bounded measurable functions on $$\sigma(U)$$, so the extended calculus $$\widetilde\Phi$$ of [Definition (The Extended Calculus)](#def:abstract-extended-calculus) applies to them. Since $$D(u)(u-1) = i(u+1)$$ for $$u \ne 1$$, the functions $$g\,h$$ and $$1_{F_n}\cdot i(\iota+1)$$ agree at every point of $$\sigma(U)$$ except possibly $$u = 1$$ (where $$g(1)h(1) = 0$$ by our convention $$D(1) = 0$$, while the right-hand side need not vanish). Since $$\mu^U(\{1\}) = 0$$ by [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), [**Lemma** *(The Integral Ignores Null Sets)*](#lmm:integral-ignores-null-sets) — together with the identification $$\widetilde\Phi(\cdot) = \int_{\sigma(U)} \cdot \; d\mu^U$$ on bounded measurable functions from [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm) — gives $$\widetilde\Phi(g\,h) = \widetilde\Phi\big(1_{F_n}i(\iota+1)\big)$$. Hence, by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative),
 
 $$
     \widetilde\Phi(g)\,\widetilde\Phi(h) = \widetilde\Phi\big( 1_{F_n} i(\iota+1) \big) = i\,\widetilde\Phi\big(1_{F_n}(\iota+1)\big). \tag{$\smile$}
