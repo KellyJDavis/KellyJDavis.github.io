@@ -2369,3 +2369,151 @@ $$
 $$
 
 the desired result.$$\blacksquare$$
+
+## The Cayley Transform
+
+We can now prove the spectral theorem for an unbounded self-adjoint operator $$A$$, by manufacturing from $$A$$ a *bounded* operator to which the results of the previous section apply. The construction is guided by a scalar analogue: the map
+
+$$
+    C(x) \equiv \frac{x+i}{x-i}, \qquad x \in \mathbb{R},
+$$
+
+is about the simplest bounded injective function one can write down on $$\mathbb{R}$$. Substituting the operator $$A$$ for $$x$$ produces a bounded operator $$U$$ — the *Cayley transform* of $$A$$ — which turns out to be unitary, hence normal, hence subject to [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). We then transport the resulting projection-valued measure back from the circle to $$\mathbb{R}$$ along $$C$$.
+
+Since unitarity has not been needed until now, we record it.
+
+> **Definition** *(Unitary Operator)*
+<a name="def:unitary-operator"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> An operator $$U \in \mathcal{B}(\mathbf{H})$$ is *unitary* if it is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$ and preserves the inner product: $$\left< U\phi, U\psi \right> = \left< \phi,\psi \right>$$ for all $$\phi,\psi \in \mathbf{H}$$.
+
+> **Lemma** *(Unitary Operators are Normal)*
+<a name="lmm:unitary-is-normal"></a>
+<!--  \uses{def:unitary-operator} -->
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{lmm:hall-dense-testing-second-slot} -->
+> If $$U \in \mathcal{B}(\mathbf{H})$$ is unitary, then $$U^*U = UU^* = \mathbf{1}$$; in particular $$U$$ is normal.
+
+**Proof**
+For all $$\phi,\psi \in \mathbf{H}$$, the [definition of the adjoint](#def:hall-9.1) and inner-product preservation give $$\left< \phi, U^*U\psi \right> = \left< U\phi, U\psi \right> = \left< \phi, \psi \right> = \left< \phi, \mathbf{1}\psi \right>$$. By [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D = \mathbf{H}$$, $$U^*U\psi = \psi$$ for every $$\psi$$, i.e. $$U^*U = \mathbf{1}$$.
+
+Since $$U$$ is a bijection, it has a set-theoretic inverse $$U^{-1}$$, and $$U^*U = \mathbf{1}$$ identifies $$U^* = U^*(UU^{-1}) = (U^*U)U^{-1} = U^{-1}$$. Hence $$UU^* = UU^{-1} = \mathbf{1}$$ as well, and $$U^*U = \mathbf{1} = UU^*$$ is exactly the [definition of normal](#def:hall-10.19).$$\blacksquare$$
+
+We record the scalar maps and their elementary properties. Write $$S^1 \equiv \{ u \in \mathbb{C} : \lvert u \rvert = 1 \}$$ for the unit circle.
+
+> **Lemma** *(The Cayley Map and its Inverse)*
+<a name="lmm:cayley-map"></a>
+> Define $$C : \mathbb{R} \to \mathbb{C}$$ and $$D : S^1\setminus\{1\} \to \mathbb{C}$$ by
+>
+> $$
+>     C(x) \equiv \frac{x+i}{x-i}, \qquad D(u) \equiv i\,\frac{u+1}{u-1}.
+> $$
+>
+> Then $$C$$ is a bijection of $$\mathbb{R}$$ onto $$S^1\setminus\{1\}$$, $$D$$ is its inverse, and both are continuous (hence Borel measurable) on their domains. Moreover $$D$$ is real-valued.
+
+**Proof**
+*Well defined and continuous.* For $$x \in \mathbb{R}$$, $$x - i \ne 0$$, so $$C(x)$$ is defined, and $$C$$ is continuous as a quotient of continuous functions with non-vanishing denominator. Also $$\lvert x+i \rvert = \sqrt{x^2+1} = \lvert x-i \rvert$$, so $$\lvert C(x) \rvert = 1$$, i.e. $$C(x) \in S^1$$; and $$C(x) = 1$$ would force $$x+i = x-i$$, i.e. $$i = -i$$, which is false, so $$C(x) \in S^1\setminus\{1\}$$. Similarly $$D$$ is defined and continuous on $$S^1\setminus\{1\}$$, where $$u - 1 \ne 0$$.
+
+*$$D$$ is real-valued.* Let $$u \in S^1\setminus\{1\}$$, so $$\overline u = u^{-1}$$. Then
+
+$$
+    \overline{D(u)} = \overline{i\,\frac{u+1}{u-1}} = -i\,\frac{\overline u + 1}{\overline u - 1} = -i\,\frac{u^{-1}+1}{u^{-1}-1} = -i\,\frac{1 + u}{1 - u} = i\,\frac{u+1}{u-1} = D(u),
+$$
+
+multiplying numerator and denominator by $$u$$ in the middle step. A complex number equal to its conjugate is real.
+
+*Mutually inverse.* For $$x \in \mathbb{R}$$, writing $$u = C(x) = (x+i)/(x-i)$$,
+
+$$
+    D(C(x)) = i\,\frac{\frac{x+i}{x-i} + 1}{\frac{x+i}{x-i} - 1} = i\,\frac{(x+i)+(x-i)}{(x+i)-(x-i)} = i\,\frac{2x}{2i} = x,
+$$
+
+multiplying numerator and denominator by $$x-i$$. Conversely, for $$u \in S^1\setminus\{1\}$$, writing $$x = D(u) = i(u+1)/(u-1)$$,
+
+$$
+    C(D(u)) = \frac{i\frac{u+1}{u-1} + i}{i\frac{u+1}{u-1} - i} = \frac{(u+1)+(u-1)}{(u+1)-(u-1)} = \frac{2u}{2} = u,
+$$
+
+multiplying numerator and denominator by $$(u-1)/i$$. So $$C$$ and $$D$$ are mutually inverse; in particular $$C$$ is injective (having a left inverse) and surjective onto $$S^1\setminus\{1\}$$ (having a right inverse), i.e. bijective.$$\blacksquare$$
+
+We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Self-Adjoint Operator is Real)*](#thrm:hall-9.17) that if $$A$$ is self-adjoint then $$\pm i$$ lie in the resolvent set of $$A$$, so $$(A \mp i\mathbf{1})^{-1}$$ exist as bounded operators on $$\mathbf{H}$$ in the sense of the [definition of the resolvent set](#def:hall-9.16).
+
+> **Theorem** *(Cayley Transform)*
+<a name="thrm:hall-10.28"></a>
+<!--  \uses{def:hall-9.5} -->
+<!--  \uses{def:hall-9.16} -->
+<!--  \uses{def:unitary-operator} -->
+<!--  \uses{thrm:hall-9.17} -->
+<!--  \uses{prpstn:hall-9.4} -->
+<!--  \uses{prpstn:hall-9.13} -->
+<!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
+<!--  \uses{def:range-of-an-unbounded-operator} -->
+> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$ and define
+>
+> $$
+>     U\psi \equiv (A + i\mathbf{1})(A - i\mathbf{1})^{-1}\psi, \qquad \psi \in \mathbf{H}.
+> $$
+>
+> Then:
+>
+> 1. $$U$$ is a unitary operator on $$\mathbf{H}$$.
+> 2. $$U - \mathbf{1}$$ is injective.
+> 3. $$\text{Range}(U - \mathbf{1}) = \text{Dom}(A)$$, and for all $$\psi \in \text{Range}(U-\mathbf{1})$$,
+>
+>    $$
+>        A\psi = i(U + \mathbf{1})(U - \mathbf{1})^{-1}\psi.
+>    $$
+
+Note that Point 2 and Point 3 together say that $$U - \mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\text{Dom}(A)$$; the symbol $$(U-\mathbf{1})^{-1}$$ in Point 3 refers to the inverse of *that* bijection. We are *not* claiming $$1$$ lies in the resolvent set of $$U$$: the map $$(U-\mathbf{1})^{-1} : \text{Dom}(A) \to \mathbf{H}$$ is not bounded unless $$\text{Dom}(A) = \mathbf{H}$$, which happens only when $$A$$ is bounded.
+
+**Proof**
+*Preliminaries on the resolvents.* Since $$A$$ is self-adjoint, [**Theorem** *(Spectrum of a Self-Adjoint Operator is Real)*](#thrm:hall-9.17) gives $$\sigma(A) \subset \mathbb{R}$$, so $$\pm i$$ lie in the resolvent set. By the [definition of the resolvent set](#def:hall-9.16), there is a bounded $$(A-i\mathbf{1})^{-1} \in \mathcal{B}(\mathbf{H})$$ with: (i) $$(A-i\mathbf{1})^{-1}\psi \in \text{Dom}(A)$$ and $$(A-i\mathbf{1})(A-i\mathbf{1})^{-1}\psi = \psi$$ for all $$\psi \in \mathbf{H}$$; and (ii) $$(A-i\mathbf{1})^{-1}(A-i\mathbf{1})\psi = \psi$$ for all $$\psi \in \text{Dom}(A)$$.
+
+From (i), $$(A-i\mathbf{1})^{-1}$$ is injective: if $$(A-i\mathbf{1})^{-1}\psi = 0$$ then $$\psi = (A-i\mathbf{1})0 = 0$$. From (ii), $$(A-i\mathbf{1})^{-1}$$ maps $$\mathbf{H}$$ *onto* $$\text{Dom}(A)$$: every $$\phi \in \text{Dom}(A)$$ equals $$(A-i\mathbf{1})^{-1}\chi$$ for $$\chi = (A-i\mathbf{1})\phi \in \mathbf{H}$$. Combining, $$(A-i\mathbf{1})^{-1}$$ is a bijection of $$\mathbf{H}$$ onto $$\text{Dom}(A)$$; and (i), (ii) show $$A - i\mathbf{1}$$ is the inverse bijection, from $$\text{Dom}(A)$$ onto $$\mathbf{H}$$. The identical reasoning with $$-i$$ in place of $$i$$ shows $$A + i\mathbf{1}$$ is a bijection of $$\text{Dom}(A)$$ onto $$\mathbf{H}$$.
+
+**Part 1.** As a composition of a bijection $$\mathbf{H} \to \text{Dom}(A)$$ with a bijection $$\text{Dom}(A) \to \mathbf{H}$$, $$U$$ is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$. It is bounded: $$(A-i\mathbf{1})^{-1}$$ is bounded, and we check below that $$U$$ preserves norms, which gives $$\left\| U\psi \right\| = \left\| \psi \right\|$$ directly.
+
+For the inner product, first note that $$A$$ is symmetric, by [**Proposition** *(Symmetric Operators and the Adjoint)*](#prpstn:hall-9.4) applied to the self-adjoint $$A$$. Hence for $$\phi \in \text{Dom}(A)$$, expanding and using symmetry to cancel the cross terms ($$\left< A\phi, i\phi \right> + \left< i\phi, A\phi \right> = i\left< A\phi,\phi \right> - i\left< \phi, A\phi \right> = 0$$),
+
+$$
+    \left< (A+i\mathbf{1})\phi, (A+i\mathbf{1})\phi \right> = \left< A\phi,A\phi \right> + \left< \phi,\phi \right> = \left< (A-i\mathbf{1})\phi, (A-i\mathbf{1})\phi \right>,
+$$
+
+the second equality by the same computation with $$i$$ replaced by $$-i$$ (the cross terms again cancelling). Applying this with $$\phi = (A-i\mathbf{1})^{-1}\psi \in \text{Dom}(A)$$, and using property (i) above,
+
+$$
+    \left\| U\psi \right\|^2 = \left< (A+i\mathbf{1})\phi, (A+i\mathbf{1})\phi \right> = \left< (A-i\mathbf{1})\phi, (A-i\mathbf{1})\phi \right> = \left< \psi,\psi \right> = \left\| \psi \right\|^2.
+$$
+
+So $$U$$ preserves norms, hence is bounded with $$\left\| U \right\| = 1$$ (as $$\mathbf{H} \ne \{0\}$$; if $$\mathbf{H} = \{0\}$$ everything is trivial). A norm-preserving linear map preserves the inner product, by the polarization identity — the inner product is a fixed linear combination of the four quantities $$\left\| \phi \pm \psi \right\|^2$$, $$\left\| \phi \pm i\psi \right\|^2$$, each preserved by $$U$$ using linearity. Being also a bijection, $$U$$ is unitary in the sense of [Definition (Unitary Operator)](#def:unitary-operator).
+
+**Part 2.** For $$\psi \in \mathbf{H}$$, write $$A + i\mathbf{1} = (A - i\mathbf{1}) + 2i\mathbf{1}$$ and apply both sides to $$(A-i\mathbf{1})^{-1}\psi$$, using property (i):
+
+$$
+    U\psi = (A+i\mathbf{1})(A-i\mathbf{1})^{-1}\psi = (A-i\mathbf{1})(A-i\mathbf{1})^{-1}\psi + 2i(A-i\mathbf{1})^{-1}\psi = \psi + 2i(A-i\mathbf{1})^{-1}\psi,
+$$
+
+that is,
+
+$$
+    U - \mathbf{1} = 2i\,(A - i\mathbf{1})^{-1}. \tag{$\natural\natural$}
+$$
+
+Since $$(A-i\mathbf{1})^{-1}$$ is injective (shown above) and $$2i \ne 0$$, $$U - \mathbf{1}$$ is injective.
+
+**Part 3.** By $$(\natural\natural)$$, $$\text{Range}(U-\mathbf{1}) = \text{Range}\big( 2i(A-i\mathbf{1})^{-1} \big) = \text{Range}\big( (A-i\mathbf{1})^{-1} \big) = \text{Dom}(A)$$, the last equality because $$(A-i\mathbf{1})^{-1}$$ maps $$\mathbf{H}$$ onto $$\text{Dom}(A)$$, as shown in the preliminaries.
+
+For the formula, let $$\psi \in \text{Dom}(A) = \text{Range}(U - \mathbf{1})$$. By $$(\natural\natural)$$, $$(U-\mathbf{1})^{-1}\psi = \tfrac{1}{2i}(A-i\mathbf{1})\psi$$ — indeed applying $$U - \mathbf{1} = 2i(A-i\mathbf{1})^{-1}$$ to the right-hand side gives $$2i(A-i\mathbf{1})^{-1}\tfrac{1}{2i}(A-i\mathbf{1})\psi = \psi$$ by property (ii). Hence, using $$U = \mathbf{1} + 2i(A-i\mathbf{1})^{-1}$$ from $$(\natural\natural)$$ to write $$U + \mathbf{1} = 2\cdot\mathbf{1} + 2i(A-i\mathbf{1})^{-1}$$ and then property (i),
+
+$$
+\begin{align}
+    i(U+\mathbf{1})(U-\mathbf{1})^{-1}\psi
+        &= i(U+\mathbf{1})\,\frac{1}{2i}(A-i\mathbf{1})\psi \\
+        &= \frac{1}{2}\Big( 2(A - i\mathbf{1})\psi + 2i(A-i\mathbf{1})^{-1}(A-i\mathbf{1})\psi \Big) \\
+        &= \frac{1}{2}\Big( 2(A-i\mathbf{1})\psi + 2i\psi \Big) \\
+        &= (A - i\mathbf{1})\psi + i\psi \\
+        &= A\psi,
+\end{align}
+$$
+
+which is the claimed identity.$$\blacksquare$$
