@@ -2078,3 +2078,294 @@ By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](../spectral
 *The properties.* Property 1 is linearity, part of the extension. For properties 2, 3, and 4, each is an identity between continuous functions of $$f$$ (and $$g$$) that holds on the dense subspace $$\mathcal{P}$$ and whose two sides are continuous in $$f$$ (and $$g$$): for property 2, both $$(f,g)\mapsto\Phi_A(fg)$$ and $$(f,g)\mapsto\Phi_A(f)\Phi_A(g)$$ are continuous, the former because $$\left\| fg - f'g' \right\|_\infty \to 0$$ when $$f\to f'$$, $$g \to g'$$ uniformly (all functions being bounded on the compact $$\sigma(A)$$) and $$\Phi_A$$ is bounded, the latter by submultiplicativity of the operator norm; on $$\mathcal{P}$$ the identity $$\Phi_A^0(pq) = \Phi_A^0(p)\Phi_A^0(q)$$ holds because substituting $$A$$ for $$\lambda$$ and $$A^*$$ for $$\overline\lambda$$ is multiplicative (the images commute, by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), which is what makes the substitution an algebra homomorphism). For property 3, $$f \mapsto \Phi_A(\overline f)$$ and $$f \mapsto \Phi_A(f)^*$$ are both continuous (the adjoint is isometric, so continuous), and agree on $$\mathcal{P}$$ by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal). Property 4 holds on $$\mathcal{P}$$ as shown, and both sides are continuous in $$f$$ (the left by boundedness of $$\Phi_A$$, the right because the supremum norm is continuous), so it holds throughout. Property 5 is immediate: the constant polynomial $$1$$ maps to $$\mathbf{1}$$ and $$p(\lambda,\overline\lambda)=\lambda$$ maps to $$A$$.
 
 Finally, if $$f$$ is real-valued then $$\overline f = f$$, so property 3 gives $$\Phi_A(f)^* = \Phi_A(f)$$; and for general $$f$$, properties 2 and 3 give $$\Phi_A(f)\Phi_A(f)^* = \Phi_A(f\overline f) = \Phi_A(\overline f f) = \Phi_A(f)^*\Phi_A(f)$$, so $$\Phi_A(f)$$ is normal.$$\blacksquare$$
+
+## From a Continuous Functional Calculus to a Projection-Valued Measure
+
+We now carry out the second stage: manufacturing a projection-valued measure from a continuous functional calculus. As promised, we do this *abstractly* — the input is a compact metric space $$X$$ and an isometric $$*$$-homomorphism $$\Phi : C^0(X;\mathbb{C}) \to \mathcal{B}(\mathbf{H})$$, with no operator in sight — so that the bounded normal case below is an instance of a single statement rather than an appeal to the self-adjoint case's proof. The previous post's stage 2 is the same argument specialized to $$X = \sigma(A)$$ with $$A$$ bounded self-adjoint; we reproduce it here in the general setting.
+
+Throughout this section, $$X$$ denotes a compact metric space, equipped with its Borel $$\sigma$$-algebra, so that "measurable" means "Borel-measurable"; this makes $$X$$ a compact metric measurable space in the sense used by the supporting lemmas of the previous post.
+
+> **Definition** *(Abstract Continuous Functional Calculus)*
+<a name="def:abstract-continuous-functional-calculus"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> Let $$X$$ be a compact metric space. An *abstract continuous functional calculus* on $$X$$ is a map $$\Phi : C^0(X;\mathbb{C}) \to \mathcal{B}(\mathbf{H})$$ satisfying, for all $$f,g \in C^0(X;\mathbb{C})$$ and $$\alpha,\beta\in\mathbb{C}$$:
+>
+> 1. $$\Phi(\alpha f + \beta g) = \alpha\Phi(f) + \beta\Phi(g)$$;
+> 2. $$\Phi(fg) = \Phi(f)\Phi(g)$$;
+> 3. $$\Phi(\overline f) = \Phi(f)^*$$;
+> 4. $$\left\| \Phi(f) \right\| = \left\| f \right\|_\infty \equiv \sup_{x \in X}\lvert f(x) \rvert$$;
+> 5. $$\Phi(1) = \mathbf{1}$$, where $$1$$ denotes the constant function with value $$1$$.
+
+By [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), a normal $$A \in \mathcal{B}(\mathbf{H})$$ with $$\mathbf{H}\ne\{0\}$$ supplies an abstract continuous functional calculus on $$X = \sigma(A)$$ — properties 1–5 there are literally properties 1–5 here.
+
+Our first observation is that such a $$\Phi$$ takes non-negative functions to non-negative operators; this is what will let us feed it into the Riesz representation theorem.
+
+> **Lemma** *(An Abstract Calculus is Non-Negative)*
+<a name="lmm:abstract-calculus-non-negative"></a>
+<!--  \uses{def:abstract-continuous-functional-calculus} -->
+<!--  \uses{../spectral-theorems/#def:non-negative-operator} -->
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$.
+>
+> 1. If $$f \in C^0(X;\mathbb{C})$$ is real-valued, then $$\Phi(f)$$ is self-adjoint, and $$\left< \psi, \Phi(f)\psi \right> \in \mathbb{R}$$ for every $$\psi \in \mathbf{H}$$.
+> 2. If $$f \in C^0(X;\mathbb{C})$$ satisfies $$f(x) \ge 0$$ for all $$x \in X$$, then $$\left< \psi, \Phi(f)\psi \right> \ge 0$$ for every $$\psi \in \mathbf{H}$$.
+
+**Proof**
+**Part 1.** If $$f$$ is real-valued then $$\overline f = f$$, so property 3 gives $$\Phi(f)^* = \Phi(\overline f) = \Phi(f)$$. For self-adjoint $$T$$ and any $$\psi$$, $$\left< \psi, T\psi \right> = \left< T^*\psi, \psi \right> = \left< T\psi,\psi \right> = \overline{\left< \psi, T\psi \right>}$$, using the [definition of the adjoint](#def:hall-9.1) and conjugate symmetry; a complex number equal to its own conjugate is real.
+
+**Part 2.** Let $$g \equiv \sqrt{f}$$, meaning $$g(x) = \sqrt{f(x)}$$ — well defined since $$f(x)\ge 0$$, real-valued, and continuous, since the square root is continuous on $$[0,\infty)$$ and $$f$$ is continuous. Then $$g^2 = f$$ pointwise, so by property 2, $$\Phi(f) = \Phi(g)\Phi(g)$$; and by **Part 1**, $$\Phi(g)^* = \Phi(g)$$. Hence, for any $$\psi \in \mathbf{H}$$,
+
+$$
+    \left< \psi, \Phi(f)\psi \right> = \left< \psi, \Phi(g)^*\Phi(g)\psi \right> = \left< \Phi(g)\psi, \Phi(g)\psi \right> = \left\| \Phi(g)\psi \right\|^2 \ge 0,
+$$
+
+using the [definition of the adjoint](#def:hall-9.1) for the middle equality.$$\blacksquare$$
+
+Non-negativity is exactly the hypothesis of the Riesz representation theorem, which now produces, for each vector $$\psi$$, a measure on $$X$$.
+
+> **Definition** *(The Measures Associated to an Abstract Calculus)*
+<a name="def:abstract-associated-measures"></a>
+<!--  \uses{def:abstract-continuous-functional-calculus} -->
+<!--  \uses{lmm:abstract-calculus-non-negative} -->
+<!--  \uses{../spectral-theorems/#thrm:riesz-representation} -->
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$ and let $$\psi \in \mathbf{H}$$. Define $$\Lambda_\psi : C^0(X;\mathbb{R}) \to \mathbb{R}$$ by
+>
+> $$
+>     \Lambda_\psi(f) \equiv \left< \psi, \Phi(f)\psi \right>.
+> $$
+>
+> By Part 1 of [**Lemma** *(An Abstract Calculus is Non-Negative)*](#lmm:abstract-calculus-non-negative) this is real-valued; it is linear, by property 1 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus) together with linearity of the inner product in its second argument; and it is non-negative on non-negative $$f$$, by Part 2 of the same lemma. Since $$X$$ is a compact metric space, the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation) therefore supplies a unique positive measure $$\mu_\psi$$ on the Borel $$\sigma$$-algebra of $$X$$ with
+>
+> $$
+>     \left< \psi, \Phi(f)\psi \right> = \Lambda_\psi(f) = \int_X f \, d\mu_\psi \qquad \text{for all } f \in C^0(X;\mathbb{R}).
+> $$
+>
+> We call $$\mu_\psi$$ the *measure associated to $$\psi$$* (relative to $$\Phi$$).
+
+> **Lemma** *(The Abstract Associated Measures are Finite)*
+<a name="lmm:abstract-associated-measures-finite"></a>
+<!--  \uses{def:abstract-associated-measures} -->
+> For every $$\psi \in \mathbf{H}$$, $$\mu_\psi(X) = \left\| \psi \right\|^2 < \infty$$. In particular $$\mu_\psi$$ is a finite measure.
+
+**Proof**
+Apply the defining property of $$\mu_\psi$$ to the constant function $$1 \in C^0(X;\mathbb{R})$$, and use property 5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus):
+
+$$
+    \mu_\psi(X) = \int_X 1 \, d\mu_\psi = \left< \psi, \Phi(1)\psi \right> = \left< \psi, \mathbf{1}\psi \right> = \left< \psi,\psi \right> = \left\| \psi \right\|^2,
+$$
+
+which is finite since $$\psi \in \mathbf{H}$$.$$\blacksquare$$
+
+The point of introducing the measures $$\mu_\psi$$ is that the right-hand side $$\int_X f \, d\mu_\psi$$ continues to make sense for *bounded measurable* $$f$$, well beyond the continuous functions on which $$\Phi$$ was defined. The next proposition shows that the resulting map of $$\psi$$ is always a bounded quadratic form, which is what lets us convert it back into an operator.
+
+> **Proposition** *(The Extended Forms are Bounded Quadratic Forms)*
+<a name="prpstn:abstract-extended-forms-are-bounded"></a>
+<!--  \uses{def:abstract-associated-measures} -->
+<!--  \uses{lmm:abstract-associated-measures-finite} -->
+<!--  \uses{../spectral-theorems/#def:bounded-quadratic-form} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.62} -->
+<!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
+<!--  \uses{../spectral-theorems/#lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$. For a bounded measurable $$f : X \to \mathbb{C}$$, define $$Q_f : \mathbf{H} \to \mathbb{C}$$ by
+>
+> $$
+>     Q_f(\psi) \equiv \int_X f \, d\mu_\psi.
+> $$
+>
+> Then $$Q_f$$ is a bounded quadratic form on $$\mathbf{H}$$, with $$\lvert Q_f(\psi) \rvert \le \left\| f \right\|_\infty \left\| \psi \right\|^2$$. Moreover $$Q_f(\psi) = \left< \psi, \Phi(f)\psi \right>$$ whenever $$f$$ is continuous.
+
+**Proof**
+Let $$\mathcal{F}$$ be the set of bounded measurable complex-valued $$f$$ on $$X$$ for which $$Q_f$$ is a bounded quadratic form. We verify the three hypotheses of [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c), which will then give that $$\mathcal{F}$$ is everything.
+
+*$$\mathcal{F}$$ contains $$C^0(X;\mathbb{R})$$.* Let $$f \in C^0(X;\mathbb{R})$$. By the defining property of $$\mu_\psi$$ in [Definition (The Measures Associated to an Abstract Calculus)](#def:abstract-associated-measures), $$Q_f(\psi) = \int_X f \, d\mu_\psi = \left< \psi, \Phi(f)\psi \right>$$ for every $$\psi$$. So $$Q_f$$ is the quadratic form induced by the bounded operator $$\Phi(f)$$, which is a bounded quadratic form by [**Proposition** *(hall-a.62)*](../spectral-theorems/#prpstn:hall-a.62), with bound $$\left\| \Phi(f) \right\| = \left\| f \right\|_\infty$$ by property 4 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus). (The same computation, applied to a general continuous complex-valued $$f$$ by splitting into real and imaginary parts and using linearity of both $$\Phi$$ and the integral, gives the final claim of the proposition.)
+
+*$$\mathcal{F}$$ is a complex vector space.* Let $$f,g \in \mathcal{F}$$ and $$\alpha,\beta\in\mathbb{C}$$. By linearity of the integral in the integrand, $$Q_{\alpha f + \beta g}(\psi) = \alpha Q_f(\psi) + \beta Q_g(\psi)$$ for every $$\psi$$. Property 1 of a quadratic form is preserved: $$Q_{\alpha f+\beta g}(\lambda\psi) = \alpha Q_f(\lambda\psi) + \beta Q_g(\lambda\psi) = \lvert \lambda \rvert^2\big( \alpha Q_f(\psi) + \beta Q_g(\psi) \big) = \lvert\lambda\rvert^2 Q_{\alpha f+\beta g}(\psi)$$. For property 2, the polarization formula is linear in the quadratic form, so the form associated to $$Q_{\alpha f + \beta g}$$ is $$\alpha L_f + \beta L_g$$, a linear combination of sesquilinear forms and hence sesquilinear. Boundedness likewise passes to linear combinations. So $$\alpha f + \beta g \in \mathcal{F}$$.
+
+*$$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.* Let $$\{f_i\}$$ be a sequence in $$\mathcal{F}$$ with $$\lvert f_i \rvert \le M$$ for all $$i$$ and $$f_i \to f$$ pointwise on $$X$$; $$f$$ is then bounded (by $$M$$) and measurable. Fix $$\psi$$. Since $$\mu_\psi$$ is a finite measure by [**Lemma** *(The Abstract Associated Measures are Finite)*](#lmm:abstract-associated-measures-finite), the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) applies and gives
+
+$$
+    Q_{f_i}(\psi) = \int_X f_i \, d\mu_\psi \longrightarrow \int_X f \, d\mu_\psi = Q_f(\psi).
+$$
+
+Property 1 passes to the limit: $$Q_f(\lambda\psi) = \lim_i Q_{f_i}(\lambda\psi) = \lim_i \lvert\lambda\rvert^2 Q_{f_i}(\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$. For property 2, the polarization formula expresses $$L_f(\phi,\psi)$$ as a fixed finite linear combination of values of $$Q_f$$, each of which is the limit of the corresponding values of $$Q_{f_i}$$; so $$L_{f_i}(\phi,\psi) \to L_f(\phi,\psi)$$ for all $$\phi,\psi$$, and each defining identity of sesquilinearity, holding for every $$f_i$$, passes to the limit. For boundedness, $$\lvert Q_f(\psi) \rvert = \lvert \int_X f \, d\mu_\psi \rvert \le M\mu_\psi(X) = M\left\| \psi \right\|^2$$, again by [**Lemma** *(The Abstract Associated Measures are Finite)*](#lmm:abstract-associated-measures-finite). So $$f \in \mathcal{F}$$.
+
+By [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c), $$\mathcal{F}$$ consists of all bounded Borel-measurable functions on $$X$$. Finally, the stated bound holds for every bounded measurable $$f$$: $$\lvert Q_f(\psi) \rvert \le \int_X \lvert f \rvert \, d\mu_\psi \le \left\| f \right\|_\infty \mu_\psi(X) = \left\| f \right\|_\infty\left\| \psi \right\|^2$$.$$\blacksquare$$
+
+With the forms in hand, converting them back to operators is immediate, and defines the extension of $$\Phi$$ to bounded measurable functions.
+
+> **Definition** *(The Extended Calculus)*
+<a name="def:abstract-extended-calculus"></a>
+<!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$ and let $$f : X \to \mathbb{C}$$ be bounded and measurable. By [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded), $$Q_f$$ is a bounded quadratic form, so by [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63) there is a unique $$\widetilde\Phi(f) \in \mathcal{B}(\mathbf{H})$$ with
+>
+> $$
+>     \left< \psi, \widetilde\Phi(f)\psi \right> = Q_f(\psi) = \int_X f \, d\mu_\psi \qquad \text{for all } \psi \in \mathbf{H}.
+> $$
+>
+> We call $$\widetilde\Phi$$ the *extended calculus*. By the final claim of that proposition, $$\widetilde\Phi(f) = \Phi(f)$$ for continuous $$f$$ — by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63), since $$\Phi(f)$$ then induces the same quadratic form — so $$\widetilde\Phi$$ genuinely extends $$\Phi$$.
+
+The extended calculus inherits the algebraic properties of $$\Phi$$. Multiplicativity is the substantial one, and is proved in two passes of the same "vector space, contains the continuous functions, closed under bounded pointwise limits" argument — first fixing a continuous second factor, then letting both factors be measurable.
+
+> **Lemma** *(Real Functions Give Self-Adjoint Operators)*
+<a name="lmm:abstract-extended-real-self-adjoint"></a>
+<!--  \uses{def:abstract-extended-calculus} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
+> Let $$f : X \to \mathbb{C}$$ be bounded, measurable, and real-valued. Then $$\widetilde\Phi(f)$$ is self-adjoint.
+
+**Proof**
+Since $$f$$ is real-valued and each $$\mu_\psi$$ is a positive real measure, $$Q_f(\psi) = \int_X f\,d\mu_\psi \in \mathbb{R}$$ for every $$\psi$$. By the second clause of [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63) — a bounded quadratic form taking only real values corresponds to a self-adjoint operator — $$\widetilde\Phi(f)$$ is self-adjoint.$$\blacksquare$$
+
+> **Proposition** *(The Extended Calculus is Multiplicative)*
+<a name="prpstn:abstract-extended-multiplicative"></a>
+<!--  \uses{def:abstract-extended-calculus} -->
+<!--  \uses{def:abstract-continuous-functional-calculus} -->
+<!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
+<!--  \uses{lmm:abstract-associated-measures-finite} -->
+<!--  \uses{../spectral-theorems/#lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.59} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
+<!--  \uses{lmm:hall-dense-testing-second-slot} -->
+> For all bounded measurable $$f,g : X \to \mathbb{C}$$,
+>
+> $$
+>     \widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g).
+> $$
+
+**Proof**
+We first record the tool used in both passes. For bounded measurable $$h$$ and any $$\phi,\psi \in \mathbf{H}$$, write $$L_h(\phi,\psi)$$ for the sesquilinear form associated to $$Q_h$$. By Part 1 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) applied with $$D = \mathbf{H}$$ and $$T = \widetilde\Phi(h)$$ (legitimate: $$Q_h$$ is a quadratic form by [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded), and $$\widetilde\Phi(h)$$ induces it on the diagonal by [Definition (The Extended Calculus)](#def:abstract-extended-calculus)),
+
+$$
+    L_h(\phi,\psi) = \left< \phi, \widetilde\Phi(h)\psi \right> \qquad \text{for all } \phi,\psi \in \mathbf{H}. \tag{$\sharp$}
+$$
+
+By [**Proposition** *(hall-a.59)*](../spectral-theorems/#prpstn:hall-a.59) and [**Proposition** *(hall-a.61)*](../spectral-theorems/#prpstn:hall-a.61), $$L_h$$ is determined by $$Q_h$$ through a fixed finite linear combination of values of $$Q_h$$; so if $$h_i \to h$$ pointwise with $$\lvert h_i \rvert \le M$$, then, exactly as in the proof of [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded), $$L_{h_i}(\phi,\psi) \to L_h(\phi,\psi)$$ for all $$\phi,\psi$$ — the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) applying because each $$\mu_\psi$$ is finite by [**Lemma** *(The Abstract Associated Measures are Finite)*](#lmm:abstract-associated-measures-finite). Combined with $$(\sharp)$$, this says: *if $$h_i \to h$$ boundedly pointwise then $$\left< \phi, \widetilde\Phi(h_i)\psi \right> \to \left< \phi, \widetilde\Phi(h)\psi \right>$$ for all $$\phi,\psi$$.* Call this the *convergence principle*.
+
+**Pass 1: $$g$$ continuous.** Fix $$g \in C^0(X;\mathbb{R})$$ and let $$\mathcal{F}_1$$ be the set of bounded measurable $$f$$ with $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$. We check the three hypotheses of [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c).
+
+$$\mathcal{F}_1$$ *is a vector space*: for $$f_1,f_2 \in \mathcal{F}_1$$ and $$\alpha_1,\alpha_2 \in \mathbb{C}$$, using that $$(\alpha_1f_1+\alpha_2f_2)g = \alpha_1(f_1g)+\alpha_2(f_2g)$$ pointwise and that $$\widetilde\Phi$$ is linear (immediate from linearity of $$f \mapsto Q_f$$ and uniqueness in [Definition (The Extended Calculus)](#def:abstract-extended-calculus)),
+
+$$
+    \widetilde\Phi\big((\alpha_1f_1+\alpha_2f_2)g\big) = \alpha_1\widetilde\Phi(f_1g)+\alpha_2\widetilde\Phi(f_2g) = \big(\alpha_1\widetilde\Phi(f_1)+\alpha_2\widetilde\Phi(f_2)\big)\widetilde\Phi(g) = \widetilde\Phi(\alpha_1f_1+\alpha_2f_2)\widetilde\Phi(g).
+$$
+
+$$\mathcal{F}_1 \supset C^0(X;\mathbb{R})$$: for continuous $$f$$, $$fg$$ is continuous, and $$\widetilde\Phi$$ agrees with $$\Phi$$ on continuous functions ([Definition (The Extended Calculus)](#def:abstract-extended-calculus)), so the claim reduces to $$\Phi(fg) = \Phi(f)\Phi(g)$$, which is property 2 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus).
+
+$$\mathcal{F}_1$$ *is closed under bounded pointwise limits*: let $$f_i \to f$$ pointwise with $$\lvert f_i \rvert \le M$$, all $$f_i \in \mathcal{F}_1$$. Then $$f_ig \to fg$$ pointwise with $$\lvert f_ig \rvert \le M\left\| g \right\|_\infty$$, so by the convergence principle, for all $$\phi,\psi$$,
+
+$$
+    \left< \phi, \widetilde\Phi(fg)\psi \right> = \lim_i \left< \phi, \widetilde\Phi(f_ig)\psi \right> = \lim_i \left< \phi, \widetilde\Phi(f_i)\widetilde\Phi(g)\psi \right> = \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g)\psi \right>,
+$$
+
+the last step being the convergence principle applied with the fixed vector $$\widetilde\Phi(g)\psi$$ in place of $$\psi$$. By [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D = \mathbf{H}$$, $$\widetilde\Phi(fg)\psi = \widetilde\Phi(f)\widetilde\Phi(g)\psi$$ for every $$\psi$$, i.e. $$f \in \mathcal{F}_1$$.
+
+By [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c), $$\mathcal{F}_1$$ contains every bounded measurable $$f$$. So $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$ whenever $$f$$ is bounded measurable and $$g \in C^0(X;\mathbb{R})$$.
+
+**Pass 2: $$g$$ measurable.** Fix a bounded measurable $$f$$ and let $$\mathcal{F}_2$$ be the set of bounded measurable $$g$$ with $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$. That $$\mathcal{F}_2$$ is a vector space follows exactly as for $$\mathcal{F}_1$$; that $$\mathcal{F}_2 \supset C^0(X;\mathbb{R})$$ is precisely the conclusion of **Pass 1**; and closure under bounded pointwise limits follows by the same convergence-principle argument, with the roles of the two factors exchanged — if $$g_i \to g$$ boundedly pointwise then $$fg_i \to fg$$ boundedly pointwise, so $$\left< \phi, \widetilde\Phi(fg)\psi \right> = \lim_i \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g_i)\psi \right>$$, and $$\left< \phi, \widetilde\Phi(f)\widetilde\Phi(g_i)\psi \right> = \left< \widetilde\Phi(f)^*\phi, \widetilde\Phi(g_i)\psi \right> \to \left< \widetilde\Phi(f)^*\phi, \widetilde\Phi(g)\psi \right> = \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g)\psi \right>$$ by the convergence principle applied with the fixed vector $$\widetilde\Phi(f)^*\phi$$ in the first slot. Again [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c) gives $$\mathcal{F}_2$$ everything, which is the proposition.$$\blacksquare$$
+
+> **Lemma** *(The Extended Calculus Respects Conjugation)*
+<a name="lmm:abstract-extended-conjugation"></a>
+<!--  \uses{def:abstract-extended-calculus} -->
+<!--  \uses{lmm:abstract-extended-real-self-adjoint} -->
+> For every bounded measurable $$f : X \to \mathbb{C}$$, $$\widetilde\Phi(\overline f) = \widetilde\Phi(f)^*$$.
+
+**Proof**
+Write $$f = u + iv$$ with $$u = \tfrac{1}{2}(f+\overline f)$$ and $$v = \tfrac{1}{2i}(f - \overline f)$$ bounded, measurable, and real-valued. By [**Lemma** *(Real Functions Give Self-Adjoint Operators)*](#lmm:abstract-extended-real-self-adjoint), $$\widetilde\Phi(u)$$ and $$\widetilde\Phi(v)$$ are self-adjoint. By linearity of $$\widetilde\Phi$$ and conjugate-linearity of the adjoint,
+
+$$
+    \widetilde\Phi(f)^* = \big( \widetilde\Phi(u) + i\widetilde\Phi(v) \big)^* = \widetilde\Phi(u)^* - i\widetilde\Phi(v)^* = \widetilde\Phi(u) - i\widetilde\Phi(v) = \widetilde\Phi(u - iv) = \widetilde\Phi(\overline f).\ \blacksquare
+$$
+
+We can now assemble the projection-valued measure. This is the abstract form of the previous post's [**Theorem** *(hall-8.10)*](../spectral-theorems/#thrm:hall-8.10).
+
+> **Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*
+<a name="thrm:abstract-calculus-yields-pvm"></a>
+<!--  \uses{def:abstract-continuous-functional-calculus} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
+<!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{def:abstract-extended-calculus} -->
+<!--  \uses{prpstn:abstract-extended-multiplicative} -->
+<!--  \uses{lmm:abstract-extended-real-self-adjoint} -->
+<!--  \uses{lmm:abstract-extended-conjugation} -->
+<!--  \uses{lmm:abstract-associated-measures-finite} -->
+<!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
+<!--  \uses{../spectral-theorems/#lmm:lemma-4} -->
+<!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
+<!--  \uses{lmm:hall-dense-testing-second-slot} -->
+> Let $$X$$ be a compact metric space and $$\Phi$$ an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. Define, for each Borel set $$E \subset X$$,
+>
+> $$
+>     \mu^\Phi(E) \equiv \widetilde\Phi(1_E).
+> $$
+>
+> Then $$\mu^\Phi$$ is a projection-valued measure on $$X$$, and for every $$f \in C^0(X;\mathbb{C})$$,
+>
+> $$
+>     \int_X f \, d\mu^\Phi = \Phi(f).
+> $$
+
+**Proof**
+We verify the four properties of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) in turn, then the integral formula.
+
+**Property 1: each $$\mu^\Phi(E)$$ is a bounded orthogonal projection.** $$\widetilde\Phi(1_E) \in \mathcal{B}(\mathbf{H})$$ by construction. Idempotency: $$1_E \cdot 1_E = 1_E$$ pointwise, so by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative), $$\mu^\Phi(E)^2 = \widetilde\Phi(1_E)\widetilde\Phi(1_E) = \widetilde\Phi(1_E \cdot 1_E) = \widetilde\Phi(1_E) = \mu^\Phi(E)$$. Self-adjointness: $$1_E$$ is real-valued, so [**Lemma** *(Real Functions Give Self-Adjoint Operators)*](#lmm:abstract-extended-real-self-adjoint) applies. So $$\mu^\Phi(E)$$ is a [bounded orthogonal projection](../spectral-theorems/#def:bounded-orthogonal-projection).
+
+**Property 2: $$\mu^\Phi(\emptyset) = 0$$ and $$\mu^\Phi(X) = \mathbf{1}$$.** We have $$1_\emptyset = 0$$, the zero function, and $$Q_0(\psi) = \int_X 0 \, d\mu_\psi = 0$$ for every $$\psi$$, so by uniqueness in [Definition (The Extended Calculus)](#def:abstract-extended-calculus), $$\widetilde\Phi(0) = 0$$. And $$1_X = 1$$, the constant function, which is continuous, so $$\widetilde\Phi(1_X) = \Phi(1) = \mathbf{1}$$ by property 5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus).
+
+**Property 4: $$\mu^\Phi(E_1 \cap E_2) = \mu^\Phi(E_1)\mu^\Phi(E_2)$$.** Immediate from multiplicativity, since $$1_{E_1 \cap E_2} = 1_{E_1}1_{E_2}$$ pointwise: $$\mu^\Phi(E_1\cap E_2) = \widetilde\Phi(1_{E_1}1_{E_2}) = \widetilde\Phi(1_{E_1})\widetilde\Phi(1_{E_2}) = \mu^\Phi(E_1)\mu^\Phi(E_2)$$.
+
+**Property 3: countable additivity.** Let $$\{E_j\}_{j\in\mathbb{N}}$$ be pairwise disjoint Borel sets and $$E \equiv \bigcup_j E_j$$. By **Property 4** and disjointness, $$\mu^\Phi(E_i)\mu^\Phi(E_j) = \mu^\Phi(E_i\cap E_j) = \mu^\Phi(\emptyset) = 0$$ for $$i \ne j$$, so $$\{\mu^\Phi(E_j)\}$$ is a family of pairwise orthogonal bounded projections. By [**Lemma** *(lemma-4)*](../spectral-theorems/#lmm:lemma-4), for each $$\psi$$ the partial sums $$\sum_{j=1}^n \mu^\Phi(E_j)\psi$$ converge in norm to $$P\psi$$, where $$P$$ is the orthogonal projection onto the smallest closed subspace containing all the ranges. It remains to identify $$P$$ with $$\mu^\Phi(E)$$.
+
+Set $$h_n \equiv \sum_{j=1}^n 1_{E_j} = 1_{\bigcup_{j\le n}E_j}$$ (the equality by disjointness). Then $$h_n \to 1_E$$ pointwise on $$X$$ — for $$x \in E$$, $$x$$ lies in exactly one $$E_j$$, so $$h_n(x) = 1$$ for $$n \ge j$$; for $$x \notin E$$, $$h_n(x)=0$$ for all $$n$$ — and $$\lvert h_n \rvert \le 1$$. By the convergence principle established in the proof of [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative), for all $$\phi,\psi \in \mathbf{H}$$,
+
+$$
+    \left< \phi, \widetilde\Phi(h_n)\psi \right> \longrightarrow \left< \phi, \widetilde\Phi(1_E)\psi \right> = \left< \phi, \mu^\Phi(E)\psi \right>.
+$$
+
+On the other hand $$\widetilde\Phi(h_n) = \sum_{j=1}^n \mu^\Phi(E_j)$$ by linearity of $$\widetilde\Phi$$, and $$\sum_{j=1}^n\mu^\Phi(E_j)\psi \to P\psi$$ in norm, so by [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product), $$\left< \phi, \widetilde\Phi(h_n)\psi \right> \to \left< \phi, P\psi \right>$$. By uniqueness of limits in $$\mathbb{C}$$, $$\left< \phi, \mu^\Phi(E)\psi \right> = \left< \phi, P\psi \right>$$ for all $$\phi,\psi$$; by [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D=\mathbf{H}$$, $$\mu^\Phi(E)\psi = P\psi$$ for every $$\psi$$. Hence $$\mu^\Phi(E)\psi = \lim_n \sum_{j=1}^n \mu^\Phi(E_j)\psi = \sum_{j=1}^\infty \mu^\Phi(E_j)\psi$$, which is Property 3.
+
+**The integral formula.** By the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) applied to the projection-valued measure $$\mu^\Phi$$ just constructed, $$\int_X f\,d\mu^\Phi$$ is the unique bounded operator with $$\left< \psi, \left( \int_X f\,d\mu^\Phi \right)\psi \right> = \int_X f \, d\mu^\Phi_\psi$$ for all $$\psi$$, where $$\mu^\Phi_\psi(E) = \left< \psi, \mu^\Phi(E)\psi \right>$$. Now for any Borel $$E$$,
+
+$$
+    \mu^\Phi_\psi(E) = \left< \psi, \widetilde\Phi(1_E)\psi \right> = Q_{1_E}(\psi) = \int_X 1_E \, d\mu_\psi = \mu_\psi(E),
+$$
+
+using [Definition (The Extended Calculus)](#def:abstract-extended-calculus). So $$\mu^\Phi_\psi = \mu_\psi$$ as measures, and therefore, for continuous $$f$$,
+
+$$
+    \left< \psi, \left( \int_X f \, d\mu^\Phi \right)\psi \right> = \int_X f \, d\mu_\psi = Q_f(\psi) = \left< \psi, \Phi(f)\psi \right>,
+$$
+
+the last two equalities by [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded) and [Definition (The Extended Calculus)](#def:abstract-extended-calculus) (which give $$Q_f(\psi) = \left<\psi,\Phi(f)\psi\right>$$ for continuous $$f$$). Two bounded operators inducing the same quadratic form are equal, by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63); hence $$\int_X f \, d\mu^\Phi = \Phi(f)$$.$$\blacksquare$$
+
+### The Spectral Theorem for Bounded Normal Operators
+
+Assembling the two stages gives the result this section was aiming at.
+
+> **Theorem** *(Spectral Theorem for Bounded Normal Operators)*
+<a name="thrm:hall-10.20"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{thrm:continuous-functional-calculus-normal} -->
+<!--  \uses{thrm:abstract-calculus-yields-pvm} -->
+<!--  \uses{def:abstract-continuous-functional-calculus} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$. Then there is a projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with
+>
+> $$
+>     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+> $$
+
+**Proof**
+By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable), $$X \equiv \sigma(A)$$ is a compact metric space. By [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), the map $$\Phi_A$$ constructed there satisfies properties 1–5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus), so it *is* an abstract continuous functional calculus on $$X$$.
+
+Applying [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm) to $$\Phi_A$$ gives a projection-valued measure $$\mu^A \equiv \mu^{\Phi_A}$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with $$\int_{\sigma(A)} f \, d\mu^A = \Phi_A(f)$$ for every continuous $$f$$. Taking $$f = \iota$$, the (continuous) function $$\iota(\lambda) = \lambda$$, and using property 5 of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), which gives $$\Phi_A(\iota) = A$$,
+
+$$
+    \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = \Phi_A(\iota) = A,
+$$
+
+the desired result.$$\blacksquare$$
