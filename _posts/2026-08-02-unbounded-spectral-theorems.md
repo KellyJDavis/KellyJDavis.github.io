@@ -2603,6 +2603,55 @@ We first record the measure-theoretic transport fact, standard and assumed here 
 >     \int_Z g \, d(T_*\nu) = \int_Y (g \circ T) \, d\nu.
 > $$
 
+We also isolate the purely set-theoretic transport of a projection-valued measure along a Borel bijection, since we will need it twice: once to build $$\mu^A$$ from $$\mu^U$$, and once, in the reverse direction, in the uniqueness argument.
+
+> **Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*
+<a name="lmm:borel-bijection-transports-pvm"></a>
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{thrm:change-of-variables} -->
+> Let $$(Y,\Omega(Y))$$ and $$(Z,\Omega(Z))$$ be measurable spaces.
+>
+> 1. *(Restriction.)* Let $$\mu$$ be a projection-valued measure on $$\Omega(Y)$$ and let $$Y_0 \in \Omega(Y)$$ satisfy $$\mu(Y\setminus Y_0) = 0$$. Then $$\Omega(Y_0) \equiv \{ E \in \Omega(Y) \mid E \subset Y_0 \}$$ is a $$\sigma$$-algebra on $$Y_0$$, and the restriction of $$\mu$$ to $$\Omega(Y_0)$$ is a projection-valued measure on $$Y_0$$.
+> 2. *(Transport.)* Let $$T : Y \to Z$$ be a bijection such that both $$T$$ and $$T^{-1}$$ are measurable, and let $$\mu$$ be a projection-valued measure on $$\Omega(Y)$$. Then
+>
+>    $$
+>        \nu(F) \equiv \mu\big( T^{-1}(F) \big), \qquad F \in \Omega(Z),
+>    $$
+>
+>    defines a projection-valued measure on $$\Omega(Z)$$, and for every $$\psi \in \mathbf{H}$$ the associated scalar measures satisfy $$\nu_\psi = T_*\mu_\psi$$, the pushforward of $$\mu_\psi$$ along $$T$$.
+
+**Proof**
+**Part 1.** That $$\Omega(Y_0)$$ is a $$\sigma$$-algebra on $$Y_0$$ is immediate: it contains $$Y_0$$, is closed under countable unions (a countable union of subsets of $$Y_0$$ lies in $$Y_0$$), and is closed under complementation *within $$Y_0$$*, since $$Y_0 \setminus E = Y_0 \cap (Y\setminus E) \in \Omega(Y)$$ for $$E \in \Omega(Y_0)$$.
+
+Properties 1, 3, and 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) are inherited verbatim, being conditions on sets that all lie in $$\Omega(Y_0) \subset \Omega(Y)$$. For property 2, $$\mu(\emptyset) = 0$$ is inherited, and for the total mass: $$Y = Y_0 \sqcup (Y\setminus Y_0)$$ is a disjoint decomposition, so property 3 applied to the sequence $$Y_0, Y\setminus Y_0, \emptyset, \emptyset, \ldots$$ gives $$\mathbf{1} = \mu(Y) = \mu(Y_0) + \mu(Y\setminus Y_0) = \mu(Y_0) + 0$$, i.e. $$\mu(Y_0) = \mathbf{1}$$.
+
+**Part 2.** First, $$\nu$$ is well defined: $$T^{-1}(F) \in \Omega(Y)$$ for $$F \in \Omega(Z)$$, since $$T$$ is measurable.
+
+*Property 1.* $$\nu(F) = \mu(T^{-1}(F))$$ is a bounded orthogonal projection, being a value of $$\mu$$.
+
+*Property 2.* $$T^{-1}(\emptyset) = \emptyset$$ and $$T^{-1}(Z) = Y$$ (as $$T$$ is a bijection onto $$Z$$), so $$\nu(\emptyset) = \mu(\emptyset) = 0$$ and $$\nu(Z) = \mu(Y) = \mathbf{1}$$.
+
+*Property 3.* Let $$\{F_j\}$$ be pairwise disjoint in $$\Omega(Z)$$ with union $$F$$. Preimages preserve disjointness and unions: $$T^{-1}(F_i) \cap T^{-1}(F_j) = T^{-1}(F_i \cap F_j) = T^{-1}(\emptyset) = \emptyset$$ for $$i \ne j$$, and $$T^{-1}(F) = \bigcup_j T^{-1}(F_j)$$. So property 3 for $$\mu$$ applied to $$\{T^{-1}(F_j)\}$$ gives, for every $$\psi$$,
+
+$$
+    \nu(F)\psi = \mu\big(T^{-1}(F)\big)\psi = \sum_{j=1}^\infty \mu\big(T^{-1}(F_j)\big)\psi = \sum_{j=1}^\infty \nu(F_j)\psi,
+$$
+
+convergent in the norm topology.
+
+*Property 4.* $$T^{-1}(F_1 \cap F_2) = T^{-1}(F_1) \cap T^{-1}(F_2)$$, so $$\nu(F_1\cap F_2) = \mu\big(T^{-1}(F_1)\cap T^{-1}(F_2)\big) = \mu\big(T^{-1}(F_1)\big)\mu\big(T^{-1}(F_2)\big) = \nu(F_1)\nu(F_2)$$, by property 4 for $$\mu$$.
+
+*The associated measures.* For $$\psi \in \mathbf{H}$$ and $$F \in \Omega(Z)$$, directly from the definitions,
+
+$$
+    \nu_\psi(F) = \left< \psi, \nu(F)\psi \right> = \left< \psi, \mu\big(T^{-1}(F)\big)\psi \right> = \mu_\psi\big( T^{-1}(F) \big) = (T_*\mu_\psi)(F),
+$$
+
+the last equality being the definition of the pushforward in [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables).$$\blacksquare$$
+
+Note that $$T$$ being a *bijection* is used only for $$T^{-1}(Z) = Y$$ in property 2; the measurability of $$T^{-1}$$ is not needed for Part 2 at all, but is what guarantees, in our applications, that the transported measure can itself be transported back.
+
 One more observation is needed: $$1$$ is never an atom of $$\mu^U$$, so $$D$$ — undefined at $$u=1$$ — is defined $$\mu^U_\psi$$-almost everywhere for every $$\psi$$, and integrating it is legitimate.
 
 > **Lemma** *(The Cayley Transform Omits the Point $$1$$)*
@@ -2696,6 +2745,7 @@ Transporting the measure along $$C$$ now gives the projection-valued measure for
 
 > **Theorem**
 <a name="thrm:hall-10.30"></a>
+<!--  \uses{lmm:borel-bijection-transports-pvm} -->
 <!--  \uses{prpstn:hall-10.29} -->
 <!--  \uses{lmm:cayley-map} -->
 <!--  \uses{lmm:cayley-omits-one} -->
@@ -2716,15 +2766,19 @@ Transporting the measure along $$C$$ now gives the projection-valued measure for
 > $$
 
 **Proof**
-*$$\mu^A$$ is well defined and a projection-valued measure.* By [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), $$C$$ is a continuous bijection $$\mathbb{R} \to S^1\setminus\{1\}$$ with continuous inverse $$D$$, so $$C$$ carries Borel sets to Borel sets and $$C(E)$$ is Borel whenever $$E$$ is; intersecting with $$\sigma(U)$$ where necessary, $$\mu^U(C(E))$$ is defined. Each of the four properties of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) transfers directly, because $$E \mapsto C(E)$$ is a bijection of Borel sets preserving all the set operations involved: property 1 is inherited pointwise; for property 2, $$C(\emptyset)=\emptyset$$ and $$C(\mathbb{R}) = S^1\setminus\{1\}$$, whose $$\mu^U$$-measure is $$\mu^U(\sigma(U)) - \mu^U(\{1\}) = \mathbf{1} - 0 = \mathbf{1}$$ by [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one); property 3 holds since $$C$$ injective carries pairwise disjoint sets to pairwise disjoint sets and $$C(\bigcup_j E_j) = \bigcup_j C(E_j)$$; and property 4 since $$C(E_1 \cap E_2) = C(E_1)\cap C(E_2)$$, again by injectivity.
+*$$\mu^A$$ is well defined and a projection-valued measure.* By [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), $$C : \mathbb{R} \to S^1\setminus\{1\}$$ is a bijection with inverse $$D$$, both continuous and hence Borel measurable.
 
-*The associated scalar measures.* For $$\psi \in \mathbf{H}$$ and Borel $$E \subset \mathbb{R}$$,
+We first put $$\mu^U$$ on the right space. Extend $$\mu^U$$ from $$\sigma(U)$$ to all of $$S^1$$ by $$\mu^U(F) \equiv \mu^U(F \cap \sigma(U))$$; this is again a projection-valued measure, the four properties being inherited from those on $$\sigma(U)$$ since $$F \mapsto F\cap\sigma(U)$$ preserves the relevant set operations and sends $$S^1$$ to $$\sigma(U)$$. By [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), $$\mu^U(\{1\}) = 0$$, so Part 1 of [**Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*](#lmm:borel-bijection-transports-pvm), applied with $$Y = S^1$$ and $$Y_0 = S^1\setminus\{1\}$$, shows the restriction of $$\mu^U$$ to the Borel subsets of $$S^1\setminus\{1\}$$ is a projection-valued measure on $$S^1\setminus\{1\}$$.
+
+Now apply Part 2 of the same lemma with $$Y = S^1\setminus\{1\}$$, $$Z = \mathbb{R}$$, and $$T = D$$ (a bijection with $$T^{-1} = C$$, both measurable). Since $$D^{-1}(E) = C(E)$$, the transported measure is exactly
 
 $$
-    \mu^A_\psi(E) = \left< \psi, \mu^A(E)\psi \right> = \left< \psi, \mu^U(C(E))\psi \right> = \mu^U_\psi\big( C(E) \big) = \mu^U_\psi\big( D^{-1}(E) \big),
+    \mu^A(E) = \mu^U\big( C(E) \big) = \mu^U\big( D^{-1}(E) \big),
 $$
 
-using $$C = D^{-1}$$ from [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). So $$\mu^A_\psi$$ is exactly the pushforward $$D_*\mu^U_\psi$$ of $$\mu^U_\psi$$ along $$D$$, in the sense of [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables).
+so $$\mu^A$$ is a projection-valued measure on $$\mathbb{R}$$, and the lemma further gives $$\mu^A_\psi = D_*\mu^U_\psi$$ for every $$\psi$$.
+
+*The associated scalar measures.* As just noted, $$\mu^A_\psi = D_*\mu^U_\psi$$, the pushforward of $$\mu^U_\psi$$ along $$D$$, in the sense of [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables).
 
 *Equality of domains.* By that change-of-variables theorem applied with $$T = D$$ and $$g(\lambda) = \lvert \lambda \rvert^2$$,
 
@@ -2746,6 +2800,7 @@ We can finally state and prove the theorem this post set out to establish.
 
 > **Theorem** *(Spectral Theorem for Unbounded, Self-Adjoint Operators)*
 <a name="thrm:hall-10.4"></a>
+<!--  \uses{lmm:borel-bijection-transports-pvm} -->
 <!--  \uses{def:hall-9.5} -->
 <!--  \uses{def:hall-9.16} -->
 <!--  \uses{thrm:hall-9.17} -->
@@ -2831,7 +2886,13 @@ $$
 
 the last equality being exactly the identity $$(\natural\natural)$$ established in the proof of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28).
 
-*Step 3: transporting to the circle.* Define $$\nu^U(F) \equiv \nu\big( C^{-1}(F) \big)$$ for Borel $$F \subset S^1$$, where $$C^{-1}(F) = D(F\setminus\{1\})$$ by [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). Exactly as in the corresponding verification in the proof of [**Theorem** *(hall-10.30)*](#thrm:hall-10.30) — with the roles of $$C$$ and $$D$$ interchanged, the argument there using only that the map in question is a Borel bijection between the two spaces — $$\nu^U$$ is a projection-valued measure on $$S^1$$, and $$\nu^U_\psi$$ is the pushforward $$C_*\nu_\psi$$.
+*Step 3: transporting to the circle.* Apply Part 2 of [**Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*](#lmm:borel-bijection-transports-pvm) with $$Y = \mathbb{R}$$, $$Z = S^1\setminus\{1\}$$, $$T = C$$ (a bijection with $$T^{-1} = D$$, both measurable, by [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map)), and the projection-valued measure $$\nu$$. This gives a projection-valued measure
+
+$$
+    \nu^U(F) \equiv \nu\big( C^{-1}(F) \big) = \nu\big( D(F) \big), \qquad F \subset S^1\setminus\{1\} \text{ Borel},
+$$
+
+on $$S^1\setminus\{1\}$$, with $$\nu^U_\psi = C_*\nu_\psi$$ for every $$\psi$$. Extend $$\nu^U$$ to all of $$S^1$$ by $$\nu^U(F) \equiv \nu^U(F\setminus\{1\})$$; this assigns $$\{1\}$$ no mass and is again a projection-valued measure, exactly as in the corresponding extension in the proof of [**Theorem** *(hall-10.30)*](#thrm:hall-10.30).
 
 By [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables) with $$T = C$$ and $$g(u) = u$$ (bounded on $$S^1$$), for every $$\psi \in \mathbf{H}$$,
 
