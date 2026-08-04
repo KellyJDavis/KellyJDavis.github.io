@@ -1881,3 +1881,200 @@ $$
 gives, in the same way (using [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms) to bound $$\left\| (A^*-\overline\lambda\mathbf{1})\psi \right\|$$ by $$\varepsilon\left\| \psi \right\|$$), $$c_{0l} = \left\| A^* \right\|^{l-1} + \lvert \lambda \rvert c_{0,l-1}$$.
 
 Finally $$\psi \ne 0$$ by hypothesis, so $$\psi$$ is a $$(C\varepsilon)$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$p(\lambda,\overline\lambda)$$, provided $$C > 0$$; if the bound above yields $$C = 0$$ (which happens only when $$p$$ is constant, where $$p(A,A^*) - p(\lambda,\overline\lambda)\mathbf{1} = 0$$), any $$C>0$$ serves.$$\blacksquare$$
+
+Two small structural facts are needed before the main construction: that polynomials in $$A$$ and $$A^*$$ are again normal, and that restricting a normal operator to a subspace invariant under both $$A$$ and $$A^*$$ leaves it normal.
+
+> **Lemma** *(Polynomials in a Normal Operator are Normal)*
+<a name="lmm:polynomials-in-normal-are-normal"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{lmm:adjoint-product-and-involution} -->
+<!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
+<!--  \uses{prpstn:hall-9.13} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal and $$p$$ a polynomial in two variables, $$p(\lambda,\overline\lambda) = \sum_{k,l} a_{kl}\lambda^k\overline\lambda^{\,l}$$. Then $$p(A,A^*) \equiv \sum_{k,l} a_{kl}A^k(A^*)^l$$ satisfies
+>
+> $$
+>     \big( p(A,A^*) \big)^* = \overline{p}(A,A^*), \qquad \text{where } \overline{p}(\lambda,\overline\lambda) \equiv \sum_{k,l} \overline{a_{kl}}\,\lambda^l\overline\lambda^{\,k},
+> $$
+>
+> and $$p(A,A^*)$$ is normal. Moreover $$p(A,A^*)$$, and its adjoint, commute with both $$A$$ and $$A^*$$.
+
+**Proof**
+By [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution), $$\big( A^k(A^*)^l \big)^* = \big((A^*)^l\big)^*\big(A^k\big)^* = A^l (A^*)^k$$, using Part 1 repeatedly to reverse each product and Part 2 to simplify $$(A^*)^* = A$$. Adjoints are conjugate-linear (by [**Proposition** *(Adjoint of a Sum with a Bounded Operator)*](#prpstn:hall-9.13) for additivity and [**Lemma** *(Adjoint of a Scalar Multiple of the Identity)*](#lmm:adjoint-of-scalar-multiple-of-identity) for scalars), so $$\big( p(A,A^*) \big)^* = \sum_{k,l}\overline{a_{kl}}A^l(A^*)^k = \overline{p}(A,A^*)$$.
+
+Since $$A$$ commutes with $$A^*$$ (normality), any two words in the letters $$A$$ and $$A^*$$ commute: repeated application of $$AA^*=A^*A$$ lets one transpose adjacent letters, so any word can be rearranged into the normal form $$A^k(A^*)^l$$, and two such normal forms commute because $$A^k(A^*)^lA^{k'}(A^*)^{l'} = A^{k+k'}(A^*)^{l+l'} = A^{k'}(A^*)^{l'}A^k(A^*)^l$$. By bilinearity of the product, any two linear combinations of such words commute; in particular $$p(A,A^*)$$ commutes with $$\overline{p}(A,A^*) = \big(p(A,A^*)\big)^*$$, i.e. $$p(A,A^*)$$ is normal, and both commute with $$A$$ and with $$A^*$$ (themselves such words).$$\blacksquare$$
+
+> **Lemma** *(Restriction of a Normal Operator to a Doubly Invariant Subspace)*
+<a name="lmm:restriction-of-normal-operator"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{def:hall-9.1} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal and let $$W \subset \mathbf{H}$$ be a nonzero closed subspace invariant under both $$A$$ and $$A^*$$. Then $$W$$ is a separable Hilbert space in the inherited inner product, $$A\vert_W \in \mathcal{B}(W)$$, its adjoint (computed in $$W$$) is $$A^*\vert_W$$, and $$A\vert_W$$ is normal.
+
+**Proof**
+$$W$$ is a closed subspace of the separable Hilbert space $$\mathbf{H}$$, hence itself a separable Hilbert space, exactly as noted in [Definition (Spectral Subspaces)](#def:hall-7.14). Invariance means $$A\vert_W$$ maps $$W$$ into $$W$$, and $$\left\| A\vert_W\eta \right\| = \left\| A\eta \right\| \le \left\| A \right\|\left\| \eta \right\|$$, so $$A\vert_W \in \mathcal{B}(W)$$ with $$\left\| A\vert_W \right\| \le \left\| A \right\|$$.
+
+For the adjoint: for $$\eta,\zeta \in W$$, $$\left< \eta, (A\vert_W)\zeta \right> = \left< \eta, A\zeta \right> = \left< A^*\eta, \zeta \right> = \left< (A^*\vert_W)\eta, \zeta \right>$$, the middle equality by the [definition of the adjoint](#def:hall-9.1) in $$\mathbf{H}$$ and the last because $$A^*\eta \in W$$ by invariance. As this holds for all $$\eta,\zeta \in W$$, the adjoint of $$A\vert_W$$ in $$\mathcal{B}(W)$$ is $$A^*\vert_W$$.
+
+Normality: for $$\eta \in W$$, $$(A\vert_W)(A\vert_W)^*\eta = A A^*\eta = A^*A\eta = (A\vert_W)^*(A\vert_W)\eta$$, using invariance to keep every intermediate vector in $$W$$ and normality of $$A$$ in the middle.$$\blacksquare$$
+
+We can now carry out the construction that replaces the matrix-case eigenspace argument.
+
+> **Lemma**
+<a name="lmm:hall-10.27"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{def:hall-10.24} -->
+<!--  \uses{def:hall-7.14} -->
+<!--  \uses{prpstn:hall-7.15} -->
+<!--  \uses{prpstn:hall-7.16} -->
+<!--  \uses{lmm:hall-10.25} -->
+<!--  \uses{lmm:hall-10.26} -->
+<!--  \uses{lmm:polynomials-in-normal-are-normal} -->
+<!--  \uses{lmm:adjoint-product-and-involution} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, $$p$$ a polynomial in two variables, and $$\mu \in \sigma\big( p(A,A^*) \big)$$. Then for every $$\varepsilon > 0$$ there is a nonzero closed subspace $$W^\varepsilon \subset \mathbf{H}$$, invariant under both $$A$$ and $$A^*$$, every nonzero element of which is an $$\varepsilon$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$\mu$$.
+
+**Proof**
+Fix $$\varepsilon > 0$$ and set $$B \equiv p(A,A^*) - \mu\mathbf{1}$$. By [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), $$p(A,A^*)$$ is normal, and hence so is $$B$$ (the computation in the proof of [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms) shows that subtracting a scalar multiple of $$\mathbf{1}$$ preserves normality). Since $$\mu \in \sigma(p(A,A^*))$$, $$0 \in \sigma(B)$$ — for $$B - 0\cdot\mathbf{1} = p(A,A^*) - \mu\mathbf{1}$$ has a bounded two-sided inverse exactly when $$\mu$$ is in the resolvent set of $$p(A,A^*)$$.
+
+*Step 1: $$0 \in \sigma(B^*B)$$.* The operator $$B^*B$$ is self-adjoint, by [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution): $$(B^*B)^* = B^*(B^*)^* = B^*B$$. Let $$\delta > 0$$. Since $$0 \in \sigma(B)$$ and $$B$$ is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives a $$\delta'$$-almost eigenvector $$\psi$$ for $$B$$ with eigenvalue $$0$$, for any $$\delta' > 0$$ we choose. Applying [**Lemma** *(hall-10.26)*](#lmm:hall-10.26) to the normal operator $$B$$ with the polynomial $$q(\lambda,\overline\lambda) = \overline\lambda\lambda$$ (so $$q(B,B^*) = B^*B$$ and $$q(0,\overline{0}) = 0$$) gives a constant $$C_q$$ with: $$\psi$$ is a $$(C_q\delta')$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. Choosing $$\delta' = \delta/C_q$$ makes $$\psi$$ a $$\delta$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. As $$\delta>0$$ was arbitrary and $$B^*B$$, being self-adjoint, is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives $$0 \in \sigma(B^*B)$$.
+
+*Step 2: the spectral subspace.* Apply the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators) to $$B^*B$$ and let
+
+$$
+    W^\varepsilon \equiv V_{(-\varepsilon^2/4,\ \varepsilon^2/4)}
+$$
+
+be the spectral subspace of $$B^*B$$ for the interval $$(-\varepsilon^2/4, \varepsilon^2/4)$$, in the sense of [Definition (Spectral Subspaces)](#def:hall-7.14). It is a closed subspace, by that definition. Since $$0 \in \sigma(B^*B)$$ by **Step 1** and $$(-\varepsilon^2/4,\varepsilon^2/4)$$ is an open neighbourhood of $$0$$, Part 3 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15) gives $$W^\varepsilon \ne \{0\}$$.
+
+*Step 3: the almost-eigenvector bound.* Since $$(-\varepsilon^2/4,\varepsilon^2/4) \subset [0 - \varepsilon^2/4,\ 0 + \varepsilon^2/4]$$, Part 2 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15), applied with $$\lambda_0 = 0$$, gives $$\left\| B^*B\psi \right\| \le (\varepsilon^2/4)\left\| \psi \right\|$$ for all $$\psi \in W^\varepsilon$$. Hence, by [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43) and the [definition of the adjoint](#def:hall-9.1),
+
+$$
+    \left\| B\psi \right\|^2 = \left< B\psi, B\psi \right> = \left< \psi, B^*B\psi \right> \le \left\| \psi \right\| \left\| B^*B\psi \right\| \le \frac{\varepsilon^2}{4}\left\| \psi \right\|^2,
+$$
+
+so $$\left\| B\psi \right\| \le \tfrac{\varepsilon}{2}\left\| \psi \right\| < \varepsilon\left\| \psi \right\|$$ for every nonzero $$\psi \in W^\varepsilon$$. Since $$B = p(A,A^*) - \mu\mathbf{1}$$, this says exactly that every nonzero $$\psi \in W^\varepsilon$$ is an $$\varepsilon$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$\mu$$.
+
+*Step 4: invariance.* By [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), $$p(A,A^*)$$ and its adjoint commute with $$A$$ and with $$A^*$$; adding the scalar $$-\mu\mathbf{1}$$ (which commutes with everything) preserves this, so $$B$$ and $$B^*$$ commute with $$A$$ and $$A^*$$, and therefore so does the product $$B^*B$$. Applying Part 2 of [**Proposition** *(Commuting Operators Preserve Spectral Subspaces)*](#prpstn:hall-7.16) to the self-adjoint operator $$B^*B$$ and the commuting bounded operator $$A$$ shows $$W^\varepsilon$$ is invariant under $$A$$; the same with $$A^*$$ in place of $$A$$ gives invariance under $$A^*$$.$$\blacksquare$$
+
+### The Two-Variable Spectral Mapping Theorem
+
+> **Theorem** *(Spectral Mapping for Polynomials in $$A$$ and $$A^*$$)*
+<a name="thrm:hall-10.23"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{def:hall-10.24} -->
+<!--  \uses{lmm:hall-10.25} -->
+<!--  \uses{lmm:hall-10.26} -->
+<!--  \uses{lmm:hall-10.27} -->
+<!--  \uses{lmm:polynomials-in-normal-are-normal} -->
+<!--  \uses{lmm:restriction-of-normal-operator} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$, and let $$p$$ be a polynomial in two variables. Then
+>
+> $$
+>     \sigma\big( p(A,A^*) \big) = \big\{ p(\lambda,\overline\lambda) \;\mid\; \lambda \in \sigma(A) \big\}.
+> $$
+
+**Proof**
+Before either inclusion, we record a uniformity remark about the constant $$C$$ of [**Lemma** *(hall-10.26)*](#lmm:hall-10.26). Inspecting the recursion there, $$C$$ is built from $$\left\| A \right\|$$, $$\left\| A^* \right\|$$, the coefficients of $$p$$, and $$\lvert \lambda \rvert$$, and is non-decreasing in $$\lvert \lambda \rvert$$. By [**Corollary**](../spectral-theorems/#crllr:crllr-1), every $$\lambda \in \sigma(A)$$ satisfies $$\lvert \lambda \rvert \le R(A) \le \left\| A \right\|$$; and, as we will see, every $$\lambda$$ arising below satisfies $$\lvert \lambda \rvert \le \left\| A \right\|$$ as well. So there is a single constant $$C$$, depending only on $$p$$ and $$A$$, valid for all $$\lambda$$ with $$\lvert\lambda\rvert \le \left\|A\right\|$$; we fix such a $$C$$ once and for all.
+
+**($$\supset$$).** Let $$\lambda \in \sigma(A)$$ and let $$\varepsilon > 0$$. By Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25), there is an $$(\varepsilon/C)$$-almost eigenvector $$\psi$$ for $$A$$ with eigenvalue $$\lambda$$. By [**Lemma** *(hall-10.26)*](#lmm:hall-10.26), $$\psi$$ is then a $$(C \cdot \varepsilon/C) = \varepsilon$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$p(\lambda,\overline\lambda)$$. As $$\varepsilon>0$$ was arbitrary and $$p(A,A^*)$$ is normal by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25), applied to $$p(A,A^*)$$, gives $$p(\lambda,\overline\lambda) \in \sigma\big(p(A,A^*)\big)$$.
+
+**($$\subset$$).** Let $$\mu \in \sigma\big(p(A,A^*)\big)$$. Fix $$n \in \mathbb{N}$$ and put $$\varepsilon_n \equiv 1/n$$. By [**Lemma** *(hall-10.27)*](#lmm:hall-10.27) there is a nonzero closed subspace $$W^{\varepsilon_n}$$, invariant under $$A$$ and $$A^*$$, every nonzero element of which is an $$\varepsilon_n$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$\mu$$.
+
+By [**Lemma** *(Restriction of a Normal Operator to a Doubly Invariant Subspace)*](#lmm:restriction-of-normal-operator), $$A\vert_{W^{\varepsilon_n}}$$ is a normal element of $$\mathcal{B}(W^{\varepsilon_n})$$ with $$\left\| A\vert_{W^{\varepsilon_n}} \right\| \le \left\| A \right\|$$, and $$W^{\varepsilon_n} \ne \{0\}$$, so by [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) its spectrum is non-empty. Choose $$\lambda_n \in \sigma\big( A\vert_{W^{\varepsilon_n}} \big)$$; then $$\lvert \lambda_n \rvert \le \left\| A\vert_{W^{\varepsilon_n}} \right\| \le \left\| A \right\|$$, by [**Corollary**](../spectral-theorems/#crllr:crllr-1), so the constant $$C$$ fixed above applies to $$\lambda_n$$.
+
+By Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) applied to the normal operator $$A\vert_{W^{\varepsilon_n}}$$ on the Hilbert space $$W^{\varepsilon_n}$$, there is an $$\varepsilon_n$$-almost eigenvector $$\psi_n \in W^{\varepsilon_n}$$ for $$A\vert_{W^{\varepsilon_n}}$$ with eigenvalue $$\lambda_n$$; since $$A\vert_{W^{\varepsilon_n}}\psi_n = A\psi_n$$ and the norms agree, $$\psi_n$$ is an $$\varepsilon_n$$-almost eigenvector for $$A$$ (on $$\mathbf{H}$$) with eigenvalue $$\lambda_n$$. By [**Lemma** *(hall-10.26)*](#lmm:hall-10.26), $$\psi_n$$ is a $$(C\varepsilon_n)$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$p(\lambda_n,\overline{\lambda_n})$$. On the other hand $$\psi_n$$ is a nonzero element of $$W^{\varepsilon_n}$$, hence an $$\varepsilon_n$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$\mu$$. Combining, and writing $$P \equiv p(A,A^*)$$,
+
+$$
+\begin{align}
+    \big\lvert \mu - p(\lambda_n,\overline{\lambda_n}) \big\rvert \left\| \psi_n \right\|
+        &= \left\| \big( \mu - p(\lambda_n,\overline{\lambda_n}) \big)\psi_n \right\| \\
+        &= \left\| \big( P - p(\lambda_n,\overline{\lambda_n})\mathbf{1} \big)\psi_n - \big( P - \mu\mathbf{1} \big)\psi_n \right\| \\
+        &\le \left\| \big( P - p(\lambda_n,\overline{\lambda_n})\mathbf{1} \big)\psi_n \right\| + \left\| \big( P - \mu\mathbf{1} \big)\psi_n \right\| \\
+        &< C\varepsilon_n \left\| \psi_n \right\| + \varepsilon_n \left\| \psi_n \right\|.
+\end{align}
+$$
+
+Dividing by $$\left\| \psi_n \right\| \ne 0$$,
+
+$$
+    \big\lvert \mu - p(\lambda_n,\overline{\lambda_n}) \big\rvert < (C+1)\varepsilon_n = \frac{C+1}{n}. \tag{$\flat$}
+$$
+
+The sequence $$\{\lambda_n\}$$ lies in the closed disc $$\{ \lvert z \rvert \le \left\| A \right\| \}$$, which is compact, so it has a subsequence $$\lambda_{n_j} \to \lambda_\infty$$ for some $$\lambda_\infty$$ with $$\lvert \lambda_\infty \rvert \le \left\| A \right\|$$.
+
+We claim $$\lambda_\infty \in \sigma(A)$$. Let $$\delta > 0$$. For each $$j$$, using the triangle inequality and that $$\psi_{n_j}$$ is an $$\varepsilon_{n_j}$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda_{n_j}$$,
+
+$$
+    \left\| (A - \lambda_\infty\mathbf{1})\psi_{n_j} \right\|
+      \le \left\| (A - \lambda_{n_j}\mathbf{1})\psi_{n_j} \right\| + \lvert \lambda_{n_j} - \lambda_\infty \rvert \left\| \psi_{n_j} \right\|
+      < \big( \varepsilon_{n_j} + \lvert \lambda_{n_j} - \lambda_\infty \rvert \big) \left\| \psi_{n_j} \right\|.
+$$
+
+Choosing $$j$$ large enough that $$\varepsilon_{n_j} + \lvert \lambda_{n_j}-\lambda_\infty \rvert < \delta$$ (possible since both terms tend to $$0$$) exhibits $$\psi_{n_j}$$ as a $$\delta$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda_\infty$$. As $$\delta>0$$ was arbitrary, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives $$\lambda_\infty \in \sigma(A)$$.
+
+Finally, $$p$$ is a polynomial, hence continuous as a function of $$(\lambda,\overline\lambda)$$, so $$p(\lambda_{n_j},\overline{\lambda_{n_j}}) \to p(\lambda_\infty,\overline{\lambda_\infty})$$; and by $$(\flat)$$, $$p(\lambda_{n_j},\overline{\lambda_{n_j}}) \to \mu$$. By uniqueness of limits in $$\mathbb{C}$$, $$\mu = p(\lambda_\infty,\overline{\lambda_\infty})$$ with $$\lambda_\infty \in \sigma(A)$$, which is the required inclusion.$$\blacksquare$$
+
+Combining [**Theorem** *(Spectral Mapping for Polynomials in $$A$$ and $$A^*$$)*](#thrm:hall-10.23) with [**Proposition** *(Norm Equals Spectral Radius for Normal Operators)*](#prpstn:hall-10.21) gives the norm identity that drives the construction of the functional calculus.
+
+> **Corollary** *(Norm of a Polynomial in $$A$$ and $$A^*$$)*
+<a name="crllr:norm-of-polynomial-in-a-astar"></a>
+<!--  \uses{thrm:hall-10.23} -->
+<!--  \uses{prpstn:hall-10.21} -->
+<!--  \uses{lmm:polynomials-in-normal-are-normal} -->
+<!--  \uses{../spectral-theorems/#def:spectral-radius} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$, and $$p$$ a polynomial in two variables. Then
+>
+> $$
+>     \left\| p(A,A^*) \right\| = \sup_{\lambda \in \sigma(A)} \big\lvert p(\lambda,\overline\lambda) \big\rvert.
+> $$
+
+**Proof**
+By [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), $$p(A,A^*)$$ is normal, so [**Proposition** *(Norm Equals Spectral Radius for Normal Operators)*](#prpstn:hall-10.21) gives $$\left\| p(A,A^*) \right\| = R\big( p(A,A^*) \big)$$. By the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius) and [**Theorem** *(Spectral Mapping for Polynomials in $$A$$ and $$A^*$$)*](#thrm:hall-10.23),
+
+$$
+    R\big( p(A,A^*) \big) = \sup_{\nu \in \sigma(p(A,A^*))} \lvert \nu \rvert = \sup_{\lambda \in \sigma(A)} \big\lvert p(\lambda,\overline\lambda) \big\rvert,
+$$
+
+the last equality because the two sets over which the supremum is taken are equal.$$\blacksquare$$
+
+### The Continuous Functional Calculus for a Normal Operator
+
+With the norm identity in hand, extending $$p \mapsto p(A,A^*)$$ from polynomials to all continuous functions on $$\sigma(A)$$ is a routine density argument.
+
+> **Theorem** *(Continuous Functional Calculus for a Normal Operator)*
+<a name="thrm:continuous-functional-calculus-normal"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{crllr:norm-of-polynomial-in-a-astar} -->
+<!--  \uses{lmm:polynomials-in-normal-are-normal} -->
+<!--  \uses{../spectral-theorems/#thrm:stone–weierstrass-complex} -->
+<!--  \uses{../spectral-theorems/#thrm:bounded-linear-transformation-theorem} -->
+<!--  \uses{../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$. There is a unique bounded linear map
+>
+> $$
+>     \Phi_A : C^0\big( \sigma(A); \mathbb{C} \big) \longrightarrow \mathcal{B}(\mathbf{H})
+> $$
+>
+> such that $$\Phi_A(p) = p(A,A^*)$$ for every polynomial $$p$$ in $$\lambda$$ and $$\overline\lambda$$. This map satisfies, for all $$f,g \in C^0(\sigma(A);\mathbb{C})$$ and $$\alpha,\beta \in \mathbb{C}$$:
+>
+> 1. $$\Phi_A(\alpha f + \beta g) = \alpha\Phi_A(f) + \beta\Phi_A(g)$$;
+> 2. $$\Phi_A(fg) = \Phi_A(f)\Phi_A(g)$$;
+> 3. $$\Phi_A(\overline{f}) = \Phi_A(f)^*$$;
+> 4. $$\left\| \Phi_A(f) \right\| = \sup_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert$$, i.e. $$\Phi_A$$ is isometric;
+> 5. $$\Phi_A(1) = \mathbf{1}$$ and $$\Phi_A(\iota) = A$$, where $$\iota(\lambda) = \lambda$$.
+>
+> In particular, if $$f$$ is real-valued on $$\sigma(A)$$ then $$\Phi_A(f)$$ is self-adjoint, and $$\Phi_A(f)$$ is normal for every $$f$$. We write $$f(A) \equiv \Phi_A(f)$$.
+
+**Proof**
+By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable), $$\sigma(A)$$ is a compact metric space, so $$C^0(\sigma(A);\mathbb{C})$$ with the supremum norm is a normed vector space.
+
+*The polynomials are dense.* Let $$\mathcal{P} \subset C^0(\sigma(A);\mathbb{C})$$ be the set of functions on $$\sigma(A)$$ of the form $$\lambda \mapsto p(\lambda,\overline\lambda)$$ for a polynomial $$p$$ in two variables. $$\mathcal{P}$$ is a subalgebra (products and linear combinations of such functions are again of this form), contains the constants (take $$p$$ constant), separates points of $$\sigma(A)$$ (the function $$\lambda\mapsto\lambda$$, i.e. $$p(\lambda,\overline\lambda)=\lambda$$, already does), and is closed under complex conjugation (the conjugate of $$p(\lambda,\overline\lambda)$$ is $$\overline{p}(\lambda,\overline\lambda)$$, again of the required form, with $$\overline p$$ as in [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal)). By the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex), $$\mathcal{P}$$ is dense in $$C^0(\sigma(A);\mathbb{C})$$.
+
+*The map on polynomials is well defined and isometric.* Define $$\Phi_A^0 : \mathcal{P} \to \mathcal{B}(\mathbf{H})$$ by $$\Phi_A^0(p) = p(A,A^*)$$. This requires a check: two different polynomials $$p \ne q$$ (as formal expressions) may define the *same function* on $$\sigma(A)$$, and we need $$p(A,A^*) = q(A,A^*)$$ in that case. Indeed, if $$p$$ and $$q$$ agree as functions on $$\sigma(A)$$, then $$r \equiv p - q$$ vanishes identically on $$\sigma(A)$$, so by [**Corollary** *(Norm of a Polynomial in $$A$$ and $$A^*$$)*](#crllr:norm-of-polynomial-in-a-astar), $$\left\| r(A,A^*) \right\| = \sup_{\lambda\in\sigma(A)} \lvert r(\lambda,\overline\lambda) \rvert = 0$$, i.e. $$p(A,A^*) = q(A,A^*)$$. So $$\Phi_A^0$$ is well defined on $$\mathcal{P}$$, and the same corollary says exactly that it is isometric: $$\left\| \Phi_A^0(p) \right\| = \sup_{\lambda\in\sigma(A)}\lvert p(\lambda,\overline\lambda) \rvert = \left\| p \right\|_\infty$$. It is linear, since $$(\alpha p + \beta q)(A,A^*) = \alpha p(A,A^*) + \beta q(A,A^*)$$ directly from the definition of substitution.
+
+*Extension.* $$\mathcal{P}$$ is a dense subspace of the normed space $$C^0(\sigma(A);\mathbb{C})$$, $$\mathcal{B}(\mathbf{H})$$ is a Banach space by [**Lemma** *(Bounded Operators form a Banach Space)*](../spectral-theorems/#lmm:bounded-operators-form-a-banach-space), and $$\Phi_A^0$$ is a bounded (indeed isometric, hence norm-$$1$$) linear map. By the [**Bounded Linear Transformation Theorem**](../spectral-theorems/#thrm:bounded-linear-transformation-theorem), $$\Phi_A^0$$ extends uniquely to a bounded linear map $$\Phi_A$$ on all of $$C^0(\sigma(A);\mathbb{C})$$, with the same norm; uniqueness of the extension is exactly the uniqueness claimed in the statement.
+
+*The properties.* Property 1 is linearity, part of the extension. For properties 2, 3, and 4, each is an identity between continuous functions of $$f$$ (and $$g$$) that holds on the dense subspace $$\mathcal{P}$$ and whose two sides are continuous in $$f$$ (and $$g$$): for property 2, both $$(f,g)\mapsto\Phi_A(fg)$$ and $$(f,g)\mapsto\Phi_A(f)\Phi_A(g)$$ are continuous, the former because $$\left\| fg - f'g' \right\|_\infty \to 0$$ when $$f\to f'$$, $$g \to g'$$ uniformly (all functions being bounded on the compact $$\sigma(A)$$) and $$\Phi_A$$ is bounded, the latter by submultiplicativity of the operator norm; on $$\mathcal{P}$$ the identity $$\Phi_A^0(pq) = \Phi_A^0(p)\Phi_A^0(q)$$ holds because substituting $$A$$ for $$\lambda$$ and $$A^*$$ for $$\overline\lambda$$ is multiplicative (the images commute, by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), which is what makes the substitution an algebra homomorphism). For property 3, $$f \mapsto \Phi_A(\overline f)$$ and $$f \mapsto \Phi_A(f)^*$$ are both continuous (the adjoint is isometric, so continuous), and agree on $$\mathcal{P}$$ by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal). Property 4 holds on $$\mathcal{P}$$ as shown, and both sides are continuous in $$f$$ (the left by boundedness of $$\Phi_A$$, the right because the supremum norm is continuous), so it holds throughout. Property 5 is immediate: the constant polynomial $$1$$ maps to $$\mathbf{1}$$ and $$p(\lambda,\overline\lambda)=\lambda$$ maps to $$A$$.
+
+Finally, if $$f$$ is real-valued then $$\overline f = f$$, so property 3 gives $$\Phi_A(f)^* = \Phi_A(f)$$; and for general $$f$$, properties 2 and 3 give $$\Phi_A(f)\Phi_A(f)^* = \Phi_A(f\overline f) = \Phi_A(\overline f f) = \Phi_A(f)^*\Phi_A(f)$$, so $$\Phi_A(f)$$ is normal.$$\blacksquare$$
