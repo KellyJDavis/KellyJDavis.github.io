@@ -338,12 +338,40 @@ $$
 
 As $$B$$ extends $$A^{\text{cl}}$$ and their domains coincide, $$B = A^{\text{cl}}$$.$$\blacksquare$$
 
-We record next a description of $$\text{Ker}(A^*)$$ in terms of $$A$$ itself, generalizing the corresponding fact for bounded operators. First, since $$A$$ need not be defined on all of $$\mathbf{H}$$, we fix what $$\text{Range}(A)$$ means.
+We record next a description of $$\text{Ker}(A^*)$$ in terms of $$A$$ itself, generalizing the corresponding fact for bounded operators. First, since $$A$$ need not be defined on all of $$\mathbf{H}$$, we fix what $$\text{Range}(A)$$ means — and, since we are about to need orthogonal complements of subsets that are not the whole space, we fix that notion too, once and for all, rather than the informal shorthand $$\{\psi : \left<\psi,A\phi\right>=0 \text{ for all } \phi\}$$ sometimes used for bounded operators (where it happens to cause no harm, since there $$\text{Dom}(A) = \mathbf{H}$$, but would be wrong here, where $$\text{Dom}(A) \subsetneq \mathbf{H}$$ in general).
+
+> **Definition** *(Orthogonal Complement)*
+<a name="def:orthogonal-complement"></a>
+> If $$V \subset \mathbf{H}$$ is any subset, its *orthogonal complement* is
+>
+> $$
+>     V^\perp \equiv \{ \psi \in \mathbf{H} \mid \left< \psi, v \right> = 0 \text{ for all } v \in V \}.
+> $$
 
 > **Definition** *(Range of an Unbounded Operator)*
 <a name="def:range-of-an-unbounded-operator"></a>
 <!--  \uses{def:hall-3.1} -->
-> If $$A$$ is an unbounded operator on $$\mathbf{H}$$, its *range* is $$\text{Range}(A) \equiv \{ A\psi \mid \psi \in \text{Dom}(A) \} \subset \mathbf{H}$$. Since $$\text{Dom}(A)$$ is a subspace of $$\mathbf{H}$$ and $$A$$ is linear, $$\text{Range}(A)$$ is again a subspace of $$\mathbf{H}$$: it contains $$0 = A0$$, and for $$A\psi_1, A\psi_2 \in \text{Range}(A)$$ and $$\alpha,\beta \in \mathbb{C}$$, linearity of $$A$$ gives $$\alpha A\psi_1 + \beta A\psi_2 = A(\alpha\psi_1+\beta\psi_2) \in \text{Range}(A)$$, as $$\alpha\psi_1+\beta\psi_2 \in \text{Dom}(A)$$.
+> If $$A$$ is an unbounded operator on $$\mathbf{H}$$, its *range* is $$\text{Range}(A) \equiv \{ A\psi \mid \psi \in \text{Dom}(A) \} \subset \mathbf{H}$$. Since $$\text{Dom}(A)$$ is a subspace of $$\mathbf{H}$$ and $$A$$ is linear, $$\text{Range}(A)$$ is again a subspace of $$\mathbf{H}$$: it contains $$0 = A0$$, and for $$A\psi_1, A\psi_2 \in \text{Range}(A)$$ and $$\alpha,\beta \in \mathbb{C}$$, linearity of $$A$$ gives $$\alpha A\psi_1 + \beta A\psi_2 = A(\alpha\psi_1+\beta\psi_2) \in \text{Range}(A)$$, as $$\alpha\psi_1+\beta\psi_2 \in \text{Dom}(A)$$. Unwinding [Definition (Orthogonal Complement)](#def:orthogonal-complement) for $$V = \text{Range}(A)$$: $$\left( \text{Range}(A) \right)^\perp = \{ \psi \in \mathbf{H} \mid \left< \psi, A\phi \right> = 0 \text{ for all } \phi \in \text{Dom}(A) \}$$ — the quantifier ranges over $$\text{Dom}(A)$$, not all of $$\mathbf{H}$$.
+
+We will need two standard facts about closed subspaces of a Hilbert space at several points below, starting almost immediately; we import them together, as Hall does when he first needs them.
+
+> **Proposition** *(Orthogonal Decomposition and the Double Complement)*
+<a name="prpstn:hall-a.49"></a>
+<!--  \uses{def:orthogonal-complement} -->
+> 1. If $$V$$ is a closed subspace of $$\mathbf{H}$$, every $$\psi \in \mathbf{H}$$ decomposes uniquely as $$\psi = \psi_1 + \psi_2$$ with $$\psi_1 \in V$$ and $$\psi_2 \in V^\perp$$.
+> 2. If $$V$$ is any subspace of $$\mathbf{H}$$, then $$(V^\perp)^\perp = \overline{V}$$, the closure of $$V$$. In particular, if $$V$$ is closed, $$(V^\perp)^\perp = V$$.
+
+We record one immediate consequence of Part 2, in the form we will repeatedly need it: a subspace has trivial orthogonal complement exactly when it is dense.
+
+> **Corollary** *(Trivial Complement Characterizes Density)*
+<a name="crllr:trivial-complement-characterizes-density"></a>
+<!--  \uses{prpstn:hall-a.49} -->
+> A subspace $$V \subset \mathbf{H}$$ is dense in $$\mathbf{H}$$ if and only if $$V^\perp = \{0\}$$.
+
+**Proof**
+If $$V^\perp = \{0\}$$, then, by [Part 2 of **Proposition** *(hall-a.49)*](#prpstn:hall-a.49), $$\overline{V} = (V^\perp)^\perp = \{0\}^\perp = \mathbf{H}$$ — the last equality since $$\left< \psi, 0 \right> = 0$$ for every $$\psi \in \mathbf{H}$$, so every $$\psi$$ lies in $$\{0\}^\perp$$. Thus $$V$$ is dense.
+
+Conversely, suppose $$V$$ is dense, i.e. $$\overline{V} = \mathbf{H}$$. Let $$\psi \in V^\perp$$, so $$\left< \psi, v \right> = 0$$ for all $$v \in V$$. Since $$\psi \in \mathbf{H} = \overline{V}$$, there is a sequence $$\{v_n\}$$ in $$V$$ with $$v_n \to \psi$$; by [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product), $$\left< \psi, \psi \right> = \lim_n \left< \psi, v_n \right> = 0$$, so $$\psi = 0$$. Hence $$V^\perp = \{0\}$$.$$\blacksquare$$
 
 > **Proposition** *(Orthogonal Complement of the Range)*
 <a name="prpstn:hall-9.12"></a>
@@ -426,6 +454,22 @@ $$
 where the third equality used the [definition of the adjoint](#def:hall-9.1) applied to $$A$$ and, separately, applied to the everywhere-defined bounded operator $$B$$, and the last equality used linearity of the inner product in its second argument. So $$\left< (A+B)^*\phi, \psi \right> = \left< A^*\phi + B^*\phi, \psi \right>$$ for all $$\psi \in \text{Dom}(A)$$, a dense subset of $$\mathbf{H}$$ by the [definition of an unbounded operator](#def:hall-3.1); by [Lemma (Equality Testing on a Dense Subspace)](#lmm:hall-dense-testing), $$(A+B)^*\phi = A^*\phi + B^*\phi$$.
 
 Finally, suppose $$A$$ is self-adjoint and $$B$$ is bounded and self-adjoint on all of $$\mathbf{H}$$. Then $$\text{Dom}\big( (A+B)^* \big) = \text{Dom}(A^*) = \text{Dom}(A) = \text{Dom}(A+B)$$, using self-adjointness of $$A$$ for the middle equality; and for $$\psi$$ in this common domain, $$(A+B)^*\psi = A^*\psi + B^*\psi = A\psi + B\psi = (A+B)\psi$$, using self-adjointness of $$A$$ and of $$B$$. So $$A+B$$ is self-adjoint.$$\blacksquare$$
+
+[Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) tells us how to add a bounded operator $$B$$ to $$A$$ and take the adjoint, but leaves $$B^*$$ itself as an unexplained ingredient whenever we specialize to $$B = \lambda\mathbf{1}$$ for a scalar $$\lambda \in \mathbb{C}$$ — a combination that will recur constantly (e.g. $$A - \lambda\mathbf{1}$$). We record the needed computation once.
+
+> **Lemma** *(Adjoint of a Scalar Multiple of the Identity)*
+<a name="lmm:adjoint-of-scalar-multiple-of-identity"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> For $$\lambda \in \mathbb{C}$$, the bounded operator $$\lambda\mathbf{1}$$ (defined on all of $$\mathbf{H}$$) has adjoint $$(\lambda\mathbf{1})^* = \overline{\lambda}\mathbf{1}$$.
+
+**Proof**
+For any $$\phi, \psi \in \mathbf{H}$$, using linearity of the inner product in its second argument,
+
+$$
+    \left< \phi, (\lambda\mathbf{1})\psi \right> = \left< \phi, \lambda\psi \right> = \lambda \left< \phi, \psi \right> = \left< \overline{\lambda}\phi, \psi \right>,
+$$
+
+the last equality by conjugate-linearity of the inner product in its first argument. As this holds for every $$\phi,\psi \in \mathbf{H} = \text{Dom}(\lambda\mathbf{1})$$, this is exactly the [definition of the adjoint](#def:hall-9.1): $$\text{Dom}\big((\lambda\mathbf{1})^*\big) = \mathbf{H}$$ and $$(\lambda\mathbf{1})^*\phi = \overline{\lambda}\phi$$ for every $$\phi$$, i.e. $$(\lambda\mathbf{1})^* = \overline{\lambda}\mathbf{1}$$.$$\blacksquare$$
 
 We record one more elementary fact about closed operators before turning to the spectrum: a uniform lower bound on $$\left\| (A - \lambda \mathbf{1})\psi \right\|$$ forces the range of $$A - \lambda \mathbf{1}$$ to be closed.
 
@@ -523,6 +567,8 @@ using positive-definiteness of the inner product for the last step.$$\blacksquar
 <!--  \uses{prpstn:hall-9.13} -->
 <!--  \uses{prpstn:hall-9.14} -->
 <!--  \uses{lmm:b-squared-inequality-symmetric} -->
+<!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
+<!--  \uses{crllr:trivial-complement-characterizes-density} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, the spectrum of $$A$$ is contained in the real line.
 
 **Proof**
@@ -542,13 +588,13 @@ $$
     \left( \text{Range}(A - \lambda \mathbf{1}) \right)^\perp = \text{Ker}\left( (A - \lambda \mathbf{1})^* \right).
 $$
 
-By [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) with $$B = -\lambda \mathbf{1}$$ — a bounded operator on all of $$\mathbf{H}$$ — $$(A - \lambda\mathbf{1})^* = A^* - \overline{\lambda}\mathbf{1} = A - \overline{\lambda}\mathbf{1}$$, using $$A^* = A$$. Since $$\overline{\lambda} = a - ib$$ also has $$b \ne 0$$ as its (negated) imaginary part, the argument of the previous paragraph applies verbatim with $$\overline{\lambda}$$ in place of $$\lambda$$ and shows $$A - \overline{\lambda}\mathbf{1}$$ is injective, i.e. $$\text{Ker}(A - \overline{\lambda}\mathbf{1}) = \{0\}$$. Hence
+By [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) with $$B = -\lambda \mathbf{1}$$ — a bounded operator on all of $$\mathbf{H}$$ — combined with [Lemma (Adjoint of a Scalar Multiple of the Identity)](#lmm:adjoint-of-scalar-multiple-of-identity) giving $$(-\lambda\mathbf{1})^* = -\overline{\lambda}\mathbf{1}$$, we get $$(A - \lambda\mathbf{1})^* = A^* + (-\lambda\mathbf{1})^* = A^* - \overline{\lambda}\mathbf{1} = A - \overline{\lambda}\mathbf{1}$$, using $$A^* = A$$. Since $$\overline{\lambda} = a - ib$$ also has $$b \ne 0$$ as its (negated) imaginary part, the argument of the previous paragraph applies verbatim with $$\overline{\lambda}$$ in place of $$\lambda$$ and shows $$A - \overline{\lambda}\mathbf{1}$$ is injective, i.e. $$\text{Ker}(A - \overline{\lambda}\mathbf{1}) = \{0\}$$. Hence
 
 $$
     \left( \text{Range}(A - \lambda \mathbf{1}) \right)^\perp = \text{Ker}(A - \overline{\lambda}\mathbf{1}) = \{0\},
 $$
 
-so $$\text{Range}(A - \lambda \mathbf{1})$$ is dense in $$\mathbf{H}$$.
+so, by [Corollary (Trivial Complement Characterizes Density)](#crllr:trivial-complement-characterizes-density), $$\text{Range}(A - \lambda \mathbf{1})$$ is dense in $$\mathbf{H}$$.
 
 Since $$A = A^*$$, [Proposition (Closedness of the Adjoint's Graph)](#prpstn:hall-9.8) shows $$A$$ is closed. Rewriting $$(\ast)$$ as $$\left\| (A - \lambda\mathbf{1})\psi \right\|^2 \ge b^2 \left\| \psi \right\|^2$$ and taking square roots, $$\lvert b \rvert \left\| \psi \right\| \le \left\| (A-\lambda\mathbf{1})\psi \right\|$$ for all $$\psi \in \text{Dom}(A)$$. This lets us apply [Proposition (Closedness of the Range from a Lower Bound)](#prpstn:hall-9.14) with $$\varepsilon = \lvert b \rvert$$, showing $$\text{Range}(A - \lambda\mathbf{1})$$ is closed. A subspace of $$\mathbf{H}$$ that is both dense and closed equals $$\mathbf{H}$$ (its closure is both itself, by closedness, and all of $$\mathbf{H}$$, by density), so $$\text{Range}(A - \lambda\mathbf{1}) = \mathbf{H}$$.
 
@@ -593,17 +639,19 @@ We conclude this part of the development with a criterion for essential self-adj
 <!--  \uses{prpstn:hall-9.14} -->
 <!--  \uses{prpstn:closure-linearity-and-sequential-description} -->
 <!--  \uses{lmm:b-squared-inequality-symmetric} -->
+<!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
+<!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 > If $$A$$ is a symmetric operator on $$\mathbf{H}$$, then $$A$$ is essentially self-adjoint if and only if $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense subspaces of $$\mathbf{H}$$.
 
 **Proof**
-We first prove the forward direction, i.e. that if $$A$$ is essentially self-adjoint, then $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense in $$\mathbf{H}$$. Since $$A$$ is essentially self-adjoint, $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$A^* = (A^{\text{cl}})^* = A^{\text{cl}}$$, the last equality because $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (Orthogonal Complement of the Range)](#prpstn:hall-9.12) and [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) (with $$B = i\mathbf{1}$$),
+We first prove the forward direction, i.e. that if $$A$$ is essentially self-adjoint, then $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense in $$\mathbf{H}$$. Since $$A$$ is essentially self-adjoint, $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$A^* = (A^{\text{cl}})^* = A^{\text{cl}}$$, the last equality because $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (Orthogonal Complement of the Range)](#prpstn:hall-9.12) and [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) (with $$B = i\mathbf{1}$$, so $$B^* = -i\mathbf{1}$$ by [Lemma (Adjoint of a Scalar Multiple of the Identity)](#lmm:adjoint-of-scalar-multiple-of-identity)),
 
 $$
     \left( \text{Range}(A - i\mathbf{1}) \right)^\perp = \text{Ker}\left( (A - i\mathbf{1})^* \right) = \text{Ker}(A^* + i\mathbf{1}) = \text{Ker}(A^{\text{cl}} + i\mathbf{1}).
 $$
 
-Since $$A^{\text{cl}}$$ is self-adjoint, [Theorem (Spectrum of a Self-Adjoint Operator is Real)](#thrm:hall-9.17) shows $$\sigma(A^{\text{cl}}) \subset \mathbb{R}$$, and since $$-i \notin \mathbb{R}$$, $$-i$$ is not in $$\sigma(A^{\text{cl}})$$, i.e. $$-i$$ is in the resolvent set of $$A^{\text{cl}}$$. By the [definition of the resolvent set](#def:hall-9.16), this gives a bounded two-sided inverse to $$A^{\text{cl}} + i\mathbf{1}$$, and an operator with a two-sided inverse is in particular injective, so $$\text{Ker}(A^{\text{cl}} + i\mathbf{1}) = \{0\}$$. Hence $$\left( \text{Range}(A - i\mathbf{1}) \right)^\perp = \{0\}$$, i.e. $$\text{Range}(A - i\mathbf{1})$$ is dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ throughout shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$.
+Since $$A^{\text{cl}}$$ is self-adjoint, [Theorem (Spectrum of a Self-Adjoint Operator is Real)](#thrm:hall-9.17) shows $$\sigma(A^{\text{cl}}) \subset \mathbb{R}$$, and since $$-i \notin \mathbb{R}$$, $$-i$$ is not in $$\sigma(A^{\text{cl}})$$, i.e. $$-i$$ is in the resolvent set of $$A^{\text{cl}}$$. By the [definition of the resolvent set](#def:hall-9.16), this gives a bounded two-sided inverse to $$A^{\text{cl}} + i\mathbf{1}$$, and an operator with a two-sided inverse is in particular injective, so $$\text{Ker}(A^{\text{cl}} + i\mathbf{1}) = \{0\}$$. Hence $$\left( \text{Range}(A - i\mathbf{1}) \right)^\perp = \{0\}$$, so, by [Corollary (Trivial Complement Characterizes Density)](#crllr:trivial-complement-characterizes-density), $$\text{Range}(A - i\mathbf{1})$$ is dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ throughout shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$.
 
 We now prove the reverse direction, i.e. that if $$A$$ is symmetric with $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ both dense in $$\mathbf{H}$$, then $$A$$ is essentially self-adjoint. By [Proposition (Closedness of the Adjoint's Graph)](#prpstn:hall-9.8), $$A$$ is closable, so $$A^{\text{cl}}$$ exists. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$(A^{\text{cl}})^* = A^*$$; and $$A^*$$ is a closed extension of the symmetric operator $$A$$ (closed by [Proposition (Closedness of the Adjoint's Graph)](#prpstn:hall-9.8), an extension of $$A$$ by [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4)), hence also an extension of the closure $$A^{\text{cl}}$$, by Part 3 of [Proposition (Linearity and the Sequential Description of the Closure)](#prpstn:closure-linearity-and-sequential-description). We check $$A^{\text{cl}}$$ is itself symmetric: for $$\xi, \eta \in \text{Dom}(A^{\text{cl}})$$, take sequences $$\{\xi_n\}, \{\eta_n\}$$ in $$\text{Dom}(A)$$ with $$\xi_n \to \xi$$, $$A\xi_n \to A^{\text{cl}}\xi$$ and $$\eta_n \to \eta$$, $$A\eta_n \to A^{\text{cl}}\eta$$, as furnished by Part 2 of the same proposition; symmetry of $$A$$ gives $$\left< \xi_n, A\eta_n \right> = \left< A\xi_n, \eta_n \right>$$ for every $$n$$, and [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product) — applicable since all four sequences $$\xi_n, A\xi_n, \eta_n, A\eta_n$$ converge — passes this to the limit, giving $$\left< \xi, A^{\text{cl}}\eta \right> = \left< A^{\text{cl}}\xi, \eta \right>$$, which is the [definition of symmetric](#def:hall-9.2) for $$A^{\text{cl}}$$.
 
@@ -621,7 +669,7 @@ $$
     (A^{\text{cl}})^* + i\mathbf{1} = A^* + i\mathbf{1} = (A - i\mathbf{1})^*.
 $$
 
-A nontrivial kernel for $$(A - i\mathbf{1})^*$$ means, by [Proposition (Orthogonal Complement of the Range)](#prpstn:hall-9.12), that $$\left( \text{Range}(A - i\mathbf{1}) \right)^\perp \ne \{0\}$$, contradicting density of $$\text{Range}(A - i\mathbf{1})$$.
+A nontrivial kernel for $$(A - i\mathbf{1})^*$$ means, by [Proposition (Orthogonal Complement of the Range)](#prpstn:hall-9.12), that $$\left( \text{Range}(A - i\mathbf{1}) \right)^\perp \ne \{0\}$$, contradicting density of $$\text{Range}(A - i\mathbf{1})$$ by [Corollary (Trivial Complement Characterizes Density)](#crllr:trivial-complement-characterizes-density).
 
 We conclude $$(A^{\text{cl}})^* + i\mathbf{1} = A^{\text{cl}} + i\mathbf{1}$$, with equal domains. Equal domains means $$\text{Dom}\big((A^{\text{cl}})^*\big) = \text{Dom}(A^{\text{cl}})$$; and, writing $$D$$ for this common domain, equality of the two operators means $$(A^{\text{cl}})^*\psi + i\psi = A^{\text{cl}}\psi + i\psi$$ for every $$\psi \in D$$, directly from the pointwise definition of the sum of an operator with $$i\mathbf{1}$$. Subtracting $$i\psi$$ from both sides (ordinary vector subtraction in $$\mathbf{H}$$) gives $$(A^{\text{cl}})^*\psi = A^{\text{cl}}\psi$$ for every $$\psi \in D$$. Together with the equal domains just noted, this is exactly $$(A^{\text{cl}})^* = A^{\text{cl}}$$, i.e. $$A^{\text{cl}}$$ is self-adjoint. Since $$A$$ is symmetric and closable with $$A^{\text{cl}}$$ self-adjoint, $$A$$ is, by the [definition of essentially self-adjoint](#def:hall-9.7), essentially self-adjoint.$$\blacksquare$$
 
@@ -766,16 +814,16 @@ $$
 \end{align}
 $$
 
-where the last equality is the defining property of the integral, applied to the bounded function $$\lvert f \rvert^2$$. If $$f$$ is *unbounded*, this suggests defining the domain of $$\int_X f \, d\mu$$ to be exactly the set of $$\psi$$ for which the right-hand side of $$(\ast\ast\ast)$$ is finite. Before making this precise, we need a version of the "quadratic form" and "sesquilinear form" machinery from the previous post that allows for a domain smaller than all of $$\mathbf{H}$$.
+where the last equality is the defining property of the integral, applied to the bounded function $$\lvert f \rvert^2$$. If $$f$$ is *unbounded*, this suggests defining the domain of $$\int_X f \, d\mu$$ to be exactly the set of $$\psi$$ for which the right-hand side of $$(\ast\ast\ast)$$ is finite. Before making this precise, we need a version of the "quadratic form" and "sesquilinear form" machinery from the previous post that allows for a domain other than all of $$\mathbf{H}$$ — a subspace, not even necessarily dense, since we will want to apply this machinery to $$\mathbf{H}_n$$, a typically non-dense closed subspace, in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3) below.
 
 > **Definition** *(Sesquilinear Form on a Subspace)*
 <a name="def:hall-sesquilinear-form-on-a-subspace"></a>
-> Let $$D$$ be a dense subspace of $$\mathbf{H}$$. A *sesquilinear form on $$D$$* is a map $$L : D \times D \to \mathbb{C}$$ that is conjugate-linear in its first argument and linear in its second argument.
+> Let $$D$$ be a subspace of $$\mathbf{H}$$. A *sesquilinear form on $$D$$* is a map $$L : D \times D \to \mathbb{C}$$ that is conjugate-linear in its first argument and linear in its second argument.
 
 > **Definition** *(Quadratic Form on a Subspace)*
 <a name="def:hall-quadratic-form-on-a-subspace"></a>
 <!--  \uses{def:hall-sesquilinear-form-on-a-subspace} -->
-> Let $$D$$ be a dense subspace of $$\mathbf{H}$$. A *quadratic form on $$D$$* is a map $$Q : D \to \mathbb{C}$$ with the following properties:
+> Let $$D$$ be a subspace of $$\mathbf{H}$$. A *quadratic form on $$D$$* is a map $$Q : D \to \mathbb{C}$$ with the following properties:
 >
 > 1. $$Q(\lambda\psi) = \lvert \lambda \rvert^2 Q(\psi)$$ for all $$\psi \in D$$ and $$\lambda \in \mathbb{C}$$.
 > 2. The map $$L : D \times D \to \mathbb{C}$$ defined by
@@ -791,12 +839,12 @@ where the last equality is the defining property of the integral, applied to the
 >
 > When $$D = \mathbf{H}$$, this recovers the notion of a (not necessarily bounded) quadratic form on $$\mathbf{H}$$ from the previous post.
 
-Two elementary facts about quadratic forms on a subspace, generalizing [**Proposition** *(hall-a.61)*](../spectral-theorems/#prpstn:hall-a.61) of the previous post from $$D = \mathbf{H}$$ to a general dense subspace $$D$$, will be used repeatedly below. Since the proof of the bounded-case proposition is purely algebraic manipulation of the polarization formula — at no point using that $$D = \mathbf{H}$$ or that the relevant vectors range over all of $$\mathbf{H}$$ — the same computation goes through verbatim on $$D$$; we record the two properties we need and reprove them directly, rather than merely asserting the analogy.
+Two elementary facts about quadratic forms on a subspace, generalizing [**Proposition** *(hall-a.61)*](../spectral-theorems/#prpstn:hall-a.61) of the previous post from $$D = \mathbf{H}$$ to a general subspace $$D$$, will be used repeatedly below. Since the proof of the bounded-case proposition is purely algebraic manipulation of the polarization formula — at no point using that $$D = \mathbf{H}$$, that $$D$$ is dense, or that the relevant vectors range over all of $$\mathbf{H}$$, only that $$D$$ is closed under the linear combinations $$\phi+\psi$$, $$\phi+i\psi$$, $$i\psi$$ appearing in the polarization formula — the same computation goes through verbatim on any subspace $$D$$; we record the two properties we need and reprove them directly, rather than merely asserting the analogy.
 
 > **Proposition** *(Properties of Quadratic Forms on a Subspace)*
 <a name="prpstn:quadratic-forms-on-a-subspace-properties"></a>
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
-> Let $$D$$ be a dense subspace of $$\mathbf{H}$$, let $$Q$$ be a quadratic form on $$D$$, and let $$L$$ be its associated sesquilinear form.
+> Let $$D$$ be a subspace of $$\mathbf{H}$$, let $$Q$$ be a quadratic form on $$D$$, and let $$L$$ be its associated sesquilinear form.
 >
 > 1. If $$T : D \to \mathbf{H}$$ is linear and $$Q(\psi) = \left< \psi, T\psi \right>$$ for all $$\psi \in D$$, then $$L(\phi, \psi) = \left< \phi, T\psi \right>$$ for all $$\phi, \psi \in D$$.
 > 2. If $$Q(\psi) \in \mathbb{R}$$ for all $$\psi \in D$$, then $$L(\phi, \psi) = \overline{L(\psi, \phi)}$$ for all $$\phi, \psi \in D$$.
@@ -1115,12 +1163,7 @@ The next proposition records a natural compatibility check, confirming that [**P
 **Proof**
 If $$f$$ is bounded, $$\mu_\psi$$ is a finite measure for every $$\psi$$ (as always), so $$\int_X \lvert f \rvert^2 \, d\mu_\psi < \infty$$ automatically and $$W_f = \mathbf{H}$$. Writing $$A_1$$ for the operator of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1) and $$A_2$$ for the bounded integral, both satisfy $$\left< \psi, A_i\psi \right> = \int_X f \, d\mu_\psi$$ for all $$\psi \in \mathbf{H}$$ — for $$A_1$$, this is the defining property of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1); for $$A_2$$, it is the defining property of the [bounded integral](../spectral-theorems/#thrm:operator-valued-integration). The uniqueness argument just given (with $$W_f = \mathbf{H}$$ throughout) applies verbatim and gives $$A_1 = A_2$$.$$\blacksquare$$
 
-We close this section with the fact we will actually need about $$\int_X f \, d\mu$$: when $$f$$ is real-valued, the resulting operator is self-adjoint. This is exactly what will let us conclude, in the proof of [Theorem 10.4](#thrm:hall-10.4), that the operator $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ we construct is self-adjoint (as it must be, to have any chance of equalling the self-adjoint operator $$A$$). The proof needs two standard facts about closed subspaces of a Hilbert space, neither used until now; we import them together, as Hall does.
-
-> **Proposition** *(Orthogonal Decomposition and the Double Complement)*
-<a name="prpstn:hall-a.49"></a>
-> 1. If $$V$$ is a closed subspace of $$\mathbf{H}$$, every $$\psi \in \mathbf{H}$$ decomposes uniquely as $$\psi = \psi_1 + \psi_2$$ with $$\psi_1 \in V$$ and $$\psi_2 \in V^\perp$$.
-> 2. If $$V$$ is any subspace of $$\mathbf{H}$$, then $$(V^\perp)^\perp = \overline{V}$$, the closure of $$V$$. In particular, if $$V$$ is closed, $$(V^\perp)^\perp = V$$.
+We close this section with the fact we will actually need about $$\int_X f \, d\mu$$: when $$f$$ is real-valued, the resulting operator is self-adjoint. This is exactly what will let us conclude, in the proof of [Theorem 10.4](#thrm:hall-10.4), that the operator $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ we construct is self-adjoint (as it must be, to have any chance of equalling the self-adjoint operator $$A$$). The proof uses [Proposition (Orthogonal Decomposition and the Double Complement)](#prpstn:hall-a.49) from earlier.
 
 > **Proposition**
 <a name="prpstn:hall-10.3"></a>
@@ -1220,25 +1263,55 @@ Every bounded self-adjoint operator is a special case of a broader, and for our 
 
 Every bounded self-adjoint operator is normal (trivially, $$A A^* = A^2 = A^*A$$), but the class is genuinely larger — for instance every unitary operator is normal ($$UU^* = U^*U = \mathbf{1}$$), and unitary operators are generally not self-adjoint. Unlike the self-adjoint case, the spectrum of a normal operator need not lie on the real line at all.
 
-Hall's proof that the bounded self-adjoint spectral theorem extends to normal operators proceeds in two stages, mirroring the two-stage proof of the self-adjoint case itself. The first stage builds a continuous functional calculus for $$A$$; the second turns that functional calculus into a projection-valued measure. Hall's own remark on this second stage is worth quoting in substance: the construction of a projection-valued measure from a continuous functional calculus, once that functional calculus is in hand, uses nothing about the operator beyond the functional calculus itself — not self-adjointness, not realness of the spectrum — so the argument already given for the bounded self-adjoint case carries over unchanged once we have built an analogous functional calculus for normal operators. We will make this precise once we reach that point; for now, our task is the first stage: building the continuous functional calculus.
+Hall's proof that the bounded self-adjoint spectral theorem extends to normal operators proceeds in two stages, mirroring the two-stage proof of the self-adjoint case itself. The first stage builds a continuous functional calculus for $$A$$; the second turns that functional calculus into a projection-valued measure. Hall's own observation is that this second stage, once a continuous functional calculus is in hand, uses nothing about the operator beyond the functional calculus itself — not self-adjointness, not realness of the spectrum. Rather than treat this as license to say the self-adjoint case's construction "carries over unchanged" — citing one proof to justify another, exactly the pattern [**Lemma** *(The $$b^2$$ Inequality for Symmetric Operators)*](#lmm:b-squared-inequality-symmetric) and [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) were introduced earlier to avoid — when we reach that stage we will extract the construction as its own proposition, parameterized by an abstract continuous functional calculus on a compact metric space, so that the self-adjoint and normal cases each cite that one statement rather than one citing the other's proof. For now, our task is the first stage: building the continuous functional calculus for a normal operator.
 
-For a self-adjoint operator, this calculus was built by approximating continuous *real-valued* functions on the (real) spectrum by real polynomials in $$\lambda$$, using the real Stone–Weierstrass theorem. For a normal operator, $$\sigma(A)$$ is a general compact subset of $$\mathbb{C}$$, and we need to approximate *complex-valued* functions; the complex-valued Stone–Weierstrass theorem requires an algebra of functions closed under complex conjugation, so plain polynomials in $$\lambda$$ no longer suffice — we need polynomials in $$\lambda$$ *and* $$\overline{\lambda}$$. On the operator side, the counterpart to conjugation is the adjoint, so a polynomial $$p(\lambda,\overline\lambda)$$ should correspond to the operator $$p(A,A^*)$$ obtained by substituting $$A$$ for $$\lambda$$ and $$A^*$$ for $$\overline\lambda$$ — and the algebra structure survives the substitution only because $$A$$ and $$A^*$$ commute (this is exactly where normality is used): if $$AA^*\ne A^*A$$, the substitution $$\lambda\mapsto A,\ \overline\lambda\mapsto A^*$$ would not even be well defined as an algebra homomorphism, since a single function $$p(\lambda,\overline\lambda)$$ can be written as a polynomial in $$\lambda,\overline\lambda$$ in more than one way (e.g. $$\lambda\overline\lambda = \overline\lambda\lambda$$), and these would have to agree once $$A,A^*$$ are substituted.
+For a self-adjoint operator, this calculus was built by approximating continuous *real-valued* functions on the (real) spectrum by real polynomials in $$\lambda$$, using the real Stone–Weierstrass theorem. For a normal operator, $$\sigma(A)$$ is a general compact subset of $$\mathbb{C}$$, and we need to approximate *complex-valued* functions; the complex-valued Stone–Weierstrass theorem requires an algebra of functions closed under complex conjugation, so plain polynomials in $$\lambda$$ no longer suffice — we need polynomials in $$\lambda$$ *and* $$\overline{\lambda}$$. On the operator side, the counterpart to conjugation is the adjoint, so a polynomial $$p(\lambda,\overline\lambda)$$ should correspond to the operator $$p(A,A^*)$$ obtained by substituting $$A$$ for $$\lambda$$ and $$A^*$$ for $$\overline\lambda$$. This substitution is where normality is essential: the polynomial ring $$\mathbb{C}[\lambda,\overline\lambda]$$ is commutative, so a given function $$p(\lambda,\overline\lambda)$$ has a unique representation as such a polynomial — but substituting $$\lambda \mapsto A$$, $$\overline\lambda \mapsto A^*$$ turns this into an expression in the generally *non*commutative algebra $$\mathcal{B}(\mathbf{H})$$, and the substitution is well defined as an algebra homomorphism only if it respects every relation that holds in the source ring — in particular $$\lambda\overline\lambda = \overline\lambda\lambda$$, which forces $$AA^* = A^*A$$. Without normality, there would be nothing to substitute *into*: no consistent way to assign a single operator to $$p(\lambda,\overline\lambda)$$ independent of how it is written.
 
 The key technical result we are aiming for is a version of the spectral mapping theorem for this two-variable substitution: $$\sigma\big(p(A,A^*)\big) = \big\{ p(\lambda,\overline\lambda) \mid \lambda \in \sigma(A) \big\}$$. Unlike the ordinary (one-variable) spectral mapping theorem, this is genuinely harder to prove, and the route we follow — matching Hall's — uses the bounded self-adjoint spectral theorem itself, applied to an auxiliary self-adjoint operator, together with the notion of an *almost eigenvector*.
 
 We start with a fact that will let us compute the norm of $$p(A,A^*)$$ once we know its spectrum: for normal operators, the operator norm equals the spectral radius, exactly as for self-adjoint operators. Proving this needs one general fact about spectral radii of commuting operators that is not yet available to us, and whose proof requires knowing that the powers of a bounded operator cannot grow faster than the spectral radius suggests.
 
-We can establish the growth bound on powers of a bounded operator that Lemma 10.22 below will need using exactly the tools already assembled in the previous post's proof of the bounded self-adjoint case of norm-equals-spectral-radius — that proof, in fact, establishes a fact about *any* bounded operator (self-adjointness enters only in its final step, where it is used for a sharper conclusion we do not need here). We extract that general fact as its own lemma, citing the same tools directly, rather than repeating "self-adjoint" hypotheses we will not use.
+We can establish the growth bound on powers of a bounded operator that Lemma 10.22 below will need using exactly the tools already assembled in the previous post's proof of the bounded self-adjoint case of norm-equals-spectral-radius — that proof, in fact, establishes a fact about *any* bounded operator (self-adjointness enters only in its final step, where it is used for a sharper conclusion we do not need here). We extract that general fact as its own lemma, citing the same tools directly, rather than repeating "self-adjoint" hypotheses we will not use. First, though, we need three facts about the resolvent that are established along the way in the previous post's proof of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), but do not appear in that proposition's own statement; we extract them here as their own citable facts.
+
+> **Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*
+<a name="prpstn:resolvent-holomorphy-and-neumann-series"></a>
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+<!--  \uses{../spectral-theorems/#lmm:hall-7.6} -->
+> Suppose $$A \in \mathcal{B}(\mathbf{H})$$.
+>
+> 1. The resolvent set of $$A$$ is open, and near every point $$\lambda_0$$ in it, the resolvent $$\lambda \mapsto (A-\lambda\mathbf{1})^{-1}$$ is given by an operator-norm-convergent power series in $$(\lambda - \lambda_0)$$ with coefficients in $$\mathcal{B}(\mathbf{H})$$.
+> 2. For $$|\lambda| > \|A\|$$, $$\lambda$$ is in the resolvent set of $$A$$, and
+>
+>    $$
+>        (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},
+>    $$
+>
+>    convergent in operator norm.
+
+**Proof**
+**Part 2.** By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), $$|\lambda|>\|A\|$$ implies $$\lambda$$ is in the resolvent set. For such $$\lambda$$, $$A - \lambda\mathbf{1} = -\lambda(\mathbf{1} - A/\lambda)$$ with $$\|A/\lambda\| < 1$$, so by the geometric series lemma [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6), $$\mathbf{1} - A/\lambda$$ is invertible with $$(\mathbf{1}-A/\lambda)^{-1} = \sum_{m=0}^\infty (A/\lambda)^m$$, operator-norm convergent; hence $$(A-\lambda\mathbf{1})^{-1} = -\frac{1}{\lambda}\sum_{m=0}^\infty (A/\lambda)^m = -\sum_{m=0}^\infty A^m/\lambda^{m+1}$$.
+
+**Part 1.** Openness of the resolvent set, and the local power series representation, both follow from the same algebraic factorization used to prove [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) itself: for $$\lambda_0$$ in the resolvent set of $$A$$ and $$\lambda$$ with $$|\lambda-\lambda_0| < 1/\|(A-\lambda_0\mathbf{1})^{-1}\|$$, writing $$A - \lambda\mathbf{1} = (A-\lambda_0\mathbf{1})\big(\mathbf{1} - (\lambda-\lambda_0)(A-\lambda_0\mathbf{1})^{-1}\big)$$ and applying [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6) to the second factor (whose norm is less than $$1$$ by the bound on $$|\lambda-\lambda_0|$$) shows $$\lambda$$ is again in the resolvent set — so the resolvent set is open — with
+
+$$
+    (A-\lambda\mathbf{1})^{-1} = \left( \sum_{m=0}^\infty (\lambda-\lambda_0)^m \big((A-\lambda_0\mathbf{1})^{-1}\big)^m \right)(A-\lambda_0\mathbf{1})^{-1},
+$$
+
+an operator-norm-convergent power series in $$(\lambda-\lambda_0)$$ with $$\mathcal{B}(\mathbf{H})$$ coefficients.$$\blacksquare$$
+
+An operator-norm-convergent power series composed with any bounded linear functional gives a convergent scalar power series with the same radius of convergence, so Part 1 immediately gives: for any bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$, the scalar function $$\lambda \mapsto \xi\big( (A-\lambda\mathbf{1})^{-1} \big)$$ is holomorphic on the (open) resolvent set of $$A$$ — this is the fact [**Lemma** *(hall-8.1)*](../spectral-theorems/#lmm:hall-8.1) uses for a general such $$\xi$$, and the one we need below.
 
 > **Lemma** *(Power Growth is Controlled by the Spectral Radius)*
 <a name="lmm:power-growth-controlled-by-spectral-radius"></a>
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
-<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+<!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{../spectral-theorems/#thrm:laurents-theorem} -->
 <!--  \uses{../spectral-theorems/#lmm:nth-term-test} -->
 <!--  \uses{../spectral-theorems/#thrm:hall-a.40} -->
 <!--  \uses{../spectral-theorems/#thrm:theorem-on-completeness-of-the-dual} -->
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{thrm:norm-via-dual-pairing} -->
+<!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
 > Suppose $$A \in \mathcal{B}(\mathbf{H})$$ and $$T \in \mathbb{R}$$ with $$T > R(A)$$. Then
 >
 > $$
@@ -1248,15 +1321,29 @@ We can establish the growth bound on powers of a bounded operator that Lemma 10.
 **Proof**
 Fix $$\lambda_1 \in \mathbb{C}$$ with $$R(A) < |\lambda_1| < T$$ (possible since $$R(A) < T$$). We first show there is a constant $$C < \infty$$ with $$\|A^m\| \le C|\lambda_1|^{m+1}$$ for all $$m$$.
 
-By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), the resolvent $$\lambda \mapsto (A-\lambda\mathbf{1})^{-1}$$ is holomorphic on the resolvent set of $$A$$, which contains $$\{ \lambda : |\lambda| > R(A) \}$$ (since $$\sigma(A) \subset \{ |\lambda| \le R(A) \}$$, by the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius)); and, for $$|\lambda| > \|A\|$$,
+By Part 1 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](#prpstn:resolvent-holomorphy-and-neumann-series), the resolvent set of $$A$$ is open and the resolvent is holomorphic (in the operator-norm sense) on it; this resolvent set contains $$\{ \lambda : |\lambda| > R(A) \}$$ (since $$\sigma(A) \subset \{ |\lambda| \le R(A) \}$$, by the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius)), so the resolvent is holomorphic on all of the open annulus $$R(A) < |\lambda|$$. By Part 2 of the same proposition, for $$|\lambda| > \|A\|$$,
 
 $$
     (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},
 $$
 
-convergent in operator norm. Fix a bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$. Then $$\lambda \mapsto \xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ is holomorphic on the open annulus $$R(A) < |\lambda|$$ (boundedness and linearity of $$\xi$$, composed with the holomorphic resolvent), so by [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) it has a unique Laurent series expansion there. Applying $$\xi$$ termwise to the operator-norm-convergent series above gives a second Laurent-type expansion, $$-\sum_m \xi(A^m)/\lambda^{m+1}$$, valid (a priori) only on the smaller annulus $$\|A\| < |\lambda|$$; on the overlap $$\max(R(A),\|A\|) < |\lambda|$$, this must coincide with the unique Laurent series just cited. By uniqueness, the series $$-\sum_m \xi(A^m)/\lambda^{m+1}$$ is *that same* Laurent series, and so — this being exactly what [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) asserts about a Laurent series on its annulus of holomorphicity — it converges throughout the full annulus $$R(A) < |\lambda|$$, in particular at $$\lambda = \lambda_1$$.
+convergent in operator norm.
 
-By the [**Nth-Term Test**](../spectral-theorems/#lmm:nth-term-test), convergence of $$\sum_m \xi(A^m)/\lambda_1^{m+1}$$ forces its terms to tend to $$0$$, so in particular $$\{ \xi(A^m/\lambda_1^{m+1}) \}_m$$ is a bounded subset of $$\mathbb{C}$$, with some bound $$C_\xi$$ depending on $$\xi$$ (and on $$\lambda_1$$). As $$\xi$$ ranges over all bounded linear functionals on $$\mathcal{B}(\mathbf{H})$$ — a Banach space, by [**Lemma** *(Bounded Operators form a Banach Space)*](../spectral-theorems/#lmm:bounded-operators-form-a-banach-space), and so, by the [**Theorem on Completeness of the Dual**](../spectral-theorems/#thrm:theorem-on-completeness-of-the-dual), its dual $$\mathcal{B}(\mathbf{H})^*$$ is itself a Banach space — the [**Principle of Uniform Boundedness**](../spectral-theorems/#thrm:hall-a.40), applied with $$V_1 = \mathcal{B}(\mathbf{H})^*$$, $$V_2 = \mathbb{C}$$, and the family of evaluation maps $$\xi \mapsto \xi(A^m/\lambda_1^{m+1})$$ (each pointwise-bounded in $$m$$ by $$C_\xi$$, just shown), gives a constant $$C < \infty$$, independent of $$\xi$$, with $$\|A^m/\lambda_1^{m+1}\| \le C$$ for all $$m$$ — identifying the operator norm of $$A^m/\lambda_1^{m+1}$$ with the norm of its image under the canonical (isometric) embedding of $$\mathcal{B}(\mathbf{H})$$ into its double dual. That is, $$\|A^m\| \le C|\lambda_1|^{m+1}$$ for all $$m$$, as claimed.
+Fix a bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$. As just noted, $$\lambda \mapsto \xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ is holomorphic on the open annulus $$R(A) < |\lambda|$$, so by [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) it has a unique Laurent series expansion there, convergent throughout that annulus. Applying $$\xi$$ termwise to the operator-norm-convergent series above (valid for $$|\lambda|>\|A\|$$) gives a second expansion, $$-\sum_m \xi(A^m)/\lambda^{m+1}$$, which is a Laurent series (all terms of non-positive integer power) valid, a priori, only on the smaller annulus $$\|A\| < |\lambda|$$. On the overlap of the two annuli — which is exactly $$\|A\| < |\lambda|$$, since $$R(A) \le \|A\|$$ by [**Corollary**](../spectral-theorems/#crllr:crllr-1) — both expansions represent the same holomorphic function, so by the uniqueness clause of [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) (applied on that overlap), they are the same series: the coefficients agree. Hence the series $$-\sum_m \xi(A^m)/\lambda^{m+1}$$ *is* the unique Laurent series of $$\xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ on the full annulus $$R(A) < |\lambda|$$ — and, Laurent's Theorem asserting convergence of that series throughout its annulus, it converges there, in particular at $$\lambda = \lambda_1$$.
+
+By the [**Nth-Term Test**](../spectral-theorems/#lmm:nth-term-test), convergence of $$\sum_m \xi(A^m)/\lambda_1^{m+1}$$ forces its terms to tend to $$0$$, so in particular $$\{ \xi(A^m/\lambda_1^{m+1}) \}_m$$ is a bounded subset of $$\mathbb{C}$$, with some bound $$C_\xi$$ depending on $$\xi$$ (and on $$\lambda_1$$). As $$\xi$$ ranges over all bounded linear functionals on $$\mathcal{B}(\mathbf{H})$$ — a Banach space, by [**Lemma** *(Bounded Operators form a Banach Space)*](../spectral-theorems/#lmm:bounded-operators-form-a-banach-space), and so, by the [**Theorem on Completeness of the Dual**](../spectral-theorems/#thrm:theorem-on-completeness-of-the-dual), its dual $$\mathcal{B}(\mathbf{H})^*$$ is itself a Banach space — the [**Principle of Uniform Boundedness**](../spectral-theorems/#thrm:hall-a.40), applied with $$V_1 = \mathcal{B}(\mathbf{H})^*$$, $$V_2 = \mathbb{C}$$, and the family of evaluation maps $$\xi \mapsto \xi(A^m/\lambda_1^{m+1})$$ (each pointwise-bounded in $$m$$ by $$C_\xi$$, just shown), gives a constant $$C < \infty$$, independent of $$\xi$$, such that these evaluation maps have norm at most $$C$$ as elements of $$\mathcal{B}(\mathbf{H})^{**}$$: $$\lvert \xi(A^m/\lambda_1^{m+1}) \rvert \le C \left\| \xi \right\|$$ for every $$\xi \in \mathcal{B}(\mathbf{H})^*$$ and every $$m$$.
+
+To convert this into a bound on $$\|A^m/\lambda_1^{m+1}\|$$ itself, we use the standard corollary of the Hahn–Banach theorem identifying the norm of an element of a normed space with the supremum of its image under unit-norm functionals.
+
+> **Theorem** *(Norm via Dual Pairing)*
+<a name="thrm:norm-via-dual-pairing"></a>
+> If $$x$$ is an element of a normed vector space $$V$$, then
+>
+> $$
+>     \|x\| = \sup \{ \lvert \xi(x) \rvert : \xi \in V^*,\ \|\xi\| \le 1 \}.
+> $$
+
+Applying [**Theorem** *(Norm via Dual Pairing)*](#thrm:norm-via-dual-pairing) with $$V = \mathcal{B}(\mathbf{H})$$ and $$x = A^m/\lambda_1^{m+1}$$: since $$\lvert \xi(A^m/\lambda_1^{m+1}) \rvert \le C\|\xi\|$$ for every $$\xi$$, taking the supremum over $$\|\xi\|\le 1$$ gives $$\|A^m/\lambda_1^{m+1}\| \le C$$, for every $$m$$. That is, $$\|A^m\| \le C|\lambda_1|^{m+1}$$ for all $$m$$, as claimed.
 
 Finally, since $$|\lambda_1| < T$$,
 
@@ -1273,6 +1360,8 @@ We now use this growth bound to establish submultiplicativity of the spectral ra
 <!--  \uses{lmm:power-growth-controlled-by-spectral-radius} -->
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+<!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
 > If $$A$$ and $$B$$ are commuting elements of $$\mathcal{B}(\mathbf{H})$$, then
 >
 > $$
@@ -1280,19 +1369,21 @@ We now use this growth bound to establish submultiplicativity of the spectral ra
 > $$
 
 **Proof**
-Fix real numbers $$S > R(A)$$ and $$T > R(B)$$. Since $$A$$ and $$B$$ commute, $$(AB)^m = A^mB^m$$ for every $$m$$ (by induction: trivial for $$m=0,1$$, and if $$(AB)^m = A^mB^m$$ then $$(AB)^{m+1} = (AB)^mAB = A^mB^mAB = A^m(B^mA)B = A^m(AB^m)B = A^{m+1}B^{m+1}$$, using $$B^mA = AB^m$$, itself immediate by induction on $$m$$ from $$AB=BA$$). By submultiplicativity of the operator norm,
-
-$$
-    \frac{\|(AB)^m\|}{S^mT^m} = \frac{\|A^mB^m\|}{S^mT^m} \le \frac{\|A^m\|\|B^m\|}{S^mT^m} = \frac{\|A^m\|}{S^m}\cdot\frac{\|B^m\|}{T^m}.
-$$
-
-By [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius), applied to $$A$$ with $$T$$ there taken to be $$S$$, and to $$B$$ with $$T$$ there taken to be $$T$$, both factors on the right tend to $$0$$ as $$m \to \infty$$, so
+We first show: for *every* pair of real numbers $$S > R(A)$$ and $$T > R(B)$$,
 
 $$
     \lim_{m \to \infty} \frac{\|(AB)^m\|}{S^mT^m} = 0. \tag{$\P$}
 $$
 
-Now fix any $$\lambda_1 \in \mathbb{C}$$ with $$|\lambda_1| > ST$$, and fix $$\lambda_2$$ with $$|\lambda_1| > |\lambda_2| > ST$$. By $$(\P)$$ applied with $$S,T$$ replaced by any pair of positive reals whose product is $$|\lambda_2|$$ — for instance $$S' = S \cdot |\lambda_2|/(ST) $$ and $$T' = T$$, so $$S'T' = |\lambda_2|$$, and $$S' > R(A)$$ since $$|\lambda_2| > ST$$ gives $$S' = S|\lambda_2|/(ST) = |\lambda_2|/T > S > R(A)$$ — the sequence $$\|(AB)^m\|/|\lambda_2|^m$$ tends to $$0$$, so in particular is bounded: there is a constant $$C$$ with $$\|(AB)^m\| \le C|\lambda_2|^m$$ for all $$m$$.
+Since $$A$$ and $$B$$ commute, $$(AB)^m = A^mB^m$$ for every $$m$$ (by induction: trivial for $$m=0,1$$, and if $$(AB)^m = A^mB^m$$ then $$(AB)^{m+1} = (AB)^mAB = A^mB^mAB = A^m(B^mA)B = A^m(AB^m)B = A^{m+1}B^{m+1}$$, using $$B^mA = AB^m$$, itself immediate by induction on $$m$$ from $$AB=BA$$). By submultiplicativity of the operator norm,
+
+$$
+    \frac{\|(AB)^m\|}{S^mT^m} = \frac{\|A^mB^m\|}{S^mT^m} \le \frac{\|A^m\|\|B^m\|}{S^mT^m} = \frac{\|A^m\|}{S^m}\cdot\frac{\|B^m\|}{T^m}.
+$$
+
+By [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius), applied to $$A$$ with $$T$$ there taken to be our $$S$$ (valid since $$S > R(A)$$), and to $$B$$ with $$T$$ there taken to be our $$T$$ (valid since $$T > R(B)$$), both factors on the right tend to $$0$$ as $$m \to \infty$$, giving $$(\P)$$.
+
+Now fix real numbers $$S > R(A)$$ and $$T > R(B)$$ (for the remainder of the proof), and fix $$\lambda_1 \in \mathbb{C}$$ with $$|\lambda_1| > ST$$, and $$\lambda_2$$ with $$|\lambda_1| > |\lambda_2| > ST$$. Applying $$(\P)$$ to the pair $$S' = S \cdot |\lambda_2|/(ST)$$, $$T' = T$$ — so $$S'T' = |\lambda_2|$$, and $$S' > R(A)$$ since $$|\lambda_2| > ST$$ gives $$S' = S|\lambda_2|/(ST) = |\lambda_2|/T > S > R(A)$$, while $$T' = T > R(B)$$ trivially — the sequence $$\|(AB)^m\|/|\lambda_2|^m$$ tends to $$0$$, so in particular is bounded: there is a constant $$C$$ with $$\|(AB)^m\| \le C|\lambda_2|^m$$ for all $$m$$.
 
 By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) applied to $$AB$$, for $$|\lambda| > \|AB\|$$,
 
@@ -1300,17 +1391,49 @@ $$
     (AB - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{(AB)^m}{\lambda^{m+1}}, \tag{$\P\P$}
 $$
 
-convergent in operator norm. We claim this series also converges (in operator norm) at $$\lambda = \lambda_1$$, which will show $$\lambda_1$$ is in the resolvent set of $$AB$$ (the series, if convergent, is readily checked — exactly as in the proof of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) — to give a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$). Indeed, the $$m$$-th term has norm
+convergent in operator norm — but this alone only shows $$\lambda_1$$ is in the resolvent set of $$AB$$ when $$|\lambda_1| > \|AB\|$$, which we do not know here ($$\lambda_1$$ was chosen only with $$|\lambda_1| > ST \ge R(A)R(B)$$, and $$ST$$ may be far smaller than $$\|AB\|$$). Instead, we show directly that the series $$-\sum_m (AB)^m/\lambda_1^{m+1}$$, which converges in operator norm by the bound on $$\|(AB)^m\|$$ just derived — its terms have norm at most $$C|\lambda_2|^m/|\lambda_1|^{m+1}$$, dominated by a convergent geometric series since $$|\lambda_2|/|\lambda_1|<1$$, so the partial sums are Cauchy and converge by completeness of $$\mathcal{B}(\mathbf{H})$$ — defines a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$.
+
+Let $$S \equiv -\sum_{m=0}^\infty (AB)^m/\lambda_1^{m+1}$$ (the operator norm limit just established) and $$S_N \equiv -\sum_{m=0}^N (AB)^m/\lambda_1^{m+1}$$, so $$S_N \to S$$ as $$N \to \infty$$ by definition of the series' convergence. Expanding and re-indexing the first sum below with $$k=m+1$$,
 
 $$
-    \left\| \frac{(AB)^m}{\lambda_1^{m+1}} \right\| = \frac{\|(AB)^m\|}{|\lambda_1|^{m+1}} \le \frac{C|\lambda_2|^m}{|\lambda_1|^{m+1}} = \frac{C}{|\lambda_1|}\left( \frac{|\lambda_2|}{|\lambda_1|} \right)^m,
+\begin{align}
+    (AB-\lambda_1\mathbf{1})S_N &= (AB-\lambda_1\mathbf{1}) \left( -\sum_{m=0}^N \frac{(AB)^m}{\lambda_1^{m+1}} \right) \\
+                                &= -\sum_{m=0}^N \frac{(AB)^{m+1}}{\lambda_1^{m+1}} + \sum_{m=0}^N \frac{(AB)^m}{\lambda_1^m} \\
+                                &= -\sum_{k=1}^{N+1} \frac{(AB)^k}{\lambda_1^k} + \mathbf{1} + \sum_{m=1}^N \frac{(AB)^m}{\lambda_1^m} \\
+                                &= \mathbf{1} - \frac{(AB)^{N+1}}{\lambda_1^{N+1}},
+\end{align}
 $$
 
-and $$|\lambda_2|/|\lambda_1| < 1$$ by choice of $$\lambda_2$$, so the terms are dominated by a convergent geometric series; by completeness of $$\mathcal{B}(\mathbf{H})$$, the series $$(\P\P)$$ converges in operator norm at $$\lambda = \lambda_1$$. Thus $$\lambda_1$$ is in the resolvent set of $$AB$$.
+the middle terms ($$k=m=1,\ldots,N$$) telescoping away. Since $$\|(AB)^{N+1}\|/|\lambda_1|^{N+1} \le C|\lambda_2|^{N+1}/|\lambda_1|^{N+1} = C(|\lambda_2|/|\lambda_1|)^{N+1} \to 0$$ as $$N \to \infty$$ (using the same bound as above, with $$|\lambda_2|/|\lambda_1|<1$$), we get $$(AB-\lambda_1\mathbf{1})S_N \to \mathbf{1}$$. On the other hand, left multiplication by the fixed bounded operator $$AB - \lambda_1\mathbf{1}$$ is continuous in the operator norm (for any $$T_1,T_2 \in \mathcal{B}(\mathbf{H})$$, $$\|(AB-\lambda_1\mathbf{1})T_1 - (AB-\lambda_1\mathbf{1})T_2\| \le \|AB-\lambda_1\mathbf{1}\|\,\|T_1-T_2\|$$, by submultiplicativity), so $$(AB-\lambda_1\mathbf{1})S_N \to (AB-\lambda_1\mathbf{1})S$$ as well. By uniqueness of limits, $$(AB-\lambda_1\mathbf{1})S = \mathbf{1}$$. An identical computation — using that $$(AB)^m$$ commutes with $$AB-\lambda_1\mathbf{1}$$, being a power of $$AB$$ itself — gives $$S_N(AB-\lambda_1\mathbf{1}) = \mathbf{1} - (AB)^{N+1}/\lambda_1^{N+1} \to \mathbf{1}$$ and hence, by continuity of right multiplication by the fixed operator $$AB-\lambda_1\mathbf{1}$$, $$S(AB-\lambda_1\mathbf{1}) = \mathbf{1}$$. So $$S$$ is a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$, and $$\lambda_1$$ is in the resolvent set of $$AB$$.
 
 Since $$\lambda_1$$ with $$|\lambda_1| > ST$$ was arbitrary, every such $$\lambda_1$$ is in the resolvent set of $$AB$$, so $$\sigma(AB) \subset \{ |\lambda| \le ST \}$$, giving $$R(AB) \le ST$$. As $$S > R(A)$$ and $$T > R(B)$$ were arbitrary, $$R(AB) \le R(A)R(B)$$.$$\blacksquare$$
 
-We can now prove the equality of norm and spectral radius for normal operators, exactly as for self-adjoint operators.
+We can now prove the equality of norm and spectral radius for normal operators, exactly as for self-adjoint operators. The proof needs two elementary properties of the adjoint of a bounded operator, neither yet available to us; we record them first.
+
+> **Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*
+<a name="lmm:adjoint-product-and-involution"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> For $$A, B \in \mathcal{B}(\mathbf{H})$$:
+>
+> 1. $$(AB)^* = B^*A^*$$.
+> 2. $$(A^*)^* = A$$.
+
+**Proof**
+**Part 1.** For any $$\phi,\psi \in \mathbf{H}$$, applying the [definition of the adjoint](#def:hall-9.1) (for a bounded operator, with domain all of $$\mathbf{H}$$) to $$B$$ and then to $$A$$,
+
+$$
+    \left< \phi, (AB)\psi \right> = \left< \phi, A(B\psi) \right> = \left< A^*\phi, B\psi \right> = \left< B^*(A^*\phi), \psi \right> = \left< (B^*A^*)\phi, \psi \right>.
+$$
+
+As this holds for all $$\phi,\psi \in \mathbf{H}$$, this is exactly the defining property of $$(AB)^*$$, so $$(AB)^* = B^*A^*$$.
+
+**Part 2.** For all $$\phi,\psi \in \mathbf{H}$$, using conjugate symmetry of the inner product twice and the [definition of the adjoint](#def:hall-9.1) applied to $$A$$ (in the form $$\left< A^*\psi,\phi\right> = \left<\psi,A\phi\right>$$, the conjugate-symmetric restatement of $$\left<\phi,A\psi\right>=\left<A^*\phi,\psi\right>$$ with $$\phi,\psi$$ swapped and both sides conjugated),
+
+$$
+    \left< \phi, A^*\psi \right> = \overline{\left< A^*\psi, \phi \right>} = \overline{\left< \psi, A\phi \right>} = \left< A\phi, \psi \right>.
+$$
+
+As this holds for all $$\phi,\psi\in\mathbf{H}$$, this is exactly the defining property of $$(A^*)^*$$ (applied to the operator $$A^*$$): it says $$A\phi$$ plays the role of $$(A^*)^*\phi$$ for every $$\phi$$, so $$(A^*)^*=A$$.$$\blacksquare$$
 
 > **Proposition** *(Norm Equals Spectral Radius for Normal Operators)*
 <a name="prpstn:hall-10.21"></a>
@@ -1320,12 +1443,13 @@ We can now prove the equality of norm and spectral radius for normal operators, 
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.2} -->
 <!--  \uses{../spectral-theorems/#lmm:hall-8.1} -->
+<!--  \uses{lmm:adjoint-product-and-involution} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is normal, then $$\|A\| = R(A)$$.
 
 **Proof**
 By [**Corollary**](../spectral-theorems/#crllr:crllr-1), $$R(A) \le \|A\|$$ for any bounded operator. It remains to show $$\|A\| \le R(A)$$.
 
-By [**Proposition** *(hall-7.2)*](../spectral-theorems/#prpstn:hall-7.2), $$\|A\|^2 = \|A^*A\|$$. Since $$A$$ is normal, $$A^*A = AA^*$$; note $$A^*A$$ is self-adjoint regardless of normality, since $$(A^*A)^* = A^*A^{**} = A^*A$$. Since $$A$$ commutes with $$A^*$$ (normality), [**Lemma**](#lmm:hall-10.22) applies with the pair $$(A^*, A)$$ to give
+By [**Proposition** *(hall-7.2)*](../spectral-theorems/#prpstn:hall-7.2), $$\|A\|^2 = \|A^*A\|$$. Since $$A$$ is normal, $$A^*A = AA^*$$; note $$A^*A$$ is self-adjoint regardless of normality, since, by [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution), $$(A^*A)^* = A^*(A^*)^* = A^*A$$ (Part 1 with the pair $$(A^*,A)$$, then Part 2 to simplify $$(A^*)^*=A$$). Since $$A$$ commutes with $$A^*$$ (normality), [**Lemma**](#lmm:hall-10.22) applies with the pair $$(A^*, A)$$ to give
 
 $$
     R(A^*A) \le R(A^*)R(A).
