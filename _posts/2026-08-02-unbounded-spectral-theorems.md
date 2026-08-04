@@ -522,7 +522,9 @@ We now come to a central result: the spectrum of a self-adjoint operator, bounde
 > **Lemma** *(The $$b^2$$ Inequality for Symmetric Operators)*
 <a name="lmm:b-squared-inequality-symmetric"></a>
 <!--  \uses{def:hall-9.2} -->
+<!--  \uses{def:hall-3.1} -->
 <!--  \uses{prpstn:hall-9.13} -->
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 > If $$A$$ is a symmetric operator on $$\mathbf{H}$$, then for all $$a, b \in \mathbb{R}$$ and associated $$\lambda \equiv a + ib \in \mathbb{C}$$,
 >
 > $$
@@ -697,6 +699,56 @@ We close this section with a construction we will use directly in the proof of [
 >
 > This inner product is well defined, and $$\mathbf{H}$$ is complete with respect to it; hence $$\mathbf{H}$$, with this inner product, is itself a separable, complex Hilbert space. The finite direct sum is dense in $$\mathbf{H}$$: for $$\psi \in \mathbf{H}$$, the truncations $$\psi^{(N)} \equiv (\psi_1, \ldots, \psi_N, 0, 0, \ldots)$$ lie in the finite direct sum and satisfy $$\left\| \psi - \psi^{(N)} \right\|^2 = \sum_{j > N} \left\| \psi_j \right\|_j^2 \to 0$$ as $$N \to \infty$$, being the tail of the convergent series defining $$\left\| \psi \right\|^2$$.
 
+The direct sum just defined is an *external* construction: its elements are sequences, and the summands $$\mathbf{H}_j$$ are separate spaces glued together. In practice we more often meet the *internal* situation: a single Hilbert space $$\mathbf{H}$$ together with a family of closed subspaces of $$\mathbf{H}$$ that decompose it. These are not literally the same object, so we record the notion and the identification between the two explicitly rather than passing between them silently.
+
+> **Definition** *(Internal Orthogonal Decomposition)*
+<a name="def:internal-orthogonal-decomposition"></a>
+<!--  \uses{def:orthogonal-complement} -->
+> A sequence $$\{ \mathbf{K}_n \}_{n=1}^\infty$$ of closed subspaces of $$\mathbf{H}$$ is an *internal orthogonal decomposition* of $$\mathbf{H}$$ if
+>
+> 1. the subspaces are pairwise orthogonal: $$\left< \eta, \zeta \right> = 0$$ whenever $$\eta \in \mathbf{K}_n$$, $$\zeta \in \mathbf{K}_m$$ with $$n \ne m$$; and
+> 2. every $$\psi \in \mathbf{H}$$ can be written as $$\psi = \sum_{n=1}^\infty \psi_n$$ with $$\psi_n \in \mathbf{K}_n$$, the series converging in the norm of $$\mathbf{H}$$.
+
+> **Lemma** *(Internal Decompositions are Unitarily External Direct Sums)*
+<a name="lmm:internal-decomposition-unitary"></a>
+<!--  \uses{def:internal-orthogonal-decomposition} -->
+<!--  \uses{def:hall-a.45} -->
+<!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+> Suppose $$\{ \mathbf{K}_n \}_{n=1}^\infty$$ is an internal orthogonal decomposition of $$\mathbf{H}$$, with each $$\mathbf{K}_n$$ separable. Then:
+>
+> 1. The decomposition in Part 2 of [Definition (Internal Orthogonal Decomposition)](#def:internal-orthogonal-decomposition) is unique: if $$\sum_n \psi_n = \sum_n \psi_n'$$ with $$\psi_n, \psi_n' \in \mathbf{K}_n$$ (both series norm-convergent), then $$\psi_n = \psi_n'$$ for every $$n$$.
+> 2. $$\left\| \psi \right\|^2 = \sum_{n=1}^\infty \left\| \psi_n \right\|^2$$ for every $$\psi \in \mathbf{H}$$, where $$\psi = \sum_n \psi_n$$ is its decomposition.
+> 3. The map $$U : \mathbf{H} \to \bigoplus_{n=1}^\infty \mathbf{K}_n$$ (external direct sum, as in [Definition (Hilbert Space Direct Sum)](#def:hall-a.45)) given by $$U\psi \equiv (\psi_1, \psi_2, \ldots)$$ is a well-defined linear bijection preserving the inner product, i.e. a unitary map.
+
+**Proof**
+**Part 2 first.** Let $$\psi = \sum_n \psi_n$$ with $$\psi_n \in \mathbf{K}_n$$, and write $$\psi^{(N)} \equiv \sum_{n=1}^N \psi_n$$, so $$\psi^{(N)} \to \psi$$ in norm. By pairwise orthogonality (Part 1 of the definition), expanding the finite sum,
+
+$$
+    \left\| \psi^{(N)} \right\|^2 = \left< \sum_{n=1}^N \psi_n, \sum_{m=1}^N \psi_m \right> = \sum_{n=1}^N \sum_{m=1}^N \left< \psi_n, \psi_m \right> = \sum_{n=1}^N \left\| \psi_n \right\|^2,
+$$
+
+all cross terms ($$n\ne m$$) vanishing. Since $$\psi^{(N)} \to \psi$$, [continuity of the norm](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product) gives $$\left\| \psi^{(N)} \right\|^2 \to \left\| \psi \right\|^2$$, so the partial sums $$\sum_{n=1}^N \left\| \psi_n \right\|^2$$ converge to $$\left\| \psi \right\|^2$$; that is, $$\sum_{n=1}^\infty \left\| \psi_n \right\|^2 = \left\| \psi \right\|^2$$.
+
+**Part 1.** Suppose $$\sum_n \psi_n = \sum_n \psi_n'$$, both norm-convergent with $$n$$-th terms in $$\mathbf{K}_n$$. Set $$\chi_n \equiv \psi_n - \psi_n' \in \mathbf{K}_n$$ (a subspace); then $$\sum_n \chi_n = 0$$, norm-convergent, since the difference of two convergent series converges to the difference of their sums. Applying **Part 2** to the vector $$0$$ with this decomposition, $$0 = \left\| 0 \right\|^2 = \sum_n \left\| \chi_n \right\|^2$$, a sum of non-negative terms; hence $$\left\| \chi_n \right\| = 0$$, i.e. $$\psi_n = \psi_n'$$, for every $$n$$.
+
+**Part 3.** *Well defined:* for $$\psi \in \mathbf{H}$$, Part 2 of the definition supplies a decomposition $$\psi = \sum_n \psi_n$$; **Part 1** shows it is unique, so $$U\psi = (\psi_1,\psi_2,\ldots)$$ is unambiguous. **Part 2** gives $$\sum_n \left\| \psi_n \right\|^2 = \left\| \psi \right\|^2 < \infty$$, so the sequence $$(\psi_1,\psi_2,\ldots)$$ does lie in the external direct sum, by [Definition (Hilbert Space Direct Sum)](#def:hall-a.45).
+
+*Linear:* if $$\psi = \sum_n \psi_n$$ and $$\phi = \sum_n \phi_n$$ are the decompositions of $$\psi,\phi$$ and $$\alpha,\beta \in \mathbb{C}$$, then $$\alpha\psi + \beta\phi = \sum_n (\alpha\psi_n + \beta\phi_n)$$ (norm-convergent, as a linear combination of convergent series), with $$\alpha\psi_n+\beta\phi_n \in \mathbf{K}_n$$; by uniqueness (**Part 1**) this *is* the decomposition of $$\alpha\psi+\beta\phi$$, so $$U(\alpha\psi+\beta\phi) = \alpha U\psi + \beta U\phi$$.
+
+*Injective:* if $$U\psi = 0$$ then every $$\psi_n = 0$$, so $$\psi = \sum_n \psi_n = 0$$.
+
+*Surjective:* let $$(\eta_1,\eta_2,\ldots)$$ be an element of the external direct sum, so $$\eta_n \in \mathbf{K}_n$$ with $$\sum_n \left\| \eta_n \right\|^2 < \infty$$. The partial sums $$S_N \equiv \sum_{n=1}^N \eta_n$$ form a Cauchy sequence in $$\mathbf{H}$$: for $$N < M$$, pairwise orthogonality gives $$\left\| S_M - S_N \right\|^2 = \sum_{n=N+1}^M \left\| \eta_n \right\|^2$$, the tail of a convergent series, which tends to $$0$$ as $$N,M\to\infty$$. By completeness of $$\mathbf{H}$$, $$S_N \to \eta$$ for some $$\eta \in \mathbf{H}$$, i.e. $$\eta = \sum_n \eta_n$$ with $$\eta_n \in \mathbf{K}_n$$; by uniqueness this is the decomposition of $$\eta$$, so $$U\eta = (\eta_1,\eta_2,\ldots)$$.
+
+*Inner-product preserving:* for $$\psi,\phi \in \mathbf{H}$$ with decompositions $$\sum_n\psi_n$$, $$\sum_n\phi_n$$, [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product) applied to the partial sums, together with pairwise orthogonality killing all cross terms in each finite double sum, gives
+
+$$
+    \left< \psi, \phi \right> = \lim_{N\to\infty} \left< \sum_{n=1}^N \psi_n, \sum_{m=1}^N \phi_m \right> = \lim_{N\to\infty} \sum_{n=1}^N \left< \psi_n, \phi_n \right> = \sum_{n=1}^\infty \left< \psi_n, \phi_n \right> = \left< U\psi, U\phi \right>,
+$$
+
+the last equality being the definition of the inner product on the external direct sum. So $$U$$ is unitary.$$\blacksquare$$
+
+With the identification in hand, we can restate [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators)*](#prpstn:hall-9.26) — which is phrased for the external direct sum — in the internal form in which we will actually apply it, transporting along $$U$$ rather than leaving the transport implicit. We state it here and prove it once [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26) itself is available, immediately below.
+
 > **Proposition** *(Direct Sums of Bounded Self-Adjoint Operators)*
 <a name="prpstn:hall-9.26"></a>
 <!--  \uses{def:hall-a.45} -->
@@ -798,6 +850,46 @@ for every $$N$$. The partial sums $$\sum_{j=1}^N \left\| A_j\phi_j \right\|_j^2$
 Combining both containments, $$\text{Dom}(A^*) = V$$, with $$A^*$$ given by the stated formula on $$V$$.
 
 **Conclusion.** By **Part 2**, $$A^{\text{cl}} = A^*$$ (with equality of domains); by **Part 3**, $$\text{Dom}(A^*) = V$$ with $$A^*\psi = (A_1\psi_1, A_2\psi_2, \ldots)$$. Hence $$\text{Dom}(A^{\text{cl}}) = \text{Dom}(A^*) = V$$ and $$A^{\text{cl}}\psi = A^*\psi = (A_1\psi_1, A_2\psi_2, \ldots)$$ for all $$\psi \in V$$, the desired result.$$\blacksquare$$
+
+We now record the internal-form version promised above.
+
+> **Proposition** *(Direct Sums of Bounded Self-Adjoint Operators, Internal Form)*
+<a name="prpstn:hall-9.26-internal"></a>
+<!--  \uses{prpstn:hall-9.26} -->
+<!--  \uses{lmm:internal-decomposition-unitary} -->
+<!--  \uses{def:internal-orthogonal-decomposition} -->
+<!--  \uses{def:hall-9.2} -->
+<!--  \uses{def:hall-9.5} -->
+<!--  \uses{def:hall-9.7} -->
+<!--  \uses{def:hall-9.1} -->
+> Suppose $$\{ \mathbf{K}_n \}_{n=1}^\infty$$ is an internal orthogonal decomposition of $$\mathbf{H}$$ into separable closed subspaces, and $$A_n$$ is a bounded, self-adjoint operator on $$\mathbf{K}_n$$ for each $$n$$. Define
+>
+> $$
+>     V \equiv \left\{ \psi \in \mathbf{H} \;\middle|\; \sum_{n=1}^\infty \left( \left\| \psi_n \right\|^2 + \left\| A_n \psi_n \right\|^2 \right) < \infty \right\},
+> $$
+>
+> where $$\psi = \sum_n \psi_n$$ is the (unique) decomposition of $$\psi$$. Suppose $$A$$ is a symmetric operator on $$\mathbf{H}$$ whose domain contains the algebraic span $$W_0$$ of the $$\mathbf{K}_n$$'s (finite sums $$\sum_{n=1}^N \eta_n$$, $$\eta_n \in \mathbf{K}_n$$), with $$A\eta = \sum_{n=1}^N A_n\eta_n$$ for $$\eta = \sum_{n=1}^N \eta_n \in W_0$$. Then $$A$$ is essentially self-adjoint, $$\text{Dom}(A^{\text{cl}}) = \text{Dom}(A^*) = V$$, and
+>
+> $$
+>     A^{\text{cl}}\psi = A^*\psi = \sum_{n=1}^\infty A_n \psi_n
+> $$
+>
+> for all $$\psi \in V$$.
+
+**Proof**
+Let $$U : \mathbf{H} \to \bigoplus_n \mathbf{K}_n$$ be the unitary map of Part 3 of [**Lemma** *(Internal Decompositions are Unitarily External Direct Sums)*](#lmm:internal-decomposition-unitary), $$U\psi = (\psi_1,\psi_2,\ldots)$$. Write $$\widetilde{\mathbf{H}} \equiv \bigoplus_n \mathbf{K}_n$$ for the external direct sum, and define $$\widetilde{A} \equiv UAU^{-1}$$, an operator on $$\widetilde{\mathbf{H}}$$ with $$\text{Dom}(\widetilde{A}) = U\big(\text{Dom}(A)\big)$$.
+
+Since $$U$$ is a unitary bijection, it carries all the structure in the hypotheses across. Explicitly: $$U(W_0)$$ is exactly the finite direct sum of the $$\mathbf{K}_n$$'s (a finite sum $$\sum_{n=1}^N \eta_n$$ maps to the sequence with entries $$\eta_1,\ldots,\eta_N$$ and zeros beyond, and conversely), so $$\text{Dom}(\widetilde{A}) \supset U(W_0)$$ is the finite direct sum; and for such an element, $$\widetilde{A}(\eta_1,\ldots,\eta_N,0,\ldots) = U A \left( \sum_n \eta_n \right) = U\left( \sum_n A_n\eta_n \right) = (A_1\eta_1,\ldots,A_N\eta_N,0,\ldots)$$, matching the hypothesis of [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26). Moreover $$\widetilde{A}$$ is symmetric: for $$\widetilde\phi,\widetilde\psi \in \text{Dom}(\widetilde{A})$$, writing $$\phi = U^{-1}\widetilde\phi$$, $$\psi = U^{-1}\widetilde\psi \in \text{Dom}(A)$$, unitarity of $$U$$ (hence of $$U^{-1}$$) gives $$\left< \widetilde\phi, \widetilde{A}\widetilde\psi \right> = \left< \phi, A\psi \right> = \left< A\phi, \psi \right> = \left< \widetilde{A}\widetilde\phi, \widetilde\psi \right>$$, using symmetry of $$A$$ in the middle.
+
+So [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26) applies to $$\widetilde{A}$$ on $$\widetilde{\mathbf{H}}$$ and gives: $$\widetilde{A}$$ is essentially self-adjoint, with $$\text{Dom}(\widetilde{A}^{\text{cl}}) = \text{Dom}(\widetilde{A}^*) = \widetilde{V}$$, where $$\widetilde{V} = \{ (\psi_1,\psi_2,\ldots) \mid \sum_n ( \|\psi_n\|^2 + \|A_n\psi_n\|^2 ) < \infty \}$$, and $$\widetilde{A}^{\text{cl}}(\psi_1,\psi_2,\ldots) = (A_1\psi_1, A_2\psi_2,\ldots)$$ there.
+
+Finally we transport back. A unitary $$U$$ intertwines adjoints and closures: $$(UAU^{-1})^* = U A^* U^{-1}$$ — since, for $$\widetilde\phi,\widetilde\psi$$, $$\left< \widetilde\phi, UAU^{-1}\widetilde\psi \right> = \left< U^{-1}\widetilde\phi, A U^{-1}\widetilde\psi \right>$$, so boundedness of $$\widetilde\psi \mapsto \left< \widetilde\phi, \widetilde{A}\widetilde\psi \right>$$ on $$\text{Dom}(\widetilde A)$$ is equivalent to boundedness of $$\psi \mapsto \left< U^{-1}\widetilde\phi, A\psi \right>$$ on $$\text{Dom}(A)$$, matching domains under $$U$$ by the [definition of the adjoint](#def:hall-9.1), with the values corresponding likewise — and $$(UAU^{-1})^{\text{cl}} = U A^{\text{cl}} U^{-1}$$, since $$U \times U$$ is a homeomorphism of $$\mathbf{H}\times\mathbf{H}$$ onto $$\widetilde{\mathbf{H}}\times\widetilde{\mathbf{H}}$$ (being unitary in each factor) and so carries the closure of the graph of $$A$$ onto the closure of the graph of $$\widetilde{A}$$. Hence $$A$$ is essentially self-adjoint (as $$A^{\text{cl}} = U^{-1}\widetilde{A}^{\text{cl}}U$$ is self-adjoint, $$\widetilde{A}^{\text{cl}}$$ being so), and
+
+$$
+    \text{Dom}(A^{\text{cl}}) = \text{Dom}(A^*) = U^{-1}(\widetilde{V}) = V,
+$$
+
+the last equality because $$U\psi = (\psi_1,\psi_2,\ldots)$$, so the defining condition of $$\widetilde{V}$$ on $$U\psi$$ is verbatim the defining condition of $$V$$ on $$\psi$$. For $$\psi \in V$$, $$A^{\text{cl}}\psi = U^{-1}\widetilde{A}^{\text{cl}}U\psi = U^{-1}(A_1\psi_1,A_2\psi_2,\ldots) = \sum_n A_n\psi_n$$, the last step by the definition of $$U^{-1}$$ (the element of $$\mathbf{H}$$ whose decomposition has $$n$$-th entry $$A_n\psi_n$$, which is exactly the norm-convergent sum $$\sum_n A_n\psi_n$$).$$\blacksquare$$
 
 ## Integration Against a Projection-Valued Measure
 
@@ -926,6 +1018,20 @@ The proof of Proposition (hall-10.2) below draws on three standard facts of Lebe
 >
 > This integral is absolutely convergent for all $$\phi, \psi \in L^2(X, \mu)$$, $$\left< \cdot, \cdot \right>$$ is indeed an inner product, and $$L^2(X, \mu)$$ is complete with respect to the associated norm; thus $$L^2(X, \mu)$$, with this inner product, is a Hilbert space.
 
+> **Proposition** *(Countable Additivity of the Integral over a Disjoint Cover)*
+<a name="prpstn:countable-additivity-of-the-integral"></a>
+> Let $$(X,\Omega,\nu)$$ be a measure space, $$g$$ a nonnegative measurable function on $$X$$, and $$\{ E_n \}_{n=1}^\infty$$ a pairwise disjoint sequence in $$\Omega$$ with $$\bigcup_n E_n = X$$. Then
+>
+> $$
+>     \int_X g \, d\nu = \sum_{n=1}^\infty \int_{E_n} g \, d\nu
+> $$
+>
+> (an equality in $$[0,\infty]$$).
+
+> **Proposition** *(Integrals Agree when Measures Agree on a Set)*
+<a name="prpstn:integrals-agree-when-measures-agree"></a>
+> Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and $$E \in \Omega$$, and suppose $$\nu(S) = \nu'(S)$$ for every measurable $$S \subset E$$. Then $$\int_E g \, d\nu = \int_E g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
+
 We record two more facts about projection-valued measures before the main proof, both used more than once below; extracting them now avoids re-deriving them, or worse, citing "the same argument as" a proof written for a different purpose.
 
 > **Lemma** *(Range Membership Concentrates the Associated Measure)*
@@ -983,6 +1089,7 @@ We can now state and prove the central technical result of this section. It is t
 > **Proposition**
 <a name="prpstn:hall-10.2"></a>
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
+<!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
@@ -1110,6 +1217,24 @@ $$
 
 the desired formula.$$\blacksquare$$
 
+The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \subset W_f$$ for the particular sets $$E_n$$ used there. We record the general fact as its own statement, since [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3) needs it below and should not have to reach inside another proof for it.
+
+> **Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*
+<a name="lmm:bounded-on-set-range-in-domain"></a>
+<!--  \uses{lmm:range-membership-concentrates-measure} -->
+<!--  \uses{prpstn:hall-10.2} -->
+> Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, $$f$$ is measurable, and $$E \in \Omega(X)$$ is a set on which $$f$$ is bounded, say $$\lvert f \rvert \le c$$ on $$E$$. Then $$\text{Range}(\mu(E)) \subset W_f$$, and indeed $$\int_X \lvert f \rvert^2\,d\mu_\eta \le c^2 \left\| \eta \right\|^2$$ for every $$\eta \in \text{Range}(\mu(E))$$.
+
+**Proof**
+Let $$\eta \in \text{Range}(\mu(E))$$. By [**Lemma** *(Range Membership Concentrates the Associated Measure)*](#lmm:range-membership-concentrates-measure), $$\int_X \lvert f \rvert^2 \, d\mu_\eta = \int_E \lvert f \rvert^2 \, d\mu_\eta$$. Since $$\lvert f \rvert \le c$$ on $$E$$,
+
+$$
+    \int_E \lvert f \rvert^2 \, d\mu_\eta \le c^2 \mu_\eta(E) \le c^2 \mu_\eta(X) = c^2 \left< \eta, \mu(X)\eta \right> = c^2 \left< \eta,\eta \right> = c^2 \left\| \eta \right\|^2 < \infty,
+$$
+
+using $$\mu(X) = \mathbf{1}$$ (property 2 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)). By the definition of $$W_f$$ in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2), $$\eta \in W_f$$.$$\blacksquare$$
+
+
 With **Proposition** *(hall-10.2)* established, we can now give the definition and existence/uniqueness statement for the integral of an unbounded function against a projection-valued measure — this is the result we will actually invoke when discussing $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ in [Theorem 10.4](#thrm:hall-10.4).
 
 > **Proposition**
@@ -1173,7 +1298,13 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{def:hall-9.5} -->
 <!--  \uses{def:hall-a.45} -->
 <!--  \uses{prpstn:hall-9.4} -->
-<!--  \uses{prpstn:hall-9.26} -->
+<!--  \uses{prpstn:hall-9.26-internal} -->
+<!--  \uses{prpstn:countable-additivity-of-the-integral} -->
+<!--  \uses{prpstn:integrals-agree-when-measures-agree} -->
+<!--  \uses{lmm:bounded-on-set-range-in-domain} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.62} -->
+<!--  \uses{def:internal-orthogonal-decomposition} -->
+<!--  \uses{lmm:internal-decomposition-unitary} -->
 <!--  \uses{prpstn:hall-a.49} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
@@ -1194,13 +1325,15 @@ $$
 
 In particular $$\eta \in W_f$$, so, by the norm formula of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), this reads $$\left\| A_f \eta \right\|^2 \le n^2 \left\| \eta \right\|^2$$, i.e. $$\left\| A_f \eta \right\| \le n \left\| \eta \right\|$$, for every $$\eta \in \mathbf{H}_n$$ — a bound on the size of $$A_f \eta$$ in $$\mathbf{H}$$, valid regardless of which subspace $$A_f \eta$$ actually lands in. By [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43) and the defining property of $$A_f$$, $$\lvert Q_f(\eta) \rvert = \lvert \left< \eta, A_f\eta \right> \rvert \le \left\| \eta \right\| \left\| A_f \eta \right\| \le n \left\| \eta \right\|^2$$, so $$Q_f$$, restricted to $$\mathbf{H}_n$$, is also a bounded quadratic form (bound $$n$$).
 
-We first record a small fact about $$\mathbf{H}_n$$ that we will use twice. For $$\xi \in \mathbf{H}_n = \text{Range}(\mu(F_n))$$ and any $$E \in \Omega(X)$$, $$\mu(E)\xi \in \mathbf{H}_n$$: indeed, using $$\mu(F_n)\xi = \xi$$ (idempotency, as $$\xi \in \text{Range}(\mu(F_n))$$) and property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) twice,
+We first record a small fact about $$\mathbf{H}_n$$ that we will use twice: for $$\xi \in \mathbf{H}_n = \text{Range}(\mu(F_n))$$ and any $$E \in \Omega(X)$$, $$\mu(E)\xi \in \mathbf{H}_n$$. Since $$\xi \in \text{Range}(\mu(F_n))$$, idempotency gives $$\mu(F_n)\xi = \xi$$. Using this and property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure), we compute the two expressions
 
 $$
-    \mu(F_n)\big[ \mu(E)\xi \big] = \mu(F_n)\mu(E)\mu(F_n)\xi = \mu(F_n \cap E)\mu(F_n)\xi = \mu\big( (F_n \cap E) \cap F_n \big)\xi = \mu(F_n \cap E)\xi = \mu(F_n)\mu(E)\xi,
+    \mu(E)\xi = \mu(E)\mu(F_n)\xi = \mu(E \cap F_n)\xi
+    \qquad\text{and}\qquad
+    \mu(F_n)\mu(E)\xi = \mu(F_n \cap E)\xi.
 $$
 
-which merely confirms $$\mu(F_n)\big[\mu(E)\xi\big]$$ equals itself — more usefully, the same computation shows $$\mu(E)\xi = \mu(E \cap F_n)\xi = \mu(F_n)\mu(E)\xi$$, i.e. $$\mu(E)\xi$$ is fixed by $$\mu(F_n)$$, so $$\mu(E)\xi \in \text{Range}(\mu(F_n)) = \mathbf{H}_n$$.
+Since $$E \cap F_n = F_n \cap E$$, the right-hand sides agree, so $$\mu(F_n)\big[\mu(E)\xi\big] = \mu(E)\xi$$: that is, $$\mu(E)\xi$$ is fixed by $$\mu(F_n)$$, and hence $$\mu(E)\xi \in \text{Range}(\mu(F_n)) = \mathbf{H}_n$$.
 
 Fix $$\psi \in \mathbf{H}_n$$, so $$\mu(F_n)\psi = \psi$$. Suppose first that $$\phi \in \mathbf{H}_n^\perp \cap W_f$$ (not yet all of $$\mathbf{H}_n^\perp$$ — see below). For any $$E \in \Omega(X)$$, the fact above gives $$\mu(E)\psi \in \mathbf{H}_n$$, so $$\left< \phi, \mu(E)\psi \right> = 0$$, as $$\phi \in \mathbf{H}_n^\perp$$; and, since $$\mu(E)$$ is self-adjoint, $$\left< \psi, \mu(E)\phi \right> = \overline{\left< \mu(E)\phi, \psi \right>} = \overline{\left< \phi, \mu(E)\psi \right>} = 0$$ as well. Hence
 
@@ -1210,7 +1343,7 @@ $$
 
 for every $$E \in \Omega(X)$$, i.e. $$\mu_{\phi+\psi} = \mu_\phi + \mu_\psi$$ as measures, so $$Q_f(\phi+\psi) = Q_f(\phi) + Q_f(\psi)$$. Since $$\phi \in W_f$$ and $$\psi \in \mathbf{H}_n \subset W_f$$, all of $$\phi, \psi, \phi+\psi, \phi+i\psi, i\psi$$ lie in $$W_f$$ (a subspace), and the identical argument with $$i\psi$$ in place of $$\psi$$ (still in $$\mathbf{H}_n$$, since $$\mathbf{H}_n$$ is a subspace) gives $$Q_f(\phi + i\psi) = Q_f(\phi) + Q_f(i\psi)$$. By the polarization formula defining $$L_f$$ in terms of $$Q_f$$, both differences $$Q_f(\phi+\psi) - Q_f(\phi) - Q_f(\psi)$$ and $$Q_f(\phi+i\psi) - Q_f(\phi) - Q_f(i\psi)$$ vanish, so $$L_f(\phi, \psi) = 0$$. By the defining property of $$A_f$$ from [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi) = 0$$ for every $$\phi \in \mathbf{H}_n^\perp \cap W_f$$.
 
-We now extend this to all of $$\mathbf{H}_n^\perp$$, using density. Let $$\phi \in \mathbf{H}_n^\perp$$ be arbitrary, and retain $$E_m \equiv \{ x \in X \mid \lvert f(x) \rvert < m \}$$ from the proof of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2). There, it was shown that $$\mu(E_m)\phi \in \text{Range}(\mu(E_m)) \subset W_f$$ for every $$m$$, and that $$\mu(E_m)\phi \to \phi$$ as $$m \to \infty$$. We claim, moreover, $$\mu(E_m)\phi \in \mathbf{H}_n^\perp$$: for any $$\eta \in \mathbf{H}_n$$, the fact established above (applied to $$\xi = \eta$$ and $$E = E_m$$) gives $$\mu(E_m)\eta \in \mathbf{H}_n$$, so, using self-adjointness of $$\mu(E_m)$$,
+We now extend this to all of $$\mathbf{H}_n^\perp$$, using density. Let $$\phi \in \mathbf{H}_n^\perp$$ be arbitrary, and set $$E_m \equiv \{ x \in X \mid \lvert f(x) \rvert < m \}$$ for $$m \in \mathbb{N}$$. Since $$\lvert f \rvert \le m$$ on $$E_m$$, [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain) gives $$\mu(E_m)\phi \in \text{Range}(\mu(E_m)) \subset W_f$$ for every $$m$$; and, taking $$F_1 \equiv E_1$$, $$F_m \equiv E_m \setminus E_{m-1}$$ for $$m \ge 2$$ (pairwise disjoint with $$\bigcup_m F_m = \bigcup_m E_m = X$$, since $$f$$ is finite-valued, and with $$\bigcup_{j=1}^m F_j = E_m$$), Part 2 of [**Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*](#lmm:norm-convergent-decomposition) gives $$\mu(E_m)\phi \to \phi$$ as $$m \to \infty$$. We claim, moreover, $$\mu(E_m)\phi \in \mathbf{H}_n^\perp$$: for any $$\eta \in \mathbf{H}_n$$, the fact established above (applied to $$\xi = \eta$$ and $$E = E_m$$) gives $$\mu(E_m)\eta \in \mathbf{H}_n$$, so, using self-adjointness of $$\mu(E_m)$$,
 
 $$
     \left< \eta, \mu(E_m)\phi \right> = \left< \mu(E_m)\eta, \phi \right> = 0,
@@ -1228,13 +1361,17 @@ As $$\phi \in \mathbf{H}_n^\perp$$ was arbitrary, $$A_f\psi$$ is orthogonal to a
 
 So $$A_f$$ maps $$\mathbf{H}_n$$ into itself; let $$A_n$$ denote this restriction. Combined with the bound $$\left\| A_f \eta \right\| \le n \left\| \eta \right\|$$ established above (for $$\eta \in \mathbf{H}_n$$, where $$A_f\eta = A_n\eta \in \mathbf{H}_n$$), $$A_n$$ is a genuine bounded operator on $$\mathbf{H}_n$$, with operator norm at most $$n$$, and satisfies $$\left< \psi, A_n\psi \right> = \left< \psi, A_f\psi \right> = Q_f(\psi)$$ for all $$\psi \in \mathbf{H}_n$$. Since $$Q_f$$, restricted to $$\mathbf{H}_n$$, is a bounded quadratic form (shown above) that is real-valued (as $$f$$ is real-valued, so $$Q_f(\psi) = \int_X f \, d\mu_\psi \in \mathbb{R}$$, an integral of a real-valued function against a positive real measure), [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63), applied with $$\mathbf{H}_n$$ in place of $$\mathbf{H}$$, produces a *unique* bounded operator on $$\mathbf{H}_n$$ representing this quadratic form, and asserts that this unique operator is self-adjoint. As $$A_n$$ is itself a bounded operator on $$\mathbf{H}_n$$ representing $$Q_f$$, uniqueness forces $$A_n$$ to be that operator, so $$A_n$$ is self-adjoint on $$\mathbf{H}_n$$.
 
-Now, $$\mathbf{H} = \bigoplus_{n=1}^\infty \mathbf{H}_n$$ is a Hilbert space direct sum. First, the $$F_n$$ are pairwise disjoint with union $$X$$, so the projections $$\mu(F_n)$$ are pairwise orthogonal: for $$n \ne m$$, $$\mu(F_n)\mu(F_m) = \mu(F_n \cap F_m) = \mu(\emptyset) = 0$$, by property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure). Second, by [Lemma (Norm-Convergent Decomposition over a Disjoint Cover)](#lmm:norm-convergent-decomposition) applied to $$\{F_n\}$$ (already pairwise disjoint with union $$X$$), every $$\psi \in \mathbf{H}$$ satisfies $$\psi = \sum_{n=1}^\infty \mu(F_n)\psi$$, norm-convergent. Third, writing $$\psi_n \equiv \mu(F_n)\psi \in \mathbf{H}_n$$, the $$\psi_n$$ are pairwise orthogonal — $$\left< \psi_n, \psi_m \right> = \left< \psi, \mu(F_n)\mu(F_m)\psi \right> = 0$$ for $$n \ne m$$, using self-adjointness and idempotency of $$\mu(F_n)$$ and the orthogonality of the projections just shown — so, by the Pythagorean identity applied to the finite sum $$\sum_{n=1}^N \psi_n$$ (expanding $$\left\| \sum_{n=1}^N \psi_n \right\|^2 = \sum_{n=1}^N \left< \psi_n, \sum_{m=1}^N \psi_m \right> = \sum_{n=1}^N \left\| \psi_n \right\|^2$$, all cross terms vanishing by pairwise orthogonality), and continuity of the norm applied to $$\sum_{n=1}^N \psi_n \to \psi$$,
+Now, $$\{ \mathbf{H}_n \}_{n=1}^\infty$$ is an *internal orthogonal decomposition* of $$\mathbf{H}$$ in the sense of [Definition (Internal Orthogonal Decomposition)](#def:internal-orthogonal-decomposition). We check its two conditions.
+
+*Pairwise orthogonality.* The $$F_n$$ are pairwise disjoint, so for $$n \ne m$$, property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) gives $$\mu(F_n)\mu(F_m) = \mu(F_n \cap F_m) = \mu(\emptyset) = 0$$. Hence for $$\eta \in \mathbf{H}_n$$ and $$\zeta \in \mathbf{H}_m$$, using $$\mu(F_n)\eta = \eta$$ and $$\mu(F_m)\zeta = \zeta$$ (idempotency, as both lie in the respective ranges) and self-adjointness of $$\mu(F_n)$$,
 
 $$
-    \left\| \psi \right\|^2 = \lim_{N\to\infty} \left\| \sum_{n=1}^N \psi_n \right\|^2 = \lim_{N\to\infty} \sum_{n=1}^N \left\| \psi_n \right\|^2 = \sum_{n=1}^\infty \left\| \psi_n \right\|^2.
+    \left< \eta, \zeta \right> = \left< \mu(F_n)\eta, \mu(F_m)\zeta \right> = \left< \eta, \mu(F_n)\mu(F_m)\zeta \right> = \left< \eta, 0 \right> = 0.
 $$
 
-Together, these are exactly the defining properties of the [Hilbert space direct sum](#def:hall-a.45): pairwise orthogonal closed subspaces $$\mathbf{H}_n$$, with every $$\psi \in \mathbf{H}$$ decomposing as a norm-convergent sum $$\psi = \sum_n \psi_n$$, $$\psi_n \in \mathbf{H}_n$$, satisfying $$\left\| \psi \right\|^2 = \sum_n \left\| \psi_n \right\|^2$$. This exhibits $$\mathbf{H}$$ as the Hilbert space direct sum of the $$\mathbf{H}_n$$'s.
+*Decomposition.* By [Lemma (Norm-Convergent Decomposition over a Disjoint Cover)](#lmm:norm-convergent-decomposition) applied to $$\{F_n\}$$ (pairwise disjoint with union $$X$$), every $$\psi \in \mathbf{H}$$ satisfies $$\psi = \sum_{n=1}^\infty \mu(F_n)\psi$$, norm-convergent, with $$\mu(F_n)\psi \in \text{Range}(\mu(F_n)) = \mathbf{H}_n$$.
+
+So $$\{\mathbf{H}_n\}$$ is an internal orthogonal decomposition of $$\mathbf{H}$$, each $$\mathbf{H}_n$$ being a separable closed subspace (shown at the start of this proof). Writing $$\psi_n \equiv \mu(F_n)\psi$$ for the components of $$\psi$$, Part 2 of [**Lemma** *(Internal Decompositions are Unitarily External Direct Sums)*](#lmm:internal-decomposition-unitary) gives $$\left\| \psi \right\|^2 = \sum_n \left\| \psi_n \right\|^2$$, and Part 1 gives uniqueness of this decomposition — so the components $$\psi_n$$ referred to below are unambiguous.
 
 Identifying $$\mathbf{H}$$ with sequences $$\psi = (\psi_1, \psi_2, \ldots)$$, $$\psi_n \in \mathbf{H}_n$$: for $$\psi \in \bigoplus_{n=1}^N \mathbf{H}_n$$ a finite sum (so $$\psi = \sum_{n=1}^N \psi_n \in W_f$$, since $$W_f$$ is a subspace and $$\mathbf{H}_n \subset W_f$$ for each $$n$$, shown above), linearity of $$A_f$$ on $$W_f$$ together with $$A_f$$ mapping each $$\mathbf{H}_n$$ to itself via $$A_n$$ gives $$A_f\psi = \sum_{n=1}^N A_n\psi_n$$, matching the formula in [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26) on the finite direct sum. It remains to identify $$W_f$$ itself with the domain $$V$$ of that proposition. For any $$\psi = (\psi_1,\psi_2,\ldots) \in \mathbf{H}$$ (not assumed to lie in $$W_f$$ or to be a finite sum), countable additivity of $$\mu_\psi$$ over the pairwise disjoint $$F_n$$'s gives $$\mu_\psi(X) = \sum_n \mu_\psi(F_n)$$, and, more generally, restricting to any measurable $$E \subset X$$, $$\mu_\psi(E) = \sum_n \mu_\psi(E \cap F_n)$$; taking $$E \subset F_n$$ shows $$\mu_\psi$$ restricted to $$F_n$$ agrees with $$\mu_{\psi_n}$$ restricted to $$F_n$$ — indeed $$\mu_{\psi_n}(E) = \left< \mu(F_n)\psi, \mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(F_n)\mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(E \cap F_n)\psi \right> = \mu_\psi(E)$$ for $$E \subset F_n$$, using self-adjointness and idempotency of $$\mu(F_n)$$ and property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure). Hence
 
@@ -1250,7 +1387,7 @@ $$
 
 the second equality using that $$\psi \in \mathbf{H}$$ already forces $$\sum_n \left\| \psi_n \right\|_n^2 < \infty$$ (Parseval for the Hilbert space direct sum). This is exactly the domain $$V$$ in [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26).
 
-We have shown: $$\mathbf{H}$$ is a Hilbert space direct sum of the $$\mathbf{H}_n$$'s, each $$A_n$$ is a bounded self-adjoint operator on $$\mathbf{H}_n$$, and $$A_f$$ is a symmetric operator (we check this directly: for $$\phi, \psi \in W_f$$, $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi)$$ and $$\left< A_f\phi, \psi \right> = \overline{\left< \psi, A_f\phi \right>} = \overline{L_f(\psi,\phi)}$$; Part 2 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties), applicable since $$Q_f$$ is real-valued, gives $$L_f(\phi,\psi) = \overline{L_f(\psi,\phi)}$$, so $$\left< \phi, A_f\psi \right> = \left< A_f\phi, \psi \right>$$) whose domain contains the finite direct sum $$W_0 \equiv \bigoplus_{n} \mathbf{H}_n$$ (finite sums) of the $$\mathbf{H}_n$$'s, and which acts as $$A_n$$ on each $$\mathbf{H}_n$$. This is exactly the hypothesis of [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26), which concludes that $$A_f$$ is essentially self-adjoint with $$\text{Dom}(A_f^{\text{cl}}) = \text{Dom}(A_f^*)$$ equal to the space identified above — which we showed coincides with $$W_f = \text{Dom}(A_f)$$. Since $$A_f$$ is symmetric, [**Proposition** *(Symmetric Operators and the Adjoint)*](#prpstn:hall-9.4) shows $$A_f^*$$ is an extension of $$A_f$$, and having just shown $$\text{Dom}(A_f^*) = \text{Dom}(A_f)$$, this extension is trivial: $$A_f^* = A_f$$, i.e. $$A_f$$ is self-adjoint.$$\blacksquare$$
+We have shown: $$\{\mathbf{H}_n\}$$ is an internal orthogonal decomposition of $$\mathbf{H}$$ into separable closed subspaces, each $$A_n$$ is a bounded self-adjoint operator on $$\mathbf{H}_n$$, and $$A_f$$ is a symmetric operator (we check this directly: for $$\phi, \psi \in W_f$$, $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi)$$ and $$\left< A_f\phi, \psi \right> = \overline{\left< \psi, A_f\phi \right>} = \overline{L_f(\psi,\phi)}$$; Part 2 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties), applicable since $$Q_f$$ is real-valued, gives $$L_f(\phi,\psi) = \overline{L_f(\psi,\phi)}$$, so $$\left< \phi, A_f\psi \right> = \left< A_f\phi, \psi \right>$$) whose domain contains the algebraic span $$W_0$$ of the $$\mathbf{H}_n$$'s (finite sums), and which acts as $$A_n$$ on each $$\mathbf{H}_n$$. This is exactly the hypothesis of [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators, Internal Form)*](#prpstn:hall-9.26-internal), which concludes that $$A_f$$ is essentially self-adjoint with $$\text{Dom}(A_f^{\text{cl}}) = \text{Dom}(A_f^*)$$ equal to the space $$V$$ identified there — which we showed above coincides with $$W_f = \text{Dom}(A_f)$$. Since $$A_f$$ is symmetric, [**Proposition** *(Symmetric Operators and the Adjoint)*](#prpstn:hall-9.4) shows $$A_f^*$$ is an extension of $$A_f$$, and having just shown $$\text{Dom}(A_f^*) = \text{Dom}(A_f)$$, this extension is trivial: $$A_f^* = A_f$$, i.e. $$A_f$$ is self-adjoint.$$\blacksquare$$
 
 ## The Spectral Theorem for Bounded Normal Operators
 
@@ -1280,7 +1417,7 @@ We can establish the growth bound on powers of a bounded operator that Lemma 10.
 > Suppose $$A \in \mathcal{B}(\mathbf{H})$$.
 >
 > 1. The resolvent set of $$A$$ is open, and near every point $$\lambda_0$$ in it, the resolvent $$\lambda \mapsto (A-\lambda\mathbf{1})^{-1}$$ is given by an operator-norm-convergent power series in $$(\lambda - \lambda_0)$$ with coefficients in $$\mathcal{B}(\mathbf{H})$$.
-> 2. For $$|\lambda| > \|A\|$$, $$\lambda$$ is in the resolvent set of $$A$$, and
+> 2. For $$\lvert \lambda \rvert > \|A\|$$, $$\lambda$$ is in the resolvent set of $$A$$, and
 >
 >    $$
 >        (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},
@@ -1289,9 +1426,9 @@ We can establish the growth bound on powers of a bounded operator that Lemma 10.
 >    convergent in operator norm.
 
 **Proof**
-**Part 2.** By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), $$|\lambda|>\|A\|$$ implies $$\lambda$$ is in the resolvent set. For such $$\lambda$$, $$A - \lambda\mathbf{1} = -\lambda(\mathbf{1} - A/\lambda)$$ with $$\|A/\lambda\| < 1$$, so by the geometric series lemma [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6), $$\mathbf{1} - A/\lambda$$ is invertible with $$(\mathbf{1}-A/\lambda)^{-1} = \sum_{m=0}^\infty (A/\lambda)^m$$, operator-norm convergent; hence $$(A-\lambda\mathbf{1})^{-1} = -\frac{1}{\lambda}\sum_{m=0}^\infty (A/\lambda)^m = -\sum_{m=0}^\infty A^m/\lambda^{m+1}$$.
+**Part 2.** By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), $$\lvert \lambda \rvert>\|A\|$$ implies $$\lambda$$ is in the resolvent set. For such $$\lambda$$, $$A - \lambda\mathbf{1} = -\lambda(\mathbf{1} - A/\lambda)$$ with $$\|A/\lambda\| < 1$$, so by the geometric series lemma [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6), $$\mathbf{1} - A/\lambda$$ is invertible with $$(\mathbf{1}-A/\lambda)^{-1} = \sum_{m=0}^\infty (A/\lambda)^m$$, operator-norm convergent; hence $$(A-\lambda\mathbf{1})^{-1} = -\frac{1}{\lambda}\sum_{m=0}^\infty (A/\lambda)^m = -\sum_{m=0}^\infty A^m/\lambda^{m+1}$$.
 
-**Part 1.** Openness of the resolvent set, and the local power series representation, both follow from the same algebraic factorization used to prove [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) itself: for $$\lambda_0$$ in the resolvent set of $$A$$ and $$\lambda$$ with $$|\lambda-\lambda_0| < 1/\|(A-\lambda_0\mathbf{1})^{-1}\|$$, writing $$A - \lambda\mathbf{1} = (A-\lambda_0\mathbf{1})\big(\mathbf{1} - (\lambda-\lambda_0)(A-\lambda_0\mathbf{1})^{-1}\big)$$ and applying [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6) to the second factor (whose norm is less than $$1$$ by the bound on $$|\lambda-\lambda_0|$$) shows $$\lambda$$ is again in the resolvent set — so the resolvent set is open — with
+**Part 1.** Openness of the resolvent set, and the local power series representation, both follow from the same algebraic factorization used to prove [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) itself: for $$\lambda_0$$ in the resolvent set of $$A$$ and $$\lambda$$ with $$\lvert \lambda-\lambda_0 \rvert < 1/\|(A-\lambda_0\mathbf{1})^{-1}\|$$, writing $$A - \lambda\mathbf{1} = (A-\lambda_0\mathbf{1})\big(\mathbf{1} - (\lambda-\lambda_0)(A-\lambda_0\mathbf{1})^{-1}\big)$$ and applying [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6) to the second factor (whose norm is less than $$1$$ by the bound on $$\lvert \lambda-\lambda_0 \rvert$$) shows $$\lambda$$ is again in the resolvent set — so the resolvent set is open — with
 
 $$
     (A-\lambda\mathbf{1})^{-1} = \left( \sum_{m=0}^\infty (\lambda-\lambda_0)^m \big((A-\lambda_0\mathbf{1})^{-1}\big)^m \right)(A-\lambda_0\mathbf{1})^{-1},
@@ -1319,9 +1456,9 @@ An operator-norm-convergent power series composed with any bounded linear functi
 > $$
 
 **Proof**
-Fix $$\lambda_1 \in \mathbb{C}$$ with $$R(A) < |\lambda_1| < T$$ (possible since $$R(A) < T$$). We first show there is a constant $$C < \infty$$ with $$\|A^m\| \le C|\lambda_1|^{m+1}$$ for all $$m$$.
+Fix $$\lambda_1 \in \mathbb{C}$$ with $$R(A) < \lvert \lambda_1 \rvert < T$$ (possible since $$R(A) < T$$). We first show there is a constant $$C < \infty$$ with $$\|A^m\| \le C\lvert \lambda_1 \rvert^{m+1}$$ for all $$m$$.
 
-By Part 1 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](#prpstn:resolvent-holomorphy-and-neumann-series), the resolvent set of $$A$$ is open and the resolvent is holomorphic (in the operator-norm sense) on it; this resolvent set contains $$\{ \lambda : |\lambda| > R(A) \}$$ (since $$\sigma(A) \subset \{ |\lambda| \le R(A) \}$$, by the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius)), so the resolvent is holomorphic on all of the open annulus $$R(A) < |\lambda|$$. By Part 2 of the same proposition, for $$|\lambda| > \|A\|$$,
+By Part 1 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](#prpstn:resolvent-holomorphy-and-neumann-series), the resolvent set of $$A$$ is open and the resolvent is holomorphic (in the operator-norm sense) on it; this resolvent set contains $$\{ \lambda : \lvert \lambda \rvert > R(A) \}$$ (since $$\sigma(A) \subset \{ \lvert \lambda \rvert \le R(A) \}$$, by the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius)), so the resolvent is holomorphic on all of the open annulus $$R(A) < \lvert \lambda \rvert$$. By Part 2 of the same proposition, for $$\lvert \lambda \rvert > \|A\|$$,
 
 $$
     (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},
@@ -1329,7 +1466,7 @@ $$
 
 convergent in operator norm.
 
-Fix a bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$. As just noted, $$\lambda \mapsto \xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ is holomorphic on the open annulus $$R(A) < |\lambda|$$, so by [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) it has a unique Laurent series expansion there, convergent throughout that annulus. Applying $$\xi$$ termwise to the operator-norm-convergent series above (valid for $$|\lambda|>\|A\|$$) gives a second expansion, $$-\sum_m \xi(A^m)/\lambda^{m+1}$$, which is a Laurent series (all terms of non-positive integer power) valid, a priori, only on the smaller annulus $$\|A\| < |\lambda|$$. On the overlap of the two annuli — which is exactly $$\|A\| < |\lambda|$$, since $$R(A) \le \|A\|$$ by [**Corollary**](../spectral-theorems/#crllr:crllr-1) — both expansions represent the same holomorphic function, so by the uniqueness clause of [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) (applied on that overlap), they are the same series: the coefficients agree. Hence the series $$-\sum_m \xi(A^m)/\lambda^{m+1}$$ *is* the unique Laurent series of $$\xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ on the full annulus $$R(A) < |\lambda|$$ — and, Laurent's Theorem asserting convergence of that series throughout its annulus, it converges there, in particular at $$\lambda = \lambda_1$$.
+Fix a bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$. As just noted, $$\lambda \mapsto \xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ is holomorphic on the open annulus $$R(A) < \lvert \lambda \rvert$$, so by [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) it has a unique Laurent series expansion there, convergent throughout that annulus. Applying $$\xi$$ termwise to the operator-norm-convergent series above (valid for $$\lvert \lambda \rvert>\|A\|$$) gives a second expansion, $$-\sum_m \xi(A^m)/\lambda^{m+1}$$, which is a Laurent series (all terms of non-positive integer power) valid, a priori, only on the smaller annulus $$\|A\| < \lvert \lambda \rvert$$. On the overlap of the two annuli — which is exactly $$\|A\| < \lvert \lambda \rvert$$, since $$R(A) \le \|A\|$$ by [**Corollary**](../spectral-theorems/#crllr:crllr-1) — both expansions represent the same holomorphic function, so by the uniqueness clause of [**Laurent's Theorem**](../spectral-theorems/#thrm:laurents-theorem) (applied on that overlap), they are the same series: the coefficients agree. Hence the series $$-\sum_m \xi(A^m)/\lambda^{m+1}$$ *is* the unique Laurent series of $$\xi\big((A-\lambda\mathbf{1})^{-1}\big)$$ on the full annulus $$R(A) < \lvert \lambda \rvert$$ — and, Laurent's Theorem asserting convergence of that series throughout its annulus, it converges there, in particular at $$\lambda = \lambda_1$$.
 
 By the [**Nth-Term Test**](../spectral-theorems/#lmm:nth-term-test), convergence of $$\sum_m \xi(A^m)/\lambda_1^{m+1}$$ forces its terms to tend to $$0$$, so in particular $$\{ \xi(A^m/\lambda_1^{m+1}) \}_m$$ is a bounded subset of $$\mathbb{C}$$, with some bound $$C_\xi$$ depending on $$\xi$$ (and on $$\lambda_1$$). As $$\xi$$ ranges over all bounded linear functionals on $$\mathcal{B}(\mathbf{H})$$ — a Banach space, by [**Lemma** *(Bounded Operators form a Banach Space)*](../spectral-theorems/#lmm:bounded-operators-form-a-banach-space), and so, by the [**Theorem on Completeness of the Dual**](../spectral-theorems/#thrm:theorem-on-completeness-of-the-dual), its dual $$\mathcal{B}(\mathbf{H})^*$$ is itself a Banach space — the [**Principle of Uniform Boundedness**](../spectral-theorems/#thrm:hall-a.40), applied with $$V_1 = \mathcal{B}(\mathbf{H})^*$$, $$V_2 = \mathbb{C}$$, and the family of evaluation maps $$\xi \mapsto \xi(A^m/\lambda_1^{m+1})$$ (each pointwise-bounded in $$m$$ by $$C_\xi$$, just shown), gives a constant $$C < \infty$$, independent of $$\xi$$, such that these evaluation maps have norm at most $$C$$ as elements of $$\mathcal{B}(\mathbf{H})^{**}$$: $$\lvert \xi(A^m/\lambda_1^{m+1}) \rvert \le C \left\| \xi \right\|$$ for every $$\xi \in \mathcal{B}(\mathbf{H})^*$$ and every $$m$$.
 
@@ -1343,15 +1480,15 @@ To convert this into a bound on $$\|A^m/\lambda_1^{m+1}\|$$ itself, we use the s
 >     \|x\| = \sup \{ \lvert \xi(x) \rvert : \xi \in V^*,\ \|\xi\| \le 1 \}.
 > $$
 
-Applying [**Theorem** *(Norm via Dual Pairing)*](#thrm:norm-via-dual-pairing) with $$V = \mathcal{B}(\mathbf{H})$$ and $$x = A^m/\lambda_1^{m+1}$$: since $$\lvert \xi(A^m/\lambda_1^{m+1}) \rvert \le C\|\xi\|$$ for every $$\xi$$, taking the supremum over $$\|\xi\|\le 1$$ gives $$\|A^m/\lambda_1^{m+1}\| \le C$$, for every $$m$$. That is, $$\|A^m\| \le C|\lambda_1|^{m+1}$$ for all $$m$$, as claimed.
+Applying [**Theorem** *(Norm via Dual Pairing)*](#thrm:norm-via-dual-pairing) with $$V = \mathcal{B}(\mathbf{H})$$ and $$x = A^m/\lambda_1^{m+1}$$: since $$\lvert \xi(A^m/\lambda_1^{m+1}) \rvert \le C\|\xi\|$$ for every $$\xi$$, taking the supremum over $$\|\xi\|\le 1$$ gives $$\|A^m/\lambda_1^{m+1}\| \le C$$, for every $$m$$. That is, $$\|A^m\| \le C\lvert \lambda_1 \rvert^{m+1}$$ for all $$m$$, as claimed.
 
-Finally, since $$|\lambda_1| < T$$,
+Finally, since $$\lvert \lambda_1 \rvert < T$$,
 
 $$
-    \frac{\|A^m\|}{T^m} \le C|\lambda_1| \left( \frac{|\lambda_1|}{T} \right)^m \longrightarrow 0
+    \frac{\|A^m\|}{T^m} \le C\lvert \lambda_1 \rvert \left( \frac{\lvert \lambda_1 \rvert}{T} \right)^m \longrightarrow 0
 $$
 
-as $$m \to \infty$$, since $$|\lambda_1|/T < 1$$. This is the desired result.$$\blacksquare$$
+as $$m \to \infty$$, since $$\lvert \lambda_1 \rvert/T < 1$$. This is the desired result.$$\blacksquare$$
 
 We now use this growth bound to establish submultiplicativity of the spectral radius for commuting operators.
 
@@ -1383,15 +1520,15 @@ $$
 
 By [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius), applied to $$A$$ with $$T$$ there taken to be our $$S$$ (valid since $$S > R(A)$$), and to $$B$$ with $$T$$ there taken to be our $$T$$ (valid since $$T > R(B)$$), both factors on the right tend to $$0$$ as $$m \to \infty$$, giving $$(\P)$$.
 
-Now fix real numbers $$S > R(A)$$ and $$T > R(B)$$ (for the remainder of the proof), and fix $$\lambda_1 \in \mathbb{C}$$ with $$|\lambda_1| > ST$$, and $$\lambda_2$$ with $$|\lambda_1| > |\lambda_2| > ST$$. Applying $$(\P)$$ to the pair $$S' = S \cdot |\lambda_2|/(ST)$$, $$T' = T$$ — so $$S'T' = |\lambda_2|$$, and $$S' > R(A)$$ since $$|\lambda_2| > ST$$ gives $$S' = S|\lambda_2|/(ST) = |\lambda_2|/T > S > R(A)$$, while $$T' = T > R(B)$$ trivially — the sequence $$\|(AB)^m\|/|\lambda_2|^m$$ tends to $$0$$, so in particular is bounded: there is a constant $$C$$ with $$\|(AB)^m\| \le C|\lambda_2|^m$$ for all $$m$$.
+Now fix real numbers $$S > R(A)$$ and $$T > R(B)$$ (for the remainder of the proof), and fix $$\lambda_1 \in \mathbb{C}$$ with $$\lvert \lambda_1 \rvert > ST$$, and $$\lambda_2$$ with $$\lvert \lambda_1 \rvert > \lvert \lambda_2 \rvert > ST$$. Applying $$(\P)$$ to the pair $$S' = S \cdot \lvert \lambda_2 \rvert/(ST)$$, $$T' = T$$ — so $$S'T' = \lvert \lambda_2 \rvert$$, and $$S' > R(A)$$ since $$\lvert \lambda_2 \rvert > ST$$ gives $$S' = S\lvert \lambda_2 \rvert/(ST) = \lvert \lambda_2 \rvert/T > S > R(A)$$, while $$T' = T > R(B)$$ trivially — the sequence $$\|(AB)^m\|/\lvert \lambda_2 \rvert^m$$ tends to $$0$$, so in particular is bounded: there is a constant $$C$$ with $$\|(AB)^m\| \le C\lvert \lambda_2 \rvert^m$$ for all $$m$$.
 
-By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) applied to $$AB$$, for $$|\lambda| > \|AB\|$$,
+By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) applied to $$AB$$, for $$\lvert \lambda \rvert > \|AB\|$$,
 
 $$
     (AB - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{(AB)^m}{\lambda^{m+1}}, \tag{$\P\P$}
 $$
 
-convergent in operator norm — but this alone only shows $$\lambda_1$$ is in the resolvent set of $$AB$$ when $$|\lambda_1| > \|AB\|$$, which we do not know here ($$\lambda_1$$ was chosen only with $$|\lambda_1| > ST \ge R(A)R(B)$$, and $$ST$$ may be far smaller than $$\|AB\|$$). Instead, we show directly that the series $$-\sum_m (AB)^m/\lambda_1^{m+1}$$, which converges in operator norm by the bound on $$\|(AB)^m\|$$ just derived — its terms have norm at most $$C|\lambda_2|^m/|\lambda_1|^{m+1}$$, dominated by a convergent geometric series since $$|\lambda_2|/|\lambda_1|<1$$, so the partial sums are Cauchy and converge by completeness of $$\mathcal{B}(\mathbf{H})$$ — defines a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$.
+convergent in operator norm — but this alone only shows $$\lambda_1$$ is in the resolvent set of $$AB$$ when $$\lvert \lambda_1 \rvert > \|AB\|$$, which we do not know here ($$\lambda_1$$ was chosen only with $$\lvert \lambda_1 \rvert > ST \ge R(A)R(B)$$, and $$ST$$ may be far smaller than $$\|AB\|$$). Instead, we show directly that the series $$-\sum_m (AB)^m/\lambda_1^{m+1}$$, which converges in operator norm by the bound on $$\|(AB)^m\|$$ just derived — its terms have norm at most $$C\lvert \lambda_2 \rvert^m/\lvert \lambda_1 \rvert^{m+1}$$, dominated by a convergent geometric series since $$\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert<1$$, so the partial sums are Cauchy and converge by completeness of $$\mathcal{B}(\mathbf{H})$$ — defines a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$.
 
 Let $$S \equiv -\sum_{m=0}^\infty (AB)^m/\lambda_1^{m+1}$$ (the operator norm limit just established) and $$S_N \equiv -\sum_{m=0}^N (AB)^m/\lambda_1^{m+1}$$, so $$S_N \to S$$ as $$N \to \infty$$ by definition of the series' convergence. Expanding and re-indexing the first sum below with $$k=m+1$$,
 
@@ -1404,9 +1541,9 @@ $$
 \end{align}
 $$
 
-the middle terms ($$k=m=1,\ldots,N$$) telescoping away. Since $$\|(AB)^{N+1}\|/|\lambda_1|^{N+1} \le C|\lambda_2|^{N+1}/|\lambda_1|^{N+1} = C(|\lambda_2|/|\lambda_1|)^{N+1} \to 0$$ as $$N \to \infty$$ (using the same bound as above, with $$|\lambda_2|/|\lambda_1|<1$$), we get $$(AB-\lambda_1\mathbf{1})S_N \to \mathbf{1}$$. On the other hand, left multiplication by the fixed bounded operator $$AB - \lambda_1\mathbf{1}$$ is continuous in the operator norm (for any $$T_1,T_2 \in \mathcal{B}(\mathbf{H})$$, $$\|(AB-\lambda_1\mathbf{1})T_1 - (AB-\lambda_1\mathbf{1})T_2\| \le \|AB-\lambda_1\mathbf{1}\|\,\|T_1-T_2\|$$, by submultiplicativity), so $$(AB-\lambda_1\mathbf{1})S_N \to (AB-\lambda_1\mathbf{1})S$$ as well. By uniqueness of limits, $$(AB-\lambda_1\mathbf{1})S = \mathbf{1}$$. An identical computation — using that $$(AB)^m$$ commutes with $$AB-\lambda_1\mathbf{1}$$, being a power of $$AB$$ itself — gives $$S_N(AB-\lambda_1\mathbf{1}) = \mathbf{1} - (AB)^{N+1}/\lambda_1^{N+1} \to \mathbf{1}$$ and hence, by continuity of right multiplication by the fixed operator $$AB-\lambda_1\mathbf{1}$$, $$S(AB-\lambda_1\mathbf{1}) = \mathbf{1}$$. So $$S$$ is a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$, and $$\lambda_1$$ is in the resolvent set of $$AB$$.
+the middle terms ($$k=m=1,\ldots,N$$) telescoping away. Since $$\|(AB)^{N+1}\|/\lvert \lambda_1 \rvert^{N+1} \le C\lvert \lambda_2 \rvert^{N+1}/\lvert \lambda_1 \rvert^{N+1} = C(\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert)^{N+1} \to 0$$ as $$N \to \infty$$ (using the same bound as above, with $$\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert<1$$), we get $$(AB-\lambda_1\mathbf{1})S_N \to \mathbf{1}$$. On the other hand, left multiplication by the fixed bounded operator $$AB - \lambda_1\mathbf{1}$$ is continuous in the operator norm (for any $$T_1,T_2 \in \mathcal{B}(\mathbf{H})$$, $$\|(AB-\lambda_1\mathbf{1})T_1 - (AB-\lambda_1\mathbf{1})T_2\| \le \|AB-\lambda_1\mathbf{1}\|\,\|T_1-T_2\|$$, by submultiplicativity), so $$(AB-\lambda_1\mathbf{1})S_N \to (AB-\lambda_1\mathbf{1})S$$ as well. By uniqueness of limits, $$(AB-\lambda_1\mathbf{1})S = \mathbf{1}$$. An identical computation — using that $$(AB)^m$$ commutes with $$AB-\lambda_1\mathbf{1}$$, being a power of $$AB$$ itself — gives $$S_N(AB-\lambda_1\mathbf{1}) = \mathbf{1} - (AB)^{N+1}/\lambda_1^{N+1} \to \mathbf{1}$$ and hence, by continuity of right multiplication by the fixed operator $$AB-\lambda_1\mathbf{1}$$, $$S(AB-\lambda_1\mathbf{1}) = \mathbf{1}$$. So $$S$$ is a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$, and $$\lambda_1$$ is in the resolvent set of $$AB$$.
 
-Since $$\lambda_1$$ with $$|\lambda_1| > ST$$ was arbitrary, every such $$\lambda_1$$ is in the resolvent set of $$AB$$, so $$\sigma(AB) \subset \{ |\lambda| \le ST \}$$, giving $$R(AB) \le ST$$. As $$S > R(A)$$ and $$T > R(B)$$ were arbitrary, $$R(AB) \le R(A)R(B)$$.$$\blacksquare$$
+Since $$\lambda_1$$ with $$\lvert \lambda_1 \rvert > ST$$ was arbitrary, every such $$\lambda_1$$ is in the resolvent set of $$AB$$, so $$\sigma(AB) \subset \{ \lvert \lambda \rvert \le ST \}$$, giving $$R(AB) \le ST$$. As $$S > R(A)$$ and $$T > R(B)$$ were arbitrary, $$R(AB) \le R(A)R(B)$$.$$\blacksquare$$
 
 We can now prove the equality of norm and spectral radius for normal operators, exactly as for self-adjoint operators. The proof needs two elementary properties of the adjoint of a bounded operator, neither yet available to us; we record them first.
 
