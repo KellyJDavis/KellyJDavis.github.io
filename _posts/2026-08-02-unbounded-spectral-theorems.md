@@ -1059,10 +1059,22 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 <a name="prpstn:integrals-agree-when-measures-agree"></a>
 > Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and $$E \in \Omega$$, and suppose $$\nu(S) = \nu'(S)$$ for every measurable $$S \subset E$$. Then $$\int_E g \, d\nu = \int_E g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
 
-We record two more facts about projection-valued measures before the main proof, both used more than once below; extracting them now avoids re-deriving them, or worse, citing "the same argument as" a proof written for a different purpose.
+We record two more facts about projection-valued measures before the main proof, both used more than once below; extracting them now avoids re-deriving them, or worse, citing "the same argument as" a proof written for a different purpose. First, though, a fact about a single projection, used at several places to know that ranges of projections are closed subspaces.
+
+> **Lemma** *(The Range of a Projection is the Kernel of its Complement)*
+<a name="lmm:range-of-projection-is-kernel"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
+> Let $$P \in \mathcal{B}(\mathbf{H})$$ be a bounded orthogonal projection. Then $$\text{Range}(P) = \text{Ker}(\mathbf{1} - P)$$, and this is a closed subspace of $$\mathbf{H}$$. Moreover $$\eta \in \text{Range}(P)$$ if and only if $$P\eta = \eta$$.
+
+**Proof**
+If $$\eta \in \text{Range}(P)$$, write $$\eta = P\xi$$; idempotency of $$P$$ (part of being a [bounded orthogonal projection](../spectral-theorems/#def:bounded-orthogonal-projection)) gives $$P\eta = P^2\xi = P\xi = \eta$$, so $$(\mathbf{1}-P)\eta = 0$$, i.e. $$\eta \in \text{Ker}(\mathbf{1}-P)$$. Conversely, if $$(\mathbf{1}-P)\eta = 0$$ then $$\eta = P\eta \in \text{Range}(P)$$. This proves both the set equality and the final characterization ($$\eta \in \text{Range}(P)$$ iff $$P\eta = \eta$$, the two conditions $$P\eta=\eta$$ and $$(\mathbf{1}-P)\eta=0$$ being the same equation).
+
+For closedness: $$\mathbf{1} - P$$ is bounded, hence continuous, so $$\text{Ker}(\mathbf{1}-P) = (\mathbf{1}-P)^{-1}(\{0\})$$ is the preimage of the closed set $$\{0\}$$ under a continuous map, hence closed. It is a subspace by linearity of $$\mathbf{1}-P$$.$$\blacksquare$$
+
 
 > **Lemma** *(Range Membership Concentrates the Associated Measure)*
 <a name="lmm:range-membership-concentrates-measure"></a>
+<!--  \uses{lmm:range-of-projection-is-kernel} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
@@ -1073,7 +1085,7 @@ We record two more facts about projection-valued measures before the main proof,
 > $$
 
 **Proof**
-Write $$\eta = \mu(E)\xi$$ for some $$\xi \in \mathbf{H}$$. Idempotency of $$\mu(E)$$ (part of being a [bounded orthogonal projection](../spectral-theorems/#def:bounded-orthogonal-projection)) gives $$\mu(E)\eta = \mu(E)^2\xi = \mu(E)\xi = \eta$$. Hence, using property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) and $$E^c \cap E = \emptyset$$,
+By [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel), applied to the bounded orthogonal projection $$\mu(E)$$ (property 1 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)), $$\eta \in \text{Range}(\mu(E))$$ gives $$\mu(E)\eta = \eta$$. Hence, using property 4 of that definition together with $$E^c \cap E = \emptyset$$, and then property 2 ($$\mu(\emptyset) = 0$$),
 
 $$
     \mu_\eta(E^c) = \left< \eta, \mu(E^c)\eta \right> = \left< \eta, \mu(E^c)\mu(E)\eta \right> = \left< \eta, \mu(E^c \cap E)\eta \right> = \left< \eta, \mu(\emptyset)\eta \right> = 0.
@@ -1405,6 +1417,49 @@ $$
 
 the second-to-last equality by the defining property of the bounded integral. This is the stated identity of measures. The final claim is then the standard fact that integration against a measure with a density reduces to integration against the underlying measure weighted by that density — immediate for indicator functions by the identity just proved, hence for simple functions by linearity, hence for nonnegative measurable $$g$$ by the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) applied to an increasing sequence of simple functions converging pointwise to $$g$$.$$\blacksquare$$
 
+We now extract, as a standalone lemma, the fact that $$A_f$$ preserves the spectral subspace attached to any set on which $$f$$ is bounded. It is needed both here and, for a different projection-valued measure and a different family of sets, in the proof of [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29) far below; stating it once, for a general such set, avoids re-deriving it there.
+
+> **Lemma** *(The Integral Preserves Spectral Subspaces on which the Integrand is Bounded)*
+<a name="lmm:integral-preserves-spectral-subspaces"></a>
+<!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{prpstn:hall-10.2} -->
+<!--  \uses{lmm:bounded-on-set-range-in-domain} -->
+<!--  \uses{lmm:range-of-projection-is-kernel} -->
+<!--  \uses{lmm:norm-convergent-decomposition} -->
+<!--  \uses{prpstn:hall-a.49} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f$$ be measurable, and let $$E \in \Omega(X)$$ be a set on which $$f$$ is bounded. Write $$A_f \equiv \int_X f\,d\mu$$ and $$V_E \equiv \text{Range}(\mu(E))$$. Then $$V_E \subset W_f$$ and $$A_f(V_E) \subset V_E$$.
+
+**Proof**
+That $$V_E \subset W_f$$ is [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain).
+
+*Step 1: $$\mu(S)$$ preserves $$V_E$$ for every $$S \in \Omega(X)$$.* Let $$\xi \in V_E$$ and $$S \in \Omega(X)$$. By [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel), $$\mu(E)\xi = \xi$$. Applying property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) twice,
+
+$$
+    \mu(E)\big[ \mu(S)\xi \big] = \mu(E)\mu(S)\xi = \mu(E \cap S)\xi
+    \qquad\text{and}\qquad
+    \mu(S)\xi = \mu(S)\mu(E)\xi = \mu(S \cap E)\xi,
+$$
+
+the second line using $$\mu(E)\xi = \xi$$. Since $$E \cap S = S \cap E$$, the two right-hand sides agree, so $$\mu(E)\big[\mu(S)\xi\big] = \mu(S)\xi$$; by the same lemma, $$\mu(S)\xi \in \text{Range}(\mu(E)) = V_E$$.
+
+*Step 2: $$\left< \phi, A_f\psi \right> = 0$$ for $$\psi \in V_E$$ and $$\phi \in V_E^\perp \cap W_f$$.* Fix such $$\psi$$ and $$\phi$$, and let $$S \in \Omega(X)$$ be arbitrary. By **Step 1**, $$\mu(S)\psi \in V_E$$, so $$\left< \phi, \mu(S)\psi \right> = 0$$ since $$\phi \in V_E^\perp$$; and, since $$\mu(S)$$ is self-adjoint, $$\left< \psi, \mu(S)\phi \right> = \overline{\left< \mu(S)\phi, \psi \right>} = \overline{\left< \phi, \mu(S)\psi \right>} = 0$$ as well. Hence
+
+$$
+    \mu_{\phi+\psi}(S) = \left< \phi + \psi, \mu(S)(\phi+\psi) \right> = \mu_\phi(S) + \mu_\psi(S) + \left< \phi, \mu(S)\psi \right> + \left< \psi, \mu(S)\phi \right> = \mu_\phi(S) + \mu_\psi(S)
+$$
+
+for every $$S \in \Omega(X)$$, i.e. $$\mu_{\phi+\psi} = \mu_\phi + \mu_\psi$$ as measures, so $$Q_f(\phi+\psi) = Q_f(\phi) + Q_f(\psi)$$. Since $$\phi \in W_f$$ and $$\psi \in V_E \subset W_f$$, all of $$\phi, \psi, \phi+\psi, \phi+i\psi, i\psi$$ lie in $$W_f$$ (a subspace); and the identical argument with $$i\psi$$ in place of $$\psi$$ (still in $$V_E$$, a subspace) gives $$Q_f(\phi+i\psi) = Q_f(\phi) + Q_f(i\psi)$$. By the polarization formula defining $$L_f$$ from $$Q_f$$, both brackets $$Q_f(\phi+\psi) - Q_f(\phi) - Q_f(\psi)$$ and $$Q_f(\phi+i\psi) - Q_f(\phi) - Q_f(i\psi)$$ vanish, so $$L_f(\phi,\psi) = 0$$. By the off-diagonal identity of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi) = 0$$.
+
+*Step 3: extension to all of $$V_E^\perp$$ by density.* Let $$\phi \in V_E^\perp$$ be arbitrary and set $$E_m \equiv \{ x \in X \mid \lvert f(x) \rvert < m \}$$ for $$m \in \mathbb{N}$$. Since $$\lvert f \rvert < m$$ on $$E_m$$, [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain) gives $$\text{Range}(\mu(E_m)) \subset W_f$$, so $$\mu(E_m)\phi \in W_f$$. Putting $$G_1 \equiv E_1$$ and $$G_m \equiv E_m \setminus E_{m-1}$$ for $$m \ge 2$$, the $$G_m$$ are pairwise disjoint with $$\bigcup_{j=1}^m G_j = E_m$$ (induction, using $$E_{m-1} \subset E_m$$) and $$\bigcup_m G_m = \bigcup_m E_m = X$$ ($$f$$ being finite-valued); so Part 2 of [**Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*](#lmm:norm-convergent-decomposition) gives $$\mu(E_m)\phi \to \phi$$ as $$m \to \infty$$.
+
+Moreover $$\mu(E_m)\phi \in V_E^\perp$$: for any $$\eta \in V_E$$, **Step 1** gives $$\mu(E_m)\eta \in V_E$$, so, using self-adjointness of $$\mu(E_m)$$, $$\left< \eta, \mu(E_m)\phi \right> = \left< \mu(E_m)\eta, \phi \right> = 0$$, the last equality because $$\mu(E_m)\eta \in V_E$$ and $$\phi \in V_E^\perp$$. As $$\eta \in V_E$$ was arbitrary, $$\mu(E_m)\phi \in V_E^\perp$$.
+
+So $$\mu(E_m)\phi \in V_E^\perp \cap W_f$$ for every $$m$$, with $$\mu(E_m)\phi \to \phi$$. Fix $$\psi \in V_E$$. By **Step 2**, $$\left< \mu(E_m)\phi, A_f\psi \right> = 0$$ for every $$m$$, so by [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product), $$\left< \phi, A_f\psi \right> = \lim_m \left< \mu(E_m)\phi, A_f\psi \right> = 0$$.
+
+*Conclusion.* For $$\psi \in V_E$$, $$A_f\psi$$ is orthogonal to every $$\phi \in V_E^\perp$$, i.e. $$A_f\psi \in \left( V_E^\perp \right)^\perp$$. Since $$V_E$$ is a closed subspace ([**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel)), Part 2 of [**Proposition** *(Orthogonal Decomposition and the Double Complement)*](#prpstn:hall-a.49) gives $$\left( V_E^\perp \right)^\perp = V_E$$, so $$A_f\psi \in V_E$$.$$\blacksquare$$
+
 We close this section with the fact we will actually need about $$\int_X f \, d\mu$$: when $$f$$ is real-valued, the resulting operator is self-adjoint. This is exactly what will let us conclude, in the proof of [Theorem 10.4](#thrm:hall-10.4), that the operator $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ we construct is self-adjoint (as it must be, to have any chance of equalling the self-adjoint operator $$A$$). The proof uses [Proposition (Orthogonal Decomposition and the Double Complement)](#prpstn:hall-a.49) from earlier.
 
 > **Proposition**
@@ -1434,7 +1489,7 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 > If $$f$$ is a real-valued, measurable function on $$X$$, then $$\int_X f \, d\mu$$ is self-adjoint on $$W_f$$.
 
 **Proof**
-Write $$A_f \equiv \int_X f \, d\mu$$. For $$n \in \mathbb{N} = \{1, 2, 3, \ldots\}$$, let $$F_n \equiv \{ x \in X \mid n - 1 \le \lvert f(x) \rvert < n \}$$, so the $$F_n$$ are pairwise disjoint with $$\bigcup_n F_n = X$$, and let $$\mathbf{H}_n \equiv \text{Range}(\mu(F_n))$$, a closed subspace of $$\mathbf{H}$$ (the range of a bounded orthogonal projection is always closed, being itself the kernel of the complementary projection $$\mathbf{1} - \mu(F_n)$$, which is bounded hence continuous), and hence itself a separable, complex Hilbert space with the inner product inherited from $$\mathbf{H}$$ (possibly $$\mathbf{H}_n = \{0\}$$, if $$F_n$$ happens to be a $$\mu$$-null set; this degenerate case is harmless here, and where it would otherwise obstruct a citation — namely in Part 1 of [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26), whose route passes through a result asserting non-emptiness of the spectrum — it is discharged directly there). By [Lemma (Range Membership Concentrates the Associated Measure)](#lmm:range-membership-concentrates-measure), for any $$\eta \in \mathbf{H}_n$$, using $$\lvert f \rvert < n$$ on $$F_n$$,
+Write $$A_f \equiv \int_X f \, d\mu$$. For $$n \in \mathbb{N} = \{1, 2, 3, \ldots\}$$, let $$F_n \equiv \{ x \in X \mid n - 1 \le \lvert f(x) \rvert < n \}$$, so the $$F_n$$ are pairwise disjoint with $$\bigcup_n F_n = X$$, and let $$\mathbf{H}_n \equiv \text{Range}(\mu(F_n))$$, a closed subspace of $$\mathbf{H}$$ by [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel), and hence itself a separable, complex Hilbert space with the inner product inherited from $$\mathbf{H}$$ (possibly $$\mathbf{H}_n = \{0\}$$, if $$F_n$$ happens to be a $$\mu$$-null set; this degenerate case is harmless here, and where it would otherwise obstruct a citation — namely in Part 1 of [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26), whose route passes through a result asserting non-emptiness of the spectrum — it is discharged directly there). By [Lemma (Range Membership Concentrates the Associated Measure)](#lmm:range-membership-concentrates-measure), for any $$\eta \in \mathbf{H}_n$$, using $$\lvert f \rvert < n$$ on $$F_n$$,
 
 $$
     \int_X \lvert f \rvert^2 \, d\mu_\eta = \int_{F_n} \lvert f \rvert^2 \, d\mu_\eta \le n^2 \mu_\eta(F_n) \le n^2 \mu_\eta(X) = n^2 \left\| \eta \right\|^2 < \infty.
@@ -1442,39 +1497,7 @@ $$
 
 In particular $$\eta \in W_f$$, so, by the norm formula of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), this reads $$\left\| A_f \eta \right\|^2 \le n^2 \left\| \eta \right\|^2$$, i.e. $$\left\| A_f \eta \right\| \le n \left\| \eta \right\|$$, for every $$\eta \in \mathbf{H}_n$$ — a bound on the size of $$A_f \eta$$ in $$\mathbf{H}$$, valid regardless of which subspace $$A_f \eta$$ actually lands in. By [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43) and the defining property of $$A_f$$, $$\lvert Q_f(\eta) \rvert = \lvert \left< \eta, A_f\eta \right> \rvert \le \left\| \eta \right\| \left\| A_f \eta \right\| \le n \left\| \eta \right\|^2$$, so $$Q_f$$, restricted to $$\mathbf{H}_n$$, is also a bounded quadratic form (bound $$n$$).
 
-We first record a small fact about $$\mathbf{H}_n$$ that we will use twice: for $$\xi \in \mathbf{H}_n = \text{Range}(\mu(F_n))$$ and any $$E \in \Omega(X)$$, $$\mu(E)\xi \in \mathbf{H}_n$$. Since $$\xi \in \text{Range}(\mu(F_n))$$, idempotency gives $$\mu(F_n)\xi = \xi$$. Using this and property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure), we compute the two expressions
-
-$$
-    \mu(E)\xi = \mu(E)\mu(F_n)\xi = \mu(E \cap F_n)\xi
-    \qquad\text{and}\qquad
-    \mu(F_n)\mu(E)\xi = \mu(F_n \cap E)\xi.
-$$
-
-Since $$E \cap F_n = F_n \cap E$$, the right-hand sides agree, so $$\mu(F_n)\big[\mu(E)\xi\big] = \mu(E)\xi$$: that is, $$\mu(E)\xi$$ is fixed by $$\mu(F_n)$$, and hence $$\mu(E)\xi \in \text{Range}(\mu(F_n)) = \mathbf{H}_n$$.
-
-Fix $$\psi \in \mathbf{H}_n$$, so $$\mu(F_n)\psi = \psi$$. Suppose first that $$\phi \in \mathbf{H}_n^\perp \cap W_f$$ (not yet all of $$\mathbf{H}_n^\perp$$ — see below). For any $$E \in \Omega(X)$$, the fact above gives $$\mu(E)\psi \in \mathbf{H}_n$$, so $$\left< \phi, \mu(E)\psi \right> = 0$$, as $$\phi \in \mathbf{H}_n^\perp$$; and, since $$\mu(E)$$ is self-adjoint, $$\left< \psi, \mu(E)\phi \right> = \overline{\left< \mu(E)\phi, \psi \right>} = \overline{\left< \phi, \mu(E)\psi \right>} = 0$$ as well. Hence
-
-$$
-    \mu_{\phi+\psi}(E) = \left< \phi + \psi, \mu(E)(\phi+\psi) \right> = \mu_\phi(E) + \mu_\psi(E) + \left< \phi, \mu(E)\psi \right> + \left< \psi, \mu(E)\phi \right> = \mu_\phi(E) + \mu_\psi(E)
-$$
-
-for every $$E \in \Omega(X)$$, i.e. $$\mu_{\phi+\psi} = \mu_\phi + \mu_\psi$$ as measures, so $$Q_f(\phi+\psi) = Q_f(\phi) + Q_f(\psi)$$. Since $$\phi \in W_f$$ and $$\psi \in \mathbf{H}_n \subset W_f$$, all of $$\phi, \psi, \phi+\psi, \phi+i\psi, i\psi$$ lie in $$W_f$$ (a subspace), and the identical argument with $$i\psi$$ in place of $$\psi$$ (still in $$\mathbf{H}_n$$, since $$\mathbf{H}_n$$ is a subspace) gives $$Q_f(\phi + i\psi) = Q_f(\phi) + Q_f(i\psi)$$. By the polarization formula defining $$L_f$$ in terms of $$Q_f$$, both differences $$Q_f(\phi+\psi) - Q_f(\phi) - Q_f(\psi)$$ and $$Q_f(\phi+i\psi) - Q_f(\phi) - Q_f(i\psi)$$ vanish, so $$L_f(\phi, \psi) = 0$$. By the defining property of $$A_f$$ from [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi) = 0$$ for every $$\phi \in \mathbf{H}_n^\perp \cap W_f$$.
-
-We now extend this to all of $$\mathbf{H}_n^\perp$$, using density. Let $$\phi \in \mathbf{H}_n^\perp$$ be arbitrary, and set $$E_m \equiv \{ x \in X \mid \lvert f(x) \rvert < m \}$$ for $$m \in \mathbb{N}$$. Since $$\lvert f \rvert \le m$$ on $$E_m$$, [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain) gives $$\mu(E_m)\phi \in \text{Range}(\mu(E_m)) \subset W_f$$ for every $$m$$; and, taking $$F_1 \equiv E_1$$, $$F_m \equiv E_m \setminus E_{m-1}$$ for $$m \ge 2$$ (pairwise disjoint with $$\bigcup_m F_m = \bigcup_m E_m = X$$, since $$f$$ is finite-valued, and with $$\bigcup_{j=1}^m F_j = E_m$$), Part 2 of [**Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*](#lmm:norm-convergent-decomposition) gives $$\mu(E_m)\phi \to \phi$$ as $$m \to \infty$$. We claim, moreover, $$\mu(E_m)\phi \in \mathbf{H}_n^\perp$$: for any $$\eta \in \mathbf{H}_n$$, the fact established above (applied to $$\xi = \eta$$ and $$E = E_m$$) gives $$\mu(E_m)\eta \in \mathbf{H}_n$$, so, using self-adjointness of $$\mu(E_m)$$,
-
-$$
-    \left< \eta, \mu(E_m)\phi \right> = \left< \mu(E_m)\eta, \phi \right> = 0,
-$$
-
-the last equality because $$\mu(E_m)\eta \in \mathbf{H}_n$$ and $$\phi \in \mathbf{H}_n^\perp$$. As $$\eta \in \mathbf{H}_n$$ was arbitrary, $$\mu(E_m)\phi \in \mathbf{H}_n^\perp$$. So $$\mu(E_m)\phi \in \mathbf{H}_n^\perp \cap W_f$$ for every $$m$$, and $$\mu(E_m)\phi \to \phi$$: this shows $$\mathbf{H}_n^\perp \cap W_f$$ is dense in $$\mathbf{H}_n^\perp$$.
-
-By the previous paragraph, $$\left< \mu(E_m)\phi, A_f\psi \right> = 0$$ for every $$m$$. By [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product), letting $$m \to \infty$$,
-
-$$
-    \left< \phi, A_f\psi \right> = \lim_{m \to \infty} \left< \mu(E_m)\phi, A_f\psi \right> = 0.
-$$
-
-As $$\phi \in \mathbf{H}_n^\perp$$ was arbitrary, $$A_f\psi$$ is orthogonal to all of $$\mathbf{H}_n^\perp$$, i.e. $$A_f\psi \in \left( \mathbf{H}_n^\perp \right)^\perp$$. Since $$\mathbf{H}_n$$ is closed, [**Proposition** *(Orthogonal Decomposition and the Double Complement)*](#prpstn:hall-a.49) gives $$\left( \mathbf{H}_n^\perp \right)^\perp = \mathbf{H}_n$$, so $$A_f\psi \in \mathbf{H}_n$$.
+By [**Lemma** *(The Integral Preserves Spectral Subspaces on which the Integrand is Bounded)*](#lmm:integral-preserves-spectral-subspaces), applied with $$E = F_n$$ (on which $$f$$ is bounded by $$n$$), $$A_f$$ maps $$\mathbf{H}_n$$ into $$\mathbf{H}_n$$.
 
 So $$A_f$$ maps $$\mathbf{H}_n$$ into itself; let $$A_n$$ denote this restriction. Combined with the bound $$\left\| A_f \eta \right\| \le n \left\| \eta \right\|$$ established above (for $$\eta \in \mathbf{H}_n$$, where $$A_f\eta = A_n\eta \in \mathbf{H}_n$$), $$A_n$$ is a genuine bounded operator on $$\mathbf{H}_n$$, with operator norm at most $$n$$, and satisfies $$\left< \psi, A_n\psi \right> = \left< \psi, A_f\psi \right> = Q_f(\psi)$$ for all $$\psi \in \mathbf{H}_n$$. Since $$Q_f$$ is a quadratic form on $$W_f$$ (Part 1 of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2)) and $$\mathbf{H}_n \subset W_f$$ is a subspace, [**Lemma** *(Restriction of a Quadratic Form to a Subspace)*](#lmm:restriction-of-quadratic-form) shows $$Q_f\vert_{\mathbf{H}_n}$$ is a quadratic form on $$\mathbf{H}_n$$; it is bounded (by the bound $$n$$ established above) and real-valued (as $$f$$ is real-valued, so $$Q_f(\psi) = \int_X f \, d\mu_\psi \in \mathbb{R}$$, an integral of a real-valued function against a positive real measure), [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63), applied with $$\mathbf{H}_n$$ in place of $$\mathbf{H}$$, produces a *unique* bounded operator on $$\mathbf{H}_n$$ representing this quadratic form, and asserts that this unique operator is self-adjoint. As $$A_n$$ is itself a bounded operator on $$\mathbf{H}_n$$ representing $$Q_f$$, uniqueness forces $$A_n$$ to be that operator, so $$A_n$$ is self-adjoint on $$\mathbf{H}_n$$.
 
@@ -1490,7 +1513,13 @@ $$
 
 So $$\{\mathbf{H}_n\}$$ is an internal orthogonal decomposition of $$\mathbf{H}$$, each $$\mathbf{H}_n$$ being a separable closed subspace (shown at the start of this proof). Writing $$\psi_n \equiv \mu(F_n)\psi$$ for the components of $$\psi$$, Part 2 of [**Lemma** *(Internal Decompositions are Unitarily External Direct Sums)*](#lmm:internal-decomposition-unitary) gives $$\left\| \psi \right\|^2 = \sum_n \left\| \psi_n \right\|^2$$, and Part 1 gives uniqueness of this decomposition — so the components $$\psi_n$$ referred to below are unambiguous.
 
-Identifying $$\mathbf{H}$$ with sequences $$\psi = (\psi_1, \psi_2, \ldots)$$, $$\psi_n \in \mathbf{H}_n$$: for $$\psi \in \bigoplus_{n=1}^N \mathbf{H}_n$$ a finite sum (so $$\psi = \sum_{n=1}^N \psi_n \in W_f$$, since $$W_f$$ is a subspace and $$\mathbf{H}_n \subset W_f$$ for each $$n$$, shown above), linearity of $$A_f$$ on $$W_f$$ together with $$A_f$$ mapping each $$\mathbf{H}_n$$ to itself via $$A_n$$ gives $$A_f\psi = \sum_{n=1}^N A_n\psi_n$$, matching the formula in [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26) on the finite direct sum. It remains to identify $$W_f$$ itself with the domain $$V$$ of that proposition. For any $$\psi = (\psi_1,\psi_2,\ldots) \in \mathbf{H}$$ (not assumed to lie in $$W_f$$ or to be a finite sum), countable additivity of $$\mu_\psi$$ over the pairwise disjoint $$F_n$$'s gives $$\mu_\psi(X) = \sum_n \mu_\psi(F_n)$$, and, more generally, restricting to any measurable $$E \subset X$$, $$\mu_\psi(E) = \sum_n \mu_\psi(E \cap F_n)$$; taking $$E \subset F_n$$ shows $$\mu_\psi$$ restricted to $$F_n$$ agrees with $$\mu_{\psi_n}$$ restricted to $$F_n$$ — indeed $$\mu_{\psi_n}(E) = \left< \mu(F_n)\psi, \mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(F_n)\mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(E \cap F_n)\psi \right> = \mu_\psi(E)$$ for $$E \subset F_n$$, using self-adjointness and idempotency of $$\mu(F_n)$$ and property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure). Hence
+Identifying $$\mathbf{H}$$ with sequences $$\psi = (\psi_1, \psi_2, \ldots)$$, $$\psi_n \in \mathbf{H}_n$$: for $$\psi \in \bigoplus_{n=1}^N \mathbf{H}_n$$ a finite sum (so $$\psi = \sum_{n=1}^N \psi_n \in W_f$$, since $$W_f$$ is a subspace and $$\mathbf{H}_n \subset W_f$$ for each $$n$$, shown above), linearity of $$A_f$$ on $$W_f$$ together with $$A_f$$ mapping each $$\mathbf{H}_n$$ to itself via $$A_n$$ gives $$A_f\psi = \sum_{n=1}^N A_n\psi_n$$, matching the formula in [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26) on the finite direct sum. It remains to identify $$W_f$$ itself with the domain $$V$$ of that proposition. Let $$\psi \in \mathbf{H}$$ be arbitrary (not assumed to lie in $$W_f$$ or to be a finite sum), and write $$\psi_n \equiv \mu(F_n)\psi \in \mathbf{H}_n$$ for its components. We claim $$\mu_\psi$$ and $$\mu_{\psi_n}$$ agree on every measurable $$E \subset F_n$$. Indeed, for such $$E$$, using self-adjointness of $$\mu(F_n)$$ to move one factor across the inner product, then property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) twice, and finally $$E \cap F_n = E$$ (as $$E \subset F_n$$),
+
+$$
+    \mu_{\psi_n}(E) = \left< \mu(F_n)\psi, \mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(F_n)\mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(F_n \cap E \cap F_n)\psi \right> = \left< \psi, \mu(E)\psi \right> = \mu_\psi(E).
+$$
+
+Hence
 
 $$
     \int_X \lvert f \rvert^2 \, d\mu_\psi = \sum_n \int_{F_n} \lvert f \rvert^2 \, d\mu_\psi = \sum_n \int_{F_n} \lvert f \rvert^2 \, d\mu_{\psi_n} = \sum_n \int_X \lvert f \rvert^2 \, d\mu_{\psi_n} = \sum_n \left\| A_n \psi_n \right\|_n^2,
@@ -2058,7 +2087,7 @@ so $$\left\| B\psi \right\| \le \tfrac{\varepsilon}{2}\left\| \psi \right\| < \v
 > $$
 
 **Proof**
-Before either inclusion, we record a uniformity remark about the constant $$C$$ of [**Lemma** *(hall-10.26)*](#lmm:hall-10.26). Inspecting the recursion there, $$C$$ is built from $$\left\| A \right\|$$, $$\left\| A^* \right\|$$, the coefficients of $$p$$, and $$\lvert \lambda \rvert$$, and is non-decreasing in $$\lvert \lambda \rvert$$. By [**Corollary**](../spectral-theorems/#crllr:crllr-1), every $$\lambda \in \sigma(A)$$ satisfies $$\lvert \lambda \rvert \le R(A) \le \left\| A \right\|$$; and, as we will see, every $$\lambda$$ arising below satisfies $$\lvert \lambda \rvert \le \left\| A \right\|$$ as well. So there is a single constant $$C$$, depending only on $$p$$ and $$A$$, valid for all $$\lambda$$ with $$\lvert\lambda\rvert \le \left\|A\right\|$$; we fix such a $$C$$ once and for all.
+Before either inclusion, we record a uniformity remark about the constant $$C$$ of [**Lemma** *(hall-10.26)*](#lmm:hall-10.26). Inspecting the recursion there, $$C$$ is built from $$\left\| A \right\|$$, $$\left\| A^* \right\|$$, the coefficients of $$p$$, and $$\lvert \lambda \rvert$$, and is non-decreasing in $$\lvert \lambda \rvert$$. By [**Corollary**](../spectral-theorems/#crllr:crllr-1), every $$\lambda \in \sigma(A)$$ satisfies $$\lvert \lambda \rvert \le R(A) \le \left\| A \right\|$$; and, as we will see, every $$\lambda$$ arising below satisfies $$\lvert \lambda \rvert \le \left\| A \right\|$$ as well. So there is a single constant $$C$$, depending only on $$p$$ and $$A$$, valid for all $$\lambda$$ with $$\lvert\lambda\rvert \le \left\|A\right\|$$. Enlarging it if necessary, we fix once and for all such a $$C$$ with $$C > 0$$ — legitimate since the conclusion of [**Lemma** *(hall-10.26)*](#lmm:hall-10.26) is monotone in $$C$$ (a $$(C\varepsilon)$$-almost eigenvector is a $$(C'\varepsilon)$$-almost eigenvector for any $$C' \ge C$$, the defining inequality only weakening), and necessary because we divide by $$C$$ below and the recursion yields $$C = 0$$ in the degenerate case of constant $$p$$.
 
 **($$\supset$$).** Let $$\lambda \in \sigma(A)$$ and let $$\varepsilon > 0$$. By Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25), there is an $$(\varepsilon/C)$$-almost eigenvector $$\psi$$ for $$A$$ with eigenvalue $$\lambda$$. By [**Lemma** *(hall-10.26)*](#lmm:hall-10.26), $$\psi$$ is then a $$(C \cdot \varepsilon/C) = \varepsilon$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$p(\lambda,\overline\lambda)$$. As $$\varepsilon>0$$ was arbitrary and $$p(A,A^*)$$ is normal by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25), applied to $$p(A,A^*)$$, gives $$p(\lambda,\overline\lambda) \in \sigma\big(p(A,A^*)\big)$$.
 
@@ -2708,21 +2737,27 @@ The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ b
 **Proof**
 Write $$\widehat{D} \equiv \int_{\sigma(U)} D \, d\mu^U$$, an unbounded operator with domain $$W_D$$ by [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1). Since $$D$$ is real-valued by [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), and defined $$\mu^U_\psi$$-almost everywhere by [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3) shows $$\widehat{D}$$ is self-adjoint on $$W_D$$.
 
-*Step 1: a disjoint cover on which $$D$$ is bounded.* For $$n \in \mathbb{N}$$ let
+*Step 1: a disjoint cover on which $$D$$ is bounded.* Recall from [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map) that $$D$$ is defined on $$S^1\setminus\{1\}$$. Extend it to all of $$S^1$$ by setting $$D(1) \equiv 0$$; since $$\mu^U(\{1\}) = 0$$ by [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), this modification changes no integral against any $$\mu^U_\psi$$, and it makes $$D$$ a measurable function defined everywhere on $$\sigma(U)$$, as required for $$\int_{\sigma(U)} D \, d\mu^U$$ to be given by [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1).
+
+For $$n \ge 1$$ define
 
 $$
-    F_n \equiv \left\{ u \in \sigma(U) \;\middle|\; \frac{1}{n+1} \le \lvert u - 1 \rvert < \frac{1}{n} \right\}, \qquad n \ge 1,
+    F_1 \equiv \big\{ u \in \sigma(U) \;\mid\; \lvert u-1 \rvert \ge 1 \big\} \cup \big( \{1\} \cap \sigma(U) \big),
+    \qquad
+    F_n \equiv \left\{ u \in \sigma(U) \;\middle|\; \frac{1}{n} \le \lvert u - 1 \rvert < \frac{1}{n-1} \right\} \ (n \ge 2).
 $$
 
-together with $$F_0 \equiv \{ u \in \sigma(U) \mid \lvert u-1 \rvert \ge 1 \}$$; re-indexing, $$\{F_n\}_{n \ge 0}$$ is a pairwise disjoint sequence of Borel subsets of $$\sigma(U)$$ whose union is $$\sigma(U)\setminus\{1\}$$. Since $$\mu^U(\{1\}) = 0$$, we may harmlessly adjoin $$\{1\}$$ to $$F_0$$, so that $$\bigcup_n F_n = \sigma(U)$$ while $$\mu^U$$ still assigns the point $$1$$ no mass. On $$F_n$$ we have $$\lvert u - 1 \rvert \ge 1/(n+1)$$, so, using $$\lvert u+1 \rvert \le 2$$ for $$u \in S^1$$,
+These are pairwise disjoint Borel subsets of $$\sigma(U)$$ with $$\bigcup_{n\ge1} F_n = \sigma(U)$$: every $$u \ne 1$$ has $$\lvert u-1\rvert > 0$$ and so lies in exactly one of the annuli, and $$u=1$$ has been placed in $$F_1$$.
+
+On $$F_n$$ we have $$\lvert u-1 \rvert \ge 1/n$$ (for $$n=1$$ apart from the single point $$u=1$$, where $$D$$ has been set to $$0$$), so, using $$\lvert u+1 \rvert \le 2$$ for $$u \in S^1$$,
 
 $$
-    \lvert D(u) \rvert = \frac{\lvert u+1 \rvert}{\lvert u-1 \rvert} \le 2(n+1) \qquad \text{on } F_n,
+    \lvert D(u) \rvert = \frac{\lvert u+1 \rvert}{\lvert u-1 \rvert} \le 2n \qquad \text{on } F_n
 $$
 
-i.e. $$D$$ is bounded on each $$F_n$$. Let $$\mathbf{H}_n \equiv \text{Range}\big( \mu^U(F_n) \big)$$ be the corresponding [spectral subspaces](#def:hall-7.14).
+(and $$\lvert D(1) \rvert = 0 \le 2n$$ as well), i.e. $$D$$ is bounded on each $$F_n$$. Let $$\mathbf{H}_n \equiv \text{Range}\big( \mu^U(F_n) \big)$$ be the corresponding [spectral subspaces](#def:hall-7.14).
 
-*Step 2: $$\mathbf{H}_n \subset W_D$$, and $$\widehat{D}$$ agrees with $$A$$ there.* By [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain), applied with $$E = F_n$$ and $$c = 2(n+1)$$, $$\mathbf{H}_n \subset W_D$$.
+*Step 2: $$\mathbf{H}_n \subset W_D$$, and $$\widehat{D}$$ agrees with $$A$$ there.* By [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain), applied with $$E = F_n$$ and $$c = 2n$$, $$\mathbf{H}_n \subset W_D$$.
 
 Fix $$n$$ and let $$\psi \in \mathbf{H}_n$$. Let $$g \equiv 1_{F_n}\cdot D$$ and $$h \equiv 1_{F_n}\cdot (\iota - 1)$$, where $$\iota(u) = u$$; both are bounded measurable functions on $$\sigma(U)$$, so the extended calculus $$\widetilde\Phi$$ of [Definition (The Extended Calculus)](#def:abstract-extended-calculus) applies to them. Since $$D(u)(u-1) = i(u+1)$$ for $$u \ne 1$$, we have $$g\,h = 1_{F_n}\cdot i(\iota+1)$$ pointwise, so by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative),
 
@@ -2744,13 +2779,25 @@ $$
     \widetilde\Phi(g)\,(U-\mathbf{1})\psi = \widetilde\Phi(g)\widetilde\Phi(h)\psi = i(U+\mathbf{1})\psi = A(U-\mathbf{1})\psi.
 $$
 
-Since $$U - \mathbf{1}$$ maps $$\mathbf{H}_n$$ *onto* $$\mathbf{H}_n$$ — it maps $$\mathbf{H}_n$$ into $$\mathbf{H}_n$$ by the computation above, and $$\widetilde\Phi(g)$$ inverts it there, because $$g h = h g$$ gives $$\widetilde\Phi(h)\widetilde\Phi(g) = \widetilde\Phi(g)\widetilde\Phi(h)$$ and, by the same multiplicativity applied to $$D(u)(u-1)/\big(i(u+1)\big)$$ where defined, the two compositions restrict to the identity on $$\mathbf{H}_n$$ — every $$\eta \in \mathbf{H}_n$$ is of the form $$(U-\mathbf{1})\psi$$ with $$\psi \in \mathbf{H}_n$$. Hence $$\widetilde\Phi(g)$$ and $$A$$ agree on all of $$\mathbf{H}_n$$, and $$\mathbf{H}_n \subset \text{Dom}(A)$$.
+We claim $$U - \mathbf{1}$$ maps $$\mathbf{H}_n$$ *onto* $$\mathbf{H}_n$$. On $$F_n$$ we have $$\lvert u - 1 \rvert \ge 1/n > 0$$ except possibly at the single point $$u=1$$ (which lies in $$F_1$$ and carries no $$\mu^U$$-mass, so altering $$k$$ there changes neither $$\widetilde\Phi(k)$$ nor any identity below), so
 
-Finally, $$\widehat{D}$$ agrees with $$\widetilde\Phi(g)$$ on $$\mathbf{H}_n$$: for $$\psi \in \mathbf{H}_n$$, [**Lemma** *(Range Membership Concentrates the Associated Measure)*](#lmm:range-membership-concentrates-measure) gives $$\mu^U_\psi(F_n^c) = 0$$, so $$\int_{\sigma(U)} D \, d\mu^U_\psi = \int_{\sigma(U)} g \, d\mu^U_\psi$$, i.e. the two operators induce the same diagonal quadratic form on $$\mathbf{H}_n$$; since both map $$\mathbf{H}_n$$ into $$\mathbf{H}_n$$ (for $$\widehat D$$ this follows from the agreement with $$\widetilde\Phi(g)$$ just being established pointwise via polarization on the subspace $$\mathbf{H}_n$$, exactly as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3)), Part 1 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) applied on the subspace $$\mathbf{H}_n$$ gives equality of the two restrictions. So $$\widehat{D}$$ and $$A$$ agree on $$\mathbf{H}_n$$, for every $$n$$.
+$$
+    k \equiv 1_{F_n}\cdot\frac{1}{\iota - 1}
+$$
+
+is a bounded measurable function on $$\sigma(U)$$ (bounded by $$n$$; it is set to $$0$$ off $$F_n$$, and at $$u=1$$, where the formula is not needed). Pointwise, $$k\,h = 1_{F_n}\frac{1}{\iota-1}\cdot 1_{F_n}(\iota-1) = 1_{F_n}$$ and likewise $$h\,k = 1_{F_n}$$, so by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative),
+
+$$
+    \widetilde\Phi(k)\widetilde\Phi(h) = \widetilde\Phi(1_{F_n}) = \mu^U(F_n) = \widetilde\Phi(h)\widetilde\Phi(k).
+$$
+
+Since $$\mu^U(F_n)$$ acts as the identity on $$\mathbf{H}_n$$ (by [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel)) and $$\widetilde\Phi(k)$$ maps $$\mathbf{H}_n$$ into $$\mathbf{H}_n$$ (as $$\mu^U(F_n)\widetilde\Phi(k) = \widetilde\Phi(1_{F_n}k) = \widetilde\Phi(k)$$ by multiplicativity), the restriction of $$\widetilde\Phi(k)$$ to $$\mathbf{H}_n$$ is a two-sided inverse of the restriction of $$\widetilde\Phi(h) = (U-\mathbf{1})\mu^U(F_n)$$ to $$\mathbf{H}_n$$ — which is just $$U - \mathbf{1}$$ there. So $$U-\mathbf{1}$$ maps $$\mathbf{H}_n$$ bijectively onto $$\mathbf{H}_n$$, and every $$\eta \in \mathbf{H}_n$$ is of the form $$(U-\mathbf{1})\psi$$ with $$\psi \in \mathbf{H}_n$$. Hence $$\widetilde\Phi(g)$$ and $$A$$ agree on all of $$\mathbf{H}_n$$, and $$\mathbf{H}_n \subset \text{Dom}(A)$$.
+
+Finally, $$\widehat{D}$$ agrees with $$\widetilde\Phi(g)$$ on $$\mathbf{H}_n$$: for $$\psi \in \mathbf{H}_n$$, [**Lemma** *(Range Membership Concentrates the Associated Measure)*](#lmm:range-membership-concentrates-measure) gives $$\mu^U_\psi(F_n^c) = 0$$, so $$\int_{\sigma(U)} D \, d\mu^U_\psi = \int_{\sigma(U)} g \, d\mu^U_\psi$$, i.e. the two operators induce the same diagonal quadratic form on $$\mathbf{H}_n$$; since both map $$\mathbf{H}_n$$ into $$\mathbf{H}_n$$ — for $$\widehat{D}$$ by [**Lemma** *(The Integral Preserves Spectral Subspaces on which the Integrand is Bounded)*](#lmm:integral-preserves-spectral-subspaces), applied to the measure $$\mu^U$$, the function $$D$$, and the set $$F_n$$ on which $$D$$ is bounded; for $$\widetilde\Phi(g)$$ because $$\mu^U(F_n)\widetilde\Phi(g) = \widetilde\Phi(1_{F_n}g) = \widetilde\Phi(g)$$ by multiplicativity —, Part 1 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) applied on the subspace $$\mathbf{H}_n$$ gives equality of the two restrictions. So $$\widehat{D}$$ and $$A$$ agree on $$\mathbf{H}_n$$, for every $$n$$.
 
 *Step 3: conclusion by essential self-adjointness.* By [**Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*](#lmm:norm-convergent-decomposition) applied to $$\{F_n\}$$, and pairwise orthogonality of the $$\mu^U(F_n)$$ exactly as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3), $$\{\mathbf{H}_n\}$$ is an [internal orthogonal decomposition](#def:internal-orthogonal-decomposition) of $$\mathbf{H}$$. Let $$W_0$$ be the algebraic span of the $$\mathbf{H}_n$$'s. By **Step 2**, $$W_0 \subset \text{Dom}(A) \cap W_D$$ and $$A = \widehat{D}$$ on $$W_0$$.
 
-Let $$A_n$$ denote the common restriction of $$A$$ and $$\widehat D$$ to $$\mathbf{H}_n$$, a bounded operator (it equals $$\widetilde\Phi(g)\vert_{\mathbf{H}_n}$$, with $$\left\| \widetilde\Phi(g) \right\| \le \left\| g \right\|_\infty \le 2(n+1)$$) which is self-adjoint on $$\mathbf{H}_n$$ (being the restriction of the self-adjoint $$\widehat D$$ to a subspace it preserves, as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3)). Both $$A\vert_{W_0}$$ and $$\widehat{D}\vert_{W_0}$$ are then symmetric operators on $$\mathbf{H}$$ with domain $$W_0$$ acting as $$A_n$$ on each $$\mathbf{H}_n$$ — and they are the *same* operator, by **Step 2**. By [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators, Internal Form)*](#prpstn:hall-9.26-internal), this common restriction is essentially self-adjoint.
+Let $$A_n$$ denote the common restriction of $$A$$ and $$\widehat D$$ to $$\mathbf{H}_n$$, a bounded operator (it equals $$\widetilde\Phi(g)\vert_{\mathbf{H}_n}$$, with $$\left\| \widetilde\Phi(g) \right\| \le \left\| g \right\|_\infty \le 2n$$) which is self-adjoint on $$\mathbf{H}_n$$ (being the restriction of the self-adjoint $$\widehat D$$ to a subspace it preserves, as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3)). Both $$A\vert_{W_0}$$ and $$\widehat{D}\vert_{W_0}$$ are then symmetric operators on $$\mathbf{H}$$ with domain $$W_0$$ acting as $$A_n$$ on each $$\mathbf{H}_n$$ — and they are the *same* operator, by **Step 2**. By [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators, Internal Form)*](#prpstn:hall-9.26-internal), this common restriction is essentially self-adjoint.
 
 Now $$A$$ and $$\widehat{D}$$ are both self-adjoint operators extending it: $$A$$ by hypothesis, $$\widehat{D}$$ by [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3), and both extend $$A\vert_{W_0} = \widehat D\vert_{W_0}$$ since $$W_0 \subset \text{Dom}(A)\cap W_D$$ with agreement there. By [**Proposition** *(Uniqueness of the Self-Adjoint Extension of an Essentially Self-Adjoint Operator)*](#prpstn:hall-9.11), an essentially self-adjoint operator has exactly one self-adjoint extension; hence $$A = \widehat{D}$$, with equality of domains.$$\blacksquare$$
 
