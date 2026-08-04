@@ -1334,6 +1334,74 @@ The next proposition records a natural compatibility check, confirming that [**P
 **Proof**
 If $$f$$ is bounded, $$\mu_\psi$$ is a finite measure for every $$\psi$$ (as always), so $$\int_X \lvert f \rvert^2 \, d\mu_\psi < \infty$$ automatically and $$W_f = \mathbf{H}$$. Let $$A_2$$ denote the [bounded integral](../spectral-theorems/#thrm:operator-valued-integration) of the previous post, an element of $$\mathcal{B}(\mathbf{H})$$, so in particular an unbounded operator on $$\mathbf{H}$$ with domain $$\mathbf{H} = W_f$$. Its defining property is exactly $$\left< \psi, A_2\psi \right> = \int_X f \, d\mu_\psi$$ for all $$\psi \in \mathbf{H}$$ — that is, $$A_2$$ satisfies the diagonal identity of the strengthened uniqueness clause of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1). That clause therefore gives $$A_2 = \int_X f \, d\mu$$ directly, which is the claim.$$\blacksquare$$
 
+Two further facts about the unbounded integral will be needed when we come to the Cayley transform. The first says that the operator may be computed as a norm limit of its bounded truncations; the second computes the associated measure of a vector in the image of the bounded calculus.
+
+> **Lemma** *(Truncations Converge to the Unbounded Integral)*
+<a name="lmm:truncations-converge"></a>
+<!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{prpstn:hall-10.2} -->
+<!--  \uses{lmm:hall-dense-testing-second-slot} -->
+<!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
+<!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
+>
+> $$
+>     \left( \int_X f_n \, d\mu \right)\psi \longrightarrow \left( \int_X f \, d\mu \right)\psi
+> $$
+>
+> in the norm of $$\mathbf{H}$$ as $$n \to \infty$$.
+
+**Proof**
+Write $$\chi_n \equiv \left( \int_X f_n \, d\mu \right)\psi$$ — defined since $$f_n$$ is bounded — and $$\chi \equiv \left( \int_X f \, d\mu \right)\psi$$, defined since $$\psi \in W_f$$.
+
+For $$n < m$$ we have $$E_n \subset E_m$$ and hence $$f_n - f_m = -f\cdot 1_{E_m \setminus E_n}$$, so, applying the norm identity $$(\ast\ast\ast)$$ to the bounded function $$f_n - f_m$$ and using linearity of the bounded integral,
+
+$$
+    \left\| \chi_n - \chi_m \right\|^2 = \int_X \lvert f_n - f_m \rvert^2 \, d\mu_\psi = \int_{E_m\setminus E_n} \lvert f \rvert^2 \, d\mu_\psi = \int_X \lvert f_m \rvert^2 \, d\mu_\psi - \int_X \lvert f_n \rvert^2 \, d\mu_\psi.
+$$
+
+Since $$\lvert f_n \rvert^2 = \lvert f \rvert^2 1_{E_n}$$ increases pointwise to $$\lvert f \rvert^2$$, the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) gives $$\int_X \lvert f_n \rvert^2 \, d\mu_\psi \to \int_X \lvert f \rvert^2\,d\mu_\psi$$, a finite limit because $$\psi \in W_f$$; a convergent sequence of reals is Cauchy, so the right-hand side above tends to $$0$$ as $$n,m\to\infty$$, and $$\{\chi_n\}$$ is Cauchy in $$\mathbf{H}$$. By completeness, $$\chi_n \to \chi'$$ for some $$\chi' \in \mathbf{H}$$.
+
+It remains to identify $$\chi' = \chi$$. Let $$\phi \in W_f$$. By the off-diagonal identity $$(\S)$$ of Part 1 of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2), $$\left< \phi, \chi_n \right> = L_{f_n}(\phi,\psi)$$, and by the convergence $$L_{f_n}(\phi,\psi) \to L_f(\phi,\psi)$$ established in the same Part 1, together with the defining property of $$\chi$$ in [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1),
+
+$$
+    \left< \phi, \chi' \right> = \lim_{n\to\infty}\left< \phi, \chi_n \right> = \lim_{n\to\infty} L_{f_n}(\phi,\psi) = L_f(\phi,\psi) = \left< \phi, \chi \right>,
+$$
+
+the first equality by [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product). As $$W_f$$ is dense in $$\mathbf{H}$$ (Part 1 of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2)), [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) gives $$\chi' = \chi$$.$$\blacksquare$$
+
+> **Lemma** *(The Associated Measure of a Bounded-Calculus Image)*
+<a name="lmm:associated-measure-of-image"></a>
+<!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$h$$ be a bounded measurable function on $$X$$, and set $$T \equiv \int_X h \, d\mu \in \mathcal{B}(\mathbf{H})$$. Then for every $$\psi \in \mathbf{H}$$ and every $$E \in \Omega(X)$$,
+>
+> $$
+>     \mu_{T\psi}(E) = \int_E \lvert h \rvert^2 \, d\mu_\psi;
+> $$
+>
+> that is, $$d\mu_{T\psi} = \lvert h \rvert^2 \, d\mu_\psi$$. Consequently, for every nonnegative measurable $$g$$ on $$X$$,
+>
+> $$
+>     \int_X g \, d\mu_{T\psi} = \int_X g\,\lvert h \rvert^2 \, d\mu_\psi.
+> $$
+
+**Proof**
+Let $$E \in \Omega(X)$$. Using the [definition of the adjoint](#def:hall-9.1), then properties 3 and 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — multiplicativity, and the fact that integration intertwines complex conjugation with the adjoint —
+
+$$
+\begin{align}
+    \mu_{T\psi}(E) &= \left< T\psi, \mu(E)T\psi \right> \\
+                   &= \left< \psi, T^*\mu(E)T\psi \right> \\
+                   &= \left< \psi, \left( \int_X \overline{h}\,d\mu \right)\left( \int_X 1_E \, d\mu \right)\left( \int_X h \, d\mu \right)\psi \right> \\
+                   &= \left< \psi, \left( \int_X \overline{h}\,1_E\,h \, d\mu \right)\psi \right> \\
+                   &= \int_X 1_E \lvert h \rvert^2 \, d\mu_\psi \\
+                   &= \int_E \lvert h \rvert^2 \, d\mu_\psi,
+\end{align}
+$$
+
+the second-to-last equality by the defining property of the bounded integral. This is the stated identity of measures. The final claim is then the standard fact that integration against a measure with a density reduces to integration against the underlying measure weighted by that density — immediate for indicator functions by the identity just proved, hence for simple functions by linearity, hence for nonnegative measurable $$g$$ by the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) applied to an increasing sequence of simple functions converging pointwise to $$g$$.$$\blacksquare$$
+
 We close this section with the fact we will actually need about $$\int_X f \, d\mu$$: when $$f$$ is real-valued, the resulting operator is self-adjoint. This is exactly what will let us conclude, in the proof of [Theorem 10.4](#thrm:hall-10.4), that the operator $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ we construct is self-adjoint (as it must be, to have any chance of equalling the self-adjoint operator $$A$$). The proof uses [Proposition (Orthogonal Decomposition and the Double Complement)](#prpstn:hall-a.49) from earlier.
 
 > **Proposition**
@@ -2680,14 +2748,20 @@ We can finally state and prove the theorem this post set out to establish.
 <a name="thrm:hall-10.4"></a>
 <!--  \uses{def:hall-9.5} -->
 <!--  \uses{def:hall-9.16} -->
+<!--  \uses{thrm:hall-9.17} -->
 <!--  \uses{thrm:hall-10.30} -->
 <!--  \uses{thrm:hall-10.28} -->
 <!--  \uses{thrm:hall-10.20} -->
-<!--  \uses{prpstn:hall-10.29} -->
 <!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{lmm:cayley-map} -->
+<!--  \uses{lmm:truncations-converge} -->
+<!--  \uses{lmm:associated-measure-of-image} -->
 <!--  \uses{thrm:change-of-variables} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
+<!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, there is a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\mathbb{R}$$ such that
 >
 > $$
@@ -2697,26 +2771,86 @@ We can finally state and prove the theorem this post set out to establish.
 **Proof**
 *Existence* is [**Theorem** *(hall-10.30)*](#thrm:hall-10.30).
 
-*Uniqueness.* Suppose $$\nu^A$$ is a projection-valued measure on $$\mathbb{R}$$ with $$\int_{\mathbb{R}} \lambda \, d\nu^A(\lambda) = A$$. Since $$C$$ is a bounded continuous function on $$\mathbb{R}$$ (values in $$S^1$$, so $$\lvert C \rvert = 1$$), the operator $$\int_{\mathbb{R}} C(\lambda)\,d\nu^A(\lambda)$$ is a bounded operator defined on all of $$\mathbf{H}$$.
+*Uniqueness.* Suppose $$\nu$$ is a projection-valued measure on $$\mathbb{R}$$ with $$\int_{\mathbb{R}} \lambda \, d\nu(\lambda) = A$$; we must show $$\nu = \mu^A$$. Write $$\iota(\lambda) = \lambda$$, so the hypothesis reads $$\int_{\mathbb{R}} \iota \, d\nu = A$$, and in particular $$W_\iota = \text{Dom}(A)$$, where $$W_\iota$$ is the domain supplied by [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) for the measure $$\nu$$.
 
-We claim it equals $$U$$. The argument is that of [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29) run in reverse, on the same kind of disjoint cover. Decompose $$\mathbb{R} = \bigcup_n G_n$$ into the pairwise disjoint Borel sets $$G_n \equiv \{ \lambda \in \mathbb{R} \mid n \le \lvert \lambda \rvert < n+1 \}$$ for $$n \ge 1$$ and $$G_0 \equiv \{ \lvert \lambda \rvert < 1 \}$$, on each of which the identity function $$\iota$$ is bounded. Writing $$\mathbf{K}_n \equiv \text{Range}(\nu^A(G_n))$$, the same reasoning as in **Step 2** of that proposition — using multiplicativity of the extended calculus attached to $$\nu^A$$, together with the pointwise identity $$C(\lambda)(\lambda - i) = \lambda + i$$ — shows that for $$\psi \in \mathbf{K}_n$$ we have $$\psi \in \text{Dom}(A)$$ and
-
-$$
-    \left( \int_{\mathbb{R}} C \, d\nu^A \right)(A - i\mathbf{1})\psi = (A + i\mathbf{1})\psi,
-$$
-
-i.e. $$\int_{\mathbb{R}}C\,d\nu^A$$ agrees with $$(A+i\mathbf{1})(A-i\mathbf{1})^{-1} = U$$ on $$(A-i\mathbf{1})\mathbf{K}_n$$. As $$\{\mathbf{K}_n\}$$ is an internal orthogonal decomposition of $$\mathbf{H}$$ (by the argument of **Step 3** of [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29) applied to $$\nu^A$$) and $$A - i\mathbf{1}$$ maps $$\text{Dom}(A)$$ onto $$\mathbf{H}$$, the union of the $$(A-i\mathbf{1})\mathbf{K}_n$$ spans a dense subspace of $$\mathbf{H}$$; two bounded operators agreeing on a dense subspace are equal, both being continuous. So $$\int_{\mathbb{R}}C\,d\nu^A = U$$.
-
-Now define a projection-valued measure $$\nu^U$$ on $$S^1$$ by $$\nu^U(F) \equiv \nu^A\big(C^{-1}(F)\big) = \nu^A\big(D(F \setminus \{1\})\big)$$; this is a projection-valued measure by the same transfer argument as in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30), with $$C$$ and $$D$$ interchanged. Exactly as in the proof of that theorem — via [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables), now applied with $$T = C$$ and $$g(u) = u$$ —
+*Step 1: the resolvent of $$A$$ is given by integrating $$r$$.* Define
 
 $$
-    \int_{S^1} u \, d\nu^U(u) = \int_{\mathbb{R}} C(\lambda) \, d\nu^A(\lambda) = U.
+    r(\lambda) \equiv \frac{1}{\lambda - i}, \qquad \lambda \in \mathbb{R},
 $$
 
-By the uniqueness clause of [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20) applied to the normal operator $$U$$, $$\nu^U = \mu^U$$. Hence, for every Borel $$E \subset \mathbb{R}$$,
+a continuous function on $$\mathbb{R}$$ satisfying $$\lvert r(\lambda) \rvert = (\lambda^2+1)^{-1/2} \le 1$$, hence bounded and measurable; so $$B \equiv \int_{\mathbb{R}} r \, d\nu$$ is a *bounded* operator defined on all of $$\mathbf{H}$$. We claim $$B = (A - i\mathbf{1})^{-1}$$, the bounded inverse supplied by [**Theorem** *(Spectrum of a Self-Adjoint Operator is Real)*](#thrm:hall-9.17) and the [definition of the resolvent set](#def:hall-9.16).
+
+First, $$B\psi \in \text{Dom}(A)$$ for every $$\psi \in \mathbf{H}$$. By [**Lemma** *(The Associated Measure of a Bounded-Calculus Image)*](#lmm:associated-measure-of-image) applied with $$h = r$$, and then using $$\lvert \iota r \rvert^2 = \lambda^2/(\lambda^2+1) \le 1$$,
 
 $$
-    \nu^A(E) = \nu^U\big( C(E) \big) = \mu^U\big( C(E) \big) = \mu^A(E),
+    \int_{\mathbb{R}} \lvert \iota \rvert^2 \, d\nu_{B\psi} = \int_{\mathbb{R}} \lvert \iota \rvert^2 \lvert r \rvert^2 \, d\nu_\psi \le \int_{\mathbb{R}} 1 \, d\nu_\psi = \nu_\psi(\mathbb{R}) = \left\| \psi \right\|^2 < \infty,
 $$
 
-the first equality because $$C^{-1}(C(E)) = E$$ by injectivity of $$C$$, and the last by the definition of $$\mu^A$$ in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30). So $$\nu^A = \mu^A$$, establishing uniqueness.$$\blacksquare$$
+so $$B\psi \in W_\iota = \text{Dom}(A)$$, by the definition of $$W_\iota$$ in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2).
+
+Next, $$(A - i\mathbf{1})B\psi = \psi$$. Put $$E_n \equiv \{ \lambda \in \mathbb{R} \mid \lvert \lambda \rvert < n \}$$ and $$\iota_n \equiv \iota\cdot 1_{E_n}$$, a bounded measurable function. Since $$\iota_n$$ and $$r$$ are both bounded, property 3 (multiplicativity) of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) gives
+
+$$
+    \left( \int_{\mathbb{R}} \iota_n \, d\nu \right) B = \left( \int_{\mathbb{R}} \iota_n \, d\nu \right)\left( \int_{\mathbb{R}} r \, d\nu \right) = \int_{\mathbb{R}} \iota_n r \, d\nu.
+$$
+
+Apply both sides to $$\psi$$ and let $$n \to \infty$$. On the left, $$B\psi \in W_\iota$$ (just shown), so [**Lemma** *(Truncations Converge to the Unbounded Integral)*](#lmm:truncations-converge), applied to $$f = \iota$$ and the vector $$B\psi$$, gives $$\left( \int \iota_n \, d\nu \right)B\psi \to \left( \int \iota \, d\nu \right)B\psi = A B\psi$$ in norm. On the right, $$\iota_n r \to \iota r$$ pointwise with $$\lvert \iota_n r \rvert \le \lvert \iota r \rvert \le 1$$, so by the norm identity $$(\ast\ast\ast)$$ applied to the bounded function $$\iota_n r - \iota r$$, together with linearity of the bounded integral,
+
+$$
+    \left\| \left( \int_{\mathbb{R}} \iota_n r \, d\nu \right)\psi - \left( \int_{\mathbb{R}} \iota r \, d\nu \right)\psi \right\|^2 = \int_{\mathbb{R}} \lvert \iota_n r - \iota r \rvert^2 \, d\nu_\psi \longrightarrow 0,
+$$
+
+by the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) — applicable since $$\nu_\psi$$ is a finite measure and the integrands are bounded by $$4$$ and tend to $$0$$ pointwise. Hence
+
+$$
+    A B\psi = \left( \int_{\mathbb{R}} \iota r \, d\nu \right)\psi.
+$$
+
+Now $$\iota r$$ simplifies: $$\dfrac{\lambda}{\lambda-i} = \dfrac{(\lambda - i) + i}{\lambda - i} = 1 + i\,r(\lambda)$$. So, by linearity of the bounded integral and $$\int_{\mathbb{R}} 1 \, d\nu = \mathbf{1}$$ (property 2 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) together with the defining property of the integral),
+
+$$
+    A B\psi = \left( \int_{\mathbb{R}} (1 + ir) \, d\nu \right)\psi = \psi + i B\psi,
+$$
+
+that is, $$(A - i\mathbf{1})B\psi = \psi$$, for every $$\psi \in \mathbf{H}$$.
+
+Finally, $$B(A-i\mathbf{1})\psi = \psi$$ for $$\psi \in \text{Dom}(A)$$: set $$\chi \equiv (A-i\mathbf{1})\psi \in \mathbf{H}$$. By what we have just shown, $$(A-i\mathbf{1})B\chi = \chi = (A - i\mathbf{1})\psi$$, with both $$B\chi$$ and $$\psi$$ in $$\text{Dom}(A)$$. Since $$i$$ lies in the resolvent set of $$A$$, $$A - i\mathbf{1}$$ is injective on $$\text{Dom}(A)$$, so $$B\chi = \psi$$, i.e. $$B(A-i\mathbf{1})\psi = \psi$$. Both clauses of the [definition of the resolvent set](#def:hall-9.16) hold, so $$B = (A-i\mathbf{1})^{-1}$$.
+
+*Step 2: $$\nu$$ determines $$U$$.* By [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), $$C$$ is bounded ($$\lvert C \rvert = 1$$) and continuous, hence measurable, so $$\int_{\mathbb{R}} C \, d\nu$$ is a bounded operator. The pointwise identity
+
+$$
+    C(\lambda) = \frac{\lambda+i}{\lambda-i} = \frac{(\lambda - i) + 2i}{\lambda-i} = 1 + 2i\,r(\lambda)
+$$
+
+together with linearity of the bounded integral and **Step 1** gives
+
+$$
+    \int_{\mathbb{R}} C \, d\nu = \mathbf{1} + 2i\,B = \mathbf{1} + 2i\,(A-i\mathbf{1})^{-1} = U,
+$$
+
+the last equality being exactly the identity $$(\natural\natural)$$ established in the proof of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28).
+
+*Step 3: transporting to the circle.* Define $$\nu^U(F) \equiv \nu\big( C^{-1}(F) \big)$$ for Borel $$F \subset S^1$$, where $$C^{-1}(F) = D(F\setminus\{1\})$$ by [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). Exactly as in the corresponding verification in the proof of [**Theorem** *(hall-10.30)*](#thrm:hall-10.30) — with the roles of $$C$$ and $$D$$ interchanged, the argument there using only that the map in question is a Borel bijection between the two spaces — $$\nu^U$$ is a projection-valued measure on $$S^1$$, and $$\nu^U_\psi$$ is the pushforward $$C_*\nu_\psi$$.
+
+By [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables) with $$T = C$$ and $$g(u) = u$$ (bounded on $$S^1$$), for every $$\psi \in \mathbf{H}$$,
+
+$$
+    \left< \psi, \left( \int_{S^1} u \, d\nu^U(u) \right)\psi \right> = \int_{S^1} u \, d\nu^U_\psi(u) = \int_{\mathbb{R}} C(\lambda)\,d\nu_\psi(\lambda) = \left< \psi, \left( \int_{\mathbb{R}} C \, d\nu \right)\psi \right>,
+$$
+
+so, two bounded operators inducing the same quadratic form being equal by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63), and by **Step 2**,
+
+$$
+    \int_{S^1} u \, d\nu^U(u) = \int_{\mathbb{R}} C \, d\nu = U.
+$$
+
+*Step 4: conclusion.* The projection-valued measure $$\mu^U$$ of $$U$$ also satisfies $$\int_{S^1} u \, d\mu^U(u) = U$$, by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). Both $$\nu^U$$ and $$\mu^U$$ are supported in $$\sigma(U)$$ and represent the same normal operator $$U$$; by the uniqueness clause of that theorem, $$\nu^U = \mu^U$$.
+
+Hence, for every Borel $$E \subset \mathbb{R}$$, using $$C^{-1}(C(E)) = E$$ (injectivity of $$C$$, from [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map)) and the definition of $$\mu^A$$ in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30),
+
+$$
+    \nu(E) = \nu\big( C^{-1}(C(E)) \big) = \nu^U\big( C(E) \big) = \mu^U\big( C(E) \big) = \mu^A(E).
+$$
+
+So $$\nu = \mu^A$$, establishing uniqueness.$$\blacksquare$$
