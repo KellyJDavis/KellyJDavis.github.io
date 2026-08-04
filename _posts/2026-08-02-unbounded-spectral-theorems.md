@@ -1652,15 +1652,18 @@ The route to the two-variable spectral mapping theorem passes through *spectral 
 
 > **Definition** *(Spectral Subspaces)*
 <a name="def:hall-7.14"></a>
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators} -->
 <!--  \uses{../spectral-theorems/#def:functional-calculus} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ be the associated projection-valued measure of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators), extended to a measure on $$\mathbb{R}$$ by setting $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$. For each Borel set $$E \subset \mathbb{R}$$, the *spectral subspace* $$V_E$$ of $$\mathbf{H}$$ is
+> Let $$\mu$$ be a projection-valued measure on a $$\sigma$$-algebra $$\Omega(Y)$$ over a set $$Y$$. For each $$E \in \Omega(Y)$$, the *spectral subspace* $$V_E$$ of $$\mathbf{H}$$ (relative to $$\mu$$) is
 >
 > $$
->     V_E \equiv \text{Range}\big( \mu^A(E) \big).
+>     V_E \equiv \text{Range}\big( \mu(E) \big).
 > $$
 >
-> Each $$V_E$$ is a closed subspace of $$\mathbf{H}$$: it is the range of a bounded orthogonal projection $$P \equiv \mu^A(E)$$, and $$\text{Range}(P) = \text{Ker}(\mathbf{1}-P)$$ — indeed if $$\eta = P\xi$$ then $$(\mathbf{1}-P)\eta = P\xi - P^2\xi = 0$$ by idempotency, and conversely if $$(\mathbf{1}-P)\eta = 0$$ then $$\eta = P\eta \in \text{Range}(P)$$ — while $$\text{Ker}(\mathbf{1}-P)$$ is closed as the preimage of the closed set $$\{0\}$$ under the continuous (because bounded) map $$\mathbf{1}-P$$. Being a closed subspace of the separable Hilbert space $$\mathbf{H}$$, $$V_E$$ is itself a separable Hilbert space under the inherited inner product: completeness because a closed subset of a complete space is complete, and separability because a subspace of a separable metric space is separable.
+> When $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint we take $$\mu = \mu^A$$, the projection-valued measure of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators), extended to $$\mathbb{R}$$ by $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$, and speak of the spectral subspaces *of $$A$$*; when $$A$$ is normal we take $$\mu = \mu^A$$ from [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20) instead. The general definition covers both, and is the one used below.
+>
+> Each $$V_E$$ is a closed subspace of $$\mathbf{H}$$: it is the range of a bounded orthogonal projection $$P \equiv \mu(E)$$ (property 1 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)), and $$\text{Range}(P) = \text{Ker}(\mathbf{1}-P)$$ — indeed if $$\eta = P\xi$$ then $$(\mathbf{1}-P)\eta = P\xi - P^2\xi = 0$$ by idempotency, and conversely if $$(\mathbf{1}-P)\eta = 0$$ then $$\eta = P\eta \in \text{Range}(P)$$ — while $$\text{Ker}(\mathbf{1}-P)$$ is closed as the preimage of the closed set $$\{0\}$$ under the continuous (because bounded) map $$\mathbf{1}-P$$. Being a closed subspace of the separable Hilbert space $$\mathbf{H}$$, $$V_E$$ is itself a separable Hilbert space under the inherited inner product: completeness because a closed subset of a complete space is complete, and separability because a subspace of a separable metric space is separable.
 
 We need three properties of these subspaces. The first two follow directly from multiplicativity of the functional calculus; the third says the subspaces attached to neighbourhoods of spectral points are non-trivial.
 
@@ -2517,3 +2520,203 @@ $$
 $$
 
 which is the claimed identity.$$\blacksquare$$
+
+## Proof of the Spectral Theorem for Unbounded Self-Adjoint Operators
+
+By [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28) and [**Lemma** *(Unitary Operators are Normal)*](#lmm:unitary-is-normal), the operator $$U$$ is normal, so [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20) supplies a projection-valued measure $$\mu^U$$ on $$\sigma(U) \subset S^1$$ with $$\int_{\sigma(U)} u \, d\mu^U(u) = U$$. The plan is to recover $$A$$ from $$\mu^U$$ by integrating $$D$$, then transport $$\mu^U$$ to a measure on $$\mathbb{R}$$ along $$C$$.
+
+We first record the measure-theoretic transport fact, standard and assumed here in the same spirit as the other imports.
+
+> **Theorem** *(Change of Variables for a Pushforward Measure)*
+<a name="thrm:change-of-variables"></a>
+> Let $$(Y,\Omega(Y))$$ and $$(Z,\Omega(Z))$$ be measurable spaces, $$T : Y \to Z$$ a measurable bijection with measurable inverse, and $$\nu$$ a measure on $$\Omega(Y)$$. Define the *pushforward* $$T_*\nu$$ on $$\Omega(Z)$$ by $$(T_*\nu)(F) \equiv \nu\big(T^{-1}(F)\big)$$. Then for every measurable $$g : Z \to [0,\infty]$$, and for every $$g$$ integrable with respect to $$T_*\nu$$,
+>
+> $$
+>     \int_Z g \, d(T_*\nu) = \int_Y (g \circ T) \, d\nu.
+> $$
+
+One more observation is needed: $$1$$ is never an atom of $$\mu^U$$, so $$D$$ — undefined at $$u=1$$ — is defined $$\mu^U_\psi$$-almost everywhere for every $$\psi$$, and integrating it is legitimate.
+
+> **Lemma** *(The Cayley Transform Omits the Point $$1$$)*
+<a name="lmm:cayley-omits-one"></a>
+<!--  \uses{thrm:hall-10.28} -->
+<!--  \uses{thrm:hall-10.20} -->
+<!--  \uses{def:hall-7.14} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+> Let $$A$$ be self-adjoint with Cayley transform $$U$$, and $$\mu^U$$ the projection-valued measure of $$U$$. Then $$\mu^U(\{1\}) = 0$$, and consequently $$\mu^U_\psi(\{1\}) = 0$$ for every $$\psi \in \mathbf{H}$$.
+
+**Proof**
+Let $$V \equiv \text{Range}\big(\mu^U(\{1\})\big)$$ be the corresponding spectral subspace and let $$\psi \in V$$. By Part 2 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15) — applicable to the normal operator $$U$$ and its projection-valued measure, the proof of that part using only multiplicativity of the calculus — applied with the set $$\{1\} \subset [1-\varepsilon, 1+\varepsilon]$$ for every $$\varepsilon > 0$$, we get $$\left\| (U - \mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$ for every $$\varepsilon>0$$, hence $$(U-\mathbf{1})\psi = 0$$. By Point 2 of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28), $$U - \mathbf{1}$$ is injective, so $$\psi = 0$$. Thus $$V = \{0\}$$, i.e. $$\mu^U(\{1\}) = 0$$ (a projection with trivial range is the zero operator, since $$P\xi \in \text{Range}(P) = \{0\}$$ for every $$\xi$$). Then $$\mu^U_\psi(\{1\}) = \left< \psi, \mu^U(\{1\})\psi \right> = 0$$ for every $$\psi$$.$$\blacksquare$$
+
+The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ by the functional calculus applied to $$D$$.
+
+> **Proposition**
+<a name="prpstn:hall-10.29"></a>
+<!--  \uses{thrm:hall-10.28} -->
+<!--  \uses{thrm:hall-10.20} -->
+<!--  \uses{lmm:cayley-map} -->
+<!--  \uses{lmm:cayley-omits-one} -->
+<!--  \uses{def:hall-7.14} -->
+<!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{prpstn:hall-10.3} -->
+<!--  \uses{prpstn:hall-9.26-internal} -->
+<!--  \uses{def:internal-orthogonal-decomposition} -->
+<!--  \uses{lmm:bounded-on-set-range-in-domain} -->
+<!--  \uses{lmm:range-membership-concentrates-measure} -->
+<!--  \uses{lmm:norm-convergent-decomposition} -->
+<!--  \uses{prpstn:abstract-extended-multiplicative} -->
+<!--  \uses{def:abstract-extended-calculus} -->
+<!--  \uses{prpstn:hall-9.11} -->
+> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, let $$U$$ be its Cayley transform, and let $$D$$ be as in [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). Then
+>
+> $$
+>     A = \int_{\sigma(U)} D(u) \, d\mu^U(u),
+> $$
+>
+> with equality of domains, the right-hand side being the (generally unbounded) operator of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1) with domain $$W_D$$.
+
+**Proof**
+Write $$\widehat{D} \equiv \int_{\sigma(U)} D \, d\mu^U$$, an unbounded operator with domain $$W_D$$ by [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1). Since $$D$$ is real-valued by [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), and defined $$\mu^U_\psi$$-almost everywhere by [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3) shows $$\widehat{D}$$ is self-adjoint on $$W_D$$.
+
+*Step 1: a disjoint cover on which $$D$$ is bounded.* For $$n \in \mathbb{N}$$ let
+
+$$
+    F_n \equiv \left\{ u \in \sigma(U) \;\middle|\; \frac{1}{n+1} \le \lvert u - 1 \rvert < \frac{1}{n} \right\}, \qquad n \ge 1,
+$$
+
+together with $$F_0 \equiv \{ u \in \sigma(U) \mid \lvert u-1 \rvert \ge 1 \}$$; re-indexing, $$\{F_n\}_{n \ge 0}$$ is a pairwise disjoint sequence of Borel subsets of $$\sigma(U)$$ whose union is $$\sigma(U)\setminus\{1\}$$. Since $$\mu^U(\{1\}) = 0$$, we may harmlessly adjoin $$\{1\}$$ to $$F_0$$, so that $$\bigcup_n F_n = \sigma(U)$$ while $$\mu^U$$ still assigns the point $$1$$ no mass. On $$F_n$$ we have $$\lvert u - 1 \rvert \ge 1/(n+1)$$, so, using $$\lvert u+1 \rvert \le 2$$ for $$u \in S^1$$,
+
+$$
+    \lvert D(u) \rvert = \frac{\lvert u+1 \rvert}{\lvert u-1 \rvert} \le 2(n+1) \qquad \text{on } F_n,
+$$
+
+i.e. $$D$$ is bounded on each $$F_n$$. Let $$\mathbf{H}_n \equiv \text{Range}\big( \mu^U(F_n) \big)$$ be the corresponding [spectral subspaces](#def:hall-7.14).
+
+*Step 2: $$\mathbf{H}_n \subset W_D$$, and $$\widehat{D}$$ agrees with $$A$$ there.* By [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain), applied with $$E = F_n$$ and $$c = 2(n+1)$$, $$\mathbf{H}_n \subset W_D$$.
+
+Fix $$n$$ and let $$\psi \in \mathbf{H}_n$$. Let $$g \equiv 1_{F_n}\cdot D$$ and $$h \equiv 1_{F_n}\cdot (\iota - 1)$$, where $$\iota(u) = u$$; both are bounded measurable functions on $$\sigma(U)$$, so the extended calculus $$\widetilde\Phi$$ of [Definition (The Extended Calculus)](#def:abstract-extended-calculus) applies to them. Since $$D(u)(u-1) = i(u+1)$$ for $$u \ne 1$$, we have $$g\,h = 1_{F_n}\cdot i(\iota+1)$$ pointwise, so by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative),
+
+$$
+    \widetilde\Phi(g)\,\widetilde\Phi(h) = \widetilde\Phi\big( 1_{F_n} i(\iota+1) \big) = i\,\widetilde\Phi\big(1_{F_n}(\iota+1)\big). \tag{$\smile$}
+$$
+
+Also $$h \cdot 1_{F_n} = h$$ and $$g \cdot 1_{F_n} = g$$, so multiplicativity gives $$\widetilde\Phi(h)\mu^U(F_n) = \widetilde\Phi(h)$$ and likewise for $$g$$; in particular $$\widetilde\Phi(h)\psi = \widetilde\Phi(h)\mu^U(F_n)\psi = \widetilde\Phi(h)\psi$$, consistent, and both $$\widetilde\Phi(g)\psi$$ and $$\widetilde\Phi(h)\psi$$ lie in $$\mathbf{H}_n$$ (as $$\mu^U(F_n)\widetilde\Phi(g) = \widetilde\Phi(1_{F_n}g) = \widetilde\Phi(g)$$, and similarly for $$h$$).
+
+Now $$\widetilde\Phi(h) = \widetilde\Phi\big(1_{F_n}(\iota-1)\big) = (U - \mathbf{1})\mu^U(F_n)$$, by multiplicativity together with $$\widetilde\Phi(\iota) = U$$ and $$\widetilde\Phi(1) = \mathbf{1}$$. So for $$\psi \in \mathbf{H}_n$$, $$\widetilde\Phi(h)\psi = (U-\mathbf{1})\psi$$. By Point 3 of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28), $$(U-\mathbf{1})\psi \in \text{Range}(U-\mathbf{1}) = \text{Dom}(A)$$, and
+
+$$
+    A(U-\mathbf{1})\psi = i(U+\mathbf{1})(U-\mathbf{1})^{-1}(U-\mathbf{1})\psi = i(U+\mathbf{1})\psi.
+$$
+
+On the other hand, applying $$(\smile)$$ to $$\psi$$ and using $$\widetilde\Phi(1_{F_n}(\iota+1))\psi = (U+\mathbf{1})\psi$$ (same reasoning),
+
+$$
+    \widetilde\Phi(g)\,(U-\mathbf{1})\psi = \widetilde\Phi(g)\widetilde\Phi(h)\psi = i(U+\mathbf{1})\psi = A(U-\mathbf{1})\psi.
+$$
+
+Since $$U - \mathbf{1}$$ maps $$\mathbf{H}_n$$ *onto* $$\mathbf{H}_n$$ — it maps $$\mathbf{H}_n$$ into $$\mathbf{H}_n$$ by the computation above, and $$\widetilde\Phi(g)$$ inverts it there, because $$g h = h g$$ gives $$\widetilde\Phi(h)\widetilde\Phi(g) = \widetilde\Phi(g)\widetilde\Phi(h)$$ and, by the same multiplicativity applied to $$D(u)(u-1)/\big(i(u+1)\big)$$ where defined, the two compositions restrict to the identity on $$\mathbf{H}_n$$ — every $$\eta \in \mathbf{H}_n$$ is of the form $$(U-\mathbf{1})\psi$$ with $$\psi \in \mathbf{H}_n$$. Hence $$\widetilde\Phi(g)$$ and $$A$$ agree on all of $$\mathbf{H}_n$$, and $$\mathbf{H}_n \subset \text{Dom}(A)$$.
+
+Finally, $$\widehat{D}$$ agrees with $$\widetilde\Phi(g)$$ on $$\mathbf{H}_n$$: for $$\psi \in \mathbf{H}_n$$, [**Lemma** *(Range Membership Concentrates the Associated Measure)*](#lmm:range-membership-concentrates-measure) gives $$\mu^U_\psi(F_n^c) = 0$$, so $$\int_{\sigma(U)} D \, d\mu^U_\psi = \int_{\sigma(U)} g \, d\mu^U_\psi$$, i.e. the two operators induce the same diagonal quadratic form on $$\mathbf{H}_n$$; since both map $$\mathbf{H}_n$$ into $$\mathbf{H}_n$$ (for $$\widehat D$$ this follows from the agreement with $$\widetilde\Phi(g)$$ just being established pointwise via polarization on the subspace $$\mathbf{H}_n$$, exactly as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3)), Part 1 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) applied on the subspace $$\mathbf{H}_n$$ gives equality of the two restrictions. So $$\widehat{D}$$ and $$A$$ agree on $$\mathbf{H}_n$$, for every $$n$$.
+
+*Step 3: conclusion by essential self-adjointness.* By [**Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*](#lmm:norm-convergent-decomposition) applied to $$\{F_n\}$$, and pairwise orthogonality of the $$\mu^U(F_n)$$ exactly as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3), $$\{\mathbf{H}_n\}$$ is an [internal orthogonal decomposition](#def:internal-orthogonal-decomposition) of $$\mathbf{H}$$. Let $$W_0$$ be the algebraic span of the $$\mathbf{H}_n$$'s. By **Step 2**, $$W_0 \subset \text{Dom}(A) \cap W_D$$ and $$A = \widehat{D}$$ on $$W_0$$.
+
+Let $$A_n$$ denote the common restriction of $$A$$ and $$\widehat D$$ to $$\mathbf{H}_n$$, a bounded operator (it equals $$\widetilde\Phi(g)\vert_{\mathbf{H}_n}$$, with $$\left\| \widetilde\Phi(g) \right\| \le \left\| g \right\|_\infty \le 2(n+1)$$) which is self-adjoint on $$\mathbf{H}_n$$ (being the restriction of the self-adjoint $$\widehat D$$ to a subspace it preserves, as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3)). Both $$A\vert_{W_0}$$ and $$\widehat{D}\vert_{W_0}$$ are then symmetric operators on $$\mathbf{H}$$ with domain $$W_0$$ acting as $$A_n$$ on each $$\mathbf{H}_n$$ — and they are the *same* operator, by **Step 2**. By [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators, Internal Form)*](#prpstn:hall-9.26-internal), this common restriction is essentially self-adjoint.
+
+Now $$A$$ and $$\widehat{D}$$ are both self-adjoint operators extending it: $$A$$ by hypothesis, $$\widehat{D}$$ by [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3), and both extend $$A\vert_{W_0} = \widehat D\vert_{W_0}$$ since $$W_0 \subset \text{Dom}(A)\cap W_D$$ with agreement there. By [**Proposition** *(Uniqueness of the Self-Adjoint Extension of an Essentially Self-Adjoint Operator)*](#prpstn:hall-9.11), an essentially self-adjoint operator has exactly one self-adjoint extension; hence $$A = \widehat{D}$$, with equality of domains.$$\blacksquare$$
+
+Transporting the measure along $$C$$ now gives the projection-valued measure for $$A$$.
+
+> **Theorem**
+<a name="thrm:hall-10.30"></a>
+<!--  \uses{prpstn:hall-10.29} -->
+<!--  \uses{lmm:cayley-map} -->
+<!--  \uses{lmm:cayley-omits-one} -->
+<!--  \uses{thrm:change-of-variables} -->
+<!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, $$U$$ its Cayley transform, and $$\mu^U$$ the projection-valued measure of $$U$$. Define, for each Borel set $$E \subset \mathbb{R}$$,
+>
+> $$
+>     \mu^A(E) \equiv \mu^U\big( C(E) \big).
+> $$
+>
+> Then $$\mu^A$$ is a projection-valued measure on $$\mathbb{R}$$ and
+>
+> $$
+>     A = \int_{\mathbb{R}} \lambda \, d\mu^A(\lambda).
+> $$
+
+**Proof**
+*$$\mu^A$$ is well defined and a projection-valued measure.* By [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), $$C$$ is a continuous bijection $$\mathbb{R} \to S^1\setminus\{1\}$$ with continuous inverse $$D$$, so $$C$$ carries Borel sets to Borel sets and $$C(E)$$ is Borel whenever $$E$$ is; intersecting with $$\sigma(U)$$ where necessary, $$\mu^U(C(E))$$ is defined. Each of the four properties of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) transfers directly, because $$E \mapsto C(E)$$ is a bijection of Borel sets preserving all the set operations involved: property 1 is inherited pointwise; for property 2, $$C(\emptyset)=\emptyset$$ and $$C(\mathbb{R}) = S^1\setminus\{1\}$$, whose $$\mu^U$$-measure is $$\mu^U(\sigma(U)) - \mu^U(\{1\}) = \mathbf{1} - 0 = \mathbf{1}$$ by [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one); property 3 holds since $$C$$ injective carries pairwise disjoint sets to pairwise disjoint sets and $$C(\bigcup_j E_j) = \bigcup_j C(E_j)$$; and property 4 since $$C(E_1 \cap E_2) = C(E_1)\cap C(E_2)$$, again by injectivity.
+
+*The associated scalar measures.* For $$\psi \in \mathbf{H}$$ and Borel $$E \subset \mathbb{R}$$,
+
+$$
+    \mu^A_\psi(E) = \left< \psi, \mu^A(E)\psi \right> = \left< \psi, \mu^U(C(E))\psi \right> = \mu^U_\psi\big( C(E) \big) = \mu^U_\psi\big( D^{-1}(E) \big),
+$$
+
+using $$C = D^{-1}$$ from [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). So $$\mu^A_\psi$$ is exactly the pushforward $$D_*\mu^U_\psi$$ of $$\mu^U_\psi$$ along $$D$$, in the sense of [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables).
+
+*Equality of domains.* By that change-of-variables theorem applied with $$T = D$$ and $$g(\lambda) = \lvert \lambda \rvert^2$$,
+
+$$
+    \int_{\mathbb{R}} \lvert \lambda \rvert^2 \, d\mu^A_\psi(\lambda) = \int_{\sigma(U)} \lvert D(u) \rvert^2 \, d\mu^U_\psi(u).
+$$
+
+The left side is finite exactly when $$\psi$$ lies in the domain $$W_\iota$$ of $$\int_{\mathbb{R}}\lambda\,d\mu^A(\lambda)$$, and the right side exactly when $$\psi \in W_D$$, by the definition of those domains in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2). So the two operators have the same domain, namely $$W_D = \text{Dom}(A)$$, the last equality by [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29).
+
+*Equality of the operators.* Applying the change-of-variables theorem again, this time with $$g(\lambda) = \lambda$$ (integrable against $$\mu^A_\psi$$ for $$\psi$$ in the common domain), for every such $$\psi$$,
+
+$$
+    \left< \psi, \left( \int_{\mathbb{R}} \lambda \, d\mu^A(\lambda) \right)\psi \right> = \int_{\mathbb{R}} \lambda \, d\mu^A_\psi(\lambda) = \int_{\sigma(U)} D(u) \, d\mu^U_\psi(u) = \left< \psi, \left( \int_{\sigma(U)} D \, d\mu^U \right)\psi \right>,
+$$
+
+the outer equalities by the defining property of the unbounded integral in [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1). By the strengthened uniqueness clause of that proposition — an operator on the common domain is determined by its diagonal quadratic form — the two operators are equal. By [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29), $$\int_{\sigma(U)}D\,d\mu^U = A$$, so $$\int_{\mathbb{R}}\lambda\,d\mu^A(\lambda) = A$$.$$\blacksquare$$
+
+We can finally state and prove the theorem this post set out to establish.
+
+> **Theorem** *(Spectral Theorem for Unbounded, Self-Adjoint Operators)*
+<a name="thrm:hall-10.4"></a>
+<!--  \uses{def:hall-9.5} -->
+<!--  \uses{def:hall-9.16} -->
+<!--  \uses{thrm:hall-10.30} -->
+<!--  \uses{thrm:hall-10.28} -->
+<!--  \uses{thrm:hall-10.20} -->
+<!--  \uses{prpstn:hall-10.29} -->
+<!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{lmm:cayley-map} -->
+<!--  \uses{thrm:change-of-variables} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+> If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, there is a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\mathbb{R}$$ such that
+>
+> $$
+>     \int_{\mathbb{R}} \lambda \, d\mu^A(\lambda) = A.
+> $$
+
+**Proof**
+*Existence* is [**Theorem** *(hall-10.30)*](#thrm:hall-10.30).
+
+*Uniqueness.* Suppose $$\nu^A$$ is a projection-valued measure on $$\mathbb{R}$$ with $$\int_{\mathbb{R}} \lambda \, d\nu^A(\lambda) = A$$. Since $$C$$ is a bounded continuous function on $$\mathbb{R}$$ (values in $$S^1$$, so $$\lvert C \rvert = 1$$), the operator $$\int_{\mathbb{R}} C(\lambda)\,d\nu^A(\lambda)$$ is a bounded operator defined on all of $$\mathbf{H}$$.
+
+We claim it equals $$U$$. The argument is that of [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29) run in reverse, on the same kind of disjoint cover. Decompose $$\mathbb{R} = \bigcup_n G_n$$ into the pairwise disjoint Borel sets $$G_n \equiv \{ \lambda \in \mathbb{R} \mid n \le \lvert \lambda \rvert < n+1 \}$$ for $$n \ge 1$$ and $$G_0 \equiv \{ \lvert \lambda \rvert < 1 \}$$, on each of which the identity function $$\iota$$ is bounded. Writing $$\mathbf{K}_n \equiv \text{Range}(\nu^A(G_n))$$, the same reasoning as in **Step 2** of that proposition — using multiplicativity of the extended calculus attached to $$\nu^A$$, together with the pointwise identity $$C(\lambda)(\lambda - i) = \lambda + i$$ — shows that for $$\psi \in \mathbf{K}_n$$ we have $$\psi \in \text{Dom}(A)$$ and
+
+$$
+    \left( \int_{\mathbb{R}} C \, d\nu^A \right)(A - i\mathbf{1})\psi = (A + i\mathbf{1})\psi,
+$$
+
+i.e. $$\int_{\mathbb{R}}C\,d\nu^A$$ agrees with $$(A+i\mathbf{1})(A-i\mathbf{1})^{-1} = U$$ on $$(A-i\mathbf{1})\mathbf{K}_n$$. As $$\{\mathbf{K}_n\}$$ is an internal orthogonal decomposition of $$\mathbf{H}$$ (by the argument of **Step 3** of [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29) applied to $$\nu^A$$) and $$A - i\mathbf{1}$$ maps $$\text{Dom}(A)$$ onto $$\mathbf{H}$$, the union of the $$(A-i\mathbf{1})\mathbf{K}_n$$ spans a dense subspace of $$\mathbf{H}$$; two bounded operators agreeing on a dense subspace are equal, both being continuous. So $$\int_{\mathbb{R}}C\,d\nu^A = U$$.
+
+Now define a projection-valued measure $$\nu^U$$ on $$S^1$$ by $$\nu^U(F) \equiv \nu^A\big(C^{-1}(F)\big) = \nu^A\big(D(F \setminus \{1\})\big)$$; this is a projection-valued measure by the same transfer argument as in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30), with $$C$$ and $$D$$ interchanged. Exactly as in the proof of that theorem — via [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables), now applied with $$T = C$$ and $$g(u) = u$$ —
+
+$$
+    \int_{S^1} u \, d\nu^U(u) = \int_{\mathbb{R}} C(\lambda) \, d\nu^A(\lambda) = U.
+$$
+
+By the uniqueness clause of [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20) applied to the normal operator $$U$$, $$\nu^U = \mu^U$$. Hence, for every Borel $$E \subset \mathbb{R}$$,
+
+$$
+    \nu^A(E) = \nu^U\big( C(E) \big) = \mu^U\big( C(E) \big) = \mu^A(E),
+$$
+
+the first equality because $$C^{-1}(C(E)) = E$$ by injectivity of $$C$$, and the last by the definition of $$\mu^A$$ in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30). So $$\nu^A = \mu^A$$, establishing uniqueness.$$\blacksquare$$
