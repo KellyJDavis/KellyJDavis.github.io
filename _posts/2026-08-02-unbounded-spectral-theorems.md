@@ -1645,3 +1645,239 @@ $$
 $$
 
 where the last equality is $$\|A^*\| = \|A\|$$, also from [**Proposition** *(hall-7.2)*](../spectral-theorems/#prpstn:hall-7.2), and $$R(A^*) \le \|A^*\|$$ is [**Corollary**](../spectral-theorems/#crllr:crllr-1) applied to $$A^*$$. If $$\|A\| \ne 0$$, dividing both sides by $$\|A\|$$ gives $$\|A\| \le R(A)$$, as desired; if $$\|A\| = 0$$ the inequality $$\|A\| \le R(A)$$ holds trivially, since $$R(A) \ge 0$$ always.$$\blacksquare$$
+
+### Spectral Subspaces
+
+The route to the two-variable spectral mapping theorem passes through *spectral subspaces*: the ranges of the projections $$\mu^A(E)$$ supplied by the bounded self-adjoint spectral theorem. These were not needed in the previous post, so we develop what we need here.
+
+> **Definition** *(Spectral Subspaces)*
+<a name="def:hall-7.14"></a>
+<!--  \uses{../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators} -->
+<!--  \uses{../spectral-theorems/#def:functional-calculus} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A$$ be the associated projection-valued measure of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators), extended to a measure on $$\mathbb{R}$$ by setting $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$. For each Borel set $$E \subset \mathbb{R}$$, the *spectral subspace* $$V_E$$ of $$\mathbf{H}$$ is
+>
+> $$
+>     V_E \equiv \text{Range}\big( \mu^A(E) \big).
+> $$
+>
+> Each $$V_E$$ is a closed subspace of $$\mathbf{H}$$: it is the range of a bounded orthogonal projection $$P \equiv \mu^A(E)$$, and $$\text{Range}(P) = \text{Ker}(\mathbf{1}-P)$$ — indeed if $$\eta = P\xi$$ then $$(\mathbf{1}-P)\eta = P\xi - P^2\xi = 0$$ by idempotency, and conversely if $$(\mathbf{1}-P)\eta = 0$$ then $$\eta = P\eta \in \text{Range}(P)$$ — while $$\text{Ker}(\mathbf{1}-P)$$ is closed as the preimage of the closed set $$\{0\}$$ under the continuous (because bounded) map $$\mathbf{1}-P$$. Being a closed subspace of the separable Hilbert space $$\mathbf{H}$$, $$V_E$$ is itself a separable Hilbert space under the inherited inner product: completeness because a closed subset of a complete space is complete, and separability because a subspace of a separable metric space is separable.
+
+We need three properties of these subspaces. The first two follow directly from multiplicativity of the functional calculus; the third says the subspaces attached to neighbourhoods of spectral points are non-trivial.
+
+> **Proposition** *(Properties of Spectral Subspaces)*
+<a name="prpstn:hall-7.15"></a>
+<!--  \uses{def:hall-7.14} -->
+<!--  \uses{../spectral-theorems/#def:functional-calculus} -->
+<!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
+<!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint, with spectral subspaces $$V_E$$.
+>
+> 1. Each $$V_E$$ is invariant under $$A$$: $$A(V_E) \subset V_E$$.
+> 2. If $$E \subset [\lambda_0 - \varepsilon, \lambda_0 + \varepsilon]$$, then $$\left\| (A - \lambda_0\mathbf{1})\psi \right\| \le \varepsilon \left\| \psi \right\|$$ for all $$\psi \in V_E$$.
+> 3. If $$\lambda_0 \in \sigma(A)$$, then $$V_U \ne \{0\}$$ for every open neighbourhood $$U$$ of $$\lambda_0$$ in $$\mathbb{R}$$.
+
+**Proof**
+Throughout we use the [**functional calculus**](../spectral-theorems/#def:functional-calculus) $$f \mapsto f(A) = \int_{\sigma(A)} f \, d\mu^A$$ for bounded measurable $$f$$, and in particular its multiplicativity, $$(fg)(A) = f(A)g(A)$$, which is property 3 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration).
+
+**Part 1.** Write $$\iota(\lambda) = \lambda$$, so $$\iota(A) = A$$, and note $$\mu^A(E) = 1_E(A)$$. Since $$\iota \cdot 1_E = 1_E \cdot \iota$$ as functions, multiplicativity gives $$A\,\mu^A(E) = (\iota 1_E)(A) = (1_E \iota)(A) = \mu^A(E)\,A$$. Hence for $$\psi = \mu^A(E)\phi \in V_E$$,
+
+$$
+    A\psi = A\mu^A(E)\phi = \mu^A(E)(A\phi) \in \text{Range}\big(\mu^A(E)\big) = V_E.
+$$
+
+**Part 2.** Let $$\psi \in V_E$$, so $$\mu^A(E)\psi = \psi$$ (idempotency, as in [Definition (Spectral Subspaces)](#def:hall-7.14)). With $$f(\lambda) \equiv \lambda - \lambda_0$$, so $$f(A) = A - \lambda_0\mathbf{1}$$, multiplicativity gives
+
+$$
+    (A - \lambda_0\mathbf{1})\psi = f(A)\,\mu^A(E)\psi = (f 1_E)(A)\psi.
+$$
+
+Since $$E \subset [\lambda_0-\varepsilon, \lambda_0+\varepsilon]$$, the function $$f 1_E$$ satisfies $$\lvert f(\lambda)1_E(\lambda) \rvert \le \varepsilon$$ for every $$\lambda$$. By the norm bound of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) (the integral of a function of supremum norm at most $$\varepsilon$$ has operator norm at most $$\varepsilon$$), $$\left\| (f1_E)(A) \right\| \le \varepsilon$$, so $$\left\| (A-\lambda_0\mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$.
+
+**Part 3.** Suppose, for contradiction, that $$\lambda_0 \in \sigma(A)$$ but $$V_U = \{0\}$$ for some open neighbourhood $$U$$ of $$\lambda_0$$; shrinking $$U$$, we may assume $$U \supset (\lambda_0-\varepsilon,\lambda_0+\varepsilon)$$ for some $$\varepsilon>0$$, and it suffices to treat $$U_\varepsilon \equiv (\lambda_0-\varepsilon,\lambda_0+\varepsilon)$$, since $$V_{U_\varepsilon} \subset V_U = \{0\}$$. Now $$V_{U_\varepsilon} = \{0\}$$ means $$\mu^A(U_\varepsilon) = 0$$ as an operator, hence $$\mu^A_\psi(U_\varepsilon) = \left< \psi, \mu^A(U_\varepsilon)\psi \right> = 0$$ for every $$\psi$$: the set $$U_\varepsilon$$ is $$\mu^A_\psi$$-null for every $$\psi$$. Define the bounded measurable function
+
+$$
+    g(\lambda) \equiv \begin{cases} \dfrac{1}{\lambda-\lambda_0} & \lvert \lambda-\lambda_0 \rvert \ge \varepsilon \\[4pt] 0 & \lvert \lambda-\lambda_0 \rvert < \varepsilon \end{cases}
+$$
+
+(bounded by $$1/\varepsilon$$). The function $$\lambda \mapsto g(\lambda)(\lambda-\lambda_0)$$ equals $$1$$ off $$U_\varepsilon$$ and $$0$$ on $$U_\varepsilon$$, so it agrees with the constant function $$1$$ except on $$U_\varepsilon$$, a null set for every $$\mu^A_\psi$$. Two bounded measurable functions agreeing off a set that is null for every $$\mu^A_\psi$$ have the same integral against $$\mu^A$$ — since the defining property of the integral determines it through the scalar integrals $$\int f \, d\mu^A_\psi$$, which are unchanged by modification on a $$\mu^A_\psi$$-null set. Hence, using multiplicativity,
+
+$$
+    g(A)(A - \lambda_0\mathbf{1}) = (A-\lambda_0\mathbf{1})g(A) = \mathbf{1},
+$$
+
+exhibiting the bounded operator $$g(A)$$ as a two-sided inverse of $$A - \lambda_0\mathbf{1}$$. By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda_0$$ lies in the resolvent set of $$A$$, contradicting $$\lambda_0 \in \sigma(A)$$.$$\blacksquare$$
+
+The last property we need is that an operator commuting with $$A$$ preserves every spectral subspace of $$A$$. This rests on the fact that commuting with $$A$$ propagates through the whole functional calculus.
+
+> **Proposition** *(Commuting Operators Preserve Spectral Subspaces)*
+<a name="prpstn:hall-7.16"></a>
+<!--  \uses{def:hall-7.14} -->
+<!--  \uses{../spectral-theorems/#def:functional-calculus} -->
+<!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
+<!--  \uses{../spectral-theorems/#thrm:stone–weierstrass-complex} -->
+<!--  \uses{../spectral-theorems/#thrm:monotone-class-theorem} -->
+<!--  \uses{lmm:hall-dense-testing-second-slot} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$B \in \mathcal{B}(\mathbf{H})$$ commute with $$A$$. Then
+>
+> 1. $$B$$ commutes with $$f(A)$$ for every bounded measurable $$f$$ on $$\sigma(A)$$; and
+> 2. every spectral subspace $$V_E$$ of $$A$$ is invariant under $$B$$.
+
+**Proof**
+**Part 1.** Let $$\mathcal{F}$$ denote the set of bounded measurable $$f$$ on $$\sigma(A)$$ with $$Bf(A) = f(A)B$$. We show $$\mathcal{F}$$ contains all bounded measurable functions, in three steps.
+
+*Polynomials.* $$B$$ commutes with $$A$$ by hypothesis, hence with $$A^m$$ for every $$m$$ (induction: $$BA^{m+1} = (BA^m)A = (A^mB)A = A^m(BA) = A^m(AB) = A^{m+1}B$$) and hence, by linearity, with $$p(A)$$ for every polynomial $$p$$. So $$\mathcal{F}$$ contains all polynomials.
+
+*Continuous functions.* If $$f$$ is continuous on $$\sigma(A)$$, the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) supplies polynomials $$p_n \to f$$ uniformly on $$\sigma(A)$$; the functional calculus is isometric on continuous functions, so $$p_n(A) \to f(A)$$ in operator norm. Since multiplication by the fixed bounded operator $$B$$ is continuous in the operator norm (on either side, by submultiplicativity), passing to the limit in $$Bp_n(A) = p_n(A)B$$ gives $$Bf(A) = f(A)B$$. So $$\mathcal{F}$$ contains $$C^0(\sigma(A);\mathbb{C})$$.
+
+*Bounded measurable functions.* Fix $$\phi,\psi \in \mathbf{H}$$. For bounded measurable $$f$$, the condition $$Bf(A) = f(A)B$$ is equivalent, by [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) applied with $$D = \mathbf{H}$$, to
+
+$$
+    \left< \phi, f(A)B\psi \right> = \left< \phi, Bf(A)\psi \right> = \left< B^*\phi, f(A)\psi \right>
+    \qquad\text{for all } \phi,\psi \in \mathbf{H},
+$$
+
+i.e. to $$\int_{\sigma(A)} f \, d\mu^A_{\phi, B\psi} = \int_{\sigma(A)} f \, d\mu^A_{B^*\phi, \psi}$$, where $$\mu^A_{\phi_1,\phi_2}$$ denotes the complex measure $$E \mapsto \left< \phi_1, \mu^A(E)\phi_2 \right>$$. Both sides are integrals of $$f$$ against fixed finite measures, so by the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) both sides are continuous under uniformly bounded pointwise limits of $$f$$. Hence $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.
+
+A collection of bounded measurable functions containing the continuous functions and closed under uniformly bounded pointwise limits contains all bounded Borel-measurable functions: the collection $$\mathcal{L}$$ of Borel sets $$E$$ with $$1_E \in \mathcal{F}$$ contains every set whose indicator is a uniformly bounded pointwise limit of continuous functions — in particular, by the argument of the previous post, every open set — and is a monotone class, being closed under increasing unions and decreasing intersections (the corresponding indicators converge pointwise and are uniformly bounded by $$1$$); so by the [**Monotone Class Theorem**](../spectral-theorems/#thrm:monotone-class-theorem), $$\mathcal{L}$$ contains the Borel $$\sigma$$-algebra. Every bounded measurable $$f$$ is a uniformly bounded pointwise limit of simple functions built from such indicators, and $$\mathcal{F}$$ is a vector space (immediate from linearity of the functional calculus) closed under those limits, so $$f \in \mathcal{F}$$.
+
+**Part 2.** Let $$\psi \in V_E = \text{Range}(\mu^A(E))$$, so $$\mu^A(E)\psi = \psi$$. By **Part 1** applied to $$f = 1_E$$, $$B\mu^A(E) = \mu^A(E)B$$, so
+
+$$
+    B\psi = B\mu^A(E)\psi = \mu^A(E)(B\psi) \in \text{Range}\big(\mu^A(E)\big) = V_E,
+$$
+
+i.e. $$V_E$$ is invariant under $$B$$.$$\blacksquare$$
+
+### Almost Eigenvectors
+
+Recall the target: the two-variable spectral mapping theorem $$\sigma\big(p(A,A^*)\big) = \{ p(\lambda,\overline\lambda) \mid \lambda \in \sigma(A) \}$$ for normal $$A$$. For *matrices* the argument is short, because the spectrum consists exactly of eigenvalues; the substitute for an eigenvector in infinite dimensions is an *almost* eigenvector. We first record the identity that makes normality work for us throughout.
+
+> **Lemma** *(Normality Balances the Two Norms)*
+<a name="lmm:normality-balances-norms"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{lmm:adjoint-product-and-involution} -->
+<!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
+<!--  \uses{prpstn:hall-9.13} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal and $$\lambda \in \mathbb{C}$$. Then for every $$\psi \in \mathbf{H}$$,
+>
+> $$
+>     \left\| (A^* - \overline\lambda\mathbf{1})\psi \right\| = \left\| (A - \lambda\mathbf{1})\psi \right\|.
+> $$
+
+**Proof**
+First note $$A - \lambda\mathbf{1}$$ is again normal. Its adjoint is $$A^* - \overline{\lambda}\mathbf{1}$$, by [**Proposition** *(Adjoint of a Sum with a Bounded Operator)*](#prpstn:hall-9.13) together with [**Lemma** *(Adjoint of a Scalar Multiple of the Identity)*](#lmm:adjoint-of-scalar-multiple-of-identity); and expanding both products, using $$AA^* = A^*A$$ (normality) and the fact that scalar multiples of $$\mathbf{1}$$ commute with everything,
+
+$$
+\begin{align}
+    (A - \lambda\mathbf{1})(A^* - \overline\lambda\mathbf{1}) &= AA^* - \overline\lambda A - \lambda A^* + \lvert \lambda \rvert^2 \mathbf{1} \\
+    (A^* - \overline\lambda\mathbf{1})(A - \lambda\mathbf{1}) &= A^*A - \lambda A^* - \overline\lambda A + \lvert \lambda \rvert^2 \mathbf{1},
+\end{align}
+$$
+
+which agree. Now, for $$\psi \in \mathbf{H}$$, using the [definition of the adjoint](#def:hall-9.1) and [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution) (to identify $$(A^* - \overline\lambda\mathbf{1})^* = A - \lambda\mathbf{1}$$),
+
+$$
+\begin{align}
+    \left\| (A^* - \overline\lambda\mathbf{1})\psi \right\|^2
+        &= \left< (A^* - \overline\lambda\mathbf{1})\psi, (A^* - \overline\lambda\mathbf{1})\psi \right> \\
+        &= \left< \psi, (A - \lambda\mathbf{1})(A^* - \overline\lambda\mathbf{1})\psi \right> \\
+        &= \left< \psi, (A^* - \overline\lambda\mathbf{1})(A - \lambda\mathbf{1})\psi \right> \\
+        &= \left< (A - \lambda\mathbf{1})\psi, (A - \lambda\mathbf{1})\psi \right> \\
+        &= \left\| (A - \lambda\mathbf{1})\psi \right\|^2,
+\end{align}
+$$
+
+the middle equality being the commutation just verified. Taking square roots gives the result.$$\blacksquare$$
+
+> **Definition** *($$\varepsilon$$-Almost Eigenvector)*
+<a name="def:hall-10.24"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$, $$\lambda \in \mathbb{C}$$, and $$\varepsilon > 0$$. An *$$\varepsilon$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda$$* is a nonzero vector $$\psi \in \mathbf{H}$$ with
+>
+> $$
+>     \left\| (A - \lambda\mathbf{1})\psi \right\| < \varepsilon \left\| \psi \right\|.
+> $$
+
+Note that, unlike the set of genuine eigenvectors for a fixed $$\lambda$$, the set of $$\varepsilon$$-almost eigenvectors is *not* a subspace — this is precisely the difficulty that spectral subspaces will be used to circumvent below.
+
+> **Lemma**
+<a name="lmm:hall-10.25"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{def:hall-10.24} -->
+<!--  \uses{lmm:normality-balances-norms} -->
+<!--  \uses{prpstn:hall-9.13} -->
+<!--  \uses{prpstn:hall-9.14} -->
+<!--  \uses{prpstn:hall-9.12} -->
+<!--  \uses{crllr:trivial-complement-characterizes-density} -->
+<!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal.
+>
+> 1. If $$\psi$$ is an $$\varepsilon$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda$$, then $$\psi$$ is an $$\varepsilon$$-almost eigenvector for $$A^*$$ with eigenvalue $$\overline\lambda$$.
+> 2. $$\lambda \in \sigma(A)$$ if and only if, for every $$\varepsilon > 0$$, there exists an $$\varepsilon$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda$$.
+
+**Proof**
+**Part 1.** Immediate from [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms): $$\left\| (A^*-\overline\lambda\mathbf{1})\psi \right\| = \left\| (A-\lambda\mathbf{1})\psi \right\| < \varepsilon\left\| \psi \right\|$$, and $$\psi \ne 0$$.
+
+**Part 2.** Suppose first that for every $$\varepsilon > 0$$ an $$\varepsilon$$-almost eigenvector $$\psi_\varepsilon$$ exists. If $$\lambda$$ were in the resolvent set, $$A - \lambda\mathbf{1}$$ would have a bounded inverse $$S$$, and then for every $$\varepsilon>0$$,
+
+$$
+    \left\| \psi_\varepsilon \right\| = \left\| S(A-\lambda\mathbf{1})\psi_\varepsilon \right\| \le \left\| S \right\| \left\| (A-\lambda\mathbf{1})\psi_\varepsilon \right\| < \left\| S \right\| \varepsilon \left\| \psi_\varepsilon \right\|.
+$$
+
+Since $$\psi_\varepsilon \ne 0$$, dividing by $$\left\| \psi_\varepsilon \right\|$$ gives $$1 < \left\| S \right\|\varepsilon$$ for every $$\varepsilon>0$$, which fails for $$\varepsilon < 1/\left\| S \right\|$$ (note $$\left\| S \right\| \neq 0$$, since $$S$$ is invertible and $$\mathbf{H} \ne \{0\}$$ whenever a nonzero $$\psi_\varepsilon$$ exists). So $$\lambda \in \sigma(A)$$.
+
+Conversely, suppose that for some $$\varepsilon > 0$$ *no* $$\varepsilon$$-almost eigenvector with eigenvalue $$\lambda$$ exists. Then
+
+$$
+    \left\| (A - \lambda\mathbf{1})\psi \right\| \ge \varepsilon \left\| \psi \right\| \tag{$\natural$}
+$$
+
+for every $$\psi \in \mathbf{H}$$ — for nonzero $$\psi$$ because $$\psi$$ fails the defining inequality, and trivially for $$\psi = 0$$. In particular $$A - \lambda\mathbf{1}$$ is injective.
+
+By [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms), $$(\natural)$$ holds equally with $$A - \lambda\mathbf{1}$$ replaced by $$A^* - \overline\lambda\mathbf{1}$$, so $$A^* - \overline\lambda\mathbf{1}$$ is injective too, i.e. $$\text{Ker}(A^* - \overline\lambda\mathbf{1}) = \{0\}$$. Since $$(A-\lambda\mathbf{1})^* = A^* - \overline\lambda\mathbf{1}$$ (as in the proof of [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms)), [**Proposition** *(Orthogonal Complement of the Range)*](#prpstn:hall-9.12) gives
+
+$$
+    \big( \text{Range}(A - \lambda\mathbf{1}) \big)^\perp = \text{Ker}\big( (A-\lambda\mathbf{1})^* \big) = \{0\},
+$$
+
+so by [**Corollary** *(Trivial Complement Characterizes Density)*](#crllr:trivial-complement-characterizes-density), $$\text{Range}(A-\lambda\mathbf{1})$$ is dense in $$\mathbf{H}$$. A bounded operator is in particular closed (its graph is closed: if $$\psi_n\to\psi$$ and $$(A-\lambda\mathbf{1})\psi_n \to \varphi$$ then continuity gives $$(A-\lambda\mathbf{1})\psi = \varphi$$, and $$\text{Dom} = \mathbf{H}$$ contains $$\psi$$), so $$(\natural)$$ lets us apply [**Proposition** *(Closedness of the Range from a Lower Bound)*](#prpstn:hall-9.14) to conclude $$\text{Range}(A-\lambda\mathbf{1})$$ is closed. Dense and closed, it is all of $$\mathbf{H}$$.
+
+So $$A - \lambda\mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$; let $$S$$ be its inverse (linear, by the argument used in the proof of [**Theorem** *(Spectrum of a Self-Adjoint Operator is Real)*](#thrm:hall-9.17)). For $$\phi \in \mathbf{H}$$, applying $$(\natural)$$ with $$\psi = S\phi$$ gives $$\left\| \phi \right\| = \left\| (A-\lambda\mathbf{1})S\phi \right\| \ge \varepsilon\left\| S\phi \right\|$$, so $$\left\| S\phi \right\| \le \varepsilon^{-1}\left\| \phi \right\|$$ and $$S$$ is bounded. By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda$$ is in the resolvent set of $$A$$, i.e. $$\lambda \notin \sigma(A)$$. This is the contrapositive of the remaining direction.$$\blacksquare$$
+
+> **Lemma**
+<a name="lmm:hall-10.26"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{def:hall-10.24} -->
+<!--  \uses{lmm:normality-balances-norms} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, $$p$$ a polynomial in two variables, and $$\lambda \in \mathbb{C}$$. Then there is a constant $$C$$ (depending on $$p$$, $$A$$, and $$\lambda$$, but not on $$\varepsilon$$ or $$\psi$$) such that: if $$\psi$$ is an $$\varepsilon$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda$$, then $$\psi$$ is a $$(C\varepsilon)$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$p(\lambda,\overline\lambda)$$.
+
+**Proof**
+Write $$p(\lambda,\overline\lambda) = \sum_{k,l} a_{kl}\lambda^k\overline\lambda^{\,l}$$, so that $$p(A,A^*) = \sum_{k,l} a_{kl}A^k(A^*)^l$$ (a well-defined expression, since $$A$$ and $$A^*$$ commute). Then
+
+$$
+    \big( p(A,A^*) - p(\lambda,\overline\lambda)\mathbf{1} \big)\psi = \sum_{k,l} a_{kl}\big( A^k(A^*)^l - \lambda^k\overline\lambda^{\,l}\mathbf{1} \big)\psi,
+$$
+
+so, by the triangle inequality, it suffices to bound $$\left\| \big( A^k(A^*)^l - \lambda^k\overline\lambda^{\,l}\mathbf{1} \big)\psi \right\|$$ by $$c_{kl}\varepsilon\left\| \psi \right\|$$ for each $$(k,l)$$; the constant $$C = \sum_{k,l} \lvert a_{kl} \rvert c_{kl}$$ then works.
+
+We prove the required bound by induction on $$k+l$$. For $$k+l = 0$$ the operator is $$\mathbf{1} - \mathbf{1} = 0$$ and $$c_{00}=0$$ works. For $$k=1, l=0$$, $$\left\| (A-\lambda\mathbf{1})\psi \right\| < \varepsilon\left\| \psi \right\|$$ by hypothesis, so $$c_{10}=1$$ works; for $$k=0,l=1$$, $$\left\| (A^*-\overline\lambda\mathbf{1})\psi \right\| = \left\| (A-\lambda\mathbf{1})\psi \right\| < \varepsilon\left\| \psi \right\|$$ by [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms), so $$c_{01}=1$$ works.
+
+Suppose the bound holds for all pairs with $$k+l = N$$, and let $$k+l = N+1$$. If $$k > 0$$, the algebraic identity
+
+$$
+    \big( A^k(A^*)^l - \lambda^k\overline\lambda^{\,l}\mathbf{1} \big)\psi
+      = A^{k-1}(A^*)^l (A - \lambda\mathbf{1})\psi
+      + \lambda\big( A^{k-1}(A^*)^l - \lambda^{k-1}\overline\lambda^{\,l}\mathbf{1} \big)\psi
+$$
+
+holds (expand the right-hand side: the two $$\lambda A^{k-1}(A^*)^l\psi$$ terms cancel). The first term has norm at most $$\left\| A \right\|^{k-1}\left\| A^* \right\|^l \left\| (A-\lambda\mathbf{1})\psi \right\| \le \left\| A \right\|^{k-1}\left\| A^* \right\|^l \varepsilon \left\| \psi \right\|$$, by submultiplicativity of the operator norm and the hypothesis on $$\psi$$. The second has norm at most $$\lvert \lambda \rvert c_{k-1,l}\varepsilon\left\| \psi \right\|$$, by the inductive hypothesis (applicable since $$(k-1)+l = N$$). So $$c_{kl} = \left\| A \right\|^{k-1}\left\| A^* \right\|^l + \lvert \lambda \rvert c_{k-1,l}$$ works. If $$k = 0$$, then $$l > 0$$, and the symmetric identity
+
+$$
+    \big( (A^*)^l - \overline\lambda^{\,l}\mathbf{1} \big)\psi
+      = (A^*)^{l-1}(A^* - \overline\lambda\mathbf{1})\psi
+      + \overline\lambda\big( (A^*)^{l-1} - \overline\lambda^{\,l-1}\mathbf{1} \big)\psi
+$$
+
+gives, in the same way (using [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms) to bound $$\left\| (A^*-\overline\lambda\mathbf{1})\psi \right\|$$ by $$\varepsilon\left\| \psi \right\|$$), $$c_{0l} = \left\| A^* \right\|^{l-1} + \lvert \lambda \rvert c_{0,l-1}$$.
+
+Finally $$\psi \ne 0$$ by hypothesis, so $$\psi$$ is a $$(C\varepsilon)$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$p(\lambda,\overline\lambda)$$, provided $$C > 0$$; if the bound above yields $$C = 0$$ (which happens only when $$p$$ is constant, where $$p(A,A^*) - p(\lambda,\overline\lambda)\mathbf{1} = 0$$), any $$C>0$$ serves.$$\blacksquare$$
