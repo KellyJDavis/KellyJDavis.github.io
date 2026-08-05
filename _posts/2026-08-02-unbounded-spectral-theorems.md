@@ -1681,7 +1681,7 @@ An operator-norm-convergent power series composed with any bounded linear functi
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{thrm:norm-via-dual-pairing} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
-> Suppose $$A \in \mathcal{B}(\mathbf{H})$$ and $$T \in \mathbb{R}$$ with $$T > R(A)$$. Then
+> Suppose $$\mathbf{H} \ne \{0\}$$, $$A \in \mathcal{B}(\mathbf{H})$$, and $$T \in \mathbb{R}$$ with $$T > R(A)$$. (The hypothesis $$\mathbf{H} \ne \{0\}$$ is what makes $$R(A)$$ well defined: by [**Definition** *(Spectral Radius)*](../spectral-theorems/#def:spectral-radius) it is a supremum over $$\sigma(A)$$, and $$\sigma(A)$$ is non-empty only because of Part 1 of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), which fails on the zero space.) Then
 >
 > $$
 >     \lim_{m \to \infty} \frac{\|A^m\|}{T^m} = 0.
@@ -1723,7 +1723,7 @@ We now use this growth bound to establish submultiplicativity of the spectral ra
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
-> If $$A$$ and $$B$$ are commuting elements of $$\mathcal{B}(\mathbf{H})$$, then
+> Suppose $$\mathbf{H} \ne \{0\}$$ (so that the spectral radii below are well defined, as in [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius)). If $$A$$ and $$B$$ are commuting elements of $$\mathcal{B}(\mathbf{H})$$, then
 >
 > $$
 >     R(AB) \le R(A)R(B).
@@ -1805,7 +1805,7 @@ As this holds for all $$\phi,\psi\in\mathbf{H}$$, this is exactly the defining p
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.2} -->
 <!--  \uses{../spectral-theorems/#lmm:hall-8.1} -->
 <!--  \uses{lmm:adjoint-product-and-involution} -->
-> If $$A \in \mathcal{B}(\mathbf{H})$$ is normal, then $$\|A\| = R(A)$$.
+> Suppose $$\mathbf{H} \ne \{0\}$$ (so that $$R(A)$$ is well defined, as in [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius)). If $$A \in \mathcal{B}(\mathbf{H})$$ is normal, then $$\|A\| = R(A)$$.
 
 **Proof**
 By [**Corollary**](../spectral-theorems/#crllr:crllr-1), $$R(A) \le \|A\|$$ for any bounded operator. It remains to show $$\|A\| \le R(A)$$.
