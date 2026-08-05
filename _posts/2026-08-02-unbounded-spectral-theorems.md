@@ -360,6 +360,17 @@ We record next a description of $$\text{Ker}(A^*)$$ in terms of $$A$$ itself, ge
 >     V^\perp \equiv \{ \psi \in \mathbf{H} \mid \left< \psi, v \right> = 0 \text{ for all } v \in V \}.
 > $$
 
+> **Definition** *(Kernel of an Unbounded Operator)*
+<a name="def:kernel-of-an-unbounded-operator"></a>
+<!--  \uses{def:hall-3.1} -->
+> If $$A$$ is an unbounded operator on $$\mathbf{H}$$, its *kernel* is
+>
+> $$
+>     \text{Ker}(A) \equiv \{ \psi \in \text{Dom}(A) \mid A\psi = 0 \} \subset \text{Dom}(A).
+> $$
+>
+> As with the range, the domain restriction is part of the definition: a vector outside $$\text{Dom}(A)$$ is not in $$\text{Ker}(A)$$, regardless of any other property it may have. $$\text{Ker}(A)$$ is a subspace of $$\mathbf{H}$$: it contains $$0$$, and for $$\psi_1,\psi_2 \in \text{Ker}(A)$$ and $$\alpha,\beta \in \mathbb{C}$$ we have $$\alpha\psi_1+\beta\psi_2 \in \text{Dom}(A)$$ (a subspace) with $$A(\alpha\psi_1+\beta\psi_2) = \alpha A\psi_1 + \beta A\psi_2 = 0$$. Saying $$A$$ is *injective* is equivalent to $$\text{Ker}(A) = \{0\}$$, by linearity.
+
 > **Definition** *(Range of an Unbounded Operator)*
 <a name="def:range-of-an-unbounded-operator"></a>
 <!--  \uses{def:hall-3.1} -->
@@ -391,6 +402,7 @@ Conversely, suppose $$V$$ is dense, i.e. $$\overline{V} = \mathbf{H}$$. Let $$\p
 <!--  \uses{def:orthogonal-complement} -->
 <!--  \uses{lmm:characterizing-adjoint-domain-membership} -->
 <!--  \uses{def:range-of-an-unbounded-operator} -->
+<!--  \uses{def:kernel-of-an-unbounded-operator} -->
 > If $$A$$ is an unbounded operator on $$\mathbf{H}$$, then
 >
 > $$
@@ -529,6 +541,22 @@ Recall that for a bounded operator, a number $$\lambda \in \mathbb{C}$$ belongs 
 >
 > If no such bounded operator $$B$$ exists, then $$\lambda$$ belongs to the *spectrum* $$\sigma(A)$$ of $$A$$.
 
+The operator $$B$$ in this definition is unique when it exists, which is what licenses the notation $$(A - \lambda\mathbf{1})^{-1}$$ used throughout below.
+
+> **Lemma** *(Uniqueness of the Resolvent)*
+<a name="lmm:uniqueness-of-resolvent"></a>
+<!--  \uses{def:hall-9.16} -->
+> Let $$A$$ be an unbounded operator on $$\mathbf{H}$$ and $$\lambda$$ a point of its resolvent set. Then there is exactly one $$B \in \mathcal{B}(\mathbf{H})$$ satisfying properties 1 and 2 of [Definition (Resolvent Set and Spectrum of an Unbounded Operator)](#def:hall-9.16). We denote it $$(A - \lambda\mathbf{1})^{-1}$$.
+
+**Proof**
+Suppose $$B_1, B_2 \in \mathcal{B}(\mathbf{H})$$ both satisfy properties 1 and 2, and let $$\psi \in \mathbf{H}$$. By property 1 for $$B_1$$, $$B_1\psi \in \text{Dom}(A)$$ and $$(A-\lambda\mathbf{1})B_1\psi = \psi$$. Applying $$B_2$$ to both sides of this last equation and using property 2 for $$B_2$$ with the vector $$B_1\psi \in \text{Dom}(A)$$,
+
+$$
+    B_1\psi = B_2(A - \lambda\mathbf{1})B_1\psi = B_2\psi.
+$$
+
+As $$\psi \in \mathbf{H}$$ was arbitrary, $$B_1 = B_2$$.$$\blacksquare$$
+
 As in the bounded case, even if $$A$$ is self-adjoint, a point $$\lambda \in \sigma(A)$$ need not be an eigenvalue. On the other hand, if $$A\psi = \lambda\psi$$ for some nonzero $$\psi \in \text{Dom}(A)$$, then $$A - \lambda\mathbf{1}$$ is not injective, so it certainly cannot have a two-sided bounded inverse — thus $$\lambda \in \sigma(A)$$.
 
 We now come to a central result: the spectrum of a self-adjoint operator, bounded or not, is always contained in the real line. This is exactly the fact that will let us make sense of the Cayley transform, later in this post. The proof rests on an unbounded, merely-symmetric version of [**Lemma 7.8**](../spectral-theorems/#lmm:hall-7.8) of the previous post, which was stated and proved only for $$A \in \mathcal{B}(\mathbf{H})$$ self-adjoint. Its proof, in fact, only uses symmetry of $$A$$ — boundedness and the (stronger) self-adjointness hypothesis are never invoked beyond what symmetry already gives — but rather than reuse that result outside its stated hypotheses, we restate and reprove it here, for an unbounded symmetric operator, using the identical computation.
@@ -585,6 +613,8 @@ using positive-definiteness of the inner product for the last step.$$\blacksquar
 <!--  \uses{lmm:b-squared-inequality-symmetric} -->
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
+<!--  \uses{def:kernel-of-an-unbounded-operator} -->
+<!--  \uses{lmm:uniqueness-of-resolvent} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, the spectrum of $$A$$ is contained in the real line.
 
 **Proof**
@@ -658,6 +688,7 @@ We conclude this part of the development with a criterion for essential self-adj
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{def:kernel-of-an-unbounded-operator} -->
 > If $$A$$ is a symmetric operator on $$\mathbf{H}$$, then $$A$$ is essentially self-adjoint if and only if $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense subspaces of $$\mathbf{H}$$.
 
 **Proof**
@@ -813,17 +844,17 @@ With the identification in hand, we can restate [**Proposition** *(Direct Sums o
 
 If $$\mathbf{H}_j = \{0\}$$, this is immediate: the only operator on $$\{0\}$$ is the zero map, and it is trivially surjective onto $$\{0\}$$. (We treat this degenerate case separately because the route used below passes through [Proposition (Spectrum of a Bounded Self-Adjoint Operator)](../spectral-theorems/#prpstn:hall-7.7), whose statement asserts that $$\sigma(A_j)$$ is *non-empty* — which fails when $$\mathbf{H}_j = \{0\}$$, since then every $$\lambda$$ lies in the resolvent set and $$\sigma(A_j) = \emptyset$$. The conclusion we need is unaffected, but the cited route is unavailable, so we discharge the case directly.)
 
-Suppose then $$\mathbf{H}_j \ne \{0\}$$. Since $$A_j$$ is a bounded self-adjoint operator on $$\mathbf{H}_j$$, [Proposition (Spectrum of a Bounded Self-Adjoint Operator)](../spectral-theorems/#prpstn:hall-7.7) shows $$\sigma(A_j) \subset \mathbb{R}$$, so $$\pm i \notin \sigma(A_j)$$, i.e. $$\pm i$$ lie in the resolvent set of $$A_j$$: the bounded operators $$A_j \mp i\mathbf{1}$$ have bounded two-sided inverses, and an operator with a two-sided inverse is in particular surjective, so $$A_j \mp i\mathbf{1}$$ maps onto $$\mathbf{H}_j$$. Let $$\iota_j : \mathbf{H}_j \to \mathbf{H}$$ denote the isometric embedding of $$\mathbf{H}_j$$ as the $$j$$-th summand (all other coordinates zero); note $$\iota_j(\mathbf{H}_j) \subset W_0 \subset \text{Dom}(A)$$, and, by hypothesis on $$A$$, $$A \iota_j(\eta) = \iota_j(A_j \eta)$$ for $$\eta \in \mathbf{H}_j$$. Hence, by linearity of $$A$$,
+Suppose then $$\mathbf{H}_j \ne \{0\}$$. Since $$A_j$$ is a bounded self-adjoint operator on $$\mathbf{H}_j$$, [Proposition (Spectrum of a Bounded Self-Adjoint Operator)](../spectral-theorems/#prpstn:hall-7.7) shows $$\sigma(A_j) \subset \mathbb{R}$$, so $$\pm i \notin \sigma(A_j)$$, i.e. $$\pm i$$ lie in the resolvent set of $$A_j$$: the bounded operators $$A_j \mp i\mathbf{1}$$ have bounded two-sided inverses, and an operator with a two-sided inverse is in particular surjective, so $$A_j \mp i\mathbf{1}$$ maps onto $$\mathbf{H}_j$$. Let $$J_j : \mathbf{H}_j \to \mathbf{H}$$ denote the isometric embedding of $$\mathbf{H}_j$$ as the $$j$$-th summand (all other coordinates zero); note $$J_j(\mathbf{H}_j) \subset W_0 \subset \text{Dom}(A)$$, and, by hypothesis on $$A$$, $$A J_j(\eta) = J_j(A_j \eta)$$ for $$\eta \in \mathbf{H}_j$$. Hence, by linearity of $$A$$,
 
 $$
-    (A - i\mathbf{1}) \iota_j(\eta) = A\iota_j(\eta) - i\iota_j(\eta) = \iota_j(A_j \eta) - i\iota_j(\eta) = \iota_j\big( (A_j - i\mathbf{1})\eta \big),
+    (A - i\mathbf{1}) J_j(\eta) = AJ_j(\eta) - iJ_j(\eta) = J_j(A_j \eta) - iJ_j(\eta) = J_j\big( (A_j - i\mathbf{1})\eta \big),
 $$
 
-using linearity of $$\iota_j$$ for the last step. So $$\iota_j\big( \text{Range}(A_j - i\mathbf{1}) \big) \subset \text{Range}(A - i\mathbf{1})$$; since $$A_j - i\mathbf{1}$$ is surjective onto $$\mathbf{H}_j$$, this reads $$\iota_j(\mathbf{H}_j) \subset \text{Range}(A - i\mathbf{1})$$. As this holds for every $$j$$, and $$\text{Range}(A - i\mathbf{1})$$ is a subspace (by linearity of $$A - i\mathbf{1}$$ on $$\text{Dom}(A)$$), $$\text{Range}(A - i\mathbf{1})$$ contains every finite sum of elements from the $$\iota_j(\mathbf{H}_j)$$'s, i.e. $$W_0 \subset \text{Range}(A - i\mathbf{1})$$. By the definition of the Hilbert space direct sum, $$W_0$$ is dense in $$\mathbf{H}$$, so $$\text{Range}(A - i\mathbf{1})$$ — being a superset of the dense subset $$W_0$$ — is itself dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$. Since $$A$$ is symmetric by hypothesis, [Theorem (Essential Self-Adjointness via Dense Range)](#thrm:hall-9.21) shows $$A$$ is essentially self-adjoint.
+using linearity of $$J_j$$ for the last step. So $$J_j\big( \text{Range}(A_j - i\mathbf{1}) \big) \subset \text{Range}(A - i\mathbf{1})$$; since $$A_j - i\mathbf{1}$$ is surjective onto $$\mathbf{H}_j$$, this reads $$J_j(\mathbf{H}_j) \subset \text{Range}(A - i\mathbf{1})$$. As this holds for every $$j$$, and $$\text{Range}(A - i\mathbf{1})$$ is a subspace (by linearity of $$A - i\mathbf{1}$$ on $$\text{Dom}(A)$$), $$\text{Range}(A - i\mathbf{1})$$ contains every finite sum of elements from the $$J_j(\mathbf{H}_j)$$'s, i.e. $$W_0 \subset \text{Range}(A - i\mathbf{1})$$. By the definition of the Hilbert space direct sum, $$W_0$$ is dense in $$\mathbf{H}$$, so $$\text{Range}(A - i\mathbf{1})$$ — being a superset of the dense subset $$W_0$$ — is itself dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$. Since $$A$$ is symmetric by hypothesis, [Theorem (Essential Self-Adjointness via Dense Range)](#thrm:hall-9.21) shows $$A$$ is essentially self-adjoint.
 
 **Part 2: reduction to $$\text{Dom}(A) = W_0$$.** We first check $$A\vert_{W_0}$$ is itself a legitimate unbounded operator to which **Part 1**'s argument applies, and that it is symmetric. By [Definition (Hilbert Space Direct Sum)](#def:hall-a.45), the finite direct sum $$W_0$$ is dense in $$\mathbf{H}$$, so $$A\vert_{W_0}$$, with domain $$W_0$$, is an unbounded operator in the sense of [Definition (Unbounded Operator)](#def:hall-3.1). For symmetry: since $$W_0 \subset \text{Dom}(A)$$ and $$A\vert_{W_0} = A$$ on $$W_0$$, for $$\phi,\psi \in W_0$$, symmetry of $$A$$ gives $$\left< \phi, (A\vert_{W_0})\psi \right> = \left< \phi, A\psi \right> = \left< A\phi, \psi \right> = \left< (A\vert_{W_0})\phi, \psi \right>$$, which is the [definition of symmetric](#def:hall-9.2) for $$A\vert_{W_0}$$.
 
-The argument of **Part 1**, applied verbatim to $$A\vert_{W_0}$$ in place of $$A$$ (it only used that $$\iota_j(\mathbf{H}_j) \subset W_0 = \text{Dom}(A\vert_{W_0})$$, that $$A\vert_{W_0}$$ agrees with $$A_j$$ there, and symmetry of $$A\vert_{W_0}$$, all just established), shows $$A\vert_{W_0}$$ is also essentially self-adjoint.
+The argument of **Part 1**, applied verbatim to $$A\vert_{W_0}$$ in place of $$A$$ (it only used that $$J_j(\mathbf{H}_j) \subset W_0 = \text{Dom}(A\vert_{W_0})$$, that $$A\vert_{W_0}$$ agrees with $$A_j$$ there, and symmetry of $$A\vert_{W_0}$$, all just established), shows $$A\vert_{W_0}$$ is also essentially self-adjoint.
 
 We now check $$A^{\text{cl}}$$ is a self-adjoint extension of $$A\vert_{W_0}$$. Essential self-adjointness of $$A$$, from **Part 1**, means exactly that $$A^{\text{cl}}$$ is self-adjoint; and, by Part 3 of [Proposition (Linearity and the Sequential Description of the Closure)](#prpstn:closure-linearity-and-sequential-description), $$A^{\text{cl}}$$ is an extension of $$A$$, which is in turn (trivially, by the [definition of extension](#def:hall-9.3)) an extension of $$A\vert_{W_0}$$. Extension is transitive: if $$\text{Dom}(A\vert_{W_0}) \subset \text{Dom}(A)$$ with $$A = A\vert_{W_0}$$ there, and $$\text{Dom}(A) \subset \text{Dom}(A^{\text{cl}})$$ with $$A^{\text{cl}} = A$$ there, then $$\text{Dom}(A\vert_{W_0}) \subset \text{Dom}(A^{\text{cl}})$$ and $$A^{\text{cl}} = A = A\vert_{W_0}$$ on $$\text{Dom}(A\vert_{W_0})$$. So $$A^{\text{cl}}$$ is a self-adjoint extension of $$A\vert_{W_0}$$. By [Proposition (Uniqueness of the Self-Adjoint Extension of an Essentially Self-Adjoint Operator)](#prpstn:hall-9.11) applied to the essentially self-adjoint operator $$A\vert_{W_0}$$, $$A^{\text{cl}}$$ must coincide with $$(A\vert_{W_0})^{\text{cl}}$$, the unique self-adjoint extension of $$A\vert_{W_0}$$:
 
@@ -1833,7 +1864,7 @@ We need three properties of these subspaces. The first two follow directly from 
 **Proof**
 Throughout we use the [**functional calculus**](../spectral-theorems/#def:functional-calculus) $$f \mapsto f(A) = \int_{\sigma(A)} f \, d\mu^A$$ for bounded measurable $$f$$, and in particular its multiplicativity, $$(fg)(A) = f(A)g(A)$$, which is property 3 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration).
 
-**Part 1.** Write $$\iota(\lambda) = \lambda$$, so $$\iota(A) = A$$, and note $$\mu^A(E) = 1_E(A)$$. Since $$\iota \cdot 1_E = 1_E \cdot \iota$$ as functions, multiplicativity gives $$A\,\mu^A(E) = (\iota 1_E)(A) = (1_E \iota)(A) = \mu^A(E)\,A$$. Hence for $$\psi = \mu^A(E)\phi \in V_E$$,
+**Part 1.** Throughout the remainder of this post, $$\iota$$ denotes the identity function $$\iota(\lambda) = \lambda$$ on whichever space is under discussion (not to be confused with the embeddings $$J_j$$ used in [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators)*](#prpstn:hall-9.26)). So $$\iota(A) = A$$, and note $$\mu^A(E) = 1_E(A)$$. Since $$\iota \cdot 1_E = 1_E \cdot \iota$$ as functions, multiplicativity gives $$A\,\mu^A(E) = (\iota 1_E)(A) = (1_E \iota)(A) = \mu^A(E)\,A$$. Hence for $$\psi = \mu^A(E)\phi \in V_E$$,
 
 $$
     A\psi = A\mu^A(E)\phi = \mu^A(E)(A\phi) \in \text{Range}\big(\mu^A(E)\big) = V_E.
@@ -1974,6 +2005,7 @@ Note that, unlike the set of genuine eigenvectors for a fixed $$\lambda$$, the s
 <!--  \uses{prpstn:hall-9.12} -->
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:kernel-of-an-unbounded-operator} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal.
 >
 > 1. If $$\psi$$ is an $$\varepsilon$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda$$, then $$\psi$$ is an $$\varepsilon$$-almost eigenvector for $$A^*$$ with eigenvalue $$\overline\lambda$$.
@@ -2667,6 +2699,7 @@ We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Se
 <!--  \uses{prpstn:hall-9.13} -->
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
 <!--  \uses{def:range-of-an-unbounded-operator} -->
+<!--  \uses{lmm:uniqueness-of-resolvent} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$ and define
 >
 > $$
@@ -2989,6 +3022,7 @@ We can finally state and prove the theorem this post set out to establish.
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
+<!--  \uses{lmm:uniqueness-of-resolvent} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, there is a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\mathbb{R}$$ such that
 >
 > $$
