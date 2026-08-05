@@ -12,11 +12,11 @@ As before, we generally follow the clear, straightforward presentation of [Quant
 
 A note on conventions, extending the one given in the previous post. Results that are standard and whose proofs lie outside the scope of the development are, as before, stated in full but not proven, marked by the absence of an accompanying **Proof**. Every other result stated here — including everything below on unbounded operators — is proven in full, and every use of a prior result is made explicit, including a check that its hypotheses actually hold in the situation at hand. We do not assume the reader has already encountered unbounded operators: the relevant definitions are built up from scratch below, so that this post is self-contained modulo the previous one.
 
-One more note, for a formalizer rather than a general reader: several proofs below pick a sequence, or a preimage, satisfying some property known only to exist (e.g. the approximating sequence in the [sequential characterization of a closure](#prpstn:closure-linearity-and-sequential-description), or a preimage $$\xi$$ with $$\eta = \mu(E)\xi$$ in the proof of [Lemma (Range Membership Concentrates the Associated Measure)](#lmm:range-membership-concentrates-measure)). These choices are all routine — nothing here needs a genuinely non-constructive selection principle beyond what dependent choice or `Classical.choice` already provides for sequences in a metric space — but they are choices, not constructions, and a formalizer should expect to reach for the corresponding Lean tactics rather than a constructive witness.
+One more note, for a formalizer rather than a general reader: several proofs below pick a sequence, or a preimage, satisfying some property known only to exist (e.g. the approximating sequence in the [sequential characterization of a closure](#prpstn:closure-linearity-and-sequential-description), or a preimage $$\xi$$ with $$\eta = P\xi$$ in the proof of [Lemma (The Range of a Projection is the Kernel of its Complement)](#lmm:range-of-projection-is-kernel)). These choices are all routine — nothing here needs a genuinely non-constructive selection principle beyond what dependent choice or `Classical.choice` already provides for sequences in a metric space — but they are choices, not constructions, and a formalizer should expect to reach for the corresponding Lean tactics rather than a constructive witness.
 
 # Spectral Theorem: Unbounded Self-Adjoint Operators
 
-We proceed in four stages. First, the basic theory of unbounded operators — adjoints, symmetry, self-adjointness, closedness, and the spectrum. Second, a theory of integrating an unbounded function against a projection-valued measure. Third, the spectral theorem for *bounded normal* operators. Finally, the Cayley transform, which lets us reduce the unbounded self-adjoint case to the bounded normal case and complete the proof.
+We proceed in five stages. First, the basic theory of unbounded operators — adjoints, symmetry, self-adjointness, closedness, and the spectrum. Second, a theory of integrating an unbounded function against a projection-valued measure. Third, the continuous functional calculus for a *bounded normal* operator, built via a two-variable spectral mapping theorem. Fourth, an abstract construction turning any continuous functional calculus into a projection-valued measure — which, combined with the third stage, yields the spectral theorem for bounded normal operators. Finally, the Cayley transform, which lets us reduce the unbounded self-adjoint case to the bounded normal case and complete the proof.
 
 ## Unbounded Operators
 
@@ -271,6 +271,7 @@ Our first observation is that the adjoint's graph is always closed, regardless o
 <!--  \uses{def:hall-9.6} -->
 <!--  \uses{prpstn:hall-9.4} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{prpstn:hall-linearity-of-the-adjoint} -->
 > 1. If $$A$$ is an unbounded operator on $$\mathbf{H}$$, then the graph of $$A^*$$ (which may or may not be densely defined) is closed in $$\mathbf{H} \times \mathbf{H}$$.
 > 2. A symmetric operator is always closable.
 
@@ -1516,6 +1517,7 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{lmm:norm-convergent-decomposition} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{lmm:restriction-of-quadratic-form} -->
 > If $$f$$ is a real-valued, measurable function on $$X$$, then $$\int_X f \, d\mu$$ is self-adjoint on $$W_f$$.
 
 **Proof**
@@ -2084,7 +2086,7 @@ We can now carry out the construction that replaces the matrix-case eigenspace a
 **Proof**
 Fix $$\varepsilon > 0$$ and set $$B \equiv p(A,A^*) - \mu\mathbf{1}$$. By [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), $$p(A,A^*)$$ is normal, and hence so is $$B$$ (the computation in the proof of [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms) shows that subtracting a scalar multiple of $$\mathbf{1}$$ preserves normality). Since $$\mu \in \sigma(p(A,A^*))$$, $$0 \in \sigma(B)$$ — for $$B - 0\cdot\mathbf{1} = p(A,A^*) - \mu\mathbf{1}$$ has a bounded two-sided inverse exactly when $$\mu$$ is in the resolvent set of $$p(A,A^*)$$.
 
-*Step 1: $$0 \in \sigma(B^*B)$$.* The operator $$B^*B$$ is self-adjoint, by [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution): $$(B^*B)^* = B^*(B^*)^* = B^*B$$. Let $$\delta > 0$$. Apply [**Lemma** *(hall-10.26)*](#lmm:hall-10.26) to the normal operator $$B$$ with the polynomial $$q(\lambda,\overline\lambda) = \lambda\overline\lambda$$. Substituting gives $$q(B,B^*) = BB^*$$, which equals $$B^*B$$ because $$B$$ is normal; and $$q(0,\overline{0}) = 0$$. The lemma supplies a constant $$C_q$$, which — as its statement permits, the conclusion only weakening when $$C$$ is enlarged — we may and do take to be strictly positive, so that division by $$C_q$$ below is legitimate.
+*Step 1: $$0 \in \sigma(B^*B)$$.* The operator $$B^*B$$ is self-adjoint, by [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution): $$(B^*B)^* = B^*(B^*)^* = B^*B$$. Let $$\delta > 0$$. Apply [**Lemma** *(hall-10.26)*](#lmm:hall-10.26) to the normal operator $$B$$ with the polynomial $$q(\lambda,\overline\lambda) = \lambda\overline\lambda$$. Substituting gives $$q(B,B^*) = BB^*$$, which equals $$B^*B$$ because $$B$$ is normal; and $$q(0,\overline{0}) = 0$$. The lemma supplies a constant $$C_q$$. Enlarging it if necessary, we may assume $$C_q > 0$$ — the conclusion of the lemma only weakens when the constant is enlarged — so that division by $$C_q$$ below is legitimate.
 
 Since $$0 \in \sigma(B)$$ and $$B$$ is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives, for the particular value $$\delta' \equiv \delta/C_q > 0$$, a $$\delta'$$-almost eigenvector $$\psi$$ for $$B$$ with eigenvalue $$0$$. By the lemma just applied, $$\psi$$ is then a $$(C_q\delta') = \delta$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. As $$\delta>0$$ was arbitrary and $$B^*B$$, being self-adjoint, is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives $$0 \in \sigma(B^*B)$$.
 
@@ -2827,6 +2829,7 @@ The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ b
 <!--  \uses{prpstn:abstract-extended-multiplicative} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{prpstn:hall-9.11} -->
+<!--  \uses{lmm:unitary-is-normal} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, let $$U$$ be its Cayley transform, and let $$D$$ be as in [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). (The hypothesis $$\mathbf{H} \ne \{0\}$$ is needed because the projection-valued measure $$\mu^U$$ below is supplied by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20), which assumes it.) Then
 >
 > $$
