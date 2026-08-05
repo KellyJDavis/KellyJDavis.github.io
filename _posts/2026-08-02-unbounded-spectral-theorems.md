@@ -1851,46 +1851,51 @@ We need three properties of these subspaces. The first two follow directly from 
 <!--  \uses{lmm:integral-ignores-null-sets} -->
 <!--  \uses{prpstn:coincidence-with-the-bounded-integral} -->
 <!--  \uses{lmm:range-of-projection-is-kernel} -->
+<!--  \uses{lmm:uniqueness-of-resolvent} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#def:functional-calculus} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint, with spectral subspaces $$V_E$$.
+> Let $$X \subset \mathbb{C}$$ be compact, let $$\mu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$, and set $$A \equiv \int_X \iota \, d\mu$$ — a bounded operator, since $$\iota(\lambda) = \lambda$$ is bounded on the compact set $$X$$. Let $$V_E \equiv \text{Range}(\mu(E))$$ be the associated [spectral subspaces](#def:hall-7.14). Then:
 >
 > 1. Each $$V_E$$ is invariant under $$A$$: $$A(V_E) \subset V_E$$.
-> 2. If $$E \subset [\lambda_0 - \varepsilon, \lambda_0 + \varepsilon]$$, then $$\left\| (A - \lambda_0\mathbf{1})\psi \right\| \le \varepsilon \left\| \psi \right\|$$ for all $$\psi \in V_E$$.
-> 3. If $$\lambda_0 \in \sigma(A)$$, then $$V_U \ne \{0\}$$ for every open neighbourhood $$U$$ of $$\lambda_0$$ in $$\mathbb{R}$$.
+> 2. If $$E \subset \{ \lambda \in X \mid \lvert \lambda - \lambda_0 \rvert \le \varepsilon \}$$ for some $$\lambda_0 \in \mathbb{C}$$ and $$\varepsilon > 0$$, then $$\left\| (A - \lambda_0\mathbf{1})\psi \right\| \le \varepsilon \left\| \psi \right\|$$ for all $$\psi \in V_E$$.
+> 3. If $$\lambda_0 \in \sigma(A)$$, then $$V_{U \cap X} \ne \{0\}$$ for every open $$U \subset \mathbb{C}$$ containing $$\lambda_0$$.
+>
+> Note that the statement is about an arbitrary projection-valued measure on a compact $$X \subset \mathbb{C}$$ and the operator $$A$$ it integrates to; it presupposes no spectral theorem, and its proof below uses none. It will be applied in two ways: with $$\mu = \mu^A$$ for a bounded *self-adjoint* $$A$$ (where $$X = \sigma(A) \subset \mathbb{R}$$, so the sets in Part 2 are real intervals), which is available now; and, later and only after that theorem has been proved by a route passing through this proposition, with $$\mu = \mu^U$$ for a bounded *normal* $$U$$. There is no circularity: the present proposition is logically prior to both.
 
 **Proof**
-Throughout we use the [**functional calculus**](../spectral-theorems/#def:functional-calculus) $$f \mapsto f(A) = \int_{\sigma(A)} f \, d\mu^A$$ for bounded measurable $$f$$, and in particular its multiplicativity, $$(fg)(A) = f(A)g(A)$$, which is property 3 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration).
+Throughout we use multiplicativity of the bounded integral, property 3 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration), and write $$f(A) \equiv \int_X f\,d\mu$$ for bounded measurable $$f$$; note $$\iota(A) = A$$ by the definition of $$A$$, $$1(A) = \mathbf{1}$$ and $$1_E(A) = \mu(E)$$ by property 1 of the same theorem.
 
-**Part 1.** Throughout the remainder of this post, $$\iota$$ denotes the identity function $$\iota(\lambda) = \lambda$$ on whichever space is under discussion (not to be confused with the embeddings $$J_j$$ used in [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators)*](#prpstn:hall-9.26)). So $$\iota(A) = A$$, and note $$\mu^A(E) = 1_E(A)$$. Since $$\iota \cdot 1_E = 1_E \cdot \iota$$ as functions, multiplicativity gives $$A\,\mu^A(E) = (\iota 1_E)(A) = (1_E \iota)(A) = \mu^A(E)\,A$$. Hence for $$\psi = \mu^A(E)\phi \in V_E$$,
-
-$$
-    A\psi = A\mu^A(E)\phi = \mu^A(E)(A\phi) \in \text{Range}\big(\mu^A(E)\big) = V_E.
-$$
-
-**Part 2.** Let $$\psi \in V_E$$, so $$\mu^A(E)\psi = \psi$$ (idempotency, as in [Definition (Spectral Subspaces)](#def:hall-7.14)). With $$f(\lambda) \equiv \lambda - \lambda_0$$, so $$f(A) = A - \lambda_0\mathbf{1}$$, multiplicativity gives
+**Part 1.** Since $$\iota \cdot 1_E = 1_E \cdot \iota$$ as functions, multiplicativity gives $$A\,\mu(E) = (\iota 1_E)(A) = (1_E \iota)(A) = \mu(E)\,A$$. Hence for $$\psi = \mu(E)\phi \in V_E$$,
 
 $$
-    (A - \lambda_0\mathbf{1})\psi = f(A)\,\mu^A(E)\psi = (f 1_E)(A)\psi.
+    A\psi = A\mu(E)\phi = \mu(E)(A\phi) \in \text{Range}\big(\mu(E)\big) = V_E.
 $$
 
-Since $$E \subset [\lambda_0-\varepsilon, \lambda_0+\varepsilon]$$, the function $$f 1_E$$ satisfies $$\lvert f(\lambda)1_E(\lambda) \rvert \le \varepsilon$$ for every $$\lambda$$. By the norm bound of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) (the integral of a function of supremum norm at most $$\varepsilon$$ has operator norm at most $$\varepsilon$$), $$\left\| (f1_E)(A) \right\| \le \varepsilon$$, so $$\left\| (A-\lambda_0\mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$.
-
-**Part 3.** Suppose, for contradiction, that $$\lambda_0 \in \sigma(A)$$ but $$V_U = \{0\}$$ for some open neighbourhood $$U$$ of $$\lambda_0$$. Since $$U$$ is open and contains $$\lambda_0$$, there is $$\varepsilon > 0$$ with $$U_\varepsilon \equiv (\lambda_0-\varepsilon,\lambda_0+\varepsilon) \subset U$$. Then $$V_{U_\varepsilon} \subset V_U$$: for $$E \subset F$$ measurable, property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) gives $$\mu^A(F)\mu^A(E) = \mu^A(E \cap F) = \mu^A(E)$$, so every $$\eta = \mu^A(E)\xi$$ satisfies $$\mu^A(F)\eta = \eta$$ and hence lies in $$\text{Range}(\mu^A(F))$$ by [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel). So $$V_{U_\varepsilon} \subset V_U = \{0\}$$, and it suffices to derive a contradiction from $$V_{U_\varepsilon} = \{0\}$$. Now $$V_{U_\varepsilon} = \{0\}$$ means $$\mu^A(U_\varepsilon) = 0$$ as an operator, hence $$\mu^A_\psi(U_\varepsilon) = \left< \psi, \mu^A(U_\varepsilon)\psi \right> = 0$$ for every $$\psi$$: the set $$U_\varepsilon$$ is $$\mu^A_\psi$$-null for every $$\psi$$. Define the bounded measurable function
+**Part 2.** Let $$\psi \in V_E$$, so $$\mu(E)\psi = \psi$$ by [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel). With $$f \equiv \iota - \lambda_0$$, so that $$f(A) = A - \lambda_0\mathbf{1}$$ by linearity of the integral together with $$1(A) = \mathbf{1}$$, multiplicativity gives
 
 $$
-    g(\lambda) \equiv \begin{cases} \dfrac{1}{\lambda-\lambda_0} & \lvert \lambda-\lambda_0 \rvert \ge \varepsilon \\[4pt] 0 & \lvert \lambda-\lambda_0 \rvert < \varepsilon \end{cases}
+    (A - \lambda_0\mathbf{1})\psi = f(A)\,\mu(E)\psi = (f 1_E)(A)\psi.
 $$
 
-(bounded by $$1/\varepsilon$$). The function $$\lambda \mapsto g(\lambda)(\lambda-\lambda_0)$$ equals $$1$$ off $$U_\varepsilon$$ and $$0$$ on $$U_\varepsilon$$, so it agrees with the constant function $$1$$ except on $$U_\varepsilon$$, a null set for every $$\mu^A_\psi$$. Since $$\mu^A(U_\varepsilon) = 0$$, [**Lemma** *(The Integral Ignores Null Sets)*](#lmm:integral-ignores-null-sets) — applied with $$N = U_\varepsilon$$, and transferred to the bounded integral by [**Proposition** *(Coincidence with the Bounded Integral)*](#prpstn:coincidence-with-the-bounded-integral) — gives that $$\lambda \mapsto g(\lambda)(\lambda-\lambda_0)$$ and the constant function $$1$$ have the same integral against $$\mu^A$$, namely $$\mathbf{1}$$. Hence, using multiplicativity,
+Since $$E \subset \{ \lvert \lambda - \lambda_0 \rvert \le \varepsilon \}$$, the function $$f 1_E$$ satisfies $$\lvert f(\lambda)1_E(\lambda) \rvert \le \varepsilon$$ for every $$\lambda \in X$$. By the norm bound, property 2 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration), $$\left\| (f1_E)(A) \right\| \le \varepsilon$$, so $$\left\| (A-\lambda_0\mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$.
+
+**Part 3.** Suppose, for contradiction, that $$\lambda_0 \in \sigma(A)$$ but $$V_{U \cap X} = \{0\}$$ for some open $$U \subset \mathbb{C}$$ containing $$\lambda_0$$. Since $$U$$ is open, there is $$\varepsilon > 0$$ with $$\{ \lvert \lambda - \lambda_0 \rvert < \varepsilon \} \subset U$$; set $$N \equiv \{ \lambda \in X \mid \lvert \lambda - \lambda_0 \rvert < \varepsilon \}$$, so $$N \subset U \cap X$$. Then $$V_N \subset V_{U\cap X} = \{0\}$$: for $$E \subset F$$ measurable, property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) gives $$\mu(F)\mu(E) = \mu(E \cap F) = \mu(E)$$, so every $$\eta = \mu(E)\xi$$ satisfies $$\mu(F)\eta = \eta$$ and hence lies in $$\text{Range}(\mu(F))$$ by [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel). So $$V_N = \{0\}$$, i.e. $$\mu(N) = 0$$ (a projection with trivial range is the zero operator).
+
+Define the bounded measurable function
+
+$$
+    g(\lambda) \equiv \begin{cases} \dfrac{1}{\lambda-\lambda_0} & \lambda \in X \setminus N \\[4pt] 0 & \lambda \in N \end{cases}
+$$
+
+— bounded by $$1/\varepsilon$$, since $$\lvert \lambda - \lambda_0 \rvert \ge \varepsilon$$ off $$N$$. The function $$\lambda \mapsto g(\lambda)(\lambda-\lambda_0)$$ equals $$1$$ on $$X \setminus N$$ and $$0$$ on $$N$$, so it agrees with the constant function $$1$$ off $$N$$, and $$\mu(N) = 0$$; hence [**Lemma** *(The Integral Ignores Null Sets)*](#lmm:integral-ignores-null-sets) — transferred to the bounded integral by [**Proposition** *(Coincidence with the Bounded Integral)*](#prpstn:coincidence-with-the-bounded-integral) — gives $$\big( g\cdot(\iota-\lambda_0) \big)(A) = 1(A) = \mathbf{1}$$. By multiplicativity,
 
 $$
     g(A)(A - \lambda_0\mathbf{1}) = (A-\lambda_0\mathbf{1})g(A) = \mathbf{1},
 $$
 
-exhibiting the bounded operator $$g(A)$$ as a two-sided inverse of $$A - \lambda_0\mathbf{1}$$. By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda_0$$ lies in the resolvent set of $$A$$, contradicting $$\lambda_0 \in \sigma(A)$$.$$\blacksquare$$
+exhibiting the bounded operator $$g(A)$$ as a two-sided inverse of $$A - \lambda_0\mathbf{1}$$ (unique, by [**Lemma** *(Uniqueness of the Resolvent)*](#lmm:uniqueness-of-resolvent)). By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda_0$$ lies in the resolvent set of $$A$$, contradicting $$\lambda_0 \in \sigma(A)$$.$$\blacksquare$$
 
 The last property we need is that an operator commuting with $$A$$ preserves every spectral subspace of $$A$$. This rests on the fact that commuting with $$A$$ propagates through the whole functional calculus.
 
@@ -2141,9 +2146,9 @@ $$
     W^\varepsilon \equiv V_{(-\varepsilon^2/4,\ \varepsilon^2/4)}
 $$
 
-be the spectral subspace of $$B^*B$$ for the interval $$(-\varepsilon^2/4, \varepsilon^2/4)$$, in the sense of [Definition (Spectral Subspaces)](#def:hall-7.14). It is a closed subspace, by that definition. Since $$0 \in \sigma(B^*B)$$ by **Step 1** and $$(-\varepsilon^2/4,\varepsilon^2/4)$$ is an open neighbourhood of $$0$$, Part 3 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15) gives $$W^\varepsilon \ne \{0\}$$.
+be the spectral subspace of $$B^*B$$ for the interval $$(-\varepsilon^2/4, \varepsilon^2/4)$$, in the sense of [Definition (Spectral Subspaces)](#def:hall-7.14). It is a closed subspace, by that definition. Since $$0 \in \sigma(B^*B)$$ by **Step 1**, and the open disc $$\{ \lambda \in \mathbb{C} \mid \lvert \lambda \rvert < \varepsilon^2/4 \}$$ is an open neighbourhood of $$0$$ in $$\mathbb{C}$$ whose intersection with $$\sigma(B^*B) \subset \mathbb{R}$$ is exactly the interval $$(-\varepsilon^2/4,\varepsilon^2/4) \cap \sigma(B^*B)$$, Part 3 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15) — applied with $$X = \sigma(B^*B)$$ and $$\mu = \mu^{B^*B}$$, for which $$\int_X \iota\,d\mu = B^*B$$ by the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators) — gives $$W^\varepsilon \ne \{0\}$$.
 
-*Step 3: the almost-eigenvector bound.* Since $$(-\varepsilon^2/4,\varepsilon^2/4) \subset [0 - \varepsilon^2/4,\ 0 + \varepsilon^2/4]$$, Part 2 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15), applied with $$\lambda_0 = 0$$, gives $$\left\| B^*B\psi \right\| \le (\varepsilon^2/4)\left\| \psi \right\|$$ for all $$\psi \in W^\varepsilon$$. Hence, by [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43) and the [definition of the adjoint](#def:hall-9.1),
+*Step 3: the almost-eigenvector bound.* Since every $$\lambda$$ in the defining set of $$W^\varepsilon$$ satisfies $$\lvert \lambda - 0 \rvert \le \varepsilon^2/4$$, Part 2 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15), applied with $$\lambda_0 = 0$$ and $$\varepsilon^2/4$$ in the role of $$\varepsilon$$ there, gives $$\left\| B^*B\psi \right\| \le (\varepsilon^2/4)\left\| \psi \right\|$$ for all $$\psi \in W^\varepsilon$$. Hence, by [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43) and the [definition of the adjoint](#def:hall-9.1),
 
 $$
     \left\| B\psi \right\|^2 = \left< B\psi, B\psi \right> = \left< \psi, B^*B\psi \right> \le \left\| \psi \right\| \left\| B^*B\psi \right\| \le \frac{\varepsilon^2}{4}\left\| \psi \right\|^2,
@@ -2842,10 +2847,12 @@ One more observation is needed: $$1$$ is never an atom of $$\mu^U$$, so $$D$$ �
 <!--  \uses{thrm:hall-10.20} -->
 <!--  \uses{def:hall-7.14} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{lmm:range-of-projection-is-kernel} -->
+<!--  \uses{prpstn:hall-7.15} -->
 > Let $$A$$ be self-adjoint with Cayley transform $$U$$, and $$\mu^U$$ the projection-valued measure of $$U$$. Then $$\mu^U(\{1\}) = 0$$, and consequently $$\mu^U_\psi(\{1\}) = 0$$ for every $$\psi \in \mathbf{H}$$.
 
 **Proof**
-Let $$V \equiv \text{Range}\big(\mu^U(\{1\})\big)$$ be the corresponding spectral subspace and let $$\psi \in V$$. By Part 2 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15) — applicable to the normal operator $$U$$ and its projection-valued measure, the proof of that part using only multiplicativity of the calculus — applied with the set $$\{1\} \subset [1-\varepsilon, 1+\varepsilon]$$ for every $$\varepsilon > 0$$, we get $$\left\| (U - \mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$ for every $$\varepsilon>0$$, hence $$(U-\mathbf{1})\psi = 0$$. By Point 2 of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28), $$U - \mathbf{1}$$ is injective, so $$\psi = 0$$. Thus $$V = \{0\}$$, i.e. $$\mu^U(\{1\}) = 0$$ (a projection with trivial range is the zero operator, since $$P\xi \in \text{Range}(P) = \{0\}$$ for every $$\xi$$). Then $$\mu^U_\psi(\{1\}) = \left< \psi, \mu^U(\{1\})\psi \right> = 0$$ for every $$\psi$$.$$\blacksquare$$
+Let $$V \equiv \text{Range}\big(\mu^U(\{1\})\big)$$ be the corresponding spectral subspace and let $$\psi \in V$$. Apply Part 2 of [**Proposition** *(Properties of Spectral Subspaces)*](#prpstn:hall-7.15) with $$X = \sigma(U)$$ (compact, and contained in $$\mathbb{C}$$), $$\mu = \mu^U$$ — so that $$\int_X \iota\,d\mu^U = U$$ by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20), making the operator called $$A$$ there equal to $$U$$ — together with $$\lambda_0 = 1$$ and $$E = \{1\} \cap \sigma(U)$$. For every $$\varepsilon > 0$$ we have $$E \subset \{ \lambda \in X \mid \lvert \lambda - 1 \rvert \le \varepsilon \}$$, since the only point of $$E$$ is $$1$$ itself, at distance $$0$$. Hence $$\left\| (U - \mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$ for every $$\varepsilon>0$$, forcing $$(U-\mathbf{1})\psi = 0$$. By Point 2 of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28), $$U - \mathbf{1}$$ is injective, so $$\psi = 0$$. Thus $$V = \{0\}$$, i.e. $$\mu^U(\{1\}) = 0$$ (a projection with trivial range is the zero operator, since $$P\xi \in \text{Range}(P) = \{0\}$$ for every $$\xi$$). Then $$\mu^U_\psi(\{1\}) = \left< \psi, \mu^U(\{1\})\psi \right> = 0$$ for every $$\psi$$.$$\blacksquare$$
 
 The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ by the functional calculus applied to $$D$$.
 
