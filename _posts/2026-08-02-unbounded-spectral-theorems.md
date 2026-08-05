@@ -676,7 +676,7 @@ $$
     \left\| \psi \right\|^2 \le \left\| (A^{\text{cl}} - i\mathbf{1})\psi \right\|^2 \tag{$\ast\ast$}
 $$
 
-for all $$\psi \in \text{Dom}(A^{\text{cl}})$$, so $$A^{\text{cl}} - i\mathbf{1}$$ is injective (by the same argument as in the proof of [Theorem (Spectrum of a Self-Adjoint Operator is Real)](#thrm:hall-9.17)). Since $$A^{\text{cl}}$$ extends $$A$$, $$\text{Range}(A - i\mathbf{1}) \subset \text{Range}(A^{\text{cl}} - i\mathbf{1})$$; as the former is dense in $$\mathbf{H}$$, so is the latter. As $$A^{\text{cl}}$$ is closed, $$(\ast\ast)$$ lets us apply [Proposition (Closedness of the Range from a Lower Bound)](#prpstn:hall-9.14) with $$\varepsilon = 1$$, showing $$\text{Range}(A^{\text{cl}} - i\mathbf{1})$$ is closed; being both dense and closed, it equals $$\mathbf{H}$$. An identical argument, using density of $$\text{Range}(A + i\mathbf{1})$$, shows $$\text{Range}(A^{\text{cl}} + i\mathbf{1}) = \mathbf{H}$$ as well.
+for all $$\psi \in \text{Dom}(A^{\text{cl}})$$, so $$A^{\text{cl}} - i\mathbf{1}$$ is injective: if $$(A^{\text{cl}} - i\mathbf{1})\psi = 0$$ then $$(\ast\ast)$$ gives $$\left\| \psi \right\|^2 \le 0$$, forcing $$\psi = 0$$. Since $$A^{\text{cl}}$$ extends $$A$$, $$\text{Range}(A - i\mathbf{1}) \subset \text{Range}(A^{\text{cl}} - i\mathbf{1})$$; as the former is dense in $$\mathbf{H}$$, so is the latter. As $$A^{\text{cl}}$$ is closed, $$(\ast\ast)$$ lets us apply [Proposition (Closedness of the Range from a Lower Bound)](#prpstn:hall-9.14) with $$\varepsilon = 1$$, showing $$\text{Range}(A^{\text{cl}} - i\mathbf{1})$$ is closed; being both dense and closed, it equals $$\mathbf{H}$$. An identical argument, using density of $$\text{Range}(A + i\mathbf{1})$$, shows $$\text{Range}(A^{\text{cl}} + i\mathbf{1}) = \mathbf{H}$$ as well.
 
 By [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13), $$(A^{\text{cl}} - i\mathbf{1})^* = (A^{\text{cl}})^* + i\mathbf{1}$$; and since $$(A^{\text{cl}})^* = A^*$$ is an extension of $$A^{\text{cl}}$$, $$(A^{\text{cl}})^* + i\mathbf{1}$$ is an extension of $$A^{\text{cl}} + i\mathbf{1}$$. We claim this extension is not proper, i.e. that $$\text{Dom}\big( (A^{\text{cl}})^* + i\mathbf{1} \big) = \text{Dom}(A^{\text{cl}} + i\mathbf{1})$$. Suppose instead that $$\text{Dom}\big( (A^{\text{cl}})^* + i\mathbf{1} \big)$$ is strictly bigger. Since $$A^{\text{cl}} + i\mathbf{1}$$ already maps $$\text{Dom}(A^{\text{cl}})$$ onto $$\mathbf{H}$$ (shown above), for any $$\xi$$ in the strictly bigger domain but not in $$\text{Dom}(A^{\text{cl}})$$, surjectivity gives some $$\chi \in \text{Dom}(A^{\text{cl}})$$, necessarily $$\chi \ne \xi$$, with $$(A^{\text{cl}} + i\mathbf{1})\chi = \big( (A^{\text{cl}})^* + i\mathbf{1} \big)\xi$$; since $$(A^{\text{cl}})^* + i\mathbf{1}$$ agrees with $$A^{\text{cl}} + i\mathbf{1}$$ on $$\text{Dom}(A^{\text{cl}})$$, this reads $$\big( (A^{\text{cl}})^* + i\mathbf{1} \big)\chi = \big( (A^{\text{cl}})^* + i\mathbf{1} \big)\xi$$, so, by linearity, $$\big( (A^{\text{cl}})^* + i\mathbf{1} \big)(\xi - \chi) = 0$$ with $$\xi - \chi \ne 0$$. So $$(A^{\text{cl}})^* + i\mathbf{1}$$ has nontrivial kernel. But, by [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) once more,
 
@@ -1031,6 +1031,10 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 >
 > as $$n \to \infty$$ (an equality in $$[0, \infty]$$).
 
+> **Theorem** *(Dominated Convergence Theorem)*
+<a name="thrm:dominated-convergence-theorem"></a>
+> Let $$(X,\Omega,\nu)$$ be a measure space and $$\{g_n\}$$ measurable complex-valued functions on $$X$$ converging pointwise to $$g$$, with $$\lvert g_n \rvert \le G$$ for all $$n$$ and some $$\nu$$-integrable $$G$$. Then $$g$$ and each $$g_n$$ are $$\nu$$-integrable and $$\int_X g_n \, d\nu \to \int_X g \, d\nu$$.
+
 > **Proposition** *(Monotonicity of the Integral in the Measure)*
 <a name="prpstn:monotonicity-of-the-integral-in-the-measure"></a>
 > Let $$\nu, \nu'$$ be measures on $$(X, \Omega)$$ with $$\nu(E) \le \nu'(E)$$ for every $$E \in \Omega$$. Then $$\int_X g \, d\nu \le \int_X g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
@@ -1372,6 +1376,9 @@ Two further facts about the unbounded integral will be needed when we come to th
 > **Lemma** *(Truncations Converge to the Unbounded Integral)*
 <a name="lmm:truncations-converge"></a>
 <!--  \uses{prpstn:hall-10.1} -->
+<!--  \uses{thrm:dominated-convergence-theorem} -->
+<!--  \uses{lmm:l2-implies-l1} -->
+<!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
@@ -1395,7 +1402,11 @@ $$
 
 Since $$\lvert f_n \rvert^2 = \lvert f \rvert^2 1_{E_n}$$ increases pointwise to $$\lvert f \rvert^2$$, the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) gives $$\int_X \lvert f_n \rvert^2 \, d\mu_\psi \to \int_X \lvert f \rvert^2\,d\mu_\psi$$, a finite limit because $$\psi \in W_f$$; a convergent sequence of reals is Cauchy, so the right-hand side above tends to $$0$$ as $$n,m\to\infty$$, and $$\{\chi_n\}$$ is Cauchy in $$\mathbf{H}$$. By completeness, $$\chi_n \to \chi'$$ for some $$\chi' \in \mathbf{H}$$.
 
-It remains to identify $$\chi' = \chi$$. Let $$\phi \in W_f$$. By the off-diagonal identity $$(\S)$$ of Part 1 of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2), $$\left< \phi, \chi_n \right> = L_{f_n}(\phi,\psi)$$, and by the convergence $$L_{f_n}(\phi,\psi) \to L_f(\phi,\psi)$$ established in the same Part 1, together with the defining property of $$\chi$$ in [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1),
+It remains to identify $$\chi' = \chi$$. Let $$\phi \in W_f$$. By the off-diagonal identity $$(\S)$$ of Part 1 of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2), $$\left< \phi, \chi_n \right> = L_{f_n}(\phi,\psi)$$.
+
+We check $$L_{f_n}(\phi,\psi) \to L_f(\phi,\psi)$$ directly. For any $$\xi \in W_f$$, the functions $$f_n$$ converge pointwise to $$f$$ and satisfy $$\lvert f_n \rvert \le \lvert f \rvert$$ with $$f$$ integrable against $$\mu_\xi$$ (by [**Lemma** *($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)*](#lmm:l2-implies-l1), since $$\xi \in W_f$$ and $$\mu_\xi$$ is finite), so the [**Dominated Convergence Theorem**](#thrm:dominated-convergence-theorem) gives $$Q_{f_n}(\xi) = \int_X f_n\,d\mu_\xi \to \int_X f\,d\mu_\xi = Q_f(\xi)$$. By property 2 of the [definition of a quadratic form on a subspace](#def:hall-quadratic-form-on-a-subspace), $$L_{f_n}(\phi,\psi)$$ is a fixed finite linear combination — the same for every $$n$$ — of the five values $$Q_{f_n}$$ takes at $$\phi+\psi$$, $$\phi$$, $$\psi$$, $$\phi+i\psi$$, $$i\psi$$, all of which lie in the subspace $$W_f$$; each converges to the corresponding value for $$f$$, so $$L_{f_n}(\phi,\psi) \to L_f(\phi,\psi)$$.
+
+Combining these with the defining property of $$\chi$$ in [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1),
 
 $$
     \left< \phi, \chi' \right> = \lim_{n\to\infty}\left< \phi, \chi_n \right> = \lim_{n\to\infty} L_{f_n}(\phi,\psi) = L_f(\phi,\psi) = \left< \phi, \chi \right>,
@@ -2342,6 +2353,36 @@ With the forms in hand, converting them back to operators is immediate, and defi
 >
 > We call $$\widetilde\Phi$$ the *extended calculus*. By the final claim of that proposition, $$\widetilde\Phi(f) = \Phi(f)$$ for continuous $$f$$ — by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63), since $$\Phi(f)$$ then induces the same quadratic form — so $$\widetilde\Phi$$ genuinely extends $$\Phi$$.
 
+We isolate two facts about $$\widetilde\Phi$$ that the rest of this section uses repeatedly: an off-diagonal formula, and a continuity property under bounded pointwise limits of the integrand.
+
+> **Lemma** *(Off-Diagonal Formula and Bounded Convergence for the Extended Calculus)*
+<a name="lmm:abstract-extended-convergence"></a>
+<!--  \uses{def:abstract-extended-calculus} -->
+<!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
+<!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
+<!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
+<!--  \uses{lmm:abstract-associated-measures-finite} -->
+<!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. For bounded measurable $$h$$ let $$L_h$$ denote the sesquilinear form associated to $$Q_h$$. Then:
+>
+> 1. *(Off-diagonal formula.)* $$L_h(\phi,\psi) = \left< \phi, \widetilde\Phi(h)\psi \right>$$ for all $$\phi,\psi \in \mathbf{H}$$.
+> 2. *(Convergence principle.)* If $$\{h_i\}$$ are bounded measurable with $$\lvert h_i \rvert \le M$$ for all $$i$$ and $$h_i \to h$$ pointwise on $$X$$, then
+>
+>    $$
+>        \left< \phi, \widetilde\Phi(h_i)\psi \right> \longrightarrow \left< \phi, \widetilde\Phi(h)\psi \right> \qquad \text{for all } \phi,\psi \in \mathbf{H}.
+>    $$
+
+**Proof**
+**Part 1.** Apply Part 1 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) with $$D = \mathbf{H}$$ and $$T = \widetilde\Phi(h)$$. Its hypotheses hold: $$Q_h$$ is a quadratic form on $$\mathbf{H}$$ by [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded), $$\widetilde\Phi(h)$$ is linear, and it induces $$Q_h$$ on the diagonal by [Definition (The Extended Calculus)](#def:abstract-extended-calculus).
+
+**Part 2.** For each fixed $$\xi \in \mathbf{H}$$, the measure $$\mu_\xi$$ is finite by [**Lemma** *(The Abstract Associated Measures are Finite)*](#lmm:abstract-associated-measures-finite), so the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) gives
+
+$$
+    Q_{h_i}(\xi) = \int_X h_i \, d\mu_\xi \longrightarrow \int_X h \, d\mu_\xi = Q_h(\xi).
+$$
+
+By property 2 of the [definition of a quadratic form on a subspace](#def:hall-quadratic-form-on-a-subspace), $$L_{h_i}(\phi,\psi)$$ is a fixed finite linear combination of the five values $$Q_{h_i}(\phi+\psi)$$, $$Q_{h_i}(\phi)$$, $$Q_{h_i}(\psi)$$, $$Q_{h_i}(\phi+i\psi)$$, $$Q_{h_i}(i\psi)$$ — the same combination for every $$i$$, the polarization formula not depending on the function. Each of those five converges to the corresponding value for $$h$$ by the previous display, so $$L_{h_i}(\phi,\psi) \to L_h(\phi,\psi)$$. Combining with **Part 1** applied to each $$h_i$$ and to $$h$$ gives the claim.$$\blacksquare$$
+
 The extended calculus inherits the algebraic properties of $$\Phi$$. Multiplicativity is the substantial one, and is proved in two passes of the same "vector space, contains the continuous functions, closed under bounded pointwise limits" argument — first fixing a continuous second factor, then letting both factors be measurable.
 
 > **Lemma** *(Real Functions Give Self-Adjoint Operators)*
@@ -2361,8 +2402,8 @@ Since $$f$$ is real-valued and each $$\mu_\psi$$ is a positive real measure, $$Q
 <!--  \uses{lmm:abstract-associated-measures-finite} -->
 <!--  \uses{../spectral-theorems/#lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
-<!--  \uses{../spectral-theorems/#prpstn:hall-a.59} -->
-<!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
+<!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
+<!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 > For all bounded measurable $$f,g : X \to \mathbb{C}$$,
 >
@@ -2371,13 +2412,7 @@ Since $$f$$ is real-valued and each $$\mu_\psi$$ is a positive real measure, $$Q
 > $$
 
 **Proof**
-We first record the tool used in both passes. For bounded measurable $$h$$ and any $$\phi,\psi \in \mathbf{H}$$, write $$L_h(\phi,\psi)$$ for the sesquilinear form associated to $$Q_h$$. By Part 1 of [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) applied with $$D = \mathbf{H}$$ and $$T = \widetilde\Phi(h)$$ (legitimate: $$Q_h$$ is a quadratic form by [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded), and $$\widetilde\Phi(h)$$ induces it on the diagonal by [Definition (The Extended Calculus)](#def:abstract-extended-calculus)),
-
-$$
-    L_h(\phi,\psi) = \left< \phi, \widetilde\Phi(h)\psi \right> \qquad \text{for all } \phi,\psi \in \mathbf{H}. \tag{$\sharp$}
-$$
-
-By [**Proposition** *(hall-a.59)*](../spectral-theorems/#prpstn:hall-a.59) and [**Proposition** *(hall-a.61)*](../spectral-theorems/#prpstn:hall-a.61), $$L_h$$ is determined by $$Q_h$$ through a fixed finite linear combination of values of $$Q_h$$; so if $$h_i \to h$$ pointwise with $$\lvert h_i \rvert \le M$$, then, exactly as in the proof of [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded), $$L_{h_i}(\phi,\psi) \to L_h(\phi,\psi)$$ for all $$\phi,\psi$$ — the [**Bounded Convergence Theorem**](../spectral-theorems/#thrm:bounded-convergence-theorem) applying because each $$\mu_\psi$$ is finite by [**Lemma** *(The Abstract Associated Measures are Finite)*](#lmm:abstract-associated-measures-finite). Combined with $$(\sharp)$$, this says: *if $$h_i \to h$$ boundedly pointwise then $$\left< \phi, \widetilde\Phi(h_i)\psi \right> \to \left< \phi, \widetilde\Phi(h)\psi \right>$$ for all $$\phi,\psi$$.* Call this the *convergence principle*.
+Throughout we use [**Lemma** *(Off-Diagonal Formula and Bounded Convergence for the Extended Calculus)*](#lmm:abstract-extended-convergence); we refer to its Part 2 as the *convergence principle*.
 
 **Pass 1: $$g$$ continuous.** Fix $$g \in C^0(X;\mathbb{R})$$ and let $$\mathcal{F}_1$$ be the set of bounded measurable $$f$$ with $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$. We check the three hypotheses of [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c).
 
@@ -2399,7 +2434,19 @@ the last step being the convergence principle applied with the fixed vector $$\w
 
 By [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c), $$\mathcal{F}_1$$ contains every bounded measurable $$f$$. So $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$ whenever $$f$$ is bounded measurable and $$g \in C^0(X;\mathbb{R})$$.
 
-**Pass 2: $$g$$ measurable.** Fix a bounded measurable $$f$$ and let $$\mathcal{F}_2$$ be the set of bounded measurable $$g$$ with $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$. That $$\mathcal{F}_2$$ is a vector space follows exactly as for $$\mathcal{F}_1$$; that $$\mathcal{F}_2 \supset C^0(X;\mathbb{R})$$ is precisely the conclusion of **Pass 1**; and closure under bounded pointwise limits follows by the same convergence-principle argument, with the roles of the two factors exchanged — if $$g_i \to g$$ boundedly pointwise then $$fg_i \to fg$$ boundedly pointwise, so $$\left< \phi, \widetilde\Phi(fg)\psi \right> = \lim_i \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g_i)\psi \right>$$, and $$\left< \phi, \widetilde\Phi(f)\widetilde\Phi(g_i)\psi \right> = \left< \widetilde\Phi(f)^*\phi, \widetilde\Phi(g_i)\psi \right> \to \left< \widetilde\Phi(f)^*\phi, \widetilde\Phi(g)\psi \right> = \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g)\psi \right>$$ by the convergence principle applied with the fixed vector $$\widetilde\Phi(f)^*\phi$$ in the first slot. Again [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c) gives $$\mathcal{F}_2$$ everything, which is the proposition.$$\blacksquare$$
+**Pass 2: $$g$$ measurable.** Fix a bounded measurable $$f$$ and let $$\mathcal{F}_2$$ be the set of bounded measurable $$g$$ with $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$. That $$\mathcal{F}_2$$ is a vector space follows exactly as for $$\mathcal{F}_1$$; that $$\mathcal{F}_2 \supset C^0(X;\mathbb{R})$$ is precisely the conclusion of **Pass 1**; and closure under bounded pointwise limits follows by the same convergence-principle argument, with the roles of the two factors exchanged. Let $$g_i \to g$$ boundedly pointwise with each $$g_i \in \mathcal{F}_2$$, and fix $$\phi,\psi \in \mathbf{H}$$. Since $$\lvert g_i \rvert \le M$$ implies $$\lvert fg_i \rvert \le M\left\| f \right\|_\infty$$, and $$fg_i \to fg$$ pointwise, the convergence principle gives
+
+$$
+    \left< \phi, \widetilde\Phi(fg)\psi \right> = \lim_{i\to\infty} \left< \phi, \widetilde\Phi(fg_i)\psi \right> = \lim_{i\to\infty} \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g_i)\psi \right>,
+$$
+
+the second equality because $$g_i \in \mathcal{F}_2$$. On the other hand, by the [definition of the adjoint](#def:hall-9.1) and the convergence principle applied with the fixed vector $$\widetilde\Phi(f)^*\phi$$ in the first slot,
+
+$$
+    \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g_i)\psi \right> = \left< \widetilde\Phi(f)^*\phi, \widetilde\Phi(g_i)\psi \right> \longrightarrow \left< \widetilde\Phi(f)^*\phi, \widetilde\Phi(g)\psi \right> = \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g)\psi \right>.
+$$
+
+By uniqueness of limits, $$\left< \phi, \widetilde\Phi(fg)\psi \right> = \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g)\psi \right>$$ for all $$\phi,\psi \in \mathbf{H}$$; fixing $$\psi$$ and applying [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D = \mathbf{H}$$ gives $$\widetilde\Phi(fg)\psi = \widetilde\Phi(f)\widetilde\Phi(g)\psi$$ for every $$\psi$$, i.e. $$g \in \mathcal{F}_2$$. Again [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c) gives $$\mathcal{F}_2$$ everything, which is the proposition.$$\blacksquare$$
 
 > **Lemma** *(The Extended Calculus Respects Conjugation)*
 <a name="lmm:abstract-extended-conjugation"></a>
@@ -2418,6 +2465,7 @@ We can now assemble the projection-valued measure. This is the abstract form of 
 
 > **Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*
 <a name="thrm:abstract-calculus-yields-pvm"></a>
+<!--  \uses{lmm:abstract-extended-convergence} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
@@ -2458,7 +2506,7 @@ We verify the four properties of the [definition of a projection-valued measure]
 
 **Property 3: countable additivity.** Let $$\{E_j\}_{j\in\mathbb{N}}$$ be pairwise disjoint Borel sets and $$E \equiv \bigcup_j E_j$$. By **Property 4** and disjointness, $$\mu^\Phi(E_i)\mu^\Phi(E_j) = \mu^\Phi(E_i\cap E_j) = \mu^\Phi(\emptyset) = 0$$ for $$i \ne j$$, so $$\{\mu^\Phi(E_j)\}$$ is a family of pairwise orthogonal bounded projections. By [**Lemma** *(lemma-4)*](../spectral-theorems/#lmm:lemma-4), for each $$\psi$$ the partial sums $$\sum_{j=1}^n \mu^\Phi(E_j)\psi$$ converge in norm to $$P\psi$$, where $$P$$ is the orthogonal projection onto the smallest closed subspace containing all the ranges. It remains to identify $$P$$ with $$\mu^\Phi(E)$$.
 
-Set $$h_n \equiv \sum_{j=1}^n 1_{E_j} = 1_{\bigcup_{j\le n}E_j}$$ (the equality by disjointness). Then $$h_n \to 1_E$$ pointwise on $$X$$ — for $$x \in E$$, $$x$$ lies in exactly one $$E_j$$, so $$h_n(x) = 1$$ for $$n \ge j$$; for $$x \notin E$$, $$h_n(x)=0$$ for all $$n$$ — and $$\lvert h_n \rvert \le 1$$. By the convergence principle established in the proof of [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative), for all $$\phi,\psi \in \mathbf{H}$$,
+Set $$h_n \equiv \sum_{j=1}^n 1_{E_j} = 1_{\bigcup_{j\le n}E_j}$$ (the equality by disjointness). Then $$h_n \to 1_E$$ pointwise on $$X$$ — for $$x \in E$$, $$x$$ lies in exactly one $$E_j$$, so $$h_n(x) = 1$$ for $$n \ge j$$; for $$x \notin E$$, $$h_n(x)=0$$ for all $$n$$ — and $$\lvert h_n \rvert \le 1$$. By Part 2 of [**Lemma** *(Off-Diagonal Formula and Bounded Convergence for the Extended Calculus)*](#lmm:abstract-extended-convergence), for all $$\phi,\psi \in \mathbf{H}$$,
 
 $$
     \left< \phi, \widetilde\Phi(h_n)\psi \right> \longrightarrow \left< \phi, \widetilde\Phi(1_E)\psi \right> = \left< \phi, \mu^\Phi(E)\psi \right>.
@@ -2621,6 +2669,7 @@ We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Se
 >    $$
 >        A\psi = i(U + \mathbf{1})(U - \mathbf{1})^{-1}\psi.
 >    $$
+> 4. $$U - \mathbf{1} = 2i\,(A - i\mathbf{1})^{-1}$$, and equivalently $$U = \mathbf{1} + 2i\,(A-i\mathbf{1})^{-1}$$.
 
 Note that Point 2 and Point 3 together say that $$U - \mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\text{Dom}(A)$$; the symbol $$(U-\mathbf{1})^{-1}$$ in Point 3 refers to the inverse of *that* bijection. We are *not* claiming $$1$$ lies in the resolvent set of $$U$$: the map $$(U-\mathbf{1})^{-1} : \text{Dom}(A) \to \mathbf{H}$$ is not bounded unless $$\text{Dom}(A) = \mathbf{H}$$, which happens only when $$A$$ is bounded.
 
@@ -2654,10 +2703,10 @@ $$
 that is,
 
 $$
-    U - \mathbf{1} = 2i\,(A - i\mathbf{1})^{-1}. \tag{$\natural\natural$}
+    U - \mathbf{1} = 2i\,(A - i\mathbf{1})^{-1}, \tag{$\natural\natural$}
 $$
 
-Since $$(A-i\mathbf{1})^{-1}$$ is injective (shown above) and $$2i \ne 0$$, $$U - \mathbf{1}$$ is injective.
+which is **Part 4**. Since $$(A-i\mathbf{1})^{-1}$$ is injective (shown above) and $$2i \ne 0$$, $$U - \mathbf{1}$$ is injective, which is **Part 2**.
 
 **Part 3.** By $$(\natural\natural)$$, $$\text{Range}(U-\mathbf{1}) = \text{Range}\big( 2i(A-i\mathbf{1})^{-1} \big) = \text{Range}\big( (A-i\mathbf{1})^{-1} \big) = \text{Dom}(A)$$, the last equality because $$(A-i\mathbf{1})^{-1}$$ maps $$\mathbf{H}$$ onto $$\text{Dom}(A)$$, as shown in the preliminaries.
 
@@ -2846,7 +2895,7 @@ Finally, $$\widehat{D}$$ agrees with $$\widetilde\Phi(g)$$ on $$\mathbf{H}_n$$: 
 
 *Step 3: conclusion by essential self-adjointness.* By [**Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*](#lmm:norm-convergent-decomposition) applied to $$\{F_n\}$$, and pairwise orthogonality of the $$\mu^U(F_n)$$ exactly as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3), $$\{\mathbf{H}_n\}$$ is an [internal orthogonal decomposition](#def:internal-orthogonal-decomposition) of $$\mathbf{H}$$. Let $$W_0$$ be the algebraic span of the $$\mathbf{H}_n$$'s. By **Step 2**, $$W_0 \subset \text{Dom}(A) \cap W_D$$ and $$A = \widehat{D}$$ on $$W_0$$.
 
-Let $$A_n$$ denote the common restriction of $$A$$ and $$\widehat D$$ to $$\mathbf{H}_n$$, a bounded operator (it equals $$\widetilde\Phi(g)\vert_{\mathbf{H}_n}$$, with $$\left\| \widetilde\Phi(g) \right\| \le \left\| g \right\|_\infty \le 2n$$) which is self-adjoint on $$\mathbf{H}_n$$ (being the restriction of the self-adjoint $$\widehat D$$ to a subspace it preserves, as in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3)). Both $$A\vert_{W_0}$$ and $$\widehat{D}\vert_{W_0}$$ are then symmetric operators on $$\mathbf{H}$$ with domain $$W_0$$ acting as $$A_n$$ on each $$\mathbf{H}_n$$ — and they are the *same* operator, by **Step 2**. By [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators, Internal Form)*](#prpstn:hall-9.26-internal), this common restriction is essentially self-adjoint.
+Let $$A_n$$ denote the common restriction of $$A$$ and $$\widehat D$$ to $$\mathbf{H}_n$$, a bounded operator (it equals $$\widetilde\Phi(g)\vert_{\mathbf{H}_n}$$, with $$\left\| \widetilde\Phi(g) \right\| \le \left\| g \right\|_\infty \le 2n$$) which is self-adjoint on $$\mathbf{H}_n$$: by [**Lemma** *(The Integral Preserves Spectral Subspaces on which the Integrand is Bounded)*](#lmm:integral-preserves-spectral-subspaces), $$\widehat{D}$$ maps $$\mathbf{H}_n$$ into itself, and for $$\eta,\zeta \in \mathbf{H}_n \subset W_D$$ the symmetry of $$\widehat D$$ (it being self-adjoint, hence symmetric by [**Proposition** *(Symmetric Operators and the Adjoint)*](#prpstn:hall-9.4)) gives $$\left< \eta, A_n\zeta \right> = \left< \eta, \widehat D\zeta \right> = \left< \widehat D\eta, \zeta \right> = \left< A_n\eta, \zeta \right>$$; a bounded symmetric operator defined on all of the Hilbert space $$\mathbf{H}_n$$ is self-adjoint there, since its adjoint is then defined on all of $$\mathbf{H}_n$$ and agrees with it. Both $$A\vert_{W_0}$$ and $$\widehat{D}\vert_{W_0}$$ are then symmetric operators on $$\mathbf{H}$$ with domain $$W_0$$ acting as $$A_n$$ on each $$\mathbf{H}_n$$ — and they are the *same* operator, by **Step 2**. By [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators, Internal Form)*](#prpstn:hall-9.26-internal), this common restriction is essentially self-adjoint.
 
 Now $$A$$ and $$\widehat{D}$$ are both self-adjoint operators extending it: $$A$$ by hypothesis, $$\widehat{D}$$ by [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3), and both extend $$A\vert_{W_0} = \widehat D\vert_{W_0}$$ since $$W_0 \subset \text{Dom}(A)\cap W_D$$ with agreement there. By [**Proposition** *(Uniqueness of the Self-Adjoint Extension of an Essentially Self-Adjoint Operator)*](#prpstn:hall-9.11), an essentially self-adjoint operator has exactly one self-adjoint extension; hence $$A = \widehat{D}$$, with equality of domains.$$\blacksquare$$
 
@@ -2993,7 +3042,7 @@ $$
     \int_{\mathbb{R}} C \, d\nu = \mathbf{1} + 2i\,B = \mathbf{1} + 2i\,(A-i\mathbf{1})^{-1} = U,
 $$
 
-the last equality being exactly the identity $$(\natural\natural)$$ established in the proof of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28).
+the last equality being Point 4 of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28).
 
 *Step 3: transporting to the circle.* Apply Part 2 of [**Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*](#lmm:borel-bijection-transports-pvm) with $$Y = \mathbb{R}$$, $$Z = S^1\setminus\{1\}$$, $$T = C$$ (a bijection with $$T^{-1} = D$$, both measurable, by [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map)), and the projection-valued measure $$\nu$$. This gives a projection-valued measure
 
