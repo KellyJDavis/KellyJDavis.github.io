@@ -2083,7 +2083,9 @@ We can now carry out the construction that replaces the matrix-case eigenspace a
 **Proof**
 Fix $$\varepsilon > 0$$ and set $$B \equiv p(A,A^*) - \mu\mathbf{1}$$. By [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), $$p(A,A^*)$$ is normal, and hence so is $$B$$ (the computation in the proof of [**Lemma** *(Normality Balances the Two Norms)*](#lmm:normality-balances-norms) shows that subtracting a scalar multiple of $$\mathbf{1}$$ preserves normality). Since $$\mu \in \sigma(p(A,A^*))$$, $$0 \in \sigma(B)$$ — for $$B - 0\cdot\mathbf{1} = p(A,A^*) - \mu\mathbf{1}$$ has a bounded two-sided inverse exactly when $$\mu$$ is in the resolvent set of $$p(A,A^*)$$.
 
-*Step 1: $$0 \in \sigma(B^*B)$$.* The operator $$B^*B$$ is self-adjoint, by [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution): $$(B^*B)^* = B^*(B^*)^* = B^*B$$. Let $$\delta > 0$$. Since $$0 \in \sigma(B)$$ and $$B$$ is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives a $$\delta'$$-almost eigenvector $$\psi$$ for $$B$$ with eigenvalue $$0$$, for any $$\delta' > 0$$ we choose. Applying [**Lemma** *(hall-10.26)*](#lmm:hall-10.26) to the normal operator $$B$$ with the polynomial $$q(\lambda,\overline\lambda) = \overline\lambda\lambda$$ (so $$q(B,B^*) = B^*B$$ and $$q(0,\overline{0}) = 0$$) gives a constant $$C_q$$ with: $$\psi$$ is a $$(C_q\delta')$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. Choosing $$\delta' = \delta/C_q$$ makes $$\psi$$ a $$\delta$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. As $$\delta>0$$ was arbitrary and $$B^*B$$, being self-adjoint, is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives $$0 \in \sigma(B^*B)$$.
+*Step 1: $$0 \in \sigma(B^*B)$$.* The operator $$B^*B$$ is self-adjoint, by [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution): $$(B^*B)^* = B^*(B^*)^* = B^*B$$. Let $$\delta > 0$$. Apply [**Lemma** *(hall-10.26)*](#lmm:hall-10.26) to the normal operator $$B$$ with the polynomial $$q(\lambda,\overline\lambda) = \lambda\overline\lambda$$. Substituting gives $$q(B,B^*) = BB^*$$, which equals $$B^*B$$ because $$B$$ is normal; and $$q(0,\overline{0}) = 0$$. The lemma supplies a constant $$C_q$$, which — as its statement permits, the conclusion only weakening when $$C$$ is enlarged — we may and do take to be strictly positive, so that division by $$C_q$$ below is legitimate.
+
+Since $$0 \in \sigma(B)$$ and $$B$$ is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives, for the particular value $$\delta' \equiv \delta/C_q > 0$$, a $$\delta'$$-almost eigenvector $$\psi$$ for $$B$$ with eigenvalue $$0$$. By the lemma just applied, $$\psi$$ is then a $$(C_q\delta') = \delta$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. As $$\delta>0$$ was arbitrary and $$B^*B$$, being self-adjoint, is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives $$0 \in \sigma(B^*B)$$.
 
 *Step 2: the spectral subspace.* Apply the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators) to $$B^*B$$ and let
 
@@ -2824,7 +2826,7 @@ The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ b
 <!--  \uses{prpstn:abstract-extended-multiplicative} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{prpstn:hall-9.11} -->
-> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, let $$U$$ be its Cayley transform, and let $$D$$ be as in [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). Then
+> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, let $$U$$ be its Cayley transform, and let $$D$$ be as in [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). (The hypothesis $$\mathbf{H} \ne \{0\}$$ is needed because the projection-valued measure $$\mu^U$$ below is supplied by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20), which assumes it.) Then
 >
 > $$
 >     A = \int_{\sigma(U)} D(u) \, d\mu^U(u),
@@ -2911,7 +2913,7 @@ Transporting the measure along $$C$$ now gives the projection-valued measure for
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
-> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, $$U$$ its Cayley transform, and $$\mu^U$$ the projection-valued measure of $$U$$. Define, for each Borel set $$E \subset \mathbb{R}$$,
+> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, let $$U$$ be its Cayley transform, and let $$\mu^U$$ be the projection-valued measure of $$U$$ supplied by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). Define, for each Borel set $$E \subset \mathbb{R}$$,
 >
 > $$
 >     \mu^A(E) \equiv \mu^U\big( C(E) \big).
@@ -2982,6 +2984,8 @@ We can finally state and prove the theorem this post set out to establish.
 > $$
 
 **Proof**
+*The degenerate case.* If $$\mathbf{H} = \{0\}$$ the statement is immediate: the only linear map on $$\{0\}$$ is the zero map, which is also the identity $$\mathbf{1}$$, so the only candidate assignment $$E \mapsto \mu^A(E) \equiv 0$$ satisfies all four properties of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) (in particular $$\mu^A(\mathbb{R}) = 0 = \mathbf{1}$$), it is the unique such assignment, and $$\int_{\mathbb{R}}\lambda\,d\mu^A(\lambda) = 0 = A$$. So assume from now on that $$\mathbf{H} \ne \{0\}$$, as required by the results invoked below.
+
 *Existence* is [**Theorem** *(hall-10.30)*](#thrm:hall-10.30).
 
 *Uniqueness.* Suppose $$\nu$$ is a projection-valued measure on $$\mathbb{R}$$ with $$\int_{\mathbb{R}} \lambda \, d\nu(\lambda) = A$$; we must show $$\nu = \mu^A$$. Write $$\iota(\lambda) = \lambda$$, so the hypothesis reads $$\int_{\mathbb{R}} \iota \, d\nu = A$$, and in particular $$W_\iota = \text{Dom}(A)$$, where $$W_\iota$$ is the domain supplied by [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) for the measure $$\nu$$.
