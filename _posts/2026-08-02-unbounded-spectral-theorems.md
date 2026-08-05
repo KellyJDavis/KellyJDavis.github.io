@@ -1193,7 +1193,7 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{lmm:norm-convergent-decomposition} -->
-> Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f$$ be a measurable function on $$X$$, not necessarily bounded. Let
+> Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f : X \to \mathbb{C}$$ be a measurable function, not necessarily bounded (but everywhere finite-valued, since its values lie in $$\mathbb{C}$$ — this is used below, where the sets $$\{ \lvert f \rvert < n \}$$ are required to exhaust $$X$$). Let
 >
 > $$
 >     W_f \equiv \left\{ \psi \in \mathbf{H} \;\middle|\; \int_X \lvert f \rvert^2 \, d\mu_\psi < \infty \right\}.
@@ -1325,7 +1325,7 @@ The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \
 <a name="lmm:bounded-on-set-range-in-domain"></a>
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{prpstn:hall-10.2} -->
-> Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, $$f$$ is measurable, and $$E \in \Omega(X)$$ is a set on which $$f$$ is bounded, say $$\lvert f \rvert \le c$$ on $$E$$. Then $$\text{Range}(\mu(E)) \subset W_f$$, and indeed $$\int_X \lvert f \rvert^2\,d\mu_\eta \le c^2 \left\| \eta \right\|^2$$ for every $$\eta \in \text{Range}(\mu(E))$$.
+> Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, $$f : X \to \mathbb{C}$$ is measurable, and $$E \in \Omega(X)$$ is a set on which $$f$$ is bounded, say $$\lvert f \rvert \le c$$ on $$E$$. Then $$\text{Range}(\mu(E)) \subset W_f$$, and indeed $$\int_X \lvert f \rvert^2\,d\mu_\eta \le c^2 \left\| \eta \right\|^2$$ for every $$\eta \in \text{Range}(\mu(E))$$.
 
 **Proof**
 Let $$\eta \in \text{Range}(\mu(E))$$. By [**Lemma** *(Range Membership Concentrates the Associated Measure)*](#lmm:range-membership-concentrates-measure), $$\int_X \lvert f \rvert^2 \, d\mu_\eta = \int_E \lvert f \rvert^2 \, d\mu_\eta$$. Since $$\lvert f \rvert \le c$$ on $$E$$,
@@ -1405,7 +1405,7 @@ The integral is insensitive to changing the integrand on a set the projection-va
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
-> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and let $$f, g$$ be measurable functions on $$X$$ agreeing off a set $$N \in \Omega(X)$$ with $$\mu(N) = 0$$. Then $$W_f = W_g$$ and $$\int_X f \, d\mu = \int_X g \, d\mu$$ (as operators, with equal domains).
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and let $$f, g : X \to \mathbb{C}$$ be measurable functions agreeing off a set $$N \in \Omega(X)$$ with $$\mu(N) = 0$$. Then $$W_f = W_g$$ and $$\int_X f \, d\mu = \int_X g \, d\mu$$ (as operators, with equal domains).
 
 **Proof**
 Since $$\mu(N) = 0$$, $$\mu_\psi(N) = \left< \psi, \mu(N)\psi \right> = 0$$ for every $$\psi \in \mathbf{H}$$; that is, $$N$$ is $$\mu_\psi$$-null for every $$\psi$$. Two measurable functions agreeing off a $$\nu$$-null set have the same $$\nu$$-integral whenever either is defined, and the same is true of their moduli squared. Hence, for every $$\psi$$,
@@ -1429,7 +1429,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
-> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
 >
 > $$
 >     \left( \int_X f_n \, d\mu \right)\psi \longrightarrow \left( \int_X f \, d\mu \right)\psi
@@ -1504,7 +1504,7 @@ We now extract, as a standalone lemma, the fact that $$A_f$$ preserves the spect
 <!--  \uses{prpstn:hall-a.49} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
-> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f$$ be measurable, and let $$E \in \Omega(X)$$ be a set on which $$f$$ is bounded. Write $$A_f \equiv \int_X f\,d\mu$$ and $$V_E \equiv \text{Range}(\mu(E))$$. Then $$V_E \subset W_f$$ and $$A_f(V_E) \subset V_E$$.
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$E \in \Omega(X)$$ be a set on which $$f$$ is bounded. Write $$A_f \equiv \int_X f\,d\mu$$ and $$V_E \equiv \text{Range}(\mu(E))$$. Then $$V_E \subset W_f$$ and $$A_f(V_E) \subset V_E$$.
 
 **Proof**
 That $$V_E \subset W_f$$ is [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain).
@@ -2244,6 +2244,20 @@ the last equality because the two sets over which the supremum is taken are equa
 
 With the norm identity in hand, extending $$p \mapsto p(A,A^*)$$ from polynomials to all continuous functions on $$\sigma(A)$$ is a routine density argument.
 
+The construction needs to know that $$\sigma(A)$$ is a compact metric space carrying a Borel $$\sigma$$-algebra. The previous post established this, but only for *self-adjoint* $$A$$ — and its statement there includes $$\sigma(A) \subset \mathbb{R}$$, which fails for a general normal operator. The topological content holds for any bounded operator, so we record the version we actually need.
+
+> **Lemma** *(The Spectrum of a Bounded Operator is a Compact Metric Measurable Space)*
+<a name="lmm:spectrum-compact-general"></a>
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+<!--  \uses{../spectral-theorems/#thrm:heine–borel-theorem} -->
+<!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ with $$\mathbf{H} \ne \{0\}$$. Then $$\sigma(A)$$ is a non-empty compact subset of $$\mathbb{C}$$; it is a metric space under the metric $$d(z_1,z_2) \equiv \lvert z_1 - z_2 \rvert$$ inherited from $$\mathbb{C}$$, and a measurable space when equipped with the Borel $$\sigma$$-algebra of that metric topology. No self-adjointness or normality is assumed, and $$\sigma(A)$$ need not be contained in $$\mathbb{R}$$.
+
+**Proof**
+By Part 1 of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), which is stated for every $$A \in \mathcal{B}(\mathbf{H})$$, the spectrum $$\sigma(A)$$ is a closed, bounded, non-empty subset of $$\mathbb{C}$$. By the [**Heine–Borel Theorem**](../spectral-theorems/#thrm:heine–borel-theorem), a closed and bounded subset of $$\mathbb{C}$$ is compact, so $$\sigma(A)$$ is compact.
+
+Any subset of $$\mathbb{C}$$ is a metric space under the inherited metric $$d$$, the metric axioms being inherited; and any metric space is a measurable space under the Borel $$\sigma$$-algebra generated by its open sets. This gives the remaining claims.$$\blacksquare$$
+
 > **Theorem** *(Continuous Functional Calculus for a Normal Operator)*
 <a name="thrm:continuous-functional-calculus-normal"></a>
 <!--  \uses{def:hall-10.19} -->
@@ -2251,7 +2265,7 @@ With the norm identity in hand, extending $$p \mapsto p(A,A^*)$$ from polynomial
 <!--  \uses{lmm:polynomials-in-normal-are-normal} -->
 <!--  \uses{../spectral-theorems/#thrm:stone–weierstrass-complex} -->
 <!--  \uses{../spectral-theorems/#thrm:bounded-linear-transformation-theorem} -->
-<!--  \uses{../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{lmm:spectrum-compact-general} -->
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$. There is a unique bounded linear map
 >
@@ -2270,7 +2284,7 @@ With the norm identity in hand, extending $$p \mapsto p(A,A^*)$$ from polynomial
 > In particular, if $$f$$ is real-valued on $$\sigma(A)$$ then $$\Phi_A(f)$$ is self-adjoint, and $$\Phi_A(f)$$ is normal for every $$f$$. We write $$f(A) \equiv \Phi_A(f)$$.
 
 **Proof**
-By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable), $$\sigma(A)$$ is a compact metric space, so $$C^0(\sigma(A);\mathbb{C})$$ with the supremum norm is a normed vector space.
+By [**Lemma** *(The Spectrum of a Bounded Operator is a Compact Metric Measurable Space)*](#lmm:spectrum-compact-general), $$\sigma(A)$$ is a compact metric space, so $$C^0(\sigma(A);\mathbb{C})$$ with the supremum norm is a normed vector space.
 
 *The polynomials are dense.* Let $$\mathcal{P} \subset C^0(\sigma(A);\mathbb{C})$$ be the set of functions on $$\sigma(A)$$ of the form $$\lambda \mapsto p(\lambda,\overline\lambda)$$ for a polynomial $$p$$ in two variables. $$\mathcal{P}$$ is a subalgebra (products and linear combinations of such functions are again of this form), contains the constants (take $$p$$ constant), separates points of $$\sigma(A)$$ (the function $$\lambda\mapsto\lambda$$, i.e. $$p(\lambda,\overline\lambda)=\lambda$$, already does), and is closed under complex conjugation (the conjugate of $$p(\lambda,\overline\lambda)$$ is $$\overline{p}(\lambda,\overline\lambda)$$, again of the required form, with $$\overline p$$ as in [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal)). By the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex), $$\mathcal{P}$$ is dense in $$C^0(\sigma(A);\mathbb{C})$$.
 
@@ -2599,7 +2613,7 @@ Assembling the two stages gives the result this section was aiming at.
 <!--  \uses{thrm:abstract-calculus-yields-pvm} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
-<!--  \uses{../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{lmm:spectrum-compact-general} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$. Then there is a *unique* projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with
 >
 > $$
@@ -2607,7 +2621,7 @@ Assembling the two stages gives the result this section was aiming at.
 > $$
 
 **Proof**
-By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](../spectral-theorems/#lmm:spectrum-is-compact-metric-measurable), $$X \equiv \sigma(A)$$ is a compact metric space. By [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), the map $$\Phi_A$$ constructed there satisfies properties 1–5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus), so it *is* an abstract continuous functional calculus on $$X$$.
+By [**Lemma** *(The Spectrum of a Bounded Operator is a Compact Metric Measurable Space)*](#lmm:spectrum-compact-general), $$X \equiv \sigma(A)$$ is a compact metric space. By [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), the map $$\Phi_A$$ constructed there satisfies properties 1–5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus), so it *is* an abstract continuous functional calculus on $$X$$.
 
 Applying [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm) to $$\Phi_A$$ gives a projection-valued measure $$\mu^A \equiv \mu^{\Phi_A}$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with $$\int_{\sigma(A)} f \, d\mu^A = \Phi_A(f)$$ for every continuous $$f$$ (and $$= \widetilde{\Phi_A}(f)$$ for every bounded measurable $$f$$). Taking $$f = \iota$$, the (continuous) function $$\iota(\lambda) = \lambda$$, and using property 5 of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), which gives $$\Phi_A(\iota) = A$$,
 
