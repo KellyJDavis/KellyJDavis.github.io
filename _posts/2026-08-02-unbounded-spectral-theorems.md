@@ -715,6 +715,13 @@ We close this section with a construction we will use directly in the proof of [
 
 The direct sum just defined is an *external* construction: its elements are sequences, and the summands $$\mathbf{H}_j$$ are separate spaces glued together. In practice we more often meet the *internal* situation: a single Hilbert space $$\mathbf{H}$$ together with a family of closed subspaces of $$\mathbf{H}$$ that decompose it. These are not literally the same object, so we record the notion and the identification between the two explicitly rather than passing between them silently.
 
+The identification below is by a *unitary* map, so we record that notion first; it is needed again, for a different purpose, in the Cayley transform of the final section.
+
+> **Definition** *(Unitary Operator)*
+<a name="def:unitary-operator"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> An operator $$U \in \mathcal{B}(\mathbf{H})$$ is *unitary* if it is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$ and preserves the inner product: $$\left< U\phi, U\psi \right> = \left< \phi,\psi \right>$$ for all $$\phi,\psi \in \mathbf{H}$$.
+
 > **Definition** *(Internal Orthogonal Decomposition)*
 <a name="def:internal-orthogonal-decomposition"></a>
 <!--  \uses{def:orthogonal-complement} -->
@@ -728,6 +735,7 @@ The direct sum just defined is an *external* construction: its elements are sequ
 <!--  \uses{def:internal-orthogonal-decomposition} -->
 <!--  \uses{def:hall-a.45} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{def:unitary-operator} -->
 > Suppose $$\{ \mathbf{K}_n \}_{n=1}^\infty$$ is an internal orthogonal decomposition of $$\mathbf{H}$$, with each $$\mathbf{K}_n$$ separable. Then:
 >
 > 1. The decomposition in Part 2 of [Definition (Internal Orthogonal Decomposition)](#def:internal-orthogonal-decomposition) is unique: if $$\sum_n \psi_n = \sum_n \psi_n'$$ with $$\psi_n, \psi_n' \in \mathbf{K}_n$$ (both series norm-convergent), then $$\psi_n = \psi_n'$$ for every $$n$$.
@@ -880,6 +888,9 @@ We now record the internal-form version promised above.
 <!--  \uses{def:hall-9.5} -->
 <!--  \uses{def:hall-9.7} -->
 <!--  \uses{def:hall-9.1} -->
+<!--  \uses{def:unitary-operator} -->
+<!--  \uses{def:hall-3.1} -->
+<!--  \uses{prpstn:hall-9.10} -->
 > Suppose $$\{ \mathbf{K}_n \}_{n=1}^\infty$$ is an internal orthogonal decomposition of $$\mathbf{H}$$ into separable closed subspaces, and $$A_n$$ is a bounded, self-adjoint operator on $$\mathbf{K}_n$$ for each $$n$$. Define
 >
 > $$
@@ -895,7 +906,7 @@ We now record the internal-form version promised above.
 > for all $$\psi \in V$$.
 
 **Proof**
-Let $$U : \mathbf{H} \to \bigoplus_n \mathbf{K}_n$$ be the unitary map of Part 3 of [**Lemma** *(Internal Decompositions are Unitarily External Direct Sums)*](#lmm:internal-decomposition-unitary), $$U\psi = (\psi_1,\psi_2,\ldots)$$. Write $$\widetilde{\mathbf{H}} \equiv \bigoplus_n \mathbf{K}_n$$ for the external direct sum, and define $$\widetilde{A} \equiv UAU^{-1}$$, an operator on $$\widetilde{\mathbf{H}}$$ with $$\text{Dom}(\widetilde{A}) = U\big(\text{Dom}(A)\big)$$.
+Let $$U : \mathbf{H} \to \bigoplus_n \mathbf{K}_n$$ be the unitary map of Part 3 of [**Lemma** *(Internal Decompositions are Unitarily External Direct Sums)*](#lmm:internal-decomposition-unitary), $$U\psi = (\psi_1,\psi_2,\ldots)$$. Write $$\widetilde{\mathbf{H}} \equiv \bigoplus_n \mathbf{K}_n$$ for the external direct sum, and define $$\widetilde{A} \equiv UAU^{-1}$$, an operator on $$\widetilde{\mathbf{H}}$$ with $$\text{Dom}(\widetilde{A}) = U\big(\text{Dom}(A)\big)$$. This is an unbounded operator in the sense of [Definition (Unbounded Operator)](#def:hall-3.1): it is linear, being a composition of linear maps, and its domain is dense, since $$U$$ is a surjective isometry — hence a homeomorphism — and $$\text{Dom}(A)$$ is dense in $$\mathbf{H}$$, so its image under $$U$$ is dense in $$\widetilde{\mathbf{H}}$$.
 
 Since $$U$$ is a unitary bijection, it carries all the structure in the hypotheses across. Explicitly: $$U(W_0)$$ is exactly the finite direct sum of the $$\mathbf{K}_n$$'s (a finite sum $$\sum_{n=1}^N \eta_n$$ maps to the sequence with entries $$\eta_1,\ldots,\eta_N$$ and zeros beyond, and conversely), so $$\text{Dom}(\widetilde{A}) \supset U(W_0)$$ is the finite direct sum; and for such an element, $$\widetilde{A}(\eta_1,\ldots,\eta_N,0,\ldots) = U A \left( \sum_n \eta_n \right) = U\left( \sum_n A_n\eta_n \right) = (A_1\eta_1,\ldots,A_N\eta_N,0,\ldots)$$, matching the hypothesis of [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26). Moreover $$\widetilde{A}$$ is symmetric: for $$\widetilde\phi,\widetilde\psi \in \text{Dom}(\widetilde{A})$$, writing $$\phi = U^{-1}\widetilde\phi$$, $$\psi = U^{-1}\widetilde\psi \in \text{Dom}(A)$$, unitarity of $$U$$ (hence of $$U^{-1}$$) gives $$\left< \widetilde\phi, \widetilde{A}\widetilde\psi \right> = \left< \phi, A\psi \right> = \left< A\phi, \psi \right> = \left< \widetilde{A}\widetilde\phi, \widetilde\psi \right>$$, using symmetry of $$A$$ in the middle.
 
@@ -907,7 +918,9 @@ $$
     \text{Dom}(A^{\text{cl}}) = \text{Dom}(A^*) = U^{-1}(\widetilde{V}) = V,
 $$
 
-the last equality because $$U\psi = (\psi_1,\psi_2,\ldots)$$, so the defining condition of $$\widetilde{V}$$ on $$U\psi$$ is verbatim the defining condition of $$V$$ on $$\psi$$. For $$\psi \in V$$, $$A^{\text{cl}}\psi = U^{-1}\widetilde{A}^{\text{cl}}U\psi = U^{-1}(A_1\psi_1,A_2\psi_2,\ldots) = \sum_n A_n\psi_n$$, the last step by the definition of $$U^{-1}$$ (the element of $$\mathbf{H}$$ whose decomposition has $$n$$-th entry $$A_n\psi_n$$, which is exactly the norm-convergent sum $$\sum_n A_n\psi_n$$).$$\blacksquare$$
+the last equality because $$U\psi = (\psi_1,\psi_2,\ldots)$$, so the defining condition of $$\widetilde{V}$$ on $$U\psi$$ is verbatim the defining condition of $$V$$ on $$\psi$$. For $$\psi \in V$$, $$A^{\text{cl}}\psi = U^{-1}\widetilde{A}^{\text{cl}}U\psi = U^{-1}(A_1\psi_1,A_2\psi_2,\ldots) = \sum_n A_n\psi_n$$, the second equality by the formula for $$\widetilde{A}^{\text{cl}}$$ above (applicable since $$U\psi \in \widetilde{V}$$) and the last by the definition of $$U^{-1}$$ — the element of $$\mathbf{H}$$ whose decomposition has $$n$$-th entry $$A_n\psi_n$$, which is exactly the norm-convergent sum $$\sum_n A_n\psi_n$$, this lying in $$\mathbf{H}$$ because $$\sum_n \left\| A_n\psi_n \right\|^2 < \infty$$ for $$\psi \in V$$.
+
+Finally, the same formula holds for $$A^*$$: since $$A$$ is essentially self-adjoint, [**Proposition** *(The Adjoint of a Closure)*](#prpstn:hall-9.10) gives $$A^* = (A^{\text{cl}})^*$$, and $$A^{\text{cl}}$$ is self-adjoint, so $$(A^{\text{cl}})^* = A^{\text{cl}}$$; hence $$A^* = A^{\text{cl}}$$, with the same domain $$V$$ and the same action.$$\blacksquare$$
 
 ## Integration Against a Projection-Valued Measure
 
@@ -2591,12 +2604,7 @@ $$
 
 is about the simplest bounded injective function one can write down on $$\mathbb{R}$$. Substituting the operator $$A$$ for $$x$$ produces a bounded operator $$U$$ — the *Cayley transform* of $$A$$ — which turns out to be unitary, hence normal, hence subject to [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). We then transport the resulting projection-valued measure back from the circle to $$\mathbb{R}$$ along $$C$$.
 
-Since unitarity has not been needed until now, we record it.
-
-> **Definition** *(Unitary Operator)*
-<a name="def:unitary-operator"></a>
-<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
-> An operator $$U \in \mathcal{B}(\mathbf{H})$$ is *unitary* if it is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$ and preserves the inner product: $$\left< U\phi, U\psi \right> = \left< \phi,\psi \right>$$ for all $$\phi,\psi \in \mathbf{H}$$.
+We will need one fact about unitary operators, from [Definition (Unitary Operator)](#def:unitary-operator) above.
 
 > **Lemma** *(Unitary Operators are Normal)*
 <a name="lmm:unitary-is-normal"></a>
