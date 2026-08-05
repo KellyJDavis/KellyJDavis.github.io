@@ -1832,6 +1832,7 @@ The route to the two-variable spectral mapping theorem passes through *spectral 
 <a name="def:hall-7.14"></a>
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators} -->
+<!--  \uses{lmm:range-of-projection-is-kernel} -->
 > Let $$\mu$$ be a projection-valued measure on a $$\sigma$$-algebra $$\Omega(Y)$$ over a set $$Y$$. For each $$E \in \Omega(Y)$$, the *spectral subspace* $$V_E$$ of $$\mathbf{H}$$ (relative to $$\mu$$) is
 >
 > $$
@@ -1840,7 +1841,7 @@ The route to the two-variable spectral mapping theorem passes through *spectral 
 >
 > When $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint we take $$\mu = \mu^A$$, the projection-valued measure of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators), extended to $$\mathbb{R}$$ by $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$, and speak of the spectral subspaces *of $$A$$*; when $$A$$ is normal we take $$\mu = \mu^A$$ from [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20) instead. The general definition covers both, and is the one used below.
 >
-> Each $$V_E$$ is a closed subspace of $$\mathbf{H}$$: it is the range of a bounded orthogonal projection $$P \equiv \mu(E)$$ (property 1 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)), and $$\text{Range}(P) = \text{Ker}(\mathbf{1}-P)$$ — indeed if $$\eta = P\xi$$ then $$(\mathbf{1}-P)\eta = P\xi - P^2\xi = 0$$ by idempotency, and conversely if $$(\mathbf{1}-P)\eta = 0$$ then $$\eta = P\eta \in \text{Range}(P)$$ — while $$\text{Ker}(\mathbf{1}-P)$$ is closed as the preimage of the closed set $$\{0\}$$ under the continuous (because bounded) map $$\mathbf{1}-P$$. Being a closed subspace of the separable Hilbert space $$\mathbf{H}$$, $$V_E$$ is itself a separable Hilbert space under the inherited inner product: completeness because a closed subset of a complete space is complete, and separability because a subspace of a separable metric space is separable.
+> Each $$V_E$$ is a closed subspace of $$\mathbf{H}$$: it is the range of a bounded orthogonal projection $$\mu(E)$$ (property 1 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)), and [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel) shows such a range is closed. Being a closed subspace of the separable Hilbert space $$\mathbf{H}$$, $$V_E$$ is itself a separable Hilbert space under the inherited inner product: completeness because a closed subset of a complete space is complete, and separability because a subspace of a separable metric space is separable.
 
 We need three properties of these subspaces. The first two follow directly from multiplicativity of the functional calculus; the third says the subspaces attached to neighbourhoods of spectral points are non-trivial.
 
@@ -2420,6 +2421,28 @@ With the forms in hand, converting them back to operators is immediate, and defi
 >
 > We call $$\widetilde\Phi$$ the *extended calculus*. By the final claim of that proposition, $$\widetilde\Phi(f) = \Phi(f)$$ for continuous $$f$$ — by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63), since $$\Phi(f)$$ then induces the same quadratic form — so $$\widetilde\Phi$$ genuinely extends $$\Phi$$.
 
+Before going further we record that $$\widetilde\Phi$$ is linear — used repeatedly below, and not automatic from the definition, which specifies $$\widetilde\Phi(f)$$ only one function at a time.
+
+> **Lemma** *(The Extended Calculus is Linear)*
+<a name="lmm:abstract-extended-linear"></a>
+<!--  \uses{def:abstract-extended-calculus} -->
+<!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
+> For all bounded measurable $$f,g : X \to \mathbb{C}$$ and $$\alpha,\beta \in \mathbb{C}$$,
+>
+> $$
+>     \widetilde\Phi(\alpha f + \beta g) = \alpha\widetilde\Phi(f) + \beta\widetilde\Phi(g).
+> $$
+
+**Proof**
+The function $$\alpha f + \beta g$$ is again bounded and measurable, so $$\widetilde\Phi(\alpha f + \beta g)$$ is defined. For every $$\psi \in \mathbf{H}$$, linearity of the integral in the integrand gives
+
+$$
+    Q_{\alpha f+\beta g}(\psi) = \int_X (\alpha f + \beta g) \, d\mu_\psi = \alpha\int_X f\,d\mu_\psi + \beta\int_X g\,d\mu_\psi = \alpha Q_f(\psi) + \beta Q_g(\psi),
+$$
+
+and, by [Definition (The Extended Calculus)](#def:abstract-extended-calculus) applied to $$f$$ and to $$g$$ together with linearity of the inner product in its second argument, this equals $$\left< \psi, \big(\alpha\widetilde\Phi(f) + \beta\widetilde\Phi(g)\big)\psi \right>$$. So the bounded operator $$\alpha\widetilde\Phi(f)+\beta\widetilde\Phi(g)$$ induces the quadratic form $$Q_{\alpha f + \beta g}$$; since $$\widetilde\Phi(\alpha f+\beta g)$$ is by definition the *unique* bounded operator doing so — uniqueness being part of [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63) — the two coincide.$$\blacksquare$$
+
 We isolate two facts about $$\widetilde\Phi$$ that the rest of this section uses repeatedly: an off-diagonal formula, and a continuity property under bounded pointwise limits of the integrand.
 
 > **Lemma** *(Off-Diagonal Formula and Bounded Convergence for the Extended Calculus)*
@@ -2472,6 +2495,7 @@ Since $$f$$ is real-valued and each $$\mu_\psi$$ is a positive real measure, $$Q
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
+<!--  \uses{lmm:abstract-extended-linear} -->
 > For all bounded measurable $$f,g : X \to \mathbb{C}$$,
 >
 > $$
@@ -2483,7 +2507,7 @@ Throughout we use [**Lemma** *(Off-Diagonal Formula and Bounded Convergence for 
 
 **Pass 1: $$g$$ continuous.** Fix $$g \in C^0(X;\mathbb{R})$$ and let $$\mathcal{F}_1$$ be the set of bounded measurable $$f$$ with $$\widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g)$$. We check the three hypotheses of [**Lemma** *(hall-prblm-8.3.3c)*](../spectral-theorems/#lmm:hall-prblm-8.3.3c).
 
-$$\mathcal{F}_1$$ *is a vector space*: for $$f_1,f_2 \in \mathcal{F}_1$$ and $$\alpha_1,\alpha_2 \in \mathbb{C}$$, using that $$(\alpha_1f_1+\alpha_2f_2)g = \alpha_1(f_1g)+\alpha_2(f_2g)$$ pointwise and that $$\widetilde\Phi$$ is linear (immediate from linearity of $$f \mapsto Q_f$$ and uniqueness in [Definition (The Extended Calculus)](#def:abstract-extended-calculus)),
+$$\mathcal{F}_1$$ *is a vector space*: for $$f_1,f_2 \in \mathcal{F}_1$$ and $$\alpha_1,\alpha_2 \in \mathbb{C}$$, using that $$(\alpha_1f_1+\alpha_2f_2)g = \alpha_1(f_1g)+\alpha_2(f_2g)$$ pointwise and [**Lemma** *(The Extended Calculus is Linear)*](#lmm:abstract-extended-linear),
 
 $$
     \widetilde\Phi\big((\alpha_1f_1+\alpha_2f_2)g\big) = \alpha_1\widetilde\Phi(f_1g)+\alpha_2\widetilde\Phi(f_2g) = \big(\alpha_1\widetilde\Phi(f_1)+\alpha_2\widetilde\Phi(f_2)\big)\widetilde\Phi(g) = \widetilde\Phi(\alpha_1f_1+\alpha_2f_2)\widetilde\Phi(g).
@@ -2519,10 +2543,11 @@ By uniqueness of limits, $$\left< \phi, \widetilde\Phi(fg)\psi \right> = \left< 
 <a name="lmm:abstract-extended-conjugation"></a>
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{lmm:abstract-extended-real-self-adjoint} -->
+<!--  \uses{lmm:abstract-extended-linear} -->
 > For every bounded measurable $$f : X \to \mathbb{C}$$, $$\widetilde\Phi(\overline f) = \widetilde\Phi(f)^*$$.
 
 **Proof**
-Write $$f = u + iv$$ with $$u = \tfrac{1}{2}(f+\overline f)$$ and $$v = \tfrac{1}{2i}(f - \overline f)$$ bounded, measurable, and real-valued. By [**Lemma** *(Real Functions Give Self-Adjoint Operators)*](#lmm:abstract-extended-real-self-adjoint), $$\widetilde\Phi(u)$$ and $$\widetilde\Phi(v)$$ are self-adjoint. By linearity of $$\widetilde\Phi$$ and conjugate-linearity of the adjoint,
+Write $$f = u + iv$$ with $$u = \tfrac{1}{2}(f+\overline f)$$ and $$v = \tfrac{1}{2i}(f - \overline f)$$ bounded, measurable, and real-valued. By [**Lemma** *(Real Functions Give Self-Adjoint Operators)*](#lmm:abstract-extended-real-self-adjoint), $$\widetilde\Phi(u)$$ and $$\widetilde\Phi(v)$$ are self-adjoint. By [**Lemma** *(The Extended Calculus is Linear)*](#lmm:abstract-extended-linear) and conjugate-linearity of the adjoint,
 
 $$
     \widetilde\Phi(f)^* = \big( \widetilde\Phi(u) + i\widetilde\Phi(v) \big)^* = \widetilde\Phi(u)^* - i\widetilde\Phi(v)^* = \widetilde\Phi(u) - i\widetilde\Phi(v) = \widetilde\Phi(u - iv) = \widetilde\Phi(\overline f).\ \blacksquare
@@ -2548,6 +2573,7 @@ We can now assemble the projection-valued measure. This is the abstract form of 
 <!--  \uses{../spectral-theorems/#lmm:lemma-4} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
+<!--  \uses{lmm:abstract-extended-linear} -->
 > Let $$X$$ be a compact metric space and $$\Phi$$ an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. Define, for each Borel set $$E \subset X$$,
 >
 > $$
@@ -2579,7 +2605,7 @@ $$
     \left< \phi, \widetilde\Phi(h_n)\psi \right> \longrightarrow \left< \phi, \widetilde\Phi(1_E)\psi \right> = \left< \phi, \mu^\Phi(E)\psi \right>.
 $$
 
-On the other hand $$\widetilde\Phi(h_n) = \sum_{j=1}^n \mu^\Phi(E_j)$$ by linearity of $$\widetilde\Phi$$, and $$\sum_{j=1}^n\mu^\Phi(E_j)\psi \to P\psi$$ in norm, so by [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product), $$\left< \phi, \widetilde\Phi(h_n)\psi \right> \to \left< \phi, P\psi \right>$$. By uniqueness of limits in $$\mathbb{C}$$, $$\left< \phi, \mu^\Phi(E)\psi \right> = \left< \phi, P\psi \right>$$ for all $$\phi,\psi$$; by [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D=\mathbf{H}$$, $$\mu^\Phi(E)\psi = P\psi$$ for every $$\psi$$. Hence $$\mu^\Phi(E)\psi = \lim_n \sum_{j=1}^n \mu^\Phi(E_j)\psi = \sum_{j=1}^\infty \mu^\Phi(E_j)\psi$$, which is Property 3.
+On the other hand $$\widetilde\Phi(h_n) = \sum_{j=1}^n \mu^\Phi(E_j)$$ by [**Lemma** *(The Extended Calculus is Linear)*](#lmm:abstract-extended-linear), and $$\sum_{j=1}^n\mu^\Phi(E_j)\psi \to P\psi$$ in norm, so by [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product), $$\left< \phi, \widetilde\Phi(h_n)\psi \right> \to \left< \phi, P\psi \right>$$. By uniqueness of limits in $$\mathbb{C}$$, $$\left< \phi, \mu^\Phi(E)\psi \right> = \left< \phi, P\psi \right>$$ for all $$\phi,\psi$$; by [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D=\mathbf{H}$$, $$\mu^\Phi(E)\psi = P\psi$$ for every $$\psi$$. Hence $$\mu^\Phi(E)\psi = \lim_n \sum_{j=1}^n \mu^\Phi(E_j)\psi = \sum_{j=1}^\infty \mu^\Phi(E_j)\psi$$, which is Property 3.
 
 **The integral formula.** By the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) applied to the projection-valued measure $$\mu^\Phi$$ just constructed, $$\int_X f\,d\mu^\Phi$$ is the unique bounded operator with $$\left< \psi, \left( \int_X f\,d\mu^\Phi \right)\psi \right> = \int_X f \, d\mu^\Phi_\psi$$ for all $$\psi$$, where $$\mu^\Phi_\psi(E) = \left< \psi, \mu^\Phi(E)\psi \right>$$. Now for any Borel $$E$$,
 
