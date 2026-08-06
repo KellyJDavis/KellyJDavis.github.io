@@ -29,6 +29,14 @@ Recall from the [previous post](../spectral-theorems) that $$\mathbf{H}$$ denote
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 > Let $$\mathbf{H}$$ be a separable, complex Hilbert space. An *unbounded operator* $$A$$ on $$\mathbf{H}$$ is a linear map $$A : \text{Dom}(A) \to \mathbf{H}$$, where $$\text{Dom}(A)$$, called the *domain* of $$A$$, is a dense subspace of $$\mathbf{H}$$. Here "unbounded" means "not necessarily bounded": we permit the case $$\text{Dom}(A) = \mathbf{H}$$ together with $$A \in \mathcal{B}(\mathbf{H})$$, the set of bounded operators on $$\mathbf{H}$$, but do not require it.
 
+Two pieces of notation are used pervasively below and are introduced here, since neither this post nor the previous one has fixed them explicitly.
+
+> **Definition** *(The Identity Operator and Indicator Functions)*
+<a name="def:identity-and-indicator"></a>
+<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+> 1. $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$ when $$\mathbf{H} \ne \{0\}$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$; for $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$. When $$A$$ is an unbounded operator, $$A - \lambda\mathbf{1}$$ denotes the operator with domain $$\text{Dom}(A)$$ acting by $$\psi \mapsto A\psi - \lambda\psi$$; its domain is that of $$A$$, since $$\lambda\mathbf{1}$$ is defined on all of $$\mathbf{H}$$.
+> 2. If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, being the preimage description $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
+
 Before defining the adjoint of an unbounded operator, we record a small fact about dense subspaces that we will use repeatedly below — both to pin down the adjoint uniquely, and at several later points where we want to conclude that two vectors, or two operators, coincide from an equation that only holds on a dense subspace.
 
 > **Lemma** *(Equality Testing on a Dense Subspace, First Slot)*
@@ -483,6 +491,7 @@ The next proposition tells us how the adjoint interacts with adding a bounded op
 <!--  \uses{lmm:hall-dense-testing} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
+<!--  \uses{def:identity-and-indicator} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$ and $$B \in \mathcal{B}(\mathbf{H})$$ is a bounded operator defined on all of $$\mathbf{H}$$. Let $$A + B$$ denote the operator with $$\text{Dom}(A+B) = \text{Dom}(A)$$, given by $$(A+B)\psi = A\psi + B\psi$$ for all $$\psi \in \text{Dom}(A)$$. Then $$(A+B)^*$$ has the same domain as $$A^*$$, and
 >
 > $$
@@ -543,6 +552,7 @@ Finally, suppose $$A$$ is self-adjoint and $$B$$ is bounded and self-adjoint on 
 > **Lemma** *(Adjoint of a Scalar Multiple of the Identity)*
 <a name="lmm:adjoint-of-scalar-multiple-of-identity"></a>
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+<!--  \uses{def:identity-and-indicator} -->
 > For $$\lambda \in \mathbb{C}$$, the bounded operator $$\lambda\mathbf{1}$$ (defined on all of $$\mathbf{H}$$) has adjoint $$(\lambda\mathbf{1})^* = \overline{\lambda}\mathbf{1}$$.
 
 **Proof**
@@ -591,6 +601,7 @@ Recall that for a bounded operator, a number $$\lambda \in \mathbb{C}$$ belongs 
 <a name="def:hall-9.16"></a>
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+<!--  \uses{def:identity-and-indicator} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$. A number $$\lambda \in \mathbb{C}$$ belongs to the *resolvent set* of $$A$$ if there exists a bounded operator $$B \in \mathcal{B}(\mathbf{H})$$ with the following properties:
 >
 > 1. For all $$\psi \in \mathbf{H}$$, $$B\psi \in \text{Dom}(A)$$ and $$(A - \lambda \mathbf{1})B\psi = \psi$$; and
@@ -688,6 +699,7 @@ using positive-definiteness of the inner product for the last step.$$\blacksquar
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{def:kernel-of-an-unbounded-operator} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
+<!--  \uses{def:identity-and-indicator} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, the spectrum of $$A$$ is contained in the real line.
 
 **Proof**
@@ -1684,6 +1696,7 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:restriction-of-quadratic-form} -->
 <!--  \uses{lmm:closed-subspace-is-hilbert} -->
+<!--  \uses{def:identity-and-indicator} -->
 > If $$f$$ is a real-valued, measurable function on $$X$$, then $$\int_X f \, d\mu$$ is self-adjoint on $$W_f$$.
 
 **Proof**
@@ -2003,6 +2016,7 @@ We need three properties of these subspaces. The first two follow directly from 
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:spectrum-notions-agree} -->
+<!--  \uses{def:identity-and-indicator} -->
 > Let $$X \subset \mathbb{C}$$ be compact, let $$\mu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$, and set $$A \equiv \int_X \iota \, d\mu$$ — a bounded operator, since $$\iota(\lambda) = \lambda$$ is bounded on the compact set $$X$$. Let $$V_E \equiv \text{Range}(\mu(E))$$ be the associated [spectral subspaces](#def:hall-7.14). Then:
 >
 > 1. Each $$V_E$$ is invariant under $$A$$: $$A(V_E) \subset V_E$$.
@@ -2729,6 +2743,7 @@ We can now assemble the projection-valued measure. This is the abstract form of 
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{lmm:abstract-extended-linear} -->
+<!--  \uses{def:identity-and-indicator} -->
 > Let $$X$$ be a compact metric space and $$\Phi$$ an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. Define, for each Borel set $$E \subset X$$,
 >
 > $$
@@ -2943,6 +2958,7 @@ We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Se
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
 <!--  \uses{def:range-of-an-unbounded-operator} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
+<!--  \uses{def:identity-and-indicator} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$ and define
 >
 > $$
