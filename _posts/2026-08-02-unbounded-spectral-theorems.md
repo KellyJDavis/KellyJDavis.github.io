@@ -973,18 +973,34 @@ Finally, the same formula holds for $$A^*$$: since $$A$$ is essentially self-adj
 
 The [previous post](../spectral-theorems) constructed, for a projection-valued measure $$\mu$$ on $$(X, \Omega(X))$$, an integral $$f \mapsto \int_X f \, d\mu$$ defined on *bounded* measurable functions $$f$$, landing in $$\mathcal{B}(\mathbf{H})$$. To state [Theorem 10.4](#thrm:hall-10.4), we need to make sense of $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ where the integrand $$\lambda \mapsto \lambda$$ is typically an *unbounded* function on $$\sigma(A)$$ — so the resulting integral will typically be an unbounded operator, and we need to say what its domain is. This section develops that theory in general, for an arbitrary (possibly unbounded) measurable function against an arbitrary projection-valued measure.
 
-Recall that for $$\psi \in \mathbf{H}$$, $$\mu_\psi$$ denotes the [associated measure](../spectral-theorems/#thrm:projection-valued-measures-associated-measure) $$\mu_\psi(E) \equiv \left< \psi, \mu(E)\psi \right>$$, a positive, real-valued measure on $$(X, \Omega(X))$$. For a bounded measurable $$f$$, combining multiplicativity of the integral with the fact that integration intertwines complex conjugation and the adjoint — properties 3 and 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — gives, for any $$\psi \in \mathbf{H}$$,
+Recall that for $$\psi \in \mathbf{H}$$, $$\mu_\psi$$ denotes the [associated measure](../spectral-theorems/#thrm:projection-valued-measures-associated-measure) $$\mu_\psi(E) \equiv \left< \psi, \mu(E)\psi \right>$$, a positive, real-valued measure on $$(X, \Omega(X))$$. The starting point is the following norm identity for the bounded integral, which is used at several points below and which motivates the definition of the domain in the unbounded case.
+
+> **Lemma** *(Norm Identity for the Bounded Integral)*
+<a name="lmm:norm-identity-bounded-integral"></a>
+<!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{def:hall-9.1} -->
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and let $$f : X \to \mathbb{C}$$ be bounded and measurable. Then for every $$\psi \in \mathbf{H}$$,
+>
+> $$
+>     \left\| \left( \int_X f \, d\mu \right) \psi \right\|^2 = \int_X \lvert f \rvert^2 \, d\mu_\psi.
+> $$
+
+**Proof**
+Combining multiplicativity of the integral with the fact that integration intertwines complex conjugation and the adjoint — properties 3 and 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — and using the [definition of the adjoint](#def:hall-9.1) for the first equality,
 
 $$
 \begin{align}
     \left\| \left( \int_X f \, d\mu \right) \psi \right\|^2 &= \left< \psi, \left( \int_X f \, d\mu \right)^* \left( \int_X f \, d\mu \right) \psi \right> \\
                                                              &= \left< \psi, \left( \int_X \overline{f} \, d\mu \right)\left( \int_X f \, d\mu \right) \psi \right> \\
                                                              &= \left< \psi, \left( \int_X \lvert f \rvert^2 \, d\mu \right) \psi \right> \\
-                                                             &= \int_X \lvert f \rvert^2 \, d\mu_\psi, \tag{$\ast\ast\ast$}
+                                                             &= \int_X \lvert f \rvert^2 \, d\mu_\psi,
 \end{align}
 $$
 
-where the last equality is the defining property of the integral, applied to the bounded function $$\lvert f \rvert^2$$. If $$f$$ is *unbounded*, this suggests defining the domain of $$\int_X f \, d\mu$$ to be exactly the set of $$\psi$$ for which the right-hand side of $$(\ast\ast\ast)$$ is finite. Before making this precise, we need a version of the "quadratic form" and "sesquilinear form" machinery from the previous post that allows for a domain other than all of $$\mathbf{H}$$ — a subspace, not even necessarily dense, since we will want to apply this machinery to $$\mathbf{H}_n$$, a typically non-dense closed subspace, in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3) below.
+the last equality being the defining property of the integral, applied to the bounded function $$\lvert f \rvert^2 = \overline{f}f$$.$$\blacksquare$$
+
+If $$f$$ is *unbounded*, this identity suggests defining the domain of $$\int_X f \, d\mu$$ to be exactly the set of $$\psi$$ for which $$\int_X \lvert f \rvert^2 \, d\mu_\psi$$ is finite. Before making this precise, we need a version of the "quadratic form" and "sesquilinear form" machinery from the previous post that allows for a domain other than all of $$\mathbf{H}$$ — a subspace, not even necessarily dense, since we will want to apply this machinery to $$\mathbf{H}_n$$, a typically non-dense closed subspace, in the proof of [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3) below.
 
 > **Definition** *(Sesquilinear Form on a Subspace)*
 <a name="def:hall-sesquilinear-form-on-a-subspace"></a>
@@ -1213,6 +1229,7 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{lmm:norm-convergent-decomposition} -->
+<!--  \uses{lmm:norm-identity-bounded-integral} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f : X \to \mathbb{C}$$ be a measurable function, not necessarily bounded (but everywhere finite-valued, since its values lie in $$\mathbb{C}$$ — this is used below, where the sets $$\{ \lvert f \rvert < n \}$$ are required to exhaust $$X$$). Let
 >
 > $$
@@ -1293,7 +1310,7 @@ $$
 
 for all $$\phi, \psi \in W_f$$, where $$L_f$$ is defined on $$W_f$$ by the same polarization formula applied to $$Q_f$$. Since each relation $$L_{f_n}(\alpha\phi_1 + \beta\phi_2, \psi) = \overline{\alpha} L_{f_n}(\phi_1, \psi) + \overline{\beta} L_{f_n}(\phi_2, \psi)$$ (and the analogous relation for linearity in the second argument) holds for every $$n$$ — with all terms in $$W_f$$, hence covered by the convergence just established — taking $$n \to \infty$$ on both sides shows the same relations hold for $$L_f$$. Thus $$L_f$$ is a sesquilinear form on $$W_f$$, verifying property 2, and completing the proof that $$Q_f$$ is a quadratic form on $$W_f$$.
 
-**Part 2.** Fix $$\phi, \psi \in W_f$$, and retain $$f_n = f \cdot 1_{E_n}$$ from **Part 1**. Since $$f_n$$ is bounded, $$(\ast\ast\ast)$$ from the start of this section applies to $$f_n$$: $$\left\| \left( \int_X f_n \, d\mu \right) \eta \right\|^2 = \int_X \lvert f_n \rvert^2 \, d\mu_\eta$$ for all $$\eta \in \mathbf{H}$$. Combined with the off-diagonal identity $$(\S)$$ of **Part 1** and [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43),
+**Part 2.** Fix $$\phi, \psi \in W_f$$, and retain $$f_n = f \cdot 1_{E_n}$$ from **Part 1**. Since $$f_n$$ is bounded, [**Lemma** *(Norm Identity for the Bounded Integral)*](#lmm:norm-identity-bounded-integral) applies to $$f_n$$: $$\left\| \left( \int_X f_n \, d\mu \right) \eta \right\|^2 = \int_X \lvert f_n \rvert^2 \, d\mu_\eta$$ for all $$\eta \in \mathbf{H}$$. Combined with the off-diagonal identity $$(\S)$$ of **Part 1** and [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43),
 
 $$
     \lvert L_{f_n}(\phi, \psi) \rvert \le \left\| \phi \right\| \left\| \left( \int_X f_n \, d\mu \right) \psi \right\| = \left\| \phi \right\| \left( \int_X \lvert f_n \rvert^2 \, d\mu_\psi \right)^{1/2}.
@@ -1323,7 +1340,7 @@ $$
     \left< \phi, \chi_n \right> \longrightarrow \left< \phi, \chi \right> \quad \text{for every } \phi \in W_f. \tag{$\ddagger$}
 $$
 
-We show $$\{ \chi_n \}_{n \in \mathbb{N}}$$ is a Cauchy sequence in $$\mathbf{H}$$. For $$n < m$$, $$E_n \subset E_m$$ gives $$f_n - f_m = f \cdot 1_{E_n} - f \cdot 1_{E_m} = -f \cdot 1_{E_m \setminus E_n}$$, so, applying $$(\ast\ast\ast)$$ to the bounded function $$f_n - f_m$$ and using linearity of the bounded integral,
+We show $$\{ \chi_n \}_{n \in \mathbb{N}}$$ is a Cauchy sequence in $$\mathbf{H}$$. For $$n < m$$, $$E_n \subset E_m$$ gives $$f_n - f_m = f \cdot 1_{E_n} - f \cdot 1_{E_m} = -f \cdot 1_{E_m \setminus E_n}$$, so, applying [**Lemma** *(Norm Identity for the Bounded Integral)*](#lmm:norm-identity-bounded-integral) to the bounded function $$f_n - f_m$$ and using linearity of the bounded integral,
 
 $$
     \left\| \chi_n - \chi_m \right\|^2 = \left\| \left( \int_X (f_n - f_m) \, d\mu \right)\psi \right\|^2 = \int_X \lvert f_n - f_m \rvert^2 \, d\mu_\psi = \int_{E_m \setminus E_n} \lvert f \rvert^2 \, d\mu_\psi = \int_X \lvert f_m \rvert^2 \, d\mu_\psi - \int_X \lvert f_n \rvert^2 \, d\mu_\psi,
@@ -1449,6 +1466,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{lmm:norm-identity-bounded-integral} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
 >
 > $$
@@ -1460,7 +1478,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 **Proof**
 Write $$\chi_n \equiv \left( \int_X f_n \, d\mu \right)\psi$$ — defined since $$f_n$$ is bounded — and $$\chi \equiv \left( \int_X f \, d\mu \right)\psi$$, defined since $$\psi \in W_f$$.
 
-For $$n < m$$ we have $$E_n \subset E_m$$ and hence $$f_n - f_m = -f\cdot 1_{E_m \setminus E_n}$$, so, applying the norm identity $$(\ast\ast\ast)$$ to the bounded function $$f_n - f_m$$ and using linearity of the bounded integral,
+For $$n < m$$ we have $$E_n \subset E_m$$ and hence $$f_n - f_m = -f\cdot 1_{E_m \setminus E_n}$$, so, applying [**Lemma** *(Norm Identity for the Bounded Integral)*](#lmm:norm-identity-bounded-integral) to the bounded function $$f_n - f_m$$ and using linearity of the bounded integral,
 
 $$
     \left\| \chi_n - \chi_m \right\|^2 = \int_X \lvert f_n - f_m \rvert^2 \, d\mu_\psi = \int_{E_m\setminus E_n} \lvert f \rvert^2 \, d\mu_\psi = \int_X \lvert f_m \rvert^2 \, d\mu_\psi - \int_X \lvert f_n \rvert^2 \, d\mu_\psi.
@@ -3125,6 +3143,7 @@ We can finally state and prove the theorem this post set out to establish.
 <!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
+<!--  \uses{lmm:norm-identity-bounded-integral} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, there is a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\mathbb{R}$$ such that
 >
 > $$
@@ -3160,7 +3179,7 @@ $$
     \left( \int_{\mathbb{R}} \iota_n \, d\nu \right) B = \left( \int_{\mathbb{R}} \iota_n \, d\nu \right)\left( \int_{\mathbb{R}} r \, d\nu \right) = \int_{\mathbb{R}} \iota_n r \, d\nu.
 $$
 
-Apply both sides to $$\psi$$ and let $$n \to \infty$$. On the left, $$B\psi \in W_\iota$$ (just shown), so [**Lemma** *(Truncations Converge to the Unbounded Integral)*](#lmm:truncations-converge), applied to $$f = \iota$$ and the vector $$B\psi$$, gives $$\left( \int \iota_n \, d\nu \right)B\psi \to \left( \int \iota \, d\nu \right)B\psi = A B\psi$$ in norm. On the right, $$\iota_n r \to \iota r$$ pointwise with $$\lvert \iota_n r \rvert \le \lvert \iota r \rvert \le 1$$, so by the norm identity $$(\ast\ast\ast)$$ applied to the bounded function $$\iota_n r - \iota r$$, together with linearity of the bounded integral,
+Apply both sides to $$\psi$$ and let $$n \to \infty$$. On the left, $$B\psi \in W_\iota$$ (just shown), so [**Lemma** *(Truncations Converge to the Unbounded Integral)*](#lmm:truncations-converge), applied to $$f = \iota$$ and the vector $$B\psi$$, gives $$\left( \int \iota_n \, d\nu \right)B\psi \to \left( \int \iota \, d\nu \right)B\psi = A B\psi$$ in norm. On the right, $$\iota_n r \to \iota r$$ pointwise with $$\lvert \iota_n r \rvert \le \lvert \iota r \rvert \le 1$$, so by [**Lemma** *(Norm Identity for the Bounded Integral)*](#lmm:norm-identity-bounded-integral) applied to the bounded function $$\iota_n r - \iota r$$, together with linearity of the bounded integral,
 
 $$
     \left\| \left( \int_{\mathbb{R}} \iota_n r \, d\nu \right)\psi - \left( \int_{\mathbb{R}} \iota r \, d\nu \right)\psi \right\|^2 = \int_{\mathbb{R}} \lvert \iota_n r - \iota r \rvert^2 \, d\nu_\psi \longrightarrow 0,
