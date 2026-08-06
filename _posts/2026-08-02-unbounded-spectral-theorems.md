@@ -3225,13 +3225,15 @@ $$
     \widetilde\Phi(g)\,(U-\mathbf{1})\psi = \widetilde\Phi(g)\widetilde\Phi(h)\psi = i(U+\mathbf{1})\psi = A(U-\mathbf{1})\psi.
 $$
 
-We claim $$U - \mathbf{1}$$ maps $$\mathbf{H}_n$$ *onto* $$\mathbf{H}_n$$. On $$F_n$$ we have $$\lvert u - 1 \rvert \ge 1/n > 0$$ except possibly at the single point $$u=1$$ (which lies in $$F_1$$ and carries no $$\mu^U$$-mass, so altering $$k$$ there changes neither $$\widetilde\Phi(k)$$ nor any identity below), so
+We claim $$U - \mathbf{1}$$ maps $$\mathbf{H}_n$$ *onto* $$\mathbf{H}_n$$. On $$F_n$$ we have $$\lvert u - 1 \rvert \ge 1/n > 0$$, except at the single point $$u = 1$$, which lies in $$F_1$$ and where the reciprocal below is undefined; we set
 
 $$
-    k \equiv 1_{F_n}\cdot\frac{1}{\iota - 1}
+    k(u) \equiv \begin{cases} \dfrac{1}{u-1} & u \in F_n,\ u \ne 1 \\[4pt] 0 & \text{otherwise,} \end{cases}
 $$
 
-is a bounded measurable function on $$\sigma(U)$$ (bounded by $$n$$; it is set to $$0$$ off $$F_n$$, and at $$u=1$$, where the formula is not needed). Pointwise, $$k\,h = 1_{F_n}\frac{1}{\iota-1}\cdot 1_{F_n}(\iota-1) = 1_{F_n}$$ and likewise $$h\,k = 1_{F_n}$$, so by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative),
+a bounded measurable function on $$\sigma(U)$$, bounded by $$n$$.
+
+The functions $$k\,h$$ and $$1_{F_n}$$ agree at every point of $$\sigma(U)$$ except possibly $$u = 1$$: for $$u \in F_n$$ with $$u \ne 1$$ both equal $$1$$, off $$F_n$$ both vanish, and at $$u=1$$ (relevant only when $$n = 1$$) we have $$k(1)h(1) = 0$$ while $$1_{F_1}(1) = 1$$. The same holds for $$h\,k$$. Since $$\mu^U(\{1\}) = 0$$ by [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), [**Lemma** *(The Integral Ignores Null Sets)*](#lmm:integral-ignores-null-sets) — together with the identification $$\widetilde\Phi(\cdot) = \int_{\sigma(U)} \cdot \; d\mu^U$$ on bounded measurable functions from [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm) — gives $$\widetilde\Phi(k\,h) = \widetilde\Phi(1_{F_n}) = \widetilde\Phi(h\,k)$$. Hence by [**Proposition** *(The Extended Calculus is Multiplicative)*](#prpstn:abstract-extended-multiplicative),
 
 $$
     \widetilde\Phi(k)\widetilde\Phi(h) = \widetilde\Phi(1_{F_n}) = \mu^U(F_n) = \widetilde\Phi(h)\widetilde\Phi(k).
