@@ -222,12 +222,51 @@ We now come to the key definition of this post: that of self-adjointness. Every 
 
 Indeed, if $$A$$ is self-adjoint then $$\text{Dom}(A^*) = \text{Dom}(A)$$ and $$A^* = A$$ on this common domain, which is exactly [Definition (Extension of an Operator)](#def:hall-9.3) applied with $$B = A$$: $$A^*$$ is (trivially) an extension of $$A$$, so by [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4), $$A$$ is symmetric. Conversely, a symmetric operator $$A$$ is self-adjoint precisely when $$\text{Dom}(A^*)$$ is no bigger than $$\text{Dom}(A)$$, since symmetry already gives the reverse containment via [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4). This is usually the difficulty in showing a symmetric operator is self-adjoint: showing that the adjoint's domain does not overshoot.
 
-The next two definitions let us make sense of the *closure* of an unbounded operator, which we will need almost immediately. First we fix the topology on $$\mathbf{H} \times \mathbf{H}$$: it is the Hilbert space with inner product $$\left< (\phi_1,\psi_1), (\phi_2,\psi_2) \right> \equiv \left< \phi_1,\phi_2 \right> + \left< \psi_1,\psi_2 \right>$$ and associated norm $$\left\| (\phi,\psi) \right\| \equiv \big( \left\| \phi \right\|^2 + \left\| \psi \right\|^2 \big)^{1/2}$$. Convergence in this norm is exactly componentwise convergence: if $$(\phi_n,\psi_n) \to (\phi,\psi)$$ then $$\left\| \phi_n - \phi \right\|^2 \le \left\| \phi_n-\phi \right\|^2 + \left\| \psi_n-\psi \right\|^2 = \left\| (\phi_n,\psi_n)-(\phi,\psi) \right\|^2 \to 0$$, so $$\phi_n \to \phi$$, and likewise $$\psi_n \to \psi$$; conversely, if $$\phi_n \to \phi$$ and $$\psi_n \to \psi$$ then $$\left\| (\phi_n,\psi_n)-(\phi,\psi) \right\|^2 = \left\| \phi_n-\phi \right\|^2 + \left\| \psi_n-\psi \right\|^2 \to 0$$. We also use the standard metric-space fact that a subset of $$\mathbf{H} \times \mathbf{H}$$ is closed exactly when it is sequentially closed (contains the limit of every convergent sequence of its own points), and that a point lies in the closure of a subset exactly when it is the limit of some sequence of points of that subset.
+The next two definitions let us make sense of the *closure* of an unbounded operator, which we will need almost immediately. They refer to the topology on $$\mathbf{H} \times \mathbf{H}$$, so we fix that first — as a definition and two supporting facts rather than as a remark, since every closedness argument below rests on them.
+
+> **Definition** *(The Product Hilbert Space $$\mathbf{H} \times \mathbf{H}$$)*
+<a name="def:product-hilbert-space"></a>
+> $$\mathbf{H} \times \mathbf{H}$$ denotes the set of ordered pairs $$(\phi,\psi)$$ with $$\phi,\psi \in \mathbf{H}$$, made a complex vector space by componentwise operations and equipped with the inner product
+>
+> $$
+>     \left< (\phi_1,\psi_1), (\phi_2,\psi_2) \right> \equiv \left< \phi_1,\phi_2 \right> + \left< \psi_1,\psi_2 \right>,
+> $$
+>
+> whose associated norm is $$\left\| (\phi,\psi) \right\| = \big( \left\| \phi \right\|^2 + \left\| \psi \right\|^2 \big)^{1/2}$$. The inner-product axioms are inherited componentwise from those on $$\mathbf{H}$$, and completeness likewise: a sequence is Cauchy in $$\mathbf{H}\times\mathbf{H}$$ exactly when both component sequences are Cauchy in $$\mathbf{H}$$, by the same two inequalities used in [**Lemma** *(Convergence in $$\mathbf{H} \times \mathbf{H}$$ is Componentwise)*](#lmm:componentwise-convergence) below with $$(\phi_m,\psi_m)$$ in place of $$(\phi,\psi)$$. So $$\mathbf{H}\times\mathbf{H}$$ is again a separable, complex Hilbert space, and the topology on it is the one induced by this norm. (It is the two-summand case of [Definition (Hilbert Space Direct Sum)](#def:hall-a.45) further below, but is used well before that definition, so we give it directly here.)
+
+> **Theorem** *(Sequential Characterization of Closed Sets and Closures)*
+<a name="thrm:sequential-closedness"></a>
+> Let $$M$$ be a metric space and $$S \subset M$$. Then $$S$$ is closed if and only if it is sequentially closed, i.e. contains the limit of every convergent sequence of its own points; and a point of $$M$$ lies in the closure $$\overline{S}$$ if and only if it is the limit of some sequence of points of $$S$$.
+
+> **Lemma** *(Convergence in $$\mathbf{H} \times \mathbf{H}$$ is Componentwise)*
+<a name="lmm:componentwise-convergence"></a>
+<!--  \uses{def:product-hilbert-space} -->
+> Let $$\{(\phi_n,\psi_n)\}_{n\in\mathbb{N}}$$ be a sequence in $$\mathbf{H}\times\mathbf{H}$$ and $$(\phi,\psi) \in \mathbf{H}\times\mathbf{H}$$. Then $$(\phi_n,\psi_n) \to (\phi,\psi)$$ in $$\mathbf{H}\times\mathbf{H}$$ if and only if $$\phi_n \to \phi$$ and $$\psi_n \to \psi$$ in $$\mathbf{H}$$.
+
+**Proof**
+Suppose $$(\phi_n,\psi_n) \to (\phi,\psi)$$. Then, by [Definition (The Product Hilbert Space $$\mathbf{H} \times \mathbf{H}$$)](#def:product-hilbert-space),
+
+$$
+    \left\| \phi_n - \phi \right\|^2 \le \left\| \phi_n-\phi \right\|^2 + \left\| \psi_n-\psi \right\|^2 = \left\| (\phi_n,\psi_n)-(\phi,\psi) \right\|^2 \longrightarrow 0,
+$$
+
+so $$\phi_n \to \phi$$; the same computation with the roles of the components exchanged gives $$\psi_n \to \psi$$.
+
+Conversely, if $$\phi_n \to \phi$$ and $$\psi_n \to \psi$$ then
+
+$$
+    \left\| (\phi_n,\psi_n)-(\phi,\psi) \right\|^2 = \left\| \phi_n-\phi \right\|^2 + \left\| \psi_n-\psi \right\|^2 \longrightarrow 0,
+$$
+
+a sum of two sequences of non-negative reals each tending to $$0$$.$$\blacksquare$$
 
 > **Definition** *(Closed and Closable Operators)*
 <a name="def:hall-9.6"></a>
 <!--  \uses{def:hall-3.1} -->
-> An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closed* if the graph of $$A$$ is a closed subset of $$\mathbf{H} \times \mathbf{H}$$. Equivalently — by sequential closedness, and componentwise convergence in $$\mathbf{H} \times \mathbf{H}$$, as just noted — $$A$$ is closed if and only if: whenever $$\{ \psi_n \}_{n \in \mathbb{N}}$$ is a sequence in $$\text{Dom}(A)$$ and there exist $$\psi, \varphi \in \mathbf{H}$$ with $$\psi_n \to \psi$$ and $$A\psi_n \to \varphi$$, it follows that $$\psi \in \text{Dom}(A)$$ and $$A\psi = \varphi$$.
+<!--  \uses{def:product-hilbert-space} -->
+<!--  \uses{lmm:componentwise-convergence} -->
+<!--  \uses{thrm:sequential-closedness} -->
+> An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closed* if the graph of $$A$$ is a closed subset of $$\mathbf{H} \times \mathbf{H}$$. Equivalently — by [**Theorem** *(Sequential Characterization of Closed Sets and Closures)*](#thrm:sequential-closedness) and [**Lemma** *(Convergence in $$\mathbf{H} \times \mathbf{H}$$ is Componentwise)*](#lmm:componentwise-convergence) — $$A$$ is closed if and only if: whenever $$\{ \psi_n \}_{n \in \mathbb{N}}$$ is a sequence in $$\text{Dom}(A)$$ and there exist $$\psi, \varphi \in \mathbf{H}$$ with $$\psi_n \to \psi$$ and $$A\psi_n \to \varphi$$, it follows that $$\psi \in \text{Dom}(A)$$ and $$A\psi = \varphi$$.
 >
 > An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closable* if the closure, in $$\mathbf{H} \times \mathbf{H}$$, of the graph of $$A$$ is again the graph of some operator. If $$A$$ is closable, the *closure* $$A^{\text{cl}}$$ of $$A$$ is the operator whose graph is the closure of the graph of $$A$$.
 
@@ -1676,7 +1715,17 @@ Every bounded self-adjoint operator is a special case of a broader, and for our 
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 > A bounded operator $$A$$ on $$\mathbf{H}$$ is *normal* if $$A$$ commutes with its adjoint: $$AA^* = A^*A$$.
 
-Every bounded self-adjoint operator is normal (trivially, $$A A^* = A^2 = A^*A$$), but the class is genuinely larger — for instance every unitary operator is normal ($$UU^* = U^*U = \mathbf{1}$$), and unitary operators are generally not self-adjoint. Unlike the self-adjoint case, the spectrum of a normal operator need not lie on the real line at all.
+The class is genuinely larger than the self-adjoint operators — for instance every unitary operator is normal, by [**Lemma** *(Unitary Operators are Normal)*](#lmm:unitary-is-normal) below, and unitary operators are generally not self-adjoint. That every self-adjoint operator is itself normal is used below to apply normality-requiring results to $$B^*B$$, so we record it rather than leave it as a remark.
+
+> **Lemma** *(Bounded Self-Adjoint Operators are Normal)*
+<a name="lmm:self-adjoint-is-normal"></a>
+<!--  \uses{def:hall-10.19} -->
+<!--  \uses{def:hall-9.5} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then $$A$$ is normal.
+
+**Proof**
+Self-adjointness gives $$A^* = A$$, so $$AA^* = AA = A^2$$ and $$A^*A = AA = A^2$$; the two agree, which is the [definition of normal](#def:hall-10.19).$$\blacksquare$$
+ Unlike the self-adjoint case, the spectrum of a normal operator need not lie on the real line at all.
 
 Hall's proof that the bounded self-adjoint spectral theorem extends to normal operators proceeds in two stages, mirroring the two-stage proof of the self-adjoint case itself. The first stage builds a continuous functional calculus for $$A$$; the second turns that functional calculus into a projection-valued measure. Hall's own observation is that this second stage, once a continuous functional calculus is in hand, uses nothing about the operator beyond the functional calculus itself — not self-adjointness, not realness of the spectrum. Rather than treat this as license to say the self-adjoint case's construction "carries over unchanged" — citing one proof to justify another, exactly the pattern [**Lemma** *(The $$b^2$$ Inequality for Symmetric Operators)*](#lmm:b-squared-inequality-symmetric) and [**Proposition** *(Properties of Quadratic Forms on a Subspace)*](#prpstn:quadratic-forms-on-a-subspace-properties) were introduced earlier to avoid — when we reach that stage we will extract the construction as its own proposition, parameterized by an abstract continuous functional calculus on a compact metric space, so that the self-adjoint and normal cases each cite that one statement rather than one citing the other's proof. For now, our task is the first stage: building the continuous functional calculus for a normal operator.
 
@@ -2220,6 +2269,7 @@ We can now carry out the construction that replaces the matrix-case eigenspace a
 <!--  \uses{lmm:polynomials-in-normal-are-normal} -->
 <!--  \uses{lmm:adjoint-product-and-involution} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
+<!--  \uses{lmm:self-adjoint-is-normal} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, $$p$$ a polynomial in two variables, and $$\mu \in \sigma\big( p(A,A^*) \big)$$. Then for every $$\varepsilon > 0$$ there is a nonzero closed subspace $$W^\varepsilon \subset \mathbf{H}$$, invariant under both $$A$$ and $$A^*$$, every nonzero element of which is an $$\varepsilon$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$\mu$$.
 
 **Proof**
@@ -2227,7 +2277,7 @@ Fix $$\varepsilon > 0$$ and set $$B \equiv p(A,A^*) - \mu\mathbf{1}$$. By [**Lem
 
 *Step 1: $$0 \in \sigma(B^*B)$$.* The operator $$B^*B$$ is self-adjoint, by [**Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*](#lmm:adjoint-product-and-involution): $$(B^*B)^* = B^*(B^*)^* = B^*B$$. Let $$\delta > 0$$. Apply [**Lemma** *(hall-10.26)*](#lmm:hall-10.26) to the normal operator $$B$$ with the polynomial $$q(\lambda,\overline\lambda) = \lambda\overline\lambda$$. Substituting gives $$q(B,B^*) = BB^*$$, which equals $$B^*B$$ because $$B$$ is normal; and $$q(0,\overline{0}) = 0$$. The lemma supplies a constant $$C_q$$, which satisfies $$C_q > 0$$ by its construction there, so the division by $$C_q$$ below is legitimate.
 
-Since $$0 \in \sigma(B)$$ and $$B$$ is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives, for the particular value $$\delta' \equiv \delta/C_q > 0$$, a $$\delta'$$-almost eigenvector $$\psi$$ for $$B$$ with eigenvalue $$0$$. By the lemma just applied, $$\psi$$ is then a $$(C_q\delta') = \delta$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. As $$\delta>0$$ was arbitrary and $$B^*B$$, being self-adjoint, is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives $$0 \in \sigma(B^*B)$$.
+Since $$0 \in \sigma(B)$$ and $$B$$ is normal, Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives, for the particular value $$\delta' \equiv \delta/C_q > 0$$, a $$\delta'$$-almost eigenvector $$\psi$$ for $$B$$ with eigenvalue $$0$$. By the lemma just applied, $$\psi$$ is then a $$(C_q\delta') = \delta$$-almost eigenvector for $$B^*B$$ with eigenvalue $$0$$. As $$\delta>0$$ was arbitrary, and $$B^*B$$ is normal by [**Lemma** *(Bounded Self-Adjoint Operators are Normal)*](#lmm:self-adjoint-is-normal) (it having been shown self-adjoint above), Part 2 of [**Lemma** *(hall-10.25)*](#lmm:hall-10.25) gives $$0 \in \sigma(B^*B)$$.
 
 *Step 2: the spectral subspace.* Apply the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators) to $$B^*B$$ and let
 
