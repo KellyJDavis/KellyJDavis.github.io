@@ -89,7 +89,23 @@ If $$A$$ happens to be a bounded operator on all of $$\mathbf{H}$$, then for any
 >
 > The operator $$A^*$$, with domain $$\text{Dom}(A^*)$$, is called the *adjoint* of $$A$$.
 
-We now justify that $$A^*\phi$$, as described in this definition, actually exists and is unique for each $$\phi \in \text{Dom}(A^*)$$ — this is not automatic once $$A$$ is only densely defined, and we spell out exactly which prior results make it work. Fix $$\phi \in \text{Dom}(A^*)$$, and consider the map $$T : \text{Dom}(A) \to \mathbb{C}$$ given by $$T\psi \equiv \left< \phi, A\psi \right>$$. Since $$A$$ is linear (by the [definition of an unbounded operator](#def:hall-3.1)) and the inner product on $$\mathbf{H}$$ is linear in its second argument, $$T$$ is a linear map; by the defining property of $$\text{Dom}(A^*)$$ used above, $$T$$ is bounded on $$\text{Dom}(A)$$.
+The definition just given is not self-evidently well posed: it declares $$A^*\phi$$ to be "the unique vector such that ...", which presupposes that such a vector exists and that there is only one. Neither is automatic once $$A$$ is merely densely defined, so we record the fact as a proposition — a formalization needs exactly this existence-and-uniqueness statement in order to define $$A^*$$ at all.
+
+> **Proposition** *(The Adjoint is Well Defined)*
+<a name="prpstn:adjoint-well-defined"></a>
+<!--  \uses{def:hall-9.1} -->
+<!--  \uses{def:hall-3.1} -->
+<!--  \uses{thrm:hall-a.52} -->
+<!--  \uses{lmm:hall-dense-testing} -->
+<!--  \uses{../spectral-theorems/#thrm:bounded-linear-transformation-theorem} -->
+> Let $$A$$ be an unbounded operator on $$\mathbf{H}$$ and let $$\phi \in \text{Dom}(A^*)$$. Then there is exactly one $$\chi \in \mathbf{H}$$ with
+>
+> $$
+>     \left< \phi, A\psi \right> = \left< \chi, \psi \right> \quad \text{for all } \psi \in \text{Dom}(A).
+> $$
+
+**Proof**
+Fix $$\phi \in \text{Dom}(A^*)$$, and consider the map $$T : \text{Dom}(A) \to \mathbb{C}$$ given by $$T\psi \equiv \left< \phi, A\psi \right>$$. Since $$A$$ is linear (by the [definition of an unbounded operator](#def:hall-3.1)) and the inner product on $$\mathbf{H}$$ is linear in its second argument, $$T$$ is a linear map; by the defining property of $$\text{Dom}(A^*)$$ used above, $$T$$ is bounded on $$\text{Dom}(A)$$.
 
 To apply the [**Bounded Linear Transformation Theorem**](../spectral-theorems/#thrm:bounded-linear-transformation-theorem) to $$T$$, we check its three hypotheses hold: it asks for a normed space $$V_1$$, a Banach space $$V_2$$, a dense subspace $$W \subset V_1$$, and a bounded linear map $$T : W \to V_2$$. Here $$\mathbf{H}$$, being a Hilbert space, is in particular a normed vector space with norm $$\left\| \cdot \right\|$$ induced by its inner product, so we may take $$V_1 = \mathbf{H}$$. The target space $$\mathbb{C}$$, with the usual absolute value as norm, is a Banach space, since every Cauchy sequence of complex numbers converges. By the [definition of an unbounded operator](#def:hall-3.1), $$\text{Dom}(A)$$ is a dense subspace of $$\mathbf{H}$$, so we may take $$W = \text{Dom}(A)$$. We have just checked $$T$$ is linear and bounded on $$W$$. All hypotheses being met, there is a unique bounded linear map $$\tilde{T} : \mathbf{H} \to \mathbb{C}$$ with $$\tilde{T} = T$$ on $$\text{Dom}(A)$$.
 
@@ -99,7 +115,7 @@ $$
     \left< \phi, A\psi \right> = T\psi = \tilde{T}\psi = \left< \chi, \psi \right> \quad \text{for all } \psi \in \text{Dom}(A).
 $$
 
-So $$\chi$$ satisfies the defining equation of $$A^*\phi$$ in [Definition (Adjoint of an Unbounded Operator)](#def:hall-9.1). For uniqueness: if $$\chi'$$ also satisfied $$\left< \phi, A\psi \right> = \left< \chi', \psi \right>$$ for all $$\psi \in \text{Dom}(A)$$, then $$\chi$$ and $$\chi'$$ would agree in inner product against every element of the dense subset $$\text{Dom}(A)$$, so $$\chi = \chi'$$ by [Lemma (Equality Testing on a Dense Subspace, First Slot)](#lmm:hall-dense-testing). We may therefore unambiguously set $$A^*\phi \equiv \chi$$.
+So $$\chi$$ satisfies the defining equation of $$A^*\phi$$ in [Definition (Adjoint of an Unbounded Operator)](#def:hall-9.1). For uniqueness: if $$\chi'$$ also satisfied $$\left< \phi, A\psi \right> = \left< \chi', \psi \right>$$ for all $$\psi \in \text{Dom}(A)$$, then $$\chi$$ and $$\chi'$$ would agree in inner product against every element of the dense subset $$\text{Dom}(A)$$, so $$\chi = \chi'$$ by [Lemma (Equality Testing on a Dense Subspace, First Slot)](#lmm:hall-dense-testing). So $$\chi$$ is unique, and setting $$A^*\phi \equiv \chi$$ in [Definition (Adjoint of an Unbounded Operator)](#def:hall-9.1) is unambiguous.$$\blacksquare$$
 
 Before proceeding, we check that $$A^*$$, as just constructed, is again a linear operator on its domain — a fact used implicitly throughout the rest of this post.
 
@@ -108,6 +124,7 @@ Before proceeding, we check that $$A^*$$, as just constructed, is again a linear
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{lmm:hall-dense-testing} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
+<!--  \uses{prpstn:adjoint-well-defined} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$. Then $$A^*$$ is linear on $$\text{Dom}(A^*)$$: for all $$\phi_1, \phi_2 \in \text{Dom}(A^*)$$ and $$\alpha, \beta \in \mathbb{C}$$, we have $$\alpha\phi_1 + \beta\phi_2 \in \text{Dom}(A^*)$$, and
 >
 > $$
@@ -135,6 +152,7 @@ Several proofs below establish $$\psi \in \text{Dom}(A^*)$$ by exhibiting a vect
 <a name="lmm:characterizing-adjoint-domain-membership"></a>
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
+<!--  \uses{prpstn:adjoint-well-defined} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$ and $$\psi \in \mathbf{H}$$. Then $$\psi \in \text{Dom}(A^*)$$ if and only if there exists $$\varphi \in \mathbf{H}$$ such that $$\left< \psi, A\chi \right> = \left< \varphi, \chi \right>$$ for all $$\chi \in \text{Dom}(A)$$; in that case, $$\varphi = A^*\psi$$.
 
 **Proof**
