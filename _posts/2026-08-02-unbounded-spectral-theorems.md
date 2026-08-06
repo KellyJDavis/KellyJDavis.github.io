@@ -55,7 +55,7 @@ Several arguments below test equality of two vectors against a dense subset with
 **Proof**
 Conjugating both sides of the hypothesis and using conjugate symmetry of the inner product, $$\left< \chi_1, \phi \right> = \overline{\left< \phi, \chi_1 \right>} = \overline{\left< \phi, \chi_2 \right>} = \left< \chi_2, \phi \right>$$ for all $$\phi \in D$$. This is exactly the hypothesis of [Lemma (Equality Testing on a Dense Subspace, First Slot)](#lmm:hall-dense-testing), which gives $$\chi_1 = \chi_2$$.$$\blacksquare$$
 
-The construction of the adjoint below rests on the Hilbert-space self-duality theorem, distinct from the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation) of the previous post (which represents positive linear functionals on $$C^0(X;\mathbb{R})$$, for $$X$$ a compact metric space, by a measure). The result we actually need is Hall's Theorem A.52, stated here for the first time in this series.
+The construction of the adjoint below rests on the Hilbert-space self-duality theorem, distinct from the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation) of the previous post (which represents positive linear functionals on $$C^0(X;\mathbb{R})$$, for $$X$$ a compact metric space, by a measure). The result we actually need is Hall's Theorem A.52. The previous post does quote it, but inline inside a proof and without an anchor, so it is not available as a citable result; we therefore restate it here as one. It is the same theorem, and a formalization should introduce only one corresponding Lean result.
 
 > **Theorem** *(Riesz Theorem)*
 <a name="thrm:hall-a.52"></a>
@@ -556,6 +556,22 @@ $$
 $$
 
 As $$\psi \in \mathbf{H}$$ was arbitrary, $$B_1 = B_2$$.$$\blacksquare$$
+
+Two notions of resolvent set are now in play: the one just defined, for an unbounded operator, and the one from the previous post for a bounded operator, where $$\lambda$$ is in the resolvent set exactly when $$A - \lambda\mathbf{1}$$ has a bounded inverse. A bounded operator is in particular an unbounded operator with $$\text{Dom}(A) = \mathbf{H}$$, so both definitions apply to it, and we must know they agree before using results stated for one notion in a context governed by the other.
+
+> **Lemma** *(The Two Notions of Spectrum Agree for Bounded Operators)*
+<a name="lmm:spectrum-notions-agree"></a>
+<!--  \uses{def:hall-9.16} -->
+<!--  \uses{def:hall-3.1} -->
+<!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$, regarded also as an unbounded operator with $$\text{Dom}(A) = \mathbf{H}$$. Then $$\lambda \in \mathbb{C}$$ lies in the resolvent set of $$A$$ in the sense of [Definition (Resolvent Set and Spectrum of an Unbounded Operator)](#def:hall-9.16) if and only if it lies in the resolvent set in the sense of the [previous post's definition](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum). Consequently the two resulting spectra $$\sigma(A)$$ coincide.
+
+**Proof**
+Suppose first that $$\lambda$$ is in the resolvent set in the previous post's sense, so $$A - \lambda\mathbf{1}$$ has a bounded inverse $$B \in \mathcal{B}(\mathbf{H})$$, meaning $$(A-\lambda\mathbf{1})B = B(A-\lambda\mathbf{1}) = \mathbf{1}$$. Then for every $$\psi \in \mathbf{H}$$ we have $$B\psi \in \mathbf{H} = \text{Dom}(A)$$ and $$(A-\lambda\mathbf{1})B\psi = \psi$$, which is property 1 of [Definition (Resolvent Set and Spectrum of an Unbounded Operator)](#def:hall-9.16); and for every $$\psi \in \text{Dom}(A) = \mathbf{H}$$, $$B(A-\lambda\mathbf{1})\psi = \psi$$, which is property 2.
+
+Conversely, suppose $$B \in \mathcal{B}(\mathbf{H})$$ satisfies properties 1 and 2 of that definition. Since $$\text{Dom}(A) = \mathbf{H}$$, property 1 says $$(A-\lambda\mathbf{1})B\psi = \psi$$ for all $$\psi \in \mathbf{H}$$ and property 2 says $$B(A-\lambda\mathbf{1})\psi = \psi$$ for all $$\psi \in \mathbf{H}$$; together, $$B$$ is a two-sided inverse of $$A - \lambda\mathbf{1}$$ lying in $$\mathcal{B}(\mathbf{H})$$, i.e. $$A - \lambda\mathbf{1}$$ has a bounded inverse.
+
+So the two resolvent sets are equal, and the spectra — their complements in $$\mathbb{C}$$ — are equal too.$$\blacksquare$$
 
 As in the bounded case, even if $$A$$ is self-adjoint, a point $$\lambda \in \sigma(A)$$ need not be an eigenvalue. On the other hand, if $$A\psi = \lambda\psi$$ for some nonzero $$\psi \in \text{Dom}(A)$$, then $$A - \lambda\mathbf{1}$$ is not injective, so it certainly cannot have a two-sided bounded inverse — thus $$\lambda \in \sigma(A)$$.
 
@@ -1869,6 +1885,7 @@ We need three properties of these subspaces. The first two follow directly from 
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{lmm:spectrum-notions-agree} -->
 > Let $$X \subset \mathbb{C}$$ be compact, let $$\mu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$, and set $$A \equiv \int_X \iota \, d\mu$$ — a bounded operator, since $$\iota(\lambda) = \lambda$$ is bounded on the compact set $$X$$. Let $$V_E \equiv \text{Range}(\mu(E))$$ be the associated [spectral subspaces](#def:hall-7.14). Then:
 >
 > 1. Each $$V_E$$ is invariant under $$A$$: $$A(V_E) \subset V_E$$.
@@ -1908,7 +1925,7 @@ $$
     g(A)(A - \lambda_0\mathbf{1}) = (A-\lambda_0\mathbf{1})g(A) = \mathbf{1},
 $$
 
-exhibiting the bounded operator $$g(A)$$ as a two-sided inverse of $$A - \lambda_0\mathbf{1}$$ (unique, by [**Lemma** *(Uniqueness of the Resolvent)*](#lmm:uniqueness-of-resolvent)). By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda_0$$ lies in the resolvent set of $$A$$, contradicting $$\lambda_0 \in \sigma(A)$$.$$\blacksquare$$
+exhibiting the bounded operator $$g(A)$$ as a two-sided inverse of $$A - \lambda_0\mathbf{1}$$. By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda_0$$ therefore lies in the resolvent set of the bounded operator $$A$$ — equivalently, by [**Lemma** *(The Two Notions of Spectrum Agree for Bounded Operators)*](#lmm:spectrum-notions-agree), in its resolvent set in the unbounded sense, so that [**Lemma** *(Uniqueness of the Resolvent)*](#lmm:uniqueness-of-resolvent) identifies $$g(A)$$ as *the* inverse $$(A-\lambda_0\mathbf{1})^{-1}$$. Either way, $$\lambda_0$$ is in the resolvent set, contradicting $$\lambda_0 \in \sigma(A)$$.$$\blacksquare$$
 
 The last property we need is that an operator commuting with $$A$$ preserves every spectral subspace of $$A$$. This rests on the fact that commuting with $$A$$ propagates through the whole functional calculus.
 
