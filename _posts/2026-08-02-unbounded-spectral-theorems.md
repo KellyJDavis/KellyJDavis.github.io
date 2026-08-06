@@ -988,11 +988,13 @@ where the last equality is the defining property of the integral, applied to the
 
 > **Definition** *(Sesquilinear Form on a Subspace)*
 <a name="def:hall-sesquilinear-form-on-a-subspace"></a>
-> Let $$D$$ be a subspace of $$\mathbf{H}$$. A *sesquilinear form on $$D$$* is a map $$L : D \times D \to \mathbb{C}$$ that is conjugate-linear in its first argument and linear in its second argument.
+<!--  \uses{../spectral-theorems/#def:bounded-sesquilinear-form} -->
+> Let $$D$$ be a subspace of $$\mathbf{H}$$. A *sesquilinear form on $$D$$* is a map $$L : D \times D \to \mathbb{C}$$ that is conjugate-linear in its first argument and linear in its second argument. As with quadratic forms below, taking $$D = \mathbf{H}$$ recovers the previous post's [definition of a sesquilinear form](../spectral-theorems/#def:bounded-sesquilinear-form), and taking $$D$$ a closed subspace recovers that definition on the Hilbert space $$D$$.
 
 > **Definition** *(Quadratic Form on a Subspace)*
 <a name="def:hall-quadratic-form-on-a-subspace"></a>
 <!--  \uses{def:hall-sesquilinear-form-on-a-subspace} -->
+<!--  \uses{../spectral-theorems/#def:bounded-quadratic-form} -->
 > Let $$D$$ be a subspace of $$\mathbf{H}$$. A *quadratic form on $$D$$* is a map $$Q : D \to \mathbb{C}$$ with the following properties:
 >
 > 1. $$Q(\lambda\psi) = \lvert \lambda \rvert^2 Q(\psi)$$ for all $$\psi \in D$$ and $$\lambda \in \mathbb{C}$$.
@@ -1007,7 +1009,9 @@ where the last equality is the defining property of the integral, applied to the
 >
 >    is a sesquilinear form on $$D$$, called the *sesquilinear form associated to $$Q$$*.
 >
-> When $$D = \mathbf{H}$$, this recovers the notion of a (not necessarily bounded) quadratic form on $$\mathbf{H}$$ from the previous post.
+> A quadratic form $$Q$$ on $$D$$ is *bounded* if there is a constant $$C \in \mathbb{R}$$ with $$\lvert Q(\psi) \rvert \le C\left\| \psi \right\|^2$$ for all $$\psi \in D$$.
+>
+> Two identifications with the previous post's notions will be used, and both are immediate from comparing the definitions rather than requiring proof. First, when $$D = \mathbf{H}$$, the conditions above are literally the previous post's [definition of a (bounded) quadratic form](../spectral-theorems/#def:bounded-quadratic-form) — the same two properties, the same polarization formula, and the same boundedness inequality. Second, and this is the form in which it is applied to $$\mathbf{H}_n$$ in [**Proposition** *(hall-10.3)*](#prpstn:hall-10.3): if $$D$$ is a *closed* subspace of $$\mathbf{H}$$, then $$D$$ is itself a Hilbert space under the inherited inner product, and a (bounded) quadratic form on $$D$$ in the present sense is exactly a (bounded) quadratic form on the Hilbert space $$D$$ in the previous post's sense — the inherited norm on $$D$$ being the restriction of the norm on $$\mathbf{H}$$, so the two boundedness inequalities are the same inequality. This is what licenses applying results such as [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63) with $$D$$ in place of $$\mathbf{H}$$.
 
 Two elementary facts about quadratic forms on a subspace, generalizing [**Proposition** *(hall-a.61)*](../spectral-theorems/#prpstn:hall-a.61) of the previous post from $$D = \mathbf{H}$$ to a general subspace $$D$$, will be used repeatedly below. Since the proof of the bounded-case proposition is purely algebraic manipulation of the polarization formula — at no point using that $$D = \mathbf{H}$$, that $$D$$ is dense, or that the relevant vectors range over all of $$\mathbf{H}$$, only that $$D$$ is closed under the linear combinations $$\phi+\psi$$, $$\phi+i\psi$$, $$i\psi$$ appearing in the polarization formula — the same computation goes through verbatim on any subspace $$D$$; we record the two properties we need and reprove them directly, rather than merely asserting the analogy.
 
