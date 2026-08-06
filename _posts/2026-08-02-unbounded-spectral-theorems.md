@@ -3014,6 +3014,61 @@ $$
 
 which is the claimed identity.$$\blacksquare$$
 
+The Cayley transform carries the spectrum of $$A$$ onto the spectrum of $$U$$, minus the point $$1$$. This is what will let us conclude that $$\mu^A$$ is concentrated on $$\sigma(A)$$, matching the form in which the spectral theorem is usually stated.
+
+> **Lemma** *(Spectral Mapping for the Cayley Transform)*
+<a name="lmm:cayley-spectral-mapping"></a>
+<!--  \uses{thrm:hall-10.28} -->
+<!--  \uses{lmm:cayley-map} -->
+<!--  \uses{def:hall-9.16} -->
+<!--  \uses{lmm:spectrum-notions-agree} -->
+<!--  \uses{lmm:uniqueness-of-resolvent} -->
+<!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+> Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, and let $$U$$ be its Cayley transform. Then for every $$\lambda \in \mathbb{R}$$,
+>
+> $$
+>     \lambda \in \sigma(A) \iff C(\lambda) \in \sigma(U),
+> $$
+>
+> and consequently $$C\big( \sigma(A) \big) = \sigma(U) \setminus \{1\}$$.
+
+**Proof**
+*The key factorization.* Fix $$\lambda \in \mathbb{R}$$, so $$\lambda \ne i$$ and $$C(\lambda) = (\lambda+i)/(\lambda-i)$$ is defined. Writing $$\mathbf{1} = (A-i\mathbf{1})(A-i\mathbf{1})^{-1}$$ and factoring,
+
+$$
+\begin{align}
+    U - C(\lambda)\mathbf{1} &= \Big[ (A+i\mathbf{1}) - C(\lambda)(A - i\mathbf{1}) \Big](A-i\mathbf{1})^{-1} \\
+                             &= \frac{1}{\lambda-i}\Big[ (\lambda-i)(A+i\mathbf{1}) - (\lambda+i)(A-i\mathbf{1}) \Big](A-i\mathbf{1})^{-1} \\
+                             &= \frac{-2i}{\lambda-i}\,(A - \lambda\mathbf{1})(A-i\mathbf{1})^{-1},
+\end{align}
+$$
+
+the last step because $$(\lambda-i)(A+i\mathbf{1}) - (\lambda+i)(A-i\mathbf{1}) = 2i\lambda\mathbf{1} - 2iA = -2i(A-\lambda\mathbf{1})$$, the terms $$\lambda A$$ and $$\mathbf{1}$$ cancelling. Note $$-2i/(\lambda-i) \ne 0$$.
+
+*If $$\lambda$$ is in the resolvent set of $$A$$, so is $$C(\lambda)$$ for $$U$$.* Let $$B \equiv (A-\lambda\mathbf{1})^{-1} \in \mathcal{B}(\mathbf{H})$$, which maps $$\mathbf{H}$$ onto $$\text{Dom}(A)$$ and inverts $$A - \lambda\mathbf{1}$$ both ways. Put
+
+$$
+    S \equiv \frac{\lambda-i}{-2i}\,\big( \mathbf{1} + (\lambda-i)B \big),
+$$
+
+a bounded operator. Since $$(A - i\mathbf{1})B = \big[ (A-\lambda\mathbf{1}) + (\lambda-i)\mathbf{1} \big]B = \mathbf{1} + (\lambda-i)B$$ — the products being defined because $$B$$ lands in $$\text{Dom}(A)$$ — we have $$S = \frac{\lambda-i}{-2i}(A-i\mathbf{1})B$$. Hence, using the factorization and $$(A-i\mathbf{1})^{-1}(A-i\mathbf{1})\psi = \psi$$ on $$\text{Dom}(A)$$,
+
+$$
+    \big( U - C(\lambda)\mathbf{1} \big) S = \frac{-2i}{\lambda-i}(A-\lambda\mathbf{1})(A-i\mathbf{1})^{-1}\cdot\frac{\lambda-i}{-2i}(A-i\mathbf{1})B = (A-\lambda\mathbf{1})B = \mathbf{1},
+$$
+
+and symmetrically $$S\big( U - C(\lambda)\mathbf{1} \big) = \mathbf{1}$$, using $$B(A-\lambda\mathbf{1})\psi = \psi$$ on $$\text{Dom}(A)$$ together with the fact that $$(A-i\mathbf{1})^{-1}$$ maps $$\mathbf{H}$$ into $$\text{Dom}(A)$$. So $$U - C(\lambda)\mathbf{1}$$ has a bounded two-sided inverse, i.e. $$C(\lambda)$$ lies in the resolvent set of $$U$$ by the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum).
+
+*Conversely.* Suppose $$C(\lambda)$$ is in the resolvent set of $$U$$, with bounded inverse $$T \equiv (U - C(\lambda)\mathbf{1})^{-1}$$. Rearranging the factorization, and using that $$(A-i\mathbf{1})^{-1}$$ is a bijection of $$\mathbf{H}$$ onto $$\text{Dom}(A)$$ (established in the preliminaries of [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28)),
+
+$$
+    (A - \lambda\mathbf{1}) = \frac{\lambda-i}{-2i}\big( U - C(\lambda)\mathbf{1} \big)(A - i\mathbf{1}) \qquad \text{on } \text{Dom}(A).
+$$
+
+Put $$R \equiv \frac{-2i}{\lambda-i}(A-i\mathbf{1})^{-1}T$$, a bounded operator mapping $$\mathbf{H}$$ into $$\text{Dom}(A)$$. For $$\psi \in \mathbf{H}$$, $$(A-\lambda\mathbf{1})R\psi = \frac{\lambda-i}{-2i}(U - C(\lambda)\mathbf{1})(A-i\mathbf{1})\cdot\frac{-2i}{\lambda-i}(A-i\mathbf{1})^{-1}T\psi = (U-C(\lambda)\mathbf{1})T\psi = \psi$$; and for $$\psi \in \text{Dom}(A)$$, $$R(A-\lambda\mathbf{1})\psi = \frac{-2i}{\lambda-i}(A-i\mathbf{1})^{-1}T\cdot\frac{\lambda-i}{-2i}(U-C(\lambda)\mathbf{1})(A-i\mathbf{1})\psi = (A-i\mathbf{1})^{-1}(A-i\mathbf{1})\psi = \psi$$. Both clauses of [Definition (Resolvent Set and Spectrum of an Unbounded Operator)](#def:hall-9.16) hold, so $$\lambda$$ is in the resolvent set of $$A$$.
+
+*Conclusion.* Taking complements, $$\lambda \in \sigma(A) \iff C(\lambda) \in \sigma(U)$$ — the two notions of spectrum for the bounded operator $$U$$ agreeing by [**Lemma** *(The Two Notions of Spectrum Agree for Bounded Operators)*](#lmm:spectrum-notions-agree). Since $$C$$ is a bijection of $$\mathbb{R}$$ onto $$S^1\setminus\{1\}$$ by [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), and $$\sigma(U) \subset S^1$$ by [**Lemma** *(The Spectrum of a Unitary Operator Lies on the Unit Circle)*](#lmm:unitary-spectrum-circle), the equivalence says exactly that $$C$$ maps $$\sigma(A)$$ onto $$\sigma(U) \cap (S^1\setminus\{1\}) = \sigma(U)\setminus\{1\}$$.$$\blacksquare$$
+
 ## Proof of the Spectral Theorem for Unbounded Self-Adjoint Operators
 
 By [**Theorem** *(Cayley Transform)*](#thrm:hall-10.28) and [**Lemma** *(Unitary Operators are Normal)*](#lmm:unitary-is-normal), the operator $$U$$ is normal, so [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20) supplies a projection-valued measure $$\mu^U$$ on $$\sigma(U) \subset S^1$$ with $$\int_{\sigma(U)} u \, d\mu^U(u) = U$$. The plan is to recover $$A$$ from $$\mu^U$$ by integrating $$D$$, then transport $$\mu^U$$ to a measure on $$\mathbb{R}$$ along $$C$$.
@@ -3271,11 +3326,16 @@ We can finally state and prove the theorem this post set out to establish.
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
 <!--  \uses{lmm:norm-identity-bounded-integral} -->
+<!--  \uses{lmm:integral-ignores-null-sets} -->
+<!--  \uses{lmm:unitary-spectrum-circle} -->
+<!--  \uses{lmm:cayley-spectral-mapping} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, there is a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\mathbb{R}$$ such that
 >
 > $$
 >     \int_{\mathbb{R}} \lambda \, d\mu^A(\lambda) = A.
 > $$
+>
+> Moreover $$\mu^A$$ is *concentrated on the spectrum*: $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$, equivalently $$\mu^A(E) = \mu^A(E \cap \sigma(A))$$ for every Borel $$E \subset \mathbb{R}$$. Restricting $$\mu^A$$ to the Borel subsets of $$\sigma(A)$$ therefore gives a projection-valued measure on $$\sigma(A)$$ with $$\int_{\sigma(A)}\lambda\,d\mu^A(\lambda) = A$$, which is the form in which the theorem is usually stated; the two formulations correspond under extension by zero.
 
 **Proof**
 *The degenerate case.* If $$\mathbf{H} = \{0\}$$ the statement is immediate: the only linear map on $$\{0\}$$ is the zero map, which is also the identity $$\mathbf{1}$$, so the only candidate assignment $$E \mapsto \mu^A(E) \equiv 0$$ satisfies all four properties of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) (in particular $$\mu^A(\mathbb{R}) = 0 = \mathbf{1}$$), it is the unique such assignment, and $$\int_{\mathbb{R}}\lambda\,d\mu^A(\lambda) = 0 = A$$. So assume from now on that $$\mathbf{H} \ne \{0\}$$, as required by the results invoked below.
@@ -3370,4 +3430,14 @@ $$
     \nu(E) = \nu\big( C^{-1}(C(E)) \big) = \nu^U\big( C(E) \big) = \mu^U\big( C(E) \big) = \mu^A(E).
 $$
 
-So $$\nu = \mu^A$$, establishing uniqueness.$$\blacksquare$$
+So $$\nu = \mu^A$$, establishing uniqueness.
+
+*Concentration on the spectrum.* By the definition of $$\mu^A$$ in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30), $$\mu^A(\mathbb{R}\setminus\sigma(A)) = \mu^U\big( C(\mathbb{R}\setminus\sigma(A)) \big)$$. Since $$C$$ is injective with image $$S^1\setminus\{1\}$$ ([**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map)) and $$C(\sigma(A)) = \sigma(U)\setminus\{1\}$$ ([**Lemma** *(Spectral Mapping for the Cayley Transform)*](#lmm:cayley-spectral-mapping)),
+
+$$
+    C\big( \mathbb{R}\setminus\sigma(A) \big) = \big( S^1\setminus\{1\} \big) \setminus \big( \sigma(U)\setminus\{1\} \big) = \big( S^1 \setminus \sigma(U) \big) \setminus \{1\} \subset S^1\setminus\sigma(U),
+$$
+
+using injectivity for the first equality. The extension of $$\mu^U$$ to $$S^1$$ assigns no mass off $$\sigma(U)$$, by its definition $$\mu^U(F) = \mu^U(F\cap\sigma(U))$$ in the proof of [**Theorem** *(hall-10.30)*](#thrm:hall-10.30). Hence $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$, and for any Borel $$E$$, countable additivity (property 3 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)) applied to the disjoint decomposition $$E = (E\cap\sigma(A)) \sqcup (E\setminus\sigma(A))$$ gives $$\mu^A(E) = \mu^A(E\cap\sigma(A)) + 0$$.
+
+Finally, the restriction of $$\mu^A$$ to Borel subsets of $$\sigma(A)$$ is a projection-valued measure on $$\sigma(A)$$, by Part 1 of [**Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*](#lmm:borel-bijection-transports-pvm) applied with $$Y = \mathbb{R}$$ and $$Y_0 = \sigma(A)$$ (legitimate since $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$); and $$\int_{\sigma(A)}\lambda\,d\mu^A(\lambda) = \int_{\mathbb{R}}\lambda\,d\mu^A(\lambda) = A$$, the integrals agreeing because the two measures $$\mu^A_\psi$$ involved differ only on the $$\mu^A_\psi$$-null set $$\mathbb{R}\setminus\sigma(A)$$, so [**Lemma** *(The Integral Ignores Null Sets)*](#lmm:integral-ignores-null-sets) applies.$$\blacksquare$$
