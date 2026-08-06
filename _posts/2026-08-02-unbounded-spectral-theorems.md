@@ -815,7 +815,23 @@ We close this section with a construction we will use directly in the proof of [
 >     \left< \phi, \psi \right> \equiv \sum_{j=1}^\infty \left< \phi_j, \psi_j \right>_j.
 > $$
 >
-> This inner product is well defined, and $$\mathbf{H}$$ is complete with respect to it; hence $$\mathbf{H}$$, with this inner product, is itself a separable, complex Hilbert space. The finite direct sum is dense in $$\mathbf{H}$$: for $$\psi \in \mathbf{H}$$, the truncations $$\psi^{(N)} \equiv (\psi_1, \ldots, \psi_N, 0, 0, \ldots)$$ lie in the finite direct sum and satisfy $$\left\| \psi - \psi^{(N)} \right\|^2 = \sum_{j > N} \left\| \psi_j \right\|_j^2 \to 0$$ as $$N \to \infty$$, being the tail of the convergent series defining $$\left\| \psi \right\|^2$$.
+> This inner product is well defined, and $$\mathbf{H}$$ is complete with respect to it; hence $$\mathbf{H}$$, with this inner product, is itself a separable, complex Hilbert space.
+
+The finite direct sum is dense in the full direct sum. This is used in the proof of [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators)*](#prpstn:hall-9.26) below, so we record it as a lemma rather than as part of the definition.
+
+> **Lemma** *(The Finite Direct Sum is Dense)*
+<a name="lmm:finite-direct-sum-dense"></a>
+<!--  \uses{def:hall-a.45} -->
+> With notation as in [Definition (Hilbert Space Direct Sum)](#def:hall-a.45), the finite direct sum — the set of sequences with only finitely many non-zero entries — is a dense subspace of $$\mathbf{H} = \bigoplus_j \mathbf{H}_j$$.
+
+**Proof**
+It is a subspace, being closed under componentwise linear combinations (a linear combination of two sequences each with finitely many non-zero entries again has finitely many). For density, let $$\psi = (\psi_1,\psi_2,\ldots) \in \mathbf{H}$$ and put $$\psi^{(N)} \equiv (\psi_1,\ldots,\psi_N,0,0,\ldots)$$, which lies in the finite direct sum. Then
+
+$$
+    \left\| \psi - \psi^{(N)} \right\|^2 = \sum_{j > N} \left\| \psi_j \right\|_j^2 \longrightarrow 0 \qquad (N \to \infty),
+$$
+
+being the tail of the series $$\sum_j \left\| \psi_j \right\|_j^2$$, which converges to $$\left\| \psi \right\|^2$$ by the definition of $$\mathbf{H}$$. So every $$\psi \in \mathbf{H}$$ is a norm limit of elements of the finite direct sum.$$\blacksquare$$
 
 The direct sum just defined is an *external* construction: its elements are sequences, and the summands $$\mathbf{H}_j$$ are separate spaces glued together. In practice we more often meet the *internal* situation: a single Hilbert space $$\mathbf{H}$$ together with a family of closed subspaces of $$\mathbf{H}$$ that decompose it. These are not literally the same object, so we record the notion and the identification between the two explicitly rather than passing between them silently.
 
@@ -892,6 +908,7 @@ With the identification in hand, we can restate [**Proposition** *(Direct Sums o
 <!--  \uses{thrm:hall-9.21} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.7} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
+<!--  \uses{lmm:finite-direct-sum-dense} -->
 > Suppose $$\mathbf{H}$$ is a Hilbert space direct sum of a sequence of separable Hilbert spaces $$\mathbf{H}_j$$:
 >
 > $$
@@ -923,7 +940,7 @@ $$
     (A - i\mathbf{1}) J_j(\eta) = AJ_j(\eta) - iJ_j(\eta) = J_j(A_j \eta) - iJ_j(\eta) = J_j\big( (A_j - i\mathbf{1})\eta \big),
 $$
 
-using linearity of $$J_j$$ for the last step. So $$J_j\big( \text{Range}(A_j - i\mathbf{1}) \big) \subset \text{Range}(A - i\mathbf{1})$$; since $$A_j - i\mathbf{1}$$ is surjective onto $$\mathbf{H}_j$$, this reads $$J_j(\mathbf{H}_j) \subset \text{Range}(A - i\mathbf{1})$$. As this holds for every $$j$$, and $$\text{Range}(A - i\mathbf{1})$$ is a subspace (by linearity of $$A - i\mathbf{1}$$ on $$\text{Dom}(A)$$), $$\text{Range}(A - i\mathbf{1})$$ contains every finite sum of elements from the $$J_j(\mathbf{H}_j)$$'s, i.e. $$W_0 \subset \text{Range}(A - i\mathbf{1})$$. By the definition of the Hilbert space direct sum, $$W_0$$ is dense in $$\mathbf{H}$$, so $$\text{Range}(A - i\mathbf{1})$$ — being a superset of the dense subset $$W_0$$ — is itself dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$. Since $$A$$ is symmetric by hypothesis, [Theorem (Essential Self-Adjointness via Dense Range)](#thrm:hall-9.21) shows $$A$$ is essentially self-adjoint.
+using linearity of $$J_j$$ for the last step. So $$J_j\big( \text{Range}(A_j - i\mathbf{1}) \big) \subset \text{Range}(A - i\mathbf{1})$$; since $$A_j - i\mathbf{1}$$ is surjective onto $$\mathbf{H}_j$$, this reads $$J_j(\mathbf{H}_j) \subset \text{Range}(A - i\mathbf{1})$$. As this holds for every $$j$$, and $$\text{Range}(A - i\mathbf{1})$$ is a subspace (by linearity of $$A - i\mathbf{1}$$ on $$\text{Dom}(A)$$), $$\text{Range}(A - i\mathbf{1})$$ contains every finite sum of elements from the $$J_j(\mathbf{H}_j)$$'s, i.e. $$W_0 \subset \text{Range}(A - i\mathbf{1})$$. By [**Lemma** *(The Finite Direct Sum is Dense)*](#lmm:finite-direct-sum-dense), $$W_0$$ is dense in $$\mathbf{H}$$, so $$\text{Range}(A - i\mathbf{1})$$ — being a superset of the dense subset $$W_0$$ — is itself dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$. Since $$A$$ is symmetric by hypothesis, [Theorem (Essential Self-Adjointness via Dense Range)](#thrm:hall-9.21) shows $$A$$ is essentially self-adjoint.
 
 **Part 2: reduction to $$\text{Dom}(A) = W_0$$.** We first check $$A\vert_{W_0}$$ is itself a legitimate unbounded operator to which **Part 1**'s argument applies, and that it is symmetric. By [Definition (Hilbert Space Direct Sum)](#def:hall-a.45), the finite direct sum $$W_0$$ is dense in $$\mathbf{H}$$, so $$A\vert_{W_0}$$, with domain $$W_0$$, is an unbounded operator in the sense of [Definition (Unbounded Operator)](#def:hall-3.1). For symmetry: since $$W_0 \subset \text{Dom}(A)$$ and $$A\vert_{W_0} = A$$ on $$W_0$$, for $$\phi,\psi \in W_0$$, symmetry of $$A$$ gives $$\left< \phi, (A\vert_{W_0})\psi \right> = \left< \phi, A\psi \right> = \left< A\phi, \psi \right> = \left< (A\vert_{W_0})\phi, \psi \right>$$, which is the [definition of symmetric](#def:hall-9.2) for $$A\vert_{W_0}$$.
 
@@ -1213,6 +1230,15 @@ If $$\eta \in \text{Range}(P)$$, write $$\eta = P\xi$$; idempotency of $$P$$ (pa
 
 For closedness: $$\mathbf{1} - P$$ is bounded, hence continuous, so $$\text{Ker}(\mathbf{1}-P) = (\mathbf{1}-P)^{-1}(\{0\})$$ is the preimage of the closed set $$\{0\}$$ under a continuous map, hence closed. It is a subspace by linearity of $$\mathbf{1}-P$$.$$\blacksquare$$
 
+
+Closed subspaces recur as Hilbert spaces in their own right — the whole development is instantiated on them at several points — so we record that fact once.
+
+> **Lemma** *(A Closed Subspace is a Separable Hilbert Space)*
+<a name="lmm:closed-subspace-is-hilbert"></a>
+> Let $$V$$ be a closed subspace of $$\mathbf{H}$$. Then $$V$$, with the inner product inherited from $$\mathbf{H}$$, is itself a separable, complex Hilbert space, and its norm is the restriction of the norm of $$\mathbf{H}$$.
+
+**Proof**
+The inner-product axioms hold on $$V$$ because they hold on $$\mathbf{H}$$ and $$V \subset \mathbf{H}$$ is a complex subspace, so the restricted form is again an inner product; the associated norm is by construction the restriction of that of $$\mathbf{H}$$. For completeness, a Cauchy sequence in $$V$$ is Cauchy in $$\mathbf{H}$$, hence converges to some $$\psi \in \mathbf{H}$$ by completeness of $$\mathbf{H}$$; since $$V$$ is closed, $$\psi \in V$$ by [**Theorem** *(Sequential Characterization of Closed Sets and Closures)*](#thrm:sequential-closedness), and the convergence takes place in $$V$$. Separability is inherited: a subspace of a separable metric space is separable.$$\blacksquare$$
 
 > **Lemma** *(Range Membership Concentrates the Associated Measure)*
 <a name="lmm:range-membership-concentrates-measure"></a>
@@ -1657,6 +1683,7 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{lmm:norm-convergent-decomposition} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:restriction-of-quadratic-form} -->
+<!--  \uses{lmm:closed-subspace-is-hilbert} -->
 > If $$f$$ is a real-valued, measurable function on $$X$$, then $$\int_X f \, d\mu$$ is self-adjoint on $$W_f$$.
 
 **Proof**
@@ -1952,6 +1979,7 @@ The route to the two-variable spectral mapping theorem passes through *spectral 
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators} -->
 <!--  \uses{lmm:range-of-projection-is-kernel} -->
+<!--  \uses{lmm:closed-subspace-is-hilbert} -->
 > Let $$\mu$$ be a projection-valued measure on a $$\sigma$$-algebra $$\Omega(Y)$$ over a set $$Y$$. For each $$E \in \Omega(Y)$$, the *spectral subspace* $$V_E$$ of $$\mathbf{H}$$ (relative to $$\mu$$) is
 >
 > $$
@@ -1960,7 +1988,7 @@ The route to the two-variable spectral mapping theorem passes through *spectral 
 >
 > When $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint we take $$\mu = \mu^A$$, the projection-valued measure of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators), extended to $$\mathbb{R}$$ by $$\mu^A(\mathbb{R}\setminus\sigma(A)) = 0$$, and speak of the spectral subspaces *of $$A$$*; when $$A$$ is normal we take $$\mu = \mu^A$$ from [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20) instead. The general definition covers both, and is the one used below.
 >
-> Each $$V_E$$ is a closed subspace of $$\mathbf{H}$$: it is the range of a bounded orthogonal projection $$\mu(E)$$ (property 1 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)), and [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel) shows such a range is closed. Being a closed subspace of the separable Hilbert space $$\mathbf{H}$$, $$V_E$$ is itself a separable Hilbert space under the inherited inner product: completeness because a closed subset of a complete space is complete, and separability because a subspace of a separable metric space is separable.
+> Each $$V_E$$ is a closed subspace of $$\mathbf{H}$$: it is the range of a bounded orthogonal projection $$\mu(E)$$ (property 1 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)), and [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel) shows such a range is closed. Being a closed subspace of $$\mathbf{H}$$, $$V_E$$ is itself a separable Hilbert space under the inherited inner product, by [**Lemma** *(A Closed Subspace is a Separable Hilbert Space)*](#lmm:closed-subspace-is-hilbert): completeness because a closed subset of a complete space is complete, and separability because a subspace of a separable metric space is separable.
 
 We need three properties of these subspaces. The first two follow directly from multiplicativity of the functional calculus; the third says the subspaces attached to neighbourhoods of spectral points are non-trivial.
 
@@ -2246,10 +2274,11 @@ Since $$A$$ commutes with $$A^*$$ (normality), any two words in the letters $$A$
 <a name="lmm:restriction-of-normal-operator"></a>
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{def:hall-9.1} -->
+<!--  \uses{lmm:closed-subspace-is-hilbert} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal and let $$W \subset \mathbf{H}$$ be a nonzero closed subspace invariant under both $$A$$ and $$A^*$$. Then $$W$$ is a separable Hilbert space in the inherited inner product, $$A\vert_W \in \mathcal{B}(W)$$, its adjoint (computed in $$W$$) is $$A^*\vert_W$$, and $$A\vert_W$$ is normal.
 
 **Proof**
-$$W$$ is a closed subspace of the separable Hilbert space $$\mathbf{H}$$, hence itself a separable Hilbert space, exactly as noted in [Definition (Spectral Subspaces)](#def:hall-7.14). Invariance means $$A\vert_W$$ maps $$W$$ into $$W$$, and $$\left\| A\vert_W\eta \right\| = \left\| A\eta \right\| \le \left\| A \right\|\left\| \eta \right\|$$, so $$A\vert_W \in \mathcal{B}(W)$$ with $$\left\| A\vert_W \right\| \le \left\| A \right\|$$.
+$$W$$ is a closed subspace of $$\mathbf{H}$$, hence itself a separable Hilbert space by [**Lemma** *(A Closed Subspace is a Separable Hilbert Space)*](#lmm:closed-subspace-is-hilbert). Invariance means $$A\vert_W$$ maps $$W$$ into $$W$$, and $$\left\| A\vert_W\eta \right\| = \left\| A\eta \right\| \le \left\| A \right\|\left\| \eta \right\|$$, so $$A\vert_W \in \mathcal{B}(W)$$ with $$\left\| A\vert_W \right\| \le \left\| A \right\|$$.
 
 For the adjoint: for $$\eta,\zeta \in W$$, $$\left< \eta, (A\vert_W)\zeta \right> = \left< \eta, A\zeta \right> = \left< A^*\eta, \zeta \right> = \left< (A^*\vert_W)\eta, \zeta \right>$$, the middle equality by the [definition of the adjoint](#def:hall-9.1) in $$\mathbf{H}$$ and the last because $$A^*\eta \in W$$ by invariance. As this holds for all $$\eta,\zeta \in W$$, the adjoint of $$A\vert_W$$ in $$\mathcal{B}(W)$$ is $$A^*\vert_W$$.
 
