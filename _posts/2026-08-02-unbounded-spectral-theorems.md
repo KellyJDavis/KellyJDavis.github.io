@@ -2814,6 +2814,14 @@ Assembling the two stages gives the result this section was aiming at.
 > $$
 >     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
 > $$
+>
+> Uniqueness holds in the following stronger, *ambient* form, which is the one applied in [**Theorem** *(Spectral Theorem for Unbounded, Self-Adjoint Operators)*](#thrm:hall-10.4) below. Let $$X \subset \mathbb{C}$$ be compact with $$\sigma(A) \subset X$$, and let $$\nu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$ with $$\int_X \lambda \, d\nu(\lambda) = A$$. Then
+>
+> $$
+>     \nu(E) = \mu^A\big( E \cap \sigma(A) \big) \qquad \text{for every Borel } E \subset X;
+> $$
+>
+> in particular $$\nu$$ assigns no mass to $$X \setminus \sigma(A)$$, so a measure representing $$A$$ on a larger space is automatically concentrated on $$\sigma(A)$$ and agrees there with $$\mu^A$$.
 
 **Proof**
 By [**Lemma** *(The Spectrum of a Bounded Operator is a Compact Metric Measurable Space)*](#lmm:spectrum-compact-general), $$X \equiv \sigma(A)$$ is a compact metric space. By [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), the map $$\Phi_A$$ constructed there satisfies properties 1–5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus), so it *is* an abstract continuous functional calculus on $$X$$.
@@ -2826,19 +2834,19 @@ $$
 
 which is existence.
 
-*Uniqueness.* Suppose $$\nu$$ is a projection-valued measure on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ with $$\int_{\sigma(A)} \iota \, d\nu = A$$, where $$\iota(\lambda) = \lambda$$ (a bounded function on the compact $$\sigma(A)$$, so this is the bounded integral). Write $$\Psi(f) \equiv \int_{\sigma(A)} f \, d\nu$$ for bounded measurable $$f$$.
+*Uniqueness.* We prove the ambient form, which contains the plain one as the case $$X = \sigma(A)$$. So let $$X \subset \mathbb{C}$$ be compact with $$\sigma(A) \subset X$$, and let $$\nu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$ with $$\int_X \iota \, d\nu = A$$, where $$\iota(\lambda) = \lambda$$ (a bounded function on the compact $$X$$, so this is the bounded integral). Write $$\Psi(f) \equiv \int_X f \, d\nu$$ for bounded measurable $$f$$ on $$X$$, and write $$\widetilde{\mu^A}$$ for the extension of $$\mu^A$$ to $$X$$ given by $$\widetilde{\mu^A}(E) \equiv \mu^A(E \cap \sigma(A))$$, a projection-valued measure on $$X$$ (the four properties transfer as in the corresponding extension in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30), using $$\sigma(A) \subset X$$).
 
-By property 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — integration intertwines complex conjugation with the adjoint — $$\Psi(\overline\iota) = \Psi(\iota)^* = A^*$$. By property 3 (multiplicativity) and linearity, it follows by induction on $$k+l$$ that $$\Psi(\iota^k\overline\iota^{\,l}) = A^k(A^*)^l$$ for all $$k,l \ge 0$$, and hence, by linearity again, $$\Psi(p) = p(A,A^*)$$ for every polynomial $$p$$ in $$\lambda$$ and $$\overline\lambda$$. The same identity holds for $$\Phi_A$$, by the defining property in [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal). So $$\Psi$$ and $$\Phi_A$$ agree on the algebra $$\mathcal{P}$$ of such polynomial functions on $$\sigma(A)$$.
+By property 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — integration intertwines complex conjugation with the adjoint — $$\Psi(\overline\iota) = \Psi(\iota)^* = A^*$$. By property 3 (multiplicativity) and linearity, it follows by induction on $$k+l$$ that $$\Psi(\iota^k\overline\iota^{\,l}) = A^k(A^*)^l$$ for all $$k,l \ge 0$$, and hence, by linearity again, $$\Psi(p) = p(A,A^*)$$ for every polynomial $$p$$ in $$\lambda$$ and $$\overline\lambda$$. The same identity holds for $$\Phi_A$$, by the defining property in [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), and for the integral against $$\widetilde{\mu^A}$$, since $$\widetilde{\mu^A}$$ is concentrated on $$\sigma(A)$$ where it agrees with $$\mu^A$$. So all three agree on polynomial functions.
 
-Now fix $$\psi \in \mathbf{H}$$ and consider the two finite positive Borel measures $$\nu_\psi$$ and $$\mu^A_\psi$$ on $$\sigma(A)$$. For $$p \in \mathcal{P}$$,
+Now fix $$\psi \in \mathbf{H}$$ and consider the two finite positive Borel measures $$\nu_\psi$$ and $$\widetilde{\mu^A}_\psi$$ on $$X$$. Writing $$\mathcal{P}$$ for the algebra of functions on $$X$$ of the form $$\lambda \mapsto p(\lambda,\overline\lambda)$$, we have for $$p \in \mathcal{P}$$
 
 $$
-    \int_{\sigma(A)} p \, d\nu_\psi = \left< \psi, \Psi(p)\psi \right> = \left< \psi, \Phi_A(p)\psi \right> = \int_{\sigma(A)} p \, d\mu^A_\psi,
+    \int_X p \, d\nu_\psi = \left< \psi, \Psi(p)\psi \right> = \left< \psi, p(A,A^*)\psi \right> = \left< \psi, \left( \int_X p \, d\widetilde{\mu^A} \right)\psi \right> = \int_X p \, d\widetilde{\mu^A}_\psi,
 $$
 
-using the defining property of each bounded integral at the two ends. Both sides are continuous in $$p$$ with respect to the supremum norm (each is bounded in modulus by $$\left\| p \right\|_\infty$$ times the total mass $$\left\| \psi \right\|^2$$), and $$\mathcal{P}$$ is dense in $$C^0(\sigma(A);\mathbb{C})$$ by the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) (as verified in the proof of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal)), so $$\int f \, d\nu_\psi = \int f \, d\mu^A_\psi$$ for every $$f \in C^0(\sigma(A);\mathbb{C})$$, in particular for every real-valued continuous $$f$$.
+using the defining property of each bounded integral at the two ends. Both sides are continuous in $$p$$ with respect to the supremum norm on $$X$$ (each is bounded in modulus by $$\left\| p \right\|_\infty$$ times the total mass $$\left\| \psi \right\|^2$$), and $$\mathcal{P}$$ is dense in $$C^0(X;\mathbb{C})$$ by the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) — $$\mathcal{P}$$ being a subalgebra of $$C^0(X;\mathbb{C})$$ containing the constants, separating points, and closed under conjugation, exactly as verified for $$\sigma(A)$$ in the proof of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), the verification using nothing about the underlying compact set. Hence $$\int_X f \, d\nu_\psi = \int_X f \, d\widetilde{\mu^A}_\psi$$ for every $$f \in C^0(X;\mathbb{C})$$, in particular for every real-valued continuous $$f$$.
 
-Two finite positive Borel measures on the compact metric space $$\sigma(A)$$ that assign the same integral to every $$f \in C^0(\sigma(A);\mathbb{R})$$ are equal — this is exactly the uniqueness clause of the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation), both measures representing the same positive linear functional. Hence $$\nu_\psi = \mu^A_\psi$$, i.e. $$\left< \psi, \nu(E)\psi \right> = \left< \psi, \mu^A(E)\psi \right>$$ for every Borel $$E \subset \sigma(A)$$ and every $$\psi \in \mathbf{H}$$. For fixed $$E$$, the two bounded operators $$\nu(E)$$ and $$\mu^A(E)$$ therefore induce the same quadratic form, so are equal by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63). As $$E$$ was arbitrary, $$\nu = \mu^A$$.$$\blacksquare$$
+Two finite positive Borel measures on the compact metric space $$X$$ that assign the same integral to every $$f \in C^0(X;\mathbb{R})$$ are equal — this is exactly the uniqueness clause of the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation), both measures representing the same positive linear functional. Hence $$\nu_\psi = \widetilde{\mu^A}_\psi$$, i.e. $$\left< \psi, \nu(E)\psi \right> = \left< \psi, \widetilde{\mu^A}(E)\psi \right>$$ for every Borel $$E \subset X$$ and every $$\psi \in \mathbf{H}$$. For fixed $$E$$, the two bounded operators therefore induce the same quadratic form, so are equal by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63). As $$E$$ was arbitrary, $$\nu = \widetilde{\mu^A}$$, which is the ambient statement; taking $$X = \sigma(A)$$ gives $$\nu = \mu^A$$.$$\blacksquare$$
 
 ## The Cayley Transform
 
@@ -2863,6 +2871,27 @@ We will need one fact about unitary operators, from [Definition (Unitary Operato
 For all $$\phi,\psi \in \mathbf{H}$$, the [definition of the adjoint](#def:hall-9.1) and inner-product preservation give $$\left< \phi, U^*U\psi \right> = \left< U\phi, U\psi \right> = \left< \phi, \psi \right> = \left< \phi, \mathbf{1}\psi \right>$$. By [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D = \mathbf{H}$$, $$U^*U\psi = \psi$$ for every $$\psi$$, i.e. $$U^*U = \mathbf{1}$$.
 
 Since $$U$$ is a bijection, it has a set-theoretic inverse $$U^{-1}$$, and $$U^*U = \mathbf{1}$$ identifies $$U^* = U^*(UU^{-1}) = (U^*U)U^{-1} = U^{-1}$$. Hence $$UU^* = UU^{-1} = \mathbf{1}$$ as well, and $$U^*U = \mathbf{1} = UU^*$$ is exactly the [definition of normal](#def:hall-10.19).$$\blacksquare$$
+
+The Cayley transform will be transported to a projection-valued measure on the unit circle, which presupposes that the spectrum of $$U$$ actually lies there. We record that.
+
+> **Lemma** *(The Spectrum of a Unitary Operator Lies on the Unit Circle)*
+<a name="lmm:unitary-spectrum-circle"></a>
+<!--  \uses{def:unitary-operator} -->
+<!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
+<!--  \uses{../spectral-theorems/#lmm:hall-7.6} -->
+<!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+> Let $$U \in \mathcal{B}(\mathbf{H})$$ be unitary, with $$\mathbf{H} \ne \{0\}$$. Then $$\sigma(U) \subset S^1 \equiv \{ z \in \mathbb{C} : \lvert z \rvert = 1 \}$$.
+
+**Proof**
+First, $$\left\| U \right\| = 1$$: unitarity gives $$\left\| U\psi \right\| = \left\| \psi \right\|$$ for all $$\psi$$ (take $$\phi = \psi$$ in the inner-product identity of [Definition (Unitary Operator)](#def:unitary-operator) and take square roots), so $$\left\| U \right\| = 1$$ since $$\mathbf{H} \ne \{0\}$$ provides a vector of norm $$1$$. The same computation applied to $$U^{-1}$$ gives $$\left\| U^{-1}\psi \right\| = \left\| U U^{-1}\psi \right\| = \left\| \psi \right\|$$, so $$\left\| U^{-1} \right\| = 1$$ as well.
+
+Let $$\lambda \in \sigma(U)$$. By [**Corollary**](../spectral-theorems/#crllr:crllr-1), $$\lvert \lambda \rvert \le R(U) \le \left\| U \right\| = 1$$. Suppose, for contradiction, that $$\lvert \lambda \rvert < 1$$. Factor
+
+$$
+    U - \lambda\mathbf{1} = U\big( \mathbf{1} - \lambda U^{-1} \big).
+$$
+
+Since $$\left\| \lambda U^{-1} \right\| = \lvert \lambda \rvert \left\| U^{-1} \right\| = \lvert \lambda \rvert < 1$$, the geometric series [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6) shows $$\mathbf{1} - \lambda U^{-1}$$ is invertible in $$\mathcal{B}(\mathbf{H})$$. As $$U$$ is invertible too (with bounded inverse $$U^{-1}$$), the product $$U(\mathbf{1}-\lambda U^{-1}) = U - \lambda\mathbf{1}$$ is invertible in $$\mathcal{B}(\mathbf{H})$$, with bounded inverse $$(\mathbf{1}-\lambda U^{-1})^{-1}U^{-1}$$. By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda$$ lies in the resolvent set of $$U$$, contradicting $$\lambda \in \sigma(U)$$. Hence $$\lvert \lambda \rvert = 1$$.$$\blacksquare$$
 
 We record the scalar maps and their elementary properties. Write $$S^1 \equiv \{ u \in \mathbb{C} : \lvert u \rvert = 1 \}$$ for the unit circle.
 
@@ -3175,6 +3204,7 @@ Transporting the measure along $$C$$ now gives the projection-valued measure for
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{lmm:unitary-spectrum-circle} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, let $$U$$ be its Cayley transform, and let $$\mu^U$$ be the projection-valued measure of $$U$$ supplied by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). Define, for each Borel set $$E \subset \mathbb{R}$$,
 >
 > $$
@@ -3190,7 +3220,7 @@ Transporting the measure along $$C$$ now gives the projection-valued measure for
 **Proof**
 *$$\mu^A$$ is well defined and a projection-valued measure.* By [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map), $$C : \mathbb{R} \to S^1\setminus\{1\}$$ is a bijection with inverse $$D$$, both continuous and hence Borel measurable.
 
-We first put $$\mu^U$$ on the right space. Extend $$\mu^U$$ from $$\sigma(U)$$ to all of $$S^1$$ by $$\mu^U(F) \equiv \mu^U(F \cap \sigma(U))$$; this is again a projection-valued measure, the four properties being inherited from those on $$\sigma(U)$$ since $$F \mapsto F\cap\sigma(U)$$ preserves the relevant set operations and sends $$S^1$$ to $$\sigma(U)$$. By [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), $$\mu^U(\{1\}) = 0$$, so Part 1 of [**Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*](#lmm:borel-bijection-transports-pvm), applied with $$Y = S^1$$ and $$Y_0 = S^1\setminus\{1\}$$, shows the restriction of $$\mu^U$$ to the Borel subsets of $$S^1\setminus\{1\}$$ is a projection-valued measure on $$S^1\setminus\{1\}$$.
+We first put $$\mu^U$$ on the right space. Extend $$\mu^U$$ from $$\sigma(U)$$ to all of $$S^1$$ by $$\mu^U(F) \equiv \mu^U(F \cap \sigma(U))$$; this is again a projection-valued measure, the four properties being inherited from those on $$\sigma(U)$$ since $$F \mapsto F\cap\sigma(U)$$ preserves the relevant set operations and sends $$S^1$$ to $$S^1 \cap \sigma(U) = \sigma(U)$$, the last equality by [**Lemma** *(The Spectrum of a Unitary Operator Lies on the Unit Circle)*](#lmm:unitary-spectrum-circle). By [**Lemma** *(The Cayley Transform Omits the Point $$1$$)*](#lmm:cayley-omits-one), $$\mu^U(\{1\}) = 0$$, so Part 1 of [**Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*](#lmm:borel-bijection-transports-pvm), applied with $$Y = S^1$$ and $$Y_0 = S^1\setminus\{1\}$$, shows the restriction of $$\mu^U$$ to the Borel subsets of $$S^1\setminus\{1\}$$ is a projection-valued measure on $$S^1\setminus\{1\}$$.
 
 Now apply Part 2 of the same lemma with $$Y = S^1\setminus\{1\}$$, $$Z = \mathbb{R}$$, and $$T = D$$ (a bijection with $$T^{-1} = C$$, both measurable). Since $$D^{-1}(E) = C(E)$$, the transported measure is exactly
 
@@ -3332,7 +3362,7 @@ $$
     \int_{S^1} u \, d\nu^U(u) = \int_{\mathbb{R}} C \, d\nu = U.
 $$
 
-*Step 4: conclusion.* The projection-valued measure $$\mu^U$$ of $$U$$ also satisfies $$\int_{S^1} u \, d\mu^U(u) = U$$, by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). Both $$\nu^U$$ and $$\mu^U$$ are supported in $$\sigma(U)$$ and represent the same normal operator $$U$$; by the uniqueness clause of that theorem, $$\nu^U = \mu^U$$.
+*Step 4: conclusion.* The projection-valued measure $$\mu^U$$ of $$U$$ also satisfies $$\int_{S^1} u \, d\mu^U(u) = U$$, by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). Now $$\nu^U$$ is a projection-valued measure on $$S^1$$, not a priori on $$\sigma(U)$$, so the plain uniqueness clause does not apply directly; but $$S^1$$ is compact and contains $$\sigma(U)$$ by [**Lemma** *(The Spectrum of a Unitary Operator Lies on the Unit Circle)*](#lmm:unitary-spectrum-circle), and $$\int_{S^1} u \, d\nu^U(u) = U$$ was just shown, so the *ambient* uniqueness clause of that theorem applies with $$X = S^1$$ and gives $$\nu^U(F) = \mu^U(F \cap \sigma(U))$$ for every Borel $$F \subset S^1$$ — that is, $$\nu^U$$ equals the extension of $$\mu^U$$ to $$S^1$$ used throughout, which we continue to denote $$\mu^U$$.
 
 Hence, for every Borel $$E \subset \mathbb{R}$$, using $$C^{-1}(C(E)) = E$$ (injectivity of $$C$$, from [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map)) and the definition of $$\mu^A$$ in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30),
 
