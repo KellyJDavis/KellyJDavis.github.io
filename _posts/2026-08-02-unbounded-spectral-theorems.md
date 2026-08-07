@@ -1239,6 +1239,16 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 <a name="thrm:dominated-convergence-theorem"></a>
 > Let $$(X,\Omega,\nu)$$ be a measure space and $$\{g_n\}$$ measurable complex-valued functions on $$X$$ converging pointwise to $$g$$, with $$\lvert g_n \rvert \le G$$ for all $$n$$ and some $$\nu$$-integrable $$G$$. Then $$g$$ and each $$g_n$$ are $$\nu$$-integrable and $$\int_X g_n \, d\nu \to \int_X g \, d\nu$$.
 
+> **Proposition** *(Additivity of the Integral in the Measure)*
+<a name="prpstn:additivity-of-the-integral-in-the-measure"></a>
+> Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and let $$\nu + \nu'$$ denote the measure $$E \mapsto \nu(E) + \nu'(E)$$. Then for every nonnegative measurable $$g$$ on $$X$$,
+>
+> $$
+>     \int_X g \, d(\nu + \nu') = \int_X g \, d\nu + \int_X g \, d\nu'
+> $$
+>
+> (an equality in $$[0,\infty]$$), and the same holds for every $$g$$ that is integrable with respect to both $$\nu$$ and $$\nu'$$.
+
 > **Proposition** *(Monotonicity of the Integral in the Measure)*
 <a name="prpstn:monotonicity-of-the-integral-in-the-measure"></a>
 > Let $$\nu, \nu'$$ be measures on $$(X, \Omega)$$ with $$\nu(E) \le \nu'(E)$$ for every $$E \in \Omega$$. Then $$\int_X g \, d\nu \le \int_X g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
@@ -1701,6 +1711,7 @@ We now extract, as a standalone lemma, the fact that $$A_f$$ preserves the spect
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
+<!--  \uses{prpstn:additivity-of-the-integral-in-the-measure} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$E \in \Omega(X)$$ be a set on which $$f$$ is bounded. Write $$A_f \equiv \int_X f\,d\mu$$ and $$V_E \equiv \text{Range}(\mu(E))$$. Then $$V_E \subset W_f$$ and $$A_f(V_E) \subset V_E$$.
 
 **Proof**
@@ -1722,7 +1733,12 @@ $$
     \mu_{\phi+\psi}(S) = \left< \phi + \psi, \mu(S)(\phi+\psi) \right> = \mu_\phi(S) + \mu_\psi(S) + \left< \phi, \mu(S)\psi \right> + \left< \psi, \mu(S)\phi \right> = \mu_\phi(S) + \mu_\psi(S)
 $$
 
-for every $$S \in \Omega(X)$$, i.e. $$\mu_{\phi+\psi} = \mu_\phi + \mu_\psi$$ as measures, so $$Q_f(\phi+\psi) = Q_f(\phi) + Q_f(\psi)$$. Since $$\phi \in W_f$$ and $$\psi \in V_E \subset W_f$$, all of $$\phi, \psi, \phi+\psi, \phi+i\psi, i\psi$$ lie in $$W_f$$ (a subspace); and the identical argument with $$i\psi$$ in place of $$\psi$$ (still in $$V_E$$, a subspace) gives $$Q_f(\phi+i\psi) = Q_f(\phi) + Q_f(i\psi)$$. By the polarization formula defining $$L_f$$ from $$Q_f$$, both brackets $$Q_f(\phi+\psi) - Q_f(\phi) - Q_f(\psi)$$ and $$Q_f(\phi+i\psi) - Q_f(\phi) - Q_f(i\psi)$$ vanish, so $$L_f(\phi,\psi) = 0$$. By the off-diagonal identity of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi) = 0$$.
+for every $$S \in \Omega(X)$$, i.e. $$\mu_{\phi+\psi} = \mu_\phi + \mu_\psi$$ as measures. Hence, by [**Proposition** *(Additivity of the Integral in the Measure)*](#prpstn:additivity-of-the-integral-in-the-measure) — applicable since $$f$$ is integrable against each of $$\mu_\phi$$ and $$\mu_\psi$$, both $$\phi$$ and $$\psi$$ lying in $$W_f$$ —
+
+$$
+    Q_f(\phi+\psi) = \int_X f \, d\mu_{\phi+\psi} = \int_X f \, d\mu_\phi + \int_X f \, d\mu_\psi = Q_f(\phi) + Q_f(\psi).
+$$
+ Since $$\phi \in W_f$$ and $$\psi \in V_E \subset W_f$$, all of $$\phi, \psi, \phi+\psi, \phi+i\psi, i\psi$$ lie in $$W_f$$ (a subspace); and the identical argument with $$i\psi$$ in place of $$\psi$$ (still in $$V_E$$, a subspace) gives $$Q_f(\phi+i\psi) = Q_f(\phi) + Q_f(i\psi)$$. By the polarization formula defining $$L_f$$ from $$Q_f$$, both brackets $$Q_f(\phi+\psi) - Q_f(\phi) - Q_f(\psi)$$ and $$Q_f(\phi+i\psi) - Q_f(\phi) - Q_f(i\psi)$$ vanish, so $$L_f(\phi,\psi) = 0$$. By the off-diagonal identity of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1), $$\left< \phi, A_f\psi \right> = L_f(\phi,\psi) = 0$$.
 
 *Step 3: extension to all of $$V_E^\perp$$ by density.* Let $$\phi \in V_E^\perp$$ be arbitrary and set $$E_m \equiv \{ x \in X \mid \lvert f(x) \rvert < m \}$$ for $$m \in \mathbb{N}$$. Since $$\lvert f \rvert < m$$ on $$E_m$$, [**Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*](#lmm:bounded-on-set-range-in-domain) gives $$\text{Range}(\mu(E_m)) \subset W_f$$, so $$\mu(E_m)\phi \in W_f$$. Putting $$G_1 \equiv E_1$$ and $$G_m \equiv E_m \setminus E_{m-1}$$ for $$m \ge 2$$, the $$G_m$$ are pairwise disjoint with $$\bigcup_{j=1}^m G_j = E_m$$ (induction, using $$E_{m-1} \subset E_m$$) and $$\bigcup_m G_m = \bigcup_m E_m = X$$ ($$f$$ being finite-valued); so Part 2 of [**Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*](#lmm:norm-convergent-decomposition) gives $$\mu(E_m)\phi \to \phi$$ as $$m \to \infty$$.
 
