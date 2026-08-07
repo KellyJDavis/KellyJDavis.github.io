@@ -37,6 +37,16 @@ Two pieces of notation are used pervasively below and are introduced here, since
 > 1. $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$ when $$\mathbf{H} \ne \{0\}$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$; for $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$. When $$A$$ is an unbounded operator, $$A - \lambda\mathbf{1}$$ denotes the operator with domain $$\text{Dom}(A)$$ acting by $$\psi \mapsto A\psi - \lambda\psi$$; its domain is that of $$A$$, since $$\lambda\mathbf{1}$$ is defined on all of $$\mathbf{H}$$.
 > 2. If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, being the preimage description $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
 
+Three standard facts about convergence of sequences and series are used at several points below. As with the other classical results imported here, we state them without proof.
+
+> **Proposition** *(Convergence Facts for Sequences and Series)*
+<a name="prpstn:convergence-facts"></a>
+> 1. *(Monotone bounded sequences.)* A non-decreasing sequence $$\{ t_n \}_{n\in\mathbb{N}}$$ of real numbers that is bounded above converges, to $$\sup_n t_n$$.
+> 2. *(Bolzano–Weierstrass.)* Every sequence in a closed, bounded subset $$K \subset \mathbb{C}$$ has a subsequence converging to a point of $$K$$. (Equivalently, such a $$K$$ is sequentially compact.)
+> 3. *(Comparison test in a Banach space.)* Let $$\{a_n\}$$ be a sequence in a Banach space $$V$$ and $$\{t_n\}$$ non-negative reals with $$\left\| a_n \right\| \le t_n$$ for all $$n$$ and $$\sum_n t_n < \infty$$. Then $$\sum_n a_n$$ converges in $$V$$.
+>
+> We also use without further comment that limits in a metric space are unique, and that a convergent sequence is Cauchy.
+
 Before defining the adjoint of an unbounded operator, we record a small fact about dense subspaces that we will use repeatedly below — both to pin down the adjoint uniquely, and at several later points where we want to conclude that two vectors, or two operators, coincide from an equation that only holds on a dense subspace.
 
 > **Lemma** *(Equality Testing on a Dense Subspace, First Slot)*
@@ -965,6 +975,7 @@ With the identification in hand, we can restate [**Proposition** *(Direct Sums o
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
 <!--  \uses{lmm:finite-direct-sum-dense} -->
 <!--  \uses{def:hall-3.1} -->
+<!--  \uses{prpstn:convergence-facts} -->
 > Suppose $$\mathbf{H}$$ is a Hilbert space direct sum of a sequence of separable Hilbert spaces $$\mathbf{H}_j$$:
 >
 > $$
@@ -1048,7 +1059,7 @@ $$
     \left( \sum_{j=1}^N \left\| A_j\phi_j \right\|_j^2 \right)^{1/2} \le C
 $$
 
-for every $$N$$. The partial sums $$\sum_{j=1}^N \left\| A_j\phi_j \right\|_j^2$$ are non-decreasing in $$N$$ and bounded above by $$C^2$$, so a non-decreasing sequence of real numbers bounded above converges, giving $$\sum_{j=1}^\infty \left\| A_j\phi_j \right\|_j^2 < \infty$$. Since also $$\phi \in \mathbf{H} = \bigoplus_j \mathbf{H}_j$$ gives $$\sum_j \left\| \phi_j \right\|_j^2 < \infty$$ automatically, we conclude $$\phi \in V$$.
+for every $$N$$. The partial sums $$\sum_{j=1}^N \left\| A_j\phi_j \right\|_j^2$$ are non-decreasing in $$N$$ and bounded above by $$C^2$$, so, by Part 1 of [**Proposition** *(Convergence Facts for Sequences and Series)*](#prpstn:convergence-facts), the sequence converges, giving $$\sum_{j=1}^\infty \left\| A_j\phi_j \right\|_j^2 < \infty$$. Since also $$\phi \in \mathbf{H} = \bigoplus_j \mathbf{H}_j$$ gives $$\sum_j \left\| \phi_j \right\|_j^2 < \infty$$ automatically, we conclude $$\phi \in V$$.
 
 Combining both containments, $$\text{Dom}(A^*) = V$$, with $$A^*$$ given by the stated formula on $$V$$.
 
@@ -1681,6 +1692,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 <!--  \uses{lmm:norm-identity-bounded-integral} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{prpstn:convergence-facts} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
 >
 > $$
@@ -2004,6 +2016,7 @@ We now use this growth bound to establish submultiplicativity of the spectral ra
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
 <!--  \uses{../spectral-theorems/#lmm:lemma-2} -->
+<!--  \uses{prpstn:convergence-facts} -->
 > Suppose $$\mathbf{H} \ne \{0\}$$ (so that the spectral radii below are well defined, as in [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius)). If $$A$$ and $$B$$ are commuting elements of $$\mathcal{B}(\mathbf{H})$$, then
 >
 > $$
@@ -2033,7 +2046,7 @@ $$
     (AB - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{(AB)^m}{\lambda^{m+1}}, \tag{$\P\P$}
 $$
 
-convergent in operator norm — but this alone only shows $$\lambda_1$$ is in the resolvent set of $$AB$$ when $$\lvert \lambda_1 \rvert > \|AB\|$$, which we do not know here ($$\lambda_1$$ was chosen only with $$\lvert \lambda_1 \rvert > ST \ge R(A)R(B)$$, and $$ST$$ may be far smaller than $$\|AB\|$$). Instead, we show directly that the series $$-\sum_m (AB)^m/\lambda_1^{m+1}$$, which converges in operator norm by the bound on $$\|(AB)^m\|$$ just derived — its terms have norm at most $$C\lvert \lambda_2 \rvert^m/\lvert \lambda_1 \rvert^{m+1}$$, dominated by a convergent geometric series since $$\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert<1$$, so the partial sums are Cauchy and converge by completeness of $$\mathcal{B}(\mathbf{H})$$ — defines a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$.
+convergent in operator norm — but this alone only shows $$\lambda_1$$ is in the resolvent set of $$AB$$ when $$\lvert \lambda_1 \rvert > \|AB\|$$, which we do not know here ($$\lambda_1$$ was chosen only with $$\lvert \lambda_1 \rvert > ST \ge R(A)R(B)$$, and $$ST$$ may be far smaller than $$\|AB\|$$). Instead, we show directly that the series $$-\sum_m (AB)^m/\lambda_1^{m+1}$$, which converges in operator norm by the bound on $$\|(AB)^m\|$$ just derived — its terms have norm at most $$C\lvert \lambda_2 \rvert^m/\lvert \lambda_1 \rvert^{m+1}$$, and $$\sum_m C\lvert \lambda_2 \rvert^m/\lvert \lambda_1 \rvert^{m+1}$$ is a convergent geometric series since $$\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert<1$$, so Part 3 of [**Proposition** *(Convergence Facts for Sequences and Series)*](#prpstn:convergence-facts), applied in the Banach space $$\mathcal{B}(\mathbf{H})$$, gives convergence — defines a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$.
 
 Let $$S \equiv -\sum_{m=0}^\infty (AB)^m/\lambda_1^{m+1}$$ (the operator norm limit just established) and $$S_N \equiv -\sum_{m=0}^N (AB)^m/\lambda_1^{m+1}$$, so $$S_N \to S$$ as $$N \to \infty$$ by definition of the series' convergence. Expanding and re-indexing the first sum below with $$k=m+1$$,
 
@@ -2498,6 +2511,7 @@ so $$\left\| B\psi \right\| \le \tfrac{\varepsilon}{2}\left\| \psi \right\| < \v
 <!--  \uses{lmm:restriction-of-normal-operator} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
+<!--  \uses{prpstn:convergence-facts} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$, and let $$p$$ be a polynomial in two variables. Then
 >
 > $$
@@ -2531,7 +2545,7 @@ $$
     \big\lvert \mu - p(\lambda_n,\overline{\lambda_n}) \big\rvert < (C+1)\varepsilon_n = \frac{C+1}{n}. \tag{$\flat$}
 $$
 
-The sequence $$\{\lambda_n\}$$ lies in the closed disc $$\{ \lvert z \rvert \le \left\| A \right\| \}$$, which is compact, so it has a subsequence $$\lambda_{n_j} \to \lambda_\infty$$ for some $$\lambda_\infty$$ with $$\lvert \lambda_\infty \rvert \le \left\| A \right\|$$.
+The sequence $$\{\lambda_n\}$$ lies in the closed disc $$K \equiv \{ \lvert z \rvert \le \left\| A \right\| \}$$, which is closed and bounded in $$\mathbb{C}$$, so by Part 2 of [**Proposition** *(Convergence Facts for Sequences and Series)*](#prpstn:convergence-facts) it has a subsequence $$\lambda_{n_j} \to \lambda_\infty$$ with $$\lambda_\infty \in K$$, i.e. $$\lvert \lambda_\infty \rvert \le \left\| A \right\|$$.
 
 We claim $$\lambda_\infty \in \sigma(A)$$. Let $$\delta > 0$$. For each $$j$$, using the triangle inequality and that $$\psi_{n_j}$$ is an $$\varepsilon_{n_j}$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda_{n_j}$$,
 
