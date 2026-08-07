@@ -14,6 +14,17 @@ A note on conventions. Throughout this post, results that are standard and whose
 In this section we will state and prove the Spectral Theorem for bounded, self-adjoint operators. However, we must introduce "extensive machinery" before we are able to state and prove the theorem. To that end we begin by examining some properties of bounded operators.
 
 ## Elementary Properties of Bounded Operators
+
+### Preliminaries: Notation
+
+Two pieces of notation are used pervasively throughout this post and are fixed here.
+
+> **Definition** *(The Identity Operator and Indicator Functions)*
+<a name="def:identity-and-indicator"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> 1. $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$ when $$\mathbf{H} \ne \{0\}$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$. For $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$, and for $$A \in \mathcal{B}(\mathbf{H})$$ the operator $$A - \lambda\mathbf{1}$$ is $$\psi \mapsto A\psi - \lambda\psi$$, again an element of $$\mathcal{B}(\mathbf{H})$$.
+> 2. If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, since $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
+
 In this section we will introduce and prove some relatively "elementary" properties of bounded operators that will be of use when proving the Spectral Theorem for bounded, self-adjoint operators. We begin by introducing some notation
 
 > **Definition** *(Bounded Operator Notation)*
@@ -1068,6 +1079,8 @@ the desired result.
 Now as one will recall the Riesz Theorem (Theorem A.52 (Riesz Theorem) of [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) states
 
 > **Theorem** *(Riesz Theorem)*
+<a name="thrm:hall-a.52"></a>
+<!--  \uses{def:bounded-operator-notation} -->
 > If $$\xi : \mathbf{H} \rightarrow \mathbb{C}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, then there exists a unique $$\chi \in \mathbf{H}$$ such that
 >
 > $$

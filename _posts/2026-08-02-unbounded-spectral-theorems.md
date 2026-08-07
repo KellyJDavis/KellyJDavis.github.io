@@ -29,13 +29,7 @@ Recall from the [previous post](../spectral-theorems) that $$\mathbf{H}$$ denote
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 > Let $$\mathbf{H}$$ be a separable, complex Hilbert space. An *unbounded operator* $$A$$ on $$\mathbf{H}$$ is a linear map $$A : \text{Dom}(A) \to \mathbf{H}$$, where $$\text{Dom}(A)$$, called the *domain* of $$A$$, is a dense subspace of $$\mathbf{H}$$. Here "unbounded" means "not necessarily bounded": we permit the case $$\text{Dom}(A) = \mathbf{H}$$ together with $$A \in \mathcal{B}(\mathbf{H})$$, the set of bounded operators on $$\mathbf{H}$$, but do not require it.
 
-Two pieces of notation are used pervasively below and are introduced here, since neither this post nor the previous one has fixed them explicitly.
-
-> **Definition** *(The Identity Operator and Indicator Functions)*
-<a name="def:identity-and-indicator"></a>
-<!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
-> 1. $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$ when $$\mathbf{H} \ne \{0\}$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$; for $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$. When $$A$$ is an unbounded operator, $$A - \lambda\mathbf{1}$$ denotes the operator with domain $$\text{Dom}(A)$$ acting by $$\psi \mapsto A\psi - \lambda\psi$$; its domain is that of $$A$$, since $$\lambda\mathbf{1}$$ is defined on all of $$\mathbf{H}$$.
-> 2. If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, being the preimage description $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
+The identity operator $$\mathbf{1}$$ and indicator functions $$1_E$$ are as fixed in [Definition (The Identity Operator and Indicator Functions)](../spectral-theorems/#def:identity-and-indicator) of the previous post. One extension is needed here: when $$A$$ is an *unbounded* operator, $$A - \lambda\mathbf{1}$$ denotes the operator with domain $$\text{Dom}(A)$$ acting by $$\psi \mapsto A\psi - \lambda\psi$$ — its domain is that of $$A$$, since $$\lambda\mathbf{1}$$ is defined on all of $$\mathbf{H}$$.
 
 Three standard facts about convergence of sequences and series are used at several points below. As with the other classical results imported here, we state them without proof.
 
@@ -73,26 +67,16 @@ Several arguments below test equality of two vectors against a dense subset with
 **Proof**
 Conjugating both sides of the hypothesis and using conjugate symmetry of the inner product, $$\left< \chi_1, \phi \right> = \overline{\left< \phi, \chi_1 \right>} = \overline{\left< \phi, \chi_2 \right>} = \left< \chi_2, \phi \right>$$ for all $$\phi \in D$$. This is exactly the hypothesis of [Lemma (Equality Testing on a Dense Subspace, First Slot)](#lmm:hall-dense-testing), which gives $$\chi_1 = \chi_2$$.$$\blacksquare$$
 
-The construction of the adjoint below rests on the Hilbert-space self-duality theorem, distinct from the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation) of the previous post (which represents positive linear functionals on $$C^0(X;\mathbb{R})$$, for $$X$$ a compact metric space, by a measure). The result we actually need is Hall's Theorem A.52. The previous post does quote it, but inline inside a proof and without an anchor, so it is not available as a citable result; we therefore restate it here as one. It is the same theorem, and a formalization should introduce only one corresponding Lean result.
+The construction of the adjoint below rests on the Hilbert-space self-duality theorem, distinct from the [**Riesz Representation Theorem**](../spectral-theorems/#thrm:riesz-representation) of the previous post (which represents positive linear functionals on $$C^0(X;\mathbb{R})$$, for $$X$$ a compact metric space, by a measure). The result we actually need is Hall's Theorem A.52, which the previous post now states as a citable result: [**Theorem** *(Riesz Theorem)*](../spectral-theorems/#thrm:hall-a.52).
 
-> **Theorem** *(Riesz Theorem)*
-<a name="thrm:hall-a.52"></a>
-> If $$\xi : \mathbf{H} \to \mathbb{C}$$ is a bounded linear functional, then there exists a unique $$\chi \in \mathbf{H}$$ such that
->
-> $$
->     \xi(\psi) = \left< \chi, \psi \right>
-> $$
->
-> for all $$\psi \in \mathbf{H}$$. Furthermore, the operator norm of $$\xi$$ as a linear functional is equal to the norm of $$\chi$$ as an element of $$\mathbf{H}$$.
-
-If $$A$$ happens to be a bounded operator on all of $$\mathbf{H}$$, then for any $$\phi \in \mathbf{H}$$ the linear functional $$\psi \mapsto \left< \phi, A\psi \right>$$ is automatically bounded, and the [**Riesz Theorem**](#thrm:hall-a.52) produces a unique $$\chi \in \mathbf{H}$$ with $$\left< \phi, A\psi \right> = \left< \chi, \psi \right>$$ for all $$\psi$$; we then set $$A^*\phi \equiv \chi$$. If $$A$$ is genuinely unbounded, the functional $$\psi \mapsto \left< \phi, A\psi \right>$$ need not be bounded on $$\text{Dom}(A)$$ for every $$\phi$$ — but it may be bounded for *some* $$\phi$$, and it is exactly this set of $$\phi$$'s on which the adjoint gets defined.
+If $$A$$ happens to be a bounded operator on all of $$\mathbf{H}$$, then for any $$\phi \in \mathbf{H}$$ the linear functional $$\psi \mapsto \left< \phi, A\psi \right>$$ is automatically bounded, and the [**Riesz Theorem**](../spectral-theorems/#thrm:hall-a.52) produces a unique $$\chi \in \mathbf{H}$$ with $$\left< \phi, A\psi \right> = \left< \chi, \psi \right>$$ for all $$\psi$$; we then set $$A^*\phi \equiv \chi$$. If $$A$$ is genuinely unbounded, the functional $$\psi \mapsto \left< \phi, A\psi \right>$$ need not be bounded on $$\text{Dom}(A)$$ for every $$\phi$$ — but it may be bounded for *some* $$\phi$$, and it is exactly this set of $$\phi$$'s on which the adjoint gets defined.
 
 > **Definition** *(Adjoint of an Unbounded Operator)*
 <a name="def:hall-9.1"></a>
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{lmm:hall-dense-testing} -->
 <!--  \uses{../spectral-theorems/#thrm:bounded-linear-transformation-theorem} -->
-<!--  \uses{thrm:hall-a.52} -->
+<!--  \uses{../spectral-theorems/#thrm:hall-a.52} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$. Let $$\text{Dom}(A^*)$$ be the space of all $$\phi \in \mathbf{H}$$ for which the linear functional
 >
 > $$
@@ -113,7 +97,7 @@ The definition just given is not self-evidently well posed: it declares $$A^*\ph
 <a name="prpstn:adjoint-well-defined"></a>
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{def:hall-3.1} -->
-<!--  \uses{thrm:hall-a.52} -->
+<!--  \uses{../spectral-theorems/#thrm:hall-a.52} -->
 <!--  \uses{lmm:hall-dense-testing} -->
 <!--  \uses{../spectral-theorems/#thrm:bounded-linear-transformation-theorem} -->
 > Let $$A$$ be an unbounded operator on $$\mathbf{H}$$ and let $$\phi \in \text{Dom}(A^*)$$. Then there is exactly one $$\chi \in \mathbf{H}$$ with
@@ -127,7 +111,7 @@ Fix $$\phi \in \text{Dom}(A^*)$$, and consider the map $$T : \text{Dom}(A) \to \
 
 To apply the [**Bounded Linear Transformation Theorem**](../spectral-theorems/#thrm:bounded-linear-transformation-theorem) to $$T$$, we check its three hypotheses hold: it asks for a normed space $$V_1$$, a Banach space $$V_2$$, a dense subspace $$W \subset V_1$$, and a bounded linear map $$T : W \to V_2$$. Here $$\mathbf{H}$$, being a Hilbert space, is in particular a normed vector space with norm $$\left\| \cdot \right\|$$ induced by its inner product, so we may take $$V_1 = \mathbf{H}$$. The target space $$\mathbb{C}$$, with the usual absolute value as norm, is a Banach space, since every Cauchy sequence of complex numbers converges. By the [definition of an unbounded operator](#def:hall-3.1), $$\text{Dom}(A)$$ is a dense subspace of $$\mathbf{H}$$, so we may take $$W = \text{Dom}(A)$$. We have just checked $$T$$ is linear and bounded on $$W$$. All hypotheses being met, there is a unique bounded linear map $$\tilde{T} : \mathbf{H} \to \mathbb{C}$$ with $$\tilde{T} = T$$ on $$\text{Dom}(A)$$.
 
-Now $$\tilde{T}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, so the [**Riesz Theorem**](#thrm:hall-a.52) applies — its only hypothesis is exactly that $$\tilde{T}$$ be a bounded linear functional on a Hilbert space — and produces a unique $$\chi \in \mathbf{H}$$ with $$\tilde{T}\psi = \left< \chi, \psi \right>$$ for all $$\psi \in \mathbf{H}$$. In particular, restricting to $$\psi \in \text{Dom}(A)$$, where $$\tilde{T}$$ agrees with $$T$$,
+Now $$\tilde{T}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, so the [**Riesz Theorem**](../spectral-theorems/#thrm:hall-a.52) applies — its only hypothesis is exactly that $$\tilde{T}$$ be a bounded linear functional on a Hilbert space — and produces a unique $$\chi \in \mathbf{H}$$ with $$\tilde{T}\psi = \left< \chi, \psi \right>$$ for all $$\psi \in \mathbf{H}$$. In particular, restricting to $$\psi \in \text{Dom}(A)$$, where $$\tilde{T}$$ agrees with $$T$$,
 
 $$
     \left< \phi, A\psi \right> = T\psi = \tilde{T}\psi = \left< \chi, \psi \right> \quad \text{for all } \psi \in \text{Dom}(A).
@@ -509,7 +493,7 @@ The next proposition tells us how the adjoint interacts with adding a bounded op
 <!--  \uses{lmm:hall-dense-testing} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{def:hall-3.1} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$ and $$B \in \mathcal{B}(\mathbf{H})$$ is a bounded operator defined on all of $$\mathbf{H}$$. Let $$A + B$$ denote the operator with $$\text{Dom}(A+B) = \text{Dom}(A)$$, given by $$(A+B)\psi = A\psi + B\psi$$ for all $$\psi \in \text{Dom}(A)$$. Then $$(A+B)^*$$ has the same domain as $$A^*$$, and
 >
@@ -571,7 +555,7 @@ Finally, suppose $$A$$ is self-adjoint and $$B$$ is bounded and self-adjoint on 
 > **Lemma** *(Adjoint of a Scalar Multiple of the Identity)*
 <a name="lmm:adjoint-of-scalar-multiple-of-identity"></a>
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{def:hall-9.1} -->
 > For $$\lambda \in \mathbb{C}$$, the bounded operator $$\lambda\mathbf{1}$$ (defined on all of $$\mathbf{H}$$) has adjoint $$(\lambda\mathbf{1})^* = \overline{\lambda}\mathbf{1}$$.
 
@@ -621,7 +605,7 @@ Recall that for a bounded operator, a number $$\lambda \in \mathbb{C}$$ belongs 
 <a name="def:hall-9.16"></a>
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$. A number $$\lambda \in \mathbb{C}$$ belongs to the *resolvent set* of $$A$$ if there exists a bounded operator $$B \in \mathcal{B}(\mathbf{H})$$ with the following properties:
 >
 > 1. For all $$\psi \in \mathbf{H}$$, $$B\psi \in \text{Dom}(A)$$ and $$(A - \lambda \mathbf{1})B\psi = \psi$$; and
@@ -719,7 +703,7 @@ using positive-definiteness of the inner product for the last step.$$\blacksquar
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{def:kernel-of-an-unbounded-operator} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, the spectrum of $$A$$ is contained in the real line.
 
 **Proof**
@@ -1128,7 +1112,7 @@ The associated measures are finite, with total mass determined by $$\psi$$. The 
 <a name="lmm:associated-measure-total-mass"></a>
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{conv:section-integration} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and $$\psi \in \mathbf{H}$$. Then
 >
@@ -1463,7 +1447,7 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{prpstn:monotonicity-of-the-integral-in-the-measure} -->
 <!--  \uses{def:hall-a.46} -->
 <!--  \uses{lmm:l2-implies-l1} -->
-<!--  \uses{thrm:hall-a.52} -->
+<!--  \uses{../spectral-theorems/#thrm:hall-a.52} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
 <!--  \uses{../spectral-theorems/#thrm:bounded-linear-transformation-theorem} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
@@ -1566,7 +1550,7 @@ $$
 
 By **Part 1**, $$L_{f_n}(\phi, \psi) \to L_f(\phi, \psi)$$ as $$n \to \infty$$. For the right-hand side, $$\lvert f_n \rvert^2 = \lvert f \rvert^2 1_{E_n}$$ is a nondecreasing sequence of nonnegative functions converging pointwise to $$\lvert f \rvert^2$$, so by the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals), $$\int_X \lvert f_n \rvert^2 \, d\mu_\psi \to \int_X \lvert f \rvert^2 \, d\mu_\psi = \left\| f \right\|_{L^2(X,\mu_\psi)}^2$$. Taking $$n \to \infty$$ in the displayed inequality gives $$\lvert L_f(\phi, \psi) \rvert \le \left\| \phi \right\| \left\| f \right\|_{L^2(X,\mu_\psi)}$$, the desired bound.
 
-**Part 3.** Fix $$\psi \in W_f$$. By **Part 2**, the map $$\phi \mapsto L_f(\phi, \psi)$$ is bounded on $$W_f$$ with bound $$\left\| f \right\|_{L^2(X,\mu_\psi)}$$; since $$L_f$$ is conjugate-linear in $$\phi$$ (by **Part 1**), this map is a bounded conjugate-linear functional on $$W_f$$. Consider instead the map $$T : \phi \mapsto \overline{L_f(\phi, \psi)}$$, which is linear (conjugating a conjugate-linear map gives a linear map) and bounded with the same bound, on the dense subspace $$W_f$$ of $$\mathbf{H}$$. Exactly as in the justification following [Definition (Adjoint of an Unbounded Operator)](#def:hall-9.1) — $$\mathbf{H}$$ normed, $$\mathbb{C}$$ Banach, $$W_f$$ dense — the [**Bounded Linear Transformation Theorem**](../spectral-theorems/#thrm:bounded-linear-transformation-theorem) extends $$T$$ uniquely to a bounded linear functional $$\tilde{T}$$ on $$\mathbf{H}$$, and the [**Riesz Theorem**](#thrm:hall-a.52) produces a unique $$\chi \in \mathbf{H}$$ with $$\tilde{T}\phi = \left< \chi, \phi \right>$$ for all $$\phi \in \mathbf{H}$$; restricting to $$\phi \in W_f$$, where $$\tilde T$$ agrees with $$T$$, and conjugating both sides,
+**Part 3.** Fix $$\psi \in W_f$$. By **Part 2**, the map $$\phi \mapsto L_f(\phi, \psi)$$ is bounded on $$W_f$$ with bound $$\left\| f \right\|_{L^2(X,\mu_\psi)}$$; since $$L_f$$ is conjugate-linear in $$\phi$$ (by **Part 1**), this map is a bounded conjugate-linear functional on $$W_f$$. Consider instead the map $$T : \phi \mapsto \overline{L_f(\phi, \psi)}$$, which is linear (conjugating a conjugate-linear map gives a linear map) and bounded with the same bound, on the dense subspace $$W_f$$ of $$\mathbf{H}$$. Exactly as in the justification following [Definition (Adjoint of an Unbounded Operator)](#def:hall-9.1) — $$\mathbf{H}$$ normed, $$\mathbb{C}$$ Banach, $$W_f$$ dense — the [**Bounded Linear Transformation Theorem**](../spectral-theorems/#thrm:bounded-linear-transformation-theorem) extends $$T$$ uniquely to a bounded linear functional $$\tilde{T}$$ on $$\mathbf{H}$$, and the [**Riesz Theorem**](../spectral-theorems/#thrm:hall-a.52) produces a unique $$\chi \in \mathbf{H}$$ with $$\tilde{T}\phi = \left< \chi, \phi \right>$$ for all $$\phi \in \mathbf{H}$$; restricting to $$\phi \in W_f$$, where $$\tilde T$$ agrees with $$T$$, and conjugating both sides,
 
 $$
     L_f(\phi, \psi) = \overline{T\phi} = \overline{\left< \chi, \phi \right>} = \left< \phi, \chi \right>
@@ -1874,7 +1858,7 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:restriction-of-quadratic-form} -->
 <!--  \uses{lmm:closed-subspace-is-hilbert} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
 <!--  \uses{lmm:integral-preserves-spectral-subspaces} -->
 <!--  \uses{lmm:range-of-projection-is-kernel} -->
@@ -2204,7 +2188,7 @@ We need three properties of these subspaces. The first two follow directly from 
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:spectrum-notions-agree} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$X \subset \mathbb{C}$$ be compact, let $$\mu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$, and set $$A \equiv \int_X \iota \, d\mu$$ — a bounded operator, since $$\iota(\lambda) = \lambda$$ is bounded on the compact set $$X$$. Let $$V_E \equiv \text{Range}(\mu(E))$$ be the associated [spectral subspaces](#def:hall-7.14). Then:
 >
@@ -2966,7 +2950,7 @@ We can now assemble the projection-valued measure. This is the abstract form of 
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{lmm:abstract-extended-linear} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 > Let $$X$$ be a compact metric space and $$\Phi$$ an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. Define, for each Borel set $$E \subset X$$,
 >
 > $$
@@ -3183,7 +3167,7 @@ We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Se
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
 <!--  \uses{def:range-of-an-unbounded-operator} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{prpstn:polarization-identity} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$ and define
 >
