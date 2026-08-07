@@ -1061,6 +1061,30 @@ The [previous post](../spectral-theorems) constructed, for a projection-valued m
 
 Recall that for $$\psi \in \mathbf{H}$$, $$\mu_\psi$$ denotes the [associated measure](../spectral-theorems/#thrm:projection-valued-measures-associated-measure) $$\mu_\psi(E) \equiv \left< \psi, \mu(E)\psi \right>$$, a positive, real-valued measure on $$(X, \Omega(X))$$. The starting point is the following norm identity for the bounded integral, which is used at several points below and which motivates the definition of the domain in the unbounded case.
 
+The associated measures are finite, with total mass determined by $$\psi$$. The previous post's [**Theorem** *(Associated Measure)*](../spectral-theorems/#thrm:projection-valued-measures-associated-measure) supplies only that $$\mu_\psi$$ is a positive real-valued measure, so we record the total mass separately; it is used repeatedly below, both to apply convergence theorems that need a finite measure and to bound integrals.
+
+> **Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*
+<a name="lmm:associated-measure-total-mass"></a>
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{def:identity-and-indicator} -->
+> Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and $$\psi \in \mathbf{H}$$. Then
+>
+> $$
+>     \mu_\psi(X) = \left\| \psi \right\|^2 < \infty;
+> $$
+>
+> in particular $$\mu_\psi$$ is a finite measure, and $$\mu_\psi(E) \le \left\| \psi \right\|^2$$ for every $$E \in \Omega(X)$$.
+
+**Proof**
+By the definition of $$\mu_\psi$$ and property 2 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure), which gives $$\mu(X) = \mathbf{1}$$,
+
+$$
+    \mu_\psi(X) = \left< \psi, \mu(X)\psi \right> = \left< \psi, \mathbf{1}\psi \right> = \left< \psi,\psi \right> = \left\| \psi \right\|^2,
+$$
+
+finite since $$\psi \in \mathbf{H}$$. The final claim follows since $$\mu_\psi$$ is a positive measure, so is monotone: $$E \subset X$$ gives $$\mu_\psi(E) \le \mu_\psi(X)$$.$$\blacksquare$$
+
 > **Lemma** *(Norm Identity for the Bounded Integral)*
 <a name="lmm:norm-identity-bounded-integral"></a>
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
@@ -1341,6 +1365,7 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{lmm:norm-convergent-decomposition} -->
 <!--  \uses{lmm:norm-identity-bounded-integral} -->
+<!--  \uses{lmm:associated-measure-total-mass} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f : X \to \mathbb{C}$$ be a measurable function, not necessarily bounded (but everywhere finite-valued, since its values lie in $$\mathbb{C}$$ — this is used below, where the sets $$\{ \lvert f \rvert < n \}$$ are required to exhaust $$X$$). Let
 >
 > $$
@@ -1364,7 +1389,7 @@ We can now state and prove the central technical result of this section. It is t
 >    $$
 
 **Proof**
-Before checking any properties of $$Q_f$$, we note it is well defined: for $$\psi \in W_f$$, $$\mu_\psi$$ is a finite measure ($$\mu_\psi(X) = \left\| \psi \right\|^2 < \infty$$) and $$f \in L^2(X,\mu_\psi)$$ (this is exactly the membership condition defining $$W_f$$), so [Lemma ($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)](#lmm:l2-implies-l1) gives $$f \in L^1(X,\mu_\psi)$$. Hence $$Q_f(\psi) = \int_X f \, d\mu_\psi$$ is a well-defined (finite) complex number for every $$\psi \in W_f$$, as required for $$Q_f$$ to be a map $$W_f \to \mathbb{C}$$ at all.
+Before checking any properties of $$Q_f$$, we note it is well defined: for $$\psi \in W_f$$, $$\mu_\psi$$ is a finite measure with $$\mu_\psi(X) = \left\| \psi \right\|^2 < \infty$$, by [**Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*](#lmm:associated-measure-total-mass), and $$f \in L^2(X,\mu_\psi)$$ (this is exactly the membership condition defining $$W_f$$), so [Lemma ($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)](#lmm:l2-implies-l1) gives $$f \in L^1(X,\mu_\psi)$$. Hence $$Q_f(\psi) = \int_X f \, d\mu_\psi$$ is a well-defined (finite) complex number for every $$\psi \in W_f$$, as required for $$Q_f$$ to be a map $$W_f \to \mathbb{C}$$ at all.
 
 **Part 1.** We first check $$W_f$$ is a subspace. If $$\psi \in W_f$$ and $$\lambda \in \mathbb{C}$$, then, directly from the definition of $$\mu_{\lambda\psi}$$ and conjugate-linearity/linearity of the inner product in its two arguments,
 
@@ -1395,9 +1420,9 @@ As this holds for every $$E \in \Omega(X)$$, the measure $$\mu_{\phi+\psi}$$ is 
 
 We next show $$W_f$$ is dense in $$\mathbf{H}$$. For $$n \in \mathbb{N} = \{1, 2, 3, \ldots\}$$ (throughout this post, indices of this kind start at $$1$$, never $$0$$), let $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$, so $$E_1 \subset E_2 \subset \cdots$$ and, since $$f$$ is finite-valued at every point of $$X$$, $$\bigcup_{n} E_n = X$$. Fix $$\psi \in \mathbf{H}$$, and let $$F_1 \equiv E_1$$ and $$F_n \equiv E_n \setminus E_{n-1}$$ for $$n \ge 2$$; the $$F_n$$ are pairwise disjoint, $$\bigcup_{j=1}^n F_j = E_n$$ for every $$n$$ (immediate by induction: true for $$n=1$$, and if $$\bigcup_{j=1}^{n-1} F_j = E_{n-1}$$ then $$\bigcup_{j=1}^n F_j = E_{n-1} \cup (E_n \setminus E_{n-1}) = E_n$$, the last step because $$E_{n-1} \subset E_n$$), and $$\bigcup_{j=1}^\infty F_j = \bigcup_n E_n = X$$. By [Lemma (Norm-Convergent Decomposition over a Disjoint Cover)](#lmm:norm-convergent-decomposition), applied to this sequence $$\{F_n\}$$, $$\mu(E_n)\psi = \mu\big(\bigcup_{j=1}^n F_j\big)\psi \to \psi$$ as $$n \to \infty$$.
 
-For each $$n$$, $$\mu(E_n)\psi \in \text{Range}(\mu(E_n))$$; and for $$\eta \in \text{Range}(\mu(E_n))$$, [Lemma (Range Membership Concentrates the Associated Measure)](#lmm:range-membership-concentrates-measure) gives $$\int_X \lvert f \rvert^2\,d\mu_\eta = \int_{E_n} \lvert f \rvert^2\,d\mu_\eta \le n^2 \mu_\eta(E_n) \le n^2 \mu_\eta(X) = n^2 \left\| \eta \right\|^2 < \infty$$ — using $$\lvert f \rvert < n$$ on $$E_n$$, and $$\mu_\eta(X) = \left< \eta, \mu(X)\eta \right> = \left< \eta, \eta \right> = \left\| \eta \right\|^2$$. So $$\text{Range}(\mu(E_n)) \subset W_f$$ for every $$n$$. Since $$\mu(E_n)\psi \in \text{Range}(\mu(E_n)) \subset W_f$$ and $$\mu(E_n)\psi \to \psi$$, and $$\psi \in \mathbf{H}$$ was arbitrary, $$W_f$$ is dense in $$\mathbf{H}$$.
+For each $$n$$, $$\mu(E_n)\psi \in \text{Range}(\mu(E_n))$$; and for $$\eta \in \text{Range}(\mu(E_n))$$, [Lemma (Range Membership Concentrates the Associated Measure)](#lmm:range-membership-concentrates-measure) gives $$\int_X \lvert f \rvert^2\,d\mu_\eta = \int_{E_n} \lvert f \rvert^2\,d\mu_\eta \le n^2 \mu_\eta(E_n) \le n^2 \mu_\eta(X) = n^2 \left\| \eta \right\|^2 < \infty$$ — using $$\lvert f \rvert < n$$ on $$E_n$$, and $$\mu_\eta(X) = \left\| \eta \right\|^2$$ by [**Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*](#lmm:associated-measure-total-mass). So $$\text{Range}(\mu(E_n)) \subset W_f$$ for every $$n$$. Since $$\mu(E_n)\psi \in \text{Range}(\mu(E_n)) \subset W_f$$ and $$\mu(E_n)\psi \to \psi$$, and $$\psi \in \mathbf{H}$$ was arbitrary, $$W_f$$ is dense in $$\mathbf{H}$$.
 
-We now verify $$Q_f$$ satisfies the two properties required of a [quadratic form on $$W_f$$](#def:hall-quadratic-form-on-a-subspace). Property 1, $$Q_f(\lambda\psi) = \lvert \lambda \rvert^2 Q_f(\psi)$$, follows immediately from $$\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \mu_\psi$$ (shown above) and linearity of the integral in the measure. For property 2, we first establish a convergence fact we will reuse in **Part 2** below. Fix $$\psi \in W_f$$, and set $$f_n \equiv f \cdot 1_{E_n}$$, a bounded measurable function for each $$n$$ (as $$\lvert f_n \rvert \le n$$). Writing $$f = (f_+ - f_-) + i(g_+ - g_-)$$ in terms of the (nonnegative, measurable) positive and negative parts of the real and imaginary parts of $$f$$, each of $$f_+ 1_{E_n}, f_- 1_{E_n}, g_+ 1_{E_n}, g_- 1_{E_n}$$ is a nondecreasing (in $$n$$) sequence of nonnegative measurable functions converging pointwise to $$f_+, f_-, g_+, g_-$$ respectively, since $$E_n \uparrow X$$. By the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) applied to $$\mu_\psi$$-integrals of each of these four sequences, $$\int_X f_\pm 1_{E_n} \, d\mu_\psi \to \int_X f_\pm \, d\mu_\psi$$ and $$\int_X g_\pm 1_{E_n} \, d\mu_\psi \to \int_X g_\pm \, d\mu_\psi$$; by [Lemma ($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)](#lmm:l2-implies-l1) — applicable since $$\psi \in W_f$$ ensures $$f \in L^2(X, \mu_\psi)$$ and $$\mu_\psi$$ is a finite measure ($$\mu_\psi(X) = \left\| \psi \right\|^2 < \infty$$) — $$f \in L^1(X,\mu_\psi)$$, so all four limiting integrals above are finite. Combining the four limits with appropriate signs,
+We now verify $$Q_f$$ satisfies the two properties required of a [quadratic form on $$W_f$$](#def:hall-quadratic-form-on-a-subspace). Property 1, $$Q_f(\lambda\psi) = \lvert \lambda \rvert^2 Q_f(\psi)$$, follows immediately from $$\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \mu_\psi$$ (shown above) and linearity of the integral in the measure. For property 2, we first establish a convergence fact we will reuse in **Part 2** below. Fix $$\psi \in W_f$$, and set $$f_n \equiv f \cdot 1_{E_n}$$, a bounded measurable function for each $$n$$ (as $$\lvert f_n \rvert \le n$$). Writing $$f = (f_+ - f_-) + i(g_+ - g_-)$$ in terms of the (nonnegative, measurable) positive and negative parts of the real and imaginary parts of $$f$$, each of $$f_+ 1_{E_n}, f_- 1_{E_n}, g_+ 1_{E_n}, g_- 1_{E_n}$$ is a nondecreasing (in $$n$$) sequence of nonnegative measurable functions converging pointwise to $$f_+, f_-, g_+, g_-$$ respectively, since $$E_n \uparrow X$$. By the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) applied to $$\mu_\psi$$-integrals of each of these four sequences, $$\int_X f_\pm 1_{E_n} \, d\mu_\psi \to \int_X f_\pm \, d\mu_\psi$$ and $$\int_X g_\pm 1_{E_n} \, d\mu_\psi \to \int_X g_\pm \, d\mu_\psi$$; by [Lemma ($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)](#lmm:l2-implies-l1) — applicable since $$\psi \in W_f$$ ensures $$f \in L^2(X, \mu_\psi)$$ and $$\mu_\psi$$ is a finite measure, by [**Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*](#lmm:associated-measure-total-mass) — $$f \in L^1(X,\mu_\psi)$$, so all four limiting integrals above are finite. Combining the four limits with appropriate signs,
 
 $$
     Q_{f_n}(\psi) = \int_X f_n \, d\mu_\psi \longrightarrow \int_X f \, d\mu_\psi = Q_f(\psi). \tag{$\dagger$}
@@ -1473,13 +1498,14 @@ The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \
 <a name="lmm:bounded-on-set-range-in-domain"></a>
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{prpstn:hall-10.2} -->
+<!--  \uses{lmm:associated-measure-total-mass} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, $$f : X \to \mathbb{C}$$ is measurable, and $$E \in \Omega(X)$$ is a set on which $$f$$ is bounded, say $$\lvert f \rvert \le c$$ on $$E$$. Then $$\text{Range}(\mu(E)) \subset W_f$$, and indeed $$\int_X \lvert f \rvert^2\,d\mu_\eta \le c^2 \left\| \eta \right\|^2$$ for every $$\eta \in \text{Range}(\mu(E))$$.
 
 **Proof**
 Let $$\eta \in \text{Range}(\mu(E))$$. By [**Lemma** *(Range Membership Concentrates the Associated Measure)*](#lmm:range-membership-concentrates-measure), $$\int_X \lvert f \rvert^2 \, d\mu_\eta = \int_E \lvert f \rvert^2 \, d\mu_\eta$$. Since $$\lvert f \rvert \le c$$ on $$E$$,
 
 $$
-    \int_E \lvert f \rvert^2 \, d\mu_\eta \le c^2 \mu_\eta(E) \le c^2 \mu_\eta(X) = c^2 \left< \eta, \mu(X)\eta \right> = c^2 \left< \eta,\eta \right> = c^2 \left\| \eta \right\|^2 < \infty,
+    \int_E \lvert f \rvert^2 \, d\mu_\eta \le c^2 \mu_\eta(E) \le c^2 \mu_\eta(X) = c^2 \left\| \eta \right\|^2 < \infty,
 $$
 
 using $$\mu(X) = \mathbf{1}$$ (property 2 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)). By the definition of $$W_f$$ in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2), $$\eta \in W_f$$.$$\blacksquare$$
@@ -1578,6 +1604,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 <!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:norm-identity-bounded-integral} -->
+<!--  \uses{lmm:associated-measure-total-mass} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
 >
 > $$
@@ -1653,6 +1680,7 @@ We now extract, as a standalone lemma, the fact that $$A_f$$ preserves the spect
 <!--  \uses{prpstn:hall-a.49} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{lmm:associated-measure-total-mass} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$E \in \Omega(X)$$ be a set on which $$f$$ is bounded. Write $$A_f \equiv \int_X f\,d\mu$$ and $$V_E \equiv \text{Range}(\mu(E))$$. Then $$V_E \subset W_f$$ and $$A_f(V_E) \subset V_E$$.
 
 **Proof**
@@ -1713,6 +1741,7 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{lmm:restriction-of-quadratic-form} -->
 <!--  \uses{lmm:closed-subspace-is-hilbert} -->
 <!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{lmm:associated-measure-total-mass} -->
 > If $$f$$ is a real-valued, measurable function on $$X$$, then $$\int_X f \, d\mu$$ is self-adjoint on $$W_f$$.
 
 **Proof**
