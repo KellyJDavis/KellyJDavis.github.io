@@ -1309,13 +1309,15 @@ One more standard fact is needed before we can even state that $$Q_f(\psi) \equi
 > Suppose $$\nu$$ is a finite measure on $$(X,\Omega)$$ and $$h \in L^2(X,\nu)$$. Then $$h \in L^1(X,\nu)$$, with $$\int_X \lvert h \rvert \, d\nu \le \nu(X)^{1/2} \left( \int_X \lvert h \rvert^2 \, d\nu \right)^{1/2}$$.
 
 **Proof**
-The constant function $$1$$ is in $$L^2(X,\nu)$$, since $$\int_X 1^2 \, d\nu = \nu(X) < \infty$$ ($$\nu$$ finite). By [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43), applied in the inner product space $$L^2(X,\nu)$$ of [**Definition** *($$L^2$$ of a Measure Space)*](#def:hall-a.46) to $$\lvert h \rvert$$ and $$1$$,
+The constant function $$1$$ is square-integrable, since $$\int_X 1^2 \, d\nu = \nu(X) < \infty$$ ($$\nu$$ finite); and $$\lvert h \rvert$$ is square-integrable because $$h$$ is. So both lie in $$\mathcal{L}^2(X,\nu)$$ in the notation of [**Definition** *($$L^2$$ of a Measure Space)*](#def:hall-a.46).
+
+[Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43) is stated for a space carrying a genuine *inner* product, so we apply it not to the functions themselves — on which the form is only a semi-inner product — but to their classes $$[\lvert h \rvert], [1]$$ in the quotient $$L^2(X,\nu)$$, which is an inner product space by that definition. This changes none of the three quantities involved: for square-integrable $$\phi,\psi$$ the integrals $$\int_X \overline{\phi}\psi \, d\nu$$ and $$\int_X \lvert \phi \rvert^2 d\nu$$ depend only on the classes of $$\phi$$ and $$\psi$$, since altering a function on a $$\nu$$-null set changes no integral. Hence
 
 $$
-    \int_X \lvert h \rvert \, d\nu = \left< \lvert h \rvert, 1 \right>_{L^2(X,\nu)} \le \left\| h \right\|_{L^2(X,\nu)} \left\| 1 \right\|_{L^2(X,\nu)} = \left( \int_X \lvert h \rvert^2 \, d\nu \right)^{1/2} \nu(X)^{1/2},
+    \int_X \lvert h \rvert \, d\nu = \left< [\lvert h \rvert], [1] \right>_{L^2(X,\nu)} \le \left\| [\lvert h \rvert] \right\|_{L^2(X,\nu)} \left\| [1] \right\|_{L^2(X,\nu)} = \left( \int_X \lvert h \rvert^2 \, d\nu \right)^{1/2} \nu(X)^{1/2},
 $$
 
-which is finite since $$h \in L^2(X,\nu)$$ and $$\nu(X) < \infty$$. So $$h \in L^1(X,\nu)$$, with the stated bound.$$\blacksquare$$
+the first equality because $$\overline{\lvert h \rvert}\cdot 1 = \lvert h \rvert$$ pointwise. The right-hand side is finite since $$h$$ is square-integrable and $$\nu(X) < \infty$$. So $$h \in L^1(X,\nu)$$, with the stated bound.$$\blacksquare$$
 
 We can now state and prove the central technical result of this section. It is the unbounded analogue of the correspondence, from the previous post, between bounded operators and bounded quadratic forms.
 
