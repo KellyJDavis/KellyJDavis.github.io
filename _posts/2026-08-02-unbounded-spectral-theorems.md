@@ -1292,15 +1292,17 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 > 3. *(Monotonicity in the integrand.)* If $$g,h$$ are measurable with $$0 \le g \le h$$ pointwise, then $$\int_X g\,d\nu \le \int_X h\,d\nu$$ in $$[0,\infty]$$. In particular, if $$0 \le g \le c$$ on $$E$$ for a constant $$c$$, then $$\int_E g\,d\nu \le c\,\nu(E)$$.
 > 4. *(Triangle inequality.)* If $$g$$ is $$\nu$$-integrable then $$\lvert \int_X g\,d\nu \rvert \le \int_X \lvert g \rvert\,d\nu$$.
 
-> **Proposition** *(Additivity of the Integral in the Measure)*
+> **Proposition** *(Linearity of the Integral in the Measure)*
 <a name="prpstn:additivity-of-the-integral-in-the-measure"></a>
-> Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and let $$\nu + \nu'$$ denote the measure $$E \mapsto \nu(E) + \nu'(E)$$. Then for every nonnegative measurable $$g$$ on $$X$$,
+> Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$, let $$c \ge 0$$ be a real constant, and let $$\nu + \nu'$$ and $$c\nu$$ denote the measures $$E \mapsto \nu(E)+\nu'(E)$$ and $$E \mapsto c\,\nu(E)$$ respectively. Then for every nonnegative measurable $$g$$ on $$X$$,
 >
 > $$
 >     \int_X g \, d(\nu + \nu') = \int_X g \, d\nu + \int_X g \, d\nu'
+>     \qquad\text{and}\qquad
+>     \int_X g \, d(c\nu) = c\int_X g \, d\nu
 > $$
 >
-> (an equality in $$[0,\infty]$$), and the same holds for every $$g$$ that is integrable with respect to both $$\nu$$ and $$\nu'$$.
+> (equalities in $$[0,\infty]$$), and both hold for every $$g$$ integrable with respect to the measures involved. We refer to the first identity as *additivity* and the second as *homogeneity* in the measure.
 
 > **Proposition** *(Monotonicity of the Integral in the Measure)*
 <a name="prpstn:monotonicity-of-the-integral-in-the-measure"></a>
@@ -1449,6 +1451,7 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{prpstn:additivity-of-the-integral-in-the-measure} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f : X \to \mathbb{C}$$ be a measurable function, not necessarily bounded (but everywhere finite-valued, since its values lie in $$\mathbb{C}$$ — this is used below, where the sets $$\{ \lvert f \rvert < n \}$$ are required to exhaust $$X$$). Let
 >
 > $$
@@ -1480,7 +1483,7 @@ $$
     \mu_{\lambda\psi}(E) = \left< \lambda\psi, \mu(E)\lambda\psi \right> = \overline{\lambda}\lambda \left< \psi, \mu(E)\psi \right> = \lvert \lambda \rvert^2 \mu_\psi(E)
 $$
 
-for every $$E \in \Omega(X)$$, so $$\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \mu_\psi$$ as measures on $$(X, \Omega(X))$$. Hence $$\int_X \lvert f \rvert^2 \, d\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \int_X \lvert f \rvert^2 \, d\mu_\psi$$, which is finite exactly when $$\int_X \lvert f \rvert^2 \, d\mu_\psi$$ is (trivially, if $$\lambda = 0$$ both integrals are $$0$$); so $$\lambda\psi \in W_f$$.
+for every $$E \in \Omega(X)$$, so $$\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \mu_\psi$$ as measures on $$(X, \Omega(X))$$. Hence, by the homogeneity clause of [**Proposition** *(Linearity of the Integral in the Measure)*](#prpstn:additivity-of-the-integral-in-the-measure), $$\int_X \lvert f \rvert^2 \, d\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \int_X \lvert f \rvert^2 \, d\mu_\psi$$, which is finite exactly when $$\int_X \lvert f \rvert^2 \, d\mu_\psi$$ is (trivially, if $$\lambda = 0$$ both integrals are $$0$$); so $$\lambda\psi \in W_f$$.
 
 For closure under addition, fix $$\phi, \psi \in \mathbf{H}$$ and $$E \in \Omega(X)$$. We first note that $$\mu_\eta(E) = \left\| \mu(E)\eta \right\|^2$$ for every $$\eta \in \mathbf{H}$$: since $$\mu(E)$$ is a [bounded orthogonal projection](../spectral-theorems/#def:bounded-orthogonal-projection), it is both self-adjoint and idempotent, so
 
@@ -1505,7 +1508,7 @@ We next show $$W_f$$ is dense in $$\mathbf{H}$$. For $$n \in \mathbb{N} = \{1, 2
 
 For each $$n$$, $$\mu(E_n)\psi \in \text{Range}(\mu(E_n))$$; and for $$\eta \in \text{Range}(\mu(E_n))$$, [Lemma (Range Membership Concentrates the Associated Measure)](#lmm:range-membership-concentrates-measure) gives $$\int_X \lvert f \rvert^2\,d\mu_\eta = \int_{E_n} \lvert f \rvert^2\,d\mu_\eta \le n^2 \mu_\eta(E_n) \le n^2 \mu_\eta(X) = n^2 \left\| \eta \right\|^2 < \infty$$ — using $$\lvert f \rvert < n$$ on $$E_n$$, and $$\mu_\eta(X) = \left\| \eta \right\|^2$$ by [**Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*](#lmm:associated-measure-total-mass). So $$\text{Range}(\mu(E_n)) \subset W_f$$ for every $$n$$. Since $$\mu(E_n)\psi \in \text{Range}(\mu(E_n)) \subset W_f$$ and $$\mu(E_n)\psi \to \psi$$, and $$\psi \in \mathbf{H}$$ was arbitrary, $$W_f$$ is dense in $$\mathbf{H}$$.
 
-We now verify $$Q_f$$ satisfies the two properties required of a [quadratic form on $$W_f$$](#def:hall-quadratic-form-on-a-subspace). Property 1, $$Q_f(\lambda\psi) = \lvert \lambda \rvert^2 Q_f(\psi)$$, follows immediately from $$\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \mu_\psi$$ (shown above) and linearity of the integral in the measure. For property 2, we first establish a convergence fact we will reuse in **Part 2** below. Fix $$\psi \in W_f$$, and set $$f_n \equiv f \cdot 1_{E_n}$$, a bounded measurable function for each $$n$$ (as $$\lvert f_n \rvert \le n$$). Writing $$f = (f_+ - f_-) + i(g_+ - g_-)$$ in terms of the (nonnegative, measurable) positive and negative parts of the real and imaginary parts of $$f$$, each of $$f_+ 1_{E_n}, f_- 1_{E_n}, g_+ 1_{E_n}, g_- 1_{E_n}$$ is a nondecreasing (in $$n$$) sequence of nonnegative measurable functions converging pointwise to $$f_+, f_-, g_+, g_-$$ respectively, since $$E_n \uparrow X$$. By the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) applied to $$\mu_\psi$$-integrals of each of these four sequences, $$\int_X f_\pm 1_{E_n} \, d\mu_\psi \to \int_X f_\pm \, d\mu_\psi$$ and $$\int_X g_\pm 1_{E_n} \, d\mu_\psi \to \int_X g_\pm \, d\mu_\psi$$; by [Lemma ($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)](#lmm:l2-implies-l1) — applicable since $$\psi \in W_f$$ ensures $$f \in L^2(X, \mu_\psi)$$ and $$\mu_\psi$$ is a finite measure, by [**Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*](#lmm:associated-measure-total-mass) — $$f \in L^1(X,\mu_\psi)$$, so all four limiting integrals above are finite. Combining the four limits with appropriate signs,
+We now verify $$Q_f$$ satisfies the two properties required of a [quadratic form on $$W_f$$](#def:hall-quadratic-form-on-a-subspace). Property 1, $$Q_f(\lambda\psi) = \lvert \lambda \rvert^2 Q_f(\psi)$$, follows from $$\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \mu_\psi$$ (shown above) together with the homogeneity clause of [**Proposition** *(Linearity of the Integral in the Measure)*](#prpstn:additivity-of-the-integral-in-the-measure), applied with $$c = \lvert \lambda \rvert^2 \ge 0$$: $$Q_f(\lambda\psi) = \int_X f \, d\mu_{\lambda\psi} = \int_X f \, d\big(\lvert\lambda\rvert^2\mu_\psi\big) = \lvert\lambda\rvert^2\int_X f\,d\mu_\psi = \lvert\lambda\rvert^2 Q_f(\psi)$$. For property 2, we first establish a convergence fact we will reuse in **Part 2** below. Fix $$\psi \in W_f$$, and set $$f_n \equiv f \cdot 1_{E_n}$$, a bounded measurable function for each $$n$$ (as $$\lvert f_n \rvert \le n$$). Writing $$f = (f_+ - f_-) + i(g_+ - g_-)$$ in terms of the (nonnegative, measurable) positive and negative parts of the real and imaginary parts of $$f$$, each of $$f_+ 1_{E_n}, f_- 1_{E_n}, g_+ 1_{E_n}, g_- 1_{E_n}$$ is a nondecreasing (in $$n$$) sequence of nonnegative measurable functions converging pointwise to $$f_+, f_-, g_+, g_-$$ respectively, since $$E_n \uparrow X$$. By the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) applied to $$\mu_\psi$$-integrals of each of these four sequences, $$\int_X f_\pm 1_{E_n} \, d\mu_\psi \to \int_X f_\pm \, d\mu_\psi$$ and $$\int_X g_\pm 1_{E_n} \, d\mu_\psi \to \int_X g_\pm \, d\mu_\psi$$; by [Lemma ($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)](#lmm:l2-implies-l1) — applicable since $$\psi \in W_f$$ ensures $$f \in L^2(X, \mu_\psi)$$ and $$\mu_\psi$$ is a finite measure, by [**Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*](#lmm:associated-measure-total-mass) — $$f \in L^1(X,\mu_\psi)$$, so all four limiting integrals above are finite. Combining the four limits with appropriate signs,
 
 $$
     Q_{f_n}(\psi) = \int_X f_n \, d\mu_\psi \longrightarrow \int_X f \, d\mu_\psi = Q_f(\psi). \tag{$\dagger$}
