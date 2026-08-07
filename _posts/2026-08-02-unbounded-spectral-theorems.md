@@ -1208,13 +1208,27 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Definition** *($$L^2$$ of a Measure Space)*
 <a name="def:hall-a.46"></a>
-> If $$(X, \mu)$$ is a measure space, define an inner product on $$L^2(X, \mu)$$ by the formula
+> Let $$(X,\Omega,\mu)$$ be a measure space and $$p \in \{1,2\}$$. Write
 >
 > $$
->     \left< \phi, \psi \right> \equiv \int_X \overline{\phi(x)} \, \psi(x) \, d\mu(x).
+>     \mathcal{L}^p(X,\mu) \equiv \left\{ f : X \to \mathbb{C} \;\middle|\; f \text{ measurable and } \int_X \lvert f \rvert^p \, d\mu < \infty \right\},
 > $$
 >
-> This integral is absolutely convergent for all $$\phi, \psi \in L^2(X, \mu)$$, $$\left< \cdot, \cdot \right>$$ is indeed an inner product, and $$L^2(X, \mu)$$ is complete with respect to the associated norm; thus $$L^2(X, \mu)$$, with this inner product, is a Hilbert space.
+> a complex vector space, and set $$\left\| f \right\|_{L^p(X,\mu)} \equiv \big( \int_X \lvert f \rvert^p \, d\mu \big)^{1/p}$$. Throughout this post the assertion "$$f \in L^p(X,\mu)$$" is shorthand for $$f \in \mathcal{L}^p(X,\mu)$$, i.e. for the integrability condition above; this is how the notation is used in every statement below.
+>
+> The quantity $$\left\| \cdot \right\|_{L^p(X,\mu)}$$ is a seminorm on $$\mathcal{L}^p(X,\mu)$$ but **not** a norm: a measurable $$f$$ that vanishes $$\mu$$-almost everywhere without being identically zero has $$\left\| f \right\|_{L^p(X,\mu)} = 0$$. To obtain a normed space one passes to the quotient
+>
+> $$
+>     L^p(X,\mu) \equiv \mathcal{L}^p(X,\mu) \big/ \mathcal{N}, \qquad \mathcal{N} \equiv \{ f \text{ measurable} \mid f = 0 \ \mu\text{-almost everywhere} \},
+> $$
+>
+> on which $$\left\| \cdot \right\|_{L^p(X,\mu)}$$ descends to a genuine norm. For $$p = 2$$ the formula
+>
+> $$
+>     \left< \phi, \psi \right> \equiv \int_X \overline{\phi(x)} \, \psi(x) \, d\mu(x)
+> $$
+>
+> is absolutely convergent for $$\phi,\psi \in \mathcal{L}^2(X,\mu)$$, descends to the quotient, and is there a genuine inner product inducing $$\left\| \cdot \right\|_{L^2(X,\mu)}$$; with it, $$L^2(X,\mu)$$ is complete, hence a Hilbert space. (The distinction matters for a formalization, where $$L^p$$ is a quotient type; it does not affect any argument below, all of which use only the seminorm and the integrability condition, never positive-definiteness.)
 
 > **Proposition** *(Countable Additivity of the Integral over a Disjoint Cover)*
 <a name="prpstn:countable-additivity-of-the-integral"></a>
