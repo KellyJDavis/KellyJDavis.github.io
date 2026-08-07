@@ -226,6 +226,8 @@ We now come to the key definition of this post: that of self-adjointness. Every 
 <a name="def:hall-9.5"></a>
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{def:hall-9.1} -->
+<!--  \uses{def:hall-9.3} -->
+<!--  \uses{prpstn:hall-9.4} -->
 > An unbounded operator $$A$$ on $$\mathbf{H}$$ is *self-adjoint* if $$\text{Dom}(A^*) = \text{Dom}(A)$$ and $$A^*\phi = A\phi$$ for all $$\phi \in \text{Dom}(A)$$. Equivalently, $$A$$ is self-adjoint if $$A^* = A$$, where equality of unbounded operators is understood to include equality of domains.
 
 Indeed, if $$A$$ is self-adjoint then $$\text{Dom}(A^*) = \text{Dom}(A)$$ and $$A^* = A$$ on this common domain, which is exactly [Definition (Extension of an Operator)](#def:hall-9.3) applied with $$B = A$$: $$A^*$$ is (trivially) an extension of $$A$$, so by [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4), $$A$$ is symmetric. Conversely, a symmetric operator $$A$$ is self-adjoint precisely when $$\text{Dom}(A^*)$$ is no bigger than $$\text{Dom}(A)$$, since symmetry already gives the reverse containment via [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4). This is usually the difficulty in showing a symmetric operator is self-adjoint: showing that the adjoint's domain does not overshoot.
@@ -283,6 +285,7 @@ Two elementary facts about this closure — that it is automatically linear, and
 > **Proposition** *(Linearity and the Sequential Description of the Closure)*
 <a name="prpstn:closure-linearity-and-sequential-description"></a>
 <!--  \uses{def:hall-9.6} -->
+<!--  \uses{def:hall-3.1} -->
 > Suppose $$A$$ is a closable operator on $$\mathbf{H}$$.
 >
 > 1. $$A^{\text{cl}}$$ is linear, and $$\text{Dom}(A^{\text{cl}})$$ is a subspace of $$\mathbf{H}$$; in particular $$A^{\text{cl}}$$ is again an unbounded operator on $$\mathbf{H}$$ in the sense of [Definition (Unbounded Operator)](#def:hall-3.1).
@@ -308,6 +311,7 @@ With self-adjointness, symmetry, and closure all in hand, we can state the last 
 <!--  \uses{def:hall-9.2} -->
 <!--  \uses{def:hall-9.5} -->
 <!--  \uses{def:hall-9.6} -->
+<!--  \uses{def:hall-9.1} -->
 > An unbounded operator $$A$$ on $$\mathbf{H}$$ is *essentially self-adjoint* if $$A$$ is symmetric, $$A$$ is closable, and $$A^{\text{cl}}$$ is self-adjoint.
 
 ### Elementary Properties of Adjoints and Closed Operators
@@ -319,6 +323,8 @@ A remark on typing, before the first proposition of this section. [Definition (U
 > **Definition** *(Closed Linear Map on a Subspace)*
 <a name="def:closed-linear-map-on-a-subspace"></a>
 <!--  \uses{def:hall-9.6} -->
+<!--  \uses{def:hall-3.1} -->
+<!--  \uses{prpstn:hall-9.4} -->
 > Let $$D \subset \mathbf{H}$$ be a subspace, not necessarily dense, and $$T : D \to \mathbf{H}$$ a linear map. The *graph* of $$T$$ is $$\{ (\psi, T\psi) \mid \psi \in D \} \subset \mathbf{H} \times \mathbf{H}$$, and $$T$$ is *closed* if its graph is a closed subset of $$\mathbf{H} \times \mathbf{H}$$ (in the product topology fixed above). Equivalently, by sequential closedness and componentwise convergence exactly as in [Definition (Closed and Closable Operators)](#def:hall-9.6): $$T$$ is closed if and only if, whenever $$\{\psi_n\}$$ is a sequence in $$D$$ with $$\psi_n \to \psi$$ and $$T\psi_n \to \varphi$$ for some $$\psi,\varphi \in \mathbf{H}$$, it follows that $$\psi \in D$$ and $$T\psi = \varphi$$.
 >
 > When $$D$$ is dense — so that $$T$$ is an unbounded operator in the sense of [Definition (Unbounded Operator)](#def:hall-3.1) — this agrees with [Definition (Closed and Closable Operators)](#def:hall-9.6), the two conditions being verbatim the same.
@@ -439,6 +445,7 @@ We record next a description of $$\text{Ker}(A^*)$$ in terms of $$A$$ itself, ge
 > **Definition** *(Range of an Unbounded Operator)*
 <a name="def:range-of-an-unbounded-operator"></a>
 <!--  \uses{def:hall-3.1} -->
+<!--  \uses{def:orthogonal-complement} -->
 > If $$A$$ is an unbounded operator on $$\mathbf{H}$$, its *range* is $$\text{Range}(A) \equiv \{ A\psi \mid \psi \in \text{Dom}(A) \} \subset \mathbf{H}$$. Since $$\text{Dom}(A)$$ is a subspace of $$\mathbf{H}$$ and $$A$$ is linear, $$\text{Range}(A)$$ is again a subspace of $$\mathbf{H}$$: it contains $$0 = A0$$, and for $$A\psi_1, A\psi_2 \in \text{Range}(A)$$ and $$\alpha,\beta \in \mathbb{C}$$, linearity of $$A$$ gives $$\alpha A\psi_1 + \beta A\psi_2 = A(\alpha\psi_1+\beta\psi_2) \in \text{Range}(A)$$, as $$\alpha\psi_1+\beta\psi_2 \in \text{Dom}(A)$$. Unwinding [Definition (Orthogonal Complement)](#def:orthogonal-complement) for $$V = \text{Range}(A)$$: $$\left( \text{Range}(A) \right)^\perp = \{ \psi \in \mathbf{H} \mid \left< \psi, A\phi \right> = 0 \text{ for all } \phi \in \text{Dom}(A) \}$$ — the quantifier ranges over $$\text{Dom}(A)$$, not all of $$\mathbf{H}$$.
 
 We will need two standard facts about closed subspaces of a Hilbert space at several points below, starting almost immediately; we import them together, as Hall does when he first needs them.
@@ -454,6 +461,7 @@ We record one immediate consequence of Part 2, in the form we will repeatedly ne
 > **Corollary** *(Trivial Complement Characterizes Density)*
 <a name="crllr:trivial-complement-characterizes-density"></a>
 <!--  \uses{prpstn:hall-a.49} -->
+<!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 > A subspace $$V \subset \mathbf{H}$$ is dense in $$\mathbf{H}$$ if and only if $$V^\perp = \{0\}$$.
 
 **Proof**
@@ -492,6 +500,7 @@ The next proposition tells us how the adjoint interacts with adding a bounded op
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
 <!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:hall-3.1} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$ and $$B \in \mathcal{B}(\mathbf{H})$$ is a bounded operator defined on all of $$\mathbf{H}$$. Let $$A + B$$ denote the operator with $$\text{Dom}(A+B) = \text{Dom}(A)$$, given by $$(A+B)\psi = A\psi + B\psi$$ for all $$\psi \in \text{Dom}(A)$$. Then $$(A+B)^*$$ has the same domain as $$A^*$$, and
 >
 > $$
@@ -553,6 +562,7 @@ Finally, suppose $$A$$ is self-adjoint and $$B$$ is bounded and self-adjoint on 
 <a name="lmm:adjoint-of-scalar-multiple-of-identity"></a>
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 <!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:hall-9.1} -->
 > For $$\lambda \in \mathbb{C}$$, the bounded operator $$\lambda\mathbf{1}$$ (defined on all of $$\mathbf{H}$$) has adjoint $$(\lambda\mathbf{1})^* = \overline{\lambda}\mathbf{1}$$.
 
 **Proof**
@@ -921,6 +931,7 @@ With the identification in hand, we can restate [**Proposition** *(Direct Sums o
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.7} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
 <!--  \uses{lmm:finite-direct-sum-dense} -->
+<!--  \uses{def:hall-3.1} -->
 > Suppose $$\mathbf{H}$$ is a Hilbert space direct sum of a sequence of separable Hilbert spaces $$\mathbf{H}_j$$:
 >
 > $$
@@ -1121,6 +1132,8 @@ If $$f$$ is *unbounded*, this identity suggests defining the domain of $$\int_X 
 <a name="def:hall-quadratic-form-on-a-subspace"></a>
 <!--  \uses{def:hall-sesquilinear-form-on-a-subspace} -->
 <!--  \uses{../spectral-theorems/#def:bounded-quadratic-form} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
 > Let $$D$$ be a subspace of $$\mathbf{H}$$. A *quadratic form on $$D$$* is a map $$Q : D \to \mathbb{C}$$ with the following properties:
 >
 > 1. $$Q(\lambda\psi) = \lvert \lambda \rvert^2 Q(\psi)$$ for all $$\psi \in D$$ and $$\lambda \in \mathbb{C}$$.
@@ -1285,6 +1298,7 @@ Closed subspaces recur as Hilbert spaces in their own right — the whole develo
 
 > **Lemma** *(A Closed Subspace is a Separable Hilbert Space)*
 <a name="lmm:closed-subspace-is-hilbert"></a>
+<!--  \uses{thrm:sequential-closedness} -->
 > Let $$V$$ be a closed subspace of $$\mathbf{H}$$. Then $$V$$, with the inner product inherited from $$\mathbf{H}$$, is itself a separable, complex Hilbert space, and its norm is the restriction of the norm of $$\mathbf{H}$$.
 
 **Proof**
@@ -1366,6 +1380,8 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{lmm:norm-convergent-decomposition} -->
 <!--  \uses{lmm:norm-identity-bounded-integral} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
+<!--  \uses{def:hall-9.1} -->
+<!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f : X \to \mathbb{C}$$ be a measurable function, not necessarily bounded (but everywhere finite-valued, since its values lie in $$\mathbb{C}$$ — this is used below, where the sets $$\{ \lvert f \rvert < n \}$$ are required to exhaust $$X$$). Let
 >
 > $$
@@ -1499,6 +1515,7 @@ The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, $$f : X \to \mathbb{C}$$ is measurable, and $$E \in \Omega(X)$$ is a set on which $$f$$ is bounded, say $$\lvert f \rvert \le c$$ on $$E$$. Then $$\text{Range}(\mu(E)) \subset W_f$$, and indeed $$\int_X \lvert f \rvert^2\,d\mu_\eta \le c^2 \left\| \eta \right\|^2$$ for every $$\eta \in \text{Range}(\mu(E))$$.
 
 **Proof**
@@ -1518,6 +1535,7 @@ With **Proposition** *(hall-10.2)* established, we can now give the definition a
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
+<!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$ and $$f : X \to \mathbb{C}$$ is a measurable function, not necessarily bounded. Let $$W_f$$, $$Q_f$$, and $$L_f$$ be as in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2). Then there exists a unique unbounded operator on $$\mathbf{H}$$, with domain $$W_f$$ — which we denote by $$\int_X f \, d\mu$$ — with the property that
 >
 > $$
@@ -1640,6 +1658,8 @@ the first equality by [continuity of the inner product](../spectral-theorems/#pr
 <a name="lmm:associated-measure-of-image"></a>
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{def:hall-9.1} -->
+<!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$h$$ be a bounded measurable function on $$X$$, and set $$T \equiv \int_X h \, d\mu \in \mathcal{B}(\mathbf{H})$$. Then for every $$\psi \in \mathbf{H}$$ and every $$E \in \Omega(X)$$,
 >
 > $$
@@ -1742,6 +1762,9 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{lmm:closed-subspace-is-hilbert} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
+<!--  \uses{lmm:integral-preserves-spectral-subspaces} -->
+<!--  \uses{lmm:range-of-projection-is-kernel} -->
+<!--  \uses{prpstn:hall-9.26} -->
 > If $$f$$ is a real-valued, measurable function on $$X$$, then $$\int_X f \, d\mu$$ is self-adjoint on $$W_f$$.
 
 **Proof**
@@ -1824,6 +1847,7 @@ We will also need the standard corollary of the Hahn–Banach theorem identifyin
 
 > **Theorem** *(Norm via Dual Pairing)*
 <a name="thrm:norm-via-dual-pairing"></a>
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
 > If $$x$$ is an element of a normed vector space $$V$$, then
 >
 > $$
@@ -1871,6 +1895,7 @@ An operator-norm-convergent power series composed with any bounded linear functi
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{thrm:norm-via-dual-pairing} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
 > Suppose $$\mathbf{H} \ne \{0\}$$, $$A \in \mathcal{B}(\mathbf{H})$$, and $$T \in \mathbb{R}$$ with $$T > R(A)$$. (The hypothesis $$\mathbf{H} \ne \{0\}$$ is what makes $$R(A)$$ well defined: by [**Definition** *(Spectral Radius)*](../spectral-theorems/#def:spectral-radius) it is a supremum over $$\sigma(A)$$, and $$\sigma(A)$$ is non-empty only because of Part 1 of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), which fails on the zero space.) Then
 >
 > $$
@@ -1964,6 +1989,7 @@ We can now prove the equality of norm and spectral radius for normal operators, 
 > **Lemma** *(Adjoint of a Product; the Adjoint is an Involution)*
 <a name="lmm:adjoint-product-and-involution"></a>
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+<!--  \uses{def:hall-9.1} -->
 > For $$A, B \in \mathcal{B}(\mathbf{H})$$:
 >
 > 1. $$(AB)^* = B^*A^*$$.
@@ -1995,6 +2021,7 @@ As this holds for all $$\phi,\psi\in\mathbf{H}$$, this is exactly the defining p
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.2} -->
 <!--  \uses{../spectral-theorems/#lmm:hall-8.1} -->
 <!--  \uses{lmm:adjoint-product-and-involution} -->
+<!--  \uses{lmm:power-growth-controlled-by-spectral-radius} -->
 > Suppose $$\mathbf{H} \ne \{0\}$$ (so that $$R(A)$$ is well defined, as in [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius)). If $$A \in \mathcal{B}(\mathbf{H})$$ is normal, then $$\|A\| = R(A)$$.
 
 **Proof**
@@ -2171,6 +2198,7 @@ Recall the target: the two-variable spectral mapping theorem $$\sigma\big(p(A,A^
 <!--  \uses{lmm:adjoint-product-and-involution} -->
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
 <!--  \uses{prpstn:hall-9.13} -->
+<!--  \uses{def:hall-9.1} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal and $$\lambda \in \mathbb{C}$$. Then for every $$\psi \in \mathbf{H}$$,
 >
 > $$
@@ -2224,6 +2252,7 @@ Note that, unlike the set of genuine eigenvectors for a fixed $$\lambda$$, the s
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{def:kernel-of-an-unbounded-operator} -->
+<!--  \uses{thrm:hall-9.17} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal.
 >
 > 1. If $$\psi$$ is an $$\varepsilon$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda$$, then $$\psi$$ is an $$\varepsilon$$-almost eigenvector for $$A^*$$ with eigenvalue $$\overline\lambda$$.
@@ -2358,6 +2387,9 @@ We can now carry out the construction that replaces the matrix-case eigenspace a
 <!--  \uses{lmm:adjoint-product-and-involution} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
 <!--  \uses{lmm:self-adjoint-is-normal} -->
+<!--  \uses{../spectral-theorems/#thrm:spectral-theorem-for-bounded-operators} -->
+<!--  \uses{def:hall-9.1} -->
+<!--  \uses{lmm:normality-balances-norms} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, $$p$$ a polynomial in two variables, and $$\mu \in \sigma\big( p(A,A^*) \big)$$. Then for every $$\varepsilon > 0$$ there is a nonzero closed subspace $$W^\varepsilon \subset \mathbf{H}$$, invariant under both $$A$$ and $$A^*$$, every nonzero element of which is an $$\varepsilon$$-almost eigenvector for $$p(A,A^*)$$ with eigenvalue $$\mu$$.
 
 **Proof**
@@ -2397,6 +2429,7 @@ so $$\left\| B\psi \right\| \le \tfrac{\varepsilon}{2}\left\| \psi \right\| < \v
 <!--  \uses{lmm:polynomials-in-normal-are-normal} -->
 <!--  \uses{lmm:restriction-of-normal-operator} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
+<!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$, and let $$p$$ be a polynomial in two variables. Then
 >
 > $$
@@ -2518,6 +2551,7 @@ Throughout this section, $$X$$ denotes a compact metric space, equipped with its
 > **Definition** *(Abstract Continuous Functional Calculus)*
 <a name="def:abstract-continuous-functional-calculus"></a>
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
+<!--  \uses{thrm:continuous-functional-calculus-normal} -->
 > Let $$X$$ be a compact metric space. An *abstract continuous functional calculus* on $$X$$ is a map $$\Phi : C^0(X;\mathbb{C}) \to \mathcal{B}(\mathbf{H})$$ satisfying, for all $$f,g \in C^0(X;\mathbb{C})$$ and $$\alpha,\beta\in\mathbb{C}$$:
 >
 > 1. $$\Phi(\alpha f + \beta g) = \alpha\Phi(f) + \beta\Phi(g)$$;
@@ -2534,6 +2568,7 @@ Our first observation is that such a $$\Phi$$ takes non-negative functions to no
 <a name="lmm:abstract-calculus-non-negative"></a>
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{../spectral-theorems/#def:non-negative-operator} -->
+<!--  \uses{def:hall-9.1} -->
 > Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$.
 >
 > 1. If $$f \in C^0(X;\mathbb{C})$$ is real-valued, then $$\Phi(f)$$ is self-adjoint, and $$\left< \psi, \Phi(f)\psi \right> \in \mathbb{R}$$ for every $$\psi \in \mathbf{H}$$.
@@ -2574,6 +2609,7 @@ Non-negativity is exactly the hypothesis of the Riesz representation theorem, wh
 > **Lemma** *(The Abstract Associated Measures are Finite)*
 <a name="lmm:abstract-associated-measures-finite"></a>
 <!--  \uses{def:abstract-associated-measures} -->
+<!--  \uses{def:abstract-continuous-functional-calculus} -->
 > For every $$\psi \in \mathbf{H}$$, $$\mu_\psi(X) = \left\| \psi \right\|^2 < \infty$$. In particular $$\mu_\psi$$ is a finite measure.
 
 **Proof**
@@ -2596,6 +2632,7 @@ The point of introducing the measures $$\mu_\psi$$ is that the right-hand side $
 <!--  \uses{../spectral-theorems/#thrm:bounded-convergence-theorem} -->
 <!--  \uses{../spectral-theorems/#lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
+<!--  \uses{def:abstract-continuous-functional-calculus} -->
 > Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$. For a bounded measurable $$f : X \to \mathbb{C}$$, define $$Q_f : \mathbf{H} \to \mathbb{C}$$ by
 >
 > $$
@@ -2710,6 +2747,8 @@ Since $$f$$ is real-valued and each $$\mu_\psi$$ is a positive real measure, $$Q
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{lmm:abstract-extended-linear} -->
+<!--  \uses{def:hall-9.1} -->
+<!--  \uses{lmm:abstract-extended-convergence} -->
 > For all bounded measurable $$f,g : X \to \mathbb{C}$$,
 >
 > $$
@@ -2758,6 +2797,7 @@ By uniqueness of limits, $$\left< \phi, \widetilde\Phi(fg)\psi \right> = \left< 
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{lmm:abstract-extended-real-self-adjoint} -->
 <!--  \uses{lmm:abstract-extended-linear} -->
+<!--  \uses{../spectral-theorems/#thrm:hall-8.10} -->
 > For every bounded measurable $$f : X \to \mathbb{C}$$, $$\widetilde\Phi(\overline f) = \widetilde\Phi(f)^*$$.
 
 **Proof**
@@ -2925,6 +2965,7 @@ We will need one fact about unitary operators, from [Definition (Unitary Operato
 <!--  \uses{def:unitary-operator} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
+<!--  \uses{def:hall-9.1} -->
 > If $$U \in \mathcal{B}(\mathbf{H})$$ is unitary, then $$U^*U = UU^* = \mathbf{1}$$; in particular $$U$$ is normal.
 
 **Proof**
@@ -3085,6 +3126,7 @@ The Cayley transform carries the spectrum of $$A$$ onto the spectrum of $$U$$, m
 <!--  \uses{lmm:spectrum-notions-agree} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{lmm:unitary-spectrum-circle} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, and let $$U$$ be its Cayley transform. Then for every $$\lambda \in \mathbb{R}$$,
 >
 > $$
@@ -3233,6 +3275,9 @@ The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ b
 <!--  \uses{prpstn:hall-9.11} -->
 <!--  \uses{lmm:unitary-is-normal} -->
 <!--  \uses{crllr:abstract-extended-norm-bound} -->
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{prpstn:hall-9.4} -->
+<!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, let $$U$$ be its Cayley transform, and let $$D$$ be as in [**Lemma** *(The Cayley Map and its Inverse)*](#lmm:cayley-map). (The hypothesis $$\mathbf{H} \ne \{0\}$$ is needed because the projection-valued measure $$\mu^U$$ below is supplied by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20), which assumes it.) Then
 >
 > $$
@@ -3323,6 +3368,8 @@ Transporting the measure along $$C$$ now gives the projection-valued measure for
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{lmm:unitary-spectrum-circle} -->
+<!--  \uses{prpstn:hall-10.2} -->
+<!--  \uses{thrm:hall-10.20} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$, with $$\mathbf{H} \ne \{0\}$$, let $$U$$ be its Cayley transform, and let $$\mu^U$$ be the projection-valued measure of $$U$$ supplied by [**Theorem** *(Spectral Theorem for Bounded Normal Operators)*](#thrm:hall-10.20). Define, for each Borel set $$E \subset \mathbb{R}$$,
 >
 > $$
