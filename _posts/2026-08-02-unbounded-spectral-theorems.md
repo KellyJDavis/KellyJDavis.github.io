@@ -1239,6 +1239,15 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 <a name="thrm:dominated-convergence-theorem"></a>
 > Let $$(X,\Omega,\nu)$$ be a measure space and $$\{g_n\}$$ measurable complex-valued functions on $$X$$ converging pointwise to $$g$$, with $$\lvert g_n \rvert \le G$$ for all $$n$$ and some $$\nu$$-integrable $$G$$. Then $$g$$ and each $$g_n$$ are $$\nu$$-integrable and $$\int_X g_n \, d\nu \to \int_X g \, d\nu$$.
 
+> **Proposition** *(Basic Properties of the Integral, and Integration over a Subset)*
+<a name="prpstn:basic-integral-properties"></a>
+> Let $$(X,\Omega,\nu)$$ be a measure space.
+>
+> 1. *(Integration over a subset.)* For $$E \in \Omega$$ and $$g$$ measurable, $$\int_E g \, d\nu \equiv \int_X 1_E\,g \, d\nu$$, whenever the right-hand side is defined. This is the meaning of the notation $$\int_E g\,d\nu$$ throughout.
+> 2. *(Linearity in the integrand.)* If $$g,h$$ are $$\nu$$-integrable and $$\alpha,\beta\in\mathbb{C}$$, then $$\alpha g + \beta h$$ is $$\nu$$-integrable and $$\int_X (\alpha g + \beta h)\,d\nu = \alpha\int_X g\,d\nu + \beta\int_X h\,d\nu$$. The same identity holds for nonnegative measurable $$g,h$$ and $$\alpha,\beta \ge 0$$, as an equality in $$[0,\infty]$$.
+> 3. *(Monotonicity in the integrand.)* If $$g,h$$ are measurable with $$0 \le g \le h$$ pointwise, then $$\int_X g\,d\nu \le \int_X h\,d\nu$$ in $$[0,\infty]$$. In particular, if $$0 \le g \le c$$ on $$E$$ for a constant $$c$$, then $$\int_E g\,d\nu \le c\,\nu(E)$$.
+> 4. *(Triangle inequality.)* If $$g$$ is $$\nu$$-integrable then $$\lvert \int_X g\,d\nu \rvert \le \int_X \lvert g \rvert\,d\nu$$.
+
 > **Proposition** *(Additivity of the Integral in the Measure)*
 <a name="prpstn:additivity-of-the-integral-in-the-measure"></a>
 > Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and let $$\nu + \nu'$$ denote the measure $$E \mapsto \nu(E) + \nu'(E)$$. Then for every nonnegative measurable $$g$$ on $$X$$,
@@ -1279,6 +1288,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Proposition** *(Countable Additivity of the Integral over a Disjoint Cover)*
 <a name="prpstn:countable-additivity-of-the-integral"></a>
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$(X,\Omega,\nu)$$ be a measure space, $$g$$ a nonnegative measurable function on $$X$$, and $$\{ E_n \}_{n=1}^\infty$$ a pairwise disjoint sequence in $$\Omega$$ with $$\bigcup_n E_n = X$$. Then
 >
 > $$
@@ -1289,6 +1299,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Proposition** *(Integrals Agree when Measures Agree on a Set)*
 <a name="prpstn:integrals-agree-when-measures-agree"></a>
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and $$E \in \Omega$$, and suppose $$\nu(S) = \nu'(S)$$ for every measurable $$S \subset E$$. Then $$\int_E g \, d\nu = \int_E g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
 
 We record two more facts about projection-valued measures before the main proof, both used more than once below; extracting them now avoids re-deriving them, or worse, citing "the same argument as" a proof written for a different purpose. First, though, a fact about a single projection, used at several places to know that ranges of projections are closed subspaces.
@@ -1320,6 +1331,7 @@ The inner-product axioms hold on $$V$$ because they hold on $$\mathbf{H}$$ and $
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$ and $$\eta \in \text{Range}(\mu(E))$$ for some $$E \in \Omega(X)$$. Then $$\mu_\eta(E^c) = 0$$. Consequently, for any nonnegative measurable $$g$$ on $$X$$,
 >
 > $$
@@ -1392,6 +1404,7 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{lmm:associated-measure-total-mass} -->
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f : X \to \mathbb{C}$$ be a measurable function, not necessarily bounded (but everywhere finite-valued, since its values lie in $$\mathbb{C}$$ — this is used below, where the sets $$\{ \lvert f \rvert < n \}$$ are required to exhaust $$X$$). Let
 >
 > $$
@@ -1526,6 +1539,7 @@ The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, $$f : X \to \mathbb{C}$$ is measurable, and $$E \in \Omega(X)$$ is a set on which $$f$$ is bounded, say $$\lvert f \rvert \le c$$ on $$E$$. Then $$\text{Range}(\mu(E)) \subset W_f$$, and indeed $$\int_X \lvert f \rvert^2\,d\mu_\eta \le c^2 \left\| \eta \right\|^2$$ for every $$\eta \in \text{Range}(\mu(E))$$.
 
 **Proof**
@@ -1633,6 +1647,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:norm-identity-bounded-integral} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
 >
 > $$
@@ -1670,6 +1685,7 @@ the first equality by [continuity of the inner product](../spectral-theorems/#pr
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$h$$ be a bounded measurable function on $$X$$, and set $$T \equiv \int_X h \, d\mu \in \mathcal{B}(\mathbf{H})$$. Then for every $$\psi \in \mathbf{H}$$ and every $$E \in \Omega(X)$$,
 >
 > $$
@@ -2105,6 +2121,7 @@ We need three properties of these subspaces. The first two follow directly from 
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:spectrum-notions-agree} -->
 <!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$X \subset \mathbb{C}$$ be compact, let $$\mu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$, and set $$A \equiv \int_X \iota \, d\mu$$ — a bounded operator, since $$\iota(\lambda) = \lambda$$ is bounded on the compact set $$X$$. Let $$V_E \equiv \text{Range}(\mu(E))$$ be the associated [spectral subspaces](#def:hall-7.14). Then:
 >
 > 1. Each $$V_E$$ is invariant under $$A$$: $$A(V_E) \subset V_E$$.
@@ -2649,6 +2666,7 @@ The point of introducing the measures $$\mu_\psi$$ is that the right-hand side $
 <!--  \uses{../spectral-theorems/#lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$. For a bounded measurable $$f : X \to \mathbb{C}$$, define $$Q_f : \mathbf{H} \to \mathbb{C}$$ by
 >
 > $$
@@ -2695,6 +2713,7 @@ Before going further we record that $$\widetilde\Phi$$ is linear — used repeat
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
 > For all bounded measurable $$f,g : X \to \mathbb{C}$$ and $$\alpha,\beta \in \mathbb{C}$$,
 >
 > $$
