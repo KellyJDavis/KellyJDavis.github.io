@@ -872,6 +872,39 @@ The identification below is by a *unitary* map, so we record that notion first; 
 > 1. the subspaces are pairwise orthogonal: $$\left< \eta, \zeta \right> = 0$$ whenever $$\eta \in \mathbf{K}_n$$, $$\zeta \in \mathbf{K}_m$$ with $$n \ne m$$; and
 > 2. every $$\psi \in \mathbf{H}$$ can be written as $$\psi = \sum_{n=1}^\infty \psi_n$$ with $$\psi_n \in \mathbf{K}_n$$, the series converging in the norm of $$\mathbf{H}$$.
 
+A norm-preserving linear map automatically preserves the inner product, because the inner product is recoverable from the norm. We record the identity that makes this so, since it is what verifies unitarity of the Cayley transform in the final section.
+
+> **Proposition** *(Polarization Identity for the Inner Product)*
+<a name="prpstn:polarization-identity"></a>
+> For all $$\phi,\psi \in \mathbf{H}$$,
+>
+> $$
+>     \left< \phi, \psi \right> = \frac{1}{4}\Big( \left\| \phi+\psi \right\|^2 - \left\| \phi-\psi \right\|^2 \Big) - \frac{i}{4}\Big( \left\| \phi+i\psi \right\|^2 - \left\| \phi-i\psi \right\|^2 \Big).
+> $$
+>
+> Consequently, if $$T : \mathbf{H} \to \mathbf{H}$$ is linear and norm-preserving, then $$T$$ preserves the inner product: $$\left< T\phi, T\psi \right> = \left< \phi,\psi \right>$$ for all $$\phi,\psi$$.
+
+**Proof**
+Expanding by conjugate-linearity in the first argument and linearity in the second,
+
+$$
+\begin{align}
+    \left\| \phi \pm \psi \right\|^2 &= \left\| \phi \right\|^2 + \left\| \psi \right\|^2 \pm \left< \phi,\psi \right> \pm \left< \psi,\phi \right>, \\
+    \left\| \phi \pm i\psi \right\|^2 &= \left\| \phi \right\|^2 + \left\| \psi \right\|^2 \pm i\left< \phi,\psi \right> \mp i\left< \psi,\phi \right>,
+\end{align}
+$$
+
+the second line using $$\left< \phi, i\psi \right> = i\left< \phi,\psi \right>$$ and $$\left< i\psi, \phi \right> = -i\left< \psi,\phi \right>$$. Subtracting within each line,
+
+$$
+    \left\| \phi+\psi \right\|^2 - \left\| \phi-\psi \right\|^2 = 2\big( \left< \phi,\psi \right> + \left< \psi,\phi \right> \big), \qquad
+    \left\| \phi+i\psi \right\|^2 - \left\| \phi-i\psi \right\|^2 = 2i\big( \left< \phi,\psi \right> - \left< \psi,\phi \right> \big).
+$$
+
+Multiplying the first by $$\tfrac14$$ and the second by $$-\tfrac{i}{4}$$ and adding, the $$\left< \psi,\phi \right>$$ terms cancel — $$\tfrac12\left< \psi,\phi \right>$$ from the first and $$-\tfrac{i}{4}\cdot(-2i)\left< \psi,\phi \right> = -\tfrac12\left< \psi,\phi \right>$$ from the second — while the $$\left< \phi,\psi \right>$$ terms combine to $$\tfrac12\left< \phi,\psi \right> + \tfrac12\left< \phi,\psi \right> = \left< \phi,\psi \right>$$. This is the stated identity.
+
+For the consequence, suppose $$T$$ is linear with $$\left\| T\chi \right\| = \left\| \chi \right\|$$ for all $$\chi$$. Applying the identity to $$T\phi, T\psi$$ and using linearity of $$T$$ to write $$T\phi \pm T\psi = T(\phi\pm\psi)$$ and $$T\phi \pm iT\psi = T(\phi\pm i\psi)$$, each of the four norms equals the corresponding norm without $$T$$; so the right-hand sides agree and $$\left< T\phi,T\psi \right> = \left< \phi,\psi \right>$$.$$\blacksquare$$
+
 > **Lemma** *(Internal Decompositions are Unitarily External Direct Sums)*
 <a name="lmm:internal-decomposition-unitary"></a>
 <!--  \uses{def:internal-orthogonal-decomposition} -->
@@ -1970,6 +2003,7 @@ We now use this growth bound to establish submultiplicativity of the spectral ra
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
+<!--  \uses{../spectral-theorems/#lmm:lemma-2} -->
 > Suppose $$\mathbf{H} \ne \{0\}$$ (so that the spectral radii below are well defined, as in [**Lemma** *(Power Growth is Controlled by the Spectral Radius)*](#lmm:power-growth-controlled-by-spectral-radius)). If $$A$$ and $$B$$ are commuting elements of $$\mathcal{B}(\mathbf{H})$$, then
 >
 > $$
@@ -1983,7 +2017,7 @@ $$
     \lim_{m \to \infty} \frac{\|(AB)^m\|}{S^mT^m} = 0. \tag{$\P$}
 $$
 
-Since $$A$$ and $$B$$ commute, $$(AB)^m = A^mB^m$$ for every $$m$$ (by induction: trivial for $$m=0,1$$, and if $$(AB)^m = A^mB^m$$ then $$(AB)^{m+1} = (AB)^mAB = A^mB^mAB = A^m(B^mA)B = A^m(AB^m)B = A^{m+1}B^{m+1}$$, using $$B^mA = AB^m$$, itself immediate by induction on $$m$$ from $$AB=BA$$). By submultiplicativity of the operator norm,
+Since $$A$$ and $$B$$ commute, $$(AB)^m = A^mB^m$$ for every $$m$$ (by induction: trivial for $$m=0,1$$, and if $$(AB)^m = A^mB^m$$ then $$(AB)^{m+1} = (AB)^mAB = A^mB^mAB = A^m(B^mA)B = A^m(AB^m)B = A^{m+1}B^{m+1}$$, using $$B^mA = AB^m$$, itself immediate by induction on $$m$$ from $$AB=BA$$). By [submultiplicativity of the operator norm](../spectral-theorems/#lmm:lemma-2),
 
 $$
     \frac{\|(AB)^m\|}{S^mT^m} = \frac{\|A^mB^m\|}{S^mT^m} \le \frac{\|A^m\|\|B^m\|}{S^mT^m} = \frac{\|A^m\|}{S^m}\cdot\frac{\|B^m\|}{T^m}.
@@ -2012,7 +2046,7 @@ $$
 \end{align}
 $$
 
-the middle terms ($$k=m=1,\ldots,N$$) telescoping away. Since $$\|(AB)^{N+1}\|/\lvert \lambda_1 \rvert^{N+1} \le C\lvert \lambda_2 \rvert^{N+1}/\lvert \lambda_1 \rvert^{N+1} = C(\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert)^{N+1} \to 0$$ as $$N \to \infty$$ (using the same bound as above, with $$\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert<1$$), we get $$(AB-\lambda_1\mathbf{1})S_N \to \mathbf{1}$$. On the other hand, left multiplication by the fixed bounded operator $$AB - \lambda_1\mathbf{1}$$ is continuous in the operator norm (for any $$T_1,T_2 \in \mathcal{B}(\mathbf{H})$$, $$\|(AB-\lambda_1\mathbf{1})T_1 - (AB-\lambda_1\mathbf{1})T_2\| \le \|AB-\lambda_1\mathbf{1}\|\,\|T_1-T_2\|$$, by submultiplicativity), so $$(AB-\lambda_1\mathbf{1})S_N \to (AB-\lambda_1\mathbf{1})S$$ as well. By uniqueness of limits, $$(AB-\lambda_1\mathbf{1})S = \mathbf{1}$$. An identical computation — using that $$(AB)^m$$ commutes with $$AB-\lambda_1\mathbf{1}$$, being a power of $$AB$$ itself — gives $$S_N(AB-\lambda_1\mathbf{1}) = \mathbf{1} - (AB)^{N+1}/\lambda_1^{N+1} \to \mathbf{1}$$ and hence, by continuity of right multiplication by the fixed operator $$AB-\lambda_1\mathbf{1}$$, $$S(AB-\lambda_1\mathbf{1}) = \mathbf{1}$$. So $$S$$ is a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$, and $$\lambda_1$$ is in the resolvent set of $$AB$$.
+the middle terms ($$k=m=1,\ldots,N$$) telescoping away. Since $$\|(AB)^{N+1}\|/\lvert \lambda_1 \rvert^{N+1} \le C\lvert \lambda_2 \rvert^{N+1}/\lvert \lambda_1 \rvert^{N+1} = C(\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert)^{N+1} \to 0$$ as $$N \to \infty$$ (using the same bound as above, with $$\lvert \lambda_2 \rvert/\lvert \lambda_1 \rvert<1$$), we get $$(AB-\lambda_1\mathbf{1})S_N \to \mathbf{1}$$. On the other hand, left multiplication by the fixed bounded operator $$AB - \lambda_1\mathbf{1}$$ is continuous in the operator norm (for any $$T_1,T_2 \in \mathcal{B}(\mathbf{H})$$, $$\|(AB-\lambda_1\mathbf{1})T_1 - (AB-\lambda_1\mathbf{1})T_2\| \le \|AB-\lambda_1\mathbf{1}\|\,\|T_1-T_2\|$$, by [submultiplicativity](../spectral-theorems/#lmm:lemma-2)), so $$(AB-\lambda_1\mathbf{1})S_N \to (AB-\lambda_1\mathbf{1})S$$ as well. By uniqueness of limits, $$(AB-\lambda_1\mathbf{1})S = \mathbf{1}$$. An identical computation — using that $$(AB)^m$$ commutes with $$AB-\lambda_1\mathbf{1}$$, being a power of $$AB$$ itself — gives $$S_N(AB-\lambda_1\mathbf{1}) = \mathbf{1} - (AB)^{N+1}/\lambda_1^{N+1} \to \mathbf{1}$$ and hence, by continuity of right multiplication by the fixed operator $$AB-\lambda_1\mathbf{1}$$, $$S(AB-\lambda_1\mathbf{1}) = \mathbf{1}$$. So $$S$$ is a two-sided inverse of $$AB - \lambda_1\mathbf{1}$$, and $$\lambda_1$$ is in the resolvent set of $$AB$$.
 
 Since $$\lambda_1$$ with $$\lvert \lambda_1 \rvert > ST$$ was arbitrary, every such $$\lambda_1$$ is in the resolvent set of $$AB$$, so $$\sigma(AB) \subset \{ \lvert \lambda \rvert \le ST \}$$, giving $$R(AB) \le ST$$. As $$S > R(A)$$ and $$T > R(B)$$ were arbitrary, $$R(AB) \le R(A)R(B)$$.$$\blacksquare$$
 
@@ -2177,6 +2211,7 @@ The last property we need is that an operator commuting with $$A$$ preserves eve
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{../spectral-theorems/#lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{lmm:spectrum-compact-general} -->
+<!--  \uses{../spectral-theorems/#lmm:lemma-2} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$B \in \mathcal{B}(\mathbf{H})$$ commute with $$A$$. Then
 >
 > 1. $$B$$ commutes with $$f(A)$$ for every bounded measurable $$f$$ on $$\sigma(A)$$; and
@@ -2187,7 +2222,7 @@ The last property we need is that an operator commuting with $$A$$ preserves eve
 
 *Polynomials.* $$B$$ commutes with $$A$$ by hypothesis, hence with $$A^m$$ for every $$m$$ (induction: $$BA^{m+1} = (BA^m)A = (A^mB)A = A^m(BA) = A^m(AB) = A^{m+1}B$$) and hence, by linearity, with $$p(A)$$ for every polynomial $$p$$. So $$\mathcal{F}$$ contains all polynomials.
 
-*Continuous functions.* If $$f$$ is continuous on $$\sigma(A)$$, the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) supplies polynomials $$p_n \to f$$ uniformly on $$\sigma(A)$$; the functional calculus is isometric on continuous functions, so $$p_n(A) \to f(A)$$ in operator norm. Since multiplication by the fixed bounded operator $$B$$ is continuous in the operator norm (on either side, by submultiplicativity), passing to the limit in $$Bp_n(A) = p_n(A)B$$ gives $$Bf(A) = f(A)B$$. So $$\mathcal{F}$$ contains $$C^0(\sigma(A);\mathbb{C})$$.
+*Continuous functions.* If $$f$$ is continuous on $$\sigma(A)$$, the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) supplies polynomials $$p_n \to f$$ uniformly on $$\sigma(A)$$; the functional calculus is isometric on continuous functions, so $$p_n(A) \to f(A)$$ in operator norm. Since multiplication by the fixed bounded operator $$B$$ is continuous in the operator norm (on either side, by [submultiplicativity](../spectral-theorems/#lmm:lemma-2)), passing to the limit in $$Bp_n(A) = p_n(A)B$$ gives $$Bf(A) = f(A)B$$. So $$\mathcal{F}$$ contains $$C^0(\sigma(A);\mathbb{C})$$.
 
 *Bounded measurable functions.* We show $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits. The key is the following convergence fact, which we establish first: if $$\{f_i\}$$ are bounded measurable with $$\lvert f_i \rvert \le M$$ and $$f_i \to f$$ pointwise on $$\sigma(A)$$, then
 
@@ -2352,7 +2387,7 @@ $$
       + \lambda\big( A^{k-1}(A^*)^l - \lambda^{k-1}\overline\lambda^{\,l}\mathbf{1} \big)\psi
 $$
 
-holds. Indeed, expanding the right-hand side, the two $$\lambda A^{k-1}(A^*)^l\psi$$ terms cancel, leaving $$A^{k-1}(A^*)^lA\psi - \lambda^k\overline\lambda^{\,l}\psi$$; and $$A^{k-1}(A^*)^lA = A^k(A^*)^l$$, since $$A$$ commutes with $$A^*$$ by normality (so $$A$$ may be moved leftwards past each of the $$l$$ factors of $$A^*$$), giving the left-hand side. The first term has norm at most $$\left\| A \right\|^{k-1}\left\| A^* \right\|^l \left\| (A-\lambda\mathbf{1})\psi \right\| \le \left\| A \right\|^{k-1}\left\| A^* \right\|^l \varepsilon \left\| \psi \right\|$$, by submultiplicativity of the operator norm and the hypothesis on $$\psi$$. The second has norm at most $$\lvert \lambda \rvert c_{k-1,l}\varepsilon\left\| \psi \right\|$$, by the inductive hypothesis (applicable since $$(k-1)+l = N$$). So $$c_{kl} = \left\| A \right\|^{k-1}\left\| A^* \right\|^l + \lvert \lambda \rvert c_{k-1,l}$$ works. If $$k = 0$$, then $$l > 0$$, and the symmetric identity
+holds. Indeed, expanding the right-hand side, the two $$\lambda A^{k-1}(A^*)^l\psi$$ terms cancel, leaving $$A^{k-1}(A^*)^lA\psi - \lambda^k\overline\lambda^{\,l}\psi$$; and $$A^{k-1}(A^*)^lA = A^k(A^*)^l$$, since $$A$$ commutes with $$A^*$$ by normality (so $$A$$ may be moved leftwards past each of the $$l$$ factors of $$A^*$$), giving the left-hand side. The first term has norm at most $$\left\| A \right\|^{k-1}\left\| A^* \right\|^l \left\| (A-\lambda\mathbf{1})\psi \right\| \le \left\| A \right\|^{k-1}\left\| A^* \right\|^l \varepsilon \left\| \psi \right\|$$, by [submultiplicativity of the operator norm](../spectral-theorems/#lmm:lemma-2) and the hypothesis on $$\psi$$. The second has norm at most $$\lvert \lambda \rvert c_{k-1,l}\varepsilon\left\| \psi \right\|$$, by the inductive hypothesis (applicable since $$(k-1)+l = N$$). So $$c_{kl} = \left\| A \right\|^{k-1}\left\| A^* \right\|^l + \lvert \lambda \rvert c_{k-1,l}$$ works. If $$k = 0$$, then $$l > 0$$, and the symmetric identity
 
 $$
     \big( (A^*)^l - \overline\lambda^{\,l}\mathbf{1} \big)\psi
@@ -2546,6 +2581,7 @@ With the norm identity in hand, extending $$p \mapsto p(A,A^*)$$ from polynomial
 <!--  \uses{../spectral-theorems/#thrm:bounded-linear-transformation-theorem} -->
 <!--  \uses{lmm:spectrum-compact-general} -->
 <!--  \uses{../spectral-theorems/#lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{../spectral-theorems/#lmm:lemma-2} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be normal, with $$\mathbf{H} \ne \{0\}$$. There is a unique bounded linear map
 >
 > $$
@@ -2571,7 +2607,7 @@ By [**Lemma** *(The Spectrum of a Bounded Operator is a Compact Metric Measurabl
 
 *Extension.* $$\mathcal{P}$$ is a dense subspace of the normed space $$C^0(\sigma(A);\mathbb{C})$$, $$\mathcal{B}(\mathbf{H})$$ is a Banach space by [**Lemma** *(Bounded Operators form a Banach Space)*](../spectral-theorems/#lmm:bounded-operators-form-a-banach-space), and $$\Phi_A^0$$ is a bounded (indeed isometric, hence norm-$$1$$) linear map. By the [**Bounded Linear Transformation Theorem**](../spectral-theorems/#thrm:bounded-linear-transformation-theorem), $$\Phi_A^0$$ extends uniquely to a bounded linear map $$\Phi_A$$ on all of $$C^0(\sigma(A);\mathbb{C})$$, with the same norm; uniqueness of the extension is exactly the uniqueness claimed in the statement.
 
-*The properties.* Property 1 is linearity, part of the extension. For properties 2, 3, and 4, each is an identity between continuous functions of $$f$$ (and $$g$$) that holds on the dense subspace $$\mathcal{P}$$ and whose two sides are continuous in $$f$$ (and $$g$$): for property 2, both $$(f,g)\mapsto\Phi_A(fg)$$ and $$(f,g)\mapsto\Phi_A(f)\Phi_A(g)$$ are continuous, the former because $$\left\| fg - f'g' \right\|_\infty \to 0$$ when $$f\to f'$$, $$g \to g'$$ uniformly (all functions being bounded on the compact $$\sigma(A)$$) and $$\Phi_A$$ is bounded, the latter by submultiplicativity of the operator norm; on $$\mathcal{P}$$ the identity $$\Phi_A^0(pq) = \Phi_A^0(p)\Phi_A^0(q)$$ holds because substituting $$A$$ for $$\lambda$$ and $$A^*$$ for $$\overline\lambda$$ is multiplicative (the images commute, by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), which is what makes the substitution an algebra homomorphism). For property 3, $$f \mapsto \Phi_A(\overline f)$$ and $$f \mapsto \Phi_A(f)^*$$ are both continuous (the adjoint is isometric, so continuous), and agree on $$\mathcal{P}$$ by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal). Property 4 holds on $$\mathcal{P}$$ as shown, and both sides are continuous in $$f$$ (the left by boundedness of $$\Phi_A$$, the right because the supremum norm is continuous), so it holds throughout. Property 5 is immediate: the constant polynomial $$1$$ maps to $$\mathbf{1}$$ and $$p(\lambda,\overline\lambda)=\lambda$$ maps to $$A$$.
+*The properties.* Property 1 is linearity, part of the extension. For properties 2, 3, and 4, each is an identity between continuous functions of $$f$$ (and $$g$$) that holds on the dense subspace $$\mathcal{P}$$ and whose two sides are continuous in $$f$$ (and $$g$$): for property 2, both $$(f,g)\mapsto\Phi_A(fg)$$ and $$(f,g)\mapsto\Phi_A(f)\Phi_A(g)$$ are continuous, the former because $$\left\| fg - f'g' \right\|_\infty \to 0$$ when $$f\to f'$$, $$g \to g'$$ uniformly (all functions being bounded on the compact $$\sigma(A)$$) and $$\Phi_A$$ is bounded, the latter by [submultiplicativity of the operator norm](../spectral-theorems/#lmm:lemma-2); on $$\mathcal{P}$$ the identity $$\Phi_A^0(pq) = \Phi_A^0(p)\Phi_A^0(q)$$ holds because substituting $$A$$ for $$\lambda$$ and $$A^*$$ for $$\overline\lambda$$ is multiplicative (the images commute, by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal), which is what makes the substitution an algebra homomorphism). For property 3, $$f \mapsto \Phi_A(\overline f)$$ and $$f \mapsto \Phi_A(f)^*$$ are both continuous (the adjoint is isometric, so continuous), and agree on $$\mathcal{P}$$ by [**Lemma** *(Polynomials in a Normal Operator are Normal)*](#lmm:polynomials-in-normal-are-normal). Property 4 holds on $$\mathcal{P}$$ as shown, and both sides are continuous in $$f$$ (the left by boundedness of $$\Phi_A$$, the right because the supremum norm is continuous), so it holds throughout. Property 5 is immediate: the constant polynomial $$1$$ maps to $$\mathbf{1}$$ and $$p(\lambda,\overline\lambda)=\lambda$$ maps to $$A$$.
 
 Finally, if $$f$$ is real-valued then $$\overline f = f$$, so property 3 gives $$\Phi_A(f)^* = \Phi_A(f)$$; and for general $$f$$, properties 2 and 3 give $$\Phi_A(f)\Phi_A(f)^* = \Phi_A(f\overline f) = \Phi_A(\overline f f) = \Phi_A(f)^*\Phi_A(f)$$, so $$\Phi_A(f)$$ is normal.$$\blacksquare$$
 
@@ -3080,6 +3116,7 @@ We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Se
 <!--  \uses{def:range-of-an-unbounded-operator} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
 <!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{prpstn:polarization-identity} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$ and define
 >
 > $$
@@ -3118,7 +3155,7 @@ $$
     \left\| U\psi \right\|^2 = \left< (A+i\mathbf{1})\phi, (A+i\mathbf{1})\phi \right> = \left< (A-i\mathbf{1})\phi, (A-i\mathbf{1})\phi \right> = \left< \psi,\psi \right> = \left\| \psi \right\|^2.
 $$
 
-So $$U$$ preserves norms, hence is bounded with $$\left\| U \right\| = 1$$ (as $$\mathbf{H} \ne \{0\}$$; if $$\mathbf{H} = \{0\}$$ everything is trivial). A norm-preserving linear map preserves the inner product, by the polarization identity — the inner product is a fixed linear combination of the four quantities $$\left\| \phi \pm \psi \right\|^2$$, $$\left\| \phi \pm i\psi \right\|^2$$, each preserved by $$U$$ using linearity. Being also a bijection, $$U$$ is unitary in the sense of [Definition (Unitary Operator)](#def:unitary-operator).
+So $$U$$ preserves norms, hence is bounded with $$\left\| U \right\| = 1$$ (as $$\mathbf{H} \ne \{0\}$$; if $$\mathbf{H} = \{0\}$$ everything is trivial). By the consequence clause of [**Proposition** *(Polarization Identity for the Inner Product)*](#prpstn:polarization-identity), a norm-preserving linear map preserves the inner product, so $$U$$ does. Being also a bijection, $$U$$ is unitary in the sense of [Definition (Unitary Operator)](#def:unitary-operator).
 
 **Part 2.** For $$\psi \in \mathbf{H}$$, write $$A + i\mathbf{1} = (A - i\mathbf{1}) + 2i\mathbf{1}$$ and apply both sides to $$(A-i\mathbf{1})^{-1}\psi$$, using property (i):
 
