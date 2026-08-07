@@ -1118,11 +1118,18 @@ Recall that for $$\psi \in \mathbf{H}$$, $$\mu_\psi$$ denotes the [associated me
 
 The associated measures are finite, with total mass determined by $$\psi$$. The previous post's [**Theorem** *(Associated Measure)*](../spectral-theorems/#thrm:projection-valued-measures-associated-measure) supplies only that $$\mu_\psi$$ is a positive real-valued measure, so we record the total mass separately; it is used repeatedly below, both to apply convergence theorems that need a finite measure and to bound integrals.
 
+> **Convention** *(Standing Hypotheses for this Section)*
+<a name="conv:section-integration"></a>
+<!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
+<!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
+> Throughout this section, $$(X,\Omega(X))$$ denotes a measurable space and $$\mu$$ a projection-valued measure on $$\Omega(X)$$ with values in $$\mathcal{B}(\mathbf{H})$$; "measurable" means $$\Omega(X)$$-measurable. For $$\psi \in \mathbf{H}$$, $$\mu_\psi$$ denotes the associated measure $$E \mapsto \left< \psi, \mu(E)\psi \right>$$. Statements below that mention $$X$$, $$\Omega(X)$$, $$\mu$$ or $$\mu_\psi$$ without introducing them are to be read as carrying these as hypotheses; a formalization should take them as parameters of the corresponding result.
+
 > **Lemma** *(The Associated Measure has Total Mass $$\left\| \psi \right\|^2$$)*
 <a name="lmm:associated-measure-total-mass"></a>
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{conv:section-integration} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and $$\psi \in \mathbf{H}$$. Then
 >
 > $$
@@ -1142,6 +1149,7 @@ finite since $$\psi \in \mathbf{H}$$. The final claim follows since $$\mu_\psi$$
 
 > **Lemma** *(Norm Identity for the Bounded Integral)*
 <a name="lmm:norm-identity-bounded-integral"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-9.1} -->
@@ -1169,11 +1177,13 @@ If $$f$$ is *unbounded*, this identity suggests defining the domain of $$\int_X 
 
 > **Definition** *(Sesquilinear Form on a Subspace)*
 <a name="def:hall-sesquilinear-form-on-a-subspace"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-sesquilinear-form} -->
 > Let $$D$$ be a subspace of $$\mathbf{H}$$. A *sesquilinear form on $$D$$* is a map $$L : D \times D \to \mathbb{C}$$ that is conjugate-linear in its first argument and linear in its second argument. As with quadratic forms below, taking $$D = \mathbf{H}$$ recovers the previous post's [definition of a sesquilinear form](../spectral-theorems/#def:bounded-sesquilinear-form), and taking $$D$$ a closed subspace recovers that definition on the Hilbert space $$D$$.
 
 > **Definition** *(Quadratic Form on a Subspace)*
 <a name="def:hall-quadratic-form-on-a-subspace"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{def:hall-sesquilinear-form-on-a-subspace} -->
 <!--  \uses{../spectral-theorems/#def:bounded-quadratic-form} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
@@ -1200,6 +1210,7 @@ Two elementary facts about quadratic forms on a subspace, generalizing [**Propos
 
 > **Proposition** *(Properties of Quadratic Forms on a Subspace)*
 <a name="prpstn:quadratic-forms-on-a-subspace-properties"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 > Let $$D$$ be a subspace of $$\mathbf{H}$$, let $$Q$$ be a quadratic form on $$D$$, and let $$L$$ be its associated sesquilinear form.
 >
@@ -1261,6 +1272,7 @@ Since our forms are now defined on arbitrary subspaces, restriction to a smaller
 
 > **Lemma** *(Restriction of a Quadratic Form to a Subspace)*
 <a name="lmm:restriction-of-quadratic-form"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 > Let $$D' \subset D$$ be subspaces of $$\mathbf{H}$$ and $$Q$$ a quadratic form on $$D$$. Then $$Q\vert_{D'}$$ is a quadratic form on $$D'$$, and its associated sesquilinear form is the restriction to $$D' \times D'$$ of the sesquilinear form associated to $$Q$$.
 
@@ -1271,6 +1283,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Theorem** *(Monotone Convergence Theorem, for Integrals)*
 <a name="thrm:monotone-convergence-theorem-for-integrals"></a>
+<!--  \uses{conv:section-integration} -->
 > Let $$(X, \Omega, \nu)$$ be a measure space, and let $$\{ g_n \}_{n \in \mathbb{N}}$$ be a sequence of nonnegative measurable functions on $$X$$ with $$g_n(x) \le g_{n+1}(x)$$ for all $$x \in X$$ and all $$n$$, converging pointwise to a function $$g$$. Then
 >
 > $$
@@ -1281,10 +1294,12 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Theorem** *(Dominated Convergence Theorem)*
 <a name="thrm:dominated-convergence-theorem"></a>
+<!--  \uses{conv:section-integration} -->
 > Let $$(X,\Omega,\nu)$$ be a measure space and $$\{g_n\}$$ measurable complex-valued functions on $$X$$ converging pointwise to $$g$$, with $$\lvert g_n \rvert \le G$$ for all $$n$$ and some $$\nu$$-integrable $$G$$. Then $$g$$ and each $$g_n$$ are $$\nu$$-integrable and $$\int_X g_n \, d\nu \to \int_X g \, d\nu$$.
 
 > **Proposition** *(Basic Properties of the Integral, and Integration over a Subset)*
 <a name="prpstn:basic-integral-properties"></a>
+<!--  \uses{conv:section-integration} -->
 > Let $$(X,\Omega,\nu)$$ be a measure space.
 >
 > 1. *(Integration over a subset.)* For $$E \in \Omega$$ and $$g$$ measurable, $$\int_E g \, d\nu \equiv \int_X 1_E\,g \, d\nu$$, whenever the right-hand side is defined. This is the meaning of the notation $$\int_E g\,d\nu$$ throughout.
@@ -1294,6 +1309,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Proposition** *(Linearity of the Integral in the Measure)*
 <a name="prpstn:additivity-of-the-integral-in-the-measure"></a>
+<!--  \uses{conv:section-integration} -->
 > Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$, let $$c \ge 0$$ be a real constant, and let $$\nu + \nu'$$ and $$c\nu$$ denote the measures $$E \mapsto \nu(E)+\nu'(E)$$ and $$E \mapsto c\,\nu(E)$$ respectively. Then for every nonnegative measurable $$g$$ on $$X$$,
 >
 > $$
@@ -1306,10 +1322,12 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Proposition** *(Monotonicity of the Integral in the Measure)*
 <a name="prpstn:monotonicity-of-the-integral-in-the-measure"></a>
+<!--  \uses{conv:section-integration} -->
 > Let $$\nu, \nu'$$ be measures on $$(X, \Omega)$$ with $$\nu(E) \le \nu'(E)$$ for every $$E \in \Omega$$. Then $$\int_X g \, d\nu \le \int_X g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
 
 > **Definition** *($$L^2$$ of a Measure Space)*
 <a name="def:hall-a.46"></a>
+<!--  \uses{conv:section-integration} -->
 > Let $$(X,\Omega,\mu)$$ be a measure space and $$p \in \{1,2\}$$. Write
 >
 > $$
@@ -1334,6 +1352,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Proposition** *(Countable Additivity of the Integral over a Disjoint Cover)*
 <a name="prpstn:countable-additivity-of-the-integral"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$(X,\Omega,\nu)$$ be a measure space, $$g$$ a nonnegative measurable function on $$X$$, and $$\{ E_n \}_{n=1}^\infty$$ a pairwise disjoint sequence in $$\Omega$$ with $$\bigcup_n E_n = X$$. Then
 >
@@ -1345,6 +1364,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 
 > **Proposition** *(Integrals Agree when Measures Agree on a Set)*
 <a name="prpstn:integrals-agree-when-measures-agree"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 > Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and $$E \in \Omega$$, and suppose $$\nu(S) = \nu'(S)$$ for every measurable $$S \subset E$$. Then $$\int_E g \, d\nu = \int_E g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
 
@@ -1352,6 +1372,7 @@ We record two more facts about projection-valued measures before the main proof,
 
 > **Lemma** *(The Range of a Projection is the Kernel of its Complement)*
 <a name="lmm:range-of-projection-is-kernel"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
 > Let $$P \in \mathcal{B}(\mathbf{H})$$ be a bounded orthogonal projection. Then $$\text{Range}(P) = \text{Ker}(\mathbf{1} - P)$$, and this is a closed subspace of $$\mathbf{H}$$. Moreover $$\eta \in \text{Range}(P)$$ if and only if $$P\eta = \eta$$.
 
@@ -1365,6 +1386,7 @@ Closed subspaces recur as Hilbert spaces in their own right — the whole develo
 
 > **Lemma** *(A Closed Subspace is a Separable Hilbert Space)*
 <a name="lmm:closed-subspace-is-hilbert"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{thrm:sequential-closedness} -->
 > Let $$V$$ be a closed subspace of $$\mathbf{H}$$. Then $$V$$, with the inner product inherited from $$\mathbf{H}$$, is itself a separable, complex Hilbert space, and its norm is the restriction of the norm of $$\mathbf{H}$$.
 
@@ -1373,6 +1395,7 @@ The inner-product axioms hold on $$V$$ because they hold on $$\mathbf{H}$$ and $
 
 > **Lemma** *(Range Membership Concentrates the Associated Measure)*
 <a name="lmm:range-membership-concentrates-measure"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{lmm:range-of-projection-is-kernel} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
@@ -1395,6 +1418,7 @@ For the consequence: since $$g \ge 0$$ and the measure of $$E^c$$ under $$\mu_\e
 
 > **Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*
 <a name="lmm:norm-convergent-decomposition"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, and $$\{F_n\}_{n\in\mathbb{N}}$$ is a pairwise disjoint sequence in $$\Omega(X)$$ with $$\bigcup_n F_n = X$$. Then for every $$\psi \in \mathbf{H}$$:
 >
@@ -1410,6 +1434,7 @@ One more standard fact is needed before we can even state that $$Q_f(\psi) \equi
 
 > **Lemma** *($$L^2$$ Implies $$L^1$$ on a Finite Measure Space)*
 <a name="lmm:l2-implies-l1"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{def:hall-a.46} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
 > Suppose $$\nu$$ is a finite measure on $$(X,\Omega)$$ and $$h \in L^2(X,\nu)$$. Then $$h \in L^1(X,\nu)$$, with $$\int_X \lvert h \rvert \, d\nu \le \nu(X)^{1/2} \left( \int_X \lvert h \rvert^2 \, d\nu \right)^{1/2}$$.
@@ -1429,6 +1454,7 @@ We can now state and prove the central technical result of this section. It is t
 
 > **Proposition**
 <a name="prpstn:hall-10.2"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
@@ -1582,6 +1608,7 @@ The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \
 
 > **Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*
 <a name="lmm:bounded-on-set-range-in-domain"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
@@ -1603,6 +1630,7 @@ With **Proposition** *(hall-10.2)* established, we can now give the definition a
 
 > **Proposition**
 <a name="prpstn:hall-10.1"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
@@ -1654,6 +1682,7 @@ The next proposition records a natural compatibility check, confirming that [**P
 
 > **Proposition** *(Coincidence with the Bounded Integral)*
 <a name="prpstn:coincidence-with-the-bounded-integral"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 > If $$f$$ is bounded, then $$W_f = \mathbf{H}$$, and the operator $$\int_X f \, d\mu$$ of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1) coincides with the [bounded integral](../spectral-theorems/#thrm:operator-valued-integration) $$\int_X f \, d\mu \in \mathcal{B}(\mathbf{H})$$ of the previous post.
@@ -1665,6 +1694,7 @@ The integral is insensitive to changing the integrand on a set the projection-va
 
 > **Lemma** *(The Integral Ignores Null Sets)*
 <a name="lmm:integral-ignores-null-sets"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
@@ -1683,6 +1713,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 
 > **Lemma** *(Truncations Converge to the Unbounded Integral)*
 <a name="lmm:truncations-converge"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{thrm:dominated-convergence-theorem} -->
@@ -1729,6 +1760,7 @@ the first equality by [continuity of the inner product](../spectral-theorems/#pr
 
 > **Lemma** *(The Associated Measure of a Bounded-Calculus Image)*
 <a name="lmm:associated-measure-of-image"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-9.1} -->
@@ -1766,6 +1798,7 @@ We now extract, as a standalone lemma, the fact that $$A_f$$ preserves the spect
 
 > **Lemma** *(The Integral Preserves Spectral Subspaces on which the Integrand is Bounded)*
 <a name="lmm:integral-preserves-spectral-subspaces"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{lmm:bounded-on-set-range-in-domain} -->
@@ -1816,6 +1849,7 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 
 > **Proposition**
 <a name="prpstn:hall-10.3"></a>
+<!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{def:hall-9.2} -->
@@ -2634,10 +2668,15 @@ We now carry out the second stage: manufacturing a projection-valued measure fro
 
 Throughout this section, $$X$$ denotes a compact metric space, equipped with its Borel $$\sigma$$-algebra, so that "measurable" means "Borel-measurable"; this makes $$X$$ a compact metric measurable space in the sense used by the supporting lemmas of the previous post.
 
+> **Convention** *(Standing Hypotheses for this Section)*
+<a name="conv:section-abstract"></a>
+> Throughout this section, $$X$$ denotes a compact metric space carrying its Borel $$\sigma$$-algebra, and — from [Definition (Abstract Continuous Functional Calculus)](#def:abstract-continuous-functional-calculus) onwards — $$\Phi$$ denotes an abstract continuous functional calculus on $$X$$, $$\mu_\psi$$ the measures it induces, and $$\widetilde\Phi$$ its extended calculus. Statements below that mention $$X$$, $$\Phi$$, $$\mu_\psi$$ or $$\widetilde\Phi$$ without introducing them are to be read as carrying these as hypotheses; a formalization should take them as parameters of the corresponding result.
+
 > **Definition** *(Abstract Continuous Functional Calculus)*
 <a name="def:abstract-continuous-functional-calculus"></a>
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 <!--  \uses{thrm:continuous-functional-calculus-normal} -->
+<!--  \uses{conv:section-abstract} -->
 > Let $$X$$ be a compact metric space. An *abstract continuous functional calculus* on $$X$$ is a map $$\Phi : C^0(X;\mathbb{C}) \to \mathcal{B}(\mathbf{H})$$ satisfying, for all $$f,g \in C^0(X;\mathbb{C})$$ and $$\alpha,\beta\in\mathbb{C}$$:
 >
 > 1. $$\Phi(\alpha f + \beta g) = \alpha\Phi(f) + \beta\Phi(g)$$;
@@ -2652,6 +2691,7 @@ Our first observation is that such a $$\Phi$$ takes non-negative functions to no
 
 > **Lemma** *(An Abstract Calculus is Non-Negative)*
 <a name="lmm:abstract-calculus-non-negative"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{../spectral-theorems/#def:non-negative-operator} -->
 <!--  \uses{def:hall-9.1} -->
@@ -2675,6 +2715,7 @@ Non-negativity is exactly the hypothesis of the Riesz representation theorem, wh
 
 > **Definition** *(The Measures Associated to an Abstract Calculus)*
 <a name="def:abstract-associated-measures"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{lmm:abstract-calculus-non-negative} -->
 <!--  \uses{../spectral-theorems/#thrm:riesz-representation} -->
@@ -2694,9 +2735,10 @@ Non-negativity is exactly the hypothesis of the Riesz representation theorem, wh
 
 > **Lemma** *(The Abstract Associated Measures are Finite)*
 <a name="lmm:abstract-associated-measures-finite"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-associated-measures} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
-> For every $$\psi \in \mathbf{H}$$, $$\mu_\psi(X) = \left\| \psi \right\|^2 < \infty$$. In particular $$\mu_\psi$$ is a finite measure.
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$, with associated measures $$\mu_\psi$$. For every $$\psi \in \mathbf{H}$$, $$\mu_\psi(X) = \left\| \psi \right\|^2 < \infty$$. In particular $$\mu_\psi$$ is a finite measure.
 
 **Proof**
 Apply the defining property of $$\mu_\psi$$ to the constant function $$1 \in C^0(X;\mathbb{R})$$, and use property 5 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus):
@@ -2711,6 +2753,7 @@ The point of introducing the measures $$\mu_\psi$$ is that the right-hand side $
 
 > **Proposition** *(The Extended Forms are Bounded Quadratic Forms)*
 <a name="prpstn:abstract-extended-forms-are-bounded"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-associated-measures} -->
 <!--  \uses{lmm:abstract-associated-measures-finite} -->
 <!--  \uses{../spectral-theorems/#def:bounded-quadratic-form} -->
@@ -2749,6 +2792,7 @@ With the forms in hand, converting them back to operators is immediate, and defi
 
 > **Definition** *(The Extended Calculus)*
 <a name="def:abstract-extended-calculus"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
 > Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$ and let $$f : X \to \mathbb{C}$$ be bounded and measurable. By [**Proposition** *(The Extended Forms are Bounded Quadratic Forms)*](#prpstn:abstract-extended-forms-are-bounded), $$Q_f$$ is a bounded quadratic form, so by [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63) there is a unique $$\widetilde\Phi(f) \in \mathcal{B}(\mathbf{H})$$ with
@@ -2763,11 +2807,12 @@ Before going further we record that $$\widetilde\Phi$$ is linear — used repeat
 
 > **Lemma** *(The Extended Calculus is Linear)*
 <a name="lmm:abstract-extended-linear"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
-> For all bounded measurable $$f,g : X \to \mathbb{C}$$ and $$\alpha,\beta \in \mathbb{C}$$,
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. For all bounded measurable $$f,g : X \to \mathbb{C}$$ and $$\alpha,\beta \in \mathbb{C}$$,
 >
 > $$
 >     \widetilde\Phi(\alpha f + \beta g) = \alpha\widetilde\Phi(f) + \beta\widetilde\Phi(g).
@@ -2786,6 +2831,7 @@ We isolate two facts about $$\widetilde\Phi$$ that the rest of this section uses
 
 > **Lemma** *(Off-Diagonal Formula and Bounded Convergence for the Extended Calculus)*
 <a name="lmm:abstract-extended-convergence"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
@@ -2816,15 +2862,17 @@ The extended calculus inherits the algebraic properties of $$\Phi$$. Multiplicat
 
 > **Lemma** *(Real Functions Give Self-Adjoint Operators)*
 <a name="lmm:abstract-extended-real-self-adjoint"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
-> Let $$f : X \to \mathbb{C}$$ be bounded, measurable, and real-valued. Then $$\widetilde\Phi(f)$$ is self-adjoint.
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$, and let $$f : X \to \mathbb{C}$$ be bounded, measurable, and real-valued. Then $$\widetilde\Phi(f)$$ is self-adjoint.
 
 **Proof**
 Since $$f$$ is real-valued and each $$\mu_\psi$$ is a positive real measure, $$Q_f(\psi) = \int_X f\,d\mu_\psi \in \mathbb{R}$$ for every $$\psi$$. By the second clause of [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63) — a bounded quadratic form taking only real values corresponds to a self-adjoint operator — $$\widetilde\Phi(f)$$ is self-adjoint.$$\blacksquare$$
 
 > **Proposition** *(The Extended Calculus is Multiplicative)*
 <a name="prpstn:abstract-extended-multiplicative"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
@@ -2837,7 +2885,7 @@ Since $$f$$ is real-valued and each $$\mu_\psi$$ is a positive real measure, $$Q
 <!--  \uses{lmm:abstract-extended-linear} -->
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{lmm:abstract-extended-convergence} -->
-> For all bounded measurable $$f,g : X \to \mathbb{C}$$,
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. For all bounded measurable $$f,g : X \to \mathbb{C}$$,
 >
 > $$
 >     \widetilde\Phi(fg) = \widetilde\Phi(f)\widetilde\Phi(g).
@@ -2882,11 +2930,12 @@ By uniqueness of limits, $$\left< \phi, \widetilde\Phi(fg)\psi \right> = \left< 
 
 > **Lemma** *(The Extended Calculus Respects Conjugation)*
 <a name="lmm:abstract-extended-conjugation"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{lmm:abstract-extended-real-self-adjoint} -->
 <!--  \uses{lmm:abstract-extended-linear} -->
 <!--  \uses{../spectral-theorems/#thrm:hall-8.10} -->
-> For every bounded measurable $$f : X \to \mathbb{C}$$, $$\widetilde\Phi(\overline f) = \widetilde\Phi(f)^*$$.
+> Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. For every bounded measurable $$f : X \to \mathbb{C}$$, $$\widetilde\Phi(\overline f) = \widetilde\Phi(f)^*$$.
 
 **Proof**
 Write $$f = u + iv$$ with $$u = \tfrac{1}{2}(f+\overline f)$$ and $$v = \tfrac{1}{2i}(f - \overline f)$$ bounded, measurable, and real-valued. By [**Lemma** *(Real Functions Give Self-Adjoint Operators)*](#lmm:abstract-extended-real-self-adjoint), $$\widetilde\Phi(u)$$ and $$\widetilde\Phi(v)$$ are self-adjoint. By [**Lemma** *(The Extended Calculus is Linear)*](#lmm:abstract-extended-linear) and conjugate-linearity of the adjoint,
@@ -2899,6 +2948,7 @@ We can now assemble the projection-valued measure. This is the abstract form of 
 
 > **Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*
 <a name="thrm:abstract-calculus-yields-pvm"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{lmm:abstract-extended-convergence} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
@@ -2968,6 +3018,7 @@ The extended calculus is norm-bounded by the supremum norm. This is *not* suppli
 
 > **Corollary** *(The Extended Calculus is Norm-Bounded)*
 <a name="crllr:abstract-extended-norm-bound"></a>
+<!--  \uses{conv:section-abstract} -->
 <!--  \uses{thrm:abstract-calculus-yields-pvm} -->
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
