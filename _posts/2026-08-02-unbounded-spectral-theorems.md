@@ -3325,7 +3325,7 @@ $$
     A(U-\mathbf{1})\psi = i(U+\mathbf{1})(U-\mathbf{1})^{-1}(U-\mathbf{1})\psi = i(U+\mathbf{1})\psi.
 $$
 
-On the other hand, applying $$(\smile)$$ to $$\psi$$ and using $$\widetilde\Phi(1_{F_n}(\iota+1))\psi = (U+\mathbf{1})\psi$$ (same reasoning),
+On the other hand, $$\widetilde\Phi\big(1_{F_n}(\iota+1)\big)\psi = (U+\mathbf{1})\psi$$ for $$\psi \in \mathbf{H}_n$$. Indeed, multiplicativity and linearity give $$\widetilde\Phi\big(1_{F_n}(\iota+1)\big) = \mu^U(F_n)(U+\mathbf{1})$$, and $$(U+\mathbf{1})\psi \in \mathbf{H}_n$$ — because $$U$$ commutes with $$\mu^U(F_n)$$ (multiplicativity again, $$\iota\cdot 1_{F_n} = 1_{F_n}\cdot\iota$$), so $$\mu^U(F_n)U\psi = U\mu^U(F_n)\psi = U\psi$$, while $$\mu^U(F_n)\psi = \psi$$ — so $$\mu^U(F_n)$$ acts as the identity on it. Hence, applying $$(\smile)$$ to $$\psi$$,
 
 $$
     \widetilde\Phi(g)\,(U-\mathbf{1})\psi = \widetilde\Phi(g)\widetilde\Phi(h)\psi = i(U+\mathbf{1})\psi = A(U-\mathbf{1})\psi.
