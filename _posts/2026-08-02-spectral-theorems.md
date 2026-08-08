@@ -14,6 +14,11 @@ A note on conventions. Throughout this post, results that are standard and whose
 In this section we will state and prove the Spectral Theorem for bounded, self-adjoint operators. However, we must introduce "extensive machinery" before we are able to state and prove the theorem. To that end we begin by examining some properties of bounded operators.
 
 ## Elementary Properties of Bounded Operators
+In this section we will introduce and prove some relatively "elementary" properties of bounded operators that will be of use when proving the Spectral Theorem for bounded, self-adjoint operators. We begin by introducing some notation
+
+> **Definition** *(Bounded Operator Notation)*
+<a name="def:bounded-operator-notation"></a>
+> We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
 
 ### Preliminaries: Notation
 
@@ -24,12 +29,6 @@ Two pieces of notation are used pervasively throughout this post and are fixed h
 <!--  \uses{def:bounded-operator-notation} -->
 > 1. $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$ when $$\mathbf{H} \ne \{0\}$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$. For $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$, and for $$A \in \mathcal{B}(\mathbf{H})$$ the operator $$A - \lambda\mathbf{1}$$ is $$\psi \mapsto A\psi - \lambda\psi$$, again an element of $$\mathcal{B}(\mathbf{H})$$.
 > 2. If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, since $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
-
-In this section we will introduce and prove some relatively "elementary" properties of bounded operators that will be of use when proving the Spectral Theorem for bounded, self-adjoint operators. We begin by introducing some notation
-
-> **Definition** *(Bounded Operator Notation)*
-<a name="def:bounded-operator-notation"></a>
-> We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
 
 Before proceeding we record two elementary continuity properties of the Hilbert space norm and inner product. Both are used repeatedly throughout this post, and so we state them once here rather than re-deriving them at each point of use. Their proofs rest on two standard inequalities, which we state first.
 
@@ -52,7 +51,7 @@ Before proceeding we record two elementary continuity properties of the Hilbert 
 > Let $$V$$ be a normed space. Then for all $$\phi, \psi \in V$$
 >
 > $$
->     \left| \left\| \phi \right\| - \left\| \psi \right\| \right| \le \left\| \phi - \psi \right\|.
+>     \left\lvert \left\| \phi \right\| - \left\| \psi \right\| \right\rvert \le \left\| \phi - \psi \right\|.
 > $$
 
 With these stated, we turn to the continuity properties themselves.
@@ -70,7 +69,7 @@ With these stated, we turn to the continuity properties themselves.
 **Part 1:** By the [**Reverse Triangle Inequality**](#prpstn:reverse-triangle-inequality), for any $$n \in \mathbb{N}$$
 
 $$
-    \left| \left\| \psi_n \right\| - \left\| \psi \right\| \right| \le \left\| \psi_n - \psi \right\|.
+    \left\lvert \left\| \psi_n \right\| - \left\| \psi \right\| \right\rvert \le \left\| \psi_n - \psi \right\|.
 $$
 
 As $$\psi_n \rightarrow \psi$$ the righthand side tends to $$0$$, and hence $$\left\| \psi_n \right\| \rightarrow \left\| \psi \right\|$$, the desired **Part 1** result.
@@ -78,7 +77,7 @@ As $$\psi_n \rightarrow \psi$$ the righthand side tends to $$0$$, and hence $$\l
 **Part 2:** By the [**Cauchy–Schwarz Inequality**](#prpstn:hall-a.43), for any $$n \in \mathbb{N}$$
 
 $$
-    \left| \left< \psi_n, \phi \right> - \left< \psi, \phi \right> \right| = \left| \left< \psi_n - \psi, \phi \right> \right| \le \left\| \psi_n - \psi \right\| \left\| \phi \right\|,
+    \left\lvert \left< \psi_n, \phi \right> - \left< \psi, \phi \right> \right\rvert = \left\lvert \left< \psi_n - \psi, \phi \right> \right\rvert \le \left\| \psi_n - \psi \right\| \left\| \phi \right\|,
 $$
 
 where we have used the additivity of the inner product in its first argument. As $$\psi_n \rightarrow \psi$$ and $$\left\| \phi \right\|$$ is a fixed finite real number, the righthand side tends to $$0$$, giving the first claim. An identical argument, using additivity in the second argument, gives the second claim. This is the desired **Part 2** result.
@@ -103,7 +102,7 @@ Next we must prove that $$\mathcal{B}(\mathbf{H})$$ is a vector space. Consider 
 $$
 \begin{align}
     \|\alpha A + \beta B\| &\le \|\alpha A\| + \|\beta B\| \\
-                           &=    |\alpha| \, \|A\| + |\beta| \, \|B\| \\
+                           &=    \lvert \alpha \rvert \, \|A\| + \lvert \beta \rvert \, \|B\| \\
                            &< \infty,
 \end{align}
 $$
@@ -392,7 +391,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 > 2. For all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 >
 >    $$
->        \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left| f(\lambda) \right|,
+>        \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert,
 >    $$
 >
 >    where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
@@ -425,7 +424,7 @@ To streamline the proof of this theorem, we will introduce a few new terms
 > A *sesquilinear form* on a Hilbert space $$\mathbf{H}$$ is a map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ that is conjugate linear in the first factor and linear in the second factor. A sesquilinear form $$L$$ is a *bounded sesquilinear form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi, \psi \in \mathbf{H}$$
 >
 > $$
->     |L(\phi, \psi)| \le C \|\phi\| \, \|\psi\|,
+>     \lvert L(\phi, \psi) \rvert \le C \|\phi\| \, \|\psi\|,
 > $$
 >
 > where $$\mid\cdot\mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
@@ -450,7 +449,7 @@ To streamline the proof of this theorem, we will introduce a few new terms
 > A quadratic form $$Q$$ is a *bounded quadratic form* if there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 >
 > $$
->     |Q(\phi)| \le C \|\phi\|^2,
+>     \lvert Q(\phi) \rvert \le C \|\phi\|^2,
 > $$
 >
 > where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
@@ -513,7 +512,7 @@ To prove that this $$Q_{1_E}$$ is a bounded quadratic form we must prove that
 3. There exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
    $$
-       |Q_{1_E}(\phi)| \le C \|\phi\|^2,
+       \lvert Q_{1_E}(\phi) \rvert \le C \|\phi\|^2,
    $$
 
    where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
@@ -561,18 +560,18 @@ The definition of an inner product then implies that $$L_{1_E}(\phi, \psi)$$ is 
 Finally, to prove that $$Q_{1_E}$$ isn't only a quadratic form but is a bounded quadratic form we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
-    |Q_{1_E}(\phi)| \le C \|\phi\|^2.
+    \lvert Q_{1_E}(\phi) \rvert \le C \|\phi\|^2.
 $$
 
 Using the results of our previous derivation, the definition of an orthogonal projection, and standard properties of an inner product and its associated norm we have
 
 $$
 \begin{align}
-    |Q_{1_E}(\phi)| &= | \left< \phi, \mu(E) \phi \right> | \\
-                    &= | \left< \phi, \mu(E) \mu(E) \phi \right> | \\
-                    &= | \left< \phi, \mu(E)^* \mu(E) \phi \right> | \\
-                    &= | \left< \mu(E) \phi, \mu(E) \phi \right> | \\
-                    &= | \|\mu(E) \phi\|^2 | \\
+    \lvert Q_{1_E}(\phi) \rvert &= \lvert  \left< \phi, \mu(E) \phi \right>  \rvert \\
+                    &= \lvert  \left< \phi, \mu(E) \mu(E) \phi \right>  \rvert \\
+                    &= \lvert  \left< \phi, \mu(E)^* \mu(E) \phi \right>  \rvert \\
+                    &= \lvert  \left< \mu(E) \phi, \mu(E) \phi \right>  \rvert \\
+                    &= \lvert  \|\mu(E) \phi\|^2  \rvert \\
                     &= \|\mu(E) \phi\|^2 \\
                     &\le \|\phi\|^2,
 \end{align}
@@ -581,7 +580,7 @@ $$
 where the final inequality follows from the fact that $$\mu(E)$$ is an orthogonal projection. This proves that
 
 $$
-    |Q_{1_E}(\phi)| \le \|\phi\|^2,
+    \lvert Q_{1_E}(\phi) \rvert \le \|\phi\|^2,
 $$
 
 which implies that the constant required to prove that $$Q_{1_E}$$ is a bounded quadratic form is simply $$1$$. This concludes the proof of the indicator function result, $$Q_{1_E}$$ is a bounded quadratic form for any indicator function $$1_E$$.
@@ -619,9 +618,9 @@ First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. Thi
 $$
 \begin{align}
     Q_s(\lambda\psi) &= \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\lambda\psi) \\
-                     &= \sum_{i = 1}^n \alpha_i |\lambda|^2 Q_{1_{E_i}}(\psi) \\
-                     &= |\lambda|^2 \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\psi) \\
-                     &= |\lambda|^2 Q_s(\psi),
+                     &= \sum_{i = 1}^n \alpha_i \lvert \lambda \rvert^2 Q_{1_{E_i}}(\psi) \\
+                     &= \lvert \lambda \rvert^2 \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\psi) \\
+                     &= \lvert \lambda \rvert^2 Q_s(\psi),
 \end{align}
 $$
 
@@ -655,31 +654,31 @@ From our indicator function result we know that each $$L_{1_{E_i}}(\phi, \psi)$$
 Finally, we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
-    |Q_s(\phi)| \le C \|\phi\|^2.
+    \lvert Q_s(\phi) \rvert \le C \|\phi\|^2.
 $$
 
 This again follows from linearity and our indicator function result. We have
 
 $$
 \begin{align}
-  |Q_s(\phi)| &= \left| \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\phi) \right| \\
-              &\le \sum_{i = 1}^n \left| \alpha_i Q_{1_{E_i}}(\phi) \right| \\
-              &= \sum_{i = 1}^n \left|\alpha_i\right| \, \left| Q_{1_{E_i}}(\phi) \right| \\
-              &\le \sum_{i = 1}^n \left|\alpha_i\right| \|\phi\|^2 \\
-              &\le \left( \sum_{i = 1}^n \left|\alpha_i\right| \right) \|\phi\|^2.
+  \lvert Q_s(\phi) \rvert &= \left\lvert \sum_{i = 1}^n \alpha_i Q_{1_{E_i}}(\phi) \right\rvert \\
+              &\le \sum_{i = 1}^n \left\lvert \alpha_i Q_{1_{E_i}}(\phi) \right\rvert \\
+              &= \sum_{i = 1}^n \left\lvert\alpha_i\right\rvert \, \left\lvert Q_{1_{E_i}}(\phi) \right\rvert \\
+              &\le \sum_{i = 1}^n \left\lvert\alpha_i\right\rvert \|\phi\|^2 \\
+              &\le \left( \sum_{i = 1}^n \left\lvert\alpha_i\right\rvert \right) \|\phi\|^2.
 \end{align}
 $$
 
 This gives the desired result
 
 $$
-    |Q_s(\phi)| \le C \|\phi\|^2
+    \lvert Q_s(\phi) \rvert \le C \|\phi\|^2
 $$
 
 for
 
 $$
-    C = \sum_{i = 1}^n \left|\alpha_i\right|.
+    C = \sum_{i = 1}^n \left\lvert\alpha_i\right\rvert.
 $$
 
 This completes the proof that $$Q_s$$ is a bounded quadratic form for any simple function $$s$$.
@@ -704,16 +703,16 @@ $$
                      &= \int_X \lim\limits_{i \rightarrow \infty} s_i \, d\mu_{\lambda\psi} \\
                      &= \lim\limits_{i \rightarrow \infty} \int_X s_i \, d\mu_{\lambda\psi} \\
                      &= \lim\limits_{i \rightarrow \infty} Q_{s_i}(\lambda\psi) \\
-                     &= \lim\limits_{i \rightarrow \infty} \left|\lambda\right|^2 Q_{s_i}(\psi) \\
-                     &= \left|\lambda\right|^2 \lim\limits_{i \rightarrow \infty} Q_{s_i}(\psi) \\
-                     &= \left|\lambda\right|^2 Q_f(\psi),
+                     &= \lim\limits_{i \rightarrow \infty} \left\lvert\lambda\right\rvert^2 Q_{s_i}(\psi) \\
+                     &= \left\lvert\lambda\right\rvert^2 \lim\limits_{i \rightarrow \infty} Q_{s_i}(\psi) \\
+                     &= \left\lvert\lambda\right\rvert^2 Q_f(\psi),
 \end{align}
 $$
 
 where the second equality follows from the Complex-Valued Simple Approximation Theorem, the third from the fact that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ and thus the limit can be pulled out of the integral, the fourth from the definition of $$Q_{s_i}$$, the fifth from our simple function result, and the final as before from uniform convergence and the Complex-Valued Simple Approximation Theorem. So in summary we have proven that
 
 $$
-    Q_f(\lambda\psi) = \left|\lambda\right|^2 Q_f(\psi),
+    Q_f(\lambda\psi) = \left\lvert\lambda\right\rvert^2 Q_f(\psi),
 $$
 
 which is the first desired result.
@@ -767,7 +766,7 @@ which---as a result of our simple function proof that $$L_{s_i}(\phi, \psi)$$ is
 Finally, we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
-    |Q_f(\phi)| \le C \|\phi\|^2.
+    \lvert Q_f(\phi) \rvert \le C \|\phi\|^2.
 $$
 
 for all $$\phi \in \mathbf{H}$$. It is to this we now turn.
@@ -776,10 +775,10 @@ The definition of $$Q_f$$, triangle inequality for integrals, and the fact that 
 
 $$
 \begin{align}
-    \left| Q_f(\phi) \right| &= \left| \int_X f \, d\mu_\phi \right| \\
-                             &\le \int_X \left| f \right| \, d\mu_\phi \\
-                             &\le \int_X \left(  \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right) \, d\mu_\phi \\
-                             &= \left( \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right) \int_X d\mu_\phi.
+    \left\lvert Q_f(\phi) \right\rvert &= \left\lvert \int_X f \, d\mu_\phi \right\rvert \\
+                             &\le \int_X \left\lvert f \right\rvert \, d\mu_\phi \\
+                             &\le \int_X \left(  \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert \right) \, d\mu_\phi \\
+                             &= \left( \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert \right) \int_X d\mu_\phi.
 \end{align}
 $$
 
@@ -799,19 +798,19 @@ where the final step uses the definition of the Hilbert space norm in terms of t
 The previous two results together imply
 
 $$
-    \left| Q_f(\phi) \right| \le \left( \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right) \| \phi \|^2
+    \left\lvert Q_f(\phi) \right\rvert \le \left( \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert \right) \| \phi \|^2
 $$
 
 which, if we make the identification
 
 $$
-    C = \left( \sup\limits_{\lambda \in X} \left| f(\lambda) \right| \right),
+    C = \left( \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert \right),
 $$
 
 is nothing more than the statement that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
-    |Q_f(\phi)| \le C \|\phi\|^2
+    \lvert Q_f(\phi) \rvert \le C \|\phi\|^2
 $$
 
 for all $$\phi \in \mathbf{H}$$, the desired result.
@@ -860,12 +859,12 @@ $$
     &=
     \begin{aligned}[t]
         &\frac{1}{2} \left[ Q(2\psi) - 2Q(\psi) \right] \\
-        &-\frac{i}{2} \left[ Q((1 + i)\psi) - Q(\psi) - |i|^2 Q(\psi) \right]
+        &-\frac{i}{2} \left[ Q((1 + i)\psi) - Q(\psi) - \lvert i \rvert^2 Q(\psi) \right]
     \end{aligned} \\
     &=
     \begin{aligned}[t]
-        &\frac{1}{2} \left[ |2|^2Q(\psi) - 2Q(\psi) \right] \\
-        &-\frac{i}{2} \left[ |1 + i|^2Q(\psi) - 2Q(\psi) \right]
+        &\frac{1}{2} \left[ \lvert 2 \rvert^2Q(\psi) - 2Q(\psi) \right] \\
+        &-\frac{i}{2} \left[ \lvert 1 + i \rvert^2Q(\psi) - 2Q(\psi) \right]
     \end{aligned} \\
     &= Q(\psi),
 \end{align}
@@ -878,7 +877,7 @@ Let us next prove that if $$Q$$ is bounded, then $$L$$ is bounded.
 In this case by hypothesis $$Q$$ is bounded. Hence, there exists a $$C$$ in $$\mathbb{R}$$ such that
 
 $$
-    \left| Q(\psi) \right| \le C \|\psi\|^2
+    \left\lvert Q(\psi) \right\rvert \le C \|\psi\|^2
 $$
 
 for all $$\psi \in \mathbf{H}$$.
@@ -894,7 +893,7 @@ which implies $$\|\phi + \psi\| \le 2$$ as well as
 $$
 \begin{align}
     \|\phi + i\psi\| &\le \|\phi\| + \|i\psi\| \\
-                     &=    \|\phi\| + |i| \|\psi\| \\
+                     &=    \|\phi\| + \lvert i \rvert \|\psi\| \\
                      &=    \|\phi\| + \|\psi\| \\
                      &=    2,
 \end{align}
@@ -906,10 +905,10 @@ This, along with the definition of a norm and the fact that $$Q$$ is bounded, im
 
 $$
 \begin{align}
-    \left| L(\phi, \psi) \right| &= \left| \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] -\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right] \right| \\
-    &\le \frac{1}{2} \left[ \left|Q(\phi + \psi)\right| + \left|Q(\phi)\right| + \left|Q(\psi)\right| + \left|Q(\phi + i\psi)\right| + \left|Q(\phi)\right| + \left|Q(i\psi)\right| \right] \\
+    \left\lvert L(\phi, \psi) \right\rvert &= \left\lvert \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] -\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right] \right\rvert \\
+    &\le \frac{1}{2} \left[ \left\lvertQ(\phi + \psi)\right\rvert + \left\lvertQ(\phi)\right\rvert + \left\lvertQ(\psi)\right\rvert + \left\lvertQ(\phi + i\psi)\right\rvert + \left\lvertQ(\phi)\right\rvert + \left\lvertQ(i\psi)\right\rvert \right] \\
     &\le C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|i\psi\|^2 \right] \\
-    &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + |i|^2 \, \|\psi\|^2 \right] \\
+    &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \lvert i \rvert^2 \, \|\psi\|^2 \right] \\
     &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|\psi\|^2 \right] \\
     &\le C \frac{1}{2} \left[ 4 + 1 + 1 + 4 + 1 + 1 \right] \\
     &=   6C.
@@ -928,13 +927,13 @@ $$
 As the definition of a quadratic form implies that $$L$$ is sesquilinear, we thus have for these arbitrary $$\phi, \psi \in \mathbf{H}$$
 
 $$
-    \left|L(\phi, \psi)\right| = \|\phi\| \, \|\psi\| \, \left| L(\widehat{\phi}, \widehat{\psi}) \right| \le 6C \|\phi\| \, \|\psi\|,
+    \left\lvertL(\phi, \psi)\right\rvert = \|\phi\| \, \|\psi\| \, \left\lvert L(\widehat{\phi}, \widehat{\psi}) \right\rvert \le 6C \|\phi\| \, \|\psi\|,
 $$
 
 where the inequality follows from our previous result. Thus we have proven the second desired result
 
 $$
-    \left|L(\phi, \psi)\right| \le 6C \|\phi\| \, \|\psi\|,
+    \left\lvertL(\phi, \psi)\right\rvert \le 6C \|\phi\| \, \|\psi\|,
 $$
 
 that $$L$$ is bounded.
@@ -974,8 +973,8 @@ Finally, as $$Q$$ is a quadratic form, and thus satisfies $$Q(\lambda\psi) = \mi
 $$
 \begin{align}
     M(i\phi, i\psi) &= \frac{1}{2} \left[ Q(i\phi + i\psi) - Q(i\phi) - Q(i\psi) \right] \\
-                    &= \frac{1}{2} \left[ Q(i(\phi + \psi)) - |i|^2Q(\phi) - |i|^2Q(\psi) \right] \\
-                    &= \frac{1}{2} \left[ |i|^2Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
+                    &= \frac{1}{2} \left[ Q(i(\phi + \psi)) - \lvert i \rvert^2Q(\phi) - \lvert i \rvert^2Q(\psi) \right] \\
+                    &= \frac{1}{2} \left[ \lvert i \rvert^2Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
                     &= \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] \\
                     &= M(\phi, \psi),
 \end{align}
@@ -1041,7 +1040,7 @@ The next in the set of "helper" propositions that we will prove is the propositi
 By hypothesis $$Q$$ is a bounded quadratic form. Hence, as a result of the [**Proposition**](#prpstn:hall-a.61) we just proved, the sesquilinear form associated to $$Q$$ is bounded. This implies that there exists a constant $$C$$ in $$\mathbb{R}$$ such that
 
 $$
-    \left| L(\phi, \psi) \right| \le C \|\phi\| \, \|\psi\|,
+    \left\lvert L(\phi, \psi) \right\rvert \le C \|\phi\| \, \|\psi\|,
 $$
 
 for all $$\phi, \psi \in \mathbf{H}$$.
@@ -1053,25 +1052,25 @@ Explicitly, $$\psi \mapsto L(\phi, \psi)$$ is linear as a result of $$Q$$ being 
 Furthermore, the definition of operator norm implies
 
 $$
-    \|L(\phi, \cdot)\| \equiv \sup\limits_{\|\psi\| = 1} |L(\phi, \psi)|.
+    \|L(\phi, \cdot)\| \equiv \sup\limits_{\|\psi\| = 1} \lvert L(\phi, \psi) \rvert.
 $$
 
 The fact that $$L$$ is bounded as a sesquilinear form implies
 
 $$
-    \left| L(\phi, \psi) \right| \le C \|\phi\| \, \|\psi\|,
+    \left\lvert L(\phi, \psi) \right\rvert \le C \|\phi\| \, \|\psi\|,
 $$
 
 for our fixed $$\phi$$ and any $$\psi \in \mathbf{H}$$. So for any $$\psi$$ such that $$\|\psi\| = 1$$
 
 $$
-    \left| L(\phi, \psi) \right| \le C \|\phi\|.
+    \left\lvert L(\phi, \psi) \right\rvert \le C \|\phi\|.
 $$
 
 Hence, these together imply
 
 $$
-    \|L(\phi, \cdot)\| \equiv \sup\limits_{\|\psi\| = 1} |L(\phi, \psi)| \le C \|\phi\|,
+    \|L(\phi, \cdot)\| \equiv \sup\limits_{\|\psi\| = 1} \lvert L(\phi, \psi) \rvert \le C \|\phi\|,
 $$
 
 the desired result.
@@ -1271,7 +1270,7 @@ which is the desired result.
 **Property 2:** The next result we must prove is that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 
 $$
-    \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left| f(\lambda) \right|,
+    \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert,
 $$
 
 where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
@@ -1279,9 +1278,9 @@ where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm o
 To prove this we will first prove a "utility" lemma that will aid our argument.
 
 > **Lemma**
-> <a name="lmm:lemma2-of-operator-valued-integration"></a>
-> <!--  \uses{def:projection-valued-measure} -->
-> <!--  \uses{def:bounded-operator-notation} -->
+<a name="lmm:lemma2-of-operator-valued-integration"></a>
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{def:bounded-operator-notation} -->
 > Let $$X$$ be a set with $$\sigma$$-algebra $$\Omega(X)$$, and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. If $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ are a finite set of elements that are pairwise disjoint and satisfy
 >
 > $$
@@ -1407,10 +1406,10 @@ Obviously $$\|\chi_0\| = 1$$. With this form for $$\chi_0$$ the definitions of n
 
 $$
 \begin{align}
-    \left| \left< \chi_0, \psi \right> \right| &= \left| \left< \frac{\psi}{\|\psi\|}, \psi \right> \right| \\
-                                            &= \left| \frac{1}{\|\psi\|} \left< \psi, \psi \right> \right| \\
-                                            &= \frac{1}{\|\psi\|} \left| \left< \psi, \psi \right> \right| \\
-                                            &= \frac{1}{\|\psi\|} \left| \|\psi\|^2 \right| \\
+    \left\lvert \left< \chi_0, \psi \right> \right\rvert &= \left\lvert \left< \frac{\psi}{\|\psi\|}, \psi \right> \right\rvert \\
+                                            &= \left\lvert \frac{1}{\|\psi\|} \left< \psi, \psi \right> \right\rvert \\
+                                            &= \frac{1}{\|\psi\|} \left\lvert \left< \psi, \psi \right> \right\rvert \\
+                                            &= \frac{1}{\|\psi\|} \left\lvert \|\psi\|^2 \right\rvert \\
                                             &= \frac{1}{\|\psi\|} \|\psi\|^2 \\
                                             &= \|\psi\|.
 \end{align}
@@ -1517,20 +1516,20 @@ Now using the definition of a norm and applying [**Cauchy–Schwarz**](#prpstn:h
 
 $$
 \begin{align}
-    \left| \left< \phi, A_s \psi \right> \right| &= \left| \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right| \\
-                                                 &\le \sum_{i = 1}^n \left| c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right| \\
-                                                 &= \sum_{i = 1}^n \left| c_i \right| \, \left| \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right| \\
-                                                 &\le \sum_{i = 1}^n \left| c_i \right| \left\| \mu(E_i) \phi \right\| \left\| \mu(E_i) \psi \right\| \\
-                                                 &\le \left( \max_i \left| c_i \right| \right)  \sum_{i = 1}^n \left\| \mu(E_i) \phi \right\| \left\| \mu(E_i) \psi \right\| \\
-                                                 &\le \left( \max_i \left| c_i \right| \right) \left( \sum_{i = 1}^n \left\| \mu(E_i) \phi \right\|^2 \right)^{1/2} \left( \sum_{i = 1}^n \left\| \mu(E_i) \psi \right\|^2 \right)^{1/2} \\
-                                                 &= \left( \max_i \left| c_i \right| \right) \|\phi\| \, \|\psi\|,
+    \left\lvert \left< \phi, A_s \psi \right> \right\rvert &= \left\lvert \sum_{i = 1}^n c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right\rvert \\
+                                                 &\le \sum_{i = 1}^n \left\lvert c_i \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right\rvert \\
+                                                 &= \sum_{i = 1}^n \left\lvert c_i \right\rvert \, \left\lvert \left< \mu(E_i) \phi, \mu(E_i) \psi \right> \right\rvert \\
+                                                 &\le \sum_{i = 1}^n \left\lvert c_i \right\rvert \left\| \mu(E_i) \phi \right\| \left\| \mu(E_i) \psi \right\| \\
+                                                 &\le \left( \max_i \left\lvert c_i \right\rvert \right)  \sum_{i = 1}^n \left\| \mu(E_i) \phi \right\| \left\| \mu(E_i) \psi \right\| \\
+                                                 &\le \left( \max_i \left\lvert c_i \right\rvert \right) \left( \sum_{i = 1}^n \left\| \mu(E_i) \phi \right\|^2 \right)^{1/2} \left( \sum_{i = 1}^n \left\| \mu(E_i) \psi \right\|^2 \right)^{1/2} \\
+                                                 &= \left( \max_i \left\lvert c_i \right\rvert \right) \|\phi\| \, \|\psi\|,
 \end{align}
 $$
 
 where in the final step we employed the second result of [**Lemma**](#lmm:lemma2-of-operator-valued-integration). So in summary
 
 $$
-    \left| \left< \phi, A_s \psi \right> \right| \le \left( \max_i \left| c_i \right| \right) \|\phi\| \, \|\psi\|
+    \left\lvert \left< \phi, A_s \psi \right> \right\rvert \le \left( \max_i \left\lvert c_i \right\rvert \right) \|\phi\| \, \|\psi\|
 $$
 
 for all $$\phi, \psi \in \mathbf{H}$$.
@@ -1538,29 +1537,29 @@ for all $$\phi, \psi \in \mathbf{H}$$.
 As a result of [**Lemma**](#lmm:lemma-1) we can write the operator norm of $$A_s$$ as follows
 
 $$
-    \|A_s\| = \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left| \left< \phi, A_s \psi \right> \right|.
+    \|A_s\| = \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left\lvert \left< \phi, A_s \psi \right> \right\rvert.
 $$
 
 Hence, our result implies
 
 $$
 \begin{align}
-    \|A_s\| &= \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left| \left< \phi, A_s \psi \right> \right| \\
-            &\le \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left( \max_i \left| c_i \right| \right) \|\phi\| \, \|\psi\| \\
-            &= \left( \max_i \left| c_i \right| \right).
+    \|A_s\| &= \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left\lvert \left< \phi, A_s \psi \right> \right\rvert \\
+            &\le \sup_{\|\phi\| = 1 \text{ } \|\psi\| = 1} \left( \max_i \left\lvert c_i \right\rvert \right) \|\phi\| \, \|\psi\| \\
+            &= \left( \max_i \left\lvert c_i \right\rvert \right).
 \end{align}
 $$
 
 Obviously
 
 $$
-    \sup_{\lambda \in X} | s(\lambda) | = \max_i \left| c_i \right|.
+    \sup_{\lambda \in X} \lvert  s(\lambda)  \rvert = \max_i \left\lvert c_i \right\rvert.
 $$
 
 Hence, we have proven the desired result
 
 $$
-    \|A_s\|  \le \sup_{\lambda \in X} | s(\lambda) |
+    \|A_s\|  \le \sup_{\lambda \in X} \lvert  s(\lambda)  \rvert
 $$
 
 for our simple function $$s$$. What remains to do is to generalize this to a bounded, measurable, complex-valued function $$f$$.
@@ -1588,7 +1587,7 @@ $$
 However, the result we just proved for simple functions implies
 
 $$
-    \|A_{s_i - s_j}\| \le \sup_{\lambda \in X} | s_i(\lambda) - s_j(\lambda) |.
+    \|A_{s_i - s_j}\| \le \sup_{\lambda \in X} \lvert  s_i(\lambda) - s_j(\lambda)  \rvert.
 $$
 
 This in turn implies
@@ -1596,7 +1595,7 @@ This in turn implies
 $$
 \begin{align}
     \|A_{s_i} - A_{s_j}\| &= \|A_{s_i - s_j}\| \\
-                          &\le \sup_{\lambda \in X} | s_i(\lambda) - s_j(\lambda) |.
+                          &\le \sup_{\lambda \in X} \lvert  s_i(\lambda) - s_j(\lambda)  \rvert.
 \end{align}
 $$
 
@@ -1604,8 +1603,8 @@ However, the definition of a norm implies
 
 $$
 \begin{align}
-    | s_i(\lambda) - s_j(\lambda) | &=   | (f(\lambda) - s_j(\lambda)) - (f(\lambda) - s_i(\lambda))| \\
-                                    &\le | f(\lambda) - s_j(\lambda) | + | f(\lambda) - s_i(\lambda) |.
+    \lvert  s_i(\lambda) - s_j(\lambda)  \rvert &=   \lvert  (f(\lambda) - s_j(\lambda)) - (f(\lambda) - s_i(\lambda)) \rvert \\
+                                    &\le \lvert  f(\lambda) - s_j(\lambda)  \rvert + \lvert  f(\lambda) - s_i(\lambda)  \rvert.
 \end{align}
 $$
 
@@ -1614,23 +1613,23 @@ Hence, we can continue our derivation
 $$
 \begin{align}
     \|A_{s_i} - A_{s_j}\| &= \|A_{s_i - s_j}\| \\
-                          &\le \sup_{\lambda \in X} | s_i(\lambda) - s_j(\lambda) | \\
-                          &\le \sup_{\lambda \in X} \left( | f(\lambda) - s_j(\lambda) | + | f(\lambda) - s_i(\lambda) | \right) \\
-                          &\le \sup_{\lambda \in X} | f(\lambda) - s_j(\lambda) | + \sup_{\lambda \in X} | f(\lambda) - s_i(\lambda) |.
+                          &\le \sup_{\lambda \in X} \lvert  s_i(\lambda) - s_j(\lambda)  \rvert \\
+                          &\le \sup_{\lambda \in X} \left( \lvert  f(\lambda) - s_j(\lambda)  \rvert + \lvert  f(\lambda) - s_i(\lambda)  \rvert \right) \\
+                          &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_j(\lambda)  \rvert + \sup_{\lambda \in X} \lvert  f(\lambda) - s_i(\lambda)  \rvert.
 \end{align}
 $$
 
 However, as the sequence $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$k \ge N$$
 
 $$
-    \sup_{\lambda \in X}  | f(\lambda) - s_k(\lambda) | < \frac{\epsilon}{2}.
+    \sup_{\lambda \in X}  \lvert  f(\lambda) - s_k(\lambda)  \rvert < \frac{\epsilon}{2}.
 $$
 
 This along with our previous derivation allows us to conclude that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i, j \ge N$$ we have
 
 $$
 \begin{align}
-    \|A_{s_i} - A_{s_j}\| &\le \sup_{\lambda \in X} | f(\lambda) - s_j(\lambda) | + \sup_{\lambda \in X} | f(\lambda) - s_i(\lambda) | \\
+    \|A_{s_i} - A_{s_j}\| &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_j(\lambda)  \rvert + \sup_{\lambda \in X} \lvert  f(\lambda) - s_i(\lambda)  \rvert \\
                           &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
                           &= \epsilon.
 \end{align}
@@ -1643,47 +1642,47 @@ By construction each $$A_{s_i}$$ is an element of $$\mathcal{B}(\mathbf{H})$$. H
 As the sequence $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$k \ge N$$
 
 $$
-    \sup_{\lambda \in X}  | f(\lambda) - s_k(\lambda) | < \epsilon.
+    \sup_{\lambda \in X}  \lvert  f(\lambda) - s_k(\lambda)  \rvert < \epsilon.
 $$
 
 Hence, using the definition of a norm, we can conclude that for all $$k \ge N$$
 
 $$
 \begin{align}
-    \sup_{\lambda \in X} | s_k(\lambda) | &=   \sup_{\lambda \in X} | f(\lambda) - (f(\lambda) - s_k(\lambda)) | \\
-                                          &\le \sup_{\lambda \in X} | f(\lambda) | + | f(\lambda) - s_k(\lambda) | \\
-                                          &\le \sup_{\lambda \in X} | f(\lambda) | + \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | \\
-                                          &< \sup_{\lambda \in X} | f(\lambda) | + \epsilon.
+    \sup_{\lambda \in X} \lvert  s_k(\lambda)  \rvert &=   \sup_{\lambda \in X} \lvert  f(\lambda) - (f(\lambda) - s_k(\lambda))  \rvert \\
+                                          &\le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert + \lvert  f(\lambda) - s_k(\lambda)  \rvert \\
+                                          &\le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert + \sup_{\lambda \in X} \lvert  f(\lambda) - s_k(\lambda)  \rvert \\
+                                          &< \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert + \epsilon.
 \end{align}
 $$
 
 This implies
 
 $$
-    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | \le \sup_{\lambda \in X} | f(\lambda) |.
+    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
 $$
 
 We can also create a similar derivation switching the roles of $$s_k$$ and $$f$$ as follows
 
 $$
 \begin{align}
-    \sup_{\lambda \in X} | f(\lambda) | &= \sup_{\lambda \in X} | (f(\lambda) - s_k(\lambda)) + s_k(\lambda) | \\
-                                        &\le \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | +  | s_k(\lambda) | \\
-                                        &\le \sup_{\lambda \in X} | f(\lambda) - s_k(\lambda) | +  \sup_{\lambda \in X} | s_k(\lambda) | \\
-                                        &< \epsilon +  \sup_{\lambda \in X} | s_k(\lambda) |.
+    \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert &= \sup_{\lambda \in X} \lvert  (f(\lambda) - s_k(\lambda)) + s_k(\lambda)  \rvert \\
+                                        &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_k(\lambda)  \rvert +  \lvert  s_k(\lambda)  \rvert \\
+                                        &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_k(\lambda)  \rvert +  \sup_{\lambda \in X} \lvert  s_k(\lambda)  \rvert \\
+                                        &< \epsilon +  \sup_{\lambda \in X} \lvert  s_k(\lambda)  \rvert.
 \end{align}
 $$
 
 This implies
 
 $$
-    \sup_{\lambda \in X} | f(\lambda) | \le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) |.
+    \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert \le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert.
 $$
 
 The last two conclusions imply
 
 $$
-    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | = \sup_{\lambda \in X} | f(\lambda) |.
+    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert = \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
 $$
 
 Now tying the last results together
@@ -1691,16 +1690,16 @@ Now tying the last results together
 $$
 \begin{align}
     \|A_s\| &=   \lim_{i \rightarrow \infty} \| A_{s_i} \| \\
-            &\le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | s_i(\lambda) | \\
-            &= \lim_{i \rightarrow \infty} \sup_{\lambda \in X} | f(\lambda) | \\
-            &= \sup_{\lambda \in X} | f(\lambda) |.
+            &\le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert \\
+            &= \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert \\
+            &= \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
 \end{align}
 $$
 
 In other words
 
 $$
-    \|A_s\| \le \sup_{\lambda \in X} | f(\lambda) |.
+    \|A_s\| \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
 $$
 
 As
@@ -1712,7 +1711,7 @@ $$
 this is almost the desired result
 
 $$
-    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} | f(\lambda) |.
+    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
 $$
 
 We simply need to identify $$A_f$$ with $$A_s$$ and we will have completed the proof. It is to this we now turn.
@@ -1779,7 +1778,7 @@ $$
 and thus the desired relation
 
 $$
-    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} | f(\lambda) |,
+    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert,
 $$
 
 is proven.
@@ -1862,7 +1861,7 @@ $$
 \begin{align}
     \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\|
     &= \left\| \int_X ( f - s_i ) \, d\mu \right\| \\
-    &\le \sup\limits_{\lambda \in X} | f(\lambda) - s_i(\lambda) |,
+    &\le \sup\limits_{\lambda \in X} \lvert  f(\lambda) - s_i(\lambda)  \rvert,
 \end{align}
 $$
 
@@ -1880,14 +1879,14 @@ $$
 \begin{align}
     \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\|
     &= \left\| \int_X (fg - s_i r_j) \, d\mu \right\| \\
-    &\le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) |
+    &\le \sup\limits_{\lambda \in X} \lvert  f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda)  \rvert
 \end{align}
 $$
 
 where in the final step we employed our **Property 2** result. Looking at this result and our previous similar result, one concludes that if we can prove that given any $$\epsilon > 0$$, there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
 
 $$
-    \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) | < \epsilon,
+    \sup\limits_{\lambda \in X} \lvert  f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda)  \rvert < \epsilon,
 $$
 
 then we can conclude that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
@@ -1896,16 +1895,16 @@ One can prove this desired convergence as follows. Consider any $$s_i$$ and $$r_
 
 $$
 \begin{align}
-    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| &=   |s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) + f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \\
-                                                      &\le |s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda)| + |f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \\
-                                                      &= |r_j(\lambda)| \, |s_i(\lambda) - f(\lambda)| + |f(\lambda)| \, |r_j(\lambda) - g(\lambda)|.
+    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert &=   \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) + f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert \\
+                                                      &\le \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) \rvert + \lvert f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert \\
+                                                      &= \lvert r_j(\lambda) \rvert \, \lvert s_i(\lambda) - f(\lambda) \rvert + \lvert f(\lambda) \rvert \, \lvert r_j(\lambda) - g(\lambda) \rvert.
 \end{align}
 $$
 
 As $$f$$ is bounded and $$r_j$$ is a simple function, their suprema are finite numbers. This allows us to continue this derivation as follows
 
 $$
-    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)| \le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)|.
+    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert \le \left( \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert.
 $$
 
 Now as $$g$$ is bounded there exists a real constant $$M_g$$ such that
@@ -1953,22 +1952,22 @@ In other words there is a bound $$C$$ on the $$r_j$$ that holds uniformly for al
 Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists an $$N$$ such that for all $$i \ge N$$ one has
 
 $$
-    \sup\limits_{\lambda \in X} |s_i(\lambda) - f(\lambda)| < \left( \frac{\epsilon}{2 C} \right).
+    \sup\limits_{\lambda \in X} \lvert s_i(\lambda) - f(\lambda) \rvert < \left( \frac{\epsilon}{2 C} \right).
 $$
 
 Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
-    \sup\limits_{\lambda \in X} |r_j(\lambda) - g(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} |f(\lambda)| \right) \right. .
+    \sup\limits_{\lambda \in X} \lvert r_j(\lambda) - g(\lambda) \rvert < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \right. .
 $$
 
 This implies that for all $$i,j \ge \max(N,M)$$ we have
 
 $$
 \begin{align}
-    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)|
-    &\le \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
-    &<   \left( \sup\limits_{\lambda \in X} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2 C} \right) + \left( \sup\limits_{\lambda \in X} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} |f(\lambda)|} \right) \\
+    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
+    &\le \left( \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert \\
+    &<   \left( \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \right) \left( \frac{\epsilon}{2 C} \right) + \left( \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert} \right) \\
     &\le \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
     &= \epsilon,
 \end{align}
@@ -1983,13 +1982,13 @@ $$
 This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
 
 $$
-    \sup\limits_{\lambda \in X} |f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda)| < \epsilon.
+    \sup\limits_{\lambda \in X} \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda) \rvert < \epsilon.
 $$
 
 This along with our previous result
 
 $$
-    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| \le \sup\limits_{\lambda \in X} | f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) |
+    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| \le \sup\limits_{\lambda \in X} \lvert  f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda)  \rvert
 $$
 
 implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
@@ -2756,7 +2755,7 @@ Combining **Part 1** through **Part 4**, $$\sigma(A)$$ is a non-empty, compact m
 > For any $$A \in \mathcal{B}(\mathbf{H})$$ the *spectral radius* $$R(A)$$ of $$A$$ is defined by
 >
 > $$
->     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} |\lambda|.
+>     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} \lvert \lambda \rvert.
 > $$
 >
 > Note that as a result of [**Proposition**](#prpstn:hall-7.5), $$\sigma(A)$$ is a closed, bounded, and non-empty subset $$\mathbb{C}$$. Hence, $$R(A)$$ is a finite real number.
@@ -2783,7 +2782,7 @@ By definition the spectrum $$\sigma(A)$$ of $$A$$ is the complement of the resol
 Hence, for all $$\lambda \in \sigma(A)$$ it follows that $$\lvert \lambda \rvert \le \|A\|$$. This then implies
 
 $$
-    R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} |\lambda| \le \|A\|,
+    R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} \lvert \lambda \rvert \le \|A\|,
 $$
 
 the desired result.$$\blacksquare$$
@@ -2855,9 +2854,9 @@ Using the alternative means of expressing the operator norm derived in [**Lemma*
 
 $$
 \begin{align}
-    \|A^*A\| &= \sup\limits_{\|\phi\| = \|\psi\| = 1} \left| \left< \phi, A^*A\psi \right> \right| \\
-             &= \sup\limits_{\|\phi\| = \|\psi\| = 1} \left| \left< A\phi, A\psi \right> \right| \\
-             &\ge \sup\limits_{\|\psi\| = 1} \left| \left< A\psi, A\psi \right> \right| \\
+    \|A^*A\| &= \sup\limits_{\|\phi\| = \|\psi\| = 1} \left\lvert \left< \phi, A^*A\psi \right> \right\rvert \\
+             &= \sup\limits_{\|\phi\| = \|\psi\| = 1} \left\lvert \left< A\phi, A\psi \right> \right\rvert \\
+             &\ge \sup\limits_{\|\psi\| = 1} \left\lvert \left< A\psi, A\psi \right> \right\rvert \\
              &= \sup\limits_{\|\psi\| = 1} \left\| A\psi \right\|^2 \\
              &= \|A\|^2,
 \end{align}
@@ -2992,24 +2991,24 @@ Consider the limit
 $$
 \begin{align}
     \lim\limits_{n \rightarrow \infty} \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\|
-    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A^{2^n} \right\| \\
-    &= \lim\limits_{n \rightarrow \infty} \left| \frac{1}{\lambda^{2^n + 1}} \right| \left\| A \right\|^{2^n}  \\
-    &= \lim\limits_{n \rightarrow \infty} \frac{1}{| \lambda |}  \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n} \\
-    &= \frac{1}{| \lambda |} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n}.
+    &= \lim\limits_{n \rightarrow \infty} \left\lvert \frac{1}{\lambda^{2^n + 1}} \right\rvert \left\| A^{2^n} \right\| \\
+    &= \lim\limits_{n \rightarrow \infty} \left\lvert \frac{1}{\lambda^{2^n + 1}} \right\rvert \left\| A \right\|^{2^n}  \\
+    &= \lim\limits_{n \rightarrow \infty} \frac{1}{\lvert  \lambda  \rvert}  \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n} \\
+    &= \frac{1}{\lvert  \lambda  \rvert} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n}.
 \end{align}
 $$
 
 By hypothesis $$\lvert \lambda \rvert \le \|A\|$$. Hence
 
 $$
-    1 \le \frac{\left\| A \right\|}{\left| \lambda \right|}.
+    1 \le \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert}.
 $$
 
 This implies that our derivation continues as follows
 
 $$
     \lim\limits_{n \rightarrow \infty} \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\|
-    = \frac{1}{| \lambda |} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n}
+    = \frac{1}{\lvert  \lambda  \rvert} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n}
     \neq 0.
 $$
 
@@ -3102,7 +3101,7 @@ Let us for the moment assume that $$R(A) < \|A\|$$. Then it is possible to selec
 The unique Laurent series from Part 3, evaluated at this fixed $$\lambda$$, converges. This implies that all of its summands are bounded. In other words, for each $$\xi$$ in the dual space of $$\mathcal{B}(\mathbf{H})$$ there exists a $$C_\xi \in \mathbb{R}$$---which may depend on $$\xi$$ and on our now-fixed $$\lambda$$---such that for any natural number $$m$$
 
 $$
-    \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi.
+    \left\lvert \frac{\xi A^m}{\lambda^{m + 1}} \right\rvert < C_\xi.
 $$
 
 Now, as we established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space), $$\mathcal{B}(\mathbf{H})$$ forms a Banach space under the operator norm. Recalling the [**Theorem on Completeness of the Dual**](#thrm:theorem-on-completeness-of-the-dual)
@@ -3140,7 +3139,7 @@ $$
 evaluated at our fixed $$\lambda$$, and the bounds we derived previously
 
 $$
-    \left| \frac{\xi A^m}{\lambda^{m + 1}} \right| < C_\xi
+    \left\lvert \frac{\xi A^m}{\lambda^{m + 1}} \right\rvert < C_\xi
 $$
 
 with those in this theorem. Doing so we find that there exists a real number $$C$$---which may depend on our fixed $$\lambda$$---such that for all natural numbers $$m$$
@@ -3160,7 +3159,7 @@ $$
 Applying this to the bound we just derived, at our fixed $$\lambda$$, gives
 
 $$
-    \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\| = \frac{\left\| A^{2^n} \right\|}{\left| \lambda \right|^{2^n + 1}} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C.
+    \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\| = \frac{\left\| A^{2^n} \right\|}{\left\lvert \lambda \right\rvert^{2^n + 1}} = \frac{\left\| A \right\|^{2^n} }{\left\lvert \lambda \right\rvert^{2^n + 1}} \le C.
 $$
 
 Now, as $$R(A) < \lvert \lambda \rvert < \|A\|$$, we have
@@ -3172,7 +3171,7 @@ $$
 Hence, it is possible to select an $$n$$ large enough to violate the above inequality
 
 $$
-    \frac{1}{\left| \lambda \right|} \left( \frac{\left\| A \right\|}{\left| \lambda \right|} \right)^{2^n} = \frac{\left\| A \right\|^{2^n} }{\left| \lambda \right|^{2^n + 1}} \le C.
+    \frac{1}{\left\lvert \lambda \right\rvert} \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n} = \frac{\left\| A \right\|^{2^n} }{\left\lvert \lambda \right\rvert^{2^n + 1}} \le C.
 $$
 
 So it can not be the case that $$R(A) < \|A\|$$. As we know $$R(A) \le \|A\|$$, the only option left is $$R(A) = \|A\|$$, the desired result.$$\blacksquare$$
@@ -3524,7 +3523,7 @@ $$
 The definition of [spectral radius](#def:spectral-radius), however, implies that
 
 $$
-    R(p(A)) = \sup\limits_{\gamma \in \sigma(p(A))} |\gamma|.
+    R(p(A)) = \sup\limits_{\gamma \in \sigma(p(A))} \lvert \gamma \rvert.
 $$
 
 Putting this all together we conclude that
@@ -3532,15 +3531,15 @@ Putting this all together we conclude that
 $$
 \begin{align}
     \|p(A)\| &= R(p(A)) \\
-             &= \sup\limits_{\gamma \in \sigma(p(A))} |\gamma| \\
-             &= \sup\limits_{\lambda \in \sigma(A)} | p(\lambda) |,
+             &= \sup\limits_{\gamma \in \sigma(p(A))} \lvert \gamma \rvert \\
+             &= \sup\limits_{\lambda \in \sigma(A)} \lvert  p(\lambda)  \rvert,
 \end{align}
 $$
 
 proving that
 
 $$
-    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} | p(\lambda) |,
+    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert  p(\lambda)  \rvert,
 $$
 
 which is simply the statement that the map $$p \mapsto p(A)$$ is isometric.
@@ -3654,7 +3653,7 @@ With all of this in hand we can apply the [**Bounded Linear Transformation Theor
 
 > **Theorem** *(Bounded Linear Transformation Theorem)*
 <a name="thrm:bounded-linear-transformation-theorem"></a>
-> Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}|_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.
+> Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}\vert_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.
 
 to the current situation. Identifying $$V_1$$ with $$C^0(\sigma(A); \mathbb{R})$$, $$V_2$$ with $$\mathcal{B}(\mathbf{H})$$, $$W$$ the real-valued polynomials on $$\sigma(A)$$, and $$T$$ with our map $$p \mapsto p(A)$$ allows us to conclude that there exists a unique, bounded, linear map
 
@@ -3893,22 +3892,22 @@ That is to say there is a bound $$C$$ on the $$r_j$$ that holds uniformly for al
 Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
 
 $$
-    \sup\limits_{\lambda \in \sigma(A)} |s_i(\lambda) - f(\lambda)| < \left( \frac{\epsilon}{2C} \right).
+    \sup\limits_{\lambda \in \sigma(A)} \lvert s_i(\lambda) - f(\lambda) \rvert < \left( \frac{\epsilon}{2C} \right).
 $$
 
 Similarly, as $$r_j$$ converges uniformly to $$g$$ and $$f$$ is bounded, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
-    \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda) - g(\lambda)| < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) \right. .
+    \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) - g(\lambda) \rvert < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \right. .
 $$
 
 This implies that for all $$i,j \ge \max(N,M)$$ we have
 
 $$
 \begin{align}
-    |s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda)|
-    &\le \left( \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) |s_i(\lambda) - f(\lambda)| + \left( \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) |r_j(\lambda) - g(\lambda)| \\
-    &<   \left( \sup\limits_{\lambda \in \sigma(A)} |r_j(\lambda)| \right) \left( \frac{\epsilon}{2C} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)| \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)|} \right) \\
+    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
+    &\le \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert \\
+    &<   \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \left( \frac{\epsilon}{2C} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert} \right) \\
     &\le \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
     &= \epsilon,
 \end{align}
@@ -3923,7 +3922,7 @@ $$
 This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
 
 $$
-    \sup\limits_{\lambda \in \sigma(A)} |f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda)| < \epsilon.
+    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda) \rvert < \epsilon.
 $$
 
 As this applies for all $$i,j \ge L$$ it implies in particular if $$j = i$$ and $$i \ge L$$. So, for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i \ge L$$ we have 
@@ -4365,7 +4364,7 @@ To prove that $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$ is a bounded q
 3. That there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
    $$
-       |Q_{\alpha f + \beta g}(\phi)| \le C \|\phi\|^2,
+       \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \|\phi\|^2,
    $$
 
    where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
@@ -4417,7 +4416,7 @@ Now as $$Q_f$$ and $$Q_g$$ are bounded quadratic forms, $$L_f$$ and $$L_g$$ are 
 Finally, let us prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
-    |Q_{\alpha f + \beta g}(\phi)| \le C \|\phi\|^2,
+    \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \|\phi\|^2,
 $$
 
 where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
@@ -4540,7 +4539,7 @@ To prove that $$Q_f$$ is a bounded quadratic form we must prove that
 3. That there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
    $$
-       |Q_f(\phi)| \le C \|\phi\|^2,
+       \lvert Q_f(\phi) \rvert \le C \|\phi\|^2,
    $$
 
    where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
@@ -4630,7 +4629,7 @@ As the $$L_{f_i}(\phi, \psi)$$ are conjugate linear in the first factor and line
 Finally, let us prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
-    |Q_f(\phi)| \le C \|\phi\|^2,
+    \lvert Q_f(\phi) \rvert \le C \|\phi\|^2,
 $$
 
 where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
@@ -4645,24 +4644,24 @@ for any $$\phi \in \mathbf{H}$$, together with the fact that $$f$$ is bounded. T
 
 $$
 \begin{align}
-    \lvert Q_f(\phi) \rvert &=   \left| \int_{\sigma(A)} f(\lambda) \, d\mu_\phi(\lambda) \right| \\
-                            &\le \int_{\sigma(A)} \left| f(\lambda) \right| \, d\mu_\phi(\lambda) \\
-                            &\le \int_{\sigma(A)} \left( \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \right) \, d\mu_\phi(\lambda) \\
-                            &=   \left( \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \right) \int_{\sigma(A)} \, d\mu_\phi(\lambda) \\
-                            &=   \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right| \|\phi\|^2 \\
+    \lvert Q_f(\phi) \rvert &=   \left\lvert \int_{\sigma(A)} f(\lambda) \, d\mu_\phi(\lambda) \right\rvert \\
+                            &\le \int_{\sigma(A)} \left\lvert f(\lambda) \right\rvert \, d\mu_\phi(\lambda) \\
+                            &\le \int_{\sigma(A)} \left( \sup\limits_{\lambda' \in \sigma(A)} \left\lvert f(\lambda') \right\rvert \right) \, d\mu_\phi(\lambda) \\
+                            &=   \left( \sup\limits_{\lambda' \in \sigma(A)} \left\lvert f(\lambda') \right\rvert \right) \int_{\sigma(A)} \, d\mu_\phi(\lambda) \\
+                            &=   \sup\limits_{\lambda' \in \sigma(A)} \left\lvert f(\lambda') \right\rvert \|\phi\|^2 \\
 \end{align}
 $$
 
 which gives the desired result, there exists a real constant
 
 $$
-    C \equiv \sup\limits_{\lambda' \in \sigma(A)} \left| f(\lambda') \right|
+    C \equiv \sup\limits_{\lambda' \in \sigma(A)} \left\lvert f(\lambda') \right\rvert
 $$
 
 such that for all $$\phi$$ in $$\mathbf{H}$$ one has
 
 $$
-    |Q_f(\phi)| \le C \|\phi\|^2.
+    \lvert Q_f(\phi) \rvert \le C \|\phi\|^2.
 $$
 
 This completes our proof that $$f$$ is in $$\mathcal{F}$$ and thus our proof that $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.
@@ -4753,7 +4752,7 @@ on $$X$$ are elements of $$C^0(X; \mathbb{R})$$.
 Also a moment's thought reveals that if we take $$C = 1$$, then we have
 
 $$
-    \lvert f_n(x) \rvert = \left| \frac{1}{n + 1} \right| \le C
+    \lvert f_n(x) \rvert = \left\lvert \frac{1}{n + 1} \right\rvert \le C
 $$
 
 for all $$x \in X$$ and all $$n \in \mathbb{N}$$. Hence, the sequence satisfies all the desired properties required by **Property 1.2.1**.
@@ -4797,13 +4796,13 @@ By hypothesis $$E \in \mathcal{L}_0$$. The definition of $$\mathcal{L}_0$$ then 
 By hypothesis $$E \in \mathcal{L}_0$$. Hence, (1) the definition of $$\mathcal{L}_0$$ implies that there exists a sequence of functions $$\{ f_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$C$$ such that
 
 $$
-    \left| f_n(x) \right| \le C
+    \left\lvert f_n(x) \right\rvert \le C
 $$
 
 for all $$x \in X$$ and $$n \in \mathbb{N}$$ and (2) for every real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
 
 $$
-    \left| f_n(x) - 1_E(x) \right| < \epsilon
+    \left\lvert f_n(x) - 1_E(x) \right\rvert < \epsilon
 $$
 
 for all $$x \in X$$.
@@ -4818,8 +4817,8 @@ Obviously, the $$g_n$$ are in $$C^0(X; \mathbb{R})$$. The definition of the $$g_
 
 $$
 \begin{align}
-    \left| g_n(x) \right| &=   \left| 1 - f_n(x) \right| \\
-                          &\le \left| 1 \right| + \left| f_n(x) \right| \\
+    \left\lvert g_n(x) \right\rvert &=   \left\lvert 1 - f_n(x) \right\rvert \\
+                          &\le \left\lvert 1 \right\rvert + \left\lvert f_n(x) \right\rvert \\
                           &\le 1 + C \\
                           &=   D,  \\
 \end{align}
@@ -4828,7 +4827,7 @@ $$
 where we have made the definition $$D \equiv 1 + C$$. Thus we have proven that there exists a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$D$$ such that
 
 $$
-    \left| g_n(x) \right| \le D
+    \left\lvert g_n(x) \right\rvert \le D
 $$
 
 for all $$x \in X$$ and all $$n \in \mathbb{N}$$. In other words our sequence $$\{ g_n \}_{n \in \mathbb{N}}$$ is a sequence of uniformly bounded continuous functions.
@@ -4836,7 +4835,7 @@ for all $$x \in X$$ and all $$n \in \mathbb{N}$$. In other words our sequence $$
 Let $$\epsilon > 0$$ be an arbitrary real number and consider if we can find a natural number $$N$$ such that
 
 $$
-    \left| g_n(x) - 1_{E^c}(x) \right| < \epsilon
+    \left\lvert g_n(x) - 1_{E^c}(x) \right\rvert < \epsilon
 $$
 
 for all $$x \in X$$ and all $$n \ge N$$.
@@ -4845,10 +4844,10 @@ To this end for an arbitrary $$g_n$$ and arbitrary $$x \in X$$ consider
 
 $$
 \begin{align}
-    \left| g_n(x) - 1_{E^c}(x) \right| &= \left| (1 - f_n(x)) - 1_{E^c}(x) \right| \\
-                                       &= \left| (1 - f_n(x)) - (1 - 1_{E}(x)) \right| \\
-                                       &= \left| 1_{E}(x) - f_n(x) \right| \\
-                                       &= \left| f_n(x) - 1_{E}(x) \right|,
+    \left\lvert g_n(x) - 1_{E^c}(x) \right\rvert &= \left\lvert (1 - f_n(x)) - 1_{E^c}(x) \right\rvert \\
+                                       &= \left\lvert (1 - f_n(x)) - (1 - 1_{E}(x)) \right\rvert \\
+                                       &= \left\lvert 1_{E}(x) - f_n(x) \right\rvert \\
+                                       &= \left\lvert f_n(x) - 1_{E}(x) \right\rvert,
 \end{align}
 $$
 
@@ -4857,7 +4856,7 @@ where in the second line we used $$1_{E^c}(x) = 1 - 1_{E}(x)$$ which follows eas
 However, as $$E \in \mathcal{L}_0$$ the definition of $$\mathcal{L}_0$$ implies that for an arbitrary real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
 
 $$
-    \left| f_n(x) - 1_{E}(x) \right| < \epsilon
+    \left\lvert f_n(x) - 1_{E}(x) \right\rvert < \epsilon
 $$
 
 for all $$x \in X$$.
@@ -4865,13 +4864,13 @@ for all $$x \in X$$.
 However, as we have proven that
 
 $$
-    \left| g_n(x) - 1_{E^c}(x) \right| = \left| f_n(x) - 1_{E}(x) \right|
+    \left\lvert g_n(x) - 1_{E^c}(x) \right\rvert = \left\lvert f_n(x) - 1_{E}(x) \right\rvert
 $$
 
 for an arbitrary $$n \in \mathbb{N}$$ and arbitrary $$x \in X$$, then it follows that for an arbitrary real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
 
 $$
-    \left| g_n(x) - 1_{E^c}(x) \right| < \epsilon
+    \left\lvert g_n(x) - 1_{E^c}(x) \right\rvert < \epsilon
 $$
 
 for all $$x \in X$$.
@@ -4892,13 +4891,13 @@ By hypothesis $$E_1,E_2 \in \mathcal{L}_0$$. The definition of $$\mathcal{L}_0$$
 By hypothesis $$E_1,E_2 \in \mathcal{L}_0$$. The definition of $$\mathcal{L}_0$$ implies that (1) there for each $$E_i$$ exists a sequence $$\{ f^i_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$C_i$$ such that
 
 $$
-    \left| f^i_n(x) \right| \le C_i
+    \left\lvert f^i_n(x) \right\rvert \le C_i
 $$
 
 for all $$n \in \mathbb{N}$$ and all $$x \in X$$ and (2) for each $$E_i$$ and any real number $$\epsilon_i > 0$$ there exists a natural number $$N_i$$ such that for all $$n \ge N_i$$ we have
 
 $$
-    \left| f^i_n(x) - 1_{E_i}(x) \right| < \epsilon_i
+    \left\lvert f^i_n(x) - 1_{E_i}(x) \right\rvert < \epsilon_i
 $$
 
 for all $$x \in X$$.
@@ -4921,9 +4920,9 @@ The norm definition along with the fact that the $$f^i_n$$ are bounded implies
 
 $$
 \begin{align}
-    \left| g_n(x) \right| &=   \left| f^1_n(x) + f^2_n(x) - f^1_n(x) f^2_n(x) \right| \\
-                          &\le \left| f^1_n(x) \right| + \left| f^2_n(x) \right| + \left| f^1_n(x) f^2_n(x) \right| \\
-                          &=   \left| f^1_n(x) \right| + \left| f^2_n(x) \right| + \left| f^1_n(x) \right| \, \left| f^2_n(x) \right| \\
+    \left\lvert g_n(x) \right\rvert &=   \left\lvert f^1_n(x) + f^2_n(x) - f^1_n(x) f^2_n(x) \right\rvert \\
+                          &\le \left\lvert f^1_n(x) \right\rvert + \left\lvert f^2_n(x) \right\rvert + \left\lvert f^1_n(x) f^2_n(x) \right\rvert \\
+                          &=   \left\lvert f^1_n(x) \right\rvert + \left\lvert f^2_n(x) \right\rvert + \left\lvert f^1_n(x) \right\rvert \, \left\lvert f^2_n(x) \right\rvert \\
                           &\le C_1 + C_2 + C_1 C_2 \\
                           &=   D,
 \end{align}
@@ -4934,7 +4933,7 @@ where we have defined $$D \equiv C_1 + C_2 + C_1 C_2$$.
 Thus we have proven that there exists a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$ and a real-valued constant $$D$$ such that
 
 $$
-    \left| g_n(x) \right| \le D
+    \left\lvert g_n(x) \right\rvert \le D
 $$
 
 for all $$x \in X$$ and all $$n \in \mathbb{N}$$. In other words the $$g_n$$ are a sequence of uniformly bounded continuous functions.
@@ -4942,7 +4941,7 @@ for all $$x \in X$$ and all $$n \in \mathbb{N}$$. In other words the $$g_n$$ are
 Let $$\epsilon > 0$$ be an arbitrary real number and consider if we can find a natural number $$N$$ such that
 
 $$
-    \left| g_n(x) - 1_{E_1 \cup E_2}(x) \right| < \epsilon
+    \left\lvert g_n(x) - 1_{E_1 \cup E_2}(x) \right\rvert < \epsilon
 $$
 
 for all $$x \in X$$ and all $$n \ge N$$.
@@ -4962,7 +4961,7 @@ $$
 for all $$x \in X$$. Thus for an arbitrary real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
 
 $$
-    \left| g_n(x) - 1_{E_1 \cup E_2}(x) \right| < \epsilon
+    \left\lvert g_n(x) - 1_{E_1 \cup E_2}(x) \right\rvert < \epsilon
 $$
 
 for all $$x \in X$$. This completes the proof of **Property 3.2** and the fact that $$\mathcal{L}_0$$ is an algebra of sets.
@@ -5002,7 +5001,7 @@ With this in mind consider our $$\overline{E}$$. One can always arrange for the 
 The definition of a bump function implies that for $$C \equiv 1$$ we have
 
 $$
-    \left| f_i(x) \right| \le C
+    \left\lvert f_i(x) \right\rvert \le C
 $$
 
 for all $$x \in X$$ and all $$i \in \mathbb{N}$$. Thus the sequence $$\{ f_i \}_{i \in \mathbb{N}}$$ is uniformly bounded.
@@ -5010,7 +5009,7 @@ for all $$x \in X$$ and all $$i \in \mathbb{N}$$. Thus the sequence $$\{ f_i \}_
 Furthermore, by construction for an arbitrary real number $$\epsilon > 0$$ we can find a natural number $$N$$ such that for all $$i \ge N$$ we have
 
 $$
-    \left| f_i(x) - 1_{\overline{E}}(x) \right| < \epsilon
+    \left\lvert f_i(x) - 1_{\overline{E}}(x) \right\rvert < \epsilon
 $$
 
 for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof of **Step 1**. Thus we have established that $$\mathcal{L}_0$$ contains all closed sets.
