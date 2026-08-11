@@ -2159,18 +2159,9 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 > $$
 
 **Proof**
-To facilitate the proof of this theorem, we first introduce the useful notion of "Functional Calculus".
+The proof runs in two stages. Throughout, we speak informally of a *functional calculus* — an association $$f \mapsto f(A)$$ — but no definition is needed yet: the two constructions the proof actually uses are given, where they are needed, by [**Proposition**](#prpstn:hall-8.3) for continuous $$f$$ and [**Definition**](#def:hall-8.8) for bounded measurable $$f$$, and the notion is named normatively only once the theorem is proved, in [**Definition** *(Functional Calculus)*](#def:functional-calculus).
 
-> **Definition** *(Functional Calculus)*
-> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$f : \sigma(A) \rightarrow \mathbb{C}$$ is a bounded measurable function on the spectrum $$\sigma(A)$$ of $$A$$, *functional calculus* defines an operator $$f(A)$$ by
->
-> $$
->     f(A) \equiv \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda),
-> $$
->
-> where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
-
-With functional calculus defined, we can now outline the proof of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators). This proof consists of two main stages.
+We can now outline the proof of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators). This proof consists of two main stages.
 
 *Stage 1:* In the first stage any self-adjoint $$A \in \mathcal{B}(\mathbf{H})$$ is used to construct a "continuous functional calculus" that associates to each continuous function $$f$$ on $$\sigma(A)$$ an operator $$f(A)$$.
 
@@ -4221,17 +4212,24 @@ $$
     \Lambda_\psi(f) \equiv \left< \psi, f(A) \psi \right>
 $$
 
-is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$, and satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear, as $$f \mapsto f(A)$$ is linear by [**Proposition**](#prpstn:hall-8.3) and the inner product is linear in its second argument, and it is non-negative whenever all the values of $$f$$ are non-negative, as established in the first paragraph above. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation) and conclude that for any $$\psi \in \mathbf{H}$$ there exists a measure $$\mu_\psi$$ such that
+is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$, and satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear, as $$f \mapsto f(A)$$ is linear by [**Proposition**](#prpstn:hall-8.3) and the inner product is linear in its second argument, and it is non-negative whenever all the values of $$f$$ are non-negative, as established in the first paragraph above. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation), which yields the following.
 
-<div id="eqtn:hall-8.8">
+> **Proposition** *(The Measures Associated to a Self-Adjoint Operator)*
+<a name="prpstn:associated-measures-self-adjoint"></a>
+<a name="eqtn:hall-8.8"></a>
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{thrm:riesz-representation} -->
+<!--  \uses{def:bounded-operator-notation} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. For every $$\psi \in \mathbf{H}$$ there is a unique positive, real-valued measure $$\mu_\psi$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$ such that
+>
+> $$
+>     \left< \psi, f(A) \psi \right> = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda)
+> $$
+>
+> for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$.
 
-$$
-    \left< \psi, f(A) \psi \right> = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda)
-$$
-
-</div>
-
-for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$. Note how similar this is to the equality
+**Proof**
+The functional $$\Lambda_\psi$$ is well defined, linear and non-negative, as established in the preceding paragraphs, so the [**Riesz Representation Theorem**](#thrm:riesz-representation) applies to it and supplies a unique positive measure $$\mu_\psi$$ representing it; unwinding the definition $$\Lambda_\psi(f) = \left< \psi, f(A)\psi \right>$$ gives the displayed identity.$$\blacksquare$$ Note how similar this is to the equality
 
 $$
     \left< \psi, \left( \int_{\sigma(A)} f \, d\mu \right) \psi \right> = \int_{\sigma(A)} f(\lambda) d\mu_\psi(\lambda).
@@ -5417,7 +5415,7 @@ $$
 \end{align}
 $$
 
-for all $$\psi \in \mathbf{H}$$. Note here we have used the [equation](#eqtn:hall-8.8) to write these operators in a form similar to that above. Hence, in both cases the operators $$f(A)$$ and $$g(A)$$ are the same. This then proves the claim that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}_1$$.
+for all $$\psi \in \mathbf{H}$$. Note here we have used [**Proposition** *(The Measures Associated to a Self-Adjoint Operator)*](#prpstn:associated-measures-self-adjoint) to write these operators in a form similar to that above. Hence, in both cases the operators $$f(A)$$ and $$g(A)$$ are the same. This then proves the claim that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}_1$$.
 
 Our next claim is that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$. It turns out we actually proved this as part of our [**Proposition**](#prpstn:hall-8.7) proof.
 
