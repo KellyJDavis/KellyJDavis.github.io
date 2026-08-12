@@ -462,6 +462,12 @@ $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
 $$
 
+The next lemma uses the Complex-Valued Simple Approximation Theorem, which we state first.
+
+> **Theorem** *(Complex-Valued Simple Approximation Theorem)*
+<a name="thrm:complex-valued-simple-approximation-theorem"></a>
+> Let $$X$$ be a measurable space, i.e. a set equipped with a $$\sigma$$-algebra $$\Omega(X)$$. Given any bounded, measurable, complex-valued function $$f$$ on $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$---i.e. functions of the form $$s_i = \sum_{j = 1}^{n_i} \alpha_{ij} 1_{E_{ij}}$$ with $$\alpha_{ij} \in \mathbb{C}$$ and $$E_{ij} \in \Omega(X)$$ pairwise disjoint---such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
+
 where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure). It turns out that such a $$Q_f(\psi)$$ is a bounded quadratic form which we now prove
 
 > **Lemma**
@@ -691,9 +697,6 @@ $$
 
 is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem
 
-> **Theorem** *(Complex-Valued Simple Approximation Theorem)*
-<a name="thrm:complex-valued-simple-approximation-theorem"></a>
-> Let $$X$$ be a measurable space, i.e. a set equipped with a $$\sigma$$-algebra $$\Omega(X)$$. Given any bounded, measurable, complex-valued function $$f$$ on $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$---i.e. functions of the form $$s_i = \sum_{j = 1}^{n_i} \alpha_{ij} 1_{E_{ij}}$$ with $$\alpha_{ij} \in \mathbb{C}$$ and $$E_{ij} \in \Omega(X)$$ pairwise disjoint---such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
 To wit we must first prove that $$Q_f(\lambda\psi) = \mid\lambda\mid^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
 
@@ -1027,6 +1030,19 @@ $$
 
 proving that $$L(\phi, \psi) = \overline{L(\psi, \phi)}$$, the desired result, i.e. if $$Q$$ is real, then $$L$$ is conjugate symmetric.$$\blacksquare$$
 
+The next result requires the Hilbert-space self-duality theorem, which we state first.
+
+> **Theorem** *(Riesz Theorem)*
+<a name="thrm:hall-a.52"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> If $$\xi : \mathbf{H} \rightarrow \mathbb{C}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, then there exists a unique $$\chi \in \mathbf{H}$$ such that
+>
+> $$
+>     \xi(\psi) = \left< \chi, \psi \right>
+> $$
+>
+> for all $$\psi \in \mathbf{H}$$. Furthermore, the operator norm of $$\xi$$ as a bounded linear functional is equal to the norm of $$\chi$$ as an element of $$\mathbf{H}$$.
+
 The next in the set of "helper" propositions that we will prove is the proposition (Proposition A.63 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
 > **Proposition**
@@ -1077,16 +1093,6 @@ the desired result.
 
 Now as one will recall the Riesz Theorem (Theorem A.52 (Riesz Theorem) of [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) states
 
-> **Theorem** *(Riesz Theorem)*
-<a name="thrm:hall-a.52"></a>
-<!--  \uses{def:bounded-operator-notation} -->
-> If $$\xi : \mathbf{H} \rightarrow \mathbb{C}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, then there exists a unique $$\chi \in \mathbf{H}$$ such that
->
-> $$
->     \xi(\psi) = \left< \chi, \psi \right>
-> $$
->
-> for all $$\psi \in \mathbf{H}$$. Furthermore, the operator norm of $$\xi$$ as a bounded linear functional is equal to the norm of $$\chi$$ as an element of $$\mathbf{H}$$.
 
 As a result of the Riesz Theorem, for any fixed $$\phi$$ there exists a $$\chi$$ in $$\mathbf{H}$$ such that $$L(\phi, \psi) = \left< \chi, \psi \right>$$. In addition, the "operator norm conclusion" of the Riesz Theorem and our finding that the operator norm of $$\psi \mapsto L(\phi, \psi)$$ is bounded for any fixed $$\phi$$ imply that
 
@@ -2263,6 +2269,24 @@ $$
 
 the desired result, operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is submultiplicative.$$\blacksquare$$
 
+The next lemma uses the following standard fact about absolutely convergent series in a Banach space, which we state first.
+
+> **Proposition**
+<a name="prpstn:hall-a.34"></a>
+> If $$V$$ is a Banach space, then absolute convergence implies convergence in $$V$$. That is, if $$\{\psi_i\}_{i \in \mathbb{N}}$$ is a sequence in $$V$$ and
+>
+> $$
+>     \sum\limits_{i \in \mathbb{N}} \|\psi_i\| < \infty,
+> $$
+>
+> then
+>
+> $$
+>     \sum\limits_{i \in \mathbb{N}} \psi_i
+> $$
+>
+> converges in $$V$$.
+
 The next "utility" lemma we must prove is the following
 
 > **Lemma**
@@ -2315,21 +2339,6 @@ $$
 
 Finally, recalling the fact established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space) that $$\mathcal{B}(\mathbf{H})$$ is a Banach space with respect to the operator norm, one can use the [**Proposition**](#prpstn:hall-a.34)
 
-> **Proposition**
-<a name="prpstn:hall-a.34"></a>
-> If $$V$$ is a Banach space, then absolute convergence implies convergence in $$V$$. That is, if $$\{\psi_i\}_{i \in \mathbb{N}}$$ is a sequence in $$V$$ and
->
-> $$
->     \sum\limits_{i \in \mathbb{N}} \|\psi_i\| < \infty,
-> $$
->
-> then
->
-> $$
->     \sum\limits_{i \in \mathbb{N}} \psi_i
-> $$
->
-> converges in $$V$$.
 
 to conclude that the series $$\{X^m\}_{m \in \mathbb{N}}$$ converges in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm. In other words the series
 
@@ -2372,6 +2381,16 @@ establishing that the left inverse is given by the same expression
 $$
     (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots.
 $$
+
+The proof of the next proposition draws on two standard results from complex analysis, which we state first.
+
+> **Theorem** *(Analytic Equivalence Theorem)*
+<a name="thrm:analytic-equivalence-theorem"></a>
+> Let $$U$$ be an open subset of $$\mathbb{C}$$ and let $$f: U \rightarrow \mathbb{C}$$ be a function. Then $$f$$ is analytic on $$U$$ if and only if it is holomorphic on $$U$$.
+
+> **Theorem** *(Maximum Modulus Principle)*
+<a name="thrm:maximum-modulus-principle"></a>
+> Let $$B$$ be a bounded, non-empty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains its maximum at some point on the boundary of $$B$$.
 
 Together these imply the final desired result.$$\blacksquare$$
 
@@ -2460,9 +2479,6 @@ $$
 
 can be expressed as a locally convergent power series with coefficients in $$\mathbb{C}$$. In other words it is an analytic function on the resolvent set of $$A$$ which, as we have proven, is open. Thus, as a result of the [**Analytic Equivalence Theorem**](#thrm:analytic-equivalence-theorem)
 
-> **Theorem** *(Analytic Equivalence Theorem)*
-<a name="thrm:analytic-equivalence-theorem"></a>
-> Let $$U$$ be an open subset of $$\mathbb{C}$$ and let $$f: U \rightarrow \mathbb{C}$$ be a function. Then $$f$$ is analytic on $$U$$ if and only if it is holomorphic on $$U$$.
 
 this function is holomorphic on the resolvent set of $$A$$.
 
@@ -2490,9 +2506,6 @@ Now let us assume the spectrum $$\sigma(A)$$ of $$A$$ is the empty set. Then the
 
 Hence, by evaluating the entire function $$\lambda \mapsto \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ on ever larger closed disks $$\overline{B}$$, the [**Maximum Modulus Principle**](#thrm:maximum-modulus-principle)
 
-> **Theorem** *(Maximum Modulus Principle)*
-<a name="thrm:maximum-modulus-principle"></a>
-> Let $$B$$ be a bounded, non-empty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains its maximum at some point on the boundary of $$B$$.
 
 implies that the maximum of $$\lvert \left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right> \rvert$$ is zero. As a result of the definition of a norm, this in turn implies that $$\left< \phi, (A - \lambda \mathbf{1})^{-1} \psi \right>$$ is identically zero.
 
@@ -2594,6 +2607,12 @@ $$
 
 which is the desired result.$$\blacksquare$$
 
+The next proposition uses the following elementary fact, which we state first.
+
+> **Proposition** *(Bounded Operators are Continuous)*
+<a name="prpstn:bounded-operators-are-continuous"></a>
+> A linear operator between normed spaces is bounded if and only if it is continuous.
+
 Now we move onto the result
 
 > **Proposition**
@@ -2664,9 +2683,6 @@ In other words $$\{ \psi_i \}_{i \in \mathbb{N}}$$ is a Cauchy sequence. Further
 
 Now as $$A \in \mathcal{B}(\mathbf{H})$$ it is a bounded linear operator from the normed space $$\mathbf{H}$$ to the normed space $$\mathbf{H}$$. Thus, as a result of the standard proposition [**Bounded Operators are Continuous**](#prpstn:bounded-operators-are-continuous)
 
-> **Proposition** *(Bounded Operators are Continuous)*
-<a name="prpstn:bounded-operators-are-continuous"></a>
-> A linear operator between normed spaces is bounded if and only if it is continuous.
 
 $$A$$ is continuous.
 
@@ -2905,6 +2921,42 @@ $$
     \left\| B_n^* - B^* \right\| = \left\| (B_n - B)^* \right\| = \left\| B_n - B \right\|.
 $$
 
+The proof of the next lemma draws on four standard results — one about series, two from complex and functional analysis, and the Principle of Uniform Boundedness — which we state first.
+
+> **Lemma** *(Nth-Term Test)*
+<a name="lmm:nth-term-test"></a>
+> Let $$\{a_i\}_{i \in \mathbb{N}}$$ be a series in a normed vector space. If
+>
+> $$
+>     \lim\limits_{i \rightarrow \infty} \| a_i \| \neq 0,
+> $$
+>
+> then this series does not converge.
+
+> **Theorem** *(Laurent's Theorem)*
+<a name="thrm:laurents-theorem"></a>
+> Any function holomorphic on an open annulus in $$\mathbb{C}$$ can be expanded uniquely as a Laurent series on that open annulus.
+
+> **Theorem** *(Theorem on Completeness of the Dual)*
+<a name="thrm:theorem-on-completeness-of-the-dual"></a>
+> If $$V$$ is a Banach space, then its dual $$V^*$$ is also a Banach space.
+
+> **Theorem** *(Principle of Uniform Boundedness)*
+<a name="thrm:hall-a.40"></a>
+> Suppose $$\{ T_m \}$$ is any family of bounded linear maps from a Banach space $$V_1$$ to a normed space $$V_2$$. Suppose that for each $$\xi \in V_1$$, there is a real constant $$C_\xi$$ such that
+> 
+> $$
+>     \| T_m \xi \| \le C_\xi
+> $$
+> 
+> for all $$m$$. Then there exists a real constant $$C$$ such that for all $$m$$
+> 
+> $$
+>     \|T_m\| \le C,
+> $$
+> 
+> where $$\|T_m\|$$ is the operator norm of $$T_m$$.
+
 As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$, and hence $$B_n^* \rightarrow B^*$$ in the operator norm, the desired result.$$\blacksquare$$
 
 > **Lemma**
@@ -2967,15 +3019,6 @@ $$
 
 This identity will be of use when we prove our series doesn't converge in the operator norm topology. In particular we will prove this using the [**Nth-Term Test**](#lmm:nth-term-test)
 
-> **Lemma** *(Nth-Term Test)*
-<a name="lmm:nth-term-test"></a>
-> Let $$\{a_i\}_{i \in \mathbb{N}}$$ be a series in a normed vector space. If
->
-> $$
->     \lim\limits_{i \rightarrow \infty} \| a_i \| \neq 0,
-> $$
->
-> then this series does not converge.
 
 Consider the limit
 
@@ -3049,9 +3092,6 @@ is holomorphic on the (unbounded) open annulus $$R(A) < \lvert \lambda \rvert$$.
 
 Now recall that [**Laurent's Theorem**](#thrm:laurents-theorem) states
 
-> **Theorem** *(Laurent's Theorem)*
-<a name="thrm:laurents-theorem"></a>
-> Any function holomorphic on an open annulus in $$\mathbb{C}$$ can be expanded uniquely as a Laurent series on that open annulus.
 
 Hence, the function
 
@@ -3097,29 +3137,11 @@ $$
 
 Now, as we established in [**Lemma** *(Bounded Operators form a Banach Space)*](#lmm:bounded-operators-form-a-banach-space), $$\mathcal{B}(\mathbf{H})$$ forms a Banach space under the operator norm. Recalling the [**Theorem on Completeness of the Dual**](#thrm:theorem-on-completeness-of-the-dual)
 
-> **Theorem** *(Theorem on Completeness of the Dual)*
-<a name="thrm:theorem-on-completeness-of-the-dual"></a>
-> If $$V$$ is a Banach space, then its dual $$V^*$$ is also a Banach space.
 
 we can conclude that the dual $$\mathcal{B}(\mathbf{H})^*$$ of $$\mathcal{B}(\mathbf{H})$$ is also a Banach space.
 
 As both $$\mathcal{B}(\mathbf{H})$$ and $$\mathcal{B}(\mathbf{H})^*$$ are Banach spaces and we have a set of bounded summands we can apply the [**Principle of Uniform Boundedness**](#thrm:hall-a.40)
 
-> **Theorem** *(Principle of Uniform Boundedness)*
-<a name="thrm:hall-a.40"></a>
-> Suppose $$\{ T_m \}$$ is any family of bounded linear maps from a Banach space $$V_1$$ to a normed space $$V_2$$. Suppose that for each $$\xi \in V_1$$, there is a real constant $$C_\xi$$ such that
-> 
-> $$
->     \| T_m \xi \| \le C_\xi
-> $$
-> 
-> for all $$m$$. Then there exists a real constant $$C$$ such that for all $$m$$
-> 
-> $$
->     \|T_m\| \le C,
-> $$
-> 
-> where $$\|T_m\|$$ is the operator norm of $$T_m$$.
 
 by identifying $$V_1$$ with $$\mathcal{B}(\mathbf{H})^*$$, $$V_2$$ with $$\mathbb{C}$$, the operators $$\{ T_m \}$$ with the operators
 
@@ -3235,6 +3257,12 @@ $$
 In other words the left inverse $$((AB)^{-1}B)$$ and the right inverse $$(B(AB)^{-1})$$ agree and there is a single unique inverse of $$A^{-1}$$.
 
 However, by hypothesis $$A$$ is not invertible. Thus our assumption that $$AB$$ is invertible is false, and $$AB$$ is not invertible. This is the desired result.$$\blacksquare$$
+
+The proof of the Spectral Mapping Theorem uses the Fundamental Theorem of Algebra, which we state first.
+
+> **Theorem** *(Fundamental Theorem of Algebra)*
+<a name="thrm:fundamental-theorem-of-algebra"></a>
+> The field of complex numbers is algebraically closed.
 
 With this lemma complete we may now move on to the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem).
 
@@ -3367,9 +3395,6 @@ for a generic polynomial $$p$$ of positive degree.
 
 Consider an arbitrary $$\gamma$$ in the spectrum $$\sigma(p(A))$$ of $$p(A)$$. As a result of the [**Fundamental Theorem of Algebra**](#thrm:fundamental-theorem-of-algebra)
 
-> **Theorem** *(Fundamental Theorem of Algebra)*
-<a name="thrm:fundamental-theorem-of-algebra"></a>
-> The field of complex numbers is algebraically closed.
 
 we can factor the polynomial $$p(z) - \gamma$$ as a function of $$z$$ as follows
 
@@ -3446,6 +3471,25 @@ We will do so using the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm
 $$
     f \longmapsto f(A).
 $$
+
+The construction in the next proposition draws on four standard results, which we state first: a definition from the theory of algebras of functions, the Stone–Weierstrass Theorem, the Boundedness Theorem, and the Bounded Linear Transformation Theorem.
+
+> **Definition** *(Separates Points)*
+<a name="def:separates-points"></a>
+> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. The algebra $$\mathcal{A}$$ is said to *separate points* if for any $$x,y \in X$$ such that $$x \neq y$$ there exists an $$f \in \mathcal{A}$$ such that $$f(x) \neq f(y)$$.
+
+> **Theorem** *(Stone–Weierstrass for Real Numbers)*
+<a name="thrm:stone–weierstrass-real"></a>
+<!--  \uses{def:separates-points} -->
+> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
+
+> **Theorem** *(Boundedness Theorem)*
+<a name="thrm:boundedness-theorem"></a>
+> A continuous real-valued function on a non-empty compact set $$C$$ is bounded on $$C$$.
+
+> **Theorem** *(Bounded Linear Transformation Theorem)*
+<a name="thrm:bounded-linear-transformation-theorem"></a>
+> Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}\vert_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.
 
 Let's get started.
 
@@ -3578,9 +3622,6 @@ $$
 
 In addition this algebra [separates-points](#def:separates-points)
 
-> **Definition** *(Separates Points)*
-<a name="def:separates-points"></a>
-> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. The algebra $$\mathcal{A}$$ is said to *separate points* if for any $$x,y \in X$$ such that $$x \neq y$$ there exists an $$f \in \mathcal{A}$$ such that $$f(x) \neq f(y)$$.
 
 Explicitly, let $$x$$ and $$y$$ be any elements in $$\sigma(A)$$ such that $$x \neq y$$. Note that [**Proposition**](#prpstn:hall-7.7) along with the hypothesis that $$A$$ is self-adjoint, imply that $$x,y \in \sigma(A) \subset \mathbb{R}$$. Hence, the polynomial
 
@@ -3601,10 +3642,6 @@ where the final $$\neq$$ follows from the fact that $$x \neq y$$. Hence, the rea
 
 With all of this in-hand we can apply the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real)
 
-> **Theorem** *(Stone–Weierstrass for Real Numbers)*
-<a name="thrm:stone–weierstrass-real"></a>
-<!--  \uses{def:separates-points} -->
-> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{R})$$, the space of continuous, real-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions and separates points, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{R})$$ with respect to the supremum norm.
 
 to the current situation. Identifying $$X$$ with $$\sigma(A)$$ and $$\mathcal{A}$$ with the real-valued polynomials on $$\sigma(A)$$, the [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) allows us to conclude that real-valued polynomials on $$\sigma(A)$$ are dense in $$C^0(\sigma(A); \mathbb{R})$$.
 
@@ -3612,9 +3649,6 @@ Next we must prepare for the application of the [**Bounded Linear Transformation
 
 Consider $$C^0(\sigma(A); \mathbb{R})$$, the space of continuous, real-valued functions on $$\sigma(A)$$. As $$\sigma(A)$$ is compact the [**Boundedness Theorem**](#thrm:boundedness-theorem)
 
-> **Theorem** *(Boundedness Theorem)*
-<a name="thrm:boundedness-theorem"></a>
-> A continuous real-valued function on a non-empty compact set $$C$$ is bounded on $$C$$.
 
 implies that any element of $$C^0(\sigma(A); \mathbb{R})$$ is bounded. Hence, the supremum norm
 
@@ -3642,9 +3676,6 @@ which is none other than the statement that the linear map $$p \mapsto p(A)$$ is
 
 With all of this in hand we can apply the [**Bounded Linear Transformation Theorem**](#thrm:bounded-linear-transformation-theorem) 
 
-> **Theorem** *(Bounded Linear Transformation Theorem)*
-<a name="thrm:bounded-linear-transformation-theorem"></a>
-> Let $$V_1$$ be a normed space and $$V_2$$ a Banach space. Suppose $$W$$ is a dense subspace of $$V_1$$ and $$T: W \rightarrow V_2$$ is a bounded linear map. Then there exists a unique bounded linear map $$\widetilde{T}: V_1 \rightarrow V_2$$ such that $$\widetilde{T}\vert_W = T$$. Furthermore, the norm of $$\widetilde{T}$$ equals the norm of $$T$$.
 
 to the current situation. Identifying $$V_1$$ with $$C^0(\sigma(A); \mathbb{R})$$, $$V_2$$ with $$\mathcal{B}(\mathbf{H})$$, $$W$$ the real-valued polynomials on $$\sigma(A)$$, and $$T$$ with our map $$p \mapsto p(A)$$ allows us to conclude that there exists a unique, bounded, linear map
 
@@ -3762,6 +3793,12 @@ $$
 $$
 
 which we previously found is the condition required for $$B$$ to be invertible.$$\blacksquare$$
+
+The next proposition uses the following elementary fact about continuity, which we state first.
+
+> **Theorem** *(Composition Theorem)*
+<a name="thrm:composition-theorem"></a>
+> If a function $$f$$ is continuous at $$c$$ and a function $$h$$ is continuous at $$f(c)$$, then the composition $$h \circ f$$ is continuous at $$c$$.
 
 The properties of the (real-valued) functional calculus are captured in the following proposition
 
@@ -3988,9 +4025,6 @@ $$
 
 is continuous. Hence, as a result of the [**Composition Theorem**](#thrm:composition-theorem)
 
-> **Theorem** *(Composition Theorem)*
-<a name="thrm:composition-theorem"></a>
-> If a function $$f$$ is continuous at $$c$$ and a function $$h$$ is continuous at $$f(c)$$, then the composition $$h \circ f$$ is continuous at $$c$$.
 
 we know $$h \circ f = \sqrt{f}$$ is continuous on $$\sigma(A)$$ and thus an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
@@ -4666,6 +4700,20 @@ This completes our proof that $$f$$ is in $$\mathcal{F}$$ and thus our proof tha
 
 Finally to complete the proof of [**Proposition**](#prpstn:hall-8.7) we will prove that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
 
+The next lemma refers to an algebra of sets and to the Archimedean Property; we state both first.
+
+> **Definition** *(Algebra of Sets)*
+<a name="def:algebra-of-sets"></a>
+> Given a set $$S$$ and a set of subsets $$\mathcal{S}$$ of $$S$$, the set of subsets $$\mathcal{S}$$ is an *algebra of sets* if it
+> 
+> 1. Contains the empty set, i.e. $$\emptyset \in \mathcal{S}$$.
+> 2. Closed under complements, i.e. if $$s \in \mathcal{S}$$, then $$(S \backslash s) \in \mathcal{S}$$.
+> 3. Closed under finite union, i.e. if $$r,s \in \mathcal{S}$$, then $$s \cup r \in \mathcal{S}$$.
+
+> **Theorem** *(Archimedean Property)*
+<a name="thrm:archimedean-property"></a>
+> For any real number $$\epsilon$$ such that $$\epsilon > 0$$ there exist a natural number $$N$$ such that for all $$n \ge N$$ one has $$1/n < \epsilon$$.
+
 Our proof of this result requires that we first prove some "utility" lemmas as stepping stones. The first of these "utility" lemmas is the following:
 
 > **Lemma**
@@ -4687,13 +4735,6 @@ Let us first prove **Part 1**, that $$\mathcal{L}_0$$ is an algebra of sets.
 
 Recall that an algebra of sets is defined as follows:
 
-> **Definition** *(Algebra of Sets)*
-<a name="def:algebra-of-sets"></a>
-> Given a set $$S$$ and a set of subsets $$\mathcal{S}$$ of $$S$$, the set of subsets $$\mathcal{S}$$ is an *algebra of sets* if it
-> 
-> 1. Contains the empty set, i.e. $$\emptyset \in \mathcal{S}$$.
-> 2. Closed under complements, i.e. if $$s \in \mathcal{S}$$, then $$(S \backslash s) \in \mathcal{S}$$.
-> 3. Closed under finite union, i.e. if $$r,s \in \mathcal{S}$$, then $$s \cup r \in \mathcal{S}$$.
 
 Let us one-by-one prove each of these properties holds for $$\mathcal{L}_0$$.
 
@@ -4777,9 +4818,6 @@ $$
 
 for all $$x \in X$$. As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property)
 
-> **Theorem** *(Archimedean Property)*
-<a name="thrm:archimedean-property"></a>
-> For any real number $$\epsilon$$ such that $$\epsilon > 0$$ there exist a natural number $$N$$ such that for all $$n \ge N$$ one has $$1/n < \epsilon$$.
 
 Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof of **Property 1**.
 
@@ -5016,6 +5054,12 @@ for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof
 
 We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as it's the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
 
+The next lemma uses the Monotone Class Theorem, which we state first.
+
+> **Theorem** *(Monotone Class Theorem)*
+<a name="thrm:monotone-class-theorem"></a>
+> Let $$\mathcal{A}$$ be an algebra of subsets of a set $$X$$, and let $$\mathcal{M}$$ be a monotone class, i.e. a collection of subsets of $$X$$ closed under countable increasing unions and countable decreasing intersections, such that $$\mathcal{A} \subseteq \mathcal{M}$$. Then $$\sigma(\mathcal{A}) \subseteq \mathcal{M}$$, where $$\sigma(\mathcal{A})$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{A}$$.
+
 The next of these "utility" lemmas is the following:
 
 > **Lemma**
@@ -5039,9 +5083,6 @@ Together these prove that $$\mathcal{L}_1$$ is a monotone class.
 
 With this established, we can apply the [**Monotone Class Theorem**](#thrm:monotone-class-theorem)
 
-> **Theorem** *(Monotone Class Theorem)*
-<a name="thrm:monotone-class-theorem"></a>
-> Let $$\mathcal{A}$$ be an algebra of subsets of a set $$X$$, and let $$\mathcal{M}$$ be a monotone class, i.e. a collection of subsets of $$X$$ closed under countable increasing unions and countable decreasing intersections, such that $$\mathcal{A} \subseteq \mathcal{M}$$. Then $$\sigma(\mathcal{A}) \subseteq \mathcal{M}$$, where $$\sigma(\mathcal{A})$$ is the smallest $$\sigma$$-algebra containing $$\mathcal{A}$$.
 
 Identifying $$\mathcal{A}$$ with $$\mathcal{L}_0$$---an algebra, as established in [**Lemma**](#lmm:hall-prblm-8.3.3a)---and $$\mathcal{M}$$ with $$\mathcal{L}_1$$---a monotone class containing $$\mathcal{L}_0$$, as we just proved---the [**Monotone Class Theorem**](#thrm:monotone-class-theorem) implies
 
@@ -5058,6 +5099,16 @@ $$
 $$
 
 Hence, $$\mathcal{L}_1$$ contains all Borel sets, the desired result.$$\blacksquare$$
+
+The next lemma uses the following form of the Monotone Convergence Theorem, which we state first.
+
+> **Theorem** *(Monotone Convergence Theorem, Non-Increasing Case)*
+<a name="thrm:monotone-convergence-theorem-nonincreasing"></a>
+> If $$\{ a_i \}_{i \in \mathbb{N}}$$ is a non-increasing sequence, i.e. $$a_i \ge a_{i + 1}$$ for all $$i \in \mathbb{N}$$, then 
+> 
+> $$
+>     \lim\limits_{i \rightarrow \infty} a_i = \inf_{i \in \mathbb{N}} a_i.
+> $$
 
 Before proving the final of these "utility" lemmas, we isolate the following elementary fact about pointwise limits of Borel-measurable functions, which we will have need of shortly.
 
@@ -5136,13 +5187,6 @@ $$
 
 we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Hence, we can apply the [**Monotone Convergence Theorem (Non-Increasing Case)**](#thrm:monotone-convergence-theorem-nonincreasing)
 
-> **Theorem** *(Monotone Convergence Theorem, Non-Increasing Case)*
-<a name="thrm:monotone-convergence-theorem-nonincreasing"></a>
-> If $$\{ a_i \}_{i \in \mathbb{N}}$$ is a non-increasing sequence, i.e. $$a_i \ge a_{i + 1}$$ for all $$i \in \mathbb{N}$$, then 
-> 
-> $$
->     \lim\limits_{i \rightarrow \infty} a_i = \inf_{i \in \mathbb{N}} a_i.
-> $$
 
 to each of these sequences, giving
 
@@ -5325,6 +5369,20 @@ and thus $$Q_f(\psi)$$ is real-valued for any $$\psi \in \mathbf{H}$$.
 
 As $$Q_f(\psi)$$ is real-valued for all $$\psi \in \mathbf{H}$$, [**Proposition**](#prpstn:hall-a.63) implies that $$f(A)$$ is self-adjoint, the desired result.$$\blacksquare$$
 
+The next proposition uses the Polarization Identity, which we state first.
+
+> **Proposition** *(Polarization Identity)*
+<a name="prpstn:hall-a.59"></a>
+<!--  \uses{def:bounded-sesquilinear-form} -->
+> If $$L$$ is a sesquilinear form on the Hilbert space $$\mathbf{H}$$, then for any $$\phi, \psi \in \mathbf{H}$$ the value of $$L(\phi, \psi)$$ can be determined from the values of $$L$$ "on the diagonal" (i.e. the values of $$L(\xi, \xi)$$ for various $$\xi \in \mathbf{H}$$) as follows:
+> 
+> $$
+> \begin{align}
+>     L(\phi, \psi) &= \frac{1}{2} \left[ L(\phi + \psi, \phi + \psi) - L(\phi, \phi) - L(\psi, \psi) \right] \\
+>                   &-\frac{i}{2} \left[ L(\phi + i\psi, \phi + i\psi) - L(\phi, \phi) - L(i\psi, i\psi) \right]. 
+> \end{align}
+> $$
+
 The next proposition proves the analog of multiplicativity from [**Proposition**](#prpstn:hall-8.4) for operators $$(fg)(A)$$, $$f(A)$$, and $$g(A)$$ that arise from bounded measurable functions $$f$$ and $$g$$ by way of [**Definition**](#def:hall-8.8).
 
 > **Proposition**
@@ -5423,17 +5481,6 @@ In [**Proposition**](#prpstn:hall-8.7) we proved that $$\mathcal{F}$$ the space 
 
 Now the [**Polarization Identity**](#prpstn:hall-a.59) states
 
-> **Proposition** *(Polarization Identity)*
-<a name="prpstn:hall-a.59"></a>
-<!--  \uses{def:bounded-sesquilinear-form} -->
-> If $$L$$ is a sesquilinear form on the Hilbert space $$\mathbf{H}$$, then for any $$\phi, \psi \in \mathbf{H}$$ the value of $$L(\phi, \psi)$$ can be determined from the values of $$L$$ "on the diagonal" (i.e. the values of $$L(\xi, \xi)$$ for various $$\xi \in \mathbf{H}$$) as follows:
-> 
-> $$
-> \begin{align}
->     L(\phi, \psi) &= \frac{1}{2} \left[ L(\phi + \psi, \phi + \psi) - L(\phi, \phi) - L(\psi, \psi) \right] \\
->                   &-\frac{i}{2} \left[ L(\phi + i\psi, \phi + i\psi) - L(\phi, \phi) - L(i\psi, i\psi) \right]. 
-> \end{align}
-> $$
 
 This result---along with the [**Proposition**](#prpstn:hall-a.61) which for quadratic form $$Q$$ expresses its sesquilinear form $$L$$ on the diagonal in terms of the quadratic form itself as follows
 
@@ -5851,6 +5898,12 @@ $$
 
 i.e. the ranges of $$\mu^A(E_1)$$ and $$\mu^A(E_2)$$ are orthogonal.
 
+The next lemma uses the Monotone Convergence Theorem for real sequences, which we state first.
+
+> **Theorem** *(Monotone Convergence Theorem)*
+<a name="thrm:monotone-convergence-theorem"></a>
+> Let $$\{ a_n \}_{n \in \mathbb{N}}$$ be a monotone sequence of real numbers (either $$a_n \le a_{n+1}$$ or $$a_n \ge a_{n+1}$$ for all $$n$$). Then the sequence $$\{ a_n \}_{n \in \mathbb{N}}$$ has a finite limit in $$\mathbb{R}$$ if and only if $$\{ a_n \}_{n \in \mathbb{N}}$$ is bounded.
+
 With this result as motivation, let us prove the following "utility" lemma
 
 > **Lemma**
@@ -5922,9 +5975,6 @@ $$
 
 in a bounded, monotonically increasing sequence of real numbers. Thus the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem)
 
-> **Theorem** *(Monotone Convergence Theorem)*
-<a name="thrm:monotone-convergence-theorem"></a>
-> Let $$\{ a_n \}_{n \in \mathbb{N}}$$ be a monotone sequence of real numbers (either $$a_n \le a_{n+1}$$ or $$a_n \ge a_{n+1}$$ for all $$n$$). Then the sequence $$\{ a_n \}_{n \in \mathbb{N}}$$ has a finite limit in $$\mathbb{R}$$ if and only if $$\{ a_n \}_{n \in \mathbb{N}}$$ is bounded.
 
 implies that the bounded, monotonically increasing sequence of real numbers
 
@@ -6443,6 +6493,13 @@ operator-valued integration with respect to $$\mu^A$$ agrees with that with resp
 
 **Part 2:** Let us next prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of continuous, complex-valued functions on $$\sigma(A)$$.
 
+The next lemma uses the complex-valued Stone–Weierstrass Theorem, which we state first.
+
+> **Theorem** *(Stone–Weierstrass for Complex Numbers)*
+<a name="thrm:stone–weierstrass-complex"></a>
+<!--  \uses{def:separates-points} -->
+> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{C})$$, the space of continuous, complex-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions, separates points, and is closed under complex conjugation, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{C})$$ with respect to the supremum norm.
+
 Later in **Part 2** we will have need of the fact that the set of complex-valued polynomials on $$\sigma(A)$$ is dense in the set of continuous, complex-valued functions on $$\sigma(A)$$ with respect to the supremum norm. So we begin by proving this fact.
 
 > **Lemma**
@@ -6510,10 +6567,6 @@ is an element in $$\mathcal{P}(\sigma(A); \mathbb{C})$$, proving that $$\mathcal
 
 With all of this in place we are in a position to apply the [**Theorem** *(Stone–Weierstrass for Complex Numbers)*](#thrm:stone–weierstrass-complex)
 
-> **Theorem** *(Stone–Weierstrass for Complex Numbers)*
-<a name="thrm:stone–weierstrass-complex"></a>
-<!--  \uses{def:separates-points} -->
-> Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{C})$$, the space of continuous, complex-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions, separates points, and is closed under complex conjugation, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{C})$$ with respect to the supremum norm.
 
 and conclude that $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is dense in $$C^0(\sigma(A); \mathbb{C})$$ with respect to the supremum norm, the desired result.$$\blacksquare$$
 
