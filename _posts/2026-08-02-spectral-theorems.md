@@ -18,7 +18,7 @@ In this section we will introduce and prove some relatively "elementary" propert
 
 > **Definition** *(Bounded Operator Notation)*
 <a name="def:bounded-operator-notation"></a>
-> We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
+> We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$. **Throughout this post $$\mathbf{H} \ne \{0\}$$.** This is needed wherever non-emptiness of the spectrum is used — on the zero space the only operator is $$0$$, and $$A - \lambda\mathbf{1} = 0$$ is a bijection of $$\{0\}$$ onto itself with bounded inverse for every $$\lambda$$, so $$\sigma(A) = \emptyset$$ and the spectral radius would be a supremum over the empty set. Nothing is lost: on the zero space every statement below is vacuous.
 
 ### Preliminaries: Notation
 
@@ -2438,9 +2438,11 @@ Together these imply the final desired result.$$\blacksquare$$
 <!--  \uses{lmm:hall-7.6} -->
 <!--  \uses{thrm:analytic-equivalence-theorem} -->
 <!--  \uses{thrm:maximum-modulus-principle} -->
-> For all $$A \in \mathcal{B}(\mathbf{H})$$, the following results hold.
+> Suppose $$\mathbf{H} \ne \{0\}$$. For all $$A \in \mathcal{B}(\mathbf{H})$$, the following results hold.
 >
 > 1. The spectrum $$\sigma(A)$$ of $$A$$ is a closed, bounded, and non-empty subset of $$\mathbb{C}$$.
+>
+>    The hypothesis $$\mathbf{H} \ne \{0\}$$ is needed only for non-emptiness: on the zero space the only operator is $$0$$, and $$A - \lambda\mathbf{1} = 0$$ is a bijection of $$\{0\}$$ onto itself with bounded inverse for every $$\lambda$$, so every $$\lambda$$ lies in the resolvent set and $$\sigma(A) = \emptyset$$. Closedness and boundedness hold regardless.
 > 2. If $$\lvert \lambda \rvert > \|A\|$$, where $$\|A\|$$ is the operator norm of $$A$$, then $$\lambda$$ is in the resolvent set of $$A$$.
 
 **Proof**
@@ -2767,7 +2769,7 @@ with that stated let us begin the consolidation.
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$. Then the spectrum $$\sigma(A)$$ of $$A$$ satisfies the following.
+> Suppose $$\mathbf{H} \ne \{0\}$$ and let $$A \in \mathcal{B}(\mathbf{H})$$. Then the spectrum $$\sigma(A)$$ of $$A$$ satisfies the following.
 >
 > 1. $$\sigma(A)$$ is a non-empty subset of $$\mathbb{C}$$.
 > 2. $$\sigma(A)$$ is compact.
@@ -2801,7 +2803,7 @@ Combining **Part 1** through **Part 4**, $$\sigma(A)$$ is a non-empty, compact m
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{prpstn:hall-7.5} -->
-> For any $$A \in \mathcal{B}(\mathbf{H})$$ the *spectral radius* $$R(A)$$ of $$A$$ is defined by
+> Suppose $$\mathbf{H} \ne \{0\}$$. For any $$A \in \mathcal{B}(\mathbf{H})$$ the *spectral radius* $$R(A)$$ of $$A$$ is defined by
 >
 > $$
 >     R(A) \equiv \sup\limits_{\lambda \in \sigma(A)} \lvert \lambda \rvert.
