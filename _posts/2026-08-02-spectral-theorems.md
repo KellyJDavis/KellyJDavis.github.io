@@ -6253,9 +6253,18 @@ With this result as motivation, let us prove the following "utility" lemma
 > converges to $$P\psi$$ where $$P$$ is a bounded orthogonal projection onto the smallest closed subspace containing the range of the $$P_i$$.
 
 **Proof**
-This proof broadly consists of three parts **Part 1:** proving that the sequence of partial sums $$S_n\psi$$ converges and **Part 2:** proving that the sequence limit $$P\psi$$ defines a bounded orthogonal projection operator $$P$$, and **Part 3:** proving that the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. 
+Convergence of the partial sums is [**Proposition** *(Partial Sums of Pairwise Orthogonal Projections Converge)*](#prpstn:orthogonal-sum-converges); that the limit map $$P$$ is a bounded orthogonal projection is [**Proposition** *(The Limit of the Partial Sums is a Bounded Orthogonal Projection)*](#prpstn:orthogonal-sum-is-projection); and that its range is the smallest closed subspace containing the ranges of the $$P_i$$ is [**Proposition** *(The Range of the Limit Projection)*](#prpstn:orthogonal-sum-range).$$\blacksquare$$
 
-**Part 1:** Let us first prove that the sequence of partial sums $$S_n\psi$$ converges.
+> **Proposition** *(Partial Sums of Pairwise Orthogonal Projections Converge)*
+<a name="prpstn:orthogonal-sum-converges"></a>
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{lmm:projection-norm-decreasing} -->
+<!--  \uses{thrm:monotone-convergence-theorem} -->
+<!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
+> Let $$\{ P_i \}_{i \in \mathbb{N}}$$ be bounded orthogonal projections on a separable, complex Hilbert space $$\mathbf{H}$$ with $$P_iP_j = 0$$ for $$i \ne j$$. Then for every $$\psi \in \mathbf{H}$$ the sequence of partial sums $$S_n\psi \equiv \sum_{i=0}^n P_i\psi$$ converges in $$\mathbf{H}$$. We write $$P\psi$$ for its limit.
+
+**Proof**
+the sequence of partial sums $$S_n\psi$$ converges.
 
 To this end for an arbitrary $$\psi \in \mathbf{H}$$ let us first examine the norm of the partial sum $$S_n\psi$$
 
@@ -6324,7 +6333,7 @@ $$
     S_n\psi \equiv \sum_{i = 0}^n P_i\psi.
 $$
 
-Using the result we just established, we will now prove that this sequence converges, the desired conclusion of **Part 1**.
+Using the result we just established, we will now prove that this sequence converges, which is the assertion of this proposition.
 
 We will do so by employing the fact that $$\mathbf{H}$$ being a Hilbert space implies that $$\mathbf{H}$$ is also a Banach space. Thus, a Cauchy sequence in $$\mathbf{H}$$ converges in $$\mathbf{H}$$. So, if we can prove the sequence $$S_n\psi$$ is a Cauchy sequence, then we can conclude it converges.
 
@@ -6359,8 +6368,18 @@ As $$S_n\psi$$ is a Cauchy sequence and $$\mathbf{H}$$ is a Hilbert, and thus a 
 $$
     P\psi \equiv \lim\limits_{n \rightarrow \infty} S_n\psi.
 $$
+$$\blacksquare$$
 
-**Part 2:** Now let us prove that the sequence limit $$P\psi$$ defines a bounded orthogonal projection operator $$P$$. To prove that $$P$$ is a bounded orthogonal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** prove that $$P$$ is self-adjoint, and **Part 2.3:** prove that $$PP=P$$.
+> **Proposition** *(The Limit of the Partial Sums is a Bounded Orthogonal Projection)*
+<a name="prpstn:orthogonal-sum-is-projection"></a>
+<!--  \uses{prpstn:orthogonal-sum-converges} -->
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
+<!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
+> With $$\{P_i\}$$ and $$P$$ as in [**Proposition** *(Partial Sums of Pairwise Orthogonal Projections Converge)*](#prpstn:orthogonal-sum-converges), the map $$\psi \mapsto P\psi$$ is a bounded orthogonal projection on $$\mathbf{H}$$: it lies in $$\mathcal{B}(\mathbf{H})$$, is self-adjoint, and satisfies $$PP = P$$.
+
+**Proof**
+the sequence limit $$P\psi$$ defines a bounded orthogonal projection operator $$P$$. To prove that $$P$$ is a bounded orthogonal projection operator we must **Part 2.1:** prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$, **Part 2.2:** prove that $$P$$ is self-adjoint, and **Part 2.3:** prove that $$PP=P$$.
 
 **Part 2.1:** Next let us prove that $$P$$ is an element of $$\mathcal{B}(\mathbf{H})$$.
 
@@ -6410,7 +6429,7 @@ $$
 \end{align}
 $$
 
-Thus $$\|P\| \le 1$$, proving that $$P$$ is bounded and thus an element of $$\mathcal{B}(\mathbf{H})$$, the desired **Part 2.1** result.
+Thus $$\|P\| \le 1$$, proving that $$P$$ is bounded and thus an element of $$\mathcal{B}(\mathbf{H})$$, as required.
 
 **Part 2.2:** Next let us prove that $$P$$ is self-adjoint. It turns out this follows directly from the fact that each of the $$P_i$$ is self-adjoint.
 
@@ -6459,9 +6478,18 @@ $$
     PP\psi = P\psi
 $$
 
-for arbitrary $$\psi \in \mathbf{H}$$, the desired **Part 2.3** result which concludes the proof that $$P$$ is a bounded orthogonal projection.
+for arbitrary $$\psi \in \mathbf{H}$$, the third and final condition, so $$P$$ is a bounded orthogonal projection.
+$$\blacksquare$$
 
-**Part 3:** Next we will prove the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. Proving this will require two parts **Part 3.1:** prove that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$ and **Part 3.2:** prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
+> **Proposition** *(The Range of the Limit Projection)*
+<a name="prpstn:orthogonal-sum-range"></a>
+<!--  \uses{prpstn:orthogonal-sum-converges} -->
+<!--  \uses{prpstn:orthogonal-sum-is-projection} -->
+<!--  \uses{def:bounded-orthogonal-projection} -->
+> With $$\{P_i\}$$ and $$P$$ as in [**Proposition** *(Partial Sums of Pairwise Orthogonal Projections Converge)*](#prpstn:orthogonal-sum-converges), the range of $$P$$ is the smallest closed subspace of $$\mathbf{H}$$ containing the ranges of all the $$P_i$$.
+
+**Proof**
+the range of $$P$$ is the smallest closed subspace containing the range of the $$P_i$$. Proving this will require two parts **Part 3.1:** prove that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$ and **Part 3.2:** prove that the range of $$P$$ is a subset of the closed subspace containing the range of the $$P_i$$.
 
 **Part 3.1:** Let us begin by proving that the closed subspace containing the range of the $$P_i$$ is a subset of the range of $$P$$.
 
@@ -6538,9 +6566,10 @@ $$
     \bigcup_{i = 0}^n \text{Range}(P_i).
 $$
 
-Obviously, $$S_n\psi \in V$$. As $$V$$ is by construction closed and $$S_n\psi \rightarrow P\psi$$ relative to the norm on $$\mathbf{H}$$, the limit $$P\psi$$ must also live in $$V$$. Thus, $$M \subseteq V$$, the desired **Part 3.2** result.
+Obviously, $$S_n\psi \in V$$. As $$V$$ is by construction closed and $$S_n\psi \rightarrow P\psi$$ relative to the norm on $$\mathbf{H}$$, the limit $$P\psi$$ must also live in $$V$$. Thus, $$M \subseteq V$$, as required.
 
 This completes the proof of [**Lemma**](#lmm:lemma-4).$$\blacksquare$$
+
 
 With the lemma in hand we return to the countable-additivity argument, consider a series $$\{ E_i \}_{i \in \mathbb{N}}$$ of disjoint measurable subsets of the spectrum $$\sigma(A)$$ of $$A$$. We proved that the $$\mu^A(E_i)$$ are bounded orthogonal projections on the separable, complex Hilbert space $$\mathbf{H}$$ and that $$\mu^A(E_i)\mu^A(E_j) = 0$$ if $$i \neq j$$.
 
