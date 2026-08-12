@@ -22,7 +22,7 @@ In this section we will introduce and prove some relatively "elementary" propert
 
 ### Preliminaries: Notation
 
-Two pieces of notation are used pervasively throughout this post and are fixed here.
+Two pieces of notation are used pervasively throughout this post and are fixed here. We also fix that $$\mathbb{N} = \{0, 1, 2, \ldots\}$$ **includes** $$0$$, matching the convention of Lean and Mathlib; wherever an index must start at $$1$$ this is stated explicitly rather than left to the convention.
 
 > **Definition** *(The Identity Operator and Indicator Functions)*
 <a name="def:identity-and-indicator"></a>
@@ -1996,7 +1996,7 @@ $$
 Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
-    \sup\limits_{\lambda \in X} \lvert r_j(\lambda) - g(\lambda) \rvert < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \right. .
+    \sup\limits_{\lambda \in X} \lvert r_j(\lambda) - g(\lambda) \rvert < \frac{\epsilon}{2 \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert}.
 $$
 
 This implies that for all $$i,j \ge \max(N,M)$$ we have
@@ -2766,19 +2766,20 @@ with that stated let us begin the consolidation.
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{prpstn:hall-7.5} -->
-<!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{thrm:heine–borel-theorem} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then the spectrum $$\sigma(A)$$ of $$A$$ satisfies the following.
+> Let $$A \in \mathcal{B}(\mathbf{H})$$. Then the spectrum $$\sigma(A)$$ of $$A$$ satisfies the following.
 >
-> 1. $$\sigma(A)$$ is a non-empty subset of $$\mathbb{R} \subset \mathbb{C}$$.
+> 1. $$\sigma(A)$$ is a non-empty subset of $$\mathbb{C}$$.
 > 2. $$\sigma(A)$$ is compact.
 > 3. $$\sigma(A)$$ is a metric space under the metric $$d(z_1, z_2) \equiv \lvert z_1 - z_2 \rvert$$ inherited from $$\mathbb{C}$$.
 > 4. $$\sigma(A)$$ is a measurable space when equipped with its Borel $$\sigma$$-algebra, i.e. the smallest $$\sigma$$-algebra containing the open sets of $$\sigma(A)$$ in the topology induced by the metric of (3).
 >
+> No self-adjointness is assumed: parts (1)–(4) hold for every $$A \in \mathcal{B}(\mathbf{H})$$, and in particular $$\sigma(A)$$ need not be contained in $$\mathbb{R}$$. When $$A$$ *is* self-adjoint one has in addition $$\sigma(A) \subset \mathbb{R}$$, which is [**Proposition** *(hall-7.7)*](#prpstn:hall-7.7) and is stated separately there, since the topological content above does not depend on it.
+>
 > In particular, $$\sigma(A)$$ is a non-empty, compact metric measurable space. Throughout the remainder of this post, whenever $$\sigma(A)$$ is described as measurable, or a subset of $$\sigma(A)$$ is described as measurable, it is with respect to this Borel $$\sigma$$-algebra. Consequently, on $$\sigma(A)$$ the terms "measurable" and "Borel-measurable" are synonymous, both for sets and for functions.
 
 **Proof**
-**Part 1:** As $$A$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(A)$$ is a subset of $$\mathbb{R}$$, and $$\mathbb{R}$$ is a subset of $$\mathbb{C}$$. Furthermore, part 1 of [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is non-empty. This is the desired **Part 1** result.
+**Part 1:** Part 1 of [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is non-empty. This is the desired **Part 1** result.
 
 **Part 2:** Part 1 of [**Proposition**](#prpstn:hall-7.5) implies that $$\sigma(A)$$ is a closed and bounded subset of $$\mathbb{C}$$. The [**Heine–Borel Theorem**](#thrm:heine–borel-theorem) then implies that $$\sigma(A)$$ is compact, the desired **Part 2** result.
 
@@ -3973,7 +3974,7 @@ $$
 Similarly, as $$r_j$$ converges uniformly to $$g$$ and $$f$$ is bounded, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) - g(\lambda) \rvert < \left( \epsilon \left/ 2 \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \right. .
+    \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) - g(\lambda) \rvert < \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert}.
 $$
 
 This implies that for all $$i,j \ge \max(N,M)$$ we have
