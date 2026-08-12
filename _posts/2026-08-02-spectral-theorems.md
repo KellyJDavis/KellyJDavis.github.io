@@ -3933,7 +3933,23 @@ The properties of the (real-valued) functional calculus are captured in the foll
 >    where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$.
 
 **Proof**
-**Part 1:** Let us begin with Part 1 multiplicativity and prove that for all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
+Each of the four properties is established separately below: multiplicativity in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), self-adjointness in [**Proposition** *(The Continuous Functional Calculus Yields Self-Adjoint Operators)*](#prpstn:cfc-self-adjoint), non-negativity in [**Proposition** *(The Continuous Functional Calculus Preserves Non-Negativity)*](#prpstn:cfc-non-negative), and the two norm-and-spectrum identities in [**Proposition** *(Norm of an Operator from the Continuous Functional Calculus)*](#prpstn:cfc-norm) and [**Proposition** *(Spectral Mapping for the Continuous Functional Calculus)*](#prpstn:cfc-spectral-mapping) respectively.$$\blacksquare$$
+
+> **Proposition** *(The Continuous Functional Calculus is Multiplicative)*
+<a name="prpstn:cfc-multiplicative"></a>
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{thrm:composition-theorem} -->
+<!--  \uses{thrm:boundedness-theorem} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$f \mapsto f(A)$$ be the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3). Then for all $$f,g \in C^0(\sigma(A); \mathbb{R})$$,
+>
+> $$
+>     (fg)(A) = f(A)g(A),
+> $$
+>
+> where $$(fg)(\lambda) \equiv f(\lambda)g(\lambda)$$.
+
+**Proof**
+for all $$f,g \in C^0(\sigma(A); \mathbb{R})$$, we have
 
 $$
     (fg)(A) = f(A)g(A),
@@ -4065,11 +4081,19 @@ $$
 where the first equality follows from our previous derivation, the second equality from [**Proposition**](#prpstn:hall-8.3) proving that for real-valued polynomials $$p$$ the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$p \rightarrow p(A)$$ is isometric, the third equality from $$(s_ir_i)(\lambda) \equiv s_i(\lambda)r_i(\lambda)$$, and the fourth equality follows from [**Proposition**](#prpstn:hall-8.3) which proved $$s_i(A)r_i(A) \rightarrow f(A)g(A)$$ relative to the operator norm.
 
 
-In summary this proves the desired Part 1 multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
+In summary this proves the desired multiplicativity result, $$(fg)(A) = f(A) g(A)$$.
+$$\blacksquare$$
 
-**Part 2:** Next let us prove Part 2 self-adjointness, proving for any $$f \in C^0(\sigma(A); \mathbb{R})$$, the operator $$f(A)$$ is self-adjoint.
+> **Proposition** *(The Continuous Functional Calculus Yields Self-Adjoint Operators)*
+<a name="prpstn:cfc-self-adjoint"></a>
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:continuity-of-the-adjoint} -->
+> With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), for any $$f \in C^0(\sigma(A); \mathbb{R})$$ the operator $$f(A)$$ is self-adjoint.
 
-As mentioned in Part 1 there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
+**Proof**
+for any $$f \in C^0(\sigma(A); \mathbb{R})$$, the operator $$f(A)$$ is self-adjoint.
+
+By [**Proposition**](#prpstn:hall-8.3) there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
 
 Furthermore, as any $$s_i$$ is a real-valued polynomial, the map $$s_i \mapsto s_i(A)$$ of the [**Lemma** *(Spectral Mapping Theorem)*](#lmm:spectral-mapping-theorem) gives
 
@@ -4100,9 +4124,19 @@ $$
 \end{align}
 $$
 
-proving that $$f(A)^* = f(A)$$ and thus that $$f(A)$$ is self-adjoint, the desired Part 2 self-adjointness result.
+proving that $$f(A)^* = f(A)$$ and thus that $$f(A)$$ is self-adjoint, the desired self-adjointness result.
+$$\blacksquare$$
 
-**Part 3:** Next let us prove Part 3 non-negativity, proving that for any $$f \in C^0(\sigma(A); \mathbb{R})$$ such that $$f$$ is non-negative, it follows that $$f(A)$$ is a non-negative bounded operator.
+> **Proposition** *(The Continuous Functional Calculus Preserves Non-Negativity)*
+<a name="prpstn:cfc-non-negative"></a>
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{def:non-negative-operator} -->
+<!--  \uses{prpstn:cfc-multiplicative} -->
+<!--  \uses{prpstn:cfc-self-adjoint} -->
+> With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), if $$f \in C^0(\sigma(A); \mathbb{R})$$ is non-negative then $$f(A)$$ is a non-negative bounded operator.
+
+**Proof**
+for any $$f \in C^0(\sigma(A); \mathbb{R})$$ such that $$f$$ is non-negative, it follows that $$f(A)$$ is a non-negative bounded operator.
 
 If $$f \in C^0(\sigma(A); \mathbb{R})$$ is non-negative, then there exists a continuous function $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ such that $$g = \sqrt{f}$$. This follows from the fact that $$f$$ is by hypothesis continuous and the square root function
 
@@ -4115,7 +4149,7 @@ $$
 
 is continuous. Hence, as a result of the [**Composition Theorem**](#thrm:composition-theorem) we know $$h \circ f = \sqrt{f}$$ is continuous on $$\sigma(A)$$ and thus an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
-With $$g \equiv \sqrt{f}$$ it follows that $$f = g^2$$. Applying the result of Part 1 we have $$f(A) = g(A)g(A)$$. Applying the result of Part 2 we know that $$g(A)$$ is self-adjoint. Hence, for any $$\psi \in \mathbf{H}$$ we have
+With $$g \equiv \sqrt{f}$$ it follows that $$f = g^2$$. Applying [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative) we have $$f(A) = g(A)g(A)$$. Applying [**Proposition** *(The Continuous Functional Calculus Yields Self-Adjoint Operators)*](#prpstn:cfc-self-adjoint) we know that $$g(A)$$ is self-adjoint. Hence, for any $$\psi \in \mathbf{H}$$ we have
 
 $$
 \begin{align}
@@ -4132,9 +4166,24 @@ $$
     0 \le \left< \psi, f(A)\psi \right>.
 $$
 
-As $$f(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3), this is none other than the statement that $$f(A)$$ is a non-negative bounded operator, the desired result of Part 3.
+As $$f(A)$$ is bounded as a result of [**Proposition**](#prpstn:hall-8.3), this is none other than the statement that $$f(A)$$ is a non-negative bounded operator, the desired result.
+$$\blacksquare$$
 
-**Part 4:** Finally let us prove Part 4 norm and spectrum properties, proving that for any $$f \in C^0(\sigma(A); \mathbb{R})$$, we have
+> **Proposition** *(Norm of an Operator from the Continuous Functional Calculus)*
+<a name="prpstn:cfc-norm"></a>
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+> With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), for any $$f \in C^0(\sigma(A); \mathbb{R})$$,
+>
+> $$
+>     \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,
+> $$
+>
+> where $$\|f(A)\|$$ is the operator norm of $$f(A)$$.
+
+**Proof**
+for any $$f \in C^0(\sigma(A); \mathbb{R})$$, we have
 
 $$
     \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,
@@ -4154,7 +4203,7 @@ $$
     \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert.
 $$
 
-As mentioned in Part 1 there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
+By [**Proposition**](#prpstn:hall-8.3) there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
 
 As proven in [**Proposition**](#prpstn:hall-8.3) for a real-valued polynomials $$p$$ on $$\sigma(A)$$ the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) map $$p \rightarrow p(A)$$ is isometric
 
@@ -4180,9 +4229,25 @@ $$
    \| f(A) \| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert
 $$ 
 
-of Part 4.
+as required.$$\blacksquare$$
 
-Next let us prove the remaining result of Part 4
+> **Proposition** *(Spectral Mapping for the Continuous Functional Calculus)*
+<a name="prpstn:cfc-spectral-mapping"></a>
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{lmm:hall-prblm-7.4.8} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{prpstn:cfc-multiplicative} -->
+<!--  \uses{prpstn:hall-7.5} -->
+> With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), for any $$f \in C^0(\sigma(A); \mathbb{R})$$,
+>
+> $$
+>     \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
+> $$
+>
+> where $$\sigma(f(A))$$ is the spectrum of $$f(A)$$.
+
+**Proof**
+We prove the two inclusions in turn.
 
 $$
     \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
@@ -4204,7 +4269,7 @@ Such a $$\lambda_0$$ could lie in the complement of $$\mathbb{R}$$ in $$\mathbb{
 
 Assume first that $$\lambda_0$$ is in the complement of $$\mathbb{R}$$ in $$\mathbb{C}$$. This in particular implies that the imaginary component of $$\lambda_0$$ is non-zero.
 
-Now, as a result of Part 2 $$f(A)$$ is self-adjoint. As $$f(A)$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(f(A))$$ is a subset of $$\mathbb{R}$$ in $$\mathbb{C}$$.
+Now, by [**Proposition** *(The Continuous Functional Calculus Yields Self-Adjoint Operators)*](#prpstn:cfc-self-adjoint), $$f(A)$$ is self-adjoint. As $$f(A)$$ is self-adjoint, [**Proposition**](#prpstn:hall-7.7) implies that $$\sigma(f(A))$$ is a subset of $$\mathbb{R}$$ in $$\mathbb{C}$$.
 
 However, as the imaginary component of $$\lambda_0$$ is non-zero this implies that $$\lambda_0$$ is not in $$\sigma(f(A))$$.
 
@@ -4226,7 +4291,7 @@ $$
     1 = (f(\lambda) - \lambda_0) \left( \frac{1}{f(\lambda) - \lambda_0} \right) = (f(\lambda) - \lambda_0) g(\lambda).
 $$
 
-As a result of Part 1 this implies
+By [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative) this implies
 
 $$
     \mathbf{1} = (f(A) - \lambda_0 \mathbf{1}) g(A).
@@ -4248,7 +4313,7 @@ Assume that there exists some $$\lambda_0$$ such that $$\lambda_0 = f(\mu)$$ for
 
 To that end, assume that $$f(\mu)$$ is in the resolvent set of $$A$$. Hence, $$f(A) - f(\mu) \mathbf{1}$$ is invertible in $$\mathcal{B}(\mathbf{H})$$.
 
-As mentioned in Part 1 there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
+By [**Proposition**](#prpstn:hall-8.3) there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ in the set of real-valued polynomials on $$\sigma(A)$$ such that $$s_i \rightarrow f$$ uniformly.
 
 As $$s_i \rightarrow f$$ uniformly [**Proposition**](#prpstn:hall-8.3) implies that $$s_i(A) \rightarrow f(A)$$ relative to the operator norm. Hence, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
 
@@ -4290,6 +4355,7 @@ $$
 $$
 
 the final desired result.$$\blacksquare$$
+
 
 **Stage 2: An Operator-Valued Riesz Representation Theorem**
 
