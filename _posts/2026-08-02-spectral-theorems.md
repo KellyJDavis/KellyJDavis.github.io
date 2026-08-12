@@ -6859,9 +6859,56 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 > Then $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.
 
 **Proof**
-This proof broadly consists of four parts **Part 1:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials, **Part 2:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on continuous complex-valued functions, **Part 3:** prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on bounded, measurable complex-valued functions, and **Part 4** prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
+The proof is a ladder of increasing function classes: the two integrals agree on polynomials by [**Proposition** *(Two Spectral Measures Agree on Polynomials)*](#prpstn:pvm-agree-on-polynomials), on continuous functions by [**Proposition** *(Two Spectral Measures Agree on Continuous Functions)*](#prpstn:pvm-agree-on-continuous), and on bounded Borel-measurable functions by [**Proposition** *(Two Spectral Measures Agree on Bounded Measurable Functions)*](#prpstn:pvm-agree-on-measurable). It remains to specialise to indicator functions.
 
-**Part 1:** Let us first prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
+We now prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
+
+Consider any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$ along with its indicator function $$1_E$$. As a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) we have
+
+$$
+\begin{align}
+    \mu^A(E) &= \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda) \\
+    \nu^A(E) &= \int_{\sigma(A)} 1_E(\lambda) \, d\nu^A(\lambda). 
+\end{align}
+$$
+
+Now the indicator function $$1_E$$ is obviously bounded, as
+
+$$
+    \lvert 1_E(\lambda) \rvert \le 1
+$$
+
+for all $$\lambda$$ in $$\sigma(A)$$; measurable, as the inverse image of any measurable set in $$\mathbb{C}$$ is either the empty set or $$E$$; and also complex-valued, as $$\mathbb{R}$$ is a subset of $$\mathbb{C}$$. Hence, the indicator function $$1_E$$ is a bounded, Borel-measurable function on $$\sigma(A)$$.
+
+Now, by [**Proposition** *(Two Spectral Measures Agree on Bounded Measurable Functions)*](#prpstn:pvm-agree-on-measurable), operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$. So in the case of $$1_E$$ this implies that
+
+$$
+    \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} 1_E(\lambda) \, d\nu^A(\lambda).
+$$
+
+This along with our previous expressions for $$\mu^A(E)$$ and $$\nu^A(E)$$ then imply
+
+$$
+    \mu^A(E) = \nu^A(E),
+$$
+
+the desired result of this final part.
+$$\blacksquare$$
+
+> **Proposition** *(Two Spectral Measures Agree on Polynomials)*
+<a name="prpstn:pvm-agree-on-polynomials"></a>
+<!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{prpstn:integral-mult-measurable} -->
+<!--  \uses{prpstn:integral-of-indicator} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A, \nu^A$$ be projection-valued measures on $$\sigma(A)$$ with $$\int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A = \int_{\sigma(A)} \lambda \, d\nu^A(\lambda)$$. Then for every polynomial $$p$$ on $$\sigma(A)$$,
+>
+> $$
+>     \int_{\sigma(A)} p \, d\mu^A = \int_{\sigma(A)} p \, d\nu^A.
+> $$
+
+**Proof**
+operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
 
 Consider an arbitrary complex valued polynomial $$p$$ on $$\sigma(A)$$ with $$\mathbb{C}$$ valued coefficients. Generically $$p$$ has the form
 
@@ -6900,8 +6947,25 @@ $$
 $$
 
 operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on complex-valued polynomials.
+$$\blacksquare$$
 
-**Part 2:** Let us next prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of continuous, complex-valued functions on $$\sigma(A)$$.
+> **Proposition** *(Two Spectral Measures Agree on Continuous Functions)*
+<a name="prpstn:pvm-agree-on-continuous"></a>
+<!--  \uses{prpstn:pvm-agree-on-polynomials} -->
+<!--  \uses{lmm:lemma-5} -->
+<!--  \uses{thrm:bounded-linear-transformation-theorem} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+> With $$A, \mu^A, \nu^A$$ as in [**Proposition** *(Two Spectral Measures Agree on Polynomials)*](#prpstn:pvm-agree-on-polynomials), for every continuous, complex-valued $$g$$ on $$\sigma(A)$$,
+>
+> $$
+>     \int_{\sigma(A)} g \, d\mu^A = \int_{\sigma(A)} g \, d\nu^A.
+> $$
+
+**Proof**
+operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of continuous, complex-valued functions on $$\sigma(A)$$.
 
 The next lemma uses the complex-valued Stone–Weierstrass Theorem, which we state first.
 
@@ -6910,7 +6974,7 @@ The next lemma uses the complex-valued Stone–Weierstrass Theorem, which we sta
 <!--  \uses{def:separates-points} -->
 > Let $$X$$ be a compact metric space and let $$\mathcal{A}$$ be an algebra in $$C^0(X; \mathbb{C})$$, the space of continuous, complex-valued functions on $$X$$. If $$\mathcal{A}$$ contains the constant functions, separates points, and is closed under complex conjugation, then $$\mathcal{A}$$ is dense in $$C^0(X; \mathbb{C})$$ with respect to the supremum norm.
 
-Later in **Part 2** we will have need of the fact that the set of complex-valued polynomials on $$\sigma(A)$$ is dense in the set of continuous, complex-valued functions on $$\sigma(A)$$ with respect to the supremum norm. So we begin by proving this fact.
+We will have need of the fact that the set of complex-valued polynomials on $$\sigma(A)$$ is dense in the set of continuous, complex-valued functions on $$\sigma(A)$$ with respect to the supremum norm. So we begin by proving this fact.
 
 > **Lemma**
 <a name="lmm:lemma-5"></a>
@@ -7027,17 +7091,34 @@ With that established, let us restrict the domain of $$I_{\mu^A}$$ and $$I_{\nu^
 
 Finally, we may make use of the [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) to uniquely extend the domain of $$I_{\mu^A}$$ and $$I_{\nu^A}$$ from $$\mathcal{P}(\sigma(A); \mathbb{C})$$ to all of $$C^0(\sigma(A); \mathbb{C})$$. (Note we will still use the same notation $$I_{\mu^A}$$ and $$I_{\nu^A}$$ for these extended maps.) As $$I_{\mu^A}$$ and $$I_{\nu^A}$$ are extensions, $$I_{\mu^A}$$ agrees on $$\mathcal{P}(\sigma(A); \mathbb{C})$$ with its non-extended version, and a similar statement is true of $$I_{\nu^A}$$.
 
-However, as we just established in **Part 1** the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree when restricted to $$\mathcal{P}(\sigma(A); \mathbb{C})$$. Thus, as the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ obtained from [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) are unique, this implies that the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree everywhere on the domain $$C^0(\sigma(A); \mathbb{C})$$. 
+However, by [**Proposition** *(Two Spectral Measures Agree on Polynomials)*](#prpstn:pvm-agree-on-polynomials) the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree when restricted to $$\mathcal{P}(\sigma(A); \mathbb{C})$$. Thus, as the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ obtained from [**Theorem** *(Bounded Linear Transformation Theorem)*](#thrm:bounded-linear-transformation-theorem) are unique, this implies that the extensions $$I_{\mu^A}$$ and $$I_{\nu^A}$$ agree everywhere on the domain $$C^0(\sigma(A); \mathbb{C})$$. 
 
-Hence, we have proven the desired **Part 2** result that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of continuous, complex-valued functions on $$\sigma(A)$$.
+Hence, we have proven as required: operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of continuous, complex-valued functions on $$\sigma(A)$$.
+$$\blacksquare$$
 
-**Part 3:** Now let us prove that operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of bounded, measurable complex-valued functions.
+> **Proposition** *(Two Spectral Measures Agree on Bounded Measurable Functions)*
+<a name="prpstn:pvm-agree-on-measurable"></a>
+<!--  \uses{prpstn:pvm-agree-on-continuous} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+> With $$A, \mu^A, \nu^A$$ as in [**Proposition** *(Two Spectral Measures Agree on Polynomials)*](#prpstn:pvm-agree-on-polynomials), for every bounded, Borel-measurable, complex-valued $$f$$ on $$\sigma(A)$$,
+>
+> $$
+>     \int_{\sigma(A)} f \, d\mu^A = \int_{\sigma(A)} f \, d\nu^A.
+> $$
 
-Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$.
+**Proof**
+operator-valued integration with respect to $$\mu^A$$ agrees with that with respect to $$\nu^A$$ on the set of bounded, measurable complex-valued functions.
 
-Recall that in **Part 2** we proved that $$C^0(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{F}$$. Now, as $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$C^0(\sigma(A); \mathbb{C})$$, it obviously follows that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$ too.
+Let $$\mathcal{G}$$ be the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$.
 
-Also note that as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$---now viewed as having domain consisting of all bounded, measurable, complex-valued functions on $$\sigma(A)$$---are linear. This implies that $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$. Explicitly, consider arbitrary $$f_1,f_2 \in \mathcal{F}$$ and arbitrary $$\alpha_1, \alpha_2 \in \mathbb{C}$$. Linearity of $$I_{\mu^A}$$ implies
+Recall from [**Proposition** *(Two Spectral Measures Agree on Continuous Functions)*](#prpstn:pvm-agree-on-continuous) that $$C^0(\sigma(A); \mathbb{C})$$ is a subset of $$\mathcal{G}$$. Now, as $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$C^0(\sigma(A); \mathbb{C})$$, it obviously follows that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{G}$$ too.
+
+Also note that as a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) the maps $$I_{\mu^A}$$ and $$I_{\nu^A}$$---now viewed as having domain consisting of all bounded, measurable, complex-valued functions on $$\sigma(A)$$---are linear. This implies that $$\mathcal{G}$$ is a vector space over $$\mathbb{C}$$. Explicitly, consider arbitrary $$f_1,f_2 \in \mathcal{G}$$ and arbitrary $$\alpha_1, \alpha_2 \in \mathbb{C}$$. Linearity of $$I_{\mu^A}$$ implies
 
 $$
     \int_{\sigma(A)} \left( \alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda) \right) \, d\mu^A(\lambda) =  
@@ -7051,7 +7132,7 @@ $$
     \alpha_1 \int_{\sigma(A)} f_1(\lambda) \, d\nu^A(\lambda) + \alpha_2 \int_{\sigma(A)} f_2(\lambda) \, d\nu^A(\lambda).
 $$
 
-However, as $$f_1,f_2 \in \mathcal{F}$$ the definition of $$\mathcal{F}$$ implies
+However, as $$f_1,f_2 \in \mathcal{G}$$ the definition of $$\mathcal{G}$$ implies
 
 $$
 \begin{align}
@@ -7067,11 +7148,11 @@ $$
     \int_{\sigma(A)} \left( \alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda) \right) \, d\nu^A(\lambda).
 $$
 
-This implies that $$\alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda)$$ is in element $$\mathcal{F}$$ and thus $$\mathcal{F}$$ is a vector space over $$\mathbb{C}$$.
+This implies that $$\alpha_1 f_1(\lambda) + \alpha_2 f_2(\lambda)$$ is in element $$\mathcal{G}$$ and thus $$\mathcal{G}$$ is a vector space over $$\mathbb{C}$$.
 
-Next we want to prove that $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences.
+Next we want to prove that $$\mathcal{G}$$ is closed under pointwise limits of uniformly bounded sequences.
 
-To this end let $$\{ f_i \}_{i \in \mathbb{N}}$$ be a sequence in $$\mathcal{F}$$, uniformly bounded by some $$M \in \mathbb{R}$$, that converges pointwise to a function $$f$$ on $$\sigma(A)$$. By [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions), $$f$$ is itself a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$, and so is a candidate for membership in $$\mathcal{F}$$. Let $$\psi \in \mathbf{H}$$ be arbitrary.
+To this end let $$\{ f_i \}_{i \in \mathbb{N}}$$ be a sequence in $$\mathcal{G}$$, uniformly bounded by some $$M \in \mathbb{R}$$, that converges pointwise to a function $$f$$ on $$\sigma(A)$$. By [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions), $$f$$ is itself a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$, and so is a candidate for membership in $$\mathcal{G}$$. Let $$\psi \in \mathbf{H}$$ be arbitrary.
 
 By the defining property of the map of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), applied to the projection-valued measure $$\mu^A$$, we have for every $$i \in \mathbb{N}$$
 
@@ -7103,7 +7184,7 @@ $$
     \left< \psi, \left( \int_{\sigma(A)} f_i(\lambda) \, d\nu^A(\lambda) \right) \psi \right> \longrightarrow \left< \psi, \left( \int_{\sigma(A)} f(\lambda) \, d\nu^A(\lambda) \right) \psi \right>.
 $$
 
-However, as each $$f_i$$ is an element of $$\mathcal{F}$$, the definition of $$\mathcal{F}$$ gives
+However, as each $$f_i$$ is an element of $$\mathcal{G}$$, the definition of $$\mathcal{G}$$ gives
 
 $$
     \int_{\sigma(A)} f_i(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} f_i(\lambda) \, d\nu^A(\lambda)
@@ -7135,7 +7216,7 @@ $$
     \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} f(\lambda) \, d\nu^A(\lambda),
 $$
 
-which is precisely the statement that $$f \in \mathcal{F}$$. Thus $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences, the desired result.
+which is precisely the statement that $$f \in \mathcal{G}$$. Thus $$\mathcal{G}$$ is closed under pointwise limits of uniformly bounded sequences, the desired result.
 
 Recall that by [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](#lmm:spectrum-is-compact-metric-measurable), $$\sigma(A)$$ is a non-empty, compact metric measurable space.
 
@@ -7143,42 +7224,10 @@ Furthermore, as $$\sigma(A)$$ is a subset of $$\mathbb{C}$$ it inherits the metr
 
 Finally recall, as we have noted many times, $$\sigma(A)$$ is also a measurable space as it is equipped with the Borel $$\sigma$$-algebra.
 
-So we have $$\sigma(A)$$ a compact metric measurable space by [**Lemma**](#lmm:spectrum-is-compact-metric-measurable), $$\mathcal{F}$$ a set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. These are the exact conditions we require to apply the [**Lemma**](#lmm:hall-prblm-8.3.3c) we previously proved.
+So we have $$\sigma(A)$$ a compact metric measurable space by [**Lemma**](#lmm:spectrum-is-compact-metric-measurable), $$\mathcal{G}$$ a set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that (1) $$\mathcal{G}$$ is a complex vector space, (2) $$\mathcal{G}$$ contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) $$\mathcal{G}$$ is closed under pointwise limits of uniformly bounded sequences. These are the exact conditions we require to apply the [**Lemma**](#lmm:hall-prblm-8.3.3c) we previously proved.
 
-Applying this [**Lemma**](#lmm:hall-prblm-8.3.3c) to the case at hand, we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$. However, by definition $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$. Thus, these last two facts imply that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$, the desired result of **Part 3**.
-
-**Part 4:** Finally let us prove that $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$.
-
-Consider any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$ along with its indicator function $$1_E$$. As a result of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) we have
-
-$$
-\begin{align}
-    \mu^A(E) &= \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda) \\
-    \nu^A(E) &= \int_{\sigma(A)} 1_E(\lambda) \, d\nu^A(\lambda). 
-\end{align}
-$$
-
-Now the indicator function $$1_E$$ is obviously bounded, as
-
-$$
-    \lvert 1_E(\lambda) \rvert \le 1
-$$
-
-for all $$\lambda$$ in $$\sigma(A)$$; measurable, as the inverse image of any measurable set in $$\mathbb{C}$$ is either the empty set or $$E$$; and also complex-valued, as $$\mathbb{R}$$ is a subset of $$\mathbb{C}$$. Hence, the indicator function $$1_E$$ is a bounded, Borel-measurable function on $$\sigma(A)$$.
-
-Now, as we proved in **Part 3**, operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$. So in the case of $$1_E$$ this implies that
-
-$$
-    \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda) = \int_{\sigma(A)} 1_E(\lambda) \, d\nu^A(\lambda).
-$$
-
-This along with our previous expressions for $$\mu^A(E)$$ and $$\nu^A(E)$$ then imply
-
-$$
-    \mu^A(E) = \nu^A(E),
-$$
-
-the desired result of this final part.
+Applying this [**Lemma**](#lmm:hall-prblm-8.3.3c) to the case at hand, we can conclude that $$\mathcal{G}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$. However, by definition $$\mathcal{G}$$ is the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$. Thus, these last two facts imply that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$, as required.
+$$\blacksquare$$
 
 So with this we have proven that under the hypotheses of the [**Theorem**](#thrm:hall-prblm-8.3.4) $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.$$\blacksquare$$
 
