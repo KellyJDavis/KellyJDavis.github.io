@@ -417,14 +417,6 @@ As $$B$$ extends $$A^{\text{cl}}$$ and their domains coincide, $$B = A^{\text{cl
 
 We record next a description of $$\text{Ker}(A^*)$$ in terms of $$A$$ itself, generalizing the corresponding fact for bounded operators. First, since $$A$$ need not be defined on all of $$\mathbf{H}$$, we fix what $$\text{Range}(A)$$ means — and, since we are about to need orthogonal complements of subsets that are not the whole space, we fix that notion too, once and for all, rather than the informal shorthand $$\{\psi : \left<\psi,A\phi\right>=0 \text{ for all } \phi\}$$ sometimes used for bounded operators (where it happens to cause no harm, since there $$\text{Dom}(A) = \mathbf{H}$$, but would be wrong here, where $$\text{Dom}(A) \subsetneq \mathbf{H}$$ in general).
 
-> **Definition** *(Orthogonal Complement)*
-<a name="def:orthogonal-complement"></a>
-> If $$V \subset \mathbf{H}$$ is any subset, its *orthogonal complement* is
->
-> $$
->     V^\perp \equiv \{ \psi \in \mathbf{H} \mid \left< \psi, v \right> = 0 \text{ for all } v \in V \}.
-> $$
-
 > **Definition** *(Kernel of an Unbounded Operator)*
 <a name="def:kernel-of-an-unbounded-operator"></a>
 <!--  \uses{def:hall-3.1} -->
@@ -439,14 +431,14 @@ We record next a description of $$\text{Ker}(A^*)$$ in terms of $$A$$ itself, ge
 > **Definition** *(Range of an Unbounded Operator)*
 <a name="def:range-of-an-unbounded-operator"></a>
 <!--  \uses{def:hall-3.1} -->
-<!--  \uses{def:orthogonal-complement} -->
-> If $$A$$ is an unbounded operator on $$\mathbf{H}$$, its *range* is $$\text{Range}(A) \equiv \{ A\psi \mid \psi \in \text{Dom}(A) \} \subset \mathbf{H}$$. Since $$\text{Dom}(A)$$ is a subspace of $$\mathbf{H}$$ and $$A$$ is linear, $$\text{Range}(A)$$ is again a subspace of $$\mathbf{H}$$: it contains $$0 = A0$$, and for $$A\psi_1, A\psi_2 \in \text{Range}(A)$$ and $$\alpha,\beta \in \mathbb{C}$$, linearity of $$A$$ gives $$\alpha A\psi_1 + \beta A\psi_2 = A(\alpha\psi_1+\beta\psi_2) \in \text{Range}(A)$$, as $$\alpha\psi_1+\beta\psi_2 \in \text{Dom}(A)$$. Unwinding [Definition (Orthogonal Complement)](#def:orthogonal-complement) for $$V = \text{Range}(A)$$: $$\left( \text{Range}(A) \right)^\perp = \{ \psi \in \mathbf{H} \mid \left< \psi, A\phi \right> = 0 \text{ for all } \phi \in \text{Dom}(A) \}$$ — the quantifier ranges over $$\text{Dom}(A)$$, not all of $$\mathbf{H}$$.
+<!--  \uses{../spectral-theorems/#def:orthogonal-complement} -->
+> If $$A$$ is an unbounded operator on $$\mathbf{H}$$, its *range* is $$\text{Range}(A) \equiv \{ A\psi \mid \psi \in \text{Dom}(A) \} \subset \mathbf{H}$$. Since $$\text{Dom}(A)$$ is a subspace of $$\mathbf{H}$$ and $$A$$ is linear, $$\text{Range}(A)$$ is again a subspace of $$\mathbf{H}$$: it contains $$0 = A0$$, and for $$A\psi_1, A\psi_2 \in \text{Range}(A)$$ and $$\alpha,\beta \in \mathbb{C}$$, linearity of $$A$$ gives $$\alpha A\psi_1 + \beta A\psi_2 = A(\alpha\psi_1+\beta\psi_2) \in \text{Range}(A)$$, as $$\alpha\psi_1+\beta\psi_2 \in \text{Dom}(A)$$. Unwinding [Definition (Orthogonal Complement)](../spectral-theorems/#def:orthogonal-complement) for $$V = \text{Range}(A)$$: $$\left( \text{Range}(A) \right)^\perp = \{ \psi \in \mathbf{H} \mid \left< \psi, A\phi \right> = 0 \text{ for all } \phi \in \text{Dom}(A) \}$$ — the quantifier ranges over $$\text{Dom}(A)$$, not all of $$\mathbf{H}$$.
 
 We will need two standard facts about closed subspaces of a Hilbert space at several points below, starting almost immediately; we import them together, as Hall does when he first needs them.
 
 > **Proposition** *(Orthogonal Decomposition and the Double Complement)*
 <a name="prpstn:hall-a.49"></a>
-<!--  \uses{def:orthogonal-complement} -->
+<!--  \uses{../spectral-theorems/#def:orthogonal-complement} -->
 > 1. If $$V$$ is a closed subspace of $$\mathbf{H}$$, every $$\psi \in \mathbf{H}$$ decomposes uniquely as $$\psi = \psi_1 + \psi_2$$ with $$\psi_1 \in V$$ and $$\psi_2 \in V^\perp$$.
 > 2. If $$V$$ is any subspace of $$\mathbf{H}$$, then $$(V^\perp)^\perp = \overline{V}$$, the closure of $$V$$. In particular, if $$V$$ is closed, $$(V^\perp)^\perp = V$$.
 
@@ -466,7 +458,7 @@ Conversely, suppose $$V$$ is dense, i.e. $$\overline{V} = \mathbf{H}$$. Let $$\p
 > **Proposition** *(Orthogonal Complement of the Range)*
 <a name="prpstn:hall-9.12"></a>
 <!--  \uses{def:hall-9.1} -->
-<!--  \uses{def:orthogonal-complement} -->
+<!--  \uses{../spectral-theorems/#def:orthogonal-complement} -->
 <!--  \uses{lmm:characterizing-adjoint-domain-membership} -->
 <!--  \uses{def:range-of-an-unbounded-operator} -->
 <!--  \uses{def:kernel-of-an-unbounded-operator} -->
@@ -860,7 +852,7 @@ The identification below is by a *unitary* map, so we record that notion first; 
 
 > **Definition** *(Internal Orthogonal Decomposition)*
 <a name="def:internal-orthogonal-decomposition"></a>
-<!--  \uses{def:orthogonal-complement} -->
+<!--  \uses{../spectral-theorems/#def:orthogonal-complement} -->
 > A sequence $$\{ \mathbf{K}_n \}_{n=1}^\infty$$ of closed subspaces of $$\mathbf{H}$$ is an *internal orthogonal decomposition* of $$\mathbf{H}$$ if
 >
 > 1. the subspaces are pairwise orthogonal: $$\left< \eta, \zeta \right> = 0$$ whenever $$\eta \in \mathbf{K}_n$$, $$\zeta \in \mathbf{K}_m$$ with $$n \ne m$$; and
@@ -1281,16 +1273,6 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 <!--  \uses{conv:section-integration} -->
 > Let $$(X,\Omega,\nu)$$ be a measure space and $$\{g_n\}$$ measurable complex-valued functions on $$X$$ converging pointwise to $$g$$, with $$\lvert g_n \rvert \le G$$ for all $$n$$ and some $$\nu$$-integrable $$G$$. Then $$g$$ and each $$g_n$$ are $$\nu$$-integrable and $$\int_X g_n \, d\nu \to \int_X g \, d\nu$$.
 
-> **Proposition** *(Basic Properties of the Integral, and Integration over a Subset)*
-<a name="prpstn:basic-integral-properties"></a>
-<!--  \uses{conv:section-integration} -->
-> Let $$(X,\Omega,\nu)$$ be a measure space.
->
-> 1. *(Integration over a subset.)* For $$E \in \Omega$$ and $$g$$ measurable, $$\int_E g \, d\nu \equiv \int_X 1_E\,g \, d\nu$$, whenever the right-hand side is defined. This is the meaning of the notation $$\int_E g\,d\nu$$ throughout.
-> 2. *(Linearity in the integrand.)* If $$g,h$$ are $$\nu$$-integrable and $$\alpha,\beta\in\mathbb{C}$$, then $$\alpha g + \beta h$$ is $$\nu$$-integrable and $$\int_X (\alpha g + \beta h)\,d\nu = \alpha\int_X g\,d\nu + \beta\int_X h\,d\nu$$. The same identity holds for nonnegative measurable $$g,h$$ and $$\alpha,\beta \ge 0$$, as an equality in $$[0,\infty]$$.
-> 3. *(Monotonicity in the integrand.)* If $$g,h$$ are measurable with $$0 \le g \le h$$ pointwise, then $$\int_X g\,d\nu \le \int_X h\,d\nu$$ in $$[0,\infty]$$. In particular, if $$0 \le g \le c$$ on $$E$$ for a constant $$c$$, then $$\int_E g\,d\nu \le c\,\nu(E)$$.
-> 4. *(Triangle inequality.)* If $$g$$ is $$\nu$$-integrable then $$\lvert \int_X g\,d\nu \rvert \le \int_X \lvert g \rvert\,d\nu$$.
-
 > **Proposition** *(Linearity of the Integral in the Measure)*
 <a name="prpstn:additivity-of-the-integral-in-the-measure"></a>
 <!--  \uses{conv:section-integration} -->
@@ -1337,7 +1319,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 > **Proposition** *(Countable Additivity of the Integral over a Disjoint Cover)*
 <a name="prpstn:countable-additivity-of-the-integral"></a>
 <!--  \uses{conv:section-integration} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Let $$(X,\Omega,\nu)$$ be a measure space, $$g$$ a nonnegative measurable function on $$X$$, and $$\{ E_n \}_{n=1}^\infty$$ a pairwise disjoint sequence in $$\Omega$$ with $$\bigcup_n E_n = X$$. Then
 >
 > $$
@@ -1349,7 +1331,7 @@ The proofs of [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2) and [**Proposit
 > **Proposition** *(Integrals Agree when Measures Agree on a Set)*
 <a name="prpstn:integrals-agree-when-measures-agree"></a>
 <!--  \uses{conv:section-integration} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Let $$\nu, \nu'$$ be measures on $$(X,\Omega)$$ and $$E \in \Omega$$, and suppose $$\nu(S) = \nu'(S)$$ for every measurable $$S \subset E$$. Then $$\int_E g \, d\nu = \int_E g \, d\nu'$$ for every nonnegative measurable $$g$$ on $$X$$.
 
 We record two more facts about projection-valued measures before the main proof, both used more than once below; extracting them now avoids re-deriving them, or worse, citing "the same argument as" a proof written for a different purpose. First, though, a fact about a single projection, used at several places to know that ranges of projections are closed subspaces.
@@ -1384,7 +1366,7 @@ The inner-product axioms hold on $$V$$ because they hold on $$\mathbf{H}$$ and $
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$ and $$\eta \in \text{Range}(\mu(E))$$ for some $$E \in \Omega(X)$$. Then $$\mu_\eta(E^c) = 0$$. Consequently, for any nonnegative measurable $$g$$ on $$X$$,
 >
 > $$
@@ -1460,7 +1442,7 @@ We can now state and prove the central technical result of this section. It is t
 <!--  \uses{lmm:associated-measure-total-mass} -->
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 <!--  \uses{prpstn:additivity-of-the-integral-in-the-measure} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X, \Omega(X))$$ with values in $$\mathcal{B}(\mathbf{H})$$, and let $$f : X \to \mathbb{C}$$ be a measurable function, not necessarily bounded (but everywhere finite-valued, since its values lie in $$\mathbb{C}$$ — this is used below, where the sets $$\{ \lvert f \rvert < n \}$$ are required to exhaust $$X$$). Let
 >
@@ -1597,7 +1579,7 @@ The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \
 <!--  \uses{prpstn:hall-10.2} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, $$f : X \to \mathbb{C}$$ is measurable, and $$E \in \Omega(X)$$ is a set on which $$f$$ is bounded, say $$\lvert f \rvert \le c$$ on $$E$$. Then $$\text{Range}(\mu(E)) \subset W_f$$, and indeed $$\int_X \lvert f \rvert^2\,d\mu_\eta \le c^2 \left\| \eta \right\|^2$$ for every $$\eta \in \text{Range}(\mu(E))$$.
 
 **Proof**
@@ -1709,7 +1691,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:norm-identity-bounded-integral} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 <!--  \uses{prpstn:convergence-facts} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$f : X \to \mathbb{C}$$ be measurable, and let $$\psi \in W_f$$. Put $$E_n \equiv \{ x \in X \mid \lvert f(x) \rvert < n \}$$ and $$f_n \equiv f\cdot 1_{E_n}$$, a bounded measurable function. Then
 >
@@ -1749,7 +1731,7 @@ the first equality by [continuity of the inner product](../spectral-theorems/#pr
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{thrm:monotone-convergence-theorem-for-integrals} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$, let $$h$$ be a bounded measurable function on $$X$$, and set $$T \equiv \int_X h \, d\mu \in \mathcal{B}(\mathbf{H})$$. Then for every $$\psi \in \mathbf{H}$$ and every $$E \in \Omega(X)$$,
 >
 > $$
@@ -2189,7 +2171,7 @@ We need three properties of these subspaces. The first two follow directly from 
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:spectrum-notions-agree} -->
 <!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Let $$X \subset \mathbb{C}$$ be compact, let $$\mu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$, and set $$A \equiv \int_X \iota \, d\mu$$ — a bounded operator, since $$\iota(\lambda) = \lambda$$ is bounded on the compact set $$X$$. Let $$V_E \equiv \text{Range}(\mu(E))$$ be the associated [spectral subspaces](#def:hall-7.14). Then:
 >
 > 1. Each $$V_E$$ is invariant under $$A$$: $$A(V_E) \subset V_E$$.
@@ -2746,7 +2728,7 @@ The point of introducing the measures $$\mu_\psi$$ is that the right-hand side $
 <!--  \uses{../spectral-theorems/#lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.61} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$. For a bounded measurable $$f : X \to \mathbb{C}$$, define $$Q_f : \mathbf{H} \to \mathbb{C}$$ by
 >
 > $$
@@ -2795,7 +2777,7 @@ Before going further we record that $$\widetilde\Phi$$ is linear — used repeat
 <!--  \uses{def:abstract-extended-calculus} -->
 <!--  \uses{prpstn:abstract-extended-forms-are-bounded} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.63} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Let $$\Phi$$ be an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. For all bounded measurable $$f,g : X \to \mathbb{C}$$ and $$\alpha,\beta \in \mathbb{C}$$,
 >
 > $$
