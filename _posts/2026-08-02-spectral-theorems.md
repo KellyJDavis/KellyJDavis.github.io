@@ -4515,11 +4515,32 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 > via [**Definition**](#def:hall-8.6). This map $$Q_f$$ is a bounded quadratic form.
 
 **Proof**
-Let $$\mathcal{F}$$ be the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form. It turns out that $$\mathcal{F}$$ is a vector space.
+Let $$\mathcal{F}$$ be as in [Definition *(The Class of Functions with Bounded Quadratic Form)*](#def:F-class). We verify the three hypotheses of [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c).
 
-Explicitly, consider $$f,g \in \mathcal{F}$$ and $$\alpha, \beta \in \mathbb{C}$$. To prove that $$\mathcal{F}$$ is a vector space we must prove that $$\alpha f + \beta g$$ is a member of $$\mathcal{F}$$. It is to this we now turn.
+$$\mathcal{F}$$ is a complex vector space by [**Proposition** *(Homogeneity of the Quadratic Form of a Linear Combination)*](#prpstn:F-homogeneous), [**Proposition** *(The Associated Form of a Linear Combination is Sesquilinear)*](#prpstn:F-sesquilinear) and [**Proposition** *(The Quadratic Form of a Linear Combination is Bounded)*](#prpstn:F-bounded), which together show that $$Q_{\alpha f + \beta g}$$ is a bounded quadratic form whenever $$f,g \in \mathcal{F}$$. It contains $$C^0(\sigma(A);\mathbb{R})$$ by [**Proposition** *(The Class Contains the Continuous Functions)*](#prpstn:F-contains-continuous), and is closed under uniformly bounded pointwise limits by [**Proposition** *(The Class is Closed under Bounded Pointwise Limits)*](#prpstn:F-closed-under-limits).
 
-The proof that $$\mathcal{F}$$ is a vector space essentially relies on the fact that $$f \mapsto Q_f$$ is linear. Explicitly,
+Since $$\sigma(A)$$ is a compact metric measurable space by [**Lemma**](#lmm:spectrum-is-compact-metric-measurable), [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c) applies and gives that $$\mathcal{F}$$ is the set of *all* bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$. That is, $$Q_f$$ is a bounded quadratic form for every such $$f$$, as required.$$\blacksquare$$
+
+> **Definition** *(The Class of Functions with Bounded Quadratic Form)*
+<a name="def:F-class"></a>
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Write $$\mathcal{F}$$ for the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on $$\sigma(A)$$ such that the associated map $$Q_f$$ of [**Definition**](#def:hall-8.6) is a bounded quadratic form on $$\mathbf{H}$$.
+
+> **Proposition** *(The Map $$f \mapsto Q_f$$ is Linear)*
+<a name="prpstn:Q-is-linear"></a>
+<!--  \uses{def:F-class} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
+> Let $$f,g$$ be bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$ and let $$\alpha,\beta \in \mathbb{C}$$. Then
+>
+> $$
+>     Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g.
+> $$
+
+**Proof**
+For any $$\psi \in \mathbf{H}$$, using the [definition of $$Q_f$$](#def:hall-8.6) and linearity of the integral in the integrand — part 2 of [**Proposition** *(Basic Properties of the Integral, and Integration over a Subset)*](#prpstn:basic-integral-properties) —
 
 $$
 \begin{align}
@@ -4530,39 +4551,17 @@ $$
 \end{align}
 $$
 
-Now to prove that $$\mathcal{F}$$ is a vector space we must prove that
+As $$\psi$$ was arbitrary, $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$.$$\blacksquare$$
 
-$$
-    Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g
-$$
+> **Proposition** *(Homogeneity of the Quadratic Form of a Linear Combination)*
+<a name="prpstn:F-homogeneous"></a>
+<!--  \uses{prpstn:Q-is-linear} -->
+<!--  \uses{def:F-class} -->
+<!--  \uses{def:bounded-quadratic-form} -->
+> Let $$f,g \in \mathcal{F}$$ and $$\alpha,\beta \in \mathbb{C}$$, with $$\mathcal{F}$$ as in [Definition (The Class of Functions with Bounded Quadratic Form)](#def:F-class). Then $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert \lambda \rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 
-is bounded quadratic form and thus an element of $$\mathcal{F}$$. 
-
-To prove that $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$ is a bounded quadratic form we must prove that
-
-1. $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda \rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
-2. The map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
-
-   $$
-   \begin{align}
-       L_{\alpha f + \beta g}(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_{\alpha f + \beta g}(\phi + \psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(\psi) \right] \\
-                                                       &-\frac{i}{2} \left[ Q_{\alpha f + \beta g}(\phi + i\psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(i\psi) \right]
-   \end{align}
-   $$
-
-   is a sesquilinear form on $$\mathbf{H}$$.
-
-3. That there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
-
-   $$
-       \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \|\phi\|^2,
-   $$
-
-   where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
-
-Let us prove these one by one.
-
-First let us prove $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda \rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+**Proof**
+$$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda \rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 
 This follows from the fact that $$f$$ and $$g$$ are in $$\mathcal{F}$$ and thus $$Q_f$$ and $$Q_g$$ are bounded quadratic forms. Explicitly,
 
@@ -4582,8 +4581,27 @@ $$
 $$
 
 the first desired result.
+$$\blacksquare$$
 
-Next let us prove the map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+> **Proposition** *(The Associated Form of a Linear Combination is Sesquilinear)*
+<a name="prpstn:F-sesquilinear"></a>
+<!--  \uses{prpstn:Q-is-linear} -->
+<!--  \uses{def:F-class} -->
+<!--  \uses{def:bounded-sesquilinear-form} -->
+<!--  \uses{prpstn:F-homogeneous} -->
+> With $$f,g,\alpha,\beta$$ as in [**Proposition** *(Homogeneity of the Quadratic Form of a Linear Combination)*](#prpstn:F-homogeneous), the map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+>
+> $$
+> \begin{align}
+>     L_{\alpha f + \beta g}(\phi, \psi) &\equiv \frac{1}{2} \left[ Q_{\alpha f + \beta g}(\phi + \psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(\psi) \right] \\
+>                                        &-\frac{i}{2} \left[ Q_{\alpha f + \beta g}(\phi + i\psi) - Q_{\alpha f + \beta g}(\phi) - Q_{\alpha f + \beta g}(i\psi) \right]
+> \end{align}
+> $$
+>
+> is a sesquilinear form on $$\mathbf{H}$$.
+
+**Proof**
+the map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 
 $$
 \begin{align}
@@ -4603,8 +4621,18 @@ $$
 with the obvious definitions of $$L_f$$ in terms of $$Q_f$$ and $$L_g$$ in terms of $$Q_g$$.
 
 Now as $$Q_f$$ and $$Q_g$$ are bounded quadratic forms, $$L_f$$ and $$L_g$$ are sesquilinear forms. Hence, they are conjugate linear in the first factor and linear in the second factor. Thus $$L_{\alpha f + \beta g}$$ is conjugate linear in the first factor and linear in the second factor. Hence, $$L_{\alpha f + \beta g}$$ is a sesquilinear form, the desired result.
+$$\blacksquare$$
 
-Finally, let us prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
+> **Proposition** *(The Quadratic Form of a Linear Combination is Bounded)*
+<a name="prpstn:F-bounded"></a>
+<!--  \uses{prpstn:Q-is-linear} -->
+<!--  \uses{def:F-class} -->
+<!--  \uses{prpstn:F-homogeneous} -->
+<!--  \uses{prpstn:F-sesquilinear} -->
+> With $$f,g,\alpha,\beta$$ as in [**Proposition** *(Homogeneity of the Quadratic Form of a Linear Combination)*](#prpstn:F-homogeneous), there is a constant $$C \in \mathbb{R}$$ with $$\lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \|\phi\|^2$$ for all $$\phi \in \mathbf{H}$$. Consequently $$\mathcal{F}$$ is a complex vector space.
+
+**Proof**
+there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
 $$
     \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \|\phi\|^2,
@@ -4648,8 +4676,18 @@ $$
 $$
 
 the final desired result. This completes the proof that $$Q_{\alpha f + \beta g}$$ is a bounded quadratic form. This in turn implies that $$\alpha f + \beta g$$ is an element of $$\mathcal{F}$$ which in turn implies $$\mathcal{F}$$ is a vector space.
+$$\blacksquare$$
 
-Next let us prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
+> **Proposition** *(The Class Contains the Continuous Functions)*
+<a name="prpstn:F-contains-continuous"></a>
+<!--  \uses{def:F-class} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:hall-a.62} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
+> With $$\mathcal{F}$$ as in [Definition (The Class of Functions with Bounded Quadratic Form)](#def:F-class), $$C^0(\sigma(A); \mathbb{R}) \subseteq \mathcal{F}$$.
+
+**Proof**
+$$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
 
 By definition $$\mathcal{F}$$ is a subset of the set of bounded, Borel-measurable, complex-valued functions on the spectrum $$\sigma(A)$$ of $$A$$, where $$A$$ is self-adjoint. So, let us first prove that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of this set of bounded, Borel-measurable, complex-valued functions.
 
@@ -4709,8 +4747,18 @@ pointwise for each $$\lambda \in \sigma(A)$$ relative to the standard norm $$\lv
 As $$\mathcal{F}$$ is a subset of the set of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$, our first task is to prove that $$f$$ is a bounded, Borel-measurable, complex-valued function.
 
 Each $$f_i$$ is an element of $$\mathcal{F}$$, and thus a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$. By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](#lmm:spectrum-is-compact-metric-measurable), $$\sigma(A)$$ is a compact metric measurable space. Hence, identifying $$X$$ with $$\sigma(A)$$, the sequence $$\{ f_i \}_{i \in \mathbb{N}}$$ and its pointwise limit $$f$$ satisfy the hypotheses of [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions). That [**Lemma**](#lmm:pointwise-limits-of-borel-measurable-functions) directly implies that $$f$$ is bounded and Borel-measurable, the desired result.
+$$\blacksquare$$
 
-Next we have to prove that $$f$$ is in $$\mathcal{F}$$. The definition of $$\mathcal{F}$$ implies that this is equivalent to proving that $$Q_f$$ is a bounded quadratic form.
+> **Proposition** *(The Class is Closed under Bounded Pointwise Limits)*
+<a name="prpstn:F-closed-under-limits"></a>
+<!--  \uses{def:F-class} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
+<!--  \uses{prpstn:F-bounded} -->
+> With $$\mathcal{F}$$ as in [Definition (The Class of Functions with Bounded Quadratic Form)](#def:F-class), if $$\{f_n\}$$ is a sequence in $$\mathcal{F}$$, uniformly bounded and converging pointwise to $$f$$, then $$f \in \mathcal{F}$$.
+
+**Proof**
+$$f$$ is in $$\mathcal{F}$$. The definition of $$\mathcal{F}$$ implies that this is equivalent to proving that $$Q_f$$ is a bounded quadratic form.
 
 To prove that $$Q_f$$ is a bounded quadratic form we must prove that
 
@@ -4857,6 +4905,7 @@ $$
 This completes our proof that $$f$$ is in $$\mathcal{F}$$ and thus our proof that $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits.
 
 Finally to complete the proof of [**Proposition**](#prpstn:hall-8.7) we will prove that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
+$$\blacksquare$$
 
 The next lemma refers to an algebra of sets and to the Archimedean Property; we state both first.
 
