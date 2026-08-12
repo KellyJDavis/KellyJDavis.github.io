@@ -4933,19 +4933,24 @@ Our proof of this result requires that we first prove some "utility" lemmas as s
 > Let $$X$$ be a compact metric measurable space with a measure $$\mu_X$$. Let $$\mathcal{L}_0$$ be the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous functions. Then $$\mathcal{L}_0$$ is an algebra and contains all open sets in $$X$$.
 
 **Proof**
-Throughout, "$$1_E$$ is the pointwise limit of a uniformly bounded sequence of continuous functions" means: there are $$\{f_n\} \subset C^0(X;\mathbb{R})$$ and a constant $$C$$ with $$\lvert f_n(x) \rvert \le C$$ for all $$n$$ and all $$x$$, such that **for each $$x \in X$$** and each $$\epsilon > 0$$ there is an $$N$$ — depending on $$x$$ as well as on $$\epsilon$$ — with $$\lvert f_n(x) - 1_E(x) \rvert < \epsilon$$ for all $$n \ge N$$. The dependence of $$N$$ on $$x$$ is essential: uniform convergence of continuous functions would force $$1_E$$ to be continuous, which holds only for clopen $$E$$ and would make the second part of this lemma false.
+That $$\mathcal{L}_0$$ is an algebra of sets is the conjunction of the three conditions of [**Definition** *(Algebra of Sets)*](#def:algebra-of-sets): it contains $$\emptyset$$ by [**Proposition** *(The Empty Set Lies in $$\mathcal{L}_0$$)*](#prpstn:L0-contains-empty), is closed under complements by [**Proposition** *($$\mathcal{L}_0$$ is Closed under Complements)*](#prpstn:L0-complement), and is closed under finite unions by [**Proposition** *($$\mathcal{L}_0$$ is Closed under Finite Unions)*](#prpstn:L0-union).
 
-This proof consists of two parts
+For the open sets: every closed subset of $$X$$ lies in $$\mathcal{L}_0$$ by [**Proposition** *($$\mathcal{L}_0$$ Contains all Closed Sets)*](#prpstn:L0-contains-closed). If $$U \subseteq X$$ is open then $$U^c$$ is closed, hence $$U^c \in \mathcal{L}_0$$, and so $$U = (U^c)^c \in \mathcal{L}_0$$ by closure under complements. Thus $$\mathcal{L}_0$$ contains all open sets in $$X$$, as required.$$\blacksquare$$
 
-**Part 1:** Prove that $$\mathcal{L}_0$$ is an algebra of sets.
+> **Definition** *(The Class $$\mathcal{L}_0$$)*
+<a name="def:L0-class"></a>
+<!--  \uses{def:identity-and-indicator} -->
+> Let $$X$$ be a compact metric measurable space. Write $$\mathcal{L}_0$$ for the set of all measurable subsets $$E \subseteq X$$ whose indicator function $$1_E$$ is the *pointwise* limit of a uniformly bounded sequence of continuous functions: that is, there are $$\{f_n\} \subset C^0(X;\mathbb{R})$$ and a constant $$C$$ with $$\lvert f_n(x) \rvert \le C$$ for all $$n$$ and all $$x$$, such that **for each $$x \in X$$** and each $$\epsilon > 0$$ there is an $$N$$ — depending on $$x$$ as well as on $$\epsilon$$ — with $$\lvert f_n(x) - 1_E(x) \rvert < \epsilon$$ for all $$n \ge N$$.
+>
+> The dependence of $$N$$ on $$x$$ is essential: uniform convergence of continuous functions would force $$1_E$$ to be continuous, which holds only for clopen $$E$$ and would make [**Lemma** *(hall-prblm-8.3.3a)*](#lmm:hall-prblm-8.3.3a) false.
 
-**Part 2:** Prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
+> **Proposition** *(The Empty Set Lies in $$\mathcal{L}_0$$)*
+<a name="prpstn:L0-contains-empty"></a>
+<!--  \uses{def:L0-class} -->
+> With $$\mathcal{L}_0$$ as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), $$\emptyset \in \mathcal{L}_0$$.
 
-Let us first prove **Part 1**, that $$\mathcal{L}_0$$ is an algebra of sets.
-
-Recall from [**Definition** *(Algebra of Sets)*](#def:algebra-of-sets) that an algebra of sets is a collection containing the empty set and closed under complements and finite unions. Let us one-by-one prove each of these properties holds for $$\mathcal{L}_0$$.
-
-**Property 1:** Let us start by proving that $$\emptyset \in \mathcal{L}_0$$. To prove this we must prove **Property 1.1:** that $$\emptyset$$ is measurable and **Property 1.2:** that $$1_\emptyset$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
+**Proof**
+$$\emptyset \in \mathcal{L}_0$$. To prove this we must prove **Property 1.1:** that $$\emptyset$$ is measurable and **Property 1.2:** that $$1_\emptyset$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
 
 **Property 1.1:** Let us first prove that $$\emptyset$$ is measurable.
 
@@ -5019,9 +5024,16 @@ for all $$x \in X$$. Hence, we must prove that for each $$x \in X$$ and any real
 
 $$
     \lvert f_n(x) \rvert < \epsilon.
-$$ As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property). Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof of **Property 1**.
+$$ As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property). Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof.
+$$\blacksquare$$
 
-**Property 2:** Let us next prove that $$\mathcal{L}_0$$ is closed under complements. In other words if $$E \in \mathcal{L}_0$$, then $$E^c \equiv (X \backslash E) \in \mathcal{L}_0$$. To prove this we must prove **Property 2.1:** that $$E^c$$ is measurable, and **Property 2.2:** that $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+> **Proposition** *($$\mathcal{L}_0$$ is Closed under Complements)*
+<a name="prpstn:L0-complement"></a>
+<!--  \uses{def:L0-class} -->
+> With $$\mathcal{L}_0$$ as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), if $$E \in \mathcal{L}_0$$ then $$E^c \in \mathcal{L}_0$$.
+
+**Proof**
+$$\mathcal{L}_0$$ is closed under complements. In other words if $$E \in \mathcal{L}_0$$, then $$E^c \equiv (X \backslash E) \in \mathcal{L}_0$$. To prove this we must prove **Property 2.1:** that $$E^c$$ is measurable, and **Property 2.2:** that $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
 **Property 2.1:** Let us prove that if $$E \in \mathcal{L}_0$$, then $$E^c$$ is measurable
 
@@ -5107,10 +5119,16 @@ $$
 
 Thus with this we have proven that $$1_{E^c}$$ is the pointwise limit of a sequence of uniformly bounded functions, the desired **Property 2.2** result.
 
-In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under complements, the desired result.
+Having proven both parts we conclude that $$\mathcal{L}_0$$ is closed under complements, the desired result.
+$$\blacksquare$$
 
+> **Proposition** *($$\mathcal{L}_0$$ is Closed under Finite Unions)*
+<a name="prpstn:L0-union"></a>
+<!--  \uses{def:L0-class} -->
+> With $$\mathcal{L}_0$$ as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), if $$E_1, E_2 \in \mathcal{L}_0$$ then $$E_1 \cup E_2 \in \mathcal{L}_0$$.
 
-**Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$. Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
+**Proof**
+$$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$. Proving this is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
 **Property 3.1:** Let us next prove that $$E_1 \cup E_2$$ is measurable.
 
@@ -5192,13 +5210,22 @@ $$
     \left\lvert g_n(x) - 1_{E_1 \cup E_2}(x) \right\rvert < \epsilon.
 $$
 
-This completes the proof of **Property 3.2** and the fact that $$\mathcal{L}_0$$ is an algebra of sets.
+This completes the proof of **Property 3.2**, and with it the proposition.
 
 Let us next prove **Part 2**, that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
 
 We will prove that $$\mathcal{L}_0$$ contains all open sets in $$X$$ by **Step 1:** proving that $$\mathcal{L}_0$$ contains all closed sets in $$X$$, then **Step 2:** relying on the fact that any open set is the complement of a closed set along with the fact that we proved that $$\mathcal{L}_0$$ is closed under complements.
+$$\blacksquare$$
 
-**Step 1:** Let us first prove that $$\mathcal{L}_0$$ contains all closed sets in $$X$$. To prove that $$\mathcal{L}_0$$ contains all closed sets in $$X$$ we must **Step 1.1:** prove that any closed set $$\overline{E}$$ in $$X$$ is measurable and **Step 1.2:** prove that $$1_{\overline{E}}$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
+> **Proposition** *($$\mathcal{L}_0$$ Contains all Closed Sets)*
+<a name="prpstn:L0-contains-closed"></a>
+<!--  \uses{def:L0-class} -->
+<!--  \uses{def:bump-function} -->
+<!--  \uses{thrm:existence-of-bump-functions} -->
+> With $$\mathcal{L}_0$$ as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), every closed subset of $$X$$ lies in $$\mathcal{L}_0$$.
+
+**Proof**
+$$\mathcal{L}_0$$ contains all closed sets in $$X$$. To prove that $$\mathcal{L}_0$$ contains all closed sets in $$X$$ we must **Step 1.1:** prove that any closed set $$\overline{E}$$ in $$X$$ is measurable and **Step 1.2:** prove that $$1_{\overline{E}}$$ is the pointwise limit of a sequence of uniformly bounded continuous functions.
 
 **Step 1.1:** Let us first prove that any closed set $$\overline{E}$$ in $$X$$ is measurable.
 
@@ -5234,17 +5261,15 @@ $$
 
 for all $$x \in X$$ and all $$i \in \mathbb{N}$$. Thus the sequence $$\{ f_i \}_{i \in \mathbb{N}}$$ is uniformly bounded.
 
-Furthermore, by construction for an arbitrary real number $$\epsilon > 0$$ we can find a natural number $$N$$ such that for all $$i \ge N$$ we have
+Furthermore, $$f_i \to 1_{\overline{E}}$$ pointwise. Fix $$x \in X$$ and $$\epsilon > 0$$. If $$x \in \overline{E}$$ then $$f_i(x) = 1 = 1_{\overline{E}}(x)$$ for every $$i$$, by the first defining property of a bump function, and any $$N$$ will do. If $$x \notin \overline{E}$$ then, since $$\bigcap_i U_i = \overline{E}$$, there is an index $$N$$ — depending on $$x$$ — with $$x \notin U_N$$; as $$f_N$$ is supported in $$U_N$$ and the $$U_i$$ are decreasing, $$f_i(x) = 0 = 1_{\overline{E}}(x)$$ for all $$i \ge N$$. In either case
 
 $$
-    \left\lvert f_i(x) - 1_{\overline{E}}(x) \right\rvert < \epsilon
+    \left\lvert f_i(x) - 1_{\overline{E}}(x) \right\rvert < \epsilon \qquad \text{for all } i \ge N.
 $$
 
-for all $$x \in X$$, this completes the proof of **Step 1.2** and also the proof of **Step 1**. Thus we have established that $$\mathcal{L}_0$$ contains all closed sets.
+The dependence of $$N$$ on $$x$$ is essential and cannot be removed: the convergence is *not* uniform, since a uniform limit of continuous functions would be continuous and $$1_{\overline{E}}$$ is not, for $$\overline{E}$$ closed but not open. So $$1_{\overline{E}}$$ is the pointwise limit of a uniformly bounded sequence of continuous functions, as required.
+$$\blacksquare$$
 
-**Step 2:** Let us now prove that $$\mathcal{L}_0$$ contains all open sets.
-
-We just established that $$\mathcal{L}_0$$ contains all closed sets. However, we previously established that $$\mathcal{L}_0$$ is closed under complement, i.e. if a set is in $$\mathcal{L}_0$$ then its complement is also in $$\mathcal{L}_0$$. By definition any open set is the complement of a closed set. Hence, as any closed set is in $$\mathcal{L}_0$$ it thus follows that any open set, as it's the complement of a closed set, must also be in $$\mathcal{L}_0$$, the desired **Step 2** result and the conclusion of the [**Lemma**](#lmm:hall-prblm-8.3.3a) proof.$$\blacksquare$$
 
 The next lemma uses the Monotone Class Theorem, which we state first.
 
