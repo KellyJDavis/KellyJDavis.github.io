@@ -4760,6 +4760,8 @@ Our proof of this result requires that we first prove some "utility" lemmas as s
 > Let $$X$$ be a compact metric measurable space with a measure $$\mu_X$$. Let $$\mathcal{L}_0$$ be the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous functions. Then $$\mathcal{L}_0$$ is an algebra and contains all open sets in $$X$$.
 
 **Proof**
+Throughout, "$$1_E$$ is the pointwise limit of a uniformly bounded sequence of continuous functions" means: there are $$\{f_n\} \subset C^0(X;\mathbb{R})$$ and a constant $$C$$ with $$\lvert f_n(x) \rvert \le C$$ for all $$n$$ and all $$x$$, such that **for each $$x \in X$$** and each $$\epsilon > 0$$ there is an $$N$$ — depending on $$x$$ as well as on $$\epsilon$$ — with $$\lvert f_n(x) - 1_E(x) \rvert < \epsilon$$ for all $$n \ge N$$. The dependence of $$N$$ on $$x$$ is essential: uniform convergence of continuous functions would force $$1_E$$ to be continuous, which holds only for clopen $$E$$ and would make the second part of this lemma false.
+
 This proof consists of two parts
 
 **Part 1:** Prove that $$\mathcal{L}_0$$ is an algebra of sets.
@@ -4828,13 +4830,11 @@ $$
 
 for all $$x \in X$$ and all $$n \in \mathbb{N}$$. Hence, the sequence satisfies all the desired properties required by **Property 1.2.1**.
 
-**Property 1.2.2:** Let us now prove that for any real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+**Property 1.2.2:** Let us now prove that for each $$x \in X$$ and any real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
 
 $$
-    \lvert f_n(x) - 1_\emptyset(x) \rvert < \epsilon
+    \lvert f_n(x) - 1_\emptyset(x) \rvert < \epsilon.
 $$
-
-for all $$x \in X$$.
 
 Recall that the definition of an indicator function implies that
 
@@ -4842,13 +4842,11 @@ $$
     1_\emptyset(x) = 0
 $$
 
-for all $$x \in X$$. Hence, we must prove that for any real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+for all $$x \in X$$. Hence, we must prove that for each $$x \in X$$ and any real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
 
 $$
-    \lvert f_n(x) \rvert < \epsilon
-$$
-
-for all $$x \in X$$. As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property). Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof of **Property 1**.
+    \lvert f_n(x) \rvert < \epsilon.
+$$ As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property). Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof of **Property 1**.
 
 **Property 2:** Let us next prove that $$\mathcal{L}_0$$ is closed under complements. In other words if $$E \in \mathcal{L}_0$$, then $$E^c \equiv (X \backslash E) \in \mathcal{L}_0$$. To prove this we must prove **Property 2.1:** that $$E^c$$ is measurable, and **Property 2.2:** that $$1_{E^c}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
 
@@ -4864,13 +4862,11 @@ $$
     \left\lvert f_n(x) \right\rvert \le C
 $$
 
-for all $$x \in X$$ and $$n \in \mathbb{N}$$ and (2) for every real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+for all $$x \in X$$ and $$n \in \mathbb{N}$$ and (2) for each $$x \in X$$ and every real number $$\epsilon > 0$$ there exists a natural number $$N$$ (depending on $$x$$ and $$\epsilon$$) such that for all $$n \ge N$$ one has
 
 $$
-    \left\lvert f_n(x) - 1_E(x) \right\rvert < \epsilon
+    \left\lvert f_n(x) - 1_E(x) \right\rvert < \epsilon.
 $$
-
-for all $$x \in X$$.
 
 Let us define a sequence of functions $$\{ g_n \}_{n \in \mathbb{N}}$$ on $$X$$ by
 
@@ -4918,13 +4914,11 @@ $$
 
 where in the second line we used $$1_{E^c}(x) = 1 - 1_{E}(x)$$ which follows easily from the definitions of the indicator function and the sets $$E$$ and $$E^c$$.
 
-However, as $$E \in \mathcal{L}_0$$ the definition of $$\mathcal{L}_0$$ implies that for an arbitrary real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+However, as $$E \in \mathcal{L}_0$$ the definition of $$\mathcal{L}_0$$ implies that for each $$x \in X$$ and each real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ (depending on $$x$$ and $$\epsilon$$) such that for all $$n \ge N$$ one has
 
 $$
-    \left\lvert f_n(x) - 1_{E}(x) \right\rvert < \epsilon
+    \left\lvert f_n(x) - 1_{E}(x) \right\rvert < \epsilon.
 $$
-
-for all $$x \in X$$.
 
 However, as we have proven that
 
@@ -4932,13 +4926,11 @@ $$
     \left\lvert g_n(x) - 1_{E^c}(x) \right\rvert = \left\lvert f_n(x) - 1_{E}(x) \right\rvert
 $$
 
-for an arbitrary $$n \in \mathbb{N}$$ and arbitrary $$x \in X$$, then it follows that for an arbitrary real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+for an arbitrary $$n \in \mathbb{N}$$ and arbitrary $$x \in X$$, then it follows that for each $$x \in X$$ and each real-valued number $$\epsilon > 0$$ there exists a natural number $$N$$ (the same one supplied by the hypothesis at that $$x$$) such that for all $$n \ge N$$ one has
 
 $$
-    \left\lvert g_n(x) - 1_{E^c}(x) \right\rvert < \epsilon
+    \left\lvert g_n(x) - 1_{E^c}(x) \right\rvert < \epsilon.
 $$
-
-for all $$x \in X$$.
 
 Thus with this we have proven that $$1_{E^c}$$ is the pointwise limit of a sequence of uniformly bounded functions, the desired **Property 2.2** result.
 
@@ -4959,13 +4951,11 @@ $$
     \left\lvert f^i_n(x) \right\rvert \le C_i
 $$
 
-for all $$n \in \mathbb{N}$$ and all $$x \in X$$ and (2) for each $$E_i$$ and any real number $$\epsilon_i > 0$$ there exists a natural number $$N_i$$ such that for all $$n \ge N_i$$ we have
+for all $$n \in \mathbb{N}$$ and all $$x \in X$$ and (2) for each $$E_i$$, each $$x \in X$$ and any real number $$\epsilon_i > 0$$ there exists a natural number $$N_i$$ (depending on $$x$$ and $$\epsilon_i$$) such that for all $$n \ge N_i$$ we have
 
 $$
-    \left\lvert f^i_n(x) - 1_{E_i}(x) \right\rvert < \epsilon_i
+    \left\lvert f^i_n(x) - 1_{E_i}(x) \right\rvert < \epsilon_i.
 $$
-
-for all $$x \in X$$.
 
 With the easily verifiable fact
 
@@ -5023,13 +5013,13 @@ $$
 \end{align}
 $$
 
-for all $$x \in X$$. Thus for an arbitrary real number $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$n \ge N$$ one has
+for each $$x \in X$$. That is, for each $$x \in X$$ and each real number $$\epsilon > 0$$ there exists a natural number $$N$$ (depending on $$x$$ and $$\epsilon$$ — one may take $$N = \max(N_1,N_2)$$ for the indices supplied by the two hypotheses at that $$x$$) such that for all $$n \ge N$$ one has
 
 $$
-    \left\lvert g_n(x) - 1_{E_1 \cup E_2}(x) \right\rvert < \epsilon
+    \left\lvert g_n(x) - 1_{E_1 \cup E_2}(x) \right\rvert < \epsilon.
 $$
 
-for all $$x \in X$$. This completes the proof of **Property 3.2** and the fact that $$\mathcal{L}_0$$ is an algebra of sets.
+This completes the proof of **Property 3.2** and the fact that $$\mathcal{L}_0$$ is an algebra of sets.
 
 Let us next prove **Part 2**, that $$\mathcal{L}_0$$ contains all open sets in $$X$$.
 
