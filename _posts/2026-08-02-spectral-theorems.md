@@ -1514,8 +1514,37 @@ $$
 
 This is the final desired result of this lemma.$$\blacksquare$$
 
-With this lemma proven, we can once again continue on with our main argument.
+Let $$f$$ be a bounded, measurable, complex-valued function on $$X$$. By the [**Complex-Valued Simple Approximation Theorem**](#thrm:complex-valued-simple-approximation-theorem) there is a sequence $$\{s_i\}_{i \in \mathbb{N}}$$ of simple functions converging uniformly to $$f$$.
 
+By [**Proposition** *(The Integral as a Limit of Integrals of Simple Functions)*](#prpstn:integral-as-limit-of-simple), the operators $$A_{s_i}$$ converge in the operator norm to $$\int_X f \, d\mu$$. By [**Proposition** *(Norm Bound for the Integral of a Simple Function)*](#prpstn:integral-norm-bound-simple), each satisfies $$\left\| A_{s_i} \right\| \le \sup_\lambda \lvert s_i(\lambda) \rvert$$.
+
+Fix $$\epsilon > 0$$ and choose $$N$$ with $$\sup_\lambda \lvert f(\lambda) - s_i(\lambda) \rvert < \epsilon$$ for all $$i \ge N$$. Then for such $$i$$, the triangle inequality for the supremum norm gives $$\sup_\lambda \lvert s_i(\lambda) \rvert \le \sup_\lambda \lvert f(\lambda) \rvert + \epsilon$$, so $$\left\| A_{s_i} \right\| \le \sup_\lambda \lvert f(\lambda) \rvert + \epsilon$$. Since $$A_{s_i} \to \int_X f \, d\mu$$ in the operator norm and the norm is continuous, letting $$i \to \infty$$ yields $$\left\| \int_X f \, d\mu \right\| \le \sup_\lambda \lvert f(\lambda) \rvert + \epsilon$$. As $$\epsilon > 0$$ was arbitrary,
+
+$$
+    \left\| \int_X f \, d\mu \right\| \le \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert,
+$$
+
+as required.$$\blacksquare$$
+
+> **Proposition** *(Norm Bound for the Integral of a Simple Function)*
+<a name="prpstn:integral-norm-bound-simple"></a>
+<!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{lmm:lemma2-of-operator-valued-integration} -->
+<!--  \uses{lmm:lemma-1} -->
+<!--  \uses{prpstn:hall-a.43} -->
+> With notation as in [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), let $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ be pairwise disjoint with $$X = \bigcup_{i=1}^n E_i$$, let $$c_1, \ldots, c_n \in \mathbb{C}$$, and let
+>
+> $$
+>     s \equiv \sum_{i=1}^n c_i 1_{E_i}
+> $$
+>
+> be the associated simple function, with $$A_s \equiv \int_X s \, d\mu$$. Then
+>
+> $$
+>     \left\| A_s \right\| \le \sup\limits_{\lambda \in X} \lvert s(\lambda) \rvert.
+> $$
+
+**Proof**
 Consider, as in the lemma, a finite set of elements $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ that are pairwise disjoint and satisfy
 
 $$
@@ -1614,8 +1643,23 @@ $$
     \|A_s\|  \le \sup_{\lambda \in X} \lvert s(\lambda) \rvert
 $$
 
-for our simple function $$s$$. What remains to do is to generalize this to a bounded, measurable, complex-valued function $$f$$.
+for our simple function $$s$$.$$\blacksquare$$
 
+> **Proposition** *(The Integral as a Limit of Integrals of Simple Functions)*
+<a name="prpstn:integral-as-limit-of-simple"></a>
+<!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{prpstn:integral-norm-bound-simple} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+> With notation as in [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), let $$f$$ be a bounded, measurable, complex-valued function on $$X$$ and let $$\{s_i\}_{i \in \mathbb{N}}$$ be a sequence of simple functions converging uniformly to $$f$$. Then $$\{A_{s_i}\}_{i \in \mathbb{N}}$$ is Cauchy in $$\mathcal{B}(\mathbf{H})$$, hence converges in the operator norm to some $$A_s \in \mathcal{B}(\mathbf{H})$$, and
+>
+> $$
+>     A_s = \int_X f \, d\mu.
+> $$
+>
+> That is, the limit operator is the integral already constructed in that theorem. (The identification is what makes the limit construction useful: it is obtained by showing $$\left< \psi, A_s\psi \right> = \int_X f \, d\mu_\psi$$ for all $$\psi$$, and then appealing to the *uniqueness* clause of that theorem.)
+
+**Proof**
 This generalization relies upon the [**Theorem** *(Complex-Valued Simple Approximation Theorem)*](#thrm:complex-valued-simple-approximation-theorem). This theorem implies that a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$ exists such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
 Now for any two simple functions $$s_i$$ and $$s_j$$ in this sequence, their difference $$s_i - s_j$$ is also a simple function. Furthermore, linearity of the map
@@ -1827,14 +1871,7 @@ $$
     A_s = \int_X f \, d\mu
 $$
 
-and thus the desired relation
-
-$$
-    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} \lvert f(\lambda) \rvert,
-$$
-
-is proven.
-$$\blacksquare$$
+This is the desired identification.$$\blacksquare$$
 
 > **Proposition** *(Operator-Valued Integration is Multiplicative)*
 <a name="prpstn:integral-multiplicative"></a>
