@@ -1914,15 +1914,21 @@ This is the desired identification.$$\blacksquare$$
 > $$
 
 **Proof**
-Next we must prove that integration is multiplicative. In other words for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
+The result is proved in three stages, each resting on the previous: for indicator functions in [**Proposition** *(Multiplicativity of the Integral for Indicator Functions)*](#prpstn:integral-mult-indicator), for simple functions in [**Proposition** *(Multiplicativity of the Integral for Simple Functions)*](#prpstn:integral-mult-simple), and for general bounded, measurable, complex-valued functions in [**Proposition** *(Multiplicativity of the Integral for Bounded Measurable Functions)*](#prpstn:integral-mult-measurable). The last of these is the statement of this proposition.$$\blacksquare$$
 
-$$
-    \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
-$$
+> **Proposition** *(Multiplicativity of the Integral for Indicator Functions)*
+<a name="prpstn:integral-mult-indicator"></a>
+<!--  \uses{prpstn:integral-of-indicator} -->
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{def:identity-and-indicator} -->
+> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all $$E_1, E_2 \in \Omega(X)$$,
+>
+> $$
+>     \int_X 1_{E_1} 1_{E_2} \, d\mu = \left( \int_X 1_{E_1} \, d\mu \right) \left( \int_X 1_{E_2} \, d\mu \right).
+> $$
 
-As in other proofs, we will first prove this result for indicator functions, then simple functions, then finally for bounded, measurable, complex-valued functions.
-
-Let us begin with indicator functions. Consider $$E_1, E_2 \in \Omega(X)$$. Property 1, which we have already proved, along with the projection-valued measure definition imply
+**Proof**
+Consider $$E_1, E_2 \in \Omega(X)$$. [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), along with the projection-valued measure definition imply
 
 $$
 \begin{align}
@@ -1940,8 +1946,20 @@ $$
 $$
 
 for indicator functions.
+$$\blacksquare$$
 
-Let us next prove the result for simple functions. This result follows from the indicator function result and linearity.
+> **Proposition** *(Multiplicativity of the Integral for Simple Functions)*
+<a name="prpstn:integral-mult-simple"></a>
+<!--  \uses{prpstn:integral-mult-indicator} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all simple functions $$s_1, s_2$$ on $$X$$,
+>
+> $$
+>     \int_X s_1 s_2 \, d\mu = \left( \int_X s_1 \, d\mu \right) \left( \int_X s_2 \, d\mu \right).
+> $$
+
+**Proof**
+This result follows from [**Proposition** *(Multiplicativity of the Integral for Indicator Functions)*](#prpstn:integral-mult-indicator) and linearity.
 
 To wit, consider two simple functions $$s_1$$ and $$s_2$$
 
@@ -1961,7 +1979,7 @@ $$
 \end{align}
 $$
 
-Hence, using linearity and our previous indicator function result we have
+Hence, using linearity and [**Proposition** *(Multiplicativity of the Integral for Indicator Functions)*](#prpstn:integral-mult-indicator) we have
 
 $$
 \begin{align}
@@ -1980,9 +1998,22 @@ $$
     \left( \int_X s_1 \, d\mu \right) \left( \int_X s_2 \, d\mu \right) = \int_X s_1 s_2 \, d\mu,
 $$
 
-the desired simple function result.
+as required.
+$$\blacksquare$$
 
-Let us next prove the result for bounded, measurable, complex-valued functions.
+> **Proposition** *(Multiplicativity of the Integral for Bounded Measurable Functions)*
+<a name="prpstn:integral-mult-measurable"></a>
+<!--  \uses{prpstn:integral-mult-simple} -->
+<!--  \uses{prpstn:integral-norm-bound} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
+<!--  \uses{prpstn:integral-as-limit-of-simple} -->
+> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f, g$$ on $$X$$,
+>
+> $$
+>     \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
+> $$
+
+**Proof**
 
 As one will recall [**Theorem** *(Complex-Valued Simple Approximation Theorem)*](#thrm:complex-valued-simple-approximation-theorem) implies that there exist sequences of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ and $$\{r_j\}_{j \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to a bounded, measurable, complex-valued function $$f$$ on $$X$$ and similarly $$\{r_j\}_{j \in \mathbb{N}}$$ to $$g$$.
 
@@ -2140,7 +2171,7 @@ $$
     \int_X s_i r_i \, d\mu \longrightarrow \int_X fg \, d\mu.
 $$
 
-Now recall from our simple function result that for every $$i$$, as $$s_i$$ and $$r_i$$ are both simple functions,
+Now recall from [**Proposition** *(Multiplicativity of the Integral for Simple Functions)*](#prpstn:integral-mult-simple) that for every $$i$$, as $$s_i$$ and $$r_i$$ are both simple functions,
 
 $$
     \left( \int_X s_i \, d\mu \right) \left( \int_X r_i \, d\mu \right) = \int_X s_i r_i \, d\mu
@@ -2215,6 +2246,7 @@ $$
 
 the desired result, integration is multiplicative for bounded, measurable, complex-valued functions $$f$$ and $$g$$.
 $$\blacksquare$$
+
 
 > **Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*
 <a name="prpstn:integral-conjugation"></a>
