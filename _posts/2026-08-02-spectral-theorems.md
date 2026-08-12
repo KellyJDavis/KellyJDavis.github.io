@@ -573,11 +573,11 @@ Using the results of our previous derivation, the definition of an orthogonal pr
 
 $$
 \begin{align}
-    \lvert Q_{1_E}(\phi) \rvert &= \lvert  \left< \phi, \mu(E) \phi \right>  \rvert \\
-                    &= \lvert  \left< \phi, \mu(E) \mu(E) \phi \right>  \rvert \\
-                    &= \lvert  \left< \phi, \mu(E)^* \mu(E) \phi \right>  \rvert \\
-                    &= \lvert  \left< \mu(E) \phi, \mu(E) \phi \right>  \rvert \\
-                    &= \lvert  \|\mu(E) \phi\|^2  \rvert \\
+    \lvert Q_{1_E}(\phi) \rvert &= \lvert \left< \phi, \mu(E) \phi \right> \rvert \\
+                    &= \lvert \left< \phi, \mu(E) \mu(E) \phi \right> \rvert \\
+                    &= \lvert \left< \phi, \mu(E)^* \mu(E) \phi \right> \rvert \\
+                    &= \lvert \left< \mu(E) \phi, \mu(E) \phi \right> \rvert \\
+                    &= \lvert \|\mu(E) \phi\|^2 \rvert \\
                     &= \|\mu(E) \phi\|^2 \\
                     &\le \|\phi\|^2,
 \end{align}
@@ -909,7 +909,7 @@ This, along with the definition of a norm and the fact that $$Q$$ is bounded, im
 $$
 \begin{align}
     \left\lvert L(\phi, \psi) \right\rvert &= \left\lvert \frac{1}{2} \left[ Q(\phi + \psi) - Q(\phi) - Q(\psi) \right] -\frac{i}{2} \left[ Q(\phi + i\psi) - Q(\phi) - Q(i\psi) \right] \right\rvert \\
-    &\le \frac{1}{2} \left[ \left\lvertQ(\phi + \psi)\right\rvert + \left\lvertQ(\phi)\right\rvert + \left\lvertQ(\psi)\right\rvert + \left\lvertQ(\phi + i\psi)\right\rvert + \left\lvertQ(\phi)\right\rvert + \left\lvertQ(i\psi)\right\rvert \right] \\
+    &\le \frac{1}{2} \left[ \left\lvert Q(\phi + \psi)\right\rvert + \left\lvert Q(\phi)\right\rvert + \left\lvert Q(\psi)\right\rvert + \left\lvert Q(\phi + i\psi)\right\rvert + \left\lvert Q(\phi)\right\rvert + \left\lvert Q(i\psi)\right\rvert \right] \\
     &\le C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|i\psi\|^2 \right] \\
     &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \lvert i \rvert^2 \, \|\psi\|^2 \right] \\
     &=   C \frac{1}{2} \left[ \|\phi + \psi\|^2 + \|\phi\|^2 + \|\psi\|^2 + \|\phi + i\psi\|^2 + \|\phi\|^2 + \|\psi\|^2 \right] \\
@@ -930,13 +930,13 @@ $$
 As the definition of a quadratic form implies that $$L$$ is sesquilinear, we thus have for these arbitrary $$\phi, \psi \in \mathbf{H}$$
 
 $$
-    \left\lvertL(\phi, \psi)\right\rvert = \|\phi\| \, \|\psi\| \, \left\lvert L(\widehat{\phi}, \widehat{\psi}) \right\rvert \le 6C \|\phi\| \, \|\psi\|,
+    \left\lvert L(\phi, \psi)\right\rvert = \|\phi\| \, \|\psi\| \, \left\lvert L(\widehat{\phi}, \widehat{\psi}) \right\rvert \le 6C \|\phi\| \, \|\psi\|,
 $$
 
 where the inequality follows from our previous result. Thus we have proven the second desired result
 
 $$
-    \left\lvertL(\phi, \psi)\right\rvert \le 6C \|\phi\| \, \|\psi\|,
+    \left\lvert L(\phi, \psi)\right\rvert \le 6C \|\phi\| \, \|\psi\|,
 $$
 
 that $$L$$ is bounded.
@@ -1559,13 +1559,13 @@ $$
 Obviously
 
 $$
-    \sup_{\lambda \in X} \lvert  s(\lambda)  \rvert = \max_i \left\lvert c_i \right\rvert.
+    \sup_{\lambda \in X} \lvert s(\lambda) \rvert = \max_i \left\lvert c_i \right\rvert.
 $$
 
 Hence, we have proven the desired result
 
 $$
-    \|A_s\|  \le \sup_{\lambda \in X} \lvert  s(\lambda)  \rvert
+    \|A_s\|  \le \sup_{\lambda \in X} \lvert s(\lambda) \rvert
 $$
 
 for our simple function $$s$$. What remains to do is to generalize this to a bounded, measurable, complex-valued function $$f$$.
@@ -1593,7 +1593,7 @@ $$
 However, the result we just proved for simple functions implies
 
 $$
-    \|A_{s_i - s_j}\| \le \sup_{\lambda \in X} \lvert  s_i(\lambda) - s_j(\lambda)  \rvert.
+    \|A_{s_i - s_j}\| \le \sup_{\lambda \in X} \lvert s_i(\lambda) - s_j(\lambda) \rvert.
 $$
 
 This in turn implies
@@ -1601,7 +1601,7 @@ This in turn implies
 $$
 \begin{align}
     \|A_{s_i} - A_{s_j}\| &= \|A_{s_i - s_j}\| \\
-                          &\le \sup_{\lambda \in X} \lvert  s_i(\lambda) - s_j(\lambda)  \rvert.
+                          &\le \sup_{\lambda \in X} \lvert s_i(\lambda) - s_j(\lambda) \rvert.
 \end{align}
 $$
 
@@ -1609,8 +1609,8 @@ However, the definition of a norm implies
 
 $$
 \begin{align}
-    \lvert  s_i(\lambda) - s_j(\lambda)  \rvert &=   \lvert  (f(\lambda) - s_j(\lambda)) - (f(\lambda) - s_i(\lambda)) \rvert \\
-                                    &\le \lvert  f(\lambda) - s_j(\lambda)  \rvert + \lvert  f(\lambda) - s_i(\lambda)  \rvert.
+    \lvert s_i(\lambda) - s_j(\lambda) \rvert &=   \lvert (f(\lambda) - s_j(\lambda)) - (f(\lambda) - s_i(\lambda)) \rvert \\
+                                    &\le \lvert f(\lambda) - s_j(\lambda) \rvert + \lvert f(\lambda) - s_i(\lambda) \rvert.
 \end{align}
 $$
 
@@ -1619,23 +1619,23 @@ Hence, we can continue our derivation
 $$
 \begin{align}
     \|A_{s_i} - A_{s_j}\| &= \|A_{s_i - s_j}\| \\
-                          &\le \sup_{\lambda \in X} \lvert  s_i(\lambda) - s_j(\lambda)  \rvert \\
-                          &\le \sup_{\lambda \in X} \left( \lvert  f(\lambda) - s_j(\lambda)  \rvert + \lvert  f(\lambda) - s_i(\lambda)  \rvert \right) \\
-                          &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_j(\lambda)  \rvert + \sup_{\lambda \in X} \lvert  f(\lambda) - s_i(\lambda)  \rvert.
+                          &\le \sup_{\lambda \in X} \lvert s_i(\lambda) - s_j(\lambda) \rvert \\
+                          &\le \sup_{\lambda \in X} \left( \lvert f(\lambda) - s_j(\lambda) \rvert + \lvert f(\lambda) - s_i(\lambda) \rvert \right) \\
+                          &\le \sup_{\lambda \in X} \lvert f(\lambda) - s_j(\lambda) \rvert + \sup_{\lambda \in X} \lvert f(\lambda) - s_i(\lambda) \rvert.
 \end{align}
 $$
 
 However, as the sequence $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$k \ge N$$
 
 $$
-    \sup_{\lambda \in X}  \lvert  f(\lambda) - s_k(\lambda)  \rvert < \frac{\epsilon}{2}.
+    \sup_{\lambda \in X}  \lvert f(\lambda) - s_k(\lambda) \rvert < \frac{\epsilon}{2}.
 $$
 
 This along with our previous derivation allows us to conclude that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i, j \ge N$$ we have
 
 $$
 \begin{align}
-    \|A_{s_i} - A_{s_j}\| &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_j(\lambda)  \rvert + \sup_{\lambda \in X} \lvert  f(\lambda) - s_i(\lambda)  \rvert \\
+    \|A_{s_i} - A_{s_j}\| &\le \sup_{\lambda \in X} \lvert f(\lambda) - s_j(\lambda) \rvert + \sup_{\lambda \in X} \lvert f(\lambda) - s_i(\lambda) \rvert \\
                           &< \frac{\epsilon}{2} + \frac{\epsilon}{2} \\
                           &= \epsilon.
 \end{align}
@@ -1648,47 +1648,47 @@ By construction each $$A_{s_i}$$ is an element of $$\mathcal{B}(\mathbf{H})$$. H
 As the sequence $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$k \ge N$$
 
 $$
-    \sup_{\lambda \in X}  \lvert  f(\lambda) - s_k(\lambda)  \rvert < \epsilon.
+    \sup_{\lambda \in X}  \lvert f(\lambda) - s_k(\lambda) \rvert < \epsilon.
 $$
 
 Hence, using the definition of a norm, we can conclude that for all $$k \ge N$$
 
 $$
 \begin{align}
-    \sup_{\lambda \in X} \lvert  s_k(\lambda)  \rvert &=   \sup_{\lambda \in X} \lvert  f(\lambda) - (f(\lambda) - s_k(\lambda))  \rvert \\
-                                          &\le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert + \lvert  f(\lambda) - s_k(\lambda)  \rvert \\
-                                          &\le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert + \sup_{\lambda \in X} \lvert  f(\lambda) - s_k(\lambda)  \rvert \\
-                                          &< \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert + \epsilon.
+    \sup_{\lambda \in X} \lvert s_k(\lambda) \rvert &=   \sup_{\lambda \in X} \lvert f(\lambda) - (f(\lambda) - s_k(\lambda)) \rvert \\
+                                          &\le \sup_{\lambda \in X} \lvert f(\lambda) \rvert + \lvert f(\lambda) - s_k(\lambda) \rvert \\
+                                          &\le \sup_{\lambda \in X} \lvert f(\lambda) \rvert + \sup_{\lambda \in X} \lvert f(\lambda) - s_k(\lambda) \rvert \\
+                                          &< \sup_{\lambda \in X} \lvert f(\lambda) \rvert + \epsilon.
 \end{align}
 $$
 
 This implies
 
 $$
-    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
+    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert s_i(\lambda) \rvert \le \sup_{\lambda \in X} \lvert f(\lambda) \rvert.
 $$
 
 We can also create a similar derivation switching the roles of $$s_k$$ and $$f$$ as follows
 
 $$
 \begin{align}
-    \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert &= \sup_{\lambda \in X} \lvert  (f(\lambda) - s_k(\lambda)) + s_k(\lambda)  \rvert \\
-                                        &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_k(\lambda)  \rvert +  \lvert  s_k(\lambda)  \rvert \\
-                                        &\le \sup_{\lambda \in X} \lvert  f(\lambda) - s_k(\lambda)  \rvert +  \sup_{\lambda \in X} \lvert  s_k(\lambda)  \rvert \\
-                                        &< \epsilon +  \sup_{\lambda \in X} \lvert  s_k(\lambda)  \rvert.
+    \sup_{\lambda \in X} \lvert f(\lambda) \rvert &= \sup_{\lambda \in X} \lvert (f(\lambda) - s_k(\lambda)) + s_k(\lambda) \rvert \\
+                                        &\le \sup_{\lambda \in X} \lvert f(\lambda) - s_k(\lambda) \rvert +  \lvert s_k(\lambda) \rvert \\
+                                        &\le \sup_{\lambda \in X} \lvert f(\lambda) - s_k(\lambda) \rvert +  \sup_{\lambda \in X} \lvert s_k(\lambda) \rvert \\
+                                        &< \epsilon +  \sup_{\lambda \in X} \lvert s_k(\lambda) \rvert.
 \end{align}
 $$
 
 This implies
 
 $$
-    \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert \le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert.
+    \sup_{\lambda \in X} \lvert f(\lambda) \rvert \le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert s_i(\lambda) \rvert.
 $$
 
 The last two conclusions imply
 
 $$
-    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert = \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
+    \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert s_i(\lambda) \rvert = \sup_{\lambda \in X} \lvert f(\lambda) \rvert.
 $$
 
 Now tying the last results together
@@ -1696,16 +1696,16 @@ Now tying the last results together
 $$
 \begin{align}
     \|A_s\| &=   \lim_{i \rightarrow \infty} \| A_{s_i} \| \\
-            &\le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  s_i(\lambda)  \rvert \\
-            &= \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert \\
-            &= \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
+            &\le \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert s_i(\lambda) \rvert \\
+            &= \lim_{i \rightarrow \infty} \sup_{\lambda \in X} \lvert f(\lambda) \rvert \\
+            &= \sup_{\lambda \in X} \lvert f(\lambda) \rvert.
 \end{align}
 $$
 
 In other words
 
 $$
-    \|A_s\| \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
+    \|A_s\| \le \sup_{\lambda \in X} \lvert f(\lambda) \rvert.
 $$
 
 As
@@ -1717,7 +1717,7 @@ $$
 this is almost the desired result
 
 $$
-    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert.
+    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} \lvert f(\lambda) \rvert.
 $$
 
 We simply need to identify $$A_f$$ with $$A_s$$ and we will have completed the proof. It is to this we now turn.
@@ -1784,7 +1784,7 @@ $$
 and thus the desired relation
 
 $$
-    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} \lvert  f(\lambda)  \rvert,
+    \left\| \int_X f \, d\mu \right\| \le \sup_{\lambda \in X} \lvert f(\lambda) \rvert,
 $$
 
 is proven.
@@ -1867,7 +1867,7 @@ $$
 \begin{align}
     \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\|
     &= \left\| \int_X ( f - s_i ) \, d\mu \right\| \\
-    &\le \sup\limits_{\lambda \in X} \lvert  f(\lambda) - s_i(\lambda)  \rvert,
+    &\le \sup\limits_{\lambda \in X} \lvert f(\lambda) - s_i(\lambda) \rvert,
 \end{align}
 $$
 
@@ -1885,14 +1885,14 @@ $$
 \begin{align}
     \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\|
     &= \left\| \int_X (fg - s_i r_j) \, d\mu \right\| \\
-    &\le \sup\limits_{\lambda \in X} \lvert  f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda)  \rvert
+    &\le \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert
 \end{align}
 $$
 
 where in the final step we employed our **Property 2** result. Looking at this result and our previous similar result, one concludes that if we can prove that given any $$\epsilon > 0$$, there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
 
 $$
-    \sup\limits_{\lambda \in X} \lvert  f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda)  \rvert < \epsilon,
+    \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert < \epsilon,
 $$
 
 then we can conclude that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
@@ -1929,8 +1929,8 @@ The definition of a norm and our previous results then imply that for all $$j \g
 
 $$
 \begin{align}
-    \lvert r_j(\lambda) \rvert &= \lvert r_j(\lambda) - g(\lambda) + g(\lambda)  \rvert \\
-                               &\le \lvert r_j(\lambda) - g(\lambda) \rvert + \lvert g(\lambda)  \rvert \\
+    \lvert r_j(\lambda) \rvert &= \lvert r_j(\lambda) - g(\lambda) + g(\lambda) \rvert \\
+                               &\le \lvert r_j(\lambda) - g(\lambda) \rvert + \lvert g(\lambda) \rvert \\
                                &< 1 + M_g.
 \end{align}
 $$
@@ -1994,7 +1994,7 @@ $$
 This along with our previous result
 
 $$
-    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| \le \sup\limits_{\lambda \in X} \lvert  f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda)  \rvert
+    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| \le \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert
 $$
 
 implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
@@ -3027,8 +3027,8 @@ $$
     \lim\limits_{n \rightarrow \infty} \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\|
     &= \lim\limits_{n \rightarrow \infty} \left\lvert \frac{1}{\lambda^{2^n + 1}} \right\rvert \left\| A^{2^n} \right\| \\
     &= \lim\limits_{n \rightarrow \infty} \left\lvert \frac{1}{\lambda^{2^n + 1}} \right\rvert \left\| A \right\|^{2^n}  \\
-    &= \lim\limits_{n \rightarrow \infty} \frac{1}{\lvert  \lambda  \rvert}  \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n} \\
-    &= \frac{1}{\lvert  \lambda  \rvert} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n}.
+    &= \lim\limits_{n \rightarrow \infty} \frac{1}{\lvert \lambda \rvert}  \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n} \\
+    &= \frac{1}{\lvert \lambda \rvert} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n}.
 \end{align}
 $$
 
@@ -3042,7 +3042,7 @@ This implies that our derivation continues as follows
 
 $$
     \lim\limits_{n \rightarrow \infty} \left\| \frac{A^{2^n}}{\lambda^{2^n + 1}} \right\|
-    = \frac{1}{\lvert  \lambda  \rvert} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n}
+    = \frac{1}{\lvert \lambda \rvert} \lim\limits_{n \rightarrow \infty} \left( \frac{\left\| A \right\|}{\left\lvert \lambda \right\rvert} \right)^{2^n}
     \neq 0.
 $$
 
@@ -3567,14 +3567,14 @@ $$
 \begin{align}
     \|p(A)\| &= R(p(A)) \\
              &= \sup\limits_{\gamma \in \sigma(p(A))} \lvert \gamma \rvert \\
-             &= \sup\limits_{\lambda \in \sigma(A)} \lvert  p(\lambda)  \rvert,
+             &= \sup\limits_{\lambda \in \sigma(A)} \lvert p(\lambda) \rvert,
 \end{align}
 $$
 
 proving that
 
 $$
-    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert  p(\lambda)  \rvert,
+    \|p(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert p(\lambda) \rvert,
 $$
 
 which is simply the statement that the map $$p \mapsto p(A)$$ is isometric.
@@ -4381,7 +4381,7 @@ is bounded quadratic form and thus an element of $$\mathcal{F}$$.
 
 To prove that $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$ is a bounded quadratic form we must prove that
 
-1. $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+1. $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda \rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 2. The map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 
    $$
@@ -4403,7 +4403,7 @@ To prove that $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$ is a bounded q
 
 Let us prove these one by one.
 
-First let us prove $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+First let us prove $$Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda \rvert^2 Q_{\alpha f + \beta g}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 
 This follows from the fact that $$f$$ and $$g$$ are in $$\mathcal{F}$$ and thus $$Q_f$$ and $$Q_g$$ are bounded quadratic forms. Explicitly,
 
@@ -4419,7 +4419,7 @@ $$
 which implies
 
 $$
-    Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{\alpha f + \beta g}(\psi),
+    Q_{\alpha f + \beta g}(\lambda\psi) = \lvert\lambda \rvert^2 Q_{\alpha f + \beta g}(\psi),
 $$
 
 the first desired result.
@@ -4458,9 +4458,9 @@ Again this follows from the fact that $$f$$ and $$g$$ are in $$\mathcal{F}$$ and
 
 $$
 \begin{align}
-    \lvert Q_{\alpha f + \beta g}(\phi) \rvert &=   \lvert  \alpha Q_f(\phi) + \beta Q_g(\phi) \rvert \\
-                                               &\le \lvert  \alpha Q_f(\phi) \rvert + \lvert \beta Q_g(\phi) \rvert \\
-                                               &=   \lvert \alpha \rvert \, \lvert  Q_f(\phi) \rvert + \lvert \beta \rvert \, \lvert Q_g(\phi) \rvert \\
+    \lvert Q_{\alpha f + \beta g}(\phi) \rvert &=   \lvert \alpha Q_f(\phi) + \beta Q_g(\phi) \rvert \\
+                                               &\le \lvert \alpha Q_f(\phi) \rvert + \lvert \beta Q_g(\phi) \rvert \\
+                                               &=   \lvert \alpha \rvert \, \lvert Q_f(\phi) \rvert + \lvert \beta \rvert \, \lvert Q_g(\phi) \rvert \\
                                                &\le C_f \lvert \alpha \rvert \, \| \phi \|^2 + C_g \lvert \beta \rvert \, \| \phi \|^2 \\
                                                &=   \left( C_f \lvert \alpha \rvert + C_g \lvert \beta \rvert \right) \| \phi \|^2 \\
                                                &=   C \| \phi \|^2, 
@@ -4471,8 +4471,8 @@ where we have used the fact that $$Q_f$$ and $$Q_g$$ are bounded quadratic forms
 
 $$
 \begin{align}
-    \lvert  Q_f(\phi) \rvert &\le C_f \| \phi \|^2 \\
-    \lvert  Q_g(\phi) \rvert &\le C_g \| \phi \|^2
+    \lvert Q_f(\phi) \rvert &\le C_f \| \phi \|^2 \\
+    \lvert Q_g(\phi) \rvert &\le C_g \| \phi \|^2
 \end{align}
 $$
 
@@ -4556,7 +4556,7 @@ Next we have to prove that $$f$$ is in $$\mathcal{F}$$. The definition of $$\mat
 
 To prove that $$Q_f$$ is a bounded quadratic form we must prove that
 
-1. $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+1. $$Q_f(\lambda\psi) = \lvert\lambda \rvert^2 Q_f(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 2. The map $$L_f : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 
    $$
@@ -4624,16 +4624,16 @@ $$
 
 that will allow us to prove that $$Q_f$$ is a bounded quadratic form.
 
-To wit, first let us prove $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+To wit, first let us prove $$Q_f(\lambda\psi) = \lvert\lambda \rvert^2 Q_f(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 
 This follows from our previous result along with the fact that the $$Q_{f_i}(\psi)$$ are bounded quadratic forms. We have
 
 $$
 \begin{align}
     Q_f(\lambda\psi) &= \lim\limits_{i \rightarrow \infty} Q_{f_i}(\lambda\psi) \\
-                     &= \lim\limits_{i \rightarrow \infty} \lvert\lambda\rvert^2 Q_{f_i}(\psi) \\
-                     &= \lvert\lambda\rvert^2 \left( \lim\limits_{i \rightarrow \infty} Q_{f_i}(\psi) \right) \\
-                     &= \lvert\lambda\rvert^2 Q_f(\psi),
+                     &= \lim\limits_{i \rightarrow \infty} \lvert\lambda \rvert^2 Q_{f_i}(\psi) \\
+                     &= \lvert\lambda \rvert^2 \left( \lim\limits_{i \rightarrow \infty} Q_{f_i}(\psi) \right) \\
+                     &= \lvert\lambda \rvert^2 Q_f(\psi),
 \end{align}
 $$
 
