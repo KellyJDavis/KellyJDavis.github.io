@@ -3781,7 +3781,7 @@ $$
 \end{align}
 $$
 
-Now if we define the $$\epsilon$$ of the hypothesis by
+Note first that $$\left\| A^{-1} \right\| \ne 0$$, so that division by it is legitimate: if $$A^{-1}$$ were the zero operator then $$\mathbf{1} = AA^{-1} = 0$$, forcing $$\mathbf{H} = \{0\}$$, which is excluded by the standing assumption of this post. Now if we define the $$\epsilon$$ of the hypothesis by
 
 $$
     \epsilon \equiv \frac{1}{\|A^{-1}\|},
@@ -5095,9 +5095,9 @@ Let us first prove that $$\mathcal{L}_0 \subseteq \mathcal{L}_1$$. Consider any 
 
 Next let us prove that $$\mathcal{L}_1$$ is a monotone class, i.e. that $$\mathcal{L}_1$$ is closed under countable increasing unions and countable decreasing intersections.
 
-Let $$\{ E_n \}_{n \in \mathbb{N}}$$ be an increasing sequence of sets in $$\mathcal{L}_1$$, i.e. $$E_1 \subseteq E_2 \subseteq \cdots$$ with each $$1_{E_n} \in \mathcal{F}$$, and let $$E \equiv \bigcup_{n \in \mathbb{N}} E_n$$. For any $$x \in X$$, if $$x \in E$$ then $$x \in E_{n_0}$$ for some $$n_0$$, and since the $$E_n$$ are increasing, $$1_{E_n}(x) = 1$$ for all $$n \ge n_0$$; if $$x \notin E$$ then $$1_{E_n}(x) = 0$$ for all $$n$$. Hence $$1_{E_n}(x) \rightarrow 1_E(x)$$ for every $$x \in X$$, i.e. $$1_{E_n} \rightarrow 1_E$$ pointwise. Furthermore this convergence is uniformly bounded, as $$\lvert 1_{E_n}(x) \rvert \le 1$$ for all $$n$$ and $$x$$. As $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits (property (3) of $$\mathcal{F}$$), we conclude $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+Let $$\{ E_n \}_{n \in \mathbb{N}}$$ be an increasing sequence of sets in $$\mathcal{L}_1$$, i.e. $$E_0 \subseteq E_1 \subseteq \cdots$$ with each $$1_{E_n} \in \mathcal{F}$$, and let $$E \equiv \bigcup_{n \in \mathbb{N}} E_n$$. For any $$x \in X$$, if $$x \in E$$ then $$x \in E_{n_0}$$ for some $$n_0$$, and since the $$E_n$$ are increasing, $$1_{E_n}(x) = 1$$ for all $$n \ge n_0$$; if $$x \notin E$$ then $$1_{E_n}(x) = 0$$ for all $$n$$. Hence $$1_{E_n}(x) \rightarrow 1_E(x)$$ for every $$x \in X$$, i.e. $$1_{E_n} \rightarrow 1_E$$ pointwise. Furthermore this convergence is uniformly bounded, as $$\lvert 1_{E_n}(x) \rvert \le 1$$ for all $$n$$ and $$x$$. As $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits (property (3) of $$\mathcal{F}$$), we conclude $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
 
-An entirely analogous argument applies to a decreasing sequence $$\{ E_n \}_{n \in \mathbb{N}}$$ in $$\mathcal{L}_1$$, i.e. $$E_1 \supseteq E_2 \supseteq \cdots$$: with $$E \equiv \bigcap_{n \in \mathbb{N}} E_n$$, one again has $$1_{E_n} \rightarrow 1_E$$ pointwise and uniformly bounded by $$1$$, so property (3) of $$\mathcal{F}$$ gives $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+An entirely analogous argument applies to a decreasing sequence $$\{ E_n \}_{n \in \mathbb{N}}$$ in $$\mathcal{L}_1$$, i.e. $$E_0 \supseteq E_1 \supseteq \cdots$$: with $$E \equiv \bigcap_{n \in \mathbb{N}} E_n$$, one again has $$1_{E_n} \rightarrow 1_E$$ pointwise and uniformly bounded by $$1$$, so property (3) of $$\mathcal{F}$$ gives $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
 
 Together these prove that $$\mathcal{L}_1$$ is a monotone class.
 
