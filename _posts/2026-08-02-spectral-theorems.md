@@ -2010,10 +2010,10 @@ $$
     \sup\limits_{\lambda \in X} \lvert s_i(\lambda) - f(\lambda) \rvert < \left( \frac{\epsilon}{2 C} \right).
 $$
 
-Similarly, as $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
+Similarly, set $$M_f \equiv 1 + \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert$$, which is finite since $$f$$ is bounded and satisfies $$M_f > 0$$ and $$\sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \le M_f$$ — the added $$1$$ is what keeps $$M_f$$ non-zero in the degenerate case $$f \equiv 0$$, so that the division below is always legitimate. As $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
-    \sup\limits_{\lambda \in X} \lvert r_j(\lambda) - g(\lambda) \rvert < \frac{\epsilon}{2 \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert}.
+    \sup\limits_{\lambda \in X} \lvert r_j(\lambda) - g(\lambda) \rvert < \frac{\epsilon}{2 M_f}.
 $$
 
 This implies that for all $$i,j \ge \max(N,M)$$ we have
@@ -2022,7 +2022,7 @@ $$
 \begin{align}
     \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
     &\le \left( \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert \\
-    &<   \left( \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \right) \left( \frac{\epsilon}{2 C} \right) + \left( \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert} \right) \\
+    &<   \left( \sup\limits_{\lambda \in X} \lvert r_j(\lambda) \rvert \right) \left( \frac{\epsilon}{2 C} \right) + \left( \sup\limits_{\lambda \in X} \lvert f(\lambda) \rvert \right) \left( \frac{\epsilon}{2 M_f} \right) \\
     &\le \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
     &= \epsilon,
 \end{align}
@@ -3955,10 +3955,10 @@ $$
     \sup\limits_{\lambda \in \sigma(A)} \lvert s_i(\lambda) - f(\lambda) \rvert < \left( \frac{\epsilon}{2C} \right).
 $$
 
-Similarly, as $$r_j$$ converges uniformly to $$g$$ and $$f$$ is bounded, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
+Similarly, set $$M_f \equiv 1 + \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert$$, which is finite since $$f$$ is bounded and satisfies $$M_f > 0$$ and $$\sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \le M_f$$ — the added $$1$$ keeps $$M_f$$ non-zero in the degenerate case $$f \equiv 0$$, so that the division below is always legitimate. As $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
 
 $$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) - g(\lambda) \rvert < \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert}.
+    \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) - g(\lambda) \rvert < \frac{\epsilon}{2 M_f}.
 $$
 
 This implies that for all $$i,j \ge \max(N,M)$$ we have
@@ -3967,7 +3967,7 @@ $$
 \begin{align}
     \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
     &\le \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert \\
-    &<   \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \left( \frac{\epsilon}{2C} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \left( \frac{\epsilon}{2 \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert} \right) \\
+    &<   \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \left( \frac{\epsilon}{2C} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \left( \frac{\epsilon}{2 M_f} \right) \\
     &\le \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
     &= \epsilon,
 \end{align}
