@@ -5691,15 +5691,33 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 > where $$(fg)(A)$$, $$f(A)$$, and $$g(A)$$ are operators that arise respectively from $$(fg)$$, $$f$$, and $$g$$ by way of [**Definition**](#def:hall-8.8).
 
 **Proof**
-Let $$\mathcal{F}_1$$ be the set of bounded, measurable, complex-valued functions $$f$$ such that
+The result is obtained by applying [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c) twice. The first pass, through [**Proposition** *($$\mathcal{F}_1$$ is a Vector Space)*](#prpstn:F1-vector-space) and [**Proposition** *($$\mathcal{F}_1$$ is Closed under Bounded Pointwise Limits)*](#prpstn:F1-closed-under-limits), gives multiplicativity for an arbitrary bounded Borel $$f$$ paired with a *continuous* $$g$$. The second pass, [**Proposition** *($$\mathcal{F}_2$$ Contains all Bounded Borel Functions)*](#prpstn:F2-is-everything), lifts the second argument to bounded Borel functions as well, which is the statement of this proposition.$$\blacksquare$$
 
-$$
-    (fg)(A) = f(A)g(A)
-$$
+> **Definition** *(The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)*
+<a name="def:F1-F2-classes"></a>
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint, and let $$f \mapsto f(A)$$ be the bounded Borel functional calculus of [**Definition**](#def:hall-8.8). Write
+>
+> $$
+> \begin{align}
+>     \mathcal{F}_1 &\equiv \{ f \text{ bounded, Borel-measurable on } \sigma(A) \mid (fg)(A) = f(A)g(A) \text{ for all } g \in C^0(\sigma(A); \mathbb{R}) \}, \\
+>     \mathcal{F}_2 &\equiv \{ g \text{ bounded, Borel-measurable on } \sigma(A) \mid (fg)(A) = f(A)g(A) \text{ for all bounded, Borel-measurable } f \}.
+> \end{align}
+> $$
+>
+> These are distinct from the class $$\mathcal{F}$$ of [Definition (The Class of Functions with Bounded Quadratic Form)](#def:F-class): the subscripted classes concern *multiplicativity* of the functional calculus, not boundedness of a quadratic form.
 
-for all $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$.
+> **Proposition** *($$\mathcal{F}_1$$ is a Vector Space)*
+<a name="prpstn:F1-vector-space"></a>
+<!--  \uses{def:F1-F2-classes} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:associated-measures-self-adjoint} -->
+> With $$\mathcal{F}_1$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), $$\mathcal{F}_1$$ is a complex vector space containing $$C^0(\sigma(A); \mathbb{R})$$.
 
-We claim that $$\mathcal{F}_1$$ is a complex vector space. To prove this consider any $$f_1$$ and $$f_2$$ in $$\mathcal{F}_1$$ and any $$\alpha_1$$ and $$\alpha_2$$ in $$\mathbb{C}$$. Then one has
+**Proof**
+We first show $$\mathcal{F}_1$$ is a complex vector space. To prove this consider any $$f_1$$ and $$f_2$$ in $$\mathcal{F}_1$$ and any $$\alpha_1$$ and $$\alpha_2$$ in $$\mathbb{C}$$. Then one has
 
 $$
 \begin{align}
@@ -5754,8 +5772,19 @@ $$
 $$
 
 for all $$\psi \in \mathbf{H}$$. Note here we have used [**Proposition** *(The Measures Associated to a Self-Adjoint Operator)*](#prpstn:associated-measures-self-adjoint) to write these operators in a form similar to that above. Hence, in both cases the operators $$f(A)$$ and $$g(A)$$ are the same. This then proves the claim that $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}_1$$.
+$$\blacksquare$$
 
-Our next claim is that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$. It turns out we actually proved this as part of our [**Proposition**](#prpstn:hall-8.7) proof.
+> **Proposition** *(The Quadratic Form is Continuous under Bounded Pointwise Limits)*
+<a name="prpstn:Q-continuous-under-limits"></a>
+<!--  \uses{prpstn:hall-8.7} -->
+<!--  \uses{prpstn:hall-a.59} -->
+<!--  \uses{prpstn:hall-a.61} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and $$\psi \in \mathbf{H}$$. If $$\{f_i\}$$ are bounded, Borel-measurable, uniformly bounded and converge pointwise to $$f$$ on $$\sigma(A)$$, then $$Q_{f_i}(\psi) \rightarrow Q_f(\psi)$$, and likewise for the associated sesquilinear forms.
+
+**Proof**
+We show that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$. It turns out we actually proved this as part of our [**Proposition**](#prpstn:hall-8.7) proof.
 
 In [**Proposition**](#prpstn:hall-8.7) we proved that $$\mathcal{F}$$ the space of all bounded, Borel-measurable, complex-valued functions $$f$$ such that $$Q_f$$ is a quadratic form is closed under uniformly bounded pointwise limits and that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions. Hence, $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$ when $$f$$ is a bounded, Borel-measurable, complex-valued function, the desired result.
 
@@ -5812,8 +5841,20 @@ $$
 $$
 
 for all $$\psi \in \mathbf{H}$$, all $$f \in \mathcal{F}_1$$, and all $$g \in C^0(\sigma(A); \mathbb{R})$$.
+$$\blacksquare$$
 
-With this identity in hand let us now prove that $$\mathcal{F}_1$$ is closed under pointwise limits of uniformly bounded sequences.
+> **Proposition** *($$\mathcal{F}_1$$ is Closed under Bounded Pointwise Limits)*
+<a name="prpstn:F1-closed-under-limits"></a>
+<!--  \uses{def:F1-F2-classes} -->
+<!--  \uses{prpstn:F1-vector-space} -->
+<!--  \uses{prpstn:Q-continuous-under-limits} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+> With $$\mathcal{F}_1$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), if $$\{f_i\}$$ is a uniformly bounded sequence in $$\mathcal{F}_1$$ converging pointwise to $$f$$, then $$f \in \mathcal{F}_1$$. Consequently, by [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c), $$\mathcal{F}_1$$ is the set of *all* bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$ — that is, $$(fg)(A) = f(A)g(A)$$ for every bounded Borel $$f$$ and every continuous $$g$$.
+
+**Proof**
+We show that $$\mathcal{F}_1$$ is closed under pointwise limits of uniformly bounded sequences.
 
 To this end let $$\{ f_i \}_{i \in \mathbb{N}}$$ be a sequence in $$\mathcal{F}_1$$, uniformly bounded by some $$M \in \mathbb{R}$$, that converges pointwise to a function $$f$$ on $$\sigma(A)$$. By [**Lemma** *(Pointwise Limits of Uniformly Bounded, Borel-Measurable Functions)*](#lmm:pointwise-limits-of-borel-measurable-functions), $$f$$ is itself a bounded, Borel-measurable, complex-valued function on $$\sigma(A)$$, and so is a candidate for membership in $$\mathcal{F}_1$$. Let $$g \in C^0(\sigma(A); \mathbb{R})$$ and $$\psi \in \mathbf{H}$$ be arbitrary.
 
@@ -5864,14 +5905,19 @@ $$
 As $$g$$ was an arbitrary element of $$C^0(\sigma(A); \mathbb{R})$$, this is precisely the statement that $$f \in \mathcal{F}_1$$. Thus $$\mathcal{F}_1$$ is closed under pointwise limits of uniformly bounded sequences.
 
 As $$\sigma(A)$$ is a compact metric measurable space by [**Lemma**](#lmm:spectrum-is-compact-metric-measurable) and $$\mathcal{F}_1$$ (1) is a vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under uniformly bounded pointwise limits, we can apply [**Lemma**](#lmm:hall-prblm-8.3.3c) to conclude that $$\mathcal{F}_1$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
+$$\blacksquare$$
 
-The result just obtained for $$\mathcal{F}_1$$ is multiplicativity for an arbitrary bounded, Borel-measurable $$f$$ paired with a *continuous* $$g$$. To obtain the full result we must also allow $$g$$ to be an arbitrary bounded, Borel-measurable function. To this end let $$\mathcal{F}_2$$ be the set of all bounded, Borel-measurable, complex-valued functions $$g$$---note that here it is the *second* argument that varies---such that
+> **Proposition** *($$\mathcal{F}_2$$ Contains all Bounded Borel Functions)*
+<a name="prpstn:F2-is-everything"></a>
+<!--  \uses{def:F1-F2-classes} -->
+<!--  \uses{prpstn:F1-closed-under-limits} -->
+<!--  \uses{prpstn:Q-continuous-under-limits} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+> With $$\mathcal{F}_2$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), $$\mathcal{F}_2$$ is a complex vector space, contains $$C^0(\sigma(A); \mathbb{R})$$, and is closed under bounded pointwise limits; hence it is the set of *all* bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
 
-$$
-    (fg)(A) = f(A)g(A)
-$$
-
-for all bounded, Borel-measurable, complex-valued functions $$f$$ on $$\sigma(A)$$. We will prove that $$\mathcal{F}_2$$ (1) is a complex vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under pointwise limits of uniformly bounded sequences, so that [**Lemma**](#lmm:hall-prblm-8.3.3c) applies.
+**Proof**
+By [**Proposition** *($$\mathcal{F}_1$$ is Closed under Bounded Pointwise Limits)*](#prpstn:F1-closed-under-limits), we have multiplicativity for an arbitrary bounded, Borel-measurable $$f$$ paired with a *continuous* $$g$$. To obtain the full result we must also allow $$g$$ to be an arbitrary bounded, Borel-measurable function. To this end recall $$\mathcal{F}_2$$ from [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes) — note that there it is the *second* argument that varies. We will prove that $$\mathcal{F}_2$$ (1) is a complex vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under pointwise limits of uniformly bounded sequences, so that [**Lemma**](#lmm:hall-prblm-8.3.3c) applies.
 
 **(1)** Consider any $$g_1$$ and $$g_2$$ in $$\mathcal{F}_2$$, any $$\alpha_1$$ and $$\alpha_2$$ in $$\mathbb{C}$$, and any bounded, Borel-measurable $$f$$. Then
 
@@ -5936,6 +5982,7 @@ $$
 $$
 
 for all bounded, Borel-measurable, complex-valued functions $$f$$ and $$g$$ on $$\sigma(A)$$.$$\blacksquare$$
+
 
 In what is the penultimate result required to prove the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) we present the following theorem that covers all of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) except uniqueness of the projection-valued measure $$\mu^A$$.
 
