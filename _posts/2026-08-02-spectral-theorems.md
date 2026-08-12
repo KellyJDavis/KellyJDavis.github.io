@@ -5929,6 +5929,8 @@ With this result as motivation, let us prove the following "utility" lemma
 
 > **Lemma**
 <a name="lmm:lemma-4"></a>
+<!--  \uses{lmm:projection-norm-decreasing} -->
+<!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -5964,13 +5966,19 @@ $$
     \left\| S_n\psi \right\|^2 = \sum_{i = 0}^n \left\| P_i\psi \right\|^2.
 $$
 
-Now as the projections $$P_i$$ satisfy $$P_iP_j = 0$$ if $$i \neq j$$, the partial sum
+Next we bound $$\left\| S_n\psi \right\|$$ by $$\left\| \psi \right\|$$. This is not immediate from $$P_iP_j = 0$$ alone; it follows because the operator $$S_n \equiv \sum_{i=0}^n P_i$$ is itself a bounded orthogonal projection. Indeed, $$S_n$$ is a finite sum of elements of $$\mathcal{B}(\mathbf{H})$$ and so lies in $$\mathcal{B}(\mathbf{H})$$; it is self-adjoint, since
 
 $$
-    S_n\psi \equiv \sum_{i = 0}^n P_i\psi
+    S_n^* = \left( \sum_{i=0}^n P_i \right)^* = \sum_{i=0}^n P_i^* = \sum_{i=0}^n P_i = S_n,
 $$
 
-must have a magnitude less than or equal to that of $$\psi$$, in other words
+each $$P_i$$ being self-adjoint by the [definition of an orthogonal projection](#def:bounded-orthogonal-projection); and it is idempotent, since
+
+$$
+    S_n^2 = \sum_{i=0}^n \sum_{j=0}^n P_iP_j = \sum_{i=0}^n P_i^2 = \sum_{i=0}^n P_i = S_n,
+$$
+
+where the cross terms vanish by the hypothesis $$P_iP_j = 0$$ for $$i \ne j$$ and the diagonal terms satisfy $$P_i^2 = P_i$$ by that same definition. So $$S_n$$ is a bounded orthogonal projection, and [**Lemma** *(Orthogonal Projections are Norm-Decreasing)*](#lmm:projection-norm-decreasing) gives
 
 $$
     \left\| S_n\psi \right\|^2 \le \|\psi\|^2.
