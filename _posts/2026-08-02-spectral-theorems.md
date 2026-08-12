@@ -5843,16 +5843,19 @@ This proof broadly consists of two parts **Part 1:** prove that $$\mu^A$$ is a p
 $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
 $$
+**Proof**
+That $$\mu^A$$ is a projection-valued measure is the conjunction of the four axioms of the [definition](#def:projection-valued-measure), established in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), [**Proposition** *(Spectral Projections Multiply to the Intersection)*](#prpstn:mua-multiplicative), [**Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*](#prpstn:mua-empty-and-whole) and [**Proposition** *(Spectral Projections are Countably Additive)*](#prpstn:mua-countably-additive). The integral identity is [**Proposition** *(The Spectral Measure Integrates to the Operator)*](#prpstn:mua-integrates-to-A).$$\blacksquare$$
 
-**Part 1:** Let us first prove that $$\mu^A$$ is a projection valued measure on $$\sigma(A)$$. This involves **Part 1.1:** proving for each measurable set $$E$$ on $$\sigma(A)$$ it follows that $$\mu^A(E)$$ is a bounded orthogonal projection, **Part 1.2:** proving for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$, **Part 1.3:** proving that $$\mu^A(\emptyset) = 0$$, where $$\emptyset$$ is the empty set, and $$\mu^A(\sigma(A)) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element, and finally **Part 1.4:** proving that for pairwise disjoint measurable sets $$\{ E_i \}_{i \in \mathbb{N}}$$ on $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$ we have
+> **Proposition** *(Each Spectral Projection is an Orthogonal Projection)*
+<a name="prpstn:mua-projection"></a>
+<!--  \uses{thrm:hall-8.10} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{prpstn:hall-8.9} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and, for measurable $$E \subseteq \sigma(A)$$, let $$\mu^A(E) \equiv 1_E(A)$$ as in [**Theorem** *(hall-8.10)*](#thrm:hall-8.10). Then $$\mu^A(E)$$ is a bounded orthogonal projection.
 
-$$
-    \mu^A \left( \bigcup_{j = 1}^{\infty} E_j \right) \psi = \sum_{j = 1}^{\infty} \mu(E_j)\psi,
-$$
-
-where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
-
-**Part 1.1:** Let us now prove that for each measurable set $$E$$ on $$\sigma(A)$$ it follows that $$\mu^A(E)$$ is a bounded orthogonal projection.
+**Proof**
+for each measurable set $$E$$ on $$\sigma(A)$$ it follows that $$\mu^A(E)$$ is a bounded orthogonal projection.
 
 To this end, first let us note that as a result of [**Lemma**](#lmm:lemma-3) for any measurable subset $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$ the fact that $$1_E$$ is a bounded, Borel-measurable, real-valued function on $$\sigma(A)$$ allows us to conclude that $$1_E(A)$$ is self-adjoint.
 
@@ -5880,9 +5883,23 @@ $$
     \mu^A(E) \equiv 1_E(A)
 $$
 
-is also an orthogonal projection for any measurable subset $$E$$ of the spectrum $$\sigma(A)$$, the desired **Part 1.1** result.
+is also an orthogonal projection for any measurable subset $$E$$ of the spectrum $$\sigma(A)$$, as required.
+$$\blacksquare$$
 
-**Part 1.2:** Next let us prove that for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$.
+> **Proposition** *(Spectral Projections Multiply to the Intersection)*
+<a name="prpstn:mua-multiplicative"></a>
+<!--  \uses{prpstn:mua-projection} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{prpstn:hall-8.9} -->
+<!--  \uses{def:identity-and-indicator} -->
+> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for any measurable $$E_1, E_2 \subseteq \sigma(A)$$,
+>
+> $$
+>     \mu^A(E_1)\mu^A(E_2) = \mu^A(E_1 \cap E_2).
+> $$
+
+**Proof**
+for any measurable sets $$E_1$$ and $$E_2$$ on $$\sigma(A)$$ that $$\mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2)$$.
 
 So to this end, consider any two measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$. Tracing definitions one has
 
@@ -5907,9 +5924,23 @@ $$
     \mu^A(E_1 \cap E_2) = \mu^A(E_1) \mu^A(E_2),
 $$
 
-the desired **Part 1.2** result.
+as required.
+$$\blacksquare$$
 
-**Part 1.3:** Now let us prove that $$\mu^A(\emptyset) = 0$$, where $$\emptyset$$ is the empty set, and $$\mu^A(\sigma(A)) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element.
+> **Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*
+<a name="prpstn:mua-empty-and-whole"></a>
+<!--  \uses{prpstn:mua-projection} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{prpstn:hall-8.9} -->
+<!--  \uses{def:identity-and-indicator} -->
+> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection),
+>
+> $$
+>     \mu^A(\emptyset) = 0 \qquad\text{and}\qquad \mu^A(\sigma(A)) = \mathbf{1}.
+> $$
+
+**Proof**
+$$\mu^A(\emptyset) = 0$$, where $$\emptyset$$ is the empty set, and $$\mu^A(\sigma(A)) = \mathbf{1}$$, where $$\mathbf{1}$$ is the multiplicative identity element.
 
 To this end, consider the empty set $$\emptyset$$ which is a measurable subset of the spectrum $$\sigma(A)$$. Tracing definitions one has
 
@@ -5941,7 +5972,7 @@ $$
     \mu^A(\emptyset) \equiv 1_\emptyset(A).
 $$
 
-Thus, $$\mu^A(\emptyset)$$ is the zero operator, the first of the desired **Part 1.3** results.
+Thus, $$\mu^A(\emptyset)$$ is the zero operator, the first of the two desired results.
 
 Now consider the measurable set $$\sigma(A)$$, the entire spectrum. Tracing definitions
 
@@ -5985,9 +6016,26 @@ $$
     \mu^A(\sigma(A)) = \mathbf{1},
 $$
 
-the second and final **Part 1.3** result.
+the second, as required.
+$$\blacksquare$$
 
-**Part 1.4:** Now let us prove that for pairwise disjoint measurable sets $$\{ E_i \}_{i \in \mathbb{N}}$$ on $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$ we have
+> **Proposition** *(Spectral Projections are Countably Additive)*
+<a name="prpstn:mua-countably-additive"></a>
+<!--  \uses{prpstn:mua-projection} -->
+<!--  \uses{prpstn:mua-multiplicative} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{lmm:lemma-4} -->
+<!--  \uses{prpstn:hall-8.9} -->
+> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for pairwise disjoint measurable sets $$\{E_j\}$$ in $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$,
+>
+> $$
+>     \mu^A\left( \bigcup_{j=1}^{\infty} E_j \right)\psi = \sum_{j=1}^{\infty} \mu^A(E_j)\psi,
+> $$
+>
+> the sum converging in the norm topology on $$\mathbf{H}$$.
+
+**Proof**
+for pairwise disjoint measurable sets $$\{ E_i \}_{i \in \mathbb{N}}$$ on $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$ we have
 
 $$
     \mu^A \left( \bigcup_{j = 1}^{\infty} E_j \right) \psi = \sum_{j = 1}^{\infty} \mu(E_j)\psi,
@@ -6358,7 +6406,7 @@ Obviously, $$S_n\psi \in V$$. As $$V$$ is by construction closed and $$S_n\psi \
 
 This completes the proof of [**Lemma**](#lmm:lemma-4).$$\blacksquare$$
 
-Now back on the main thread, proving **Part 1.4** of [**Theorem**](#thrm:hall-8.10), consider a series $$\{ E_i \}_{i \in \mathbb{N}}$$ of disjoint measurable subsets of the spectrum $$\sigma(A)$$ of $$A$$. We proved that the $$\mu^A(E_i)$$ are bounded orthogonal projections on the separable, complex Hilbert space $$\mathbf{H}$$ and that $$\mu^A(E_i)\mu^A(E_j) = 0$$ if $$i \neq j$$.
+With the lemma in hand we return to the countable-additivity argument, consider a series $$\{ E_i \}_{i \in \mathbb{N}}$$ of disjoint measurable subsets of the spectrum $$\sigma(A)$$ of $$A$$. We proved that the $$\mu^A(E_i)$$ are bounded orthogonal projections on the separable, complex Hilbert space $$\mathbf{H}$$ and that $$\mu^A(E_i)\mu^A(E_j) = 0$$ if $$i \neq j$$.
 
 Hence, we can apply the [**Lemma**](#lmm:lemma-4) we just proved to conclude that for any $$\psi \in \mathbf{H}$$ the sequence of partial sums
 
@@ -6399,9 +6447,23 @@ $$
      \left< \psi, \mu^A\left( \bigcup_{i = 0}^\infty E_i \right) \psi \right> = \lim\limits_{n \rightarrow \infty} \left< \psi, \left( \sum_{i = 0}^n \mu^A(E_i) \right) \psi \right>,
 $$
 
-for arbitrary $$\psi \in \mathbf{H}$$. This is nothing more than the statement that $$\mu^A$$ is countable additive, the desired result of **Part 1.4**. This concludes the proof that $$\mu^A$$ is a projection-valued measure.
+for arbitrary $$\psi \in \mathbf{H}$$. This is nothing more than the statement that $$\mu^A$$ is countable additive, as required.
+$$\blacksquare$$
 
-**Part 2:** Now let us prove that $$\mu^A$$ satisfies
+> **Proposition** *(Spectral Projections are the Integrals of their Indicators)*
+<a name="prpstn:mua-indicator-integral"></a>
+<!--  \uses{thrm:hall-8.10} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{prpstn:integral-of-indicator} -->
+<!--  \uses{def:hall-8.8} -->
+> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), and given that $$\mu^A$$ is a projection-valued measure, for every measurable $$E \subseteq \sigma(A)$$,
+>
+> $$
+>     \mu^A(E) = \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda).
+> $$
+
+**Proof**
+$$\mu^A$$ satisfies
 
 $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
@@ -6480,8 +6542,22 @@ $$
 $$
 
 which, as $$E$$ is arbitrary, is none other than the statement that the measures $$\mu^A_\psi$$ and $$\mu_\psi$$ agree.
+$$\blacksquare$$
 
-Next let us (2) prove that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$.
+> **Proposition** *(The Two Bounded Functional Calculi Agree)*
+<a name="prpstn:mua-bounded-calculus-agrees"></a>
+<!--  \uses{prpstn:mua-indicator-integral} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{prpstn:hall-a.63} -->
+> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for every bounded, Borel-measurable, complex-valued $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) coincides with the projection-valued integral of $$f$$ against $$\mu^A$$:
+>
+> $$
+>     f(A) = \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda).
+> $$
+
+**Proof**
+We show that the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) agrees with the projection-valued integral of $$f$$ with respect to $$\mu^A$$.
 
 For any bounded, Borel-measurable, complex-valued function $$f$$ on $$\sigma(A)$$ as a result of [**Definition**](#def:hall-8.8) and [**Definition**](#def:hall-8.6) we have
 
@@ -6514,8 +6590,23 @@ However, by the uniqueness clause of [**Proposition**](#prpstn:hall-a.63) the op
 $$
     f(A) = \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda).
 $$
+$$\blacksquare$$
 
-Next we want to (3) prove that for continuous $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ the operator $$g(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$g(A)$$ of [**Proposition**](#prpstn:hall-8.3).
+> **Proposition** *(The Spectral Measure Integrates to the Operator)*
+<a name="prpstn:mua-integrates-to-A"></a>
+<!--  \uses{prpstn:mua-bounded-calculus-agrees} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{thrm:riesz-representation} -->
+<!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{def:hall-8.6} -->
+> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection),
+>
+> $$
+>     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+> $$
+
+**Proof**
+We show that for continuous $$g$$ in $$C^0(\sigma(A); \mathbb{R})$$ the operator $$g(A)$$ of [**Definition**](#def:hall-8.8) agrees with the operator $$g(A)$$ of [**Proposition**](#prpstn:hall-8.3).
 
 Directly before the statement of [**Definition**](#def:hall-8.6) we established that for any $$\psi$$ in $$\mathbf{H}$$ we can construct a map $$\Lambda_\psi : C^0(\sigma(A); \mathbb{R}) \rightarrow \mathbb{R}$$ defined by
 
@@ -6567,7 +6658,8 @@ $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A,
 $$
 
-the desired **Part 2** result which completes the proof of [**Theorem**](#thrm:hall-8.10).$$\blacksquare$$
+as required.$$\blacksquare$$
+
 
 The final result we need to prove to complete our proof of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) is to prove that the projection-valued measure $$\mu^A$$ of [**Theorem**](#thrm:hall-8.10) is unique. It is to this we turn.
 
