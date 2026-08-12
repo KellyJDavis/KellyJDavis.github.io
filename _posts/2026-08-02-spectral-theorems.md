@@ -424,41 +424,9 @@ Projection-valued measures give rise to a type of integration known as "operator
 >     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi,
 > $$
 >
-> for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure) and $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. This unique linear map has the following additional properties
+> for all $$f$$ and $$\psi \in \mathbf{H}$$, where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure) and $$\left< \cdot, \cdot \right>$$ is the Hilbert space inner product on $$\mathbf{H}$$. 
 >
-> 1. For all $$E \in \Omega(X)$$, we have
->
->    $$
->        \int_X 1_E \, d\mu = \mu(E),
->    $$
->
->    where $$1_E$$ is the indicator function of $$E$$. In particular, the integral of the constant function $$1$$ is the multiplicative identity $$\mathbf{1}$$.
-> 2. For all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
->
->    $$
->        \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert,
->    $$
->
->    where $$\| \cdot \|$$ is the operator norm and $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$.
-> 3. Integration is multiplicative: For all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
->
->    $$
->        \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
->    $$
->
-> 4. For all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
->
->    $$
->        \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
->    $$
->
->    where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$ arising from the Hilbert space inner product. In particular, if $$f$$ is real-valued, then $$f = \overline{f}$$ and
->
->    $$
->        \left( \int_X f \, d\mu \right) = \left( \int_X \overline{f} \, d\mu \right) = \left( \int_X f \, d\mu \right)^*
->    $$
->
->    is self-adjoint.
+> Its four basic properties — the integral of an indicator, the norm bound, multiplicativity, and the interaction with conjugation — are established separately in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](#prpstn:integral-norm-bound), [**Proposition** *(Operator-Valued Integration is Multiplicative)*](#prpstn:integral-multiplicative) and [**Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*](#prpstn:integral-conjugation) below.
 
 **Proof**
 
@@ -1267,7 +1235,7 @@ $$
 
 By construction it is a map from the space of bounded, measurable, complex-valued functions to $$\mathcal{B}(\mathbf{H})$$, as required.
 
-**Property 0:** Tracing definitions it is obvious that this satisfies the required property
+*The defining identity.* Tracing definitions it is obvious that this satisfies the required property
 
 $$
     \left< \psi, \left( \int_X f \, d\mu \right) \psi \right> = \int_X f d\mu_\psi
@@ -1291,7 +1259,23 @@ $$
 
 the desired result.
 
-**Property 1:** Next we must prove that for all $$E \in \Omega(X)$$, we have
+for any bounded, measurable, complex-valued function $$f$$.$$\blacksquare$$
+
+We now establish, one at a time, the four properties asserted by the theorem.
+
+> **Proposition** *(Integral of an Indicator Function)*
+<a name="prpstn:integral-of-indicator"></a>
+<!--  \uses{thrm:operator-valued-integration} -->
+> Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$, let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure, and let $$f \mapsto \int_X f \, d\mu$$ be the map of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration). Then for all $$E \in \Omega(X)$$,
+>
+> $$
+>     \int_X 1_E \, d\mu = \mu(E),
+> $$
+>
+> where $$1_E$$ is the indicator function of $$E$$. In particular, the integral of the constant function $$1$$ is the multiplicative identity $$\mathbf{1}$$.
+
+**Proof**
+Next we must prove that for all $$E \in \Omega(X)$$, we have
 
 $$
     \int_X 1_E \, d\mu = \mu(E),
@@ -1320,8 +1304,21 @@ $$
 $$
 
 which is the desired result.
+$$\blacksquare$$
 
-**Property 2:** The next result we must prove is that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+> **Proposition** *(Norm Bound for the Operator-Valued Integral)*
+<a name="prpstn:integral-norm-bound"></a>
+<!--  \uses{thrm:operator-valued-integration} -->
+> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f$$ on $$X$$,
+>
+> $$
+>     \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert,
+> $$
+>
+> where $$\| \cdot \|$$ is the operator norm and $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$.
+
+**Proof**
+The next result we must prove is that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 
 $$
     \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert,
@@ -1837,8 +1834,20 @@ $$
 $$
 
 is proven.
+$$\blacksquare$$
 
-**Property 3:** Next we must prove that integration is multiplicative. In other words for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
+> **Proposition** *(Operator-Valued Integration is Multiplicative)*
+<a name="prpstn:integral-multiplicative"></a>
+<!--  \uses{prpstn:integral-norm-bound} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$,
+>
+> $$
+>     \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
+> $$
+
+**Proof**
+Next we must prove that integration is multiplicative. In other words for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
 
 $$
     \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
@@ -1920,7 +1929,7 @@ $$
 \end{align}
 $$
 
-where in the final step we employed our **Property 2** result. As $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, this implies that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
+where in the final step we employed [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](#prpstn:integral-norm-bound). As $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, this implies that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
 
 $$
     \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\| < \epsilon,
@@ -1938,7 +1947,7 @@ $$
 \end{align}
 $$
 
-where in the final step we employed our **Property 2** result. Looking at this result and our previous similar result, one concludes that if we can prove that given any $$\epsilon > 0$$, there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
+where in the final step we employed [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](#prpstn:integral-norm-bound). Looking at this result and our previous similar result, one concludes that if we can prove that given any $$\epsilon > 0$$, there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
 
 $$
     \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert < \epsilon,
@@ -2137,9 +2146,22 @@ $$
     \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right) = \int_X fg \, d\mu,
 $$
 
-the desired result of **Property 3**, integration is multiplicative for bounded, measurable, complex-valued functions $$f$$ and $$g$$.
+the desired result, integration is multiplicative for bounded, measurable, complex-valued functions $$f$$ and $$g$$.
+$$\blacksquare$$
 
-**Property 4:** Finally we must prove that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
+> **Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*
+<a name="prpstn:integral-conjugation"></a>
+<!--  \uses{thrm:operator-valued-integration} -->
+> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f$$ on $$X$$,
+>
+> $$
+>     \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
+> $$
+>
+> where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$. In particular, if $$f$$ is real-valued then $$f = \overline{f}$$ and $$\int_X f \, d\mu$$ is self-adjoint.
+
+**Proof**
+Finally we must prove that for all bounded, measurable, complex-valued functions $$f$$ on $$X$$, we have
 
 $$
     \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*,
@@ -2191,8 +2213,7 @@ where when taking the adjoint we have also used our previous result that $$A_{f_
 $$
     \int_X \overline{f} \, d\mu = \left( \int_X f \, d\mu \right)^*
 $$
-
-for any bounded, measurable, complex-valued function $$f$$. This also completes the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration).$$\blacksquare$$
+$$\blacksquare$$
 
 ### The Spectral Theorem
 
@@ -4934,7 +4955,7 @@ $$
 
 Thus with this we have proven that $$1_{E^c}$$ is the pointwise limit of a sequence of uniformly bounded functions, the desired **Property 2.2** result.
 
-In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under complements, the desired **Property 2** result.
+In proving **Property 2.1** and **Property 2.2** we can thus conclude that $$\mathcal{L}_0$$ is closed under complements, the desired result.
 
 
 **Property 3:** Next let us prove that $$\mathcal{L}_0$$ is closed under finite union, i.e. if $$E_1,E_2 \in \mathcal{L}_0$$, then $$E_1 \cup E_2 \in \mathcal{L}_0$$. Proving **Property 3** is tantamount to proving **Property 3.1:** that $$E_1 \cup E_2$$ is measurable and **Property 3.2:** that $$1_{E_1 \cup E_2}$$ is a pointwise limit of a sequence of uniformly bounded continuous functions.
@@ -6499,7 +6520,7 @@ $$
 \end{align}
 $$
 
-where the first equality made use of the definition of $$p$$, the second equality made use of linearity of operator-valued integration following from [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), the third equality made use of multiplicativity of operator-valued integration also from [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), and the final equality made use of the hypothesis of this theorem.
+where the first equality made use of the definition of $$p$$, the second equality made use of linearity of operator-valued integration following from [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration), the third equality made use of multiplicativity of operator-valued integration, [**Proposition** *(Operator-Valued Integration is Multiplicative)*](#prpstn:integral-multiplicative), and the final equality made use of the hypothesis of this theorem.
 
 Using the same logic, operator-valued integration with respect to $$\nu^A$$ gives
 
@@ -6628,7 +6649,7 @@ Finally, note that as $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is continuous and t
 
 Hence, elements of $$\mathcal{P}(\sigma(A); \mathbb{C})$$ are bounded, measurable, complex-valued functions on $$\sigma(A)$$. Thus, $$\mathcal{P}(\sigma(A); \mathbb{C})$$ is in the domain of the $$I_{\mu^A}$$ and $$I_{\nu^A}$$.
 
-Furthermore, Property 2 of the [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) implies that for any bounded, measurable, complex-valued function $$f$$ on $$\sigma(A)$$
+Furthermore, [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](#prpstn:integral-norm-bound) implies that for any bounded, measurable, complex-valued function $$f$$ on $$\sigma(A)$$
 
 $$
     \left\| \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda) \right\| \le \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,

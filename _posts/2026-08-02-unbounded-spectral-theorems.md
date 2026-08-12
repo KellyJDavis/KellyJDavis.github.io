@@ -1136,7 +1136,7 @@ finite since $$\psi \in \mathbf{H}$$. The final claim follows since $$\mu_\psi$$
 > $$
 
 **Proof**
-Combining multiplicativity of the integral with the fact that integration intertwines complex conjugation and the adjoint — properties 3 and 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — and using the [definition of the adjoint](#def:hall-9.1) for the first equality,
+Combining multiplicativity of the integral with the fact that integration intertwines complex conjugation and the adjoint — [**Proposition** *(Operator-Valued Integration is Multiplicative)*](../spectral-theorems/#prpstn:integral-multiplicative) and [**Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*](../spectral-theorems/#prpstn:integral-conjugation) — and using the [definition of the adjoint](#def:hall-9.1) for the first equality,
 
 $$
 \begin{align}
@@ -1745,7 +1745,7 @@ the first equality by [continuity of the inner product](../spectral-theorems/#pr
 > $$
 
 **Proof**
-Let $$E \in \Omega(X)$$. Using the [definition of the adjoint](#def:hall-9.1), then properties 3 and 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — multiplicativity, and the fact that integration intertwines complex conjugation with the adjoint —
+Let $$E \in \Omega(X)$$. Using the [definition of the adjoint](#def:hall-9.1), then [**Proposition** *(Operator-Valued Integration is Multiplicative)*](../spectral-theorems/#prpstn:integral-multiplicative) and [**Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*](../spectral-theorems/#prpstn:integral-conjugation) — multiplicativity, and the fact that integration intertwines complex conjugation with the adjoint —
 
 $$
 \begin{align}
@@ -2166,7 +2166,7 @@ We need three properties of these subspaces. The first two follow directly from 
 > Note that the statement is about an arbitrary projection-valued measure on a compact $$X \subset \mathbb{C}$$ and the operator $$A$$ it integrates to; it presupposes no spectral theorem, and its proof below uses none. It will be applied in two ways: with $$\mu = \mu^A$$ for a bounded *self-adjoint* $$A$$ (where $$X = \sigma(A) \subset \mathbb{R}$$, so the sets in Part 2 are real intervals), which is available now; and, later and only after that theorem has been proved by a route passing through this proposition, with $$\mu = \mu^U$$ for a bounded *normal* $$U$$. There is no circularity: the present proposition is logically prior to both.
 
 **Proof**
-Throughout we use multiplicativity of the bounded integral, property 3 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration), and write $$f(A) \equiv \int_X f\,d\mu$$ for bounded measurable $$f$$; note $$\iota(A) = A$$ by the definition of $$A$$, $$1(A) = \mathbf{1}$$ and $$1_E(A) = \mu(E)$$ by property 1 of the same theorem.
+Throughout we use multiplicativity of the bounded integral, [**Proposition** *(Operator-Valued Integration is Multiplicative)*](../spectral-theorems/#prpstn:integral-multiplicative), and write $$f(A) \equiv \int_X f\,d\mu$$ for bounded measurable $$f$$; note $$\iota(A) = A$$ by the definition of $$A$$, $$1(A) = \mathbf{1}$$ and $$1_E(A) = \mu(E)$$ by property 1 of the same theorem.
 
 **Part 1.** Since $$\iota \cdot 1_E = 1_E \cdot \iota$$ as functions, multiplicativity gives $$A\,\mu(E) = (\iota 1_E)(A) = (1_E \iota)(A) = \mu(E)\,A$$. Hence for $$\psi = \mu(E)\phi \in V_E$$,
 
@@ -2180,7 +2180,7 @@ $$
     (A - \lambda_0\mathbf{1})\psi = f(A)\,\mu(E)\psi = (f 1_E)(A)\psi.
 $$
 
-Since $$E \subset \{ \lvert \lambda - \lambda_0 \rvert \le \varepsilon \}$$, the function $$f 1_E$$ satisfies $$\lvert f(\lambda)1_E(\lambda) \rvert \le \varepsilon$$ for every $$\lambda \in X$$. By the norm bound, property 2 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration), $$\left\| (f1_E)(A) \right\| \le \varepsilon$$, so $$\left\| (A-\lambda_0\mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$.
+Since $$E \subset \{ \lvert \lambda - \lambda_0 \rvert \le \varepsilon \}$$, the function $$f 1_E$$ satisfies $$\lvert f(\lambda)1_E(\lambda) \rvert \le \varepsilon$$ for every $$\lambda \in X$$. By the norm bound, [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](../spectral-theorems/#prpstn:integral-norm-bound), $$\left\| (f1_E)(A) \right\| \le \varepsilon$$, so $$\left\| (A-\lambda_0\mathbf{1})\psi \right\| \le \varepsilon\left\| \psi \right\|$$.
 
 **Part 3.** Suppose, for contradiction, that $$\lambda_0 \in \sigma(A)$$ but $$V_{U \cap X} = \{0\}$$ for some open $$U \subset \mathbb{C}$$ containing $$\lambda_0$$. Since $$U$$ is open, there is $$\varepsilon > 0$$ with $$\{ \lvert \lambda - \lambda_0 \rvert < \varepsilon \} \subset U$$; set $$N \equiv \{ \lambda \in X \mid \lvert \lambda - \lambda_0 \rvert < \varepsilon \}$$, so $$N \subset U \cap X$$. Then $$V_N \subset V_{U\cap X} = \{0\}$$: for $$E \subset F$$ measurable, property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) gives $$\mu(F)\mu(E) = \mu(E \cap F) = \mu(E)$$, so every $$\eta = \mu(E)\xi$$ satisfies $$\mu(F)\eta = \eta$$ and hence lies in $$\text{Range}(\mu(F))$$ by [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel). So $$V_N = \{0\}$$, i.e. $$\mu(N) = 0$$ (a projection with trivial range is the zero operator).
 
@@ -2980,7 +2980,7 @@ The extended calculus is norm-bounded by the supremum norm. This is *not* suppli
 > $$
 
 **Proof**
-By [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm), $$\widetilde\Phi(f) = \int_X f \, d\mu^\Phi$$ for every bounded measurable $$f$$. Property 2 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) bounds the operator norm of that integral by the supremum norm of the integrand, giving the claim.$$\blacksquare$$
+By [**Theorem** *(A Continuous Functional Calculus Yields a Projection-Valued Measure)*](#thrm:abstract-calculus-yields-pvm), $$\widetilde\Phi(f) = \int_X f \, d\mu^\Phi$$ for every bounded measurable $$f$$. [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](../spectral-theorems/#prpstn:integral-norm-bound) bounds the operator norm of that integral by the supremum norm of the integrand, giving the claim.$$\blacksquare$$
 
 ### The Spectral Theorem for Bounded Normal Operators
 
@@ -3026,7 +3026,7 @@ which is existence.
 
 *Uniqueness.* We prove the ambient form, which contains the plain one as the case $$X = \sigma(A)$$. So let $$X \subset \mathbb{C}$$ be compact with $$\sigma(A) \subset X$$, and let $$\nu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$ with $$\int_X \iota \, d\nu = A$$, where $$\iota(\lambda) = \lambda$$ (a bounded function on the compact $$X$$, so this is the bounded integral). Write $$\Psi(f) \equiv \int_X f \, d\nu$$ for bounded measurable $$f$$ on $$X$$, and write $$\widetilde{\mu^A}$$ for the extension of $$\mu^A$$ to $$X$$ given by $$\widetilde{\mu^A}(E) \equiv \mu^A(E \cap \sigma(A))$$, a projection-valued measure on $$X$$ (the four properties transfer as in the corresponding extension in [**Theorem** *(hall-10.30)*](#thrm:hall-10.30), using $$\sigma(A) \subset X$$).
 
-By property 4 of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) — integration intertwines complex conjugation with the adjoint — $$\Psi(\overline\iota) = \Psi(\iota)^* = A^*$$. By property 3 (multiplicativity) and linearity, it follows by induction on $$k+l$$ that $$\Psi(\iota^k\overline\iota^{\,l}) = A^k(A^*)^l$$ for all $$k,l \ge 0$$, and hence, by linearity again, $$\Psi(p) = p(A,A^*)$$ for every polynomial $$p$$ in $$\lambda$$ and $$\overline\lambda$$. The same identity holds for $$\Phi_A$$, by the defining property in [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), and for the integral against $$\widetilde{\mu^A}$$, since $$\widetilde{\mu^A}$$ is concentrated on $$\sigma(A)$$ where it agrees with $$\mu^A$$. So all three agree on polynomial functions.
+By [**Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*](../spectral-theorems/#prpstn:integral-conjugation) — integration intertwines complex conjugation with the adjoint — $$\Psi(\overline\iota) = \Psi(\iota)^* = A^*$$. By property 3 (multiplicativity) and linearity, it follows by induction on $$k+l$$ that $$\Psi(\iota^k\overline\iota^{\,l}) = A^k(A^*)^l$$ for all $$k,l \ge 0$$, and hence, by linearity again, $$\Psi(p) = p(A,A^*)$$ for every polynomial $$p$$ in $$\lambda$$ and $$\overline\lambda$$. The same identity holds for $$\Phi_A$$, by the defining property in [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), and for the integral against $$\widetilde{\mu^A}$$, since $$\widetilde{\mu^A}$$ is concentrated on $$\sigma(A)$$ where it agrees with $$\mu^A$$. So all three agree on polynomial functions.
 
 Now fix $$\psi \in \mathbf{H}$$ and consider the two finite positive Borel measures $$\nu_\psi$$ and $$\widetilde{\mu^A}_\psi$$ on $$X$$. Writing $$\mathcal{P}$$ for the algebra of functions on $$X$$ of the form $$\lambda \mapsto p(\lambda,\overline\lambda)$$, we have for $$p \in \mathcal{P}$$
 
@@ -3561,7 +3561,7 @@ $$
 
 so $$B\psi \in W_\iota = \text{Dom}(A)$$, by the definition of $$W_\iota$$ in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2).
 
-Next, $$(A - i\mathbf{1})B\psi = \psi$$. Put $$E_n \equiv \{ \lambda \in \mathbb{R} \mid \lvert \lambda \rvert < n \}$$ and $$\iota_n \equiv \iota\cdot 1_{E_n}$$, a bounded measurable function. Since $$\iota_n$$ and $$r$$ are both bounded, property 3 (multiplicativity) of the [**Theorem** *(Operator-Valued Integration)*](../spectral-theorems/#thrm:operator-valued-integration) gives
+Next, $$(A - i\mathbf{1})B\psi = \psi$$. Put $$E_n \equiv \{ \lambda \in \mathbb{R} \mid \lvert \lambda \rvert < n \}$$ and $$\iota_n \equiv \iota\cdot 1_{E_n}$$, a bounded measurable function. Since $$\iota_n$$ and $$r$$ are both bounded, [**Proposition** *(Operator-Valued Integration is Multiplicative)*](../spectral-theorems/#prpstn:integral-multiplicative) gives
 
 $$
     \left( \int_{\mathbb{R}} \iota_n \, d\nu \right) B = \left( \int_{\mathbb{R}} \iota_n \, d\nu \right)\left( \int_{\mathbb{R}} r \, d\nu \right) = \int_{\mathbb{R}} \iota_n r \, d\nu.
