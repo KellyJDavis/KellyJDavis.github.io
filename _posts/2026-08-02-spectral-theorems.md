@@ -503,9 +503,19 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 > where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure), is a bounded quadratic form.
 
 **Proof**
-To prove this result we will first prove the result for indicator functions, then for simple functions, and finally for bounded, measurable, complex-valued functions.
+The result is proved in three stages, each resting on the previous: for indicator functions in [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), for simple functions in [**Proposition** *(The Quadratic Form of a Simple Function is Bounded)*](#prpstn:Q-simple-bounded-form), and for general bounded, measurable, complex-valued functions in [**Proposition** *(The Quadratic Form of a Bounded Measurable Function is Bounded)*](#prpstn:Q-measurable-bounded-form). The last of these is the statement of this lemma.$$\blacksquare$$
 
-Let us start this proof by proving it is true for the case of indicator functions. Consider an arbitrary $$E \in \Omega(X)$$ and its indicator function $$1_E$$. In this case the definition of $$Q_{1_E}$$, standard properties of integration, and the definition of $$\mu_\psi$$ implies
+> **Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*
+<a name="prpstn:Q-indicator-bounded-form"></a>
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{lmm:projection-norm-decreasing} -->
+> Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any $$E \in \Omega(X)$$ the map $$Q_{1_E} : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_{1_E}(\psi) \equiv \int_X 1_E \, d\mu_\psi$$, is a bounded quadratic form, with constant $$1$$.
+
+**Proof**
+Consider an arbitrary $$E \in \Omega(X)$$ and its indicator function $$1_E$$. In this case the definition of $$Q_{1_E}$$, standard properties of integration, and the definition of $$\mu_\psi$$ implies
 
 $$
 \begin{align}
@@ -606,9 +616,18 @@ $$
     \lvert Q_{1_E}(\phi) \rvert \le \|\phi\|^2,
 $$
 
-which implies that the constant required to prove that $$Q_{1_E}$$ is a bounded quadratic form is simply $$1$$. This concludes the proof of the indicator function result, $$Q_{1_E}$$ is a bounded quadratic form for any indicator function $$1_E$$.
+which implies that the constant required to prove that $$Q_{1_E}$$ is a bounded quadratic form is simply $$1$$. This concludes the proof: $$Q_{1_E}$$ is a bounded quadratic form for any indicator function $$1_E$$.
+$$\blacksquare$$
 
-Next we will prove that any simple function $$s$$, i.e. any finite linear combination of indicator functions
+> **Proposition** *(The Quadratic Form of a Simple Function is Bounded)*
+<a name="prpstn:Q-simple-bounded-form"></a>
+<!--  \uses{prpstn:Q-indicator-bounded-form} -->
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
+> With notation as in [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), let $$s = \sum_{i} c_i 1_{E_i}$$ be a simple function on $$X$$. Then $$Q_s : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_s(\psi) \equiv \int_X s \, d\mu_\psi$$, is a bounded quadratic form.
+
+**Proof**
+Let $$s$$ be a simple function, i.e. a finite linear combination of indicator functions
 
 $$
   s = \sum_{i = 1}^n \alpha_i 1_{E_i}
@@ -636,7 +655,7 @@ $$
 
 To prove that such a $$Q_s$$ is a bounded quadratic form we must prove the same three results.
 
-First we must prove that $$Q_s(\lambda\psi) = \lvert\lambda\rvert^2 Q_s(\psi)$$. This follows from our indicator function result
+First we must prove that $$Q_s(\lambda\psi) = \lvert\lambda\rvert^2 Q_s(\psi)$$. This follows from [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form)
 
 $$
 \begin{align}
@@ -658,7 +677,7 @@ $$
 \end{align}
 $$
 
-is a sesquilinear form on $$\mathbf{H}$$. Basically this result follows from linearity and our indicator function result.
+is a sesquilinear form on $$\mathbf{H}$$. This result follows from linearity together with [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form).
 
 As
 
@@ -672,7 +691,7 @@ $$
   L_s(\phi, \psi) = \sum_{i = 1}^n \alpha_i L_{1_{E_i}}(\phi, \psi).
 $$
 
-From our indicator function result we know that each $$L_{1_{E_i}}(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Hence, $$L_s(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Thus $$L_s(\phi, \psi)$$ is a sesquilinear form on $$\mathbf{H}$$, the desired result.
+From [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form) we know that each $$L_{1_{E_i}}(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Hence, $$L_s(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Thus $$L_s(\phi, \psi)$$ is a sesquilinear form on $$\mathbf{H}$$, the desired result.
 
 Finally, we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
@@ -680,7 +699,7 @@ $$
     \lvert Q_s(\phi) \rvert \le C \|\phi\|^2.
 $$
 
-This again follows from linearity and our indicator function result. We have
+This again follows from linearity together with [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form). We have
 
 $$
 \begin{align}
@@ -705,8 +724,18 @@ $$
 $$
 
 This completes the proof that $$Q_s$$ is a bounded quadratic form for any simple function $$s$$.
+$$\blacksquare$$
 
-Next we will prove that for any bounded, measurable, complex-valued function $$f$$ the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
+> **Proposition** *(The Quadratic Form of a Bounded Measurable Function is Bounded)*
+<a name="prpstn:Q-measurable-bounded-form"></a>
+<!--  \uses{prpstn:Q-simple-bounded-form} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
+> With notation as in [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), let $$f$$ be a bounded, measurable, complex-valued function on $$X$$. Then $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_f(\psi) \equiv \int_X f \, d\mu_\psi$$, is a bounded quadratic form.
+
+**Proof**
+Consider the map $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 
 $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
@@ -714,7 +743,7 @@ $$
 
 is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem.
 
-To wit we must first prove that $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
+To wit we must first prove that $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$. This follows from [**Proposition** *(The Quadratic Form of a Simple Function is Bounded)*](#prpstn:Q-simple-bounded-form) and the Complex-Valued Simple Approximation Theorem. One has
 
 $$
 \begin{align}
@@ -728,7 +757,7 @@ $$
 \end{align}
 $$
 
-where the second equality follows from the Complex-Valued Simple Approximation Theorem, the third from the fact that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ and thus the limit can be pulled out of the integral, the fourth from the definition of $$Q_{s_i}$$, the fifth from our simple function result, and the final as before from uniform convergence and the Complex-Valued Simple Approximation Theorem. So in summary we have proven that
+where the second equality follows from the Complex-Valued Simple Approximation Theorem, the third from the fact that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ and thus the limit can be pulled out of the integral, the fourth from the definition of $$Q_{s_i}$$, the fifth from [**Proposition** *(The Quadratic Form of a Simple Function is Bounded)*](#prpstn:Q-simple-bounded-form), and the final as before from uniform convergence and the Complex-Valued Simple Approximation Theorem. So in summary we have proven that
 
 $$
     Q_f(\lambda\psi) = \left\lvert\lambda\right\rvert^2 Q_f(\psi),
@@ -835,6 +864,7 @@ $$
 for all $$\phi \in \mathbf{H}$$, the desired result.
 
 This concludes our proof that for any bounded, measurable, complex-valued function $$f$$ on the set $$X$$ with $$\sigma$$-algebra $$\Omega(X)$$ the map $$Q_f$$ is a bounded quadratic form. $$\blacksquare$$
+
 
 Our next step in the larger proof is establishing several propositions we will have need of later in our argument. To wit let us first prove the proposition (Proposition A.61 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
