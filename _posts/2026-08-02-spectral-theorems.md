@@ -282,6 +282,23 @@ In this section we will actually be able to state the Spectral Theorem. However,
 <!--  \uses{def:bounded-operator-notation} -->
 > A *bounded orthogonal projection*, sometimes shortened to *orthogonal projection* or simply *projection*, is an element $$P \in \mathcal{B}(\mathbf{H})$$ such that $$P^2 = P$$ and $$P^* = P$$.
 
+Orthogonal projections are norm-decreasing, a fact used repeatedly below.
+
+> **Lemma** *(Orthogonal Projections are Norm-Decreasing)*
+<a name="lmm:projection-norm-decreasing"></a>
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{prpstn:hall-a.43} -->
+> Let $$P \in \mathcal{B}(\mathbf{H})$$ be a bounded orthogonal projection. Then $$\left\| P\psi \right\| \le \left\| \psi \right\|$$ for every $$\psi \in \mathbf{H}$$.
+
+**Proof**
+Using $$P^* = P$$ and $$P^2 = P$$ from the [definition of an orthogonal projection](#def:bounded-orthogonal-projection), and then [**Cauchy–Schwarz**](#prpstn:hall-a.43),
+
+$$
+    \left\| P\psi \right\|^2 = \left< P\psi, P\psi \right> = \left< \psi, P^*P\psi \right> = \left< \psi, P\psi \right> \le \left\| \psi \right\| \left\| P\psi \right\|.
+$$
+
+If $$\left\| P\psi \right\| = 0$$ the claim is immediate; otherwise divide both sides by $$\left\| P\psi \right\| > 0$$ to obtain $$\left\| P\psi \right\| \le \left\| \psi \right\|$$.$$\blacksquare$$
+
 The notion of a bounded orthogonal projection can then be employed to define a "projection-valued measure"
 
 > **Definition** *(Projection-Valued Measure)*
@@ -307,6 +324,7 @@ Now, we can associate a positive, real-valued measure $$\mu_\psi$$ to a projecti
 
 > **Theorem** *(Projection-Valued Measure's Associated Measure)*
 <a name="thrm:projection-valued-measures-associated-measure"></a>
+<!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > Given a projection-valued measure $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ and any $$\psi \in \mathbf{H}$$ the map $$\mu_\psi$$ defined by
@@ -368,7 +386,7 @@ $$
 \end{align}
 $$
 
-where the third equality follows from the definition of an inner product. This implies
+where the third equality requires care: the sum $$\sum_{j=1}^\infty \mu(E_j)\psi$$ is a limit of partial sums in the norm topology, so linearity of the inner product alone gives only the *finite* case. Writing $$S_N \equiv \sum_{j=1}^N \mu(E_j)\psi$$, linearity gives $$\left< \psi, S_N \right> = \sum_{j=1}^N \left< \psi, \mu(E_j)\psi \right>$$ for each $$N$$, and $$S_N \to \sum_{j=1}^\infty \mu(E_j)\psi$$ in norm by property 3 of the [definition of a projection-valued measure](#def:projection-valued-measure); [**Proposition** *(Continuity of the Norm and Inner Product)*](#prpstn:continuity-of-norm-and-inner-product) then lets us pass to the limit in the second argument, giving the displayed equality. This implies
 
 $$
     \mu_\psi \left( \bigcup_{j = 1}^{\infty} E_j \right) = \sum_{j = 1}^{\infty} \mu_\psi(E_j),
@@ -421,7 +439,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 >        \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert,
 >    $$
 >
->    where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
+>    where $$\| \cdot \|$$ is the operator norm and $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$.
 > 3. Integration is multiplicative: For all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$, we have
 >
 >    $$
@@ -454,14 +472,14 @@ To streamline the proof of this theorem, we will introduce a few new terms
 >     \lvert L(\phi, \psi) \rvert \le C \|\phi\| \, \|\psi\|,
 > $$
 >
-> where $$\mid\cdot\mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+> where $$\lvert\cdot\rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
 > **Definition** *((Bounded) Quadratic Form)*
 <a name="def:bounded-quadratic-form"></a>
 <!--  \uses{def:bounded-sesquilinear-form} -->
 > A *quadratic form* on a Hilbert space $$\mathbf{H}$$ is a map $$Q : \mathbf{H} \rightarrow \mathbb{C}$$ with the following properties:
 >
-> 1. $$Q(\lambda\psi) = \mid\lambda\mid^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+> 1. $$Q(\lambda\psi) = \lvert\lambda\rvert^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 > 2. The map $$L : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 >
 >    $$
@@ -479,7 +497,7 @@ To streamline the proof of this theorem, we will introduce a few new terms
 >     \lvert Q(\phi) \rvert \le C \|\phi\|^2,
 > $$
 >
-> where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+> where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
 These will now let us begin the proof of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration)
 
@@ -500,6 +518,7 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 
 > **Lemma**
 <a name="lmm:lemma1-of-operator-valued-integration"></a>
+<!--  \uses{lmm:projection-norm-decreasing} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:projection-valued-measure} -->
@@ -533,7 +552,7 @@ So, $$Q_{1_E}(\psi) = \left< \psi, \mu(E) \psi \right>$$.
 
 To prove that this $$Q_{1_E}$$ is a bounded quadratic form we must prove that
 
-1. $$Q_{1_E}(\lambda\psi) = \mid\lambda\mid^2 Q_{1_E}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
+1. $$Q_{1_E}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{1_E}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$.
 2. The map $$L_{1_E} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 
    $$
@@ -551,20 +570,20 @@ To prove that this $$Q_{1_E}$$ is a bounded quadratic form we must prove that
        \lvert Q_{1_E}(\phi) \rvert \le C \|\phi\|^2,
    $$
 
-   where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+   where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
-Let us first prove that $$Q_{1_E}(\lambda\psi) = \mid\lambda\mid^2 Q_{1_E}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$. As a result of our previous derivation, the definition of an inner product, and the definition of the norm on $$\mathbb{C}$$ one has
+Let us first prove that $$Q_{1_E}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{1_E}(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$. As a result of our previous derivation, the definition of an inner product, and the definition of the norm on $$\mathbb{C}$$ one has
 
 $$
 \begin{align}
   Q_{1_E}(\lambda\psi) &= \left< \lambda\psi, \mu(E) \lambda\psi \right> \\
                        &= \lambda^*\lambda \left< \psi, \mu(E) \psi \right> \\
-                       &= \mid\lambda\mid^2 \left< \psi, \mu(E) \psi \right> \\
-                       &= \mid\lambda\mid^2 Q_{1_E}(\psi),
+                       &= \lvert\lambda\rvert^2 \left< \psi, \mu(E) \psi \right> \\
+                       &= \lvert\lambda\rvert^2 Q_{1_E}(\psi),
 \end{align}
 $$
 
-which proves $$Q_{1_E}(\lambda\psi) = \mid\lambda\mid^2 Q_{1_E}(\psi)$$, the desired result.
+which proves $$Q_{1_E}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{1_E}(\psi)$$, the desired result.
 
 Next let us prove the map $$L_{1_E} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined above is a sesquilinear form on $$\mathbf{H}$$. As a result of our previous derivation and the definition of $$L_{1_E}$$ we have
 
@@ -613,7 +632,7 @@ $$
 \end{align}
 $$
 
-where the final inequality follows from the fact that $$\mu(E)$$ is an orthogonal projection. This proves that
+where the final inequality is [**Lemma** *(Orthogonal Projections are Norm-Decreasing)*](#lmm:projection-norm-decreasing), applicable since $$\mu(E)$$ is an orthogonal projection by property 1 of the [definition of a projection-valued measure](#def:projection-valued-measure). This proves that
 
 $$
     \lvert Q_{1_E}(\phi) \rvert \le \|\phi\|^2,
@@ -649,7 +668,7 @@ $$
 
 To prove that such a $$Q_s$$ is a bounded quadratic form we must prove the same three results.
 
-First we must prove that $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$. This follows from our indicator function result
+First we must prove that $$Q_s(\lambda\psi) = \lvert\lambda\rvert^2 Q_s(\psi)$$. This follows from our indicator function result
 
 $$
 \begin{align}
@@ -660,7 +679,7 @@ $$
 \end{align}
 $$
 
-giving the desired result $$Q_s(\lambda\psi) = \mid\lambda\mid^2 Q_s(\psi)$$.
+giving the desired result $$Q_s(\lambda\psi) = \lvert\lambda\rvert^2 Q_s(\psi)$$.
 
 Next we must prove the map $$L_s : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 
@@ -728,7 +747,7 @@ $$
 is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem
 
 
-To wit we must first prove that $$Q_f(\lambda\psi) = \mid\lambda\mid^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
+To wit we must first prove that $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$. This follows from our simple function result and the Complex-Valued Simple Approximation Theorem. One has
 
 $$
 \begin{align}
@@ -880,7 +899,7 @@ Our next step in the larger proof is establishing several propositions we will h
 **Proof**
 Let us first prove for all $$\psi \in \mathbf{H}$$, we have $$Q(\psi) = L(\psi, \psi)$$.
 
-The definition of a quadratic form along with standard properties of the norm $$\mid \cdot \mid$$ imply
+The definition of a quadratic form along with standard properties of the norm $$\lvert \cdot \rvert$$ imply
 
 $$
 \begin{align}
@@ -1001,7 +1020,7 @@ that $$M(\phi, \psi)$$ is symmetric, i.e. $$M(\phi, \psi) = M(\psi, \phi)$$.
 
 Second, as $$M(\phi, \psi) \equiv \text{Re} \left[ L(\phi, \psi) \right]$$ and $$L$$ is a sesquilinear form, and thus conjugate linear in the first factor and linear in the second factor, it follows that $$M$$ is linear in both factors, i.e. real-bilinear.
 
-Finally, as $$Q$$ is a quadratic form, and thus satisfies $$Q(\lambda\psi) = \mid\lambda\mid^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$, one has
+Finally, as $$Q$$ is a quadratic form, and thus satisfies $$Q(\lambda\psi) = \lvert\lambda\rvert^2 Q(\psi)$$ for all $$\psi \in \mathbf{H}$$ and $$\lambda \in \mathbb{C}$$, one has
 
 $$
 \begin{align}
@@ -1122,8 +1141,7 @@ $$
 
 the desired result.
 
-Now as one will recall the Riesz Theorem (Theorem A.52 (Riesz Theorem) of [Hall](https://doi.org/10.1007/978-1-4614-7116-5)) states
-
+Now recall the [**Riesz Theorem**](#thrm:hall-a.52) stated above: a bounded linear functional $$\xi$$ on $$\mathbf{H}$$ is represented by a unique $$\chi \in \mathbf{H}$$ via $$\xi(\psi) = \left< \chi, \psi \right>$$, with $$\left\| \chi \right\| = \left\| \xi \right\|$$.
 
 As a result of the Riesz Theorem, for any fixed $$\phi$$ there exists a $$\chi$$ in $$\mathbf{H}$$ such that $$L(\phi, \psi) = \left< \chi, \psi \right>$$. In addition, the "operator norm conclusion" of the Riesz Theorem and our finding that the operator norm of $$\psi \mapsto L(\phi, \psi)$$ is bounded for any fixed $$\phi$$ imply that
 
@@ -1310,7 +1328,7 @@ $$
     \left\| \, \int_X f \, d\mu \, \right\| \le \sup\limits_{\lambda \in X} \left\lvert f(\lambda) \right\rvert,
 $$
 
-where $$\| \cdot \|$$ is the operator norm and $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$.
+where $$\| \cdot \|$$ is the operator norm and $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$.
 
 To prove this we will first prove a "utility" lemma that will aid our argument.
 
@@ -3135,8 +3153,7 @@ $$
 
 is holomorphic on the (unbounded) open annulus $$R(A) < \lvert \lambda \rvert$$.
 
-Now recall that [**Laurent's Theorem**](#thrm:laurents-theorem) states
-
+Now recall [**Laurent's Theorem**](#thrm:laurents-theorem) stated above: a function holomorphic on an annulus admits there a Laurent expansion, convergent on that annulus, whose coefficients are uniquely determined.
 
 Hence, the function
 
@@ -4455,7 +4472,7 @@ To prove that $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$ is a bounded q
        \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \|\phi\|^2,
    $$
 
-   where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+   where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
 Let us prove these one by one.
 
@@ -4507,7 +4524,7 @@ $$
     \lvert Q_{\alpha f + \beta g}(\phi) \rvert \le C \|\phi\|^2,
 $$
 
-where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
+where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
 
 Again this follows from the fact that $$f$$ and $$g$$ are in $$\mathcal{F}$$ and thus $$Q_f$$ and $$Q_g$$ are bounded quadratic forms. Explicitly, the norm definition and linearity imply
 
@@ -4630,7 +4647,7 @@ To prove that $$Q_f$$ is a bounded quadratic form we must prove that
        \lvert Q_f(\phi) \rvert \le C \|\phi\|^2,
    $$
 
-   where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
+   where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$.
 
 The key "engine" in proving the $$Q_f$$ is a bounded quadratic form is the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem)
 
@@ -4720,7 +4737,7 @@ $$
     \lvert Q_f(\phi) \rvert \le C \|\phi\|^2,
 $$
 
-where $$\mid \cdot \mid$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
+where $$\lvert \cdot \rvert$$ is the norm on $$\mathbb{C}$$ and $$\|\cdot\|$$ is the norm on $$\mathbf{H}$$. 
 
 This follows from [**Lemma** *(The Associated Measures are Finite)*](#lmm:associated-measures-are-finite), which gives
 
@@ -5543,8 +5560,7 @@ Our next claim is that the map $$f \mapsto Q_f(\psi)$$ is continuous under unifo
 
 In [**Proposition**](#prpstn:hall-8.7) we proved that $$\mathcal{F}$$ the space of all bounded, Borel-measurable, complex-valued functions $$f$$ such that $$Q_f$$ is a quadratic form is closed under uniformly bounded pointwise limits and that $$\mathcal{F}$$ is the space of all bounded, Borel-measurable, complex-valued functions. Hence, $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$ when $$f$$ is a bounded, Borel-measurable, complex-valued function, the desired result.
 
-Now the [**Polarization Identity**](#prpstn:hall-a.59) states
-
+Now recall the [**Polarization Identity**](#prpstn:hall-a.59) stated above, which expresses the sesquilinear form $$L$$ associated to a quadratic form $$Q$$ in terms of the values of $$Q$$ alone.
 
 This result---along with the [**Proposition**](#prpstn:hall-a.61) which for quadratic form $$Q$$ expresses its sesquilinear form $$L$$ on the diagonal in terms of the quadratic form itself as follows
 
