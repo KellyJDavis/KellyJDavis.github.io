@@ -5738,10 +5738,6 @@ Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is i
 
 So we've proven that any function $$f$$ in $$\mathcal{C}$$ is bounded and Borel-measurable and we've proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{C}$$. Thus, $$\mathcal{C}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
-This is precisely what [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) asserts, and its proof above establishes it via [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c). Restating the conclusion for the record:
-
-As $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$, it follows that $$Q_f$$ is quadratic form not only on some subset of functions, but all bounded, Borel-measurable functions on $$\sigma(A)$$, proving that $$Q_f$$ satisfies all the properties of [**Definition**](#def:hall-8.6), the desired result of [**Proposition**](#prpstn:hall-8.7).$$\blacksquare$$
-
 With [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) established, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$; this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
 > **Definition**
@@ -7501,7 +7497,7 @@ $$\blacksquare$$
 
 So with this we have proven that under the hypotheses of the [**Theorem**](#thrm:hall-prblm-8.3.4) $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.$$\blacksquare$$
 
-This also completes the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof.$$\blacksquare$$
+This also completes the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof. To state the assembly explicitly: *existence* of a projection-valued measure $$\mu^A$$ on $$\sigma(A)$$ with $$\int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A$$ is [**Theorem** *(hall-8.10)*](#thrm:hall-8.10), and *uniqueness* — that any two such measures agree — is [**Theorem** *(hall-prblm-8.3.4)*](#thrm:hall-prblm-8.3.4). Together these give the existence and uniqueness asserted in the statement.$$\blacksquare$$
 
 With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof complete, we can conclude by finally introducing the normative definition of the "functional calculus"
 
