@@ -5001,7 +5001,7 @@ Our proof of this result requires that we first prove some "utility" lemmas as s
 <!--  \uses{thrm:archimedean-property} -->
 <!--  \uses{def:bump-function} -->
 <!--  \uses{thrm:existence-of-bump-functions} -->
-> Let $$X$$ be a compact metric measurable space with a measure $$\mu_X$$. Let $$\mathcal{L}_0$$ be the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous functions. Then $$\mathcal{L}_0$$ is an algebra and contains all open sets in $$X$$.
+> Let $$X$$ be a compact metric measurable space with a measure $$\mu_X$$. Let $$\mathcal{L}_0$$ be as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class) below: the measurable subsets $$E \subseteq X$$ whose indicator function $$1_E$$ is the *pointwise* limit of a uniformly bounded sequence of continuous functions. Then $$\mathcal{L}_0$$ is an algebra and contains all open sets in $$X$$.
 
 **Proof**
 That $$\mathcal{L}_0$$ is an algebra of sets is the conjunction of the three conditions of [**Definition** *(Algebra of Sets)*](#def:algebra-of-sets): it contains $$\emptyset$$ by [**Proposition** *(The Empty Set Lies in $$\mathcal{L}_0$$)*](#prpstn:L0-contains-empty), is closed under complements by [**Proposition** *($$\mathcal{L}_0$$ is Closed under Complements)*](#prpstn:L0-complement), and is closed under finite unions by [**Proposition** *($$\mathcal{L}_0$$ is Closed under Finite Unions)*](#prpstn:L0-union).
@@ -5355,18 +5355,18 @@ The next of these "utility" lemmas is the following:
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{lmm:hall-prblm-8.3.3a} -->
 <!--  \uses{thrm:monotone-class-theorem} -->
-> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Finally let $$\mathcal{L}_1$$ be the set of all measurable sets $$E$$ in $$X$$ such that the indicator function $$1_E$$ belongs to $$\mathcal{F}$$. Then $$\mathcal{L}_1$$ contains all Borel sets in $$X$$.
+> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{C}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{C}$$ is a complex vector space, (2) $$\mathcal{C}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{C}$$ is closed under pointwise limits of uniformly bounded sequences. Finally let $$\mathcal{L}_1$$ be the set of all measurable sets $$E$$ in $$X$$ such that the indicator function $$1_E$$ belongs to $$\mathcal{C}$$. Then $$\mathcal{L}_1$$ contains all Borel sets in $$X$$.
 
 **Proof**
-By definition $$\mathcal{L}_0$$ of [**Lemma**](#lmm:hall-prblm-8.3.3a) is the set of all measurable subsets $$E$$ of $$X$$ with an indicator function $$1_E$$ that is a uniformly bounded limit of a sequence of continuous, real-valued functions.
+By [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), $$\mathcal{L}_0$$ is the set of all measurable subsets $$E$$ of $$X$$ whose indicator function $$1_E$$ is the *pointwise* limit of a uniformly bounded sequence of continuous, real-valued functions on $$X$$.
 
-Let us first prove that $$\mathcal{L}_0 \subseteq \mathcal{L}_1$$. Consider any $$E$$ in $$\mathcal{L}_0$$. Then there exists a sequence $$\{ f_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$, uniformly bounded, that converges pointwise to $$1_E$$. By hypothesis $$C^0(X; \mathbb{R})$$ is a subset of $$\mathcal{F}$$, so each $$f_n$$ is in $$\mathcal{F}$$. By hypothesis $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences, so $$1_E$$, being such a limit, is in $$\mathcal{F}$$. Hence $$E$$ is in $$\mathcal{L}_1$$, the desired result $$\mathcal{L}_0 \subseteq \mathcal{L}_1$$.
+Let us first prove that $$\mathcal{L}_0 \subseteq \mathcal{L}_1$$. Consider any $$E$$ in $$\mathcal{L}_0$$. Then there exists a sequence $$\{ f_n \}_{n \in \mathbb{N}}$$ in $$C^0(X; \mathbb{R})$$, uniformly bounded, that converges pointwise to $$1_E$$. By hypothesis $$C^0(X; \mathbb{R})$$ is a subset of $$\mathcal{C}$$, so each $$f_n$$ is in $$\mathcal{C}$$. By hypothesis $$\mathcal{C}$$ is closed under pointwise limits of uniformly bounded sequences, so $$1_E$$, being such a limit, is in $$\mathcal{C}$$. Hence $$E$$ is in $$\mathcal{L}_1$$, the desired result $$\mathcal{L}_0 \subseteq \mathcal{L}_1$$.
 
 Next let us prove that $$\mathcal{L}_1$$ is a monotone class, i.e. that $$\mathcal{L}_1$$ is closed under countable increasing unions and countable decreasing intersections.
 
-Let $$\{ E_n \}_{n \in \mathbb{N}}$$ be an increasing sequence of sets in $$\mathcal{L}_1$$, i.e. $$E_0 \subseteq E_1 \subseteq \cdots$$ with each $$1_{E_n} \in \mathcal{F}$$, and let $$E \equiv \bigcup_{n \in \mathbb{N}} E_n$$. For any $$x \in X$$, if $$x \in E$$ then $$x \in E_{n_0}$$ for some $$n_0$$, and since the $$E_n$$ are increasing, $$1_{E_n}(x) = 1$$ for all $$n \ge n_0$$; if $$x \notin E$$ then $$1_{E_n}(x) = 0$$ for all $$n$$. Hence $$1_{E_n}(x) \rightarrow 1_E(x)$$ for every $$x \in X$$, i.e. $$1_{E_n} \rightarrow 1_E$$ pointwise. Furthermore this convergence is uniformly bounded, as $$\lvert 1_{E_n}(x) \rvert \le 1$$ for all $$n$$ and $$x$$. As $$\mathcal{F}$$ is closed under uniformly bounded pointwise limits (property (3) of $$\mathcal{F}$$), we conclude $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+Let $$\{ E_n \}_{n \in \mathbb{N}}$$ be an increasing sequence of sets in $$\mathcal{L}_1$$, i.e. $$E_0 \subseteq E_1 \subseteq \cdots$$ with each $$1_{E_n} \in \mathcal{C}$$, and let $$E \equiv \bigcup_{n \in \mathbb{N}} E_n$$. For any $$x \in X$$, if $$x \in E$$ then $$x \in E_{n_0}$$ for some $$n_0$$, and since the $$E_n$$ are increasing, $$1_{E_n}(x) = 1$$ for all $$n \ge n_0$$; if $$x \notin E$$ then $$1_{E_n}(x) = 0$$ for all $$n$$. Hence $$1_{E_n}(x) \rightarrow 1_E(x)$$ for every $$x \in X$$, i.e. $$1_{E_n} \rightarrow 1_E$$ pointwise. Furthermore this convergence is uniformly bounded, as $$\lvert 1_{E_n}(x) \rvert \le 1$$ for all $$n$$ and $$x$$. As $$\mathcal{C}$$ is closed under uniformly bounded pointwise limits (property (3) of $$\mathcal{C}$$), we conclude $$1_E \in \mathcal{C}$$, i.e. $$E \in \mathcal{L}_1$$.
 
-An entirely analogous argument applies to a decreasing sequence $$\{ E_n \}_{n \in \mathbb{N}}$$ in $$\mathcal{L}_1$$, i.e. $$E_0 \supseteq E_1 \supseteq \cdots$$: with $$E \equiv \bigcap_{n \in \mathbb{N}} E_n$$, one again has $$1_{E_n} \rightarrow 1_E$$ pointwise and uniformly bounded by $$1$$, so property (3) of $$\mathcal{F}$$ gives $$1_E \in \mathcal{F}$$, i.e. $$E \in \mathcal{L}_1$$.
+An entirely analogous argument applies to a decreasing sequence $$\{ E_n \}_{n \in \mathbb{N}}$$ in $$\mathcal{L}_1$$, i.e. $$E_0 \supseteq E_1 \supseteq \cdots$$: with $$E \equiv \bigcap_{n \in \mathbb{N}} E_n$$, one again has $$1_{E_n} \rightarrow 1_E$$ pointwise and uniformly bounded by $$1$$, so property (3) of $$\mathcal{C}$$ gives $$1_E \in \mathcal{C}$$, i.e. $$E \in \mathcal{L}_1$$.
 
 Together these prove that $$\mathcal{L}_1$$ is a monotone class.
 
@@ -5546,18 +5546,18 @@ The final of these "utility" lemmas is the following:
 <!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{F}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. Then $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$X$$.
+> Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{C}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{C}$$ is a complex vector space, (2) $$\mathcal{C}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{C}$$ is closed under pointwise limits of uniformly bounded sequences. Then $$\mathcal{C}$$ consists of all bounded, Borel-measurable functions on $$X$$.
 
 **Proof**
-By hypothesis $$\mathcal{F}$$ is the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences.
+By hypothesis $$\mathcal{C}$$ is the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{C}$$ is a complex vector space, (2) $$\mathcal{C}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{C}$$ is closed under pointwise limits of uniformly bounded sequences.
 
-Let us first prove that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable.
+Let us first prove that any function $$f$$ in $$\mathcal{C}$$ is bounded and Borel-measurable.
 
-For any $$f \in \mathcal{F}$$, the definition of $$\mathcal{F}$$ implies that $$f$$ is bounded and measurable. As $$X$$ is a metric measurable space, its measure is a Borel regular measure. A Borel regular measure is a measure in which any Borel set is measurable. Hence, in the definition of $$\mathcal{F}$$ when we state that $$f$$ is measurable we mean that $$f$$ is Borel-measurable. Thus, any $$f \in \mathcal{F}$$ is bounded and Borel-measurable.
+For any $$f \in \mathcal{C}$$, the definition of $$\mathcal{C}$$ implies that $$f$$ is bounded and measurable. As $$X$$ is a metric measurable space, its measure is a Borel regular measure. A Borel regular measure is a measure in which any Borel set is measurable. Hence, in the definition of $$\mathcal{C}$$ when we state that $$f$$ is measurable we mean that $$f$$ is Borel-measurable. Thus, any $$f \in \mathcal{C}$$ is bounded and Borel-measurable.
 
-Let us now prove that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
+Let us now prove that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{C}$$.
 
-By [**Lemma**](#lmm:hall-prblm-8.3.3b), the set $$\mathcal{L}_1 \equiv \{ E \subseteq X \text{ measurable} : 1_E \in \mathcal{F} \}$$ contains all Borel sets of $$X$$. As noted above, on $$X$$ "measurable" and "Borel-measurable" coincide; hence every measurable set of $$X$$ is a Borel set, and so for any measurable set $$E$$ of $$X$$, $$1_E \in \mathcal{F}$$.
+By [**Lemma**](#lmm:hall-prblm-8.3.3b), the set $$\mathcal{L}_1 \equiv \{ E \subseteq X \text{ measurable} : 1_E \in \mathcal{C} \}$$ contains all Borel sets of $$X$$. As noted above, on $$X$$ "measurable" and "Borel-measurable" coincide; hence every measurable set of $$X$$ is a Borel set, and so for any measurable set $$E$$ of $$X$$, $$1_E \in \mathcal{C}$$.
 
 Consider now an arbitrary simple function $$s$$ on $$X$$, i.e.
 
@@ -5565,9 +5565,9 @@ $$
     s = \sum_{i = 1}^n \alpha_i 1_{E_i},
 $$
 
-where $$\alpha_i \in \mathbb{C}$$ and the $$E_i$$ are pairwise disjoint measurable sets of $$X$$. By the previous paragraph, each $$1_{E_i}$$ is in $$\mathcal{F}$$. As $$\mathcal{F}$$ is by hypothesis a complex vector space, it is closed under finite linear combinations, so $$s \in \mathcal{F}$$. Hence every simple function on $$X$$ is in $$\mathcal{F}$$.
+where $$\alpha_i \in \mathbb{C}$$ and the $$E_i$$ are pairwise disjoint measurable sets of $$X$$. By the previous paragraph, each $$1_{E_i}$$ is in $$\mathcal{C}$$. As $$\mathcal{C}$$ is by hypothesis a complex vector space, it is closed under finite linear combinations, so $$s \in \mathcal{C}$$. Hence every simple function on $$X$$ is in $$\mathcal{C}$$.
 
-Now consider our arbitrary bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$. By the [**Complex-Valued Simple Approximation Theorem**](#thrm:complex-valued-simple-approximation-theorem), there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ of complex-valued simple functions on $$X$$ that converges uniformly to $$f$$ on $$X$$. By the previous paragraph, each $$s_i$$ is in $$\mathcal{F}$$.
+Now consider our arbitrary bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$. By the [**Complex-Valued Simple Approximation Theorem**](#thrm:complex-valued-simple-approximation-theorem), there exists a sequence $$\{ s_i \}_{i \in \mathbb{N}}$$ of complex-valued simple functions on $$X$$ that converges uniformly to $$f$$ on $$X$$. By the previous paragraph, each $$s_i$$ is in $$\mathcal{C}$$.
 
 We claim the $$s_i$$ are uniformly bounded. As $$f$$ is bounded, there exists $$M_f \in \mathbb{R}$$ such that $$\lvert f(x) \rvert \le M_f$$ for all $$x \in X$$. As $$s_i \rightarrow f$$ uniformly, there exists $$N \in \mathbb{N}$$ such that for all $$i \ge N$$ and all $$x \in X$$
 
@@ -5583,11 +5583,11 @@ $$
 
 we have $$\lvert s_i(x) \rvert \le M$$ for all $$i \in \mathbb{N}$$ and all $$x \in X$$, i.e. the $$s_i$$ are uniformly bounded.
 
-As $$s_i \rightarrow f$$ uniformly, in particular $$s_i \rightarrow f$$ pointwise. Thus $$\{ s_i \}_{i \in \mathbb{N}}$$ is a uniformly bounded sequence in $$\mathcal{F}$$ that converges pointwise to $$f$$. As $$\mathcal{F}$$ is by hypothesis closed under pointwise limits of uniformly bounded sequences, $$f \in \mathcal{F}$$.
+As $$s_i \rightarrow f$$ uniformly, in particular $$s_i \rightarrow f$$ pointwise. Thus $$\{ s_i \}_{i \in \mathbb{N}}$$ is a uniformly bounded sequence in $$\mathcal{C}$$ that converges pointwise to $$f$$. As $$\mathcal{C}$$ is by hypothesis closed under pointwise limits of uniformly bounded sequences, $$f \in \mathcal{C}$$.
 
-Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$.
+Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{C}$$.
 
-So we've proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we've proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
+So we've proven that any function $$f$$ in $$\mathcal{C}$$ is bounded and Borel-measurable and we've proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{C}$$. Thus, $$\mathcal{C}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
 This is precisely what [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) asserts, and its proof above establishes it via [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c). Restating the conclusion for the record:
 
@@ -6210,6 +6210,7 @@ $$\blacksquare$$
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:lemma-4} -->
 <!--  \uses{prpstn:hall-8.9} -->
+<!--  \uses{prpstn:mua-empty-and-whole} -->
 > With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for pairwise disjoint measurable sets $$\{E_j\}$$ in $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$,
 >
 > $$
@@ -6227,7 +6228,7 @@ $$
 
 where the convergence of the sum is in the norm topology on $$\mathbf{H}$$.
 
-In order to prove this, consider now any two disjoint measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$. The definition of $$\mu^A$$ along with our previous result implies
+In order to prove this, consider now any two disjoint measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$. The definition of $$\mu^A$$ along with [**Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*](#prpstn:mua-empty-and-whole) implies
 
 $$
 \begin{align}
@@ -6237,9 +6238,9 @@ $$
 \end{align}
 $$
 
-where the first line follows from the fact that $$E_1$$ and $$E_2$$ are disjoint and the final line follows from our previous result, $$1_\emptyset(A)$$ is the zero operator.
+where the first line follows from the fact that $$E_1$$ and $$E_2$$ are disjoint and the final line follows from [**Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*](#prpstn:mua-empty-and-whole), which gives that $$1_\emptyset(A)$$ is the zero operator.
 
-However, previously we found that for arbitrary measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$ of $$A$$
+However, by [**Proposition** *(Spectral Projections Multiply to the Intersection)*](#prpstn:mua-multiplicative), for arbitrary measurable subsets $$E_1$$ and $$E_2$$ of the spectrum $$\sigma(A)$$ of $$A$$
 
 $$
     \mu^A(E_1) \mu^A(E_2) = \mu^A(E_1 \cap E_2).
