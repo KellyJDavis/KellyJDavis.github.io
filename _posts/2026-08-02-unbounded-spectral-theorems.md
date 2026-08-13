@@ -830,7 +830,7 @@ The finite direct sum is dense in the full direct sum. This is used in the proof
 > **Lemma** *(The Finite Direct Sum is Dense)*
 <a name="lmm:finite-direct-sum-dense"></a>
 <!--  \uses{def:hall-a.45} -->
-> With notation as in [Definition (Hilbert Space Direct Sum)](#def:hall-a.45), the finite direct sum — the set of sequences with only finitely many non-zero entries — is a dense subspace of $$\mathbf{H} = \bigoplus_j \mathbf{H}_j$$.
+> Let $$\{\mathbf{H}_j\}_{j}$$ be a countable family of separable, complex Hilbert spaces and let $$\mathbf{H} = \bigoplus_j \mathbf{H}_j$$ be their direct sum, as in [Definition (Hilbert Space Direct Sum)](#def:hall-a.45). Then the finite direct sum — the set of sequences in $$\mathbf{H}$$ with only finitely many non-zero entries — is a dense subspace of $$\mathbf{H}$$.
 
 **Proof**
 It is a subspace, being closed under componentwise linear combinations (a linear combination of two sequences each with finitely many non-zero entries again has finitely many). For density, let $$\psi = (\psi_1,\psi_2,\ldots) \in \mathbf{H}$$ and put $$\psi^{(N)} \equiv (\psi_1,\ldots,\psi_N,0,0,\ldots)$$, which lies in the finite direct sum. Then
@@ -1125,6 +1125,8 @@ finite since $$\psi \in \mathbf{H}$$. The final claim follows since $$\mu_\psi$$
 
 > **Lemma** *(Norm Identity for the Bounded Integral)*
 <a name="lmm:norm-identity-bounded-integral"></a>
+<!--  \uses{../spectral-theorems/#prpstn:integral-conjugation} -->
+<!--  \uses{../spectral-theorems/#prpstn:integral-multiplicative} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
@@ -1420,6 +1422,7 @@ We can now state and prove the central technical result of this section. It is t
 
 > **Proposition**
 <a name="prpstn:hall-10.2"></a>
+<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
@@ -1726,6 +1729,8 @@ the first equality by [continuity of the inner product](../spectral-theorems/#pr
 
 > **Lemma** *(The Associated Measure of a Bounded-Calculus Image)*
 <a name="lmm:associated-measure-of-image"></a>
+<!--  \uses{../spectral-theorems/#prpstn:integral-conjugation} -->
+<!--  \uses{../spectral-theorems/#prpstn:integral-multiplicative} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
@@ -2146,6 +2151,8 @@ We need three properties of these subspaces. The first two follow directly from 
 
 > **Proposition** *(Properties of Spectral Subspaces)*
 <a name="prpstn:hall-7.15"></a>
+<!--  \uses{../spectral-theorems/#prpstn:integral-multiplicative} -->
+<!--  \uses{../spectral-theorems/#prpstn:integral-norm-bound} -->
 <!--  \uses{def:hall-7.14} -->
 <!--  \uses{lmm:integral-ignores-null-sets} -->
 <!--  \uses{prpstn:coincidence-with-the-bounded-integral} -->
@@ -2358,6 +2365,7 @@ So $$A - \lambda\mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$
 
 > **Lemma**
 <a name="lmm:hall-10.26"></a>
+<!--  \uses{../spectral-theorems/#lmm:lemma-2} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{def:hall-10.24} -->
 <!--  \uses{lmm:normality-balances-norms} -->
@@ -2969,6 +2977,7 @@ The extended calculus is norm-bounded by the supremum norm. This is *not* suppli
 
 > **Corollary** *(The Extended Calculus is Norm-Bounded)*
 <a name="crllr:abstract-extended-norm-bound"></a>
+<!--  \uses{../spectral-theorems/#prpstn:integral-norm-bound} -->
 <!--  \uses{conv:section-abstract} -->
 <!--  \uses{thrm:abstract-calculus-yields-pvm} -->
 <!--  \uses{def:abstract-extended-calculus} -->
@@ -2988,6 +2997,7 @@ Assembling the two stages gives the result this section was aiming at.
 
 > **Theorem** *(Spectral Theorem for Bounded Normal Operators)*
 <a name="thrm:hall-10.20"></a>
+<!--  \uses{../spectral-theorems/#prpstn:integral-conjugation} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#thrm:riesz-representation} -->
@@ -3508,6 +3518,7 @@ We can finally state and prove the theorem this post set out to establish.
 
 > **Theorem** *(Spectral Theorem for Unbounded, Self-Adjoint Operators)*
 <a name="thrm:hall-10.4"></a>
+<!--  \uses{../spectral-theorems/#prpstn:integral-multiplicative} -->
 <!--  \uses{lmm:borel-bijection-transports-pvm} -->
 <!--  \uses{def:hall-9.5} -->
 <!--  \uses{def:hall-9.16} -->

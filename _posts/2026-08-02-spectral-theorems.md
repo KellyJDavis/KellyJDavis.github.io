@@ -4303,7 +4303,7 @@ $$\blacksquare$$
 <!--  \uses{def:non-negative-operator} -->
 <!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:cfc-self-adjoint} -->
-> With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), if $$f \in C^0(\sigma(A); \mathbb{R})$$ is non-negative then $$f(A)$$ is a non-negative bounded operator.
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$f \mapsto f(A)$$ the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3), if $$f \in C^0(\sigma(A); \mathbb{R})$$ is non-negative then $$f(A)$$ is a non-negative bounded operator.
 
 **Proof**
 for any $$f \in C^0(\sigma(A); \mathbb{R})$$ such that $$f$$ is non-negative, it follows that $$f(A)$$ is a non-negative bounded operator.
@@ -4345,7 +4345,7 @@ $$\blacksquare$$
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-> With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), for any $$f \in C^0(\sigma(A); \mathbb{R})$$,
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$f \mapsto f(A)$$ the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3), for any $$f \in C^0(\sigma(A); \mathbb{R})$$,
 >
 > $$
 >     \|f(A)\| = \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert,
@@ -4411,7 +4411,7 @@ as required.$$\blacksquare$$
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:hall-7.5} -->
-> With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), for any $$f \in C^0(\sigma(A); \mathbb{R})$$,
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$f \mapsto f(A)$$ the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3), for any $$f \in C^0(\sigma(A); \mathbb{R})$$,
 >
 > $$
 >     \sigma(f(A)) = \{ f(\lambda) : \lambda \in \sigma(A) \},
@@ -4712,7 +4712,7 @@ Since $$\sigma(A)$$ is a compact metric measurable space by [**Lemma**](#lmm:spe
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
-> Let $$f,g$$ be bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$ and let $$\alpha,\beta \in \mathbb{C}$$. Then
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint, let $$f,g$$ be bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$, and let $$\alpha,\beta \in \mathbb{C}$$. Then
 >
 > $$
 >     Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g.
@@ -4866,7 +4866,7 @@ $$\blacksquare$$
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:hall-a.62} -->
 <!--  \uses{lmm:associated-measures-are-finite} -->
-> With $$\mathcal{F}$$ as in [Definition (The Class of Functions with Bounded Quadratic Form)](#def:F-class), $$C^0(\sigma(A); \mathbb{R}) \subseteq \mathcal{F}$$.
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mathcal{F}$$ as in [Definition (The Class of Functions with Bounded Quadratic Form)](#def:F-class), $$C^0(\sigma(A); \mathbb{R}) \subseteq \mathcal{F}$$.
 
 **Proof**
 $$C^0(\sigma(A); \mathbb{R})$$ is a subset of $$\mathcal{F}$$.
@@ -5837,7 +5837,7 @@ The result is obtained by applying [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-p
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:associated-measures-self-adjoint} -->
-> With $$\mathcal{F}_1$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), $$\mathcal{F}_1$$ is a complex vector space containing $$C^0(\sigma(A); \mathbb{R})$$.
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mathcal{F}_1$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), $$\mathcal{F}_1$$ is a complex vector space containing $$C^0(\sigma(A); \mathbb{R})$$.
 
 **Proof**
 We first show $$\mathcal{F}_1$$ is a complex vector space. To prove this consider any $$f_1$$ and $$f_2$$ in $$\mathcal{F}_1$$ and any $$\alpha_1$$ and $$\alpha_2$$ in $$\mathbb{C}$$. Then one has
@@ -5980,7 +5980,7 @@ $$\blacksquare$$
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-> With $$\mathcal{F}_1$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), if $$\{f_i\}$$ is a uniformly bounded sequence in $$\mathcal{F}_1$$ converging pointwise to $$f$$, then $$f \in \mathcal{F}_1$$. Consequently, by [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c), $$\mathcal{F}_1$$ is the set of *all* bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$ — that is, $$(fg)(A) = f(A)g(A)$$ for every bounded Borel $$f$$ and every continuous $$g$$.
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mathcal{F}_1$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), if $$\{f_i\}$$ is a uniformly bounded sequence in $$\mathcal{F}_1$$ converging pointwise to $$f$$, then $$f \in \mathcal{F}_1$$. Consequently, by [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c), $$\mathcal{F}_1$$ is the set of *all* bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$ — that is, $$(fg)(A) = f(A)g(A)$$ for every bounded Borel $$f$$ and every continuous $$g$$.
 
 **Proof**
 We show that $$\mathcal{F}_1$$ is closed under pointwise limits of uniformly bounded sequences.
@@ -6047,7 +6047,7 @@ $$\blacksquare$$
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-> With $$\mathcal{F}_2$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), $$\mathcal{F}_2$$ is a complex vector space, contains $$C^0(\sigma(A); \mathbb{R})$$, and is closed under bounded pointwise limits; hence it is the set of *all* bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mathcal{F}_2$$ as in [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes), $$\mathcal{F}_2$$ is a complex vector space, contains $$C^0(\sigma(A); \mathbb{R})$$, and is closed under bounded pointwise limits; hence it is the set of *all* bounded, Borel-measurable, complex-valued functions on $$\sigma(A)$$.
 
 **Proof**
 By [**Proposition** *($$\mathcal{F}_1$$ is Closed under Bounded Pointwise Limits)*](#prpstn:F1-closed-under-limits), we have multiplicativity for an arbitrary bounded, Borel-measurable $$f$$ paired with a *continuous* $$g$$. To obtain the full result we must also allow $$g$$ to be an arbitrary bounded, Borel-measurable function. To this end recall $$\mathcal{F}_2$$ from [Definition (The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)](#def:F1-F2-classes) — note that there it is the *second* argument that varies. We will prove that $$\mathcal{F}_2$$ (1) is a complex vector space, (2) contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) is closed under pointwise limits of uniformly bounded sequences, so that [**Lemma**](#lmm:hall-prblm-8.3.3c) applies.
@@ -6232,7 +6232,7 @@ $$\blacksquare$$
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.9} -->
 <!--  \uses{def:identity-and-indicator} -->
-> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for any measurable $$E_1, E_2 \subseteq \sigma(A)$$,
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for any measurable $$E_1, E_2 \subseteq \sigma(A)$$,
 >
 > $$
 >     \mu^A(E_1)\mu^A(E_2) = \mu^A(E_1 \cap E_2).
@@ -6274,7 +6274,7 @@ $$\blacksquare$$
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.9} -->
 <!--  \uses{def:identity-and-indicator} -->
-> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection),
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), 
 >
 > $$
 >     \mu^A(\emptyset) = 0 \qquad\text{and}\qquad \mu^A(\sigma(A)) = \mathbf{1}.
@@ -6376,7 +6376,7 @@ $$\blacksquare$$
 <!--  \uses{lmm:lemma-4} -->
 <!--  \uses{prpstn:hall-8.9} -->
 <!--  \uses{prpstn:mua-empty-and-whole} -->
-> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for pairwise disjoint measurable sets $$\{E_j\}$$ in $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$,
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for pairwise disjoint measurable sets $$\{E_j\}$$ in $$\sigma(A)$$ and any $$\psi \in \mathbf{H}$$,
 >
 > $$
 >     \mu^A\left( \bigcup_{j=1}^{\infty} E_j \right)\psi = \sum_{j=1}^{\infty} \mu^A(E_j)\psi,
@@ -6455,7 +6455,6 @@ With this result as motivation, let us prove the following "utility" lemma
 <!--  \uses{prpstn:orthogonal-sum-is-projection} -->
 <!--  \uses{prpstn:orthogonal-sum-range} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
-<!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -6843,7 +6842,7 @@ $$\blacksquare$$
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{def:hall-8.8} -->
-> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), and given that $$\mu^A$$ is a projection-valued measure, for every measurable $$E \subseteq \sigma(A)$$,
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), and given that $$\mu^A$$ is a projection-valued measure, for every measurable $$E \subseteq \sigma(A)$$,
 >
 > $$
 >     \mu^A(E) = \int_{\sigma(A)} 1_E(\lambda) \, d\mu^A(\lambda).
@@ -6939,7 +6938,7 @@ $$\blacksquare$$
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:hall-a.63} -->
-> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for every bounded, Borel-measurable, complex-valued $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) coincides with the projection-valued integral of $$f$$ against $$\mu^A$$:
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for every bounded, Borel-measurable, complex-valued $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of [**Definition**](#def:hall-8.8) coincides with the projection-valued integral of $$f$$ against $$\mu^A$$:
 >
 > $$
 >     f(A) = \int_{\sigma(A)} f(\lambda) \, d\mu^A(\lambda).
@@ -6993,7 +6992,7 @@ $$\blacksquare$$
 <!--  \uses{thrm:riesz-representation} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{def:hall-8.6} -->
-> With notation as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection),
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), 
 >
 > $$
 >     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
@@ -7194,7 +7193,7 @@ $$\blacksquare$$
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-> With $$A, \mu^A, \nu^A$$ as in [**Proposition** *(Two Spectral Measures Agree on Polynomials)*](#prpstn:pvm-agree-on-polynomials), for every continuous, complex-valued $$g$$ on $$\sigma(A)$$,
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A, \nu^A$$ be projection-valued measures on $$\sigma(A)$$ with $$\int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A = \int_{\sigma(A)} \lambda \, d\nu^A(\lambda)$$. Then for every continuous, complex-valued $$g$$ on $$\sigma(A)$$,
 >
 > $$
 >     \int_{\sigma(A)} g \, d\mu^A = \int_{\sigma(A)} g \, d\nu^A.
@@ -7343,7 +7342,7 @@ $$\blacksquare$$
 <!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-> With $$A, \mu^A, \nu^A$$ as in [**Proposition** *(Two Spectral Measures Agree on Polynomials)*](#prpstn:pvm-agree-on-polynomials), for every bounded, Borel-measurable, complex-valued $$f$$ on $$\sigma(A)$$,
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$\mu^A, \nu^A$$ be projection-valued measures on $$\sigma(A)$$ with $$\int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A = \int_{\sigma(A)} \lambda \, d\nu^A(\lambda)$$. Then for every bounded, Borel-measurable, complex-valued $$f$$ on $$\sigma(A)$$,
 >
 > $$
 >     \int_{\sigma(A)} f \, d\mu^A = \int_{\sigma(A)} f \, d\nu^A.
