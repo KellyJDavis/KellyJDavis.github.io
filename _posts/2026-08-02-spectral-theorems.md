@@ -1998,62 +1998,20 @@ $$
     \left( \int_X s_1 \, d\mu \right) \left( \int_X s_2 \, d\mu \right) = \int_X s_1 s_2 \, d\mu,
 $$
 
-as required.
-$$\blacksquare$$
-
-> **Proposition** *(Multiplicativity of the Integral for Bounded Measurable Functions)*
-<a name="prpstn:integral-mult-measurable"></a>
-<!--  \uses{prpstn:integral-mult-simple} -->
-<!--  \uses{prpstn:integral-norm-bound} -->
-<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
-<!--  \uses{prpstn:integral-as-limit-of-simple} -->
-> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f, g$$ on $$X$$,
+> **Proposition** *(Products of Uniform Approximants Converge Uniformly)*
+<a name="prpstn:products-converge-uniformly"></a>
+<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{def:identity-and-indicator} -->
+> Let $$f, g$$ be bounded, complex-valued functions on a set $$X$$, and let $$\{s_i\}$$ and $$\{r_j\}$$ be sequences of complex-valued functions converging uniformly to $$f$$ and $$g$$ respectively, with each $$r_j$$ bounded. Then $$s_i r_j \rightarrow fg$$ uniformly as $$i, j \rightarrow \infty$$: for every $$\epsilon > 0$$ there is an $$N$$ with
 >
 > $$
->     \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
+>     \sup\limits_{\lambda \in X} \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda) \rvert < \epsilon
 > $$
+>
+> for all $$i, j \ge N$$.
 
 **Proof**
-
-As one will recall [**Theorem** *(Complex-Valued Simple Approximation Theorem)*](#thrm:complex-valued-simple-approximation-theorem) implies that there exist sequences of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ and $$\{r_j\}_{j \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to a bounded, measurable, complex-valued function $$f$$ on $$X$$ and similarly $$\{r_j\}_{j \in \mathbb{N}}$$ to $$g$$.
-
-This along with linearity of operator-valued integration implies for any $$s_i$$
-
-$$
-\begin{align}
-    \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\|
-    &= \left\| \int_X ( f - s_i ) \, d\mu \right\| \\
-    &\le \sup\limits_{\lambda \in X} \lvert f(\lambda) - s_i(\lambda) \rvert,
-\end{align}
-$$
-
-where in the final step we employed [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](#prpstn:integral-norm-bound). As $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$, this implies that for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
-
-$$
-    \left\| \left( \int_X f \, d\mu \right) - \left( \int_X s_i \, d\mu \right) \right\| < \epsilon,
-$$
-
-in other words the operator-valued integral of $$s_i$$ converges to the operator-valued integral of $$f$$. One can establish using similar logic that the operator-valued integral of $$r_i$$ converges to the operator-valued integral of $$g$$.
-
-Similarly, uniform convergence along with linearity imply for any $$s_i$$ and $$r_j$$
-
-$$
-\begin{align}
-    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\|
-    &= \left\| \int_X (fg - s_i r_j) \, d\mu \right\| \\
-    &\le \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert
-\end{align}
-$$
-
-where in the final step we employed [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](#prpstn:integral-norm-bound). Looking at this result and our previous similar result, one concludes that if we can prove that given any $$\epsilon > 0$$, there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
-
-$$
-    \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert < \epsilon,
-$$
-
-then we can conclude that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
-
-One can prove this desired convergence as follows. Consider any $$s_i$$ and $$r_j$$. One has
+Consider any $$s_i$$ and $$r_j$$. One has
 
 $$
 \begin{align}
@@ -2158,6 +2116,57 @@ implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such t
 $$
     \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| < \epsilon.
 $$
+$$\blacksquare$$
+
+as required.
+$$\blacksquare$$
+
+> **Proposition** *(Multiplicativity of the Integral for Bounded Measurable Functions)*
+<a name="prpstn:integral-mult-measurable"></a>
+<!--  \uses{prpstn:products-converge-uniformly} -->
+<!--  \uses{prpstn:integral-mult-simple} -->
+<!--  \uses{prpstn:integral-norm-bound} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
+<!--  \uses{prpstn:integral-as-limit-of-simple} -->
+> With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f, g$$ on $$X$$,
+>
+> $$
+>     \int_X fg \, d\mu = \left( \int_X f \, d\mu \right) \left( \int_X g \, d\mu \right).
+> $$
+
+**Proof**
+
+As one will recall [**Theorem** *(Complex-Valued Simple Approximation Theorem)*](#thrm:complex-valued-simple-approximation-theorem) implies that there exist sequences of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ and $$\{r_j\}_{j \in \mathbb{N}}$$ on $$X$$ such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to a bounded, measurable, complex-valued function $$f$$ on $$X$$ and similarly $$\{r_j\}_{j \in \mathbb{N}}$$ to $$g$$.
+
+By [**Proposition** *(The Integral as a Limit of Integrals of Simple Functions)*](#prpstn:integral-as-limit-of-simple), applied to $$\{s_i\}$$ and to $$\{r_j\}$$ in turn,
+
+$$
+    \int_X s_i \, d\mu \longrightarrow \int_X f \, d\mu
+    \qquad\text{and}\qquad
+    \int_X r_j \, d\mu \longrightarrow \int_X g \, d\mu
+$$
+
+in the operator norm.
+
+Similarly, uniform convergence along with linearity imply for any $$s_i$$ and $$r_j$$
+
+$$
+\begin{align}
+    \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\|
+    &= \left\| \int_X (fg - s_i r_j) \, d\mu \right\| \\
+    &\le \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert
+\end{align}
+$$
+
+where in the final step we employed [**Proposition** *(Norm Bound for the Operator-Valued Integral)*](#prpstn:integral-norm-bound). Looking at this bound, one concludes that if we can prove that given any $$\epsilon > 0$$, there exists a natural number $$N$$ such that for all $$i,j \ge N$$ one has
+
+$$
+    \sup\limits_{\lambda \in X} \lvert f(\lambda) g(\lambda) - s_i(\lambda) r_j(\lambda) \rvert < \epsilon,
+$$
+
+then we can conclude that the operator-valued integral of $$s_ir_j$$ converges to the operator-valued integral of $$fg$$.
+
+That supremum bound is [**Proposition** *(Products of Uniform Approximants Converge Uniformly)*](#prpstn:products-converge-uniformly) above, applied to $$\{s_i\}$$ and $$\{r_j\}$$; it holds for all $$i,j \ge N$$, and hence the operator-valued integral of $$s_i r_j$$ converges to that of $$fg$$.
 
 In particular, this holds when $$j = i$$: for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i \ge L$$ we have
 
