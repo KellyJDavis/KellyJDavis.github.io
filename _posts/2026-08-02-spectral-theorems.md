@@ -400,6 +400,11 @@ Projection-valued measures give rise to a type of integration known as "operator
 
 > **Theorem** *(Operator-Valued Integration)*
 <a name="thrm:operator-valued-integration"></a>
+<!--  \uses{lmm:projection-norm-decreasing} -->
+<!--  \uses{prpstn:Q-indicator-bounded-form} -->
+<!--  \uses{prpstn:Q-measurable-bounded-form} -->
+<!--  \uses{prpstn:Q-simple-bounded-form} -->
+<!--  \uses{thrm:hall-a.52} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
@@ -486,6 +491,9 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 
 > **Lemma**
 <a name="lmm:lemma1-of-operator-valued-integration"></a>
+<!--  \uses{prpstn:Q-indicator-bounded-form} -->
+<!--  \uses{prpstn:Q-measurable-bounded-form} -->
+<!--  \uses{prpstn:Q-simple-bounded-form} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
@@ -728,6 +736,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form of a Bounded Measurable Function is Bounded)*
 <a name="prpstn:Q-measurable-bounded-form"></a>
+<!--  \uses{prpstn:Q-indicator-bounded-form} -->
 <!--  \uses{prpstn:Q-simple-bounded-form} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 <!--  \uses{def:bounded-quadratic-form} -->
@@ -1295,6 +1304,7 @@ We now establish, one at a time, the four properties asserted by the theorem.
 
 > **Proposition** *(Integral of an Indicator Function)*
 <a name="prpstn:integral-of-indicator"></a>
+<!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$, let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure, and let $$f \mapsto \int_X f \, d\mu$$ be the map of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration). Then for all $$E \in \Omega(X)$$,
 >
@@ -1338,6 +1348,11 @@ $$\blacksquare$$
 
 > **Proposition** *(Norm Bound for the Operator-Valued Integral)*
 <a name="prpstn:integral-norm-bound"></a>
+<!--  \uses{prpstn:hall-a.43} -->
+<!--  \uses{prpstn:integral-as-limit-of-simple} -->
+<!--  \uses{prpstn:integral-norm-bound-simple} -->
+<!--  \uses{prpstn:integral-of-indicator} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 > With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f$$ on $$X$$,
 >
@@ -1905,6 +1920,10 @@ This is the desired identification.$$\blacksquare$$
 
 > **Proposition** *(Operator-Valued Integration is Multiplicative)*
 <a name="prpstn:integral-multiplicative"></a>
+<!--  \uses{prpstn:integral-mult-indicator} -->
+<!--  \uses{prpstn:integral-mult-measurable} -->
+<!--  \uses{prpstn:integral-mult-simple} -->
+<!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{prpstn:integral-norm-bound} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 > With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f$$ and $$g$$ on $$X$$,
@@ -1950,6 +1969,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Multiplicativity of the Integral for Simple Functions)*
 <a name="prpstn:integral-mult-simple"></a>
+<!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{prpstn:integral-mult-indicator} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 > With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all simple functions $$s_1, s_2$$ on $$X$$,
@@ -2123,6 +2143,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Multiplicativity of the Integral for Bounded Measurable Functions)*
 <a name="prpstn:integral-mult-measurable"></a>
+<!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{prpstn:products-converge-uniformly} -->
 <!--  \uses{prpstn:integral-mult-simple} -->
 <!--  \uses{prpstn:integral-norm-bound} -->
@@ -2259,6 +2280,8 @@ $$\blacksquare$$
 
 > **Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*
 <a name="prpstn:integral-conjugation"></a>
+<!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 > With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all bounded, measurable, complex-valued functions $$f$$ on $$X$$,
 >
@@ -2329,6 +2352,71 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 
 > **Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*
 <a name="thrm:spectral-theorem-for-bounded-operators"></a>
+<!--  \uses{crllr:crllr-1} -->
+<!--  \uses{def:F-class} -->
+<!--  \uses{def:L0-class} -->
+<!--  \uses{def:algebra-of-sets} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{def:separates-points} -->
+<!--  \uses{def:spectral-radius} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{lmm:hall-7.6} -->
+<!--  \uses{lmm:hall-7.8} -->
+<!--  \uses{lmm:hall-8.1} -->
+<!--  \uses{lmm:hall-ex-8.3.1} -->
+<!--  \uses{lmm:hall-prblm-7.4.8} -->
+<!--  \uses{lmm:hall-prblm-8.3.3a} -->
+<!--  \uses{lmm:hall-prblm-8.3.3b} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{lmm:lemma-1} -->
+<!--  \uses{lmm:lemma-2} -->
+<!--  \uses{lmm:nth-term-test} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{prpstn:F-bounded} -->
+<!--  \uses{prpstn:F-closed-under-limits} -->
+<!--  \uses{prpstn:F-contains-continuous} -->
+<!--  \uses{prpstn:F-homogeneous} -->
+<!--  \uses{prpstn:F-sesquilinear} -->
+<!--  \uses{prpstn:L0-complement} -->
+<!--  \uses{prpstn:L0-contains-closed} -->
+<!--  \uses{prpstn:L0-contains-empty} -->
+<!--  \uses{prpstn:L0-union} -->
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
+<!--  \uses{prpstn:cfc-multiplicative} -->
+<!--  \uses{prpstn:cfc-non-negative} -->
+<!--  \uses{prpstn:cfc-norm} -->
+<!--  \uses{prpstn:cfc-self-adjoint} -->
+<!--  \uses{prpstn:cfc-spectral-mapping} -->
+<!--  \uses{prpstn:continuity-of-the-adjoint} -->
+<!--  \uses{prpstn:hall-7.2} -->
+<!--  \uses{prpstn:hall-7.3} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:hall-8.4} -->
+<!--  \uses{prpstn:hall-8.7} -->
+<!--  \uses{prpstn:hall-a.34} -->
+<!--  \uses{prpstn:hall-a.62} -->
+<!--  \uses{thrm:analytic-equivalence-theorem} -->
+<!--  \uses{thrm:archimedean-property} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{thrm:bounded-linear-transformation-theorem} -->
+<!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
+<!--  \uses{thrm:composition-theorem} -->
+<!--  \uses{thrm:existence-of-bump-functions} -->
+<!--  \uses{thrm:fundamental-theorem-of-algebra} -->
+<!--  \uses{thrm:hall-a.40} -->
+<!--  \uses{thrm:laurents-theorem} -->
+<!--  \uses{thrm:maximum-modulus-principle} -->
+<!--  \uses{thrm:monotone-class-theorem} -->
+<!--  \uses{thrm:monotone-convergence-theorem-nonincreasing} -->
+<!--  \uses{thrm:riesz-representation} -->
+<!--  \uses{thrm:theorem-on-completeness-of-the-dual} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{def:orthogonal-complement} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
@@ -2899,6 +2987,7 @@ with that stated let us begin the consolidation.
 
 > **Lemma** *(The Spectrum is a Compact Metric Measurable Space)*
 <a name="lmm:spectrum-is-compact-metric-measurable"></a>
+<!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{prpstn:hall-7.5} -->
@@ -3964,6 +4053,11 @@ The properties of the (real-valued) functional calculus are captured in the foll
 
 > **Proposition**
 <a name="prpstn:hall-8.4"></a>
+<!--  \uses{prpstn:cfc-multiplicative} -->
+<!--  \uses{prpstn:cfc-non-negative} -->
+<!--  \uses{prpstn:cfc-norm} -->
+<!--  \uses{prpstn:cfc-self-adjoint} -->
+<!--  \uses{prpstn:cfc-spectral-mapping} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:hall-8.3} -->
@@ -4008,6 +4102,8 @@ Each of the four properties is established separately below: multiplicativity in
 
 > **Proposition** *(The Continuous Functional Calculus is Multiplicative)*
 <a name="prpstn:cfc-multiplicative"></a>
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{thrm:composition-theorem} -->
 <!--  \uses{thrm:boundedness-theorem} -->
@@ -4157,6 +4253,8 @@ $$\blacksquare$$
 
 > **Proposition** *(The Continuous Functional Calculus Yields Self-Adjoint Operators)*
 <a name="prpstn:cfc-self-adjoint"></a>
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:continuity-of-the-adjoint} -->
 > With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), for any $$f \in C^0(\sigma(A); \mathbb{R})$$ the operator $$f(A)$$ is self-adjoint.
@@ -4200,6 +4298,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Continuous Functional Calculus Preserves Non-Negativity)*
 <a name="prpstn:cfc-non-negative"></a>
+<!--  \uses{thrm:composition-theorem} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{def:non-negative-operator} -->
 <!--  \uses{prpstn:cfc-multiplicative} -->
@@ -4242,6 +4341,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Norm of an Operator from the Continuous Functional Calculus)*
 <a name="prpstn:cfc-norm"></a>
+<!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
@@ -4304,6 +4404,8 @@ as required.$$\blacksquare$$
 
 > **Proposition** *(Spectral Mapping for the Continuous Functional Calculus)*
 <a name="prpstn:cfc-spectral-mapping"></a>
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{prpstn:cfc-self-adjoint} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{lmm:hall-prblm-7.4.8} -->
 <!--  \uses{prpstn:hall-7.7} -->
@@ -4563,6 +4665,12 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 
 > **Proposition**
 <a name="prpstn:hall-8.7"></a>
+<!--  \uses{def:F-class} -->
+<!--  \uses{prpstn:F-bounded} -->
+<!--  \uses{prpstn:F-closed-under-limits} -->
+<!--  \uses{prpstn:F-contains-continuous} -->
+<!--  \uses{prpstn:F-homogeneous} -->
+<!--  \uses{prpstn:F-sesquilinear} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -4751,6 +4859,9 @@ $$\blacksquare$$
 
 > **Proposition** *(The Class Contains the Continuous Functions)*
 <a name="prpstn:F-contains-continuous"></a>
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:hall-a.62} -->
@@ -4996,6 +5107,11 @@ Our proof of this result requires that we first prove some "utility" lemmas as s
 
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3a"></a>
+<!--  \uses{def:L0-class} -->
+<!--  \uses{prpstn:L0-complement} -->
+<!--  \uses{prpstn:L0-contains-closed} -->
+<!--  \uses{prpstn:L0-contains-empty} -->
+<!--  \uses{prpstn:L0-union} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{def:algebra-of-sets} -->
 <!--  \uses{thrm:archimedean-property} -->
@@ -5017,6 +5133,7 @@ For the open sets: every closed subset of $$X$$ lies in $$\mathcal{L}_0$$ by [**
 
 > **Proposition** *(The Empty Set Lies in $$\mathcal{L}_0$$)*
 <a name="prpstn:L0-contains-empty"></a>
+<!--  \uses{thrm:archimedean-property} -->
 <!--  \uses{def:L0-class} -->
 > With $$\mathcal{L}_0$$ as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), $$\emptyset \in \mathcal{L}_0$$.
 
@@ -5352,6 +5469,7 @@ The next of these "utility" lemmas is the following:
 
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3b"></a>
+<!--  \uses{def:L0-class} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{lmm:hall-prblm-8.3.3a} -->
 <!--  \uses{thrm:monotone-class-theorem} -->
@@ -5665,6 +5783,9 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 
 > **Proposition**
 <a name="prpstn:hall-8.9"></a>
+<!--  \uses{prpstn:F1-closed-under-limits} -->
+<!--  \uses{prpstn:F1-vector-space} -->
+<!--  \uses{prpstn:F2-is-everything} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
 <!--  \uses{prpstn:associated-measures-self-adjoint} -->
@@ -5696,6 +5817,7 @@ The result is obtained by applying [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-p
 
 > **Definition** *(The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)*
 <a name="def:F1-F2-classes"></a>
+<!--  \uses{def:F-class} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint, and let $$f \mapsto f(A)$$ be the bounded Borel functional calculus of [**Definition**](#def:hall-8.8). Write
@@ -5777,6 +5899,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form is Continuous under Bounded Pointwise Limits)*
 <a name="prpstn:Q-continuous-under-limits"></a>
+<!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.7} -->
 <!--  \uses{prpstn:hall-a.59} -->
 <!--  \uses{prpstn:hall-a.61} -->
@@ -5846,6 +5969,11 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{F}_1$$ is Closed under Bounded Pointwise Limits)*
 <a name="prpstn:F1-closed-under-limits"></a>
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{def:F1-F2-classes} -->
 <!--  \uses{prpstn:F1-vector-space} -->
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
@@ -5910,6 +6038,10 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{F}_2$$ Contains all Bounded Borel Functions)*
 <a name="prpstn:F2-is-everything"></a>
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
+<!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{def:F1-F2-classes} -->
 <!--  \uses{prpstn:F1-closed-under-limits} -->
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
@@ -5989,6 +6121,30 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 
 > **Theorem**
 <a name="thrm:hall-8.10"></a>
+<!--  \uses{def:separates-points} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
+<!--  \uses{lmm:projection-norm-decreasing} -->
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
+<!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{prpstn:integral-multiplicative} -->
+<!--  \uses{prpstn:integral-norm-bound} -->
+<!--  \uses{prpstn:mua-countably-additive} -->
+<!--  \uses{prpstn:mua-empty-and-whole} -->
+<!--  \uses{prpstn:mua-integrates-to-A} -->
+<!--  \uses{prpstn:mua-multiplicative} -->
+<!--  \uses{prpstn:mua-projection} -->
+<!--  \uses{prpstn:orthogonal-sum-converges} -->
+<!--  \uses{prpstn:orthogonal-sum-is-projection} -->
+<!--  \uses{prpstn:orthogonal-sum-range} -->
+<!--  \uses{prpstn:pvm-agree-on-continuous} -->
+<!--  \uses{prpstn:pvm-agree-on-measurable} -->
+<!--  \uses{prpstn:pvm-agree-on-polynomials} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{thrm:bounded-linear-transformation-theorem} -->
+<!--  \uses{thrm:hall-prblm-8.3.4} -->
+<!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -6032,11 +6188,11 @@ That $$\mu^A$$ is a projection-valued measure is the conjunction of the four axi
 
 > **Proposition** *(Each Spectral Projection is an Orthogonal Projection)*
 <a name="prpstn:mua-projection"></a>
-<!--  \uses{thrm:hall-8.10} -->
+<!--  \uses{lmm:lemma-3} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{prpstn:hall-8.9} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and, for measurable $$E \subseteq \sigma(A)$$, let $$\mu^A(E) \equiv 1_E(A)$$ as in [**Theorem** *(hall-8.10)*](#thrm:hall-8.10). Then $$\mu^A(E)$$ is a bounded orthogonal projection.
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and, for measurable $$E \subseteq \sigma(A)$$, define $$\mu^A(E) \equiv 1_E(A)$$, where $$1_E(A)$$ is given by [**Definition**](#def:hall-8.8). Then $$\mu^A(E)$$ is a bounded orthogonal projection.
 
 **Proof**
 for each measurable set $$E$$ on $$\sigma(A)$$ it follows that $$\mu^A(E)$$ is a bounded orthogonal projection.
@@ -6113,6 +6269,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*
 <a name="prpstn:mua-empty-and-whole"></a>
+<!--  \uses{thrm:riesz-representation} -->
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.9} -->
@@ -6205,6 +6362,14 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are Countably Additive)*
 <a name="prpstn:mua-countably-additive"></a>
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{lmm:projection-norm-decreasing} -->
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
+<!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
+<!--  \uses{prpstn:orthogonal-sum-converges} -->
+<!--  \uses{prpstn:orthogonal-sum-is-projection} -->
+<!--  \uses{prpstn:orthogonal-sum-range} -->
+<!--  \uses{thrm:monotone-convergence-theorem} -->
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{prpstn:mua-multiplicative} -->
 <!--  \uses{def:hall-8.8} -->
@@ -6286,6 +6451,9 @@ With this result as motivation, let us prove the following "utility" lemma
 
 > **Lemma**
 <a name="lmm:lemma-4"></a>
+<!--  \uses{prpstn:orthogonal-sum-converges} -->
+<!--  \uses{prpstn:orthogonal-sum-is-projection} -->
+<!--  \uses{prpstn:orthogonal-sum-range} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
@@ -6532,6 +6700,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Range of the Limit Projection)*
 <a name="prpstn:orthogonal-sum-range"></a>
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
 <!--  \uses{prpstn:orthogonal-sum-converges} -->
 <!--  \uses{prpstn:orthogonal-sum-is-projection} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
@@ -6666,7 +6835,11 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are the Integrals of their Indicators)*
 <a name="prpstn:mua-indicator-integral"></a>
-<!--  \uses{thrm:hall-8.10} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:mua-projection} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{def:hall-8.8} -->
@@ -6760,6 +6933,8 @@ $$\blacksquare$$
 
 > **Proposition** *(The Two Bounded Functional Calculi Agree)*
 <a name="prpstn:mua-bounded-calculus-agrees"></a>
+<!--  \uses{prpstn:mua-projection} -->
+<!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{prpstn:mua-indicator-integral} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{def:hall-8.6} -->
@@ -6808,6 +6983,11 @@ $$\blacksquare$$
 
 > **Proposition** *(The Spectral Measure Integrates to the Operator)*
 <a name="prpstn:mua-integrates-to-A"></a>
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{prpstn:mua-projection} -->
+<!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{prpstn:mua-bounded-calculus-agrees} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{thrm:riesz-representation} -->
@@ -6879,6 +7059,9 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 
 > **Theorem**
 <a name="thrm:hall-prblm-8.3.4"></a>
+<!--  \uses{prpstn:pvm-agree-on-continuous} -->
+<!--  \uses{prpstn:pvm-agree-on-measurable} -->
+<!--  \uses{prpstn:pvm-agree-on-polynomials} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
@@ -6946,6 +7129,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Two Spectral Measures Agree on Polynomials)*
 <a name="prpstn:pvm-agree-on-polynomials"></a>
+<!--  \uses{prpstn:integral-multiplicative} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{prpstn:integral-mult-measurable} -->
@@ -7000,6 +7184,9 @@ $$\blacksquare$$
 
 > **Proposition** *(Two Spectral Measures Agree on Continuous Functions)*
 <a name="prpstn:pvm-agree-on-continuous"></a>
+<!--  \uses{def:separates-points} -->
+<!--  \uses{prpstn:integral-norm-bound} -->
+<!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{prpstn:pvm-agree-on-polynomials} -->
 <!--  \uses{lmm:lemma-5} -->
 <!--  \uses{thrm:bounded-linear-transformation-theorem} -->
@@ -7147,6 +7334,8 @@ $$\blacksquare$$
 
 > **Proposition** *(Two Spectral Measures Agree on Bounded Measurable Functions)*
 <a name="prpstn:pvm-agree-on-measurable"></a>
+<!--  \uses{prpstn:pvm-agree-on-polynomials} -->
+<!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{prpstn:pvm-agree-on-continuous} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
