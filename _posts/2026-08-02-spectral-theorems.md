@@ -1304,6 +1304,7 @@ We now establish, one at a time, the four properties asserted by the theorem.
 
 > **Proposition** *(Integral of an Indicator Function)*
 <a name="prpstn:integral-of-indicator"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$, let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure, and let $$f \mapsto \int_X f \, d\mu$$ be the map of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration). Then for all $$E \in \Omega(X)$$,
@@ -2280,6 +2281,8 @@ $$\blacksquare$$
 
 > **Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*
 <a name="prpstn:integral-conjugation"></a>
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{thrm:operator-valued-integration} -->
@@ -4740,6 +4743,7 @@ Since $$\sigma(A)$$ is a compact metric measurable space by [**Lemma**](#lmm:spe
 
 > **Proposition** *(The Map $$f \mapsto Q_f$$ is Linear)*
 <a name="prpstn:Q-is-linear"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
@@ -4765,6 +4769,7 @@ As $$\psi$$ was arbitrary, $$Q_{\alpha f + \beta g} = \alpha Q_f + \beta Q_g$$.$
 
 > **Proposition** *(Homogeneity of the Quadratic Form of a Linear Combination)*
 <a name="prpstn:F-homogeneous"></a>
+<!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:Q-is-linear} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:bounded-quadratic-form} -->
@@ -4795,6 +4800,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Associated Form of a Linear Combination is Sesquilinear)*
 <a name="prpstn:F-sesquilinear"></a>
+<!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:Q-is-linear} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
@@ -4835,6 +4841,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form of a Linear Combination is Bounded)*
 <a name="prpstn:F-bounded"></a>
+<!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:Q-is-linear} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{prpstn:F-homogeneous} -->
@@ -4890,6 +4897,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Class Contains the Continuous Functions)*
 <a name="prpstn:F-contains-continuous"></a>
+<!--  \uses{def:hall-8.6} -->
 <!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
 <!--  \uses{thrm:boundedness-theorem} -->
@@ -4964,6 +4972,8 @@ $$\blacksquare$$
 
 > **Proposition** *(The Class is Closed under Bounded Pointwise Limits)*
 <a name="prpstn:F-closed-under-limits"></a>
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{lmm:associated-measures-are-finite} -->
@@ -5860,6 +5870,7 @@ The result is obtained by applying [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-p
 
 > **Proposition** *($$\mathcal{F}_1$$ is a Vector Space)*
 <a name="prpstn:F1-vector-space"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:F1-F2-classes} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.3} -->
@@ -5926,6 +5937,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form is Continuous under Bounded Pointwise Limits)*
 <a name="prpstn:Q-continuous-under-limits"></a>
+<!--  \uses{def:F1-F2-classes} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.7} -->
 <!--  \uses{prpstn:hall-a.59} -->
@@ -5996,6 +6008,7 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{F}_1$$ is Closed under Bounded Pointwise Limits)*
 <a name="prpstn:F1-closed-under-limits"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:associated-measures-are-finite} -->
 <!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
@@ -6065,6 +6078,7 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{F}_2$$ Contains all Bounded Borel Functions)*
 <a name="prpstn:F2-is-everything"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:associated-measures-are-finite} -->
 <!--  \uses{prpstn:hall-a.63} -->
@@ -6297,6 +6311,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*
 <a name="prpstn:mua-empty-and-whole"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{thrm:riesz-representation} -->
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{def:hall-8.8} -->
@@ -6390,6 +6405,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are Countably Additive)*
 <a name="prpstn:mua-countably-additive"></a>
+<!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
@@ -6961,6 +6977,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Two Bounded Functional Calculi Agree)*
 <a name="prpstn:mua-bounded-calculus-agrees"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{prpstn:mua-indicator-integral} -->
@@ -7011,6 +7028,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Spectral Measure Integrates to the Operator)*
 <a name="prpstn:mua-integrates-to-A"></a>
+<!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
