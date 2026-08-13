@@ -3225,13 +3225,9 @@ The proof of the next lemma draws on four standard results — one about series,
 
 > **Lemma** *(Nth-Term Test)*
 <a name="lmm:nth-term-test"></a>
-> Let $$\{a_i\}_{i \in \mathbb{N}}$$ be a series in a normed vector space. If
+> Let $$\{a_i\}_{i \in \mathbb{N}}$$ be a sequence in a normed vector space. If $$\left\| a_i \right\|$$ does **not** converge to $$0$$ — either because the limit exists and is non-zero, or because it fails to exist — then the series $$\sum_i a_i$$ does not converge.
 >
-> $$
->     \lim\limits_{i \rightarrow \infty} \| a_i \| \neq 0,
-> $$
->
-> then this series does not converge.
+> Equivalently, in contrapositive form: if $$\sum_i a_i$$ converges then $$\left\| a_i \right\| \rightarrow 0$$.
 
 > **Theorem** *(Laurent's Theorem)*
 <a name="thrm:laurents-theorem"></a>
@@ -5142,7 +5138,7 @@ The next lemma refers to an algebra of sets and to the Archimedean Property; we 
 
 > **Theorem** *(Archimedean Property)*
 <a name="thrm:archimedean-property"></a>
-> For any real number $$\epsilon$$ such that $$\epsilon > 0$$ there exist a natural number $$N$$ such that for all $$n \ge N$$ one has $$1/n < \epsilon$$.
+> For any real number $$\epsilon > 0$$ there exists a natural number $$N \ge 1$$ such that for all natural numbers $$n \ge N$$ one has $$1/n < \epsilon$$. (The requirement $$N \ge 1$$ matters because $$\mathbb{N}$$ includes $$0$$ here, and $$1/n$$ is undefined at $$n = 0$$.)
 
 Our proof of this result requires that we first prove some "utility" lemmas as stepping stones. The first of these "utility" lemmas is the following:
 
@@ -5549,11 +5545,13 @@ The next lemma uses the following form of the Monotone Convergence Theorem, whic
 
 > **Theorem** *(Monotone Convergence Theorem, Non-Increasing Case)*
 <a name="thrm:monotone-convergence-theorem-nonincreasing"></a>
-> If $$\{ a_i \}_{i \in \mathbb{N}}$$ is a non-increasing sequence, i.e. $$a_i \ge a_{i + 1}$$ for all $$i \in \mathbb{N}$$, then 
-> 
+> Let $$\{ a_i \}_{i \in \mathbb{N}}$$ be a non-increasing sequence of real numbers, i.e. $$a_i \ge a_{i + 1}$$ for all $$i \in \mathbb{N}$$, and suppose it is **bounded below**. Then it converges, and
+>
 > $$
 >     \lim\limits_{i \rightarrow \infty} a_i = \inf_{i \in \mathbb{N}} a_i.
 > $$
+>
+> The boundedness hypothesis is needed: without it $$\inf_i a_i = -\infty$$ and the sequence has no limit in $$\mathbb{R}$$. Compare [**Theorem** *(Monotone Convergence Theorem)*](#thrm:monotone-convergence-theorem), which states the two-sided version with the same hypothesis.
 
 Before proving the final of these "utility" lemmas, we isolate the following elementary fact about pointwise limits of Borel-measurable functions, which we will have need of shortly.
 
@@ -5630,7 +5628,7 @@ $$
     \left\{  g_i(x) \right\}_{i \in \mathbb{N}} \quad \text{and} \quad \left\{  h_i(x) \right\}_{i \in \mathbb{N}}
 $$
 
-we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Hence, we can apply the [**Monotone Convergence Theorem (Non-Increasing Case)**](#thrm:monotone-convergence-theorem-nonincreasing) to each of these sequences, giving
+we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Both are also bounded below: the $$f_n$$ are uniformly bounded, say $$\lvert f_n(x) \rvert \le M$$ for all $$n$$ and $$x$$, so $$g_i(x) \ge \text{Re}(f_i(x)) \ge -M$$ and likewise $$h_i(x) \ge -M$$. Hence, we can apply the [**Monotone Convergence Theorem (Non-Increasing Case)**](#thrm:monotone-convergence-theorem-nonincreasing) to each of these sequences, giving
 
 $$
     \text{Re}(f(x)) = \lim\limits_{i \rightarrow \infty} g_i(x) = \inf_{i \in \mathbb{N}} g_i(x), \qquad \text{Im}(f(x)) = \lim\limits_{i \rightarrow \infty} h_i(x) = \inf_{i \in \mathbb{N}} h_i(x).
