@@ -1938,40 +1938,14 @@ We will also need the standard corollary of the Hahn–Banach theorem identifyin
 >     \|x\| = \sup \{ \lvert \xi(x) \rvert : \xi \in V^*,\ \|\xi\| \le 1 \}.
 > $$
 
-We can establish the growth bound on powers of a bounded operator that Lemma 10.22 below will need using exactly the tools already assembled in the previous post's proof of the bounded self-adjoint case of norm-equals-spectral-radius — that proof, in fact, establishes a fact about *any* bounded operator (self-adjointness enters only in its final step, where it is used for a sharper conclusion we do not need here). We extract that general fact as its own lemma, citing the same tools directly, rather than repeating "self-adjoint" hypotheses we will not use. First, though, we need three facts about the resolvent that are established along the way in the previous post's proof of [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), but do not appear in that proposition's own statement; we extract them here as their own citable facts.
-
-> **Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*
-<a name="prpstn:resolvent-holomorphy-and-neumann-series"></a>
-<!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
-<!--  \uses{../spectral-theorems/#lmm:hall-7.6} -->
-> Suppose $$\mathbf{H} \ne \{0\}$$ and $$A \in \mathcal{B}(\mathbf{H})$$.
->
-> 1. The resolvent set of $$A$$ is open, and near every point $$\lambda_0$$ in it, the resolvent $$\lambda \mapsto (A-\lambda\mathbf{1})^{-1}$$ is given by an operator-norm-convergent power series in $$(\lambda - \lambda_0)$$ with coefficients in $$\mathcal{B}(\mathbf{H})$$.
-> 2. For $$\lvert \lambda \rvert > \|A\|$$, $$\lambda$$ is in the resolvent set of $$A$$, and
->
->    $$
->        (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},
->    $$
->
->    convergent in operator norm.
-
-**Proof**
-**Part 2.** By [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5), $$\lvert \lambda \rvert>\|A\|$$ implies $$\lambda$$ is in the resolvent set. For such $$\lambda$$, $$A - \lambda\mathbf{1} = -\lambda(\mathbf{1} - A/\lambda)$$ with $$\|A/\lambda\| < 1$$, so by the geometric series lemma [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6), $$\mathbf{1} - A/\lambda$$ is invertible with $$(\mathbf{1}-A/\lambda)^{-1} = \sum_{m=0}^\infty (A/\lambda)^m$$, operator-norm convergent; hence $$(A-\lambda\mathbf{1})^{-1} = -\frac{1}{\lambda}\sum_{m=0}^\infty (A/\lambda)^m = -\sum_{m=0}^\infty A^m/\lambda^{m+1}$$.
-
-**Part 1.** Openness of the resolvent set, and the local power series representation, both follow from the same algebraic factorization used to prove [**Proposition** *(hall-7.5)*](../spectral-theorems/#prpstn:hall-7.5) itself: for $$\lambda_0$$ in the resolvent set of $$A$$ and $$\lambda$$ with $$\lvert \lambda-\lambda_0 \rvert < 1/\|(A-\lambda_0\mathbf{1})^{-1}\|$$, writing $$A - \lambda\mathbf{1} = (A-\lambda_0\mathbf{1})\big(\mathbf{1} - (\lambda-\lambda_0)(A-\lambda_0\mathbf{1})^{-1}\big)$$ and applying [**Lemma** *(hall-7.6)*](../spectral-theorems/#lmm:hall-7.6) to the second factor (whose norm is less than $$1$$ by the bound on $$\lvert \lambda-\lambda_0 \rvert$$) shows $$\lambda$$ is again in the resolvent set — so the resolvent set is open — with
-
-$$
-    (A-\lambda\mathbf{1})^{-1} = \left( \sum_{m=0}^\infty (\lambda-\lambda_0)^m \big((A-\lambda_0\mathbf{1})^{-1}\big)^m \right)(A-\lambda_0\mathbf{1})^{-1},
-$$
-
-an operator-norm-convergent power series in $$(\lambda-\lambda_0)$$ with $$\mathcal{B}(\mathbf{H})$$ coefficients.$$\blacksquare$$
+The bounded post now records the holomorphy and Neumann-series facts we need as [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](../spectral-theorems/#prpstn:resolvent-holomorphy-and-neumann-series).
 
 An operator-norm-convergent power series composed with any bounded linear functional gives a convergent scalar power series with the same radius of convergence, so Part 1 immediately gives: for any bounded linear functional $$\xi$$ on $$\mathcal{B}(\mathbf{H})$$, the scalar function $$\lambda \mapsto \xi\big( (A-\lambda\mathbf{1})^{-1} \big)$$ is holomorphic on the (open) resolvent set of $$A$$ — this is the fact [**Lemma** *(hall-8.1)*](../spectral-theorems/#lmm:hall-8.1) uses for a general such $$\xi$$, and the one we need below.
 
 > **Lemma** *(Power Growth is Controlled by the Spectral Radius)*
 <a name="lmm:power-growth-controlled-by-spectral-radius"></a>
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
-<!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
+<!--  \uses{../spectral-theorems/#prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{../spectral-theorems/#thrm:laurents-theorem} -->
 <!--  \uses{../spectral-theorems/#lmm:nth-term-test} -->
 <!--  \uses{../spectral-theorems/#thrm:hall-a.40} -->
@@ -1989,7 +1963,7 @@ An operator-norm-convergent power series composed with any bounded linear functi
 **Proof**
 Fix $$\lambda_1 \in \mathbb{C}$$ with $$R(A) < \lvert \lambda_1 \rvert < T$$ (possible since $$R(A) < T$$). We first show there is a constant $$C < \infty$$ with $$\|A^m\| \le C\lvert \lambda_1 \rvert^{m+1}$$ for all $$m$$.
 
-By Part 1 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](#prpstn:resolvent-holomorphy-and-neumann-series), the resolvent set of $$A$$ is open and the resolvent is holomorphic (in the operator-norm sense) on it; this resolvent set contains $$\{ \lambda : \lvert \lambda \rvert > R(A) \}$$ (since $$\sigma(A) \subset \{ \lvert \lambda \rvert \le R(A) \}$$, by the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius)), so the resolvent is holomorphic on all of the open annulus $$R(A) < \lvert \lambda \rvert$$. By Part 2 of the same proposition, for $$\lvert \lambda \rvert > \|A\|$$,
+By Part 1 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](../spectral-theorems/#prpstn:resolvent-holomorphy-and-neumann-series), the resolvent set of $$A$$ is open and the resolvent is holomorphic (in the operator-norm sense) on it; this resolvent set contains $$\{ \lambda : \lvert \lambda \rvert > R(A) \}$$ (since $$\sigma(A) \subset \{ \lvert \lambda \rvert \le R(A) \}$$, by the [definition of the spectral radius](../spectral-theorems/#def:spectral-radius)), so the resolvent is holomorphic on all of the open annulus $$R(A) < \lvert \lambda \rvert$$. By Part 2 of the same proposition, for $$\lvert \lambda \rvert > \|A\|$$,
 
 $$
     (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},

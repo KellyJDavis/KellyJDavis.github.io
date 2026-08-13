@@ -2352,6 +2352,7 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 
 > **Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*
 <a name="thrm:spectral-theorem-for-bounded-operators"></a>
+<!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{crllr:crllr-1} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:L0-class} -->
@@ -2776,6 +2777,35 @@ Hence, by evaluating the entire function $$\lambda \mapsto \left< \phi, (A - \la
 As this is true for any $$\phi, \psi \in \mathbf{H}$$, it implies that $$(A - \lambda \mathbf{1})^{-1}$$ has operator norm zero and is thus the zero operator. However, we know that $$(A - \lambda \mathbf{1})(A - \lambda \mathbf{1})^{-1} = \mathbf{1}$$. Thus, $$(A - \lambda \mathbf{1})^{-1}$$ can not be the zero operator, and we have arrived at a contradiction.
 
 Hence, our assumption that the spectrum $$\sigma(A)$$ of $$A$$ is the empty set is false. The spectrum $$\sigma(A)$$ is non-empty. This is the final desired result of Part 1.$$\blacksquare$$
+
+
+The proof of the preceding proposition establishes two facts about the resolvent that later arguments use directly. We record them as a separate result rather than reaching into that proof.
+
+> **Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*
+<a name="prpstn:resolvent-holomorphy-and-neumann-series"></a>
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{lmm:hall-7.6} -->
+> Suppose $$\mathbf{H} \ne \{0\}$$ and $$A \in \mathcal{B}(\mathbf{H})$$.
+>
+> 1. The resolvent set of $$A$$ is open, and near every point $$\lambda_0$$ in it, the resolvent $$\lambda \mapsto (A-\lambda\mathbf{1})^{-1}$$ is given by an operator-norm-convergent power series in $$(\lambda - \lambda_0)$$ with coefficients in $$\mathcal{B}(\mathbf{H})$$.
+> 2. For $$\lvert \lambda \rvert > \|A\|$$, $$\lambda$$ is in the resolvent set of $$A$$, and
+>
+>    $$
+>        (A - \lambda\mathbf{1})^{-1} = -\sum_{m=0}^\infty \frac{A^m}{\lambda^{m+1}},
+>    $$
+>
+>    convergent in operator norm.
+
+**Proof**
+**Part 2.** By [**Proposition** *(hall-7.5)*](#prpstn:hall-7.5), $$\lvert \lambda \rvert>\|A\|$$ implies $$\lambda$$ is in the resolvent set. For such $$\lambda$$, $$A - \lambda\mathbf{1} = -\lambda(\mathbf{1} - A/\lambda)$$ with $$\|A/\lambda\| < 1$$, so by the geometric series lemma [**Lemma** *(hall-7.6)*](#lmm:hall-7.6), $$\mathbf{1} - A/\lambda$$ is invertible with $$(\mathbf{1}-A/\lambda)^{-1} = \sum_{m=0}^\infty (A/\lambda)^m$$, operator-norm convergent; hence $$(A-\lambda\mathbf{1})^{-1} = -\frac{1}{\lambda}\sum_{m=0}^\infty (A/\lambda)^m = -\sum_{m=0}^\infty A^m/\lambda^{m+1}$$.
+
+**Part 1.** Openness of the resolvent set, and the local power series representation, both follow from the same algebraic factorization used to prove [**Proposition** *(hall-7.5)*](#prpstn:hall-7.5) itself: for $$\lambda_0$$ in the resolvent set of $$A$$ and $$\lambda$$ with $$\lvert \lambda-\lambda_0 \rvert < 1/\|(A-\lambda_0\mathbf{1})^{-1}\|$$, writing $$A - \lambda\mathbf{1} = (A-\lambda_0\mathbf{1})\big(\mathbf{1} - (\lambda-\lambda_0)(A-\lambda_0\mathbf{1})^{-1}\big)$$ and applying [**Lemma** *(hall-7.6)*](#lmm:hall-7.6) to the second factor (whose norm is less than $$1$$ by the bound on $$\lvert \lambda-\lambda_0 \rvert$$) shows $$\lambda$$ is again in the resolvent set — so the resolvent set is open — with
+
+$$
+    (A-\lambda\mathbf{1})^{-1} = \left( \sum_{m=0}^\infty (\lambda-\lambda_0)^m \big((A-\lambda_0\mathbf{1})^{-1}\big)^m \right)(A-\lambda_0\mathbf{1})^{-1},
+$$
+
+an operator-norm-convergent power series in $$(\lambda-\lambda_0)$$ with $$\mathcal{B}(\mathbf{H})$$ coefficients.$$\blacksquare$$
 
 Another proposition we will have need of is
 
@@ -3228,6 +3258,7 @@ As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$,
 
 > **Lemma**
 <a name="lmm:hall-8.1"></a>
+<!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:spectral-radius} -->
@@ -3257,7 +3288,7 @@ Before diving in to the details, let's present an outline of the proof. At core,
 
 Let us first (1) prove that if $$\lvert \lambda \rvert > \|A\|$$, then $$(A - \lambda \mathbf{1})^{-1}$$ can be expressed as a series convergent in the operator norm topology.
 
-This first result was established in the proof of [**Proposition**](#prpstn:hall-7.5). There we established that for $$\lvert \lambda \rvert > \|A\|$$, the following series is convergent in the operator norm topology
+This first result is Part 2 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](#prpstn:resolvent-holomorphy-and-neumann-series), which gives that for $$\lvert \lambda \rvert > \|A\|$$, the following series is convergent in the operator norm topology
 
 $$
     - \frac{1}{\lambda} \left( \mathbf{1} + \frac{A}{\lambda} + \frac{A^2}{\lambda^2} + \frac{A^3}{\lambda^3} + \cdots \right) = - \sum_{m = 0}^\infty \frac{A^m}{\lambda^{m + 1}},
@@ -3319,7 +3350,7 @@ With that we have proven the desired result: if $$\lvert \lambda \rvert \le \|A\
 
 Now let us (3) prove that if $$\lvert \lambda \rvert > R(A)$$, then this series converges in the operator norm topology.
 
-Recall that in the proof of [**Proposition**](#prpstn:hall-7.5) we showed that if $$\lambda_0$$ is in the resolvent set of $$A$$ and $$\lambda \in \mathbb{C}$$ satisfies
+Recall from Part 1 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](#prpstn:resolvent-holomorphy-and-neumann-series) that if $$\lambda_0$$ is in the resolvent set of $$A$$ and $$\lambda \in \mathbb{C}$$ satisfies
 
 $$
     \lvert \lambda - \lambda_0 \rvert < \frac{1}{\|(A - \lambda_0 \mathbf{1})^{-1}\|}
@@ -3339,7 +3370,7 @@ $$
     \lambda \longmapsto \xi (A - \lambda \mathbf{1})^{-1}
 $$
 
-can be expressed as a locally convergent power series with coefficients in $$\mathbb{C}$$. Hence, it is an analytic function on the resolvent set of $$A$$, which as shown in the proof of [**Proposition**](#prpstn:hall-7.5) is open. Hence, the [**Analytic Equivalence Theorem**](#thrm:analytic-equivalence-theorem) implies that this function is holomorphic on the resolvent set of $$A$$.
+can be expressed as a locally convergent power series with coefficients in $$\mathbb{C}$$. Hence, it is an analytic function on the resolvent set of $$A$$, which is open by Part 1 of [**Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*](#prpstn:resolvent-holomorphy-and-neumann-series). Hence, the [**Analytic Equivalence Theorem**](#thrm:analytic-equivalence-theorem) implies that this function is holomorphic on the resolvent set of $$A$$.
 
 Now, as mentioned in [**Definition** *(Spectral Radius)*](#def:spectral-radius), the spectral radius
 
@@ -6121,6 +6152,7 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 
 > **Theorem**
 <a name="thrm:hall-8.10"></a>
+<!--  \uses{prpstn:Q-continuous-under-limits} -->
 <!--  \uses{def:separates-points} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{lmm:hall-prblm-8.3.3c} -->
@@ -6362,6 +6394,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are Countably Additive)*
 <a name="prpstn:mua-countably-additive"></a>
+<!--  \uses{prpstn:Q-continuous-under-limits} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
 <!--  \uses{prpstn:bounded-operators-are-continuous} -->
@@ -6814,7 +6847,7 @@ is uniformly bounded by $$1$$, and converges pointwise to $$1_E$$.
 
 As both the $$1_{E_i}$$ and $$1_E$$ are bounded measurable functions on the spectrum $$\sigma(A)$$ of $$A$$, we can associate by way of the [**Definition**](#def:hall-8.8) the operators $$1_{E_i}(A)$$ and $$1_E(A)$$ to them.
 
-As the sequence $$f_n$$ is uniformly bounded and converges pointwise to $$1_E$$, we can use the fact, determined within the proof of [**Proposition**](#prpstn:hall-8.9), that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$ to conclude that the convergence of $$f_n$$ along with [**Definition**](#def:hall-8.8) imply
+As the sequence $$f_n$$ is uniformly bounded and converges pointwise to $$1_E$$, we can use [**Proposition** *(The Quadratic Form is Continuous under Bounded Pointwise Limits)*](#prpstn:Q-continuous-under-limits), which gives that the map $$f \mapsto Q_f(\psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\psi \in \mathbf{H}$$ to conclude that the convergence of $$f_n$$ along with [**Definition**](#def:hall-8.8) imply
 
 $$
 \begin{align}
