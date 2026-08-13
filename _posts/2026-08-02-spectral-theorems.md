@@ -7526,6 +7526,9 @@ With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectr
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:spectral-theorem-for-bounded-operators} -->
 <!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{prpstn:hall-a.63} -->
+<!--  \uses{prpstn:mua-bounded-calculus-agrees} -->
+<!--  \uses{def:hall-8.8} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint and $$f : \sigma(A) \rightarrow \mathbb{C}$$ is a bounded measurable function on the spectrum $$\sigma(A)$$ of $$A$$, *functional calculus* defines an operator $$f(A)$$ by
 >
 > $$
@@ -7533,5 +7536,7 @@ With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectr
 > $$
 >
 > where $$\mu^A$$ is the unique projection-valued measure of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators) associated to $$A$$.
+>
+> This is the *second* construction of an operator written $$f(A)$$ in this post. The first, [**Definition**](#def:hall-8.8), obtains $$f(A)$$ from the quadratic form $$Q_f$$ via [**Proposition** *(hall-a.63)*](#prpstn:hall-a.63), without reference to any projection-valued measure. **The two agree**: that is the content of [**Proposition** *(The Two Bounded Functional Calculi Agree)*](#prpstn:mua-bounded-calculus-agrees), which shows $$f(A) = \int_{\sigma(A)} f \, d\mu^A$$ for every bounded, Borel-measurable $$f$$. The notation $$f(A)$$ is therefore unambiguous, and either construction may be used.
 
 a tool which will often be used.
