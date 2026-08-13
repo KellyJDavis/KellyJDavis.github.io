@@ -5589,19 +5589,11 @@ Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is i
 
 So we've proven that any function $$f$$ in $$\mathcal{F}$$ is bounded and Borel-measurable and we've proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{F}$$. Thus, $$\mathcal{F}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
-With these "utility" lemmas established, we can once again consider the [**Proposition**](#prpstn:hall-8.7) we were in the process of proving.
-
-As one will recall there $$\mathcal{F}$$ was the set of all bounded, Borel-measurable, complex-valued functions $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$ such that $$Q_f$$ is a bounded quadratic form.
-
-Previously we established that (1) $$\mathcal{F}$$ is a complex vector space, (2) $$\mathcal{F}$$ contains $$C^0(\sigma(A); \mathbb{R})$$, and (3) $$\mathcal{F}$$ is closed under pointwise limits of uniformly bounded sequences. By [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](#lmm:spectrum-is-compact-metric-measurable), $$\sigma(A)$$ is a non-empty, compact metric measurable space.
-
-Now, with the metric and measure on $$\sigma(A)$$ arising from $$\mathbb{C}$$ as $$\sigma(A) \subset \mathbb{C}$$, we find that $$\sigma(A)$$ becomes a metric measurable space.
-
-All of this together allows us apply [**Lemma**](#lmm:hall-prblm-8.3.3c), $$\sigma(A)$$ taking the place of $$X$$ and this $$\mathcal{F}$$ the place of the identically named $$\mathcal{F}$$ of the lemma. Doing so we can conclude that $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$.
+This is precisely what [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) asserts, and its proof above establishes it via [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-prblm-8.3.3c). Restating the conclusion for the record:
 
 As $$\mathcal{F}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$, it follows that $$Q_f$$ is quadratic form not only on some subset of functions, but all bounded, Borel-measurable functions on $$\sigma(A)$$, proving that $$Q_f$$ satisfies all the properties of [**Definition**](#def:hall-8.6), the desired result of [**Proposition**](#prpstn:hall-8.7).$$\blacksquare$$
 
-With this proposition resolved, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$; this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
+With [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) established, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$; this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
 > **Definition**
 <a name="def:hall-8.8"></a>
