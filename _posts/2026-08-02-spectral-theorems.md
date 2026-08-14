@@ -2473,98 +2473,11 @@ $$
 $$\blacksquare$$
 
 ### The Spectral Theorem
+The development below constructs, for a self-adjoint $$A \in \mathcal{B}(\mathbf{H})$$, a continuous functional calculus, extends it to bounded Borel functions, and reads off from it a projection-valued measure. The spectral theorem itself is stated and proved at the end of this section, once those pieces are in place.
 
-Now we are finally in the position to state the spectral theorem for bounded operators.
+Throughout, we speak informally of a *functional calculus* — an association $$f \mapsto f(A)$$ — but no definition is needed yet: the two constructions actually used are given, where they are needed, by [**Proposition**](#prpstn:hall-8.3) for continuous $$f$$ and [**Definition**](#def:hall-8.8) for bounded measurable $$f$$, and the notion is named normatively only once the theorem is proved, in [**Definition** *(Functional Calculus)*](#def:functional-calculus).
 
-> **Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*
-<a name="thrm:spectral-theorem-for-bounded-operators"></a>
-<!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
-<!--  \uses{crllr:crllr-1} -->
-<!--  \uses{def:F-class} -->
-<!--  \uses{def:L0-class} -->
-<!--  \uses{def:algebra-of-sets} -->
-<!--  \uses{def:hall-8.6} -->
-<!--  \uses{def:hall-8.8} -->
-<!--  \uses{def:separates-points} -->
-<!--  \uses{def:spectral-radius} -->
-<!--  \uses{lmm:associated-measures-are-finite} -->
-<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
-<!--  \uses{lmm:hall-7.6} -->
-<!--  \uses{lmm:hall-7.8} -->
-<!--  \uses{lmm:hall-8.1} -->
-<!--  \uses{lmm:hall-ex-8.3.1} -->
-<!--  \uses{lmm:hall-prblm-7.4.8} -->
-<!--  \uses{lmm:hall-prblm-8.3.3a} -->
-<!--  \uses{lmm:hall-prblm-8.3.3b} -->
-<!--  \uses{lmm:hall-prblm-8.3.3c} -->
-<!--  \uses{lmm:lemma-1} -->
-<!--  \uses{lmm:lemma-2} -->
-<!--  \uses{lmm:nth-term-test} -->
-<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
-<!--  \uses{lmm:spectral-mapping-theorem} -->
-<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
-<!--  \uses{prpstn:F-bounded} -->
-<!--  \uses{prpstn:F-closed-under-limits} -->
-<!--  \uses{prpstn:F-contains-continuous} -->
-<!--  \uses{prpstn:F-homogeneous} -->
-<!--  \uses{prpstn:F-sesquilinear} -->
-<!--  \uses{prpstn:L0-complement} -->
-<!--  \uses{prpstn:L0-contains-closed} -->
-<!--  \uses{prpstn:L0-contains-empty} -->
-<!--  \uses{prpstn:L0-union} -->
-<!--  \uses{prpstn:bounded-operators-are-continuous} -->
-<!--  \uses{prpstn:cfc-multiplicative} -->
-<!--  \uses{prpstn:cfc-non-negative} -->
-<!--  \uses{prpstn:cfc-norm} -->
-<!--  \uses{prpstn:cfc-self-adjoint} -->
-<!--  \uses{prpstn:cfc-spectral-mapping} -->
-<!--  \uses{prpstn:continuity-of-the-adjoint} -->
-<!--  \uses{prpstn:hall-7.2} -->
-<!--  \uses{prpstn:hall-7.3} -->
-<!--  \uses{prpstn:hall-7.5} -->
-<!--  \uses{prpstn:hall-7.7} -->
-<!--  \uses{prpstn:hall-8.3} -->
-<!--  \uses{prpstn:hall-8.4} -->
-<!--  \uses{prpstn:hall-8.7} -->
-<!--  \uses{prpstn:hall-a.34} -->
-<!--  \uses{prpstn:hall-a.62} -->
-<!--  \uses{thrm:analytic-equivalence-theorem} -->
-<!--  \uses{thrm:archimedean-property} -->
-<!--  \uses{thrm:bounded-convergence-theorem} -->
-<!--  \uses{thrm:bounded-linear-transformation-theorem} -->
-<!--  \uses{thrm:boundedness-theorem} -->
-<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
-<!--  \uses{thrm:composition-theorem} -->
-<!--  \uses{thrm:existence-of-bump-functions} -->
-<!--  \uses{thrm:fundamental-theorem-of-algebra} -->
-<!--  \uses{thrm:hall-a.40} -->
-<!--  \uses{thrm:laurents-theorem} -->
-<!--  \uses{thrm:maximum-modulus-principle} -->
-<!--  \uses{thrm:monotone-class-theorem} -->
-<!--  \uses{thrm:monotone-convergence-theorem-nonincreasing} -->
-<!--  \uses{thrm:riesz-representation} -->
-<!--  \uses{thrm:theorem-on-completeness-of-the-dual} -->
-<!--  \uses{def:identity-operator} -->
-<!--  \uses{def:indicator-function} -->
-<!--  \uses{def:orthogonal-complement} -->
-<!--  \uses{prpstn:basic-integral-properties} -->
-<!--  \uses{def:bounded-operator-notation} -->
-<!--  \uses{def:projection-valued-measure} -->
-<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
-<!--  \uses{def:bounded-orthogonal-projection} -->
-<!--  \uses{thrm:operator-valued-integration} -->
-<!--  \uses{thrm:hall-8.10} -->
-<!--  \uses{thrm:hall-prblm-8.3.4} -->
-> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then there exists a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$, the spectrum of $$A$$, with values in orthogonal projections on $$\mathbf{H}$$ such that
->
-> $$
->     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
-> $$
-
-**Proof**
-The proof runs in two stages. Throughout, we speak informally of a *functional calculus* — an association $$f \mapsto f(A)$$ — but no definition is needed yet: the two constructions the proof actually uses are given, where they are needed, by [**Proposition**](#prpstn:hall-8.3) for continuous $$f$$ and [**Definition**](#def:hall-8.8) for bounded measurable $$f$$, and the notion is named normatively only once the theorem is proved, in [**Definition** *(Functional Calculus)*](#def:functional-calculus).
-
-We can now outline the proof of [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators). This proof consists of two main stages.
+Together the two stages establish [**Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*](#thrm:spectral-theorem-for-bounded-operators), stated and proved at the end of this section.
 
 *Stage 1:* In the first stage any self-adjoint $$A \in \mathcal{B}(\mathbf{H})$$ is used to construct a "continuous functional calculus" that associates to each continuous function $$f$$ on $$\sigma(A)$$ an operator $$f(A)$$.
 
@@ -2572,11 +2485,11 @@ This association is such that for any natural number $$m$$ the function $$f(\lam
 
 The [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass-real) implies that polynomials are dense in the space of continuous functions on $$\sigma(A)$$. Hence, for any continuous function $$f$$ on $$\sigma(A)$$ there exists a sequence of polynomials $$\{p_i\}_{i \in \mathbb{N}}$$ that converge uniformly to $$f$$ on $$\sigma(A)$$. The final step of stage 1 then proves that the sequence of operators $$\{p_i(A)\}_{i \in \mathbb{N}}$$ converge to an operator denoted as $$f(A)$$.
 
-*Stage 2:* The second stage of the proof shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
+*Stage 2:* The second stage shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
 
 **Stage 1: The Continuous Functional Calculus**
 
-We begin this stage of the proof with "utility" lemmas and propositions that we will have need of later in this stage.
+We begin this stage with "utility" lemmas and propositions that we will have need of later in this stage.
 
 > **Lemma** *(Bounded Operator Product is Submultiplicative)*
 <a name="lmm:lemma-2"></a>
@@ -7578,7 +7491,100 @@ $$\blacksquare$$
 
 So with this we have proven that under the hypotheses of the [**Theorem**](#thrm:hall-prblm-8.3.4) $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.$$\blacksquare$$
 
-This also completes the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof. To state the assembly explicitly: *existence* of a projection-valued measure $$\mu^A$$ on $$\sigma(A)$$ with $$\int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A$$ is [**Theorem** *(hall-8.10)*](#thrm:hall-8.10), and *uniqueness* — that any two such measures agree — is [**Theorem** *(hall-prblm-8.3.4)*](#thrm:hall-prblm-8.3.4). Together these give the existence and uniqueness asserted in the statement.$$\blacksquare$$
+
+> **Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*
+<a name="thrm:spectral-theorem-for-bounded-operators"></a>
+<!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
+<!--  \uses{crllr:crllr-1} -->
+<!--  \uses{def:F-class} -->
+<!--  \uses{def:L0-class} -->
+<!--  \uses{def:algebra-of-sets} -->
+<!--  \uses{def:hall-8.6} -->
+<!--  \uses{def:hall-8.8} -->
+<!--  \uses{def:separates-points} -->
+<!--  \uses{def:spectral-radius} -->
+<!--  \uses{lmm:associated-measures-are-finite} -->
+<!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
+<!--  \uses{lmm:hall-7.6} -->
+<!--  \uses{lmm:hall-7.8} -->
+<!--  \uses{lmm:hall-8.1} -->
+<!--  \uses{lmm:hall-ex-8.3.1} -->
+<!--  \uses{lmm:hall-prblm-7.4.8} -->
+<!--  \uses{lmm:hall-prblm-8.3.3a} -->
+<!--  \uses{lmm:hall-prblm-8.3.3b} -->
+<!--  \uses{lmm:hall-prblm-8.3.3c} -->
+<!--  \uses{lmm:lemma-1} -->
+<!--  \uses{lmm:lemma-2} -->
+<!--  \uses{lmm:nth-term-test} -->
+<!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
+<!--  \uses{lmm:spectral-mapping-theorem} -->
+<!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{prpstn:F-bounded} -->
+<!--  \uses{prpstn:F-closed-under-limits} -->
+<!--  \uses{prpstn:F-contains-continuous} -->
+<!--  \uses{prpstn:F-homogeneous} -->
+<!--  \uses{prpstn:F-sesquilinear} -->
+<!--  \uses{prpstn:L0-complement} -->
+<!--  \uses{prpstn:L0-contains-closed} -->
+<!--  \uses{prpstn:L0-contains-empty} -->
+<!--  \uses{prpstn:L0-union} -->
+<!--  \uses{prpstn:bounded-operators-are-continuous} -->
+<!--  \uses{prpstn:cfc-multiplicative} -->
+<!--  \uses{prpstn:cfc-non-negative} -->
+<!--  \uses{prpstn:cfc-norm} -->
+<!--  \uses{prpstn:cfc-self-adjoint} -->
+<!--  \uses{prpstn:cfc-spectral-mapping} -->
+<!--  \uses{prpstn:continuity-of-the-adjoint} -->
+<!--  \uses{prpstn:hall-7.2} -->
+<!--  \uses{prpstn:hall-7.3} -->
+<!--  \uses{prpstn:hall-7.5} -->
+<!--  \uses{prpstn:hall-7.7} -->
+<!--  \uses{prpstn:hall-8.3} -->
+<!--  \uses{prpstn:hall-8.4} -->
+<!--  \uses{prpstn:hall-8.7} -->
+<!--  \uses{prpstn:hall-a.34} -->
+<!--  \uses{prpstn:hall-a.62} -->
+<!--  \uses{thrm:analytic-equivalence-theorem} -->
+<!--  \uses{thrm:archimedean-property} -->
+<!--  \uses{thrm:bounded-convergence-theorem} -->
+<!--  \uses{thrm:bounded-linear-transformation-theorem} -->
+<!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
+<!--  \uses{thrm:composition-theorem} -->
+<!--  \uses{thrm:existence-of-bump-functions} -->
+<!--  \uses{thrm:fundamental-theorem-of-algebra} -->
+<!--  \uses{thrm:hall-a.40} -->
+<!--  \uses{thrm:laurents-theorem} -->
+<!--  \uses{thrm:maximum-modulus-principle} -->
+<!--  \uses{thrm:monotone-class-theorem} -->
+<!--  \uses{thrm:monotone-convergence-theorem-nonincreasing} -->
+<!--  \uses{thrm:riesz-representation} -->
+<!--  \uses{thrm:theorem-on-completeness-of-the-dual} -->
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{def:indicator-function} -->
+<!--  \uses{def:orthogonal-complement} -->
+<!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:projection-valued-measure} -->
+<!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
+<!--  \uses{def:bounded-orthogonal-projection} -->
+<!--  \uses{thrm:operator-valued-integration} -->
+<!--  \uses{thrm:hall-8.10} -->
+<!--  \uses{thrm:hall-prblm-8.3.4} -->
+> If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then there exists a unique projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$, the spectrum of $$A$$, with values in orthogonal projections on $$\mathbf{H}$$ such that
+>
+> $$
+>     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+> $$
+
+**Proof**
+*Existence.* [**Theorem** *(The Spectral Measure of a Self-Adjoint Operator)*](#thrm:hall-8.10) constructs a projection-valued measure $$\mu^A$$ on the Borel $$\sigma$$-algebra of $$\sigma(A)$$, with values in orthogonal projections on $$\mathbf{H}$$, and establishes
+
+$$
+    \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
+$$
+
+*Uniqueness.* [**Theorem** *(Uniqueness of the Spectral Measure)*](#thrm:hall-prblm-8.3.4) shows that any two projection-valued measures on $$\sigma(A)$$ satisfying that identity agree on every measurable set. Together these give existence and uniqueness as asserted.$$\blacksquare$$
 
 With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) proof complete, we can conclude by finally introducing the normative definition of the "functional calculus"
 
