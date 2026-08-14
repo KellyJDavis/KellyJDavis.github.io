@@ -485,7 +485,6 @@ The next proposition tells us how the adjoint interacts with adding a bounded op
 <!--  \uses{lmm:hall-dense-testing} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-a.43} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{def:hall-3.1} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$ and $$B \in \mathcal{B}(\mathbf{H})$$ is a bounded operator defined on all of $$\mathbf{H}$$. Let $$A + B$$ denote the operator with $$\text{Dom}(A+B) = \text{Dom}(A)$$, given by $$(A+B)\psi = A\psi + B\psi$$ for all $$\psi \in \text{Dom}(A)$$. Then $$(A+B)^*$$ has the same domain as $$A^*$$, and
 >
@@ -547,7 +546,7 @@ Finally, suppose $$A$$ is self-adjoint and $$B$$ is bounded and self-adjoint on 
 > **Lemma** *(Adjoint of a Scalar Multiple of the Identity)*
 <a name="lmm:adjoint-of-scalar-multiple-of-identity"></a>
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-9.1} -->
 > For $$\lambda \in \mathbb{C}$$, the bounded operator $$\lambda\mathbf{1}$$ (defined on all of $$\mathbf{H}$$) has adjoint $$(\lambda\mathbf{1})^* = \overline{\lambda}\mathbf{1}$$.
 
@@ -564,6 +563,7 @@ We record one more elementary fact about closed operators before turning to the 
 
 > **Proposition** *(Closedness of the Range from a Lower Bound)*
 <a name="prpstn:hall-9.14"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-9.6} -->
 <!--  \uses{prpstn:hall-9.13} -->
 > Let $$A$$ be a closed operator on $$\mathbf{H}$$ and $$\lambda \in \mathbb{C}$$. Suppose there exists $$\varepsilon > 0$$ such that
@@ -597,7 +597,7 @@ Recall that for a bounded operator, a number $$\lambda \in \mathbb{C}$$ belongs 
 <a name="def:hall-9.16"></a>
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 > Suppose $$A$$ is an unbounded operator on $$\mathbf{H}$$. A number $$\lambda \in \mathbb{C}$$ belongs to the *resolvent set* of $$A$$ if there exists a bounded operator $$B \in \mathcal{B}(\mathbf{H})$$ with the following properties:
 >
 > 1. For all $$\psi \in \mathbf{H}$$, $$B\psi \in \text{Dom}(A)$$ and $$(A - \lambda \mathbf{1})B\psi = \psi$$; and
@@ -609,6 +609,7 @@ The operator $$B$$ in this definition is unique when it exists, which is what li
 
 > **Lemma** *(Uniqueness of the Resolvent)*
 <a name="lmm:uniqueness-of-resolvent"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-9.16} -->
 > Let $$A$$ be an unbounded operator on $$\mathbf{H}$$ and $$\lambda$$ a point of its resolvent set. Then there is exactly one $$B \in \mathcal{B}(\mathbf{H})$$ satisfying properties 1 and 2 of [Definition (Resolvent Set and Spectrum of an Unbounded Operator)](#def:hall-9.16). We denote it $$(A - \lambda\mathbf{1})^{-1}$$.
 
@@ -625,6 +626,7 @@ Two notions of resolvent set are now in play: the one just defined, for an unbou
 
 > **Lemma** *(The Two Notions of Spectrum Agree for Bounded Operators)*
 <a name="lmm:spectrum-notions-agree"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-9.16} -->
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
@@ -643,6 +645,7 @@ We now come to a central result: the spectrum of a self-adjoint operator, bounde
 
 > **Lemma** *(The $$b^2$$ Inequality for Symmetric Operators)*
 <a name="lmm:b-squared-inequality-symmetric"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-9.2} -->
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{prpstn:hall-9.13} -->
@@ -695,7 +698,7 @@ using positive-definiteness of the inner product for the last step.$$\blacksquar
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{def:kernel-of-an-unbounded-operator} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 > If $$A$$ is an unbounded self-adjoint operator on $$\mathbf{H}$$, the spectrum of $$A$$ is contained in the real line.
 
 **Proof**
@@ -753,6 +756,7 @@ We conclude this part of the development with a criterion for essential self-adj
 
 > **Theorem** *(Essential Self-Adjointness via Dense Range)*
 <a name="thrm:hall-9.21"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-9.2} -->
 <!--  \uses{def:hall-9.6} -->
 <!--  \uses{def:hall-9.7} -->
@@ -934,6 +938,7 @@ With the identification in hand, we can restate [**Proposition** *(Direct Sums o
 
 > **Proposition** *(Direct Sums of Bounded Self-Adjoint Operators)*
 <a name="prpstn:hall-9.26"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-a.45} -->
 <!--  \uses{def:hall-9.1} -->
 <!--  \uses{def:hall-9.2} -->
@@ -1104,7 +1109,7 @@ The associated measures are finite, with total mass determined by $$\psi$$. The 
 <a name="lmm:associated-measure-total-mass"></a>
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{conv:section-integration} -->
 > Let $$\mu$$ be a projection-valued measure on $$(X,\Omega(X))$$ and $$\psi \in \mathbf{H}$$. Then
 >
@@ -1340,6 +1345,7 @@ We record two more facts about projection-valued measures before the main proof,
 
 > **Lemma** *(The Range of a Projection is the Kernel of its Complement)*
 <a name="lmm:range-of-projection-is-kernel"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
 > Let $$P \in \mathcal{B}(\mathbf{H})$$ be a bounded orthogonal projection. Then $$\text{Range}(P) = \text{Ker}(\mathbf{1} - P)$$, and this is a closed subspace of $$\mathbf{H}$$. Moreover $$\eta \in \text{Range}(P)$$ if and only if $$P\eta = \eta$$.
@@ -1386,6 +1392,7 @@ For the consequence: since $$g \ge 0$$ and the measure of $$E^c$$ under $$\mu_\e
 
 > **Lemma** *(Norm-Convergent Decomposition over a Disjoint Cover)*
 <a name="lmm:norm-convergent-decomposition"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 > Suppose $$\mu$$ is a projection-valued measure on $$(X,\Omega(X))$$, and $$\{F_n\}_{n\in\mathbb{N}}$$ is a pairwise disjoint sequence in $$\Omega(X)$$ with $$\bigcup_n F_n = X$$. Then for every $$\psi \in \mathbf{H}$$:
@@ -1422,7 +1429,7 @@ We can now state and prove the central technical result of this section. It is t
 
 > **Proposition**
 <a name="prpstn:hall-10.2"></a>
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{def:hall-quadratic-form-on-a-subspace} -->
 <!--  \uses{../spectral-theorems/#def:bounded-orthogonal-projection} -->
@@ -1577,6 +1584,7 @@ The proof of Part 1 above showed, along the way, that $$\text{Range}(\mu(E_n)) \
 
 > **Lemma** *(Bounded on a Set Implies the Range Lies in the Domain)*
 <a name="lmm:bounded-on-set-range-in-domain"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{lmm:range-membership-concentrates-measure} -->
 <!--  \uses{prpstn:hall-10.2} -->
@@ -1682,6 +1690,7 @@ Two further facts about the unbounded integral will be needed when we come to th
 
 > **Lemma** *(Truncations Converge to the Unbounded Integral)*
 <a name="lmm:truncations-converge"></a>
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.1} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
@@ -1729,6 +1738,7 @@ the first equality by [continuity of the inner product](../spectral-theorems/#pr
 
 > **Lemma** *(The Associated Measure of a Bounded-Calculus Image)*
 <a name="lmm:associated-measure-of-image"></a>
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{../spectral-theorems/#prpstn:integral-conjugation} -->
 <!--  \uses{../spectral-theorems/#prpstn:integral-multiplicative} -->
 <!--  \uses{conv:section-integration} -->
@@ -1845,7 +1855,6 @@ We close this section with the fact we will actually need about $$\int_X f \, d\
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{lmm:restriction-of-quadratic-form} -->
 <!--  \uses{lmm:closed-subspace-is-hilbert} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
 <!--  \uses{lmm:associated-measure-total-mass} -->
 <!--  \uses{lmm:integral-preserves-spectral-subspaces} -->
 <!--  \uses{lmm:range-of-projection-is-kernel} -->
@@ -1944,6 +1953,7 @@ An operator-norm-convergent power series composed with any bounded linear functi
 
 > **Lemma** *(Power Growth is Controlled by the Spectral Radius)*
 <a name="lmm:power-growth-controlled-by-spectral-radius"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
 <!--  \uses{../spectral-theorems/#prpstn:resolvent-holomorphy-and-neumann-series} -->
@@ -1992,6 +2002,7 @@ We now use this growth bound to establish submultiplicativity of the spectral ra
 
 > **Lemma**
 <a name="lmm:hall-10.22"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{lmm:power-growth-controlled-by-spectral-radius} -->
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
@@ -2140,7 +2151,8 @@ We need three properties of these subspaces. The first two follow directly from 
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:spectrum-notions-agree} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{../spectral-theorems/#prpstn:basic-integral-properties} -->
 > Let $$X \subset \mathbb{C}$$ be compact, let $$\mu$$ be a projection-valued measure on the Borel $$\sigma$$-algebra of $$X$$, and set $$A \equiv \int_X \iota \, d\mu$$ â€” a bounded operator, since $$\iota(\lambda) = \lambda$$ is bounded on the compact set $$X$$. Let $$V_E \equiv \text{Range}(\mu(E))$$ be the associated [spectral subspaces](#def:hall-7.14). Then:
 >
@@ -2187,6 +2199,7 @@ The last property we need is that an operator commuting with $$A$$ preserves eve
 
 > **Proposition** *(Commuting Operators Preserve Spectral Subspaces)*
 <a name="prpstn:hall-7.16"></a>
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:hall-7.14} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
@@ -2249,6 +2262,7 @@ Recall the target: the two-variable spectral mapping theorem $$\sigma\big(p(A,A^
 
 > **Lemma** *(Normality Balances the Two Norms)*
 <a name="lmm:normality-balances-norms"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{lmm:adjoint-product-and-involution} -->
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
@@ -2287,6 +2301,7 @@ the middle equality being the commutation just verified. Taking square roots giv
 
 > **Definition** *($$\varepsilon$$-Almost Eigenvector)*
 <a name="def:hall-10.24"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$, $$\lambda \in \mathbb{C}$$, and $$\varepsilon > 0$$. An *$$\varepsilon$$-almost eigenvector for $$A$$ with eigenvalue $$\lambda$$* is a nonzero vector $$\psi \in \mathbf{H}$$ with
 >
@@ -2298,6 +2313,7 @@ Note that, unlike the set of genuine eigenvectors for a fixed $$\lambda$$, the s
 
 > **Lemma**
 <a name="lmm:hall-10.25"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{def:hall-10.24} -->
 <!--  \uses{lmm:normality-balances-norms} -->
@@ -2344,6 +2360,7 @@ So $$A - \lambda\mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$
 
 > **Lemma**
 <a name="lmm:hall-10.26"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#lmm:lemma-2} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{def:hall-10.24} -->
@@ -2432,6 +2449,7 @@ We can now carry out the construction that replaces the matrix-case eigenspace a
 
 > **Lemma**
 <a name="lmm:hall-10.27"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{def:hall-10.24} -->
 <!--  \uses{def:hall-7.14} -->
@@ -2477,6 +2495,7 @@ so $$\left\| B\psi \right\| \le \tfrac{\varepsilon}{2}\left\| \psi \right\| < \v
 
 > **Theorem** *(Spectral Mapping for Polynomials in $$A$$ and $$A^*$$)*
 <a name="thrm:hall-10.23"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{def:hall-10.24} -->
@@ -2565,6 +2584,7 @@ With the norm identity in hand, extending $$p \mapsto p(A,A^*)$$ from polynomial
 
 > **Theorem** *(Continuous Functional Calculus for a Normal Operator)*
 <a name="thrm:continuous-functional-calculus-normal"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{crllr:norm-of-polynomial-in-a-astar} -->
@@ -2615,6 +2635,7 @@ Throughout this section, $$X$$ denotes a compact metric space, equipped with its
 
 > **Definition** *(Abstract Continuous Functional Calculus)*
 <a name="def:abstract-continuous-functional-calculus"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#def:bounded-operator-notation} -->
 <!--  \uses{thrm:continuous-functional-calculus-normal} -->
 <!--  \uses{conv:section-abstract} -->
@@ -2676,6 +2697,7 @@ Non-negativity is exactly the hypothesis of the Riesz representation theorem, wh
 
 > **Lemma** *(The Abstract Associated Measures are Finite)*
 <a name="lmm:abstract-associated-measures-finite"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{conv:section-abstract} -->
 <!--  \uses{def:abstract-associated-measures} -->
 <!--  \uses{def:abstract-continuous-functional-calculus} -->
@@ -2907,7 +2929,8 @@ We can now assemble the projection-valued measure. This is the abstract form of 
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
 <!--  \uses{lmm:abstract-extended-linear} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 > Let $$X$$ be a compact metric space and $$\Phi$$ an abstract continuous functional calculus on $$X$$, with extended calculus $$\widetilde\Phi$$. Define, for each Borel set $$E \subset X$$,
 >
 > $$
@@ -3045,6 +3068,7 @@ We will need one fact about unitary operators, from [Definition (Unitary Operato
 
 > **Lemma** *(Unitary Operators are Normal)*
 <a name="lmm:unitary-is-normal"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:unitary-operator} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{lmm:hall-dense-testing-second-slot} -->
@@ -3060,6 +3084,7 @@ The Cayley transform will be transported to a projection-valued measure on the u
 
 > **Lemma** *(The Spectrum of a Unitary Operator Lies on the Unit Circle)*
 <a name="lmm:unitary-spectrum-circle"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:unitary-operator} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
@@ -3128,7 +3153,7 @@ We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Se
 <!--  \uses{lmm:adjoint-of-scalar-multiple-of-identity} -->
 <!--  \uses{def:range-of-an-unbounded-operator} -->
 <!--  \uses{lmm:uniqueness-of-resolvent} -->
-<!--  \uses{../spectral-theorems/#def:identity-and-indicator} -->
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{prpstn:polarization-identity} -->
 > Let $$A$$ be a self-adjoint operator on $$\mathbf{H}$$ and define
 >
@@ -3205,6 +3230,7 @@ The Cayley transform carries the spectrum of $$A$$ onto the spectrum of $$U$$, m
 
 > **Lemma** *(Spectral Mapping for the Cayley Transform)*
 <a name="lmm:cayley-spectral-mapping"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{thrm:hall-10.28} -->
 <!--  \uses{lmm:cayley-map} -->
@@ -3276,6 +3302,7 @@ We also isolate the purely set-theoretic transport of a projection-valued measur
 
 > **Lemma** *(A Borel Bijection Transports a Projection-Valued Measure)*
 <a name="lmm:borel-bijection-transports-pvm"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{thrm:change-of-variables} -->
@@ -3325,6 +3352,7 @@ One more observation is needed: $$1$$ is never an atom of $$\mu^U$$, so $$D$$ â€
 
 > **Lemma** *(The Cayley Transform Omits the Point $$1$$)*
 <a name="lmm:cayley-omits-one"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{thrm:hall-10.28} -->
 <!--  \uses{thrm:hall-10.20} -->
 <!--  \uses{def:hall-7.14} -->
@@ -3340,6 +3368,8 @@ The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ b
 
 > **Proposition**
 <a name="prpstn:hall-10.29"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{thrm:hall-10.28} -->
 <!--  \uses{lmm:integral-ignores-null-sets} -->
@@ -3505,6 +3535,8 @@ We can finally state and prove the theorem this post set out to establish.
 
 > **Theorem** *(Spectral Theorem for Unbounded, Self-Adjoint Operators)*
 <a name="thrm:hall-10.4"></a>
+<!--  \uses{../spectral-theorems/#def:identity-operator} -->
+<!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{../spectral-theorems/#prpstn:integral-multiplicative} -->
 <!--  \uses{lmm:borel-bijection-transports-pvm} -->
 <!--  \uses{def:hall-9.5} -->

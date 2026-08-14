@@ -55,12 +55,21 @@ In this section we will introduce and prove some relatively "elementary" propert
 
 Two pieces of notation are used pervasively throughout this post and are fixed here. We also fix that $$\mathbb{N} = \{0, 1, 2, \ldots\}$$ **includes** $$0$$, matching the convention of Lean and Mathlib; wherever an index must start at $$1$$ this is stated explicitly rather than left to the convention.
 
+> **Definition** *(The Identity Operator)*
+<a name="def:identity-operator"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{conv:nonzero-hilbert-space} -->
+> $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$. For $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$, and for $$A \in \mathcal{B}(\mathbf{H})$$ the operator $$A - \lambda\mathbf{1}$$ is $$\psi \mapsto A\psi - \lambda\psi$$, again an element of $$\mathcal{B}(\mathbf{H})$$.
+
+> **Definition** *(Indicator Function)*
+<a name="def:indicator-function"></a>
+> If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, since $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
+
 > **Definition** *(The Identity Operator and Indicator Functions)*
 <a name="def:identity-and-indicator"></a>
-<!--  \uses{conv:nonzero-hilbert-space} -->
-<!--  \uses{def:bounded-operator-notation} -->
-> 1. $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$ when $$\mathbf{H} \ne \{0\}$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$. For $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$, and for $$A \in \mathcal{B}(\mathbf{H})$$ the operator $$A - \lambda\mathbf{1}$$ is $$\psi \mapsto A\psi - \lambda\psi$$, again an element of $$\mathcal{B}(\mathbf{H})$$.
-> 2. If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, since $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{def:indicator-function} -->
+> Retained as a compound reference to [Definition (The Identity Operator)](#def:identity-operator) and [Definition (Indicator Function)](#def:indicator-function), which now state these two unrelated notations separately. Citations of this anchor remain valid; new citations should prefer whichever of the two is actually needed.
 
 We also fix the notation for the orthogonal complement of a subset, and record the basic properties of the Lebesgue integral that are used throughout — including the meaning of $$\int_E g \, d\nu$$, which appears repeatedly below.
 
@@ -74,7 +83,7 @@ We also fix the notation for the orthogonal complement of a subset, and record t
 
 > **Proposition** *(Basic Properties of the Integral, and Integration over a Subset)*
 <a name="prpstn:basic-integral-properties"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 > Let $$(X,\Omega,\nu)$$ be a measure space.
 >
 > 1. *(Integration over a subset.)* For $$E \in \Omega$$ and $$g$$ measurable, $$\int_E g \, d\nu \equiv \int_X 1_E\,g \, d\nu$$, whenever the right-hand side is defined. This is the meaning of the notation $$\int_E g\,d\nu$$ throughout.
@@ -290,7 +299,7 @@ With this first, elementary result out of the way, our next step is the introduc
 
 > **Definition** *(Bounded Inverse)*
 <a name="def:bounded-inverse"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > The *bounded inverse* of $$A \in \mathcal{B}(\mathbf{H})$$ is an element $$B \in \mathcal{B}(\mathbf{H})$$ such that $$AB = BA = \mathbf{1}$$, where $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$ is the multiplicative identity element.
 
@@ -298,7 +307,7 @@ This is required to define the "spectrum" of an operator, which is required by m
 
 > **Definition** *(Resolvent and Spectrum)*
 <a name="def:bounded-operator-resolvent-and-spectrum"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-inverse} -->
 > For $$A \in \mathcal{B}(\mathbf{H})$$, the *resolvent set* of $$A$$, denoted as $$\rho(A)$$, is the set of all $$\lambda \in \mathbb{C}$$ such that the operator $$(A - \lambda \mathbf{1})$$ has a bounded inverse. The *spectrum* of $$A$$, denoted by $$\sigma(A)$$, is the complement of $$A$$'s resolvent set $$\rho(A)$$ in $$\mathbb{C}$$. For $$\lambda$$ in the resolvent set of $$A$$ the bounded inverse of $$(A - \lambda \mathbf{1})$$, which we notate as $$(A - \lambda \mathbf{1})^{-1}$$, is called the *resolvent* of $$A$$ at $$\lambda$$.
@@ -335,7 +344,7 @@ The notion of a bounded orthogonal projection can then be employed to define a "
 
 > **Definition** *(Projection-Valued Measure)*
 <a name="def:projection-valued-measure"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 > Let $$X$$ be a set and $$\Omega(X)$$ a $$\sigma$$-algebra on $$X$$. A map $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ is called a *projection-valued measure* if the following properties are satisfied:
@@ -437,7 +446,8 @@ Projection-valued measures give rise to a type of integration known as "operator
 <!--  \uses{prpstn:Q-measurable-bounded-form} -->
 <!--  \uses{prpstn:Q-simple-bounded-form} -->
 <!--  \uses{thrm:hall-a.52} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{def:projection-valued-measure} -->
@@ -516,7 +526,7 @@ The next lemma uses the Complex-Valued Simple Approximation Theorem, which we st
 
 > **Theorem** *(Complex-Valued Simple Approximation Theorem)*
 <a name="thrm:complex-valued-simple-approximation-theorem"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 > Let $$X$$ be a measurable space, i.e. a set equipped with a $$\sigma$$-algebra $$\Omega(X)$$. Given any bounded, measurable, complex-valued function $$f$$ on $$X$$, there exists a sequence of complex-valued simple functions $$\{s_i\}_{i \in \mathbb{N}}$$ on $$X$$---i.e. functions of the form $$s_i = \sum_{j = 1}^{n_i} \alpha_{ij} 1_{E_{ij}}$$ with $$\alpha_{ij} \in \mathbb{C}$$ and $$E_{ij} \in \Omega(X)$$ pairwise disjoint---such that $$\{s_i\}_{i \in \mathbb{N}}$$ converges uniformly to $$f$$ on $$X$$.
 
 where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure). It turns out that such a $$Q_f(\psi)$$ is a bounded quadratic form which we now prove
@@ -527,7 +537,6 @@ where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Project
 <!--  \uses{prpstn:Q-measurable-bounded-form} -->
 <!--  \uses{prpstn:Q-simple-bounded-form} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
-<!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -550,7 +559,7 @@ The result is proved in three stages, each resting on the previous: for indicato
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:bounded-quadratic-form} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
 > Let $$\Omega(X)$$ be a $$\sigma$$-algebra on a set $$X$$ and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. For any $$E \in \Omega(X)$$ the map $$Q_{1_E} : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_{1_E}(\psi) \equiv \int_X 1_E \, d\mu_\psi$$, is a bounded quadratic form, with constant $$1$$.
 
@@ -661,6 +670,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form of a Simple Function is Bounded)*
 <a name="prpstn:Q-simple-bounded-form"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{prpstn:Q-indicator-bounded-form} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
@@ -768,6 +778,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form of a Bounded Measurable Function is Bounded)*
 <a name="prpstn:Q-measurable-bounded-form"></a>
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{prpstn:Q-indicator-bounded-form} -->
 <!--  \uses{prpstn:Q-simple-bounded-form} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
@@ -1336,6 +1347,8 @@ We now establish, one at a time, the four properties asserted by the theorem.
 
 > **Proposition** *(Integral of an Indicator Function)*
 <a name="prpstn:integral-of-indicator"></a>
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{thrm:operator-valued-integration} -->
@@ -1381,6 +1394,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Norm Bound for the Operator-Valued Integral)*
 <a name="prpstn:integral-norm-bound"></a>
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{prpstn:integral-as-limit-of-simple} -->
 <!--  \uses{prpstn:integral-norm-bound-simple} -->
@@ -1408,7 +1422,7 @@ To prove this we will first prove a "utility" lemma that will aid our argument.
 
 > **Lemma**
 <a name="lmm:lemma2-of-operator-valued-integration"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > Let $$X$$ be a set with $$\sigma$$-algebra $$\Omega(X)$$, and let $$\mu : \Omega(X) \rightarrow \mathcal{B}(\mathbf{H})$$ be a projection-valued measure. If $$E_1, E_2, \ldots, E_n \in \Omega(X)$$ are a finite set of elements that are pairwise disjoint and satisfy
@@ -1606,6 +1620,7 @@ as required.$$\blacksquare$$
 
 > **Proposition** *(Norm Bound for the Integral of a Simple Function)*
 <a name="prpstn:integral-norm-bound-simple"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{lmm:lemma2-of-operator-valued-integration} -->
 <!--  \uses{lmm:lemma-1} -->
@@ -1972,7 +1987,7 @@ The result is proved in three stages, each resting on the previous: for indicato
 <a name="prpstn:integral-mult-indicator"></a>
 <!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{def:projection-valued-measure} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 > With notation as in [**Proposition** *(Integral of an Indicator Function)*](#prpstn:integral-of-indicator), for all $$E_1, E_2 \in \Omega(X)$$,
 >
 > $$
@@ -2002,6 +2017,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Multiplicativity of the Integral for Simple Functions)*
 <a name="prpstn:integral-mult-simple"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{prpstn:integral-of-indicator} -->
 <!--  \uses{prpstn:integral-mult-indicator} -->
 <!--  \uses{thrm:operator-valued-integration} -->
@@ -2054,7 +2070,6 @@ $$
 > **Proposition** *(Products of Uniform Approximants Converge Uniformly)*
 <a name="prpstn:products-converge-uniformly"></a>
 <!--  \uses{prpstn:basic-integral-properties} -->
-<!--  \uses{def:identity-and-indicator} -->
 > Let $$f, g$$ be bounded, complex-valued functions on a set $$X$$, and let $$\{s_i\}$$ and $$\{r_j\}$$ be sequences of complex-valued functions converging uniformly to $$f$$ and $$g$$ respectively, with each $$r_j$$ bounded. Then $$s_i r_j \rightarrow fg$$ uniformly as $$i, j \rightarrow \infty$$: for every $$\epsilon > 0$$ there is an $$N$$ with
 >
 > $$
@@ -2453,7 +2468,8 @@ Now we are finally in the position to state the spectral theorem for bounded ope
 <!--  \uses{thrm:monotone-convergence-theorem-nonincreasing} -->
 <!--  \uses{thrm:riesz-representation} -->
 <!--  \uses{thrm:theorem-on-completeness-of-the-dual} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{def:orthogonal-complement} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -2596,7 +2612,7 @@ The next "utility" lemma we must prove is the following
 
 > **Lemma**
 <a name="lmm:hall-7.6"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-inverse} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
@@ -2700,7 +2716,7 @@ Together these imply the final desired result.$$\blacksquare$$
 > **Proposition**
 <a name="prpstn:hall-7.5"></a>
 <!--  \uses{conv:nonzero-hilbert-space} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-7.6} -->
@@ -2819,6 +2835,7 @@ The proof of the preceding proposition establishes two facts about the resolvent
 
 > **Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*
 <a name="prpstn:resolvent-holomorphy-and-neumann-series"></a>
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{lmm:hall-7.6} -->
@@ -2893,7 +2910,7 @@ Another result we will require is
 
 > **Lemma**
 <a name="lmm:hall-7.8"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then for all $$a,b \in \mathbb{R}$$ and associated $$\lambda \equiv a + ib$$ in $$\mathbb{C}$$, we have
 >
@@ -2950,7 +2967,7 @@ Now we move onto the result
 
 > **Proposition**
 <a name="prpstn:hall-7.7"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:orthogonal-complement} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -3294,7 +3311,7 @@ As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$,
 > **Lemma**
 <a name="lmm:hall-8.1"></a>
 <!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:spectral-radius} -->
 <!--  \uses{prpstn:hall-7.5} -->
@@ -3521,7 +3538,7 @@ However, to prove the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theor
 
 > **Lemma**
 <a name="lmm:hall-ex-8.3.1"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > If $$A,B \in \mathcal{B}(\mathbf{H})$$ commute and $$A$$ is not invertible, then $$AB$$ is not invertible.
 
@@ -3595,7 +3612,7 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 
 > **Lemma** *(Spectral Mapping Theorem)*
 <a name="lmm:spectral-mapping-theorem"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-ex-8.3.1} -->
@@ -3820,7 +3837,7 @@ Let's get started.
 
 > **Proposition**
 <a name="prpstn:hall-8.3"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{thrm:stone–weierstrass-real} -->
@@ -4018,7 +4035,7 @@ as well as the following lemma
 
 > **Lemma**
 <a name="lmm:hall-prblm-7.4.8"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{lmm:lemma-2} -->
 <!--  \uses{lmm:hall-7.6} -->
@@ -4124,7 +4141,6 @@ The properties of the (real-valued) functional calculus are captured in the foll
 <!--  \uses{prpstn:cfc-norm} -->
 <!--  \uses{prpstn:cfc-self-adjoint} -->
 <!--  \uses{prpstn:cfc-spectral-mapping} -->
-<!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{def:non-negative-operator} -->
@@ -4319,6 +4335,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Continuous Functional Calculus Yields Self-Adjoint Operators)*
 <a name="prpstn:cfc-self-adjoint"></a>
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:hall-8.3} -->
@@ -4470,6 +4487,7 @@ as required.$$\blacksquare$$
 
 > **Proposition** *(Spectral Mapping for the Continuous Functional Calculus)*
 <a name="prpstn:cfc-spectral-mapping"></a>
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{prpstn:cfc-self-adjoint} -->
 <!--  \uses{prpstn:hall-8.3} -->
@@ -4686,7 +4704,7 @@ Before proceeding, let us record a basic property of the measures $$\mu_\psi$$ j
 
 > **Lemma** *(The Associated Measures are Finite)*
 <a name="lmm:associated-measures-are-finite"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:hall-8.6} -->
@@ -4737,7 +4755,6 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 <!--  \uses{prpstn:F-contains-continuous} -->
 <!--  \uses{prpstn:F-homogeneous} -->
 <!--  \uses{prpstn:F-sesquilinear} -->
-<!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -5185,7 +5202,7 @@ Our proof of this result requires that we first prove some "utility" lemmas as s
 <!--  \uses{prpstn:L0-contains-closed} -->
 <!--  \uses{prpstn:L0-contains-empty} -->
 <!--  \uses{prpstn:L0-union} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{def:algebra-of-sets} -->
 <!--  \uses{thrm:archimedean-property} -->
 <!--  \uses{def:bump-function} -->
@@ -5199,7 +5216,7 @@ For the open sets: every closed subset of $$X$$ lies in $$\mathcal{L}_0$$ by [**
 
 > **Definition** *(The Class $$\mathcal{L}_0$$)*
 <a name="def:L0-class"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 > Let $$X$$ be a compact metric measurable space. Write $$\mathcal{L}_0$$ for the set of all measurable subsets $$E \subseteq X$$ whose indicator function $$1_E$$ is the *pointwise* limit of a uniformly bounded sequence of continuous functions: that is, there are $$\{f_n\} \subset C^0(X;\mathbb{R})$$ and a constant $$C$$ with $$\lvert f_n(x) \rvert \le C$$ for all $$n$$ and all $$x$$, such that **for each $$x \in X$$** and each $$\epsilon > 0$$ there is an $$N$$ — depending on $$x$$ as well as on $$\epsilon$$ — with $$\lvert f_n(x) - 1_E(x) \rvert < \epsilon$$ for all $$n \ge N$$.
 >
 > The dependence of $$N$$ on $$x$$ is essential: uniform convergence of continuous functions would force $$1_E$$ to be continuous, which holds only for clopen $$E$$ and would make [**Lemma** *(hall-prblm-8.3.3a)*](#lmm:hall-prblm-8.3.3a) false.
@@ -5290,6 +5307,7 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{L}_0$$ is Closed under Complements)*
 <a name="prpstn:L0-complement"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{def:L0-class} -->
 > With $$\mathcal{L}_0$$ as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), if $$E \in \mathcal{L}_0$$ then $$E^c \in \mathcal{L}_0$$.
 
@@ -5385,6 +5403,7 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{L}_0$$ is Closed under Finite Unions)*
 <a name="prpstn:L0-union"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{def:L0-class} -->
 > With $$\mathcal{L}_0$$ as in [Definition (The Class $$\mathcal{L}_0$$)](#def:L0-class), if $$E_1, E_2 \in \mathcal{L}_0$$ then $$E_1 \cup E_2 \in \mathcal{L}_0$$.
 
@@ -5480,6 +5499,7 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{L}_0$$ Contains all Closed Sets)*
 <a name="prpstn:L0-contains-closed"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{def:L0-class} -->
 <!--  \uses{def:bump-function} -->
 <!--  \uses{thrm:existence-of-bump-functions} -->
@@ -5543,7 +5563,7 @@ The next of these "utility" lemmas is the following:
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3b"></a>
 <!--  \uses{def:L0-class} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{lmm:hall-prblm-8.3.3a} -->
 <!--  \uses{thrm:monotone-class-theorem} -->
 > Let $$X$$ be a compact metric measurable space and $$C^0(X; \mathbb{R})$$ the set of continuous real-valued functions on $$X$$. Let $$\mathcal{C}$$ be the set of bounded, measurable, complex-valued functions on $$X$$ such that (1) $$\mathcal{C}$$ is a complex vector space, (2) $$\mathcal{C}$$ contains $$C^0(X; \mathbb{R})$$, and (3) $$\mathcal{C}$$ is closed under pointwise limits of uniformly bounded sequences. Finally let $$\mathcal{L}_1$$ be the set of all measurable sets $$E$$ in $$X$$ such that the indicator function $$1_E$$ belongs to $$\mathcal{C}$$. Then $$\mathcal{L}_1$$ contains all Borel sets in $$X$$.
@@ -5734,7 +5754,7 @@ The final of these "utility" lemmas is the following:
 
 > **Lemma**
 <a name="lmm:hall-prblm-8.3.3c"></a>
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{lmm:hall-prblm-8.3.3b} -->
 <!--  \uses{thrm:boundedness-theorem} -->
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
@@ -6221,7 +6241,8 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 <!--  \uses{thrm:bounded-linear-transformation-theorem} -->
 <!--  \uses{thrm:hall-prblm-8.3.4} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -6264,6 +6285,7 @@ That $$\mu^A$$ is a projection-valued measure is the conjunction of the four axi
 
 > **Proposition** *(Each Spectral Projection is an Orthogonal Projection)*
 <a name="prpstn:mua-projection"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{lmm:lemma-3} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
@@ -6307,7 +6329,7 @@ $$\blacksquare$$
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.9} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), for any measurable $$E_1, E_2 \subseteq \sigma(A)$$,
 >
 > $$
@@ -6350,7 +6372,8 @@ $$\blacksquare$$
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.9} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{def:indicator-function} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. With $$\mu^A(E) \equiv 1_E(A)$$ as in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), 
 >
 > $$
@@ -6439,6 +6462,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are Countably Additive)*
 <a name="prpstn:mua-countably-additive"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
@@ -6913,6 +6937,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are the Integrals of their Indicators)*
 <a name="prpstn:mua-indicator-integral"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
 <!--  \uses{prpstn:hall-8.3} -->
@@ -7011,6 +7036,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Two Bounded Functional Calculi Agree)*
 <a name="prpstn:mua-bounded-calculus-agrees"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{thrm:operator-valued-integration} -->
@@ -7062,6 +7088,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Spectral Measure Integrates to the Operator)*
 <a name="prpstn:mua-integrates-to-A"></a>
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
@@ -7142,7 +7169,7 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 <!--  \uses{prpstn:pvm-agree-on-continuous} -->
 <!--  \uses{prpstn:pvm-agree-on-measurable} -->
 <!--  \uses{prpstn:pvm-agree-on-polynomials} -->
-<!--  \uses{def:identity-and-indicator} -->
+<!--  \uses{def:indicator-function} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -7414,6 +7441,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Two Spectral Measures Agree on Bounded Measurable Functions)*
 <a name="prpstn:pvm-agree-on-measurable"></a>
+<!--  \uses{def:identity-operator} -->
 <!--  \uses{prpstn:pvm-agree-on-polynomials} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{prpstn:pvm-agree-on-continuous} -->
