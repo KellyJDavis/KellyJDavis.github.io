@@ -674,6 +674,7 @@ $$\blacksquare$$
 <!--  \uses{prpstn:Q-indicator-bounded-form} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{lmm:sesquilinear-linear-combination} -->
 > With notation as in [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), let $$s = \sum_{i} c_i 1_{E_i}$$ be a simple function on $$X$$. Then $$Q_s : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_s(\psi) \equiv \int_X s \, d\mu_\psi$$, is a bounded quadratic form.
 
 **Proof**
@@ -741,7 +742,7 @@ $$
   L_s(\phi, \psi) = \sum_{i = 1}^n \alpha_i L_{1_{E_i}}(\phi, \psi).
 $$
 
-From [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form) we know that each $$L_{1_{E_i}}(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Hence, $$L_s(\phi, \psi)$$ is conjugate linear in the first factor and linear in the second factor. Thus $$L_s(\phi, \psi)$$ is a sesquilinear form on $$\mathbf{H}$$, the desired result.
+From [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form) each $$L_{1_{E_i}}$$ is a sesquilinear form, so [**Lemma** *(Linear Combinations of Sesquilinear Forms are Sesquilinear)*](#lmm:sesquilinear-linear-combination) gives that $$L_s$$ is a sesquilinear form on $$\mathbf{H}$$, as required.
 
 Finally, we must prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
@@ -784,6 +785,7 @@ $$\blacksquare$$
 <!--  \uses{thrm:complex-valued-simple-approximation-theorem} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
+<!--  \uses{lmm:sesquilinear-pointwise-limit} -->
 > With notation as in [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), let $$f$$ be a bounded, measurable, complex-valued function on $$X$$. Then $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_f(\psi) \equiv \int_X f \, d\mu_\psi$$, is a bounded quadratic form.
 
 **Proof**
@@ -817,7 +819,7 @@ $$
 
 which is the first desired result.
 
-A similar argument implies that $$L_f$$ defined by
+By [**Lemma** *(Pointwise Limits of Sesquilinear Forms are Sesquilinear)*](#lmm:sesquilinear-pointwise-limit), applied to the sesquilinear forms $$L_{s_i}$$ whose pointwise limit it is, the map $$L_f$$ defined by
 
 $$
 \begin{align}
@@ -1127,6 +1129,43 @@ $$
 $$
 
 proving that $$L(\phi, \psi) = \overline{L(\psi, \phi)}$$, the desired result, i.e. if $$Q$$ is real, then $$L$$ is conjugate symmetric.$$\blacksquare$$
+
+
+Two closure properties of sesquilinear forms are used repeatedly below; we record them once here.
+
+> **Lemma** *(Linear Combinations of Sesquilinear Forms are Sesquilinear)*
+<a name="lmm:sesquilinear-linear-combination"></a>
+<!--  \uses{def:bounded-sesquilinear-form} -->
+> Let $$L_1, \ldots, L_n$$ be sesquilinear forms on $$\mathbf{H}$$ and let $$\alpha_1, \ldots, \alpha_n \in \mathbb{C}$$. Then
+>
+> $$
+>     L(\phi,\psi) \equiv \sum_{k=1}^n \alpha_k L_k(\phi,\psi)
+> $$
+>
+> is a sesquilinear form on $$\mathbf{H}$$.
+
+**Proof**
+Fix $$\psi$$. Each $$L_k$$ is conjugate-linear in its first argument, so for $$\phi, \chi \in \mathbf{H}$$ and $$c \in \mathbb{C}$$,
+
+$$
+    L(c\phi + \chi, \psi) = \sum_k \alpha_k L_k(c\phi+\chi,\psi) = \sum_k \alpha_k \left( \overline{c} L_k(\phi,\psi) + L_k(\chi,\psi) \right) = \overline{c} L(\phi,\psi) + L(\chi,\psi),
+$$
+
+using that finite sums may be rearranged. The same computation with linearity in the second argument gives $$L(\phi, c\psi + \chi) = c L(\phi,\psi) + L(\phi,\chi)$$. So $$L$$ is conjugate-linear in the first argument and linear in the second, hence sesquilinear.$$\blacksquare$$
+
+> **Lemma** *(Pointwise Limits of Sesquilinear Forms are Sesquilinear)*
+<a name="lmm:sesquilinear-pointwise-limit"></a>
+<!--  \uses{def:bounded-sesquilinear-form} -->
+> Let $$\{L_i\}_{i \in \mathbb{N}}$$ be sesquilinear forms on $$\mathbf{H}$$ such that $$L(\phi,\psi) \equiv \lim_{i \rightarrow \infty} L_i(\phi,\psi)$$ exists for all $$\phi,\psi \in \mathbf{H}$$. Then $$L$$ is a sesquilinear form on $$\mathbf{H}$$.
+
+**Proof**
+For $$\phi,\chi,\psi \in \mathbf{H}$$ and $$c \in \mathbb{C}$$, each $$L_i$$ satisfies $$L_i(c\phi+\chi,\psi) = \overline{c}L_i(\phi,\psi) + L_i(\chi,\psi)$$. All three limits exist by hypothesis, and the limit of a sum is the sum of the limits while the limit of a scalar multiple is that multiple of the limit, so
+
+$$
+    L(c\phi+\chi,\psi) = \lim_{i \rightarrow \infty} \left( \overline{c}L_i(\phi,\psi) + L_i(\chi,\psi) \right) = \overline{c}L(\phi,\psi) + L(\chi,\psi).
+$$
+
+The same argument in the second argument gives linearity there. Hence $$L$$ is sesquilinear.$$\blacksquare$$
 
 The next result requires the Hilbert-space self-duality theorem, which we state first.
 
@@ -4777,6 +4816,7 @@ $$\blacksquare$$
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
 <!--  \uses{prpstn:F-homogeneous} -->
+<!--  \uses{lmm:sesquilinear-linear-combination} -->
 > With $$f,g,\alpha,\beta$$ as in [**Proposition** *(Homogeneity of the Quadratic Form of a Linear Combination)*](#prpstn:F-homogeneous), the map $$L_{\alpha f + \beta g} : \mathbf{H} \times \mathbf{H} \rightarrow \mathbb{C}$$ defined by
 >
 > $$
@@ -4808,7 +4848,7 @@ $$
 
 with the obvious definitions of $$L_f$$ in terms of $$Q_f$$ and $$L_g$$ in terms of $$Q_g$$.
 
-Now as $$Q_f$$ and $$Q_g$$ are bounded quadratic forms, $$L_f$$ and $$L_g$$ are sesquilinear forms. Hence, they are conjugate linear in the first factor and linear in the second factor. Thus $$L_{\alpha f + \beta g}$$ is conjugate linear in the first factor and linear in the second factor. Hence, $$L_{\alpha f + \beta g}$$ is a sesquilinear form, the desired result.
+Now as $$Q_f$$ and $$Q_g$$ are bounded quadratic forms, $$L_f$$ and $$L_g$$ are sesquilinear forms. Hence [**Lemma** *(Linear Combinations of Sesquilinear Forms are Sesquilinear)*](#lmm:sesquilinear-linear-combination) gives that $$L_{\alpha f + \beta g} = \alpha L_f + \beta L_g$$ is a sesquilinear form, as required.
 $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form of a Linear Combination is Bounded)*
@@ -4950,6 +4990,7 @@ $$\blacksquare$$
 <!--  \uses{thrm:bounded-convergence-theorem} -->
 <!--  \uses{lmm:associated-measures-are-finite} -->
 <!--  \uses{prpstn:F-bounded} -->
+<!--  \uses{lmm:sesquilinear-pointwise-limit} -->
 > With $$\mathcal{F}$$ as in [Definition (The Class of Functions with Bounded Quadratic Form)](#def:F-class), if $$\{f_n\}$$ is a sequence in $$\mathcal{F}$$, uniformly bounded and converging pointwise to $$f$$, then $$f \in \mathcal{F}$$.
 
 **Proof**
@@ -5057,7 +5098,7 @@ $$
     L_f(\phi, \psi) = \lim\limits_{i \rightarrow \infty} L_{f_i}(\phi, \psi).
 $$
 
-As the $$L_{f_i}(\phi, \psi)$$ are conjugate linear in the first factor and linear in the second factor the same is true of $$L_f(\phi, \psi)$$ and thus it is a sesquilinear form on $$\mathbf{H}$$, the desired result.
+As each $$L_{f_i}$$ is a sesquilinear form and this limit exists for all $$\phi,\psi$$, [**Lemma** *(Pointwise Limits of Sesquilinear Forms are Sesquilinear)*](#lmm:sesquilinear-pointwise-limit) gives that $$L_f$$ is a sesquilinear form on $$\mathbf{H}$$, as required.
 
 Finally, let us prove that there exists a constant $$C$$ in $$\mathbb{R}$$ such that for all $$\phi$$ in $$\mathbf{H}$$
 
