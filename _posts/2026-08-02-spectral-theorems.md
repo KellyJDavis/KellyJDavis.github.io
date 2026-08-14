@@ -3800,6 +3800,37 @@ $$
 
 for a generic polynomial of positive degree, while Part 1 establishes the result for a polynomial of degree zero. This establishes the desired result for a generic polynomial of arbitrary finite degree.$$\blacksquare$$
 
+We record separately a fact used both in constructing the continuous functional calculus and in establishing its self-adjointness.
+
+> **Lemma** *(A Real Polynomial in a Self-Adjoint Operator is Self-Adjoint)*
+<a name="lmm:real-polynomial-self-adjoint"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:identity-operator} -->
+<!--  \uses{prpstn:continuity-of-the-adjoint} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$p$$ be a polynomial with real coefficients, so that
+>
+> $$
+>     p(A) = c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_m A^m, \qquad c_0, \ldots, c_m \in \mathbb{R}.
+> $$
+>
+> Then $$p(A)$$ is self-adjoint.
+
+**Proof**
+The adjoint is additive and conjugate-homogeneous, and $$(A^k)^* = (A^*)^k$$ for every $$k \ge 0$$, so
+
+$$
+\begin{align}
+    p(A)^* &= \left( c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_m A^m \right)^* \\
+           &= (c_0 \mathbf{1})^* + (c_1 A)^* + (c_2 A^2)^* + \cdots + (c_m A^m)^* \\
+           &= \overline{c_0} \mathbf{1}^* + \overline{c_1} A^* + \overline{c_2} (A^*)^2 + \cdots + \overline{c_m} (A^*)^m \\
+           &= c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_m A^m \\
+           &= p(A),
+\end{align}
+$$
+
+the fourth line using that $$A^* = A$$, that $$\mathbf{1}^* = \mathbf{1}$$, and that each $$c_k$$ is real so $$\overline{c_k} = c_k$$.$$\blacksquare$$
+
+
 The last step in **Stage 1: The Continuous Functional Calculus** is to generalize the map of the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem)
 
 $$
@@ -3851,6 +3882,7 @@ Let's get started.
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
+<!--  \uses{lmm:real-polynomial-self-adjoint} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint. Then there exists a unique bounded linear map from $$C^0(\sigma(A); \mathbb{R})$$---the space of continuous, real-valued functions on the spectrum $$\sigma(A)$$ of $$A$$---to $$\mathcal{B}(\mathbf{H})$$
 >
 > $$
@@ -3872,19 +3904,7 @@ $$
     p(A) = c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m,
 $$
 
-with $$\mathbb{R}$$ valued coefficients $$c_i$$. If $$A$$ is self-adjoint, then $$p(A)$$ is also self-adjoint. Explicitly,
-
-$$
-\begin{align}
-    p(A)^* &= \left( c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \right)^* \\
-           &= (c_0 \mathbf{1})^* + (c_1 A)^* + (c_2 A^2)^* + \cdots + (c_{m - 1} A^{m - 1})^* + (c_m A^m)^* \\
-           &= c_0^* \mathbf{1}^* + c_1^* A^* + c_2^* (A^2)^* + \cdots + c_{m - 1}^* (A^{m - 1})^* + c_m^* (A^m)^* \\
-           &= c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \\
-           &= p(A),
-\end{align}
-$$
-
-where we employed the fact that $$A$$ is self-adjoint, the definition of the involution $$B \mapsto B^*$$, and the fact that the $$c_i$$ are real-valued.
+with $$\mathbb{R}$$ valued coefficients $$c_i$$. By [**Lemma** *(A Real Polynomial in a Self-Adjoint Operator is Self-Adjoint)*](#lmm:real-polynomial-self-adjoint), $$p(A)$$ is self-adjoint.
 
 Now we can apply the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) to this real-valued polynomial to conclude that
 
@@ -4252,6 +4272,7 @@ $$\blacksquare$$
 <!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{prpstn:continuity-of-the-adjoint} -->
+<!--  \uses{lmm:real-polynomial-self-adjoint} -->
 > With notation as in [**Proposition** *(The Continuous Functional Calculus is Multiplicative)*](#prpstn:cfc-multiplicative), for any $$f \in C^0(\sigma(A); \mathbb{R})$$ the operator $$f(A)$$ is self-adjoint.
 
 **Proof**
@@ -4265,17 +4286,7 @@ $$
     s_i(A) = c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m,
 $$
 
-with $$\mathbb{R}$$ valued coefficients $$c_i$$. As $$A$$ is self-adjoint, it obviously follows that $$s_i(A)$$ is also self-adjoint. Explicitly,
-
-$$
-\begin{align}
-    s_i(A)^* &= \left( c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \right)^* \\
-             &= (c_0 \mathbf{1})^* + (c_1 A)^* + (c_2 A^2)^* + \cdots + (c_{m - 1} A^{m - 1})^* + (c_m A^m)^* \\
-             &= c_0^* \mathbf{1}^* + c_1^* A^* + c_2^* (A^2)^* + \cdots + c_{m - 1}^* (A^{m - 1})^* + c_m^* (A^m)^* \\
-             &= c_0 \mathbf{1} + c_1 A + c_2 A^2 + \cdots + c_{m - 1} A^{m - 1} + c_m A^m \\
-             &= s_i(A).
-\end{align}
-$$
+with $$\mathbb{R}$$ valued coefficients $$c_i$$. By [**Lemma** *(A Real Polynomial in a Self-Adjoint Operator is Self-Adjoint)*](#lmm:real-polynomial-self-adjoint), each $$s_i(A)$$ is self-adjoint.
 
 This then implies, using [**Proposition** *(Continuity of the Adjoint)*](#prpstn:continuity-of-the-adjoint) to exchange the adjoint with the limit,
 
