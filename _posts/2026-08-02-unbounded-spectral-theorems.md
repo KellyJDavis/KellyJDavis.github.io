@@ -1099,7 +1099,7 @@ Recall that for $$\psi \in \mathbf{H}$$, $$\mu_\psi$$ denotes the [associated me
 
 The associated measures are finite, with total mass determined by $$\psi$$. The previous post's [**Theorem** *(Associated Measure)*](../spectral-theorems/#thrm:projection-valued-measures-associated-measure) supplies only that $$\mu_\psi$$ is a positive real-valued measure, so we record the total mass separately; it is used repeatedly below, both to apply convergence theorems that need a finite measure and to bound integrals.
 
-> **Convention** *(Standing Hypotheses for this Section)*
+> **Convention** *(Standing Hypotheses: Integration against a Projection-Valued Measure)*
 <a name="conv:section-integration"></a>
 <!--  \uses{../spectral-theorems/#def:projection-valued-measure} -->
 <!--  \uses{../spectral-theorems/#thrm:projection-valued-measures-associated-measure} -->
@@ -1427,7 +1427,7 @@ the first equality because $$\overline{\lvert h \rvert}\cdot 1 = \lvert h \rvert
 
 We can now state and prove the central technical result of this section. It is the unbounded analogue of the correspondence, from the previous post, between bounded operators and bounded quadratic forms.
 
-> **Proposition**
+> **Proposition** *(Properties of the Integral against a Projection-Valued Measure)*
 <a name="prpstn:hall-10.2"></a>
 <!--  \uses{../spectral-theorems/#def:indicator-function} -->
 <!--  \uses{conv:section-integration} -->
@@ -1605,7 +1605,7 @@ using $$\mu(X) = \mathbf{1}$$ (property 2 of the [definition of a projection-val
 
 With **Proposition** *(hall-10.2)* established, we can now give the definition and existence/uniqueness statement for the integral of an unbounded function against a projection-valued measure — this is the result we will actually invoke when discussing $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ in [Theorem 10.4](#thrm:hall-10.4).
 
-> **Proposition**
+> **Proposition** *(The Integral against a Projection-Valued Measure)*
 <a name="prpstn:hall-10.1"></a>
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.2} -->
@@ -1828,7 +1828,7 @@ So $$\mu(E_m)\phi \in V_E^\perp \cap W_f$$ for every $$m$$, with $$\mu(E_m)\phi 
 
 We close this section with the fact we will actually need about $$\int_X f \, d\mu$$: when $$f$$ is real-valued, the resulting operator is self-adjoint. This is exactly what will let us conclude, in the proof of [Theorem 10.4](#thrm:hall-10.4), that the operator $$\int_{\sigma(A)} \lambda \, d\mu_A(\lambda)$$ we construct is self-adjoint (as it must be, to have any chance of equalling the self-adjoint operator $$A$$). The proof uses [Proposition (Orthogonal Decomposition and the Double Complement)](#prpstn:hall-a.49) from earlier.
 
-> **Proposition**
+> **Proposition** *(The Integral of a Real-Valued Function is Self-Adjoint)*
 <a name="prpstn:hall-10.3"></a>
 <!--  \uses{conv:section-integration} -->
 <!--  \uses{prpstn:hall-10.1} -->
@@ -2000,7 +2000,7 @@ as $$m \to \infty$$, since $$\lvert \lambda_1 \rvert/T < 1$$. This is the desire
 
 We now use this growth bound to establish submultiplicativity of the spectral radius for commuting operators.
 
-> **Lemma**
+> **Lemma** *(Spectral Radius of a Product of Commuting Operators)*
 <a name="lmm:hall-10.22"></a>
 <!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
@@ -2311,7 +2311,7 @@ the middle equality being the commutation just verified. Taking square roots giv
 
 Note that, unlike the set of genuine eigenvectors for a fixed $$\lambda$$, the set of $$\varepsilon$$-almost eigenvectors is *not* a subspace — this is precisely the difficulty that spectral subspaces will be used to circumvent below.
 
-> **Lemma**
+> **Lemma** *(Almost Eigenvectors and the Spectrum of a Normal Operator)*
 <a name="lmm:hall-10.25"></a>
 <!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-10.19} -->
@@ -2358,7 +2358,7 @@ so by [**Corollary** *(Trivial Complement Characterizes Density)*](#crllr:trivia
 
 So $$A - \lambda\mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\mathbf{H}$$; let $$S$$ be its inverse (linear, by the argument used in the proof of [**Theorem** *(Spectrum of a Self-Adjoint Operator is Real)*](#thrm:hall-9.17)). For $$\phi \in \mathbf{H}$$, applying $$(\natural)$$ with $$\psi = S\phi$$ gives $$\left\| \phi \right\| = \left\| (A-\lambda\mathbf{1})S\phi \right\| \ge \varepsilon\left\| S\phi \right\|$$, so $$\left\| S\phi \right\| \le \varepsilon^{-1}\left\| \phi \right\|$$ and $$S$$ is bounded. By the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum), $$\lambda$$ is in the resolvent set of $$A$$, i.e. $$\lambda \notin \sigma(A)$$. This is the contrapositive of the remaining direction.$$\blacksquare$$
 
-> **Lemma**
+> **Lemma** *(Polynomials Preserve Almost Eigenvectors)*
 <a name="lmm:hall-10.26"></a>
 <!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#lmm:lemma-2} -->
@@ -2447,7 +2447,7 @@ Normality: for $$\eta \in W$$, $$(A\vert_W)(A\vert_W)^*\eta = A A^*\eta = A^*A\e
 
 We can now carry out the construction that replaces the matrix-case eigenspace argument.
 
-> **Lemma**
+> **Lemma** *(An Almost-Eigenvector Subspace for a Polynomial in a Normal Operator)*
 <a name="lmm:hall-10.27"></a>
 <!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{def:hall-10.19} -->
@@ -2629,7 +2629,7 @@ We now carry out the second stage: manufacturing a projection-valued measure fro
 
 Throughout this section, $$X$$ denotes a compact metric space, equipped with its Borel $$\sigma$$-algebra, so that "measurable" means "Borel-measurable"; this makes $$X$$ a compact metric measurable space in the sense used by the supporting lemmas of the previous post.
 
-> **Convention** *(Standing Hypotheses for this Section)*
+> **Convention** *(Standing Hypotheses: The Abstract Functional Calculus)*
 <a name="conv:section-abstract"></a>
 > Throughout this section, $$X$$ denotes a compact metric space carrying its Borel $$\sigma$$-algebra, and — from [Definition (Abstract Continuous Functional Calculus)](#def:abstract-continuous-functional-calculus) onwards — $$\Phi$$ denotes an abstract continuous functional calculus on $$X$$, $$\mu_\psi$$ the measures it induces, and $$\widetilde\Phi$$ its extended calculus. Statements below that mention $$X$$, $$\Phi$$, $$\mu_\psi$$ or $$\widetilde\Phi$$ without introducing them are to be read as carrying these as hypotheses; a formalization should take them as parameters of the corresponding result.
 
@@ -3366,7 +3366,7 @@ Let $$V \equiv \text{Range}\big(\mu^U(\{1\})\big)$$ be the corresponding spectra
 
 The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ by the functional calculus applied to $$D$$.
 
-> **Proposition**
+> **Proposition** *(Spectral Subspaces of the Cayley Transform)*
 <a name="prpstn:hall-10.29"></a>
 <!--  \uses{../spectral-theorems/#def:identity-operator} -->
 <!--  \uses{../spectral-theorems/#def:indicator-function} -->
@@ -3474,7 +3474,7 @@ Now $$A$$ and $$\widehat{D}$$ are both self-adjoint operators extending it: $$A$
 
 Transporting the measure along $$C$$ now gives the projection-valued measure for $$A$$.
 
-> **Theorem**
+> **Theorem** *(Transporting the Spectral Measure through the Cayley Transform)*
 <a name="thrm:hall-10.30"></a>
 <!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{lmm:borel-bijection-transports-pvm} -->

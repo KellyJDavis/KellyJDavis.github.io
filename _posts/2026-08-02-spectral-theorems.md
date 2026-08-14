@@ -531,7 +531,7 @@ The next lemma uses the Complex-Valued Simple Approximation Theorem, which we st
 
 where $$\mu_\psi$$ is the positive real-valued measure of [**Theorem** *(Projection-Valued Measure's Associated Measure)*](#thrm:projection-valued-measures-associated-measure). It turns out that such a $$Q_f(\psi)$$ is a bounded quadratic form which we now prove
 
-> **Lemma**
+> **Lemma** *(The Quadratic Form of a Bounded Measurable Function)*
 <a name="lmm:lemma1-of-operator-valued-integration"></a>
 <!--  \uses{prpstn:Q-indicator-bounded-form} -->
 <!--  \uses{prpstn:Q-measurable-bounded-form} -->
@@ -920,7 +920,7 @@ This concludes our proof that for any bounded, measurable, complex-valued functi
 
 Our next step in the larger proof is establishing several propositions we will have need of later in our argument. To wit let us first prove the proposition (Proposition A.61 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
-> **Proposition**
+> **Proposition** *(Properties of the Sesquilinear Form Associated to a Quadratic Form)*
 <a name="prpstn:hall-a.61"></a>
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
@@ -1143,7 +1143,7 @@ The next result requires the Hilbert-space self-duality theorem, which we state 
 
 The next in the set of "helper" propositions that we will prove is the proposition (Proposition A.63 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
-> **Proposition**
+> **Proposition** *(A Bounded Quadratic Form Determines a Unique Bounded Operator)*
 <a name="prpstn:hall-a.63"></a>
 <!--  \uses{thrm:hall-a.52} -->
 <!--  \uses{def:bounded-quadratic-form} -->
@@ -1420,7 +1420,7 @@ where $$\| \cdot \|$$ is the operator norm and $$\lvert \cdot \rvert$$ is the no
 
 To prove this we will first prove a "utility" lemma that will aid our argument.
 
-> **Lemma**
+> **Lemma** *(Orthogonality of Spectral Projections on a Disjoint Cover)*
 <a name="lmm:lemma2-of-operator-valued-integration"></a>
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:projection-valued-measure} -->
@@ -1503,7 +1503,7 @@ the desired result and completing the proof of our "utility" lemma.$$\blacksquar
 
 One more "utility" lemma we will require is
 
-> **Lemma**
+> **Lemma** *(Operator Norm via the Inner Product)*
 <a name="lmm:lemma-1"></a>
 <!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -2592,7 +2592,7 @@ the desired result, operator multiplication in $$\mathcal{B}(\mathbf{H})$$ is su
 
 The next lemma uses the following standard fact about absolutely convergent series in a Banach space, which we state first.
 
-> **Proposition**
+> **Proposition** *(Absolute Convergence Implies Convergence in a Banach Space)*
 <a name="prpstn:hall-a.34"></a>
 > If $$V$$ is a Banach space, then absolute convergence implies convergence in $$V$$. That is, if $$\{\psi_i\}_{i \in \mathbb{N}}$$ is a sequence in $$V$$ and
 >
@@ -2610,7 +2610,7 @@ The next lemma uses the following standard fact about absolutely convergent seri
 
 The next "utility" lemma we must prove is the following
 
-> **Lemma**
+> **Lemma** *(Neumann Series for a Contraction)*
 <a name="lmm:hall-7.6"></a>
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -2713,7 +2713,7 @@ The proof of the next proposition draws on two standard results from complex ana
 
 Together these imply the final desired result.$$\blacksquare$$
 
-> **Proposition**
+> **Proposition** *(The Spectrum is Closed, Bounded and Non-Empty)*
 <a name="prpstn:hall-7.5"></a>
 <!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{def:identity-operator} -->
@@ -2863,7 +2863,7 @@ an operator-norm-convergent power series in $$(\lambda-\lambda_0)$$ with $$\math
 
 Another proposition we will have need of is
 
-> **Proposition**
+> **Proposition** *(The Orthogonal Complement of the Range is the Kernel of the Adjoint)*
 <a name="prpstn:hall-7.3"></a>
 <!--  \uses{def:orthogonal-complement} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -2908,7 +2908,7 @@ which is the desired result.$$\blacksquare$$
 
 Another result we will require is
 
-> **Lemma**
+> **Lemma** *(The $$b^2$$ Inequality for a Self-Adjoint Operator)*
 <a name="lmm:hall-7.8"></a>
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -2965,7 +2965,7 @@ The next proposition uses the following elementary fact, which we state first.
 
 Now we move onto the result
 
-> **Proposition**
+> **Proposition** *(The Spectrum of a Self-Adjoint Operator is Real)*
 <a name="prpstn:hall-7.7"></a>
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:orthogonal-complement} -->
@@ -3122,7 +3122,7 @@ Combining **Part 1** through **Part 4**, $$\sigma(A)$$ is a non-empty, compact m
 
 The first property that one can easily ascertain of the spectral radius is the following corollary:
 
-> **Corollary**
+> **Corollary** *(The Spectral Radius is at Most the Operator Norm)*
 <a name="crllr:crllr-1"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:spectral-radius} -->
@@ -3149,7 +3149,7 @@ the desired result.$$\blacksquare$$
 
 The next "utility" proposition we will require details properties of the operator norm on $$\mathcal{B}(\mathbf{H})$$.
 
-> **Proposition**
+> **Proposition** *(The Adjoint Preserves the Operator Norm)*
 <a name="prpstn:hall-7.2"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:hall-a.43} -->
@@ -3308,7 +3308,7 @@ The proof of the next lemma draws on four standard results — one about series,
 
 As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$, and hence $$B_n^* \rightarrow B^*$$ in the operator norm, the desired result.$$\blacksquare$$
 
-> **Lemma**
+> **Lemma** *(The Norm of a Self-Adjoint Operator is its Spectral Radius)*
 <a name="lmm:hall-8.1"></a>
 <!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{def:identity-operator} -->
@@ -3536,7 +3536,7 @@ The next step in this **Stage 1: The Continuous Functional Calculus** is to unde
 
 However, to prove the [**Spectral Mapping Theorem**](#lmm:spectral-mapping-theorem) we will first have to prove this utility lemma
 
-> **Lemma**
+> **Lemma** *(A Product with a Non-Invertible Commuting Factor is Non-Invertible)*
 <a name="lmm:hall-ex-8.3.1"></a>
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -3835,7 +3835,7 @@ The construction in the next proposition draws on four standard results, which w
 
 Let's get started.
 
-> **Proposition**
+> **Proposition** *(The Continuous Functional Calculus)*
 <a name="prpstn:hall-8.3"></a>
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -4033,7 +4033,7 @@ As a final step in **Stage 1: The Continuous Functional Calculus**, we will deri
 
 as well as the following lemma
 
-> **Lemma**
+> **Lemma** *(Invertibility is an Open Condition)*
 <a name="lmm:hall-prblm-7.4.8"></a>
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -4134,7 +4134,7 @@ The next proposition uses the following elementary fact about continuity, which 
 
 The properties of the (real-valued) functional calculus are captured in the following proposition
 
-> **Proposition**
+> **Proposition** *(Properties of the Continuous Functional Calculus)*
 <a name="prpstn:hall-8.4"></a>
 <!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:cfc-non-negative} -->
@@ -4684,7 +4684,7 @@ that appears when [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-v
  
 To that end let us make the following definition
 
-> **Definition**
+> **Definition** *(The Quadratic Form Associated to a Bounded Measurable Function)*
 <a name="def:hall-8.6"></a>
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -4747,7 +4747,7 @@ i.e. $$\mu_\psi$$ is a finite measure on $$\sigma(A)$$, the desired result.$$\bl
 
 It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the following [**Proposition**](#prpstn:hall-8.7)
 
-> **Proposition**
+> **Proposition** *(The Associated Quadratic Form is Bounded)*
 <a name="prpstn:hall-8.7"></a>
 <!--  \uses{def:F-class} -->
 <!--  \uses{prpstn:F-bounded} -->
@@ -4977,7 +4977,7 @@ $$
 
 where bounded operator $$f(A)$$ is the image of $$f$$ under the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3). Thus as a result of [**Proposition**](#prpstn:hall-a.62)
 
-> **Proposition**
+> **Proposition** *(The Quadratic Form of a Bounded Operator)*
 <a name="prpstn:hall-a.62"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-quadratic-form} -->
@@ -5195,7 +5195,7 @@ The next lemma refers to an algebra of sets and to the Archimedean Property; we 
 
 Our proof of this result requires that we first prove some "utility" lemmas as stepping stones. The first of these "utility" lemmas is the following:
 
-> **Lemma**
+> **Lemma** *(The Class $$\mathcal{L}_0$$ is an Algebra Containing the Open Sets)*
 <a name="lmm:hall-prblm-8.3.3a"></a>
 <!--  \uses{def:L0-class} -->
 <!--  \uses{prpstn:L0-complement} -->
@@ -5560,7 +5560,7 @@ The next lemma uses the Monotone Class Theorem, which we state first.
 
 The next of these "utility" lemmas is the following:
 
-> **Lemma**
+> **Lemma** *(Extension from an Algebra to the Generated $$\sigma$$-Algebra)*
 <a name="lmm:hall-prblm-8.3.3b"></a>
 <!--  \uses{def:L0-class} -->
 <!--  \uses{def:indicator-function} -->
@@ -5752,7 +5752,7 @@ Together, boundedness and Borel-measurability of $$f$$ give the desired result.$
 
 The final of these "utility" lemmas is the following:
 
-> **Lemma**
+> **Lemma** *(A Class Containing the Continuous Functions and Closed under Bounded Limits is Everything)*
 <a name="lmm:hall-prblm-8.3.3c"></a>
 <!--  \uses{def:indicator-function} -->
 <!--  \uses{lmm:hall-prblm-8.3.3b} -->
@@ -5804,7 +5804,7 @@ So we've proven that any function $$f$$ in $$\mathcal{C}$$ is bounded and Borel-
 
 With [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) established, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$; this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
-> **Definition**
+> **Definition** *(The Bounded Borel Functional Calculus)*
 <a name="def:hall-8.8"></a>
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -5821,7 +5821,7 @@ With [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) established, let us introd
 
 As a first use of this definition we can prove the following lemma
 
-> **Lemma**
+> **Lemma** *(The Operator of a Real-Valued Function is Self-Adjoint)*
 <a name="lmm:lemma-3"></a>
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -5872,7 +5872,7 @@ The next proposition uses the Polarization Identity, which we state first.
 
 The next proposition proves the analog of multiplicativity from [**Proposition**](#prpstn:hall-8.4) for operators $$(fg)(A)$$, $$f(A)$$, and $$g(A)$$ that arise from bounded measurable functions $$f$$ and $$g$$ by way of [**Definition**](#def:hall-8.8).
 
-> **Proposition**
+> **Proposition** *(The Bounded Borel Functional Calculus is Multiplicative)*
 <a name="prpstn:hall-8.9"></a>
 <!--  \uses{prpstn:F1-closed-under-limits} -->
 <!--  \uses{prpstn:F1-vector-space} -->
@@ -6214,7 +6214,7 @@ for all bounded, Borel-measurable, complex-valued functions $$f$$ and $$g$$ on $
 
 In what is the penultimate result required to prove the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) we present the following theorem that covers all of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) except uniqueness of the projection-valued measure $$\mu^A$$.
 
-> **Theorem**
+> **Theorem** *(The Spectral Measure of a Self-Adjoint Operator)*
 <a name="thrm:hall-8.10"></a>
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
 <!--  \uses{def:separates-points} -->
@@ -6552,7 +6552,7 @@ The next lemma uses the Monotone Convergence Theorem for real sequences, which w
 
 With this result as motivation, let us prove the following "utility" lemma
 
-> **Lemma**
+> **Lemma** *(Sums of Pairwise Orthogonal Projections)*
 <a name="lmm:lemma-4"></a>
 <!--  \uses{prpstn:orthogonal-sum-converges} -->
 <!--  \uses{prpstn:orthogonal-sum-is-projection} -->
@@ -7164,7 +7164,7 @@ as required.$$\blacksquare$$
 
 The final result we need to prove to complete our proof of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) is to prove that the projection-valued measure $$\mu^A$$ of [**Theorem**](#thrm:hall-8.10) is unique. It is to this we turn.
 
-> **Theorem**
+> **Theorem** *(Uniqueness of the Spectral Measure)*
 <a name="thrm:hall-prblm-8.3.4"></a>
 <!--  \uses{prpstn:pvm-agree-on-continuous} -->
 <!--  \uses{prpstn:pvm-agree-on-measurable} -->
@@ -7319,7 +7319,7 @@ The next lemma uses the complex-valued Stone–Weierstrass Theorem, which we sta
 
 We will have need of the fact that the set of complex-valued polynomials on $$\sigma(A)$$ is dense in the set of continuous, complex-valued functions on $$\sigma(A)$$ with respect to the supremum norm. So we begin by proving this fact.
 
-> **Lemma**
+> **Lemma** *(Polynomials are Dense in the Continuous Functions on the Spectrum)*
 <a name="lmm:lemma-5"></a>
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{def:bounded-operator-notation} -->
