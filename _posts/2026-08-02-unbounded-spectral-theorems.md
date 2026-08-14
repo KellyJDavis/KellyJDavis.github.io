@@ -866,6 +866,8 @@ A norm-preserving linear map automatically preserves the inner product, because 
 
 > **Proposition** *(Polarization Identity for the Inner Product)*
 <a name="prpstn:polarization-identity"></a>
+<!--  \uses{../spectral-theorems/#def:induced-norm} -->
+<!--  \uses{../spectral-theorems/#prpstn:hall-a.59} -->
 > For all $$\phi,\psi \in \mathbf{H}$$,
 >
 > $$
@@ -875,23 +877,22 @@ A norm-preserving linear map automatically preserves the inner product, because 
 > Consequently, if $$T : \mathbf{H} \to \mathbf{H}$$ is linear and norm-preserving, then $$T$$ preserves the inner product: $$\left< T\phi, T\psi \right> = \left< \phi,\psi \right>$$ for all $$\phi,\psi$$.
 
 **Proof**
-Expanding by conjugate-linearity in the first argument and linearity in the second,
+The inner product $$\left< \cdot, \cdot \right>$$ is itself a sesquilinear form on $$\mathbf{H}$$, so [**Proposition** *(Polarization Identity)*](../spectral-theorems/#prpstn:hall-a.59) applies to it with $$L = \left< \cdot, \cdot \right>$$, giving
 
 $$
 \begin{align}
-    \left\| \phi \pm \psi \right\|^2 &= \left\| \phi \right\|^2 + \left\| \psi \right\|^2 \pm \left< \phi,\psi \right> \pm \left< \psi,\phi \right>, \\
-    \left\| \phi \pm i\psi \right\|^2 &= \left\| \phi \right\|^2 + \left\| \psi \right\|^2 \pm i\left< \phi,\psi \right> \mp i\left< \psi,\phi \right>,
+    \left< \phi, \psi \right> &= \frac{1}{2} \left[ \left< \phi+\psi, \phi+\psi \right> - \left< \phi,\phi \right> - \left< \psi,\psi \right> \right] \\
+                              &-\frac{i}{2} \left[ \left< \phi+i\psi, \phi+i\psi \right> - \left< \phi,\phi \right> - \left< i\psi, i\psi \right> \right].
 \end{align}
 $$
 
-the second line using $$\left< \phi, i\psi \right> = i\left< \phi,\psi \right>$$ and $$\left< i\psi, \phi \right> = -i\left< \psi,\phi \right>$$. Subtracting within each line,
+Now $$\left< \xi,\xi \right> = \left\| \xi \right\|^2$$ by [Definition (Norm Induced by an Inner Product)](../spectral-theorems/#def:induced-norm), and $$\left< i\psi, i\psi \right> = \overline{i}\,i \left< \psi,\psi \right> = \left\| \psi \right\|^2$$. Substituting and expanding $$\left\| \phi+\psi \right\|^2 = \left\| \phi \right\|^2 + \left\| \psi \right\|^2 + \left< \phi,\psi \right> + \left< \psi,\phi \right>$$ together with the corresponding identity for $$\left\| \phi - \psi \right\|^2$$, the bracketed expressions become
 
 $$
-    \left\| \phi+\psi \right\|^2 - \left\| \phi-\psi \right\|^2 = 2\big( \left< \phi,\psi \right> + \left< \psi,\phi \right> \big), \qquad
-    \left\| \phi+i\psi \right\|^2 - \left\| \phi-i\psi \right\|^2 = 2i\big( \left< \phi,\psi \right> - \left< \psi,\phi \right> \big).
+    \left\| \phi+\psi \right\|^2 - \left\| \phi \right\|^2 - \left\| \psi \right\|^2 = \tfrac{1}{2}\Big( \left\| \phi+\psi \right\|^2 - \left\| \phi-\psi \right\|^2 \Big),
 $$
 
-Multiplying the first by $$\tfrac14$$ and the second by $$-\tfrac{i}{4}$$ and adding, the $$\left< \psi,\phi \right>$$ terms cancel — $$\tfrac12\left< \psi,\phi \right>$$ from the first and $$-\tfrac{i}{4}\cdot(-2i)\left< \psi,\phi \right> = -\tfrac12\left< \psi,\phi \right>$$ from the second — while the $$\left< \phi,\psi \right>$$ terms combine to $$\tfrac12\left< \phi,\psi \right> + \tfrac12\left< \phi,\psi \right> = \left< \phi,\psi \right>$$. This is the stated identity.
+and likewise with $$\psi$$ replaced by $$i\psi$$. Substituting these gives the stated identity.
 
 For the consequence, suppose $$T$$ is linear with $$\left\| T\chi \right\| = \left\| \chi \right\|$$ for all $$\chi$$. Applying the identity to $$T\phi, T\psi$$ and using linearity of $$T$$ to write $$T\phi \pm T\psi = T(\phi\pm\psi)$$ and $$T\phi \pm iT\psi = T(\phi\pm i\psi)$$, each of the four norms equals the corresponding norm without $$T$$; so the right-hand sides agree and $$\left< T\phi,T\psi \right> = \left< \phi,\psi \right>$$.$$\blacksquare$$
 
