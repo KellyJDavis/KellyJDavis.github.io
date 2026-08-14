@@ -1911,7 +1911,7 @@ We have shown: $$\{\mathbf{H}_n\}$$ is an internal orthogonal decomposition of $
 
 ## The Spectral Theorem for Bounded Normal Operators
 
-Every bounded self-adjoint operator is a special case of a broader, and for our purposes essential, class: the *normal* operators. The Cayley transform, developed in the next section, produces from a self-adjoint (possibly unbounded) operator a bounded operator that is generally not self-adjoint but is always normal — so to make the reduction work, we need the spectral theorem for bounded normal operators, not just bounded self-adjoint ones.
+Every bounded self-adjoint operator is a special case of a broader, and for our purposes essential, class: the *normal* operators. The Cayley transform, developed in a later section of this post, produces from a self-adjoint (possibly unbounded) operator a bounded operator that is generally not self-adjoint but is always normal — so to make the reduction work, we need the spectral theorem for bounded normal operators, not just bounded self-adjoint ones.
 
 > **Definition** *(Normal Operator)*
 <a name="def:hall-10.19"></a>
