@@ -4570,10 +4570,10 @@ $$
 
 is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$, and satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear, as $$f \mapsto f(A)$$ is linear by [**Proposition**](#prpstn:hall-8.3) and the inner product is linear in its second argument, and it is non-negative whenever all the values of $$f$$ are non-negative, as established in the first paragraph above. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation), which yields the following.
 
+<a name="eqtn:hall-8.8"></a>
 > **Proposition** *(The Measures Associated to a Self-Adjoint Operator)*
 <a name="prpstn:associated-measures-self-adjoint"></a>
 <!--  \uses{prpstn:basic-integral-properties} -->
-<a name="eqtn:hall-8.8"></a>
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{thrm:riesz-representation} -->
 <!--  \uses{def:bounded-operator-notation} -->
