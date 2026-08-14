@@ -4189,6 +4189,7 @@ Each of the four properties is established separately below: multiplicativity in
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{thrm:composition-theorem} -->
 <!--  \uses{thrm:boundedness-theorem} -->
+<!--  \uses{prpstn:products-converge-uniformly} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$f \mapsto f(A)$$ be the real-valued functional calculus of [**Proposition**](#prpstn:hall-8.3). Then for all $$f,g \in C^0(\sigma(A); \mathbb{R})$$,
 >
 > $$
@@ -4210,104 +4211,15 @@ As a result of the proof of [**Proposition**](#prpstn:hall-8.3) we know the real
 
 Recall that by [**Lemma** *(The Spectrum is a Compact Metric Measurable Space)*](#lmm:spectrum-is-compact-metric-measurable), $$\sigma(A)$$ is a non-empty, compact metric measurable space. Thus as a result of the [**Boundedness Theorem**](#thrm:boundedness-theorem) $$f$$, $$g$$, and all the $$s_i$$ and $$r_j$$ are bounded.
 
-This setup will now allow us to prove that $$s_ir_i \rightarrow fg$$ uniformly. 
+This setup will now allow us to prove that $$s_i r_i \rightarrow fg$$ uniformly.
 
-To wit, consider any $$s_i$$ and $$r_j$$. For any $$\lambda \in \sigma(A)$$ the norm definition implies
-
-$$
-\begin{align}
-    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
-    &=   \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) + f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert \\
-    &\le \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)r_j(\lambda) \rvert + \lvert f(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert \\
-    &=   \lvert r_j(\lambda) \rvert \lvert s_i(\lambda) - f(\lambda) \rvert + \lvert f(\lambda) \rvert \lvert r_j(\lambda) - g(\lambda) \rvert.
-\end{align}
-$$
-
-As $$f$$ and $$r_j$$ are bounded, their suprema are finite numbers. Hence, we can continue this derivation as follows
+Each $$r_j$$ is bounded, and $$f$$ and $$g$$ are bounded on the compact set $$\sigma(A)$$, by the [**Boundedness Theorem**](#thrm:boundedness-theorem) — these are exactly the hypotheses of the proposition below, which derives the uniform bound on the $$r_j$$ itself. So [**Proposition** *(Products of Uniform Approximants Converge Uniformly)*](#prpstn:products-converge-uniformly), applied on $$X = \sigma(A)$$ to the sequences $$\{s_i\}$$ and $$\{r_j\}$$, gives: for every $$\epsilon > 0$$ there is an $$L$$ with
 
 $$
-    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
-    \le \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert.
+    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda) \rvert < \epsilon
 $$
 
-Now as $$g$$ is bounded there exists a real constant $$M_g$$ such that
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert g(\lambda) \rvert \le M_g.
-$$
-
-As $$r_j \rightarrow g$$ uniformly, for $$\epsilon = 1$$ there exists an integer $$N_1$$ such that for all $$j \ge N_1$$ and all $$\lambda \in \sigma(A)$$ one has
-
-$$
-    \lvert r_j(\lambda) - g(\lambda) \rvert < 1.
-$$
-
-The norm definition and our previous results then imply for all $$j \ge N_1$$ and all $$\lambda \in \sigma(A)$$
-
-$$
-\begin{align}
-    \lvert r_j(\lambda) \rvert &=   \lvert r_j(\lambda) - g(\lambda) + g(\lambda) \rvert \\
-                               &\le \lvert r_j(\lambda) - g(\lambda) \rvert + \lvert g(\lambda) \rvert \\
-                               &<   1 + M_g.
-\end{align}
-$$
-
-Taking the supremum while still requiring $$j \ge N_1$$ results in
-
-$$
-    \sup\limits_{j \ge N_1} \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert < 1 + M_g.
-$$
-
-Noting the $$r_j$$ are bounded we can define the real constant $$C$$ by
-
-$$
-    C \equiv \max \left\{ \sup\limits_{\lambda \in \sigma(A)} \lvert r_1(\lambda) \rvert, \ldots, \sup\limits_{\lambda \in \sigma(A)} \lvert r_{N_1 - 1} (\lambda) \rvert, 1 + M_g \right\},
-$$
-
-then it is obviously the case that
-
-$$
-    \sup\limits_{j \in \mathbb{N}} \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \le C.
-$$
-
-That is to say there is a bound $$C$$ on the $$r_j$$ that holds uniformly for all $$\lambda \in \sigma(A)$$ and all $$j$$.
-
-Now as $$s_i$$ converges uniformly to $$f$$, for any $$\epsilon > 0$$ there exists a natural number $$N$$ such that for all $$i \ge N$$ one has
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert s_i(\lambda) - f(\lambda) \rvert < \left( \frac{\epsilon}{2C} \right).
-$$
-
-Similarly, set $$M_f \equiv 1 + \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert$$, which is finite since $$f$$ is bounded and satisfies $$M_f > 0$$ and $$\sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \le M_f$$ — the added $$1$$ keeps $$M_f$$ non-zero in the degenerate case $$f \equiv 0$$, so that the division below is always legitimate. As $$r_j$$ converges uniformly to $$g$$, for this same $$\epsilon > 0$$ there exists an $$M$$ such that for all $$j \ge M$$ one has
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) - g(\lambda) \rvert < \frac{\epsilon}{2 M_f}.
-$$
-
-This implies that for all $$i,j \ge \max(N,M)$$ we have
-
-$$
-\begin{align}
-    \lvert s_i(\lambda)r_j(\lambda) - f(\lambda)g(\lambda) \rvert
-    &\le \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \lvert s_i(\lambda) - f(\lambda) \rvert + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \lvert r_j(\lambda) - g(\lambda) \rvert \\
-    &<   \left( \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \right) \left( \frac{\epsilon}{2C} \right)  + \left( \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda) \rvert \right) \left( \frac{\epsilon}{2 M_f} \right) \\
-    &\le \frac{\epsilon}{2} +  \frac{\epsilon}{2} \\
-    &= \epsilon,
-\end{align}
-$$
-
-where the third line follows from our previous result
-
-$$
-    \sup\limits_{j \in \mathbb{N}} \sup\limits_{\lambda \in \sigma(A)} \lvert r_j(\lambda) \rvert \le C.
-$$
-
-This implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i,j \ge L$$ we have
-
-$$
-    \sup\limits_{\lambda \in \sigma(A)} \lvert f(\lambda)g(\lambda) - s_i(\lambda)r_j(\lambda) \rvert < \epsilon.
-$$
-
+for all $$i,j \ge L$$.
 As this applies for all $$i,j \ge L$$ it implies in particular if $$j = i$$ and $$i \ge L$$. So, for any $$\epsilon > 0$$ there exists a natural number $$L$$ such that for all $$i \ge L$$ we have 
 
 $$
