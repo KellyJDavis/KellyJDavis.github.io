@@ -958,6 +958,7 @@ With the identification in hand, we can restate [**Proposition** *(Direct Sums o
 <!--  \uses{lmm:finite-direct-sum-dense} -->
 <!--  \uses{def:hall-3.1} -->
 <!--  \uses{prpstn:convergence-facts} -->
+<!-- Hall states this as Example 9.26; we record it as a proposition and prove it. -->
 > Suppose $$\mathbf{H}$$ is a Hilbert space direct sum of a sequence of separable Hilbert spaces $$\mathbf{H}_j$$:
 >
 > $$

@@ -4899,6 +4899,7 @@ where bounded operator $$f(A)$$ is the image of $$f$$ under the real-valued func
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-sesquilinear-form} -->
+<!-- Hall states this as Example A.62; we record it as a proposition since later results cite it. -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$, one can construct a bounded quadratic form $$Q_A$$ on $$\mathbf{H}$$ by setting
 > 
 > $$
