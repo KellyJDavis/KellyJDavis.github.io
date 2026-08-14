@@ -2404,7 +2404,6 @@ $$\blacksquare$$
 
 > **Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*
 <a name="prpstn:integral-conjugation"></a>
-<!--  \uses{def:hall-8.6} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{prpstn:integral-of-indicator} -->
@@ -2426,7 +2425,7 @@ $$
 
 where $$\overline{f}$$ is the complex conjugate of $$f$$ and the superscript $$*$$ denotes the adjoint on $$\mathcal{B}(\mathbf{H})$$ arising from the Hilbert space inner product.
 
-Let us start by considering the case in which $$f$$ is real. The definition of $$Q_f$$ states
+Let us start by considering the case in which $$f$$ is real. The map $$Q_f$$ introduced in the construction of [**Theorem** *(Operator-Valued Integration)*](#thrm:operator-valued-integration) is given by
 
 $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi.
