@@ -675,6 +675,7 @@ $$\blacksquare$$
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{lmm:sesquilinear-linear-combination} -->
+<!--  \uses{lmm:bqf-linear-combination} -->
 > With notation as in [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), let $$s = \sum_{i} c_i 1_{E_i}$$ be a simple function on $$X$$. Then $$Q_s : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_s(\psi) \equiv \int_X s \, d\mu_\psi$$, is a bounded quadratic form.
 
 **Proof**
@@ -704,7 +705,7 @@ $$
     Q_s(\psi) = \sum_{i = 1}^n \alpha_i  Q_{1_{E_i}}(\psi)
 $$
 
-To prove that such a $$Q_s$$ is a bounded quadratic form we must prove the same three results.
+Each $$Q_{1_{E_i}}$$ is a bounded quadratic form by [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), so [**Lemma** *(Linear Combinations of Bounded Quadratic Forms are Bounded Quadratic Forms)*](#lmm:bqf-linear-combination) gives at once that $$Q_s$$ is a bounded quadratic form. For completeness we record the three conditions explicitly.
 
 First we must prove that $$Q_s(\lambda\psi) = \lvert\lambda\rvert^2 Q_s(\psi)$$. This follows from [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form)
 
@@ -786,6 +787,7 @@ $$\blacksquare$$
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{lmm:sesquilinear-pointwise-limit} -->
+<!--  \uses{lmm:bqf-pointwise-limit} -->
 > With notation as in [**Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*](#prpstn:Q-indicator-bounded-form), let $$f$$ be a bounded, measurable, complex-valued function on $$X$$. Then $$Q_f : \mathbf{H} \rightarrow \mathbb{C}$$, $$Q_f(\psi) \equiv \int_X f \, d\mu_\psi$$, is a bounded quadratic form.
 
 **Proof**
@@ -795,7 +797,7 @@ $$
     Q_f(\psi) \equiv \int_X f \, d\mu_\psi,
 $$
 
-is a bounded quadratic form. This proof relies upon our previous simple function result along with the Complex-Valued Simple Approximation Theorem.
+is a bounded quadratic form. The route is: approximate $$f$$ uniformly by simple functions $$s_i$$, note that each $$Q_{s_i}$$ is a bounded quadratic form by [**Proposition** *(The Quadratic Form of a Simple Function is Bounded)*](#prpstn:Q-simple-bounded-form) with a bound uniform in $$i$$, and apply [**Lemma** *(Uniformly Bounded Pointwise Limits of Bounded Quadratic Forms)*](#lmm:bqf-pointwise-limit). We give the three conditions explicitly below.
 
 To wit we must first prove that $$Q_f(\lambda\psi) = \lvert\lambda\rvert^2 Q_f(\psi)$$. This follows from [**Proposition** *(The Quadratic Form of a Simple Function is Bounded)*](#prpstn:Q-simple-bounded-form) and the Complex-Valued Simple Approximation Theorem. One has
 
@@ -1166,6 +1168,41 @@ $$
 $$
 
 The same argument in the second argument gives linearity there. Hence $$L$$ is sesquilinear.$$\blacksquare$$
+
+
+The same two closure properties hold for bounded quadratic forms, and it is in that form that they are used.
+
+> **Lemma** *(Linear Combinations of Bounded Quadratic Forms are Bounded Quadratic Forms)*
+<a name="lmm:bqf-linear-combination"></a>
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{lmm:sesquilinear-linear-combination} -->
+> Let $$Q_1, \ldots, Q_n$$ be bounded quadratic forms on $$\mathbf{H}$$ and let $$\alpha_1, \ldots, \alpha_n \in \mathbb{C}$$. Then $$Q \equiv \sum_{k=1}^n \alpha_k Q_k$$ is a bounded quadratic form on $$\mathbf{H}$$.
+
+**Proof**
+*Homogeneity.* For $$\lambda \in \mathbb{C}$$ and $$\psi \in \mathbf{H}$$,
+
+$$
+    Q(\lambda\psi) = \sum_k \alpha_k Q_k(\lambda\psi) = \sum_k \alpha_k \lvert \lambda \rvert^2 Q_k(\psi) = \lvert \lambda \rvert^2 Q(\psi).
+$$
+
+*Sesquilinearity of the associated form.* The polarization formula is linear in $$Q$$, so the form associated to $$Q$$ is $$\sum_k \alpha_k L_k$$ where $$L_k$$ is the form associated to $$Q_k$$; each $$L_k$$ is sesquilinear, so [**Lemma** *(Linear Combinations of Sesquilinear Forms are Sesquilinear)*](#lmm:sesquilinear-linear-combination) applies.
+
+*Boundedness.* Choose $$C_k$$ with $$\lvert Q_k(\phi) \rvert \le C_k \lVert \phi \rVert^2$$. Then $$\lvert Q(\phi) \rvert \le \sum_k \lvert \alpha_k \rvert C_k \lVert \phi \rVert^2$$, so $$C \equiv \sum_k \lvert \alpha_k \rvert C_k$$ works.$$\blacksquare$$
+
+> **Lemma** *(Uniformly Bounded Pointwise Limits of Bounded Quadratic Forms)*
+<a name="lmm:bqf-pointwise-limit"></a>
+<!--  \uses{def:bounded-quadratic-form} -->
+<!--  \uses{lmm:sesquilinear-pointwise-limit} -->
+> Let $$\{Q_i\}_{i \in \mathbb{N}}$$ be bounded quadratic forms on $$\mathbf{H}$$ such that $$Q(\psi) \equiv \lim_{i \rightarrow \infty} Q_i(\psi)$$ exists for every $$\psi \in \mathbf{H}$$, and suppose there is a single constant $$C$$ with $$\lvert Q_i(\phi) \rvert \le C \lVert \phi \rVert^2$$ for all $$i$$ and all $$\phi$$. Then $$Q$$ is a bounded quadratic form on $$\mathbf{H}$$, with the same constant $$C$$.
+>
+> The *uniformity* of the bound is required: a pointwise limit of quadratic forms whose individual bounds grow without limit need not be bounded.
+
+**Proof**
+*Homogeneity.* $$Q(\lambda\psi) = \lim_i Q_i(\lambda\psi) = \lim_i \lvert \lambda \rvert^2 Q_i(\psi) = \lvert \lambda \rvert^2 Q(\psi)$$.
+
+*Sesquilinearity of the associated form.* The polarization formula expresses the associated form as a fixed finite combination of values of $$Q$$, so the form associated to $$Q$$ is the pointwise limit of the forms associated to the $$Q_i$$; [**Lemma** *(Pointwise Limits of Sesquilinear Forms are Sesquilinear)*](#lmm:sesquilinear-pointwise-limit) applies.
+
+*Boundedness.* For each $$\phi$$, $$\lvert Q(\phi) \rvert = \lim_i \lvert Q_i(\phi) \rvert \le C \lVert \phi \rVert^2$$, the inequality passing to the limit because it holds for every $$i$$ with the *same* $$C$$.$$\blacksquare$$
 
 The next result requires the Hilbert-space self-duality theorem, which we state first.
 
