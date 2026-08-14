@@ -2162,6 +2162,8 @@ We need three properties of these subspaces. The first two follow directly from 
 > 2. If $$E \subset \{ \lambda \in X \mid \lvert \lambda - \lambda_0 \rvert \le \varepsilon \}$$ for some $$\lambda_0 \in \mathbb{C}$$ and $$\varepsilon > 0$$, then $$\left\| (A - \lambda_0\mathbf{1})\psi \right\| \le \varepsilon \left\| \psi \right\|$$ for all $$\psi \in V_E$$.
 > 3. If $$\lambda_0 \in \sigma(A)$$, then $$V_{U \cap X} \ne \{0\}$$ for every open $$U \subset \mathbb{C}$$ containing $$\lambda_0$$.
 >
+> Hall's Proposition 7.15 has a fourth clause, that the spectrum of the restriction of $$A$$ to $$V_E$$ is contained in the closure of $$E$$; it is not needed anywhere below and is omitted, so the numbering here is Parts 1, 2 and 4 of his statement, renumbered 1, 2, 3.
+>
 > Note that the statement is about an arbitrary projection-valued measure on a compact $$X \subset \mathbb{C}$$ and the operator $$A$$ it integrates to; it presupposes no spectral theorem, and its proof below uses none. It will be applied in two ways: with $$\mu = \mu^A$$ for a bounded *self-adjoint* $$A$$ (where $$X = \sigma(A) \subset \mathbb{R}$$, so the sets in Part 2 are real intervals), which is available now; and, later and only after that theorem has been proved by a route passing through this proposition, with $$\mu = \mu^U$$ for a bounded *normal* $$U$$. There is no circularity: the present proposition is logically prior to both.
 
 **Proof**

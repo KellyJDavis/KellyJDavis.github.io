@@ -2965,6 +2965,8 @@ Now we move onto the result
 <!--  \uses{prpstn:hall-7.3} -->
 <!--  \uses{prpstn:bounded-operators-are-continuous} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then the spectrum $$\sigma(A)$$ of $$A$$ is in $$\mathbb{R}$$.
+>
+> Hall's Proposition 7.7 pairs this with a second clause characterising membership of the spectrum by the existence of almost-eigenvectors; that clause is not needed in this post and is omitted here. Its analogue for normal operators is proved in the sequel.
 
 **Proof**
 A statement obviously equivalent to that of this proposition is the following: For $$a,b \in \mathbb{R}$$ and $$\lambda \equiv a + ib$$ it follows that if $$b \neq 0$$, then $$\lambda$$ is in the resolvent set of $$A$$. We will prove this equivalent statement.
