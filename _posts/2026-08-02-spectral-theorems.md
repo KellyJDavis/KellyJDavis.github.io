@@ -2491,6 +2491,8 @@ The [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass
 
 We begin this stage with "utility" lemmas and propositions that we will have need of later in this stage.
 
+#### Stage 1: The Continuous Functional Calculus
+
 > **Lemma** *(Bounded Operator Product is Submultiplicative)*
 <a name="lmm:lemma-2"></a>
 <!--  \uses{def:bounded-operator-notation} -->
@@ -4568,6 +4570,9 @@ $$
     \Lambda_\psi(f) \equiv \left< \psi, f(A) \psi \right>
 $$
 
+
+#### Stage 2: From the Calculus to a Measure
+
 is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$, and satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear, as $$f \mapsto f(A)$$ is linear by [**Proposition**](#prpstn:hall-8.3) and the inner product is linear in its second argument, and it is non-negative whenever all the values of $$f$$ are non-negative, as established in the first paragraph above. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation), which yields the following.
 
 <a name="eqtn:hall-8.8"></a>
@@ -5716,6 +5721,9 @@ Thus, any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is i
 
 So we've proven that any function $$f$$ in $$\mathcal{C}$$ is bounded and Borel-measurable and we've proven that any bounded, Borel-measurable, complex-valued function $$f$$ on $$X$$ is in $$\mathcal{C}$$. Thus, $$\mathcal{C}$$ is the set of bounded, Borel-measurable, complex-valued functions on $$X$$, the desired result.$$\blacksquare$$
 
+
+#### The Bounded Borel Functional Calculus
+
 With [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) established, let us introduce another definition that will be of use later. It essentially amounts to a means of defining an operator $$f(A)$$ from a bounded measurable function $$f$$ on $$\sigma(A)$$; this is in contrast to the identically notated operator $$f(A)$$ defined in [**Proposition**](#prpstn:hall-8.3) which requires $$f$$ be an element of $$C^0(\sigma(A); \mathbb{R})$$.
 
 > **Definition** *(The Bounded Borel Functional Calculus)*
@@ -6125,6 +6133,9 @@ $$
 
 for all bounded, Borel-measurable, complex-valued functions $$f$$ and $$g$$ on $$\sigma(A)$$.$$\blacksquare$$
 
+
+
+#### The Spectral Measure
 
 In what is the penultimate result required to prove the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) we present the following theorem that covers all of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) except uniqueness of the projection-valued measure $$\mu^A$$.
 
@@ -7075,6 +7086,9 @@ $$
 
 as required.$$\blacksquare$$
 
+
+
+#### Uniqueness of the Spectral Measure
 
 The final result we need to prove to complete our proof of the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectral-theorem-for-bounded-operators) is to prove that the projection-valued measure $$\mu^A$$ of [**Theorem**](#thrm:hall-8.10) is unique. It is to this we turn.
 
