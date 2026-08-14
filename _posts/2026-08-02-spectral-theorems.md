@@ -16,9 +16,40 @@ In this section we will state and prove the Spectral Theorem for bounded, self-a
 ## Elementary Properties of Bounded Operators
 In this section we will introduce and prove some relatively "elementary" properties of bounded operators that will be of use when proving the Spectral Theorem for bounded, self-adjoint operators. We begin by introducing some notation
 
+> **Definition** *(Inner Product)*
+<a name="def:inner-product"></a>
+> An *inner product* on a complex vector space $$V$$ is a map $$\left< \cdot, \cdot \right> : V \times V \rightarrow \mathbb{C}$$ satisfying, for all $$\phi, \psi, \chi \in V$$ and $$c \in \mathbb{C}$$:
+>
+> 1. *(Conjugate symmetry.)* $$\left< \psi, \phi \right> = \overline{\left< \phi, \psi \right>}$$.
+> 2. *(Positive definiteness.)* $$\left< \phi, \phi \right>$$ is real and non-negative, and $$\left< \phi, \phi \right> = 0$$ only if $$\phi = 0$$.
+> 3. *(Conjugate-linear in the first argument, linear in the second.)* $$\left< c\phi, \psi \right> = \overline{c} \left< \phi, \psi \right>$$ and $$\left< \phi, c\psi \right> = c \left< \phi, \psi \right>$$.
+> 4. *(Additivity.)* $$\left< \phi + \psi, \chi \right> = \left< \phi, \chi \right> + \left< \psi, \chi \right>$$ and $$\left< \phi, \psi + \chi \right> = \left< \phi, \psi \right> + \left< \phi, \chi \right>$$.
+>
+> Point 3 fixes the *physics* convention — the conjugate is taken on the **first** factor. This choice is load-bearing rather than cosmetic: several expansions below, the polarization formula and the $$b^2$$ inequality among them, change sign under the opposite convention. It is the convention used throughout this post and its sequel.
+
+> **Definition** *(Norm Induced by an Inner Product)*
+<a name="def:induced-norm"></a>
+<!--  \uses{def:inner-product} -->
+> Let $$V$$ be a complex vector space with an inner product. The *induced norm* is
+>
+> $$
+>     \left\| \psi \right\| \equiv \sqrt{\left< \psi, \psi \right>},
+> $$
+>
+> which is well defined by point 2 of [Definition (Inner Product)](#def:inner-product).
+
 > **Definition** *(Bounded Operator Notation)*
 <a name="def:bounded-operator-notation"></a>
-> We notate the set of operators on a separable, complex Hilbert space $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$. The inner product on $$\mathbf{H}$$ is written $$\left< \cdot, \cdot \right>$$ and is taken to be **conjugate-linear in its first argument and linear in its second**, so that $$\left< \alpha\phi, \beta\psi \right> = \overline{\alpha}\beta\left< \phi,\psi \right>$$ and $$\left< \phi,\psi \right> = \overline{\left< \psi,\phi \right>}$$; the induced norm is $$\left\| \psi \right\| \equiv \sqrt{\left< \psi,\psi \right>}$$. This is the convention used throughout both this post and its sequel, and it is load-bearing: several expansions below — the polarization formula and the $$b^2$$ inequality among them — change sign under the opposite convention. **Throughout this post $$\mathbf{H} \ne \{0\}$$.** This is needed wherever non-emptiness of the spectrum is used — on the zero space the only operator is $$0$$, and $$A - \lambda\mathbf{1} = 0$$ is a bijection of $$\{0\}$$ onto itself with bounded inverse for every $$\lambda$$, so $$\sigma(A) = \emptyset$$ and the spectral radius would be a supremum over the empty set. Nothing is lost: on the zero space every statement below is vacuous.
+<!--  \uses{def:inner-product} -->
+<!--  \uses{def:induced-norm} -->
+> Throughout, $$\mathbf{H}$$ denotes a separable, complex Hilbert space — a complex vector space with an inner product, complete with respect to the induced norm. We notate the set of operators on $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
+
+> **Convention** *(The Hilbert Space is Non-Zero)*
+<a name="conv:nonzero-hilbert-space"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> Throughout this post $$\mathbf{H} \ne \{0\}$$.
+>
+> This is needed wherever non-emptiness of the spectrum is used: on the zero space the only operator is $$0$$, and $$A - \lambda\mathbf{1} = 0$$ is a bijection of $$\{0\}$$ onto itself with bounded inverse for every $$\lambda$$, so $$\sigma(A) = \emptyset$$ and the spectral radius would be a supremum over the empty set. Nothing is lost: on the zero space every statement below is vacuous.
 
 ### Preliminaries: Notation
 
@@ -26,6 +57,7 @@ Two pieces of notation are used pervasively throughout this post and are fixed h
 
 > **Definition** *(The Identity Operator and Indicator Functions)*
 <a name="def:identity-and-indicator"></a>
+<!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > 1. $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$ when $$\mathbf{H} \ne \{0\}$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$. For $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$, and for $$A \in \mathcal{B}(\mathbf{H})$$ the operator $$A - \lambda\mathbf{1}$$ is $$\psi \mapsto A\psi - \lambda\psi$$, again an element of $$\mathcal{B}(\mathbf{H})$$.
 > 2. If $$(X,\Omega(X))$$ is a measurable space and $$E \in \Omega(X)$$, the *indicator function* $$1_E : X \to \mathbb{C}$$ is defined by $$1_E(x) \equiv 1$$ for $$x \in E$$ and $$1_E(x) \equiv 0$$ for $$x \notin E$$. It is measurable, since $$1_E^{-1}(S) \in \{ \emptyset, E, X\setminus E, X\}$$ for every $$S \subset \mathbb{C}$$, and bounded by $$1$$. It satisfies $$1_E 1_F = 1_{E \cap F}$$ pointwise, and $$1_E + 1_F = 1_{E \cup F}$$ when $$E \cap F = \emptyset$$.
@@ -2667,6 +2699,7 @@ Together these imply the final desired result.$$\blacksquare$$
 
 > **Proposition**
 <a name="prpstn:hall-7.5"></a>
+<!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{def:identity-and-indicator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -2786,6 +2819,7 @@ The proof of the preceding proposition establishes two facts about the resolvent
 
 > **Proposition** *(Operator-Norm Holomorphy and the Neumann Series of the Resolvent)*
 <a name="prpstn:resolvent-holomorphy-and-neumann-series"></a>
+<!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{prpstn:hall-7.5} -->
 <!--  \uses{lmm:hall-7.6} -->
 > Suppose $$\mathbf{H} \ne \{0\}$$ and $$A \in \mathcal{B}(\mathbf{H})$$.
@@ -3020,6 +3054,7 @@ with that stated let us begin the consolidation.
 
 > **Lemma** *(The Spectrum is a Compact Metric Measurable Space)*
 <a name="lmm:spectrum-is-compact-metric-measurable"></a>
+<!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -3056,6 +3091,7 @@ Combining **Part 1** through **Part 4**, $$\sigma(A)$$ is a non-empty, compact m
 
 > **Definition** *(Spectral Radius)*
 <a name="def:spectral-radius"></a>
+<!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{prpstn:hall-7.5} -->

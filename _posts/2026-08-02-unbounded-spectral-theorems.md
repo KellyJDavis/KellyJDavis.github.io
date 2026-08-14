@@ -1944,6 +1944,7 @@ An operator-norm-convergent power series composed with any bounded linear functi
 
 > **Lemma** *(Power Growth is Controlled by the Spectral Radius)*
 <a name="lmm:power-growth-controlled-by-spectral-radius"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
 <!--  \uses{../spectral-theorems/#prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{../spectral-theorems/#thrm:laurents-theorem} -->
@@ -1991,6 +1992,7 @@ We now use this growth bound to establish submultiplicativity of the spectral ra
 
 > **Lemma**
 <a name="lmm:hall-10.22"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{lmm:power-growth-controlled-by-spectral-radius} -->
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
 <!--  \uses{../spectral-theorems/#prpstn:hall-7.5} -->
@@ -2074,6 +2076,7 @@ As this holds for all $$\phi,\psi\in\mathbf{H}$$, this is exactly the defining p
 
 > **Proposition** *(Norm Equals Spectral Radius for Normal Operators)*
 <a name="prpstn:hall-10.21"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{lmm:hall-10.22} -->
 <!--  \uses{../spectral-theorems/#def:spectral-radius} -->
@@ -2125,6 +2128,7 @@ We need three properties of these subspaces. The first two follow directly from 
 
 > **Proposition** *(Properties of Spectral Subspaces)*
 <a name="prpstn:hall-7.15"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{../spectral-theorems/#prpstn:integral-multiplicative} -->
 <!--  \uses{../spectral-theorems/#prpstn:integral-norm-bound} -->
 <!--  \uses{def:hall-7.14} -->
@@ -2183,6 +2187,7 @@ The last property we need is that an operator commuting with $$A$$ preserves eve
 
 > **Proposition** *(Commuting Operators Preserve Spectral Subspaces)*
 <a name="prpstn:hall-7.16"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:hall-7.14} -->
 <!--  \uses{prpstn:quadratic-forms-on-a-subspace-properties} -->
 <!--  \uses{def:hall-9.1} -->
@@ -2472,6 +2477,7 @@ so $$\left\| B\psi \right\| \le \tfrac{\varepsilon}{2}\left\| \psi \right\| < \v
 
 > **Theorem** *(Spectral Mapping for Polynomials in $$A$$ and $$A^*$$)*
 <a name="thrm:hall-10.23"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{def:hall-10.24} -->
 <!--  \uses{lmm:hall-10.25} -->
@@ -2533,6 +2539,7 @@ Combining [**Theorem** *(Spectral Mapping for Polynomials in $$A$$ and $$A^*$$)*
 
 > **Corollary** *(Norm of a Polynomial in $$A$$ and $$A^*$$)*
 <a name="crllr:norm-of-polynomial-in-a-astar"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{thrm:hall-10.23} -->
 <!--  \uses{prpstn:hall-10.21} -->
 <!--  \uses{lmm:polynomials-in-normal-are-normal} -->
@@ -2558,6 +2565,7 @@ With the norm identity in hand, extending $$p \mapsto p(A,A^*)$$ from polynomial
 
 > **Theorem** *(Continuous Functional Calculus for a Normal Operator)*
 <a name="thrm:continuous-functional-calculus-normal"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{crllr:norm-of-polynomial-in-a-astar} -->
 <!--  \uses{lmm:polynomials-in-normal-are-normal} -->
@@ -2971,6 +2979,7 @@ Assembling the two stages gives the result this section was aiming at.
 
 > **Theorem** *(Spectral Theorem for Bounded Normal Operators)*
 <a name="thrm:hall-10.20"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{../spectral-theorems/#prpstn:integral-conjugation} -->
 <!--  \uses{def:hall-10.19} -->
 <!--  \uses{../spectral-theorems/#thrm:operator-valued-integration} -->
@@ -3051,6 +3060,7 @@ The Cayley transform will be transported to a projection-valued measure on the u
 
 > **Lemma** *(The Spectrum of a Unitary Operator Lies on the Unit Circle)*
 <a name="lmm:unitary-spectrum-circle"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{def:unitary-operator} -->
 <!--  \uses{../spectral-theorems/#crllr:crllr-1} -->
 <!--  \uses{../spectral-theorems/#lmm:hall-7.6} -->
@@ -3195,6 +3205,7 @@ The Cayley transform carries the spectrum of $$A$$ onto the spectrum of $$U$$, m
 
 > **Lemma** *(Spectral Mapping for the Cayley Transform)*
 <a name="lmm:cayley-spectral-mapping"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{thrm:hall-10.28} -->
 <!--  \uses{lmm:cayley-map} -->
 <!--  \uses{def:hall-9.16} -->
@@ -3329,6 +3340,7 @@ The next proposition is the heart of the matter: $$A$$ is recovered from $$U$$ b
 
 > **Proposition**
 <a name="prpstn:hall-10.29"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{thrm:hall-10.28} -->
 <!--  \uses{lmm:integral-ignores-null-sets} -->
 <!--  \uses{thrm:abstract-calculus-yields-pvm} -->
@@ -3434,6 +3446,7 @@ Transporting the measure along $$C$$ now gives the projection-valued measure for
 
 > **Theorem**
 <a name="thrm:hall-10.30"></a>
+<!--  \uses{../spectral-theorems/#conv:nonzero-hilbert-space} -->
 <!--  \uses{lmm:borel-bijection-transports-pvm} -->
 <!--  \uses{prpstn:hall-10.29} -->
 <!--  \uses{lmm:cayley-map} -->
