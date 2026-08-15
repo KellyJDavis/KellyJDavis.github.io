@@ -3613,6 +3613,7 @@ With this lemma complete we may now move on to the [**Spectral Mapping Theorem**
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{lmm:hall-ex-8.3.1} -->
 <!--  \uses{thrm:fundamental-theorem-of-algebra} -->
+<!--  \uses{conv:nonzero-hilbert-space} -->
 > For all $$A$$ in $$\mathcal{B}(\mathbf{H})$$ and any polynomial $$p(\lambda)$$ of degree $$m$$ on the spectrum $$\sigma(A)$$ of $$A$$
 >
 > $$
@@ -3674,7 +3675,7 @@ $$
 
 holds for a constant polynomial $$p(\lambda) = \alpha_0$$.
 
-The resolvent set of $$p(A) = \alpha_0 \mathbf{1}$$ is defined as the set of $$\lambda \in \mathbb{C}$$ such that $$\alpha_0 \mathbf{1} - \lambda \mathbf{1}$$ has a bounded inverse in $$\mathcal{B}(\mathbf{H})$$. Obviously the resolvent set of $$p(A)$$ in this case is $$(\mathbb{C} - \alpha_0)$$, the set of all elements in $$\mathbb{C}$$ not equal to $$\alpha_0$$. The spectrum $$\sigma(p(A))$$ of $$p(A)$$ is defined as the complement of the resolvent set of $$p(A)$$ in $$\mathbb{C}$$. Hence, $$\sigma(p(A)) = \{ \alpha_0 \}$$.
+The resolvent set of $$p(A) = \alpha_0 \mathbf{1}$$ is defined as the set of $$\lambda \in \mathbb{C}$$ such that $$\alpha_0 \mathbf{1} - \lambda \mathbf{1}$$ has a bounded inverse in $$\mathcal{B}(\mathbf{H})$$. The resolvent set of $$p(A)$$ in this case is $$\mathbb{C} \setminus \{\alpha_0\}$$. Indeed $$\alpha_0\mathbf{1} - \lambda\mathbf{1} = (\alpha_0 - \lambda)\mathbf{1}$$, so for $$\lambda \ne \alpha_0$$ the operator $$(\alpha_0 - \lambda)^{-1}\mathbf{1}$$ is a bounded two-sided inverse, putting $$\lambda$$ in the resolvent set; while for $$\lambda = \alpha_0$$ the operator is $$0$$, which has no inverse because $$\mathbf{H} \ne \{0\}$$ by the [standing convention](#conv:nonzero-hilbert-space) — there is a non-zero $$\psi$$ with $$0\psi = 0$$, so $$0$$ is not injective. The spectrum $$\sigma(p(A))$$ of $$p(A)$$ is defined as the complement of the resolvent set of $$p(A)$$ in $$\mathbb{C}$$. Hence, $$\sigma(p(A)) = \{ \alpha_0 \}$$.
 
 On the other hand, by definition the spectrum $$\sigma(A)$$ is some subset of $$\mathbb{C}$$. In addition, for any $$\lambda$$ in $$\mathbb{C}$$ we have $$p(\lambda) = \alpha_0$$. Hence,
 
