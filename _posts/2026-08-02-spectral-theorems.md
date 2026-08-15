@@ -328,6 +328,17 @@ In this section we will actually be able to state the Spectral Theorem. However,
 ### Projection-Valued Measures
 "Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive, real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
 
+> **Theorem** *(Riesz Theorem)*
+<a name="thrm:hall-a.52"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+> If $$\xi : \mathbf{H} \rightarrow \mathbb{C}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, then there exists a unique $$\chi \in \mathbf{H}$$ such that
+>
+> $$
+>     \xi(\psi) = \left< \chi, \psi \right>
+> $$
+>
+> for all $$\psi \in \mathbf{H}$$. Furthermore, the operator norm of $$\xi$$ as a bounded linear functional is equal to the norm of $$\chi$$ as an element of $$\mathbf{H}$$.
+
 The adjoint is used from here onward; we fix it and its basic algebra before the first use.
 
 > **Definition** *(Adjoint of a Bounded Operator)*
@@ -1290,16 +1301,6 @@ $$
 
 The next result requires the Hilbert-space self-duality theorem, which we state first.
 
-> **Theorem** *(Riesz Theorem)*
-<a name="thrm:hall-a.52"></a>
-<!--  \uses{def:bounded-operator-notation} -->
-> If $$\xi : \mathbf{H} \rightarrow \mathbb{C}$$ is a bounded linear functional on the Hilbert space $$\mathbf{H}$$, then there exists a unique $$\chi \in \mathbf{H}$$ such that
->
-> $$
->     \xi(\psi) = \left< \chi, \psi \right>
-> $$
->
-> for all $$\psi \in \mathbf{H}$$. Furthermore, the operator norm of $$\xi$$ as a bounded linear functional is equal to the norm of $$\chi$$ as an element of $$\mathbf{H}$$.
 
 The next in the set of "helper" propositions that we will prove is the proposition (Proposition A.63 of [Hall](https://doi.org/10.1007/978-1-4614-7116-5))
 
@@ -5857,7 +5858,8 @@ With [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) established, let us introd
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:hall-a.63} -->
-> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint. For a bounded, measurable, complex-valued function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, let $$f(A)$$ be the operator associated to the quadratic form $$Q_f$$ of [**Definition**](#def:hall-8.6) by [**Proposition**](#prpstn:hall-a.63). This means that $$f(A)$$ is the unique operator such that
+<!--  \uses{prpstn:hall-8.7} -->
+> Let $$A$$ in $$\mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$f$$ be a bounded, measurable, complex-valued function on the spectrum $$\sigma(A)$$ of $$A$$. By [**Proposition** *(The Associated Quadratic Form is Bounded)*](#prpstn:hall-8.7) the quadratic form $$Q_f$$ of [**Definition** *(The Quadratic Form Associated to a Bounded Measurable Function)*](#def:hall-8.6) is a **bounded** quadratic form, which is exactly the hypothesis of [**Proposition** *(A Bounded Quadratic Form Determines a Unique Bounded Operator)*](#prpstn:hall-a.63). Let $$f(A)$$ be the operator that proposition associates to $$Q_f$$. This means that $$f(A)$$ is the unique operator such that
 > 
 > $$
 >     \left< \psi, f(A)\psi \right> = Q_f(\psi) = \int_{\sigma(A)} f(\lambda) \, d\mu_\psi(\lambda)
