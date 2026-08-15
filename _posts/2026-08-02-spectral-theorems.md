@@ -42,7 +42,17 @@ In this section we will introduce and prove some relatively "elementary" propert
 <a name="def:bounded-operator-notation"></a>
 <!--  \uses{def:inner-product} -->
 <!--  \uses{def:induced-norm} -->
-> Throughout, $$\mathbf{H}$$ denotes a separable, complex Hilbert space — a complex vector space with an inner product, complete with respect to the induced norm. We notate the set of operators on $$\mathbf{H}$$ that are bounded with respect to the operator norm as $$\mathcal{B}(\mathbf{H})$$.
+> Throughout, $$\mathbf{H}$$ denotes a separable, complex Hilbert space — a complex vector space with an inner product, complete with respect to the induced norm.
+>
+> A linear map $$A : \mathbf{H} \rightarrow \mathbf{H}$$ is *bounded* if there is a constant $$C \in \mathbb{R}$$ with $$\left\| A\psi \right\| \le C \left\| \psi \right\|$$ for all $$\psi \in \mathbf{H}$$. For such an $$A$$ the *operator norm* is the least such constant,
+>
+> $$
+>     \left\| A \right\| \equiv \sup\limits_{\psi \ne 0} \frac{\left\| A\psi \right\|}{\left\| \psi \right\|} = \sup\limits_{\left\| \psi \right\| = 1} \left\| A\psi \right\|,
+> $$
+>
+> the two suprema agreeing by homogeneity, and both being finite exactly when $$A$$ is bounded. It satisfies $$\left\| A\psi \right\| \le \left\| A \right\| \left\| \psi \right\|$$ for every $$\psi$$.
+>
+> We notate the set of bounded linear operators on $$\mathbf{H}$$ as $$\mathcal{B}(\mathbf{H})$$.
 
 > **Convention** *(The Hilbert Space is Non-Zero)*
 <a name="conv:nonzero-hilbert-space"></a>
