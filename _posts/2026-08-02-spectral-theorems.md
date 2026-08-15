@@ -335,13 +335,38 @@ The adjoint is used from here onward; we fix it and its basic algebra before the
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:inner-product} -->
 <!--  \uses{thrm:hall-a.52} -->
-> Let $$A \in \mathcal{B}(\mathbf{H})$$. For each $$\phi \in \mathbf{H}$$ the map $$\psi \mapsto \left< \phi, A\psi \right>$$ is a bounded linear functional on $$\mathbf{H}$$, so by [**Theorem** *(hall-a.52)*](#thrm:hall-a.52) there is a unique $$\chi \in \mathbf{H}$$ with $$\left< \phi, A\psi \right> = \left< \chi, \psi \right>$$ for all $$\psi$$. The *adjoint* $$A^*$$ of $$A$$ is the map $$\phi \mapsto \chi$$, so that
+<!--  \uses{prpstn:hall-a.43} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$ and fix $$\phi \in \mathbf{H}$$. The map $$\xi_\phi : \psi \mapsto \left< \phi, A\psi \right>$$ is linear, since the inner product is linear in its second argument and $$A$$ is linear; and it is bounded, since $$\lvert \xi_\phi(\psi) \rvert \le \left\| \phi \right\| \left\| A\psi \right\| \le \left\| \phi \right\| \left\| A \right\| \left\| \psi \right\|$$ by [**Cauchy–Schwarz**](#prpstn:hall-a.43) and the operator-norm bound. So by [**Theorem** *(Riesz Theorem)*](#thrm:hall-a.52) there is a unique $$\chi \in \mathbf{H}$$ with $$\left< \phi, A\psi \right> = \left< \chi, \psi \right>$$ for all $$\psi$$. The *adjoint* $$A^*$$ of $$A$$ is the map $$\phi \mapsto \chi$$, so that
 >
 > $$
 >     \left< \phi, A\psi \right> = \left< A^*\phi, \psi \right> \qquad \text{for all } \phi, \psi \in \mathbf{H}.
 > $$
 >
 > An operator $$A \in \mathcal{B}(\mathbf{H})$$ is *self-adjoint* if $$A^* = A$$, that is, if $$\left< \phi, A\psi \right> = \left< A\phi, \psi \right>$$ for all $$\phi, \psi \in \mathbf{H}$$.
+
+> **Proposition** *(The Adjoint is a Bounded Operator)*
+<a name="prpstn:adjoint-is-bounded"></a>
+<!--  \uses{def:adjoint-bounded} -->
+<!--  \uses{prpstn:hall-a.43} -->
+<!--  \uses{thrm:hall-a.52} -->
+> For every $$A \in \mathcal{B}(\mathbf{H})$$ the adjoint $$A^*$$ is linear and bounded, with $$\left\| A^* \right\| \le \left\| A \right\|$$; in particular $$A^* \in \mathcal{B}(\mathbf{H})$$.
+
+**Proof**
+*Linearity.* For $$\phi, \eta \in \mathbf{H}$$ and $$c \in \mathbb{C}$$, and every $$\psi$$,
+
+$$
+    \left< A^*(c\phi + \eta), \psi \right> = \left< c\phi + \eta, A\psi \right> = \overline{c}\left< \phi, A\psi \right> + \left< \eta, A\psi \right> = \left< cA^*\phi + A^*\eta, \psi \right>,
+$$
+
+using conjugate-linearity in the first argument twice. Since this holds for every $$\psi$$, the uniqueness in [**Theorem** *(Riesz Theorem)*](#thrm:hall-a.52) gives $$A^*(c\phi+\eta) = cA^*\phi + A^*\eta$$.
+
+*Boundedness.* By [**Cauchy–Schwarz**](#prpstn:hall-a.43) and the operator-norm bound,
+
+$$
+    \left\| A^*\phi \right\|^2 = \left< A^*\phi, A^*\phi \right> = \left< \phi, A A^*\phi \right> \le \left\| \phi \right\| \left\| A \right\| \left\| A^*\phi \right\|.
+$$
+
+If $$\left\| A^*\phi \right\| = 0$$ the bound $$\left\| A^*\phi \right\| \le \left\| A \right\| \left\| \phi \right\|$$ is immediate; otherwise divide by $$\left\| A^*\phi \right\| > 0$$. Hence $$A^*$$ is bounded with $$\left\| A^* \right\| \le \left\| A \right\|$$.$$\blacksquare$$
 
 > **Lemma** *(Algebraic Properties of the Adjoint)*
 <a name="lmm:adjoint-algebra"></a>
@@ -3218,6 +3243,7 @@ The next "utility" proposition we will require details properties of the operato
 <!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{lmm:lemma-1} -->
 <!--  \uses{lmm:lemma-2} -->
+<!--  \uses{prpstn:adjoint-is-bounded} -->
 > For any $$A \in \mathcal{B}(\mathbf{H})$$ the operator norm satisfies
 >
 > $$
@@ -3233,7 +3259,7 @@ The next "utility" proposition we will require details properties of the operato
 > In particular if $$A$$ is self-adjoint, it satisfies $$\|A^2\| = \|A\|^2$$.
 
 **Proof**
-Let us begin the proof of the first result $$\|A\| = \|A^*\|$$ by noting that as a result of our previous [**Lemma**](#lmm:lemma-1) we can write the operator norm of any $$A \in \mathcal{B}(\mathbf{H})$$ as
+By [**Proposition** *(The Adjoint is a Bounded Operator)*](#prpstn:adjoint-is-bounded), $$A^* \in \mathcal{B}(\mathbf{H})$$, so $$\|A^*\|$$ is defined. Let us begin the proof of the first result $$\|A\| = \|A^*\|$$ by noting that as a result of our previous [**Lemma**](#lmm:lemma-1) we can write the operator norm of any $$A \in \mathcal{B}(\mathbf{H})$$ as
 
 $$
     \|A\| = \sup\limits_{\|\chi\| = \|\psi\| = 1} \lvert \left< \chi, A \psi \right> \rvert.
