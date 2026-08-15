@@ -52,6 +52,8 @@ In this section we will introduce and prove some relatively "elementary" propert
 >
 > the two suprema agreeing by homogeneity, and both being finite exactly when $$A$$ is bounded. It satisfies $$\left\| A\psi \right\| \le \left\| A \right\| \left\| \psi \right\|$$ for every $$\psi$$.
 >
+> The operator norm is a norm on $$\mathcal{B}(\mathbf{H})$$: it is non-negative, and vanishes only for $$A = 0$$ since $$\left\| A \right\| = 0$$ forces $$A\psi = 0$$ for every $$\psi$$; it is absolutely homogeneous, since $$\left\| (cA)\psi \right\| = \lvert c \rvert \left\| A\psi \right\|$$ for every $$\psi$$ and taking the supremum gives $$\left\| cA \right\| = \lvert c \rvert \left\| A \right\|$$; and it satisfies the triangle inequality, since $$\left\| (A+B)\psi \right\| \le \left\| A\psi \right\| + \left\| B\psi \right\| \le \left( \left\| A \right\| + \left\| B \right\| \right) \left\| \psi \right\|$$ for every $$\psi$$, so that $$\left\| A + B \right\| \le \left\| A \right\| + \left\| B \right\|$$.
+>
 > We notate the set of bounded linear operators on $$\mathbf{H}$$ as $$\mathcal{B}(\mathbf{H})$$.
 
 > **Convention** *(The Hilbert Space is Non-Zero)*
@@ -167,7 +169,7 @@ With that stated, we now give an "elementary" lemma that proves $$\mathcal{B}(\m
 **Proof**
 By definition a Banach space is a normed vector space that is complete with respect to the distance function associated to its norm. Hence, we must prove that $$\mathcal{B}(\mathbf{H})$$ is a normed vector space that is complete with respect to the distance function associated to its norm.
 
-The norm we place on $$\mathcal{B}(\mathbf{H})$$ is the operator norm. The operator norm is indeed a norm. Hence, $$\mathcal{B}(\mathbf{H})$$ is normed.
+The norm we place on $$\mathcal{B}(\mathbf{H})$$ is the operator norm, which is a norm by [Definition (Bounded Operator Notation)](#def:bounded-operator-notation). Hence, $$\mathcal{B}(\mathbf{H})$$ is normed.
 
 Next we must prove that $$\mathcal{B}(\mathbf{H})$$ is a vector space. Consider $$A, B \in \mathcal{B}(\mathbf{H})$$ as well as $$\alpha, \beta \in \mathbb{C}$$. As the operator norm is a norm we have
 
