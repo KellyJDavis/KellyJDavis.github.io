@@ -318,8 +318,49 @@ In this section we will actually be able to state the Spectral Theorem. However,
 ### Projection-Valued Measures
 "Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive, real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
 
+The adjoint is used from here onward; we fix it and its basic algebra before the first use.
+
+> **Definition** *(Adjoint of a Bounded Operator)*
+<a name="def:adjoint-bounded"></a>
+<!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:inner-product} -->
+<!--  \uses{thrm:hall-a.52} -->
+> Let $$A \in \mathcal{B}(\mathbf{H})$$. For each $$\phi \in \mathbf{H}$$ the map $$\psi \mapsto \left< \phi, A\psi \right>$$ is a bounded linear functional on $$\mathbf{H}$$, so by [**Theorem** *(hall-a.52)*](#thrm:hall-a.52) there is a unique $$\chi \in \mathbf{H}$$ with $$\left< \phi, A\psi \right> = \left< \chi, \psi \right>$$ for all $$\psi$$. The *adjoint* $$A^*$$ of $$A$$ is the map $$\phi \mapsto \chi$$, so that
+>
+> $$
+>     \left< \phi, A\psi \right> = \left< A^*\phi, \psi \right> \qquad \text{for all } \phi, \psi \in \mathbf{H}.
+> $$
+>
+> An operator $$A \in \mathcal{B}(\mathbf{H})$$ is *self-adjoint* if $$A^* = A$$, that is, if $$\left< \phi, A\psi \right> = \left< A\phi, \psi \right>$$ for all $$\phi, \psi \in \mathbf{H}$$.
+
+> **Lemma** *(Algebraic Properties of the Adjoint)*
+<a name="lmm:adjoint-algebra"></a>
+<!--  \uses{def:adjoint-bounded} -->
+<!--  \uses{def:identity-operator} -->
+> For all $$A, B \in \mathcal{B}(\mathbf{H})$$ and $$c \in \mathbb{C}$$:
+>
+> 1. $$(A + B)^* = A^* + B^*$$.
+> 2. $$(cA)^* = \overline{c}\,A^*$$.
+> 3. $$(AB)^* = B^*A^*$$, and hence $$(A^k)^* = (A^*)^k$$ for every integer $$k \ge 0$$.
+> 4. $$(A^*)^* = A$$.
+> 5. $$\mathbf{1}^* = \mathbf{1}$$.
+
+**Proof**
+Each part follows from uniqueness in [Definition (Adjoint of a Bounded Operator)](#def:adjoint-bounded): it suffices to exhibit an operator satisfying the defining identity.
+
+*Part 1.* $$\left< \phi, (A+B)\psi \right> = \left< \phi, A\psi \right> + \left< \phi, B\psi \right> = \left< A^*\phi, \psi \right> + \left< B^*\phi, \psi \right> = \left< (A^*+B^*)\phi, \psi \right>$$.
+
+*Part 2.* $$\left< \phi, cA\psi \right> = c\left< \phi, A\psi \right> = c\left< A^*\phi, \psi \right> = \left< \overline{c}A^*\phi, \psi \right>$$, the last step because the inner product is conjugate-linear in its first argument.
+
+*Part 3.* $$\left< \phi, AB\psi \right> = \left< A^*\phi, B\psi \right> = \left< B^*A^*\phi, \psi \right>$$. Induction on $$k$$ then gives $$(A^k)^* = (A^*)^k$$, the case $$k=0$$ being Part 5.
+
+*Part 4.* $$\left< \phi, A^*\psi \right> = \overline{\left< A^*\psi, \phi \right>} = \overline{\left< \psi, A\phi \right>} = \left< A\phi, \psi \right>$$, using conjugate symmetry twice.
+
+*Part 5.* $$\left< \phi, \mathbf{1}\psi \right> = \left< \phi, \psi \right> = \left< \mathbf{1}\phi, \psi \right>$$.$$\blacksquare$$
+
 > **Definition** *(Orthogonal Projection)*
 <a name="def:bounded-orthogonal-projection"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > A *bounded orthogonal projection*, sometimes shortened to *orthogonal projection* or simply *projection*, is an element $$P \in \mathcal{B}(\mathbf{H})$$ such that $$P^2 = P$$ and $$P^* = P$$.
 
@@ -327,6 +368,7 @@ Orthogonal projections are norm-decreasing, a fact used repeatedly below.
 
 > **Lemma** *(Orthogonal Projections are Norm-Decreasing)*
 <a name="lmm:projection-norm-decreasing"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{prpstn:hall-a.43} -->
 > Let $$P \in \mathcal{B}(\mathbf{H})$$ be a bounded orthogonal projection. Then $$\left\| P\psi \right\| \le \left\| \psi \right\|$$ for every $$\psi \in \mathbf{H}$$.
@@ -365,6 +407,7 @@ Now, we can associate a positive, real-valued measure $$\mu_\psi$$ to a projecti
 
 > **Theorem** *(Projection-Valued Measure's Associated Measure)*
 <a name="thrm:projection-valued-measures-associated-measure"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -441,6 +484,7 @@ Projection-valued measures give rise to a type of integration known as "operator
 
 > **Theorem** *(Operator-Valued Integration)*
 <a name="thrm:operator-valued-integration"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
 <!--  \uses{prpstn:Q-indicator-bounded-form} -->
 <!--  \uses{prpstn:Q-measurable-bounded-form} -->
@@ -556,6 +600,7 @@ The result is proved in three stages, each resting on the previous: for indicato
 
 > **Proposition** *(The Quadratic Form of an Indicator Function is Bounded)*
 <a name="prpstn:Q-indicator-bounded-form"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:bounded-quadratic-form} -->
@@ -1225,6 +1270,7 @@ The next in the set of "helper" propositions that we will prove is the propositi
 
 > **Proposition** *(A Bounded Quadratic Form Determines a Unique Bounded Operator)*
 <a name="prpstn:hall-a.63"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:hall-a.52} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -1474,6 +1520,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Norm Bound for the Operator-Valued Integral)*
 <a name="prpstn:integral-norm-bound"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{prpstn:integral-as-limit-of-simple} -->
@@ -1502,6 +1549,7 @@ To prove this we will first prove a "utility" lemma that will aid our argument.
 
 > **Lemma** *(Orthogonality of Spectral Projections on a Disjoint Cover)*
 <a name="lmm:lemma2-of-operator-valued-integration"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:projection-valued-measure} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -1700,6 +1748,7 @@ as required.$$\blacksquare$$
 
 > **Proposition** *(Norm Bound for the Integral of a Simple Function)*
 <a name="prpstn:integral-norm-bound-simple"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:indicator-function} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{lmm:lemma2-of-operator-valued-integration} -->
@@ -2408,6 +2457,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Operator-Valued Integration Intertwines Conjugation and the Adjoint)*
 <a name="prpstn:integral-conjugation"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:hall-a.63} -->
 <!--  \uses{prpstn:integral-of-indicator} -->
@@ -2855,12 +2905,15 @@ $$
 
 an operator-norm-convergent power series in $$(\lambda-\lambda_0)$$ with $$\mathcal{B}(\mathbf{H})$$ coefficients.$$\blacksquare$$
 
+
+
 Another proposition we will have need of is
 
 > **Proposition** *(The Orthogonal Complement of the Range is the Kernel of the Adjoint)*
 <a name="prpstn:hall-7.3"></a>
 <!--  \uses{def:orthogonal-complement} -->
 <!--  \uses{def:bounded-operator-notation} -->
+<!--  \uses{def:adjoint-bounded} -->
 > For any $$A \in \mathcal{B}(\mathbf{H})$$, we have
 >
 > $$
@@ -2904,6 +2957,7 @@ Another result we will require is
 
 > **Lemma** *(The $$b^2$$ Inequality for a Self-Adjoint Operator)*
 <a name="lmm:hall-7.8"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 > If $$A \in \mathcal{B}(\mathbf{H})$$ is self-adjoint, then for all $$a,b \in \mathbb{R}$$ and associated $$\lambda \equiv a + ib$$ in $$\mathbb{C}$$, we have
@@ -2961,6 +3015,7 @@ Now we move onto the result
 
 > **Proposition** *(The Spectrum of a Self-Adjoint Operator is Real)*
 <a name="prpstn:hall-7.7"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:orthogonal-complement} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -3067,6 +3122,7 @@ with that stated let us begin the consolidation.
 
 > **Lemma** *(The Spectrum is a Compact Metric Measurable Space)*
 <a name="lmm:spectrum-is-compact-metric-measurable"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{conv:nonzero-hilbert-space} -->
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -3147,6 +3203,7 @@ The next "utility" proposition we will require details properties of the operato
 
 > **Proposition** *(The Adjoint Preserves the Operator Norm)*
 <a name="prpstn:hall-7.2"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:hall-a.43} -->
 <!--  \uses{lmm:lemma-1} -->
@@ -3242,6 +3299,7 @@ As a consequence of the first result of the [**Proposition**](#prpstn:hall-7.2) 
 
 > **Proposition** *(Continuity of the Adjoint)*
 <a name="prpstn:continuity-of-the-adjoint"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{prpstn:hall-7.2} -->
 > Let $$\mathbf{H}$$ be a Hilbert space and let $$\{ B_n \}_{n \in \mathbb{N}}$$ be a sequence in $$\mathcal{B}(\mathbf{H})$$ converging in the operator norm to $$B \in \mathcal{B}(\mathbf{H})$$. Then $$\{ B_n^* \}_{n \in \mathbb{N}}$$ converges in the operator norm to $$B^*$$, i.e.
@@ -3284,6 +3342,7 @@ The proof of the next lemma draws on four standard results — one about series,
 
 > **Theorem** *(Theorem on Completeness of the Dual)*
 <a name="thrm:theorem-on-completeness-of-the-dual"></a>
+<!--  \uses{def:adjoint-bounded} -->
 > If $$V$$ is a Banach space, then its dual $$V^*$$ is also a Banach space.
 
 > **Theorem** *(Principle of Uniform Boundedness)*
@@ -3306,6 +3365,7 @@ As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$,
 
 > **Lemma** *(The Norm of a Self-Adjoint Operator is its Spectral Radius)*
 <a name="lmm:hall-8.1"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -3801,9 +3861,10 @@ We record separately a fact used both in constructing the continuous functional 
 
 > **Lemma** *(A Real Polynomial in a Self-Adjoint Operator is Self-Adjoint)*
 <a name="lmm:real-polynomial-self-adjoint"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:identity-operator} -->
-<!--  \uses{prpstn:continuity-of-the-adjoint} -->
+<!--  \uses{lmm:adjoint-algebra} -->
 > Let $$A \in \mathcal{B}(\mathbf{H})$$ be self-adjoint and let $$p$$ be a polynomial with real coefficients, so that
 >
 > $$
@@ -3813,7 +3874,7 @@ We record separately a fact used both in constructing the continuous functional 
 > Then $$p(A)$$ is self-adjoint.
 
 **Proof**
-The adjoint is additive and conjugate-homogeneous, and $$(A^k)^* = (A^*)^k$$ for every $$k \ge 0$$, so
+By [**Lemma** *(Algebraic Properties of the Adjoint)*](#lmm:adjoint-algebra) the adjoint is additive and conjugate-homogeneous, and $$(A^k)^* = (A^*)^k$$ for every $$k \ge 0$$, so
 
 $$
 \begin{align}
@@ -3865,6 +3926,7 @@ Let's get started.
 
 > **Proposition** *(The Continuous Functional Calculus)*
 <a name="prpstn:hall-8.3"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -4153,6 +4215,7 @@ The properties of the (real-valued) functional calculus are captured in the foll
 
 > **Proposition** *(Properties of the Continuous Functional Calculus)*
 <a name="prpstn:hall-8.4"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:cfc-non-negative} -->
 <!--  \uses{prpstn:cfc-norm} -->
@@ -4201,6 +4264,7 @@ Each of the four properties is established separately below: multiplicativity in
 
 > **Proposition** *(The Continuous Functional Calculus is Multiplicative)*
 <a name="prpstn:cfc-multiplicative"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
 <!--  \uses{prpstn:hall-8.3} -->
@@ -4264,6 +4328,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Continuous Functional Calculus Yields Self-Adjoint Operators)*
 <a name="prpstn:cfc-self-adjoint"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{prpstn:cfc-multiplicative} -->
@@ -4301,6 +4366,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Continuous Functional Calculus Preserves Non-Negativity)*
 <a name="prpstn:cfc-non-negative"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:composition-theorem} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{def:non-negative-operator} -->
@@ -4344,6 +4410,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Norm of an Operator from the Continuous Functional Calculus)*
 <a name="prpstn:cfc-norm"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:cfc-multiplicative} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
@@ -4407,6 +4474,7 @@ as required.$$\blacksquare$$
 
 > **Proposition** *(Spectral Mapping for the Continuous Functional Calculus)*
 <a name="prpstn:cfc-spectral-mapping"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{lmm:spectral-mapping-theorem} -->
 <!--  \uses{prpstn:cfc-self-adjoint} -->
@@ -4584,6 +4652,7 @@ is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$,
 <a name="eqtn:hall-8.8"></a>
 > **Proposition** *(The Measures Associated to a Self-Adjoint Operator)*
 <a name="prpstn:associated-measures-self-adjoint"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{prpstn:hall-8.3} -->
 <!--  \uses{thrm:riesz-representation} -->
@@ -4609,6 +4678,7 @@ To that end let us make the following definition
 
 > **Definition** *(The Quadratic Form Associated to a Bounded Measurable Function)*
 <a name="def:hall-8.6"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -4627,6 +4697,7 @@ Before proceeding, let us record a basic property of the measures $$\mu_\psi$$ j
 
 > **Lemma** *(The Associated Measures are Finite)*
 <a name="lmm:associated-measures-are-finite"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
@@ -4672,6 +4743,7 @@ It turns out that $$Q_f$$ is a bounded quadratic form, as proven in the followin
 
 > **Proposition** *(The Associated Quadratic Form is Bounded)*
 <a name="prpstn:hall-8.7"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{prpstn:F-bounded} -->
 <!--  \uses{prpstn:F-closed-under-limits} -->
@@ -4708,6 +4780,7 @@ Since $$\sigma(A)$$ is a compact metric measurable space by [**Lemma**](#lmm:spe
 
 > **Definition** *(The Class of Functions with Bounded Quadratic Form)*
 <a name="def:F-class"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{def:bounded-quadratic-form} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
@@ -4715,6 +4788,7 @@ Since $$\sigma(A)$$ is a compact metric measurable space by [**Lemma**](#lmm:spe
 
 > **Proposition** *(The Map $$f \mapsto Q_f$$ is Linear)*
 <a name="prpstn:Q-is-linear"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:hall-8.6} -->
@@ -4870,6 +4944,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Class Contains the Continuous Functions)*
 <a name="prpstn:F-contains-continuous"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{lmm:pointwise-limits-of-borel-measurable-functions} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
@@ -5740,6 +5815,7 @@ With [**Proposition** *(hall-8.7)*](#prpstn:hall-8.7) established, let us introd
 
 > **Definition** *(The Bounded Borel Functional Calculus)*
 <a name="def:hall-8.8"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -5757,6 +5833,7 @@ As a first use of this definition we can prove the following lemma
 
 > **Lemma** *(The Operator of a Real-Valued Function is Self-Adjoint)*
 <a name="lmm:lemma-3"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -5808,6 +5885,7 @@ The next proposition proves the analog of multiplicativity from [**Proposition**
 
 > **Proposition** *(The Bounded Borel Functional Calculus is Multiplicative)*
 <a name="prpstn:hall-8.9"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:F1-closed-under-limits} -->
 <!--  \uses{prpstn:F1-vector-space} -->
 <!--  \uses{prpstn:F2-is-everything} -->
@@ -5842,6 +5920,7 @@ The result is obtained by applying [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-p
 
 > **Definition** *(The Classes $$\mathcal{F}_1$$ and $$\mathcal{F}_2$$)*
 <a name="def:F1-F2-classes"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:F-class} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
@@ -5858,6 +5937,7 @@ The result is obtained by applying [**Lemma** *(hall-prblm-8.3.3c)*](#lmm:hall-p
 
 > **Proposition** *($$\mathcal{F}_1$$ is a Vector Space)*
 <a name="prpstn:F1-vector-space"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:F1-F2-classes} -->
 <!--  \uses{def:hall-8.8} -->
@@ -5925,6 +6005,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Quadratic Form is Continuous under Bounded Pointwise Limits)*
 <a name="prpstn:Q-continuous-under-limits"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:F1-F2-classes} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.7} -->
@@ -5996,6 +6077,7 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{F}_1$$ is Closed under Bounded Pointwise Limits)*
 <a name="prpstn:F1-closed-under-limits"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:associated-measures-are-finite} -->
@@ -6066,6 +6148,7 @@ $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{F}_2$$ Contains all Bounded Borel Functions)*
 <a name="prpstn:F2-is-everything"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{lmm:associated-measures-are-finite} -->
@@ -6162,6 +6245,7 @@ In what is the penultimate result required to prove the [**Spectral Theorem for 
 
 > **Theorem** *(The Spectral Measure of a Self-Adjoint Operator)*
 <a name="thrm:hall-8.10"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
 <!--  \uses{def:separates-points} -->
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
@@ -6231,6 +6315,7 @@ That $$\mu^A$$ is a projection-valued measure is the conjunction of the four axi
 
 > **Proposition** *(Each Spectral Projection is an Orthogonal Projection)*
 <a name="prpstn:mua-projection"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:indicator-function} -->
 <!--  \uses{lmm:lemma-3} -->
 <!--  \uses{def:hall-8.8} -->
@@ -6272,6 +6357,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections Multiply to the Intersection)*
 <a name="prpstn:mua-multiplicative"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:mua-projection} -->
 <!--  \uses{def:hall-8.8} -->
 <!--  \uses{prpstn:hall-8.9} -->
@@ -6313,6 +6399,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*
 <a name="prpstn:mua-empty-and-whole"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{thrm:riesz-representation} -->
 <!--  \uses{prpstn:mua-projection} -->
@@ -6408,6 +6495,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are Countably Additive)*
 <a name="prpstn:mua-countably-additive"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:indicator-function} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{prpstn:Q-continuous-under-limits} -->
@@ -6522,6 +6610,7 @@ Convergence of the partial sums is [**Proposition** *(Partial Sums of Pairwise O
 
 > **Proposition** *(Partial Sums of Pairwise Orthogonal Projections Converge)*
 <a name="prpstn:orthogonal-sum-converges"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{lmm:projection-norm-decreasing} -->
 <!--  \uses{thrm:monotone-convergence-theorem} -->
@@ -6637,6 +6726,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Limit of the Partial Sums is a Bounded Orthogonal Projection)*
 <a name="prpstn:orthogonal-sum-is-projection"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:orthogonal-sum-converges} -->
 <!--  \uses{def:bounded-orthogonal-projection} -->
 <!--  \uses{prpstn:bounded-operators-are-continuous} -->
@@ -6883,6 +6973,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Spectral Projections are the Integrals of their Indicators)*
 <a name="prpstn:mua-indicator-integral"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:indicator-function} -->
 <!--  \uses{def:hall-8.6} -->
 <!--  \uses{lmm:spectrum-is-compact-metric-measurable} -->
@@ -6982,6 +7073,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Two Bounded Functional Calculi Agree)*
 <a name="prpstn:mua-bounded-calculus-agrees"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:indicator-function} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{prpstn:mua-projection} -->
@@ -7034,6 +7126,7 @@ $$\blacksquare$$
 
 > **Proposition** *(The Spectral Measure Integrates to the Operator)*
 <a name="prpstn:mua-integrates-to-A"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:indicator-function} -->
 <!--  \uses{thrm:projection-valued-measures-associated-measure} -->
 <!--  \uses{def:hall-8.8} -->
@@ -7115,6 +7208,7 @@ The final result we need to prove to complete our proof of the [**Spectral Theor
 
 > **Theorem** *(Uniqueness of the Spectral Measure)*
 <a name="thrm:hall-prblm-8.3.4"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:pvm-agree-on-continuous} -->
 <!--  \uses{prpstn:pvm-agree-on-measurable} -->
 <!--  \uses{prpstn:pvm-agree-on-polynomials} -->
@@ -7185,6 +7279,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Two Spectral Measures Agree on Polynomials)*
 <a name="prpstn:pvm-agree-on-polynomials"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:integral-multiplicative} -->
 <!--  \uses{thrm:operator-valued-integration} -->
 <!--  \uses{def:projection-valued-measure} -->
@@ -7240,6 +7335,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Two Spectral Measures Agree on Continuous Functions)*
 <a name="prpstn:pvm-agree-on-continuous"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:separates-points} -->
 <!--  \uses{prpstn:integral-norm-bound} -->
 <!--  \uses{thrm:operator-valued-integration} -->
@@ -7270,6 +7366,7 @@ We will have need of the fact that the set of complex-valued polynomials on $$\s
 
 > **Lemma** *(Polynomials are Dense in the Continuous Functions on the Spectrum)*
 <a name="lmm:lemma-5"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:hall-7.7} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
@@ -7390,6 +7487,7 @@ $$\blacksquare$$
 
 > **Proposition** *(Two Spectral Measures Agree on Bounded Measurable Functions)*
 <a name="prpstn:pvm-agree-on-measurable"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{def:identity-operator} -->
 <!--  \uses{prpstn:pvm-agree-on-polynomials} -->
 <!--  \uses{thrm:operator-valued-integration} -->
@@ -7529,6 +7627,7 @@ So with this we have proven that under the hypotheses of the [**Theorem**](#thrm
 
 > **Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*
 <a name="thrm:spectral-theorem-for-bounded-operators"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:resolvent-holomorphy-and-neumann-series} -->
 <!--  \uses{crllr:crllr-1} -->
 <!--  \uses{def:F-class} -->
@@ -7625,6 +7724,7 @@ With the [**Spectral Theorem for Bounded, Self-Adjoint Operators**](#thrm:spectr
 
 > **Definition** *(Functional Calculus)*
 <a name="def:functional-calculus"></a>
+<!--  \uses{def:adjoint-bounded} -->
 <!--  \uses{prpstn:basic-integral-properties} -->
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{def:bounded-operator-resolvent-and-spectrum} -->
