@@ -1150,7 +1150,11 @@ Two closure properties of sesquilinear forms are used repeatedly below; we recor
 Fix $$\psi$$. Each $$L_k$$ is conjugate-linear in its first argument, so for $$\phi, \chi \in \mathbf{H}$$ and $$c \in \mathbb{C}$$,
 
 $$
-    L(c\phi + \chi, \psi) = \sum_k \alpha_k L_k(c\phi+\chi,\psi) = \sum_k \alpha_k \left( \overline{c} L_k(\phi,\psi) + L_k(\chi,\psi) \right) = \overline{c} L(\phi,\psi) + L(\chi,\psi),
+\begin{align}
+    L(c\phi + \chi, \psi) &= \sum_k \alpha_k L_k(c\phi+\chi,\psi) \\
+                &= \sum_k \alpha_k \left( \overline{c} L_k(\phi,\psi) + L_k(\chi,\psi) \right) \\
+                &= \overline{c} L(\phi,\psi) + L(\chi,\psi),
+\end{align}
 $$
 
 using that finite sums may be rearranged. The same computation with linearity in the second argument gives $$L(\phi, c\psi + \chi) = c L(\phi,\psi) + L(\phi,\chi)$$. So $$L$$ is conjugate-linear in the first argument and linear in the second, hence sesquilinear.$$\blacksquare$$
@@ -5608,7 +5612,12 @@ $$
 we see that both are non-increasing, since each is a supremum taken over a shrinking set of indices $$\{ n : n \ge i \}$$ as $$i$$ increases. Both are also bounded below: the $$f_n$$ are uniformly bounded, say $$\lvert f_n(x) \rvert \le M$$ for all $$n$$ and $$x$$, so $$g_i(x) \ge \text{Re}(f_i(x)) \ge -M$$ and likewise $$h_i(x) \ge -M$$. Hence, we can apply the [**Monotone Convergence Theorem (Non-Increasing Case)**](#thrm:monotone-convergence-theorem-nonincreasing) to each of these sequences, giving
 
 $$
-    \text{Re}(f(x)) = \lim\limits_{i \rightarrow \infty} g_i(x) = \inf_{i \in \mathbb{N}} g_i(x), \qquad \text{Im}(f(x)) = \lim\limits_{i \rightarrow \infty} h_i(x) = \inf_{i \in \mathbb{N}} h_i(x).
+\begin{align}
+    \text{Re}(f(x)) &= \lim\limits_{i \rightarrow \infty} g_i(x) \\
+                &= \inf_{i \in \mathbb{N}} g_i(x), \qquad \text{Im}(f(x)) \\
+                &= \lim\limits_{i \rightarrow \infty} h_i(x) \\
+                &= \inf_{i \in \mathbb{N}} h_i(x).
+\end{align}
 $$
 
 We will next prove that $$g_i$$ and $$h_i$$ are Borel-measurable, and use this and the two equations above to prove that $$\text{Re}(f)$$ and $$\text{Im}(f)$$---and hence $$f$$ itself---are Borel-measurable.
@@ -6098,7 +6107,12 @@ $$
 for all $$i \in \mathbb{N}$$ and all $$\lambda \in \sigma(A)$$, so the sequence $$\{ fg_i \}_{i \in \mathbb{N}}$$ is uniformly bounded. Hence, the [**Bounded Convergence Theorem**](#thrm:bounded-convergence-theorem), applied to the measure $$\mu_\psi$$, which is finite by [**Lemma** *(The Associated Measures are Finite)*](#lmm:associated-measures-are-finite), gives 
 
 $$
-    \left< \psi, (fg_i)(A)\psi \right> = Q_{fg_i}(\psi) = \int_{\sigma(A)} fg_i \, d\mu_\psi \longrightarrow \int_{\sigma(A)} fg \, d\mu_\psi = Q_{fg}(\psi) = \left< \psi, (fg)(A)\psi \right>.
+\begin{align}
+    \left< \psi, (fg_i)(A)\psi \right> &= Q_{fg_i}(\psi) \\
+                &= \int_{\sigma(A)} fg_i \, d\mu_\psi \longrightarrow \int_{\sigma(A)} fg \, d\mu_\psi \\
+                &= Q_{fg}(\psi) \\
+                &= \left< \psi, (fg)(A)\psi \right>.
+\end{align}
 $$
 
 On the other hand, as each $$g_i$$ is in $$\mathcal{F}_2$$ we have $$(fg_i)(A) = f(A)g_i(A)$$, and thus
@@ -6110,7 +6124,11 @@ $$
 where $$f(A)^*$$ is the adjoint of the bounded operator $$f(A)$$. Recall we established above that for any bounded, Borel-measurable, complex-valued function $$h$$ the sesquilinear form $$L_h$$ associated to $$Q_h$$ satisfies $$L_h(\phi, \psi) = \left< \phi, h(A)\psi \right>$$, and that the map $$h \mapsto L_h(\phi, \psi)$$ is continuous under uniformly bounded pointwise convergence for any $$\phi, \psi \in \mathbf{H}$$. Applying this with $$\phi = f(A)^*\psi$$ to the uniformly bounded sequence $$\{ g_i \}_{i \in \mathbb{N}}$$ converging pointwise to $$g$$ gives
 
 $$
-    \left< f(A)^*\psi, g_i(A)\psi \right> = L_{g_i}(f(A)^*\psi, \psi) \longrightarrow L_g(f(A)^*\psi, \psi) = \left< f(A)^*\psi, g(A)\psi \right> = \left< \psi, f(A)g(A)\psi \right>.
+\begin{align}
+    \left< f(A)^*\psi, g_i(A)\psi \right> &= L_{g_i}(f(A)^*\psi, \psi) \longrightarrow L_g(f(A)^*\psi, \psi) \\
+                &= \left< f(A)^*\psi, g(A)\psi \right> \\
+                &= \left< \psi, f(A)g(A)\psi \right>.
+\end{align}
 $$
 
 As a sequence in $$\mathbb{C}$$ has at most one limit, the two computations give

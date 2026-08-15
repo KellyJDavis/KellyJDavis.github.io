@@ -780,7 +780,11 @@ We conclude this part of the development with a criterion for essential self-adj
 We first prove the forward direction, i.e. that if $$A$$ is essentially self-adjoint, then $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense in $$\mathbf{H}$$. Since $$A$$ is essentially self-adjoint, $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$A^* = (A^{\text{cl}})^* = A^{\text{cl}}$$, the last equality because $$A^{\text{cl}}$$ is self-adjoint. By [Proposition (Orthogonal Complement of the Range)](#prpstn:hall-9.12) and [Proposition (Adjoint of a Sum with a Bounded Operator)](#prpstn:hall-9.13) (applied to $$A - i\mathbf{1}$$, i.e. with $$B = -i\mathbf{1}$$, so that $$B^* = \overline{(-i)}\mathbf{1} = i\mathbf{1}$$ by [Lemma (Adjoint of a Scalar Multiple of the Identity)](#lmm:adjoint-of-scalar-multiple-of-identity)),
 
 $$
-    \left( \text{Range}(A - i\mathbf{1}) \right)^\perp = \text{Ker}\left( (A - i\mathbf{1})^* \right) = \text{Ker}(A^* + i\mathbf{1}) = \text{Ker}(A^{\text{cl}} + i\mathbf{1}).
+\begin{align}
+    \left( \text{Range}(A - i\mathbf{1}) \right)^\perp &= \text{Ker}\left( (A - i\mathbf{1})^* \right) \\
+                &= \text{Ker}(A^* + i\mathbf{1}) \\
+                &= \text{Ker}(A^{\text{cl}} + i\mathbf{1}).
+\end{align}
 $$
 
 Since $$A^{\text{cl}}$$ is self-adjoint, [Theorem (Spectrum of a Self-Adjoint Operator is Real)](#thrm:hall-9.17) shows $$\sigma(A^{\text{cl}}) \subset \mathbb{R}$$, and since $$-i \notin \mathbb{R}$$, $$-i$$ is not in $$\sigma(A^{\text{cl}})$$, i.e. $$-i$$ is in the resolvent set of $$A^{\text{cl}}$$. By the [definition of the resolvent set](#def:hall-9.16), this gives a bounded two-sided inverse to $$A^{\text{cl}} + i\mathbf{1}$$, and an operator with a two-sided inverse is in particular injective, so $$\text{Ker}(A^{\text{cl}} + i\mathbf{1}) = \{0\}$$. Hence $$\left( \text{Range}(A - i\mathbf{1}) \right)^\perp = \{0\}$$, so, by [Corollary (Trivial Complement Characterizes Density)](#crllr:trivial-complement-characterizes-density), $$\text{Range}(A - i\mathbf{1})$$ is dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ throughout shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$.
@@ -912,7 +916,11 @@ For the consequence, suppose $$T$$ is linear with $$\left\| T\chi \right\| = \le
 **Part 2 first.** Let $$\psi = \sum_n \psi_n$$ with $$\psi_n \in \mathbf{K}_n$$, and write $$\psi^{(N)} \equiv \sum_{n=1}^N \psi_n$$, so $$\psi^{(N)} \to \psi$$ in norm. By pairwise orthogonality (Part 1 of the definition), expanding the finite sum,
 
 $$
-    \left\| \psi^{(N)} \right\|^2 = \left< \sum_{n=1}^N \psi_n, \sum_{m=1}^N \psi_m \right> = \sum_{n=1}^N \sum_{m=1}^N \left< \psi_n, \psi_m \right> = \sum_{n=1}^N \left\| \psi_n \right\|^2,
+\begin{align}
+    \left\| \psi^{(N)} \right\|^2 &= \left< \sum_{n=1}^N \psi_n, \sum_{m=1}^N \psi_m \right> \\
+                &= \sum_{n=1}^N \sum_{m=1}^N \left< \psi_n, \psi_m \right> \\
+                &= \sum_{n=1}^N \left\| \psi_n \right\|^2,
+\end{align}
 $$
 
 all cross terms ($$n\ne m$$) vanishing. Since $$\psi^{(N)} \to \psi$$, [continuity of the norm](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product) gives $$\left\| \psi^{(N)} \right\|^2 \to \left\| \psi \right\|^2$$, so the partial sums $$\sum_{n=1}^N \left\| \psi_n \right\|^2$$ converge to $$\left\| \psi \right\|^2$$; that is, $$\sum_{n=1}^\infty \left\| \psi_n \right\|^2 = \left\| \psi \right\|^2$$.
@@ -930,7 +938,12 @@ all cross terms ($$n\ne m$$) vanishing. Since $$\psi^{(N)} \to \psi$$, [continui
 *Inner-product preserving:* for $$\psi,\phi \in \mathbf{H}$$ with decompositions $$\sum_n\psi_n$$, $$\sum_n\phi_n$$, [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product) applied to the partial sums, together with pairwise orthogonality killing all cross terms in each finite double sum, gives
 
 $$
-    \left< \psi, \phi \right> = \lim_{N\to\infty} \left< \sum_{n=1}^N \psi_n, \sum_{m=1}^N \phi_m \right> = \lim_{N\to\infty} \sum_{n=1}^N \left< \psi_n, \phi_n \right> = \sum_{n=1}^\infty \left< \psi_n, \phi_n \right> = \left< U\psi, U\phi \right>,
+\begin{align}
+    \left< \psi, \phi \right> &= \lim_{N\to\infty} \left< \sum_{n=1}^N \psi_n, \sum_{m=1}^N \phi_m \right> \\
+                &= \lim_{N\to\infty} \sum_{n=1}^N \left< \psi_n, \phi_n \right> \\
+                &= \sum_{n=1}^\infty \left< \psi_n, \phi_n \right> \\
+                &= \left< U\psi, U\phi \right>,
+\end{align}
 $$
 
 the last equality being the definition of the inner product on the external direct sum. So $$U$$ is unitary.$$\blacksquare$$
@@ -1013,7 +1026,11 @@ So $$A^* = (A\vert_{W_0})^*$$, and it suffices to compute the adjoint of $$A\ver
 **Part 3: $$\text{Dom}(A^*) = V$$, with the stated formula.** Assume now $$\text{Dom}(A) = W_0$$. We first show $$V \subset \text{Dom}(A^*)$$. Let $$\phi = (\phi_1, \phi_2, \ldots) \in V$$, and let $$\psi = (\psi_1, \ldots, \psi_N, 0, 0, \ldots) \in W_0$$ be arbitrary. Since each $$A_j$$ is self-adjoint (hence symmetric, by [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4)) on $$\mathbf{H}_j$$, and using the definition of the inner product on the direct sum $$\mathbf{H}$$ as the sum of the componentwise inner products,
 
 $$
-    \left< \phi, A\psi \right> = \sum_{j=1}^N \left< \phi_j, A_j \psi_j \right> = \sum_{j=1}^N \left< A_j \phi_j, \psi_j \right> = \left< (A_1\phi_1, \ldots, A_N\phi_N, 0, \ldots), \psi \right>.
+\begin{align}
+    \left< \phi, A\psi \right> &= \sum_{j=1}^N \left< \phi_j, A_j \psi_j \right> \\
+                &= \sum_{j=1}^N \left< A_j \phi_j, \psi_j \right> \\
+                &= \left< (A_1\phi_1, \ldots, A_N\phi_N, 0, \ldots), \psi \right>.
+\end{align}
 $$
 
 By [Cauchy–Schwarz](../spectral-theorems/#prpstn:hall-a.43) applied in $$\mathbf{H}$$ — valid since both $$(A_1\phi_1, \ldots, A_N\phi_N, 0, \ldots)$$ and $$\psi$$ are elements of $$\mathbf{H}$$ —
@@ -1027,7 +1044,11 @@ and the right-most quantity is a finite constant since $$\phi \in V$$. Thus $$\p
 We now show $$\text{Dom}(A^*) \subset V$$. Let $$\phi = (\phi_1, \phi_2, \ldots) \in \text{Dom}(A^*)$$, so there is a constant $$C$$ with $$\lvert \left< \phi, A\psi \right> \rvert \le C \left\| \psi \right\|$$ for all $$\psi \in W_0$$. For each $$N$$, set $$\psi_N \equiv (A_1\phi_1, A_2\phi_2, \ldots, A_N\phi_N, 0, 0, \ldots) \in W_0$$ (a valid element of $$W_0$$ since each $$A_j\phi_j \in \mathbf{H}_j$$ and only finitely many entries are nonzero). Then, using self-adjointness of each $$A_j$$ as in the previous part,
 
 $$
-    \left< \phi, A\psi_N \right> = \sum_{j=1}^N \left< \phi_j, A_j(A_j\phi_j) \right> = \sum_{j=1}^N \left< A_j\phi_j, A_j\phi_j \right> = \sum_{j=1}^N \left\| A_j\phi_j \right\|_j^2,
+\begin{align}
+    \left< \phi, A\psi_N \right> &= \sum_{j=1}^N \left< \phi_j, A_j(A_j\phi_j) \right> \\
+                &= \sum_{j=1}^N \left< A_j\phi_j, A_j\phi_j \right> \\
+                &= \sum_{j=1}^N \left\| A_j\phi_j \right\|_j^2,
+\end{align}
 $$
 
 while $$\left\| \psi_N \right\| = \left( \sum_{j=1}^N \left\| A_j\phi_j \right\|_j^2 \right)^{1/2}$$. Boundedness of $$\psi \mapsto \left< \phi, A\psi \right>$$ gives
@@ -1236,7 +1257,11 @@ $$
 which is manifestly symmetric, $$M(\phi,\psi) = M(\psi,\phi)$$. Since $$M = \text{Re}[L]$$ and $$L$$ is sesquilinear (property 2 of the [definition of a quadratic form](#def:hall-quadratic-form-on-a-subspace)), $$M$$ is real-bilinear: additive and $$\mathbb{R}$$-homogeneous in each argument. Also, using $$Q(\lambda\xi) = \lvert \lambda \rvert^2 Q(\xi)$$ (property 1 of the same definition) with $$\lambda = i$$,
 
 $$
-    M(i\phi, i\psi) = \frac{1}{2}\big[ Q(i\phi+i\psi) - Q(i\phi) - Q(i\psi) \big] = \frac{1}{2}\big[ \lvert i \rvert^2 Q(\phi+\psi) - Q(\phi) - Q(\psi) \big] = M(\phi, \psi),
+\begin{align}
+    M(i\phi, i\psi) &= \frac{1}{2}\big[ Q(i\phi+i\psi) - Q(i\phi) - Q(i\psi) \big] \\
+                &= \frac{1}{2}\big[ \lvert i \rvert^2 Q(\phi+\psi) - Q(\phi) - Q(\psi) \big] \\
+                &= M(\phi, \psi),
+\end{align}
 $$
 
 using $$i\phi + i\psi = i(\phi+\psi)$$ and $$\lvert i \rvert^2 = 1$$. Combining symmetry, real-bilinearity, and $$M(i\phi,i\psi) = M(\phi,\psi)$$ (applied with $$\phi \mapsto i\psi$$, $$\psi \mapsto \phi$$),
@@ -1387,7 +1412,13 @@ The inner-product axioms hold on $$V$$ because they hold on $$\mathbf{H}$$ and $
 By [**Lemma** *(The Range of a Projection is the Kernel of its Complement)*](#lmm:range-of-projection-is-kernel), applied to the bounded orthogonal projection $$\mu(E)$$ (property 1 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure)), $$\eta \in \text{Range}(\mu(E))$$ gives $$\mu(E)\eta = \eta$$. Hence, using property 4 of that definition together with $$E^c \cap E = \emptyset$$, and then property 2 ($$\mu(\emptyset) = 0$$),
 
 $$
-    \mu_\eta(E^c) = \left< \eta, \mu(E^c)\eta \right> = \left< \eta, \mu(E^c)\mu(E)\eta \right> = \left< \eta, \mu(E^c \cap E)\eta \right> = \left< \eta, \mu(\emptyset)\eta \right> = 0.
+\begin{align}
+    \mu_\eta(E^c) &= \left< \eta, \mu(E^c)\eta \right> \\
+                &= \left< \eta, \mu(E^c)\mu(E)\eta \right> \\
+                &= \left< \eta, \mu(E^c \cap E)\eta \right> \\
+                &= \left< \eta, \mu(\emptyset)\eta \right> \\
+                &= 0.
+\end{align}
 $$
 
 For the consequence: since $$g \ge 0$$ and the measure of $$E^c$$ under $$\mu_\eta$$ is $$0$$, the portion of the integral over $$E^c$$ vanishes, and $$\int_X g\,d\mu_\eta = \int_E g\,d\mu_\eta + \int_{E^c} g\,d\mu_\eta = \int_E g\,d\mu_\eta + 0$$.$$\blacksquare$$
@@ -1484,7 +1515,11 @@ Before checking any properties of $$Q_f$$, we note it is well defined: for $$\ps
 **Part 1.** We first check $$W_f$$ is a subspace. If $$\psi \in W_f$$ and $$\lambda \in \mathbb{C}$$, then, directly from the definition of $$\mu_{\lambda\psi}$$ and conjugate-linearity/linearity of the inner product in its two arguments,
 
 $$
-    \mu_{\lambda\psi}(E) = \left< \lambda\psi, \mu(E)\lambda\psi \right> = \overline{\lambda}\lambda \left< \psi, \mu(E)\psi \right> = \lvert \lambda \rvert^2 \mu_\psi(E)
+\begin{align}
+    \mu_{\lambda\psi}(E) &= \left< \lambda\psi, \mu(E)\lambda\psi \right> \\
+                &= \overline{\lambda}\lambda \left< \psi, \mu(E)\psi \right> \\
+                &= \lvert \lambda \rvert^2 \mu_\psi(E)
+\end{align}
 $$
 
 for every $$E \in \Omega(X)$$, so $$\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \mu_\psi$$ as measures on $$(X, \Omega(X))$$. Hence, by the homogeneity clause of [**Proposition** *(Linearity of the Integral in the Measure)*](#prpstn:additivity-of-the-integral-in-the-measure), $$\int_X \lvert f \rvert^2 \, d\mu_{\lambda\psi} = \lvert \lambda \rvert^2 \int_X \lvert f \rvert^2 \, d\mu_\psi$$, which is finite exactly when $$\int_X \lvert f \rvert^2 \, d\mu_\psi$$ is (trivially, if $$\lambda = 0$$ both integrals are $$0$$); so $$\lambda\psi \in W_f$$.
@@ -1555,7 +1590,11 @@ for all $$\phi \in W_f$$. Uniqueness of $$\chi$$ with this property follows from
 For linearity of $$\psi \mapsto \chi$$: writing $$\chi_\psi$$ for the vector associated to $$\psi \in W_f$$, fix $$\psi_1, \psi_2 \in W_f$$ and $$\alpha, \beta \in \mathbb{C}$$. Since $$L_f$$ is linear in its second argument, for all $$\phi \in W_f$$,
 
 $$
-    L_f(\phi, \alpha\psi_1 + \beta\psi_2) = \alpha L_f(\phi, \psi_1) + \beta L_f(\phi, \psi_2) = \alpha \left< \phi, \chi_{\psi_1} \right> + \beta \left< \phi, \chi_{\psi_2} \right> = \left< \phi, \alpha\chi_{\psi_1} + \beta\chi_{\psi_2} \right>,
+\begin{align}
+    L_f(\phi, \alpha\psi_1 + \beta\psi_2) &= \alpha L_f(\phi, \psi_1) + \beta L_f(\phi, \psi_2) \\
+                &= \alpha \left< \phi, \chi_{\psi_1} \right> + \beta \left< \phi, \chi_{\psi_2} \right> \\
+                &= \left< \phi, \alpha\chi_{\psi_1} + \beta\chi_{\psi_2} \right>,
+\end{align}
 $$
 
 using linearity of the inner product in its second argument for the last step. By uniqueness (via [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) again), $$\chi_{\alpha\psi_1 + \beta\psi_2} = \alpha\chi_{\psi_1} + \beta\chi_{\psi_2}$$.
@@ -1569,7 +1608,12 @@ $$
 We show $$\{ \chi_n \}_{n \in \mathbb{N}}$$ is a Cauchy sequence in $$\mathbf{H}$$. For $$n < m$$, $$E_n \subset E_m$$ gives $$f_n - f_m = f \cdot 1_{E_n} - f \cdot 1_{E_m} = -f \cdot 1_{E_m \setminus E_n}$$, so, applying [**Lemma** *(Norm Identity for the Bounded Integral)*](#lmm:norm-identity-bounded-integral) to the bounded function $$f_n - f_m$$ and using linearity of the bounded integral,
 
 $$
-    \left\| \chi_n - \chi_m \right\|^2 = \left\| \left( \int_X (f_n - f_m) \, d\mu \right)\psi \right\|^2 = \int_X \lvert f_n - f_m \rvert^2 \, d\mu_\psi = \int_{E_m \setminus E_n} \lvert f \rvert^2 \, d\mu_\psi = \int_X \lvert f_m \rvert^2 \, d\mu_\psi - \int_X \lvert f_n \rvert^2 \, d\mu_\psi,
+\begin{align}
+    \left\| \chi_n - \chi_m \right\|^2 &= \left\| \left( \int_X (f_n - f_m) \, d\mu \right)\psi \right\|^2 \\
+                &= \int_X \lvert f_n - f_m \rvert^2 \, d\mu_\psi \\
+                &= \int_{E_m \setminus E_n} \lvert f \rvert^2 \, d\mu_\psi \\
+                &= \int_X \lvert f_m \rvert^2 \, d\mu_\psi - \int_X \lvert f_n \rvert^2 \, d\mu_\psi,
+\end{align}
 $$
 
 the last equality because $$E_n \subset E_m$$ splits $$\int_{E_m}$$ as $$\int_{E_n} + \int_{E_m \setminus E_n}$$. By **Part 2**'s argument, $$\int_X \lvert f_n \rvert^2 \, d\mu_\psi \to \int_X \lvert f \rvert^2 \, d\mu_\psi$$, a finite limit since $$\psi \in W_f$$; being also non-decreasing in $$n$$, this sequence of real numbers is Cauchy, so the right-hand side above tends to $$0$$ as $$n, m \to \infty$$. Thus $$\{ \chi_n \}_{n \in \mathbb{N}}$$ is Cauchy in $$\mathbf{H}$$, and, $$\mathbf{H}$$ being complete, converges to some $$\chi' \in \mathbf{H}$$.
@@ -1577,7 +1621,11 @@ the last equality because $$E_n \subset E_m$$ splits $$\int_{E_m}$$ as $$\int_{E
 By [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product), $$\left< \phi, \chi' \right> = \lim_n \left< \phi, \chi_n \right> = \left< \phi, \chi \right>$$ for every $$\phi \in W_f$$, using $$(\ddagger)$$ — matching the defining property of $$\chi$$ exactly — so $$\chi' = \chi$$ by [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot). That is, $$\chi_n \to \chi$$ in norm, so, by continuity of the norm,
 
 $$
-    \left\| \chi \right\|^2 = \lim_{n \to \infty} \left\| \chi_n \right\|^2 = \lim_{n \to \infty} \int_X \lvert f_n \rvert^2 \, d\mu_\psi = \int_X \lvert f \rvert^2 \, d\mu_\psi,
+\begin{align}
+    \left\| \chi \right\|^2 &= \lim_{n \to \infty} \left\| \chi_n \right\|^2 \\
+                &= \lim_{n \to \infty} \int_X \lvert f_n \rvert^2 \, d\mu_\psi \\
+                &= \int_X \lvert f \rvert^2 \, d\mu_\psi,
+\end{align}
 $$
 
 the desired formula.$$\blacksquare$$
@@ -1721,7 +1769,11 @@ Write $$\chi_n \equiv \left( \int_X f_n \, d\mu \right)\psi$$ — defined since 
 For $$n < m$$ we have $$E_n \subset E_m$$ and hence $$f_n - f_m = -f\cdot 1_{E_m \setminus E_n}$$, so, applying [**Lemma** *(Norm Identity for the Bounded Integral)*](#lmm:norm-identity-bounded-integral) to the bounded function $$f_n - f_m$$ and using linearity of the bounded integral,
 
 $$
-    \left\| \chi_n - \chi_m \right\|^2 = \int_X \lvert f_n - f_m \rvert^2 \, d\mu_\psi = \int_{E_m\setminus E_n} \lvert f \rvert^2 \, d\mu_\psi = \int_X \lvert f_m \rvert^2 \, d\mu_\psi - \int_X \lvert f_n \rvert^2 \, d\mu_\psi.
+\begin{align}
+    \left\| \chi_n - \chi_m \right\|^2 &= \int_X \lvert f_n - f_m \rvert^2 \, d\mu_\psi \\
+                &= \int_{E_m\setminus E_n} \lvert f \rvert^2 \, d\mu_\psi \\
+                &= \int_X \lvert f_m \rvert^2 \, d\mu_\psi - \int_X \lvert f_n \rvert^2 \, d\mu_\psi.
+\end{align}
 $$
 
 Since $$\lvert f_n \rvert^2 = \lvert f \rvert^2 1_{E_n}$$ increases pointwise to $$\lvert f \rvert^2$$, the [**Monotone Convergence Theorem**](#thrm:monotone-convergence-theorem-for-integrals) gives $$\int_X \lvert f_n \rvert^2 \, d\mu_\psi \to \int_X \lvert f \rvert^2\,d\mu_\psi$$, a finite limit because $$\psi \in W_f$$; a convergent sequence of reals is Cauchy, so the right-hand side above tends to $$0$$ as $$n,m\to\infty$$, and $$\{\chi_n\}$$ is Cauchy in $$\mathbf{H}$$. By completeness, $$\chi_n \to \chi'$$ for some $$\chi' \in \mathbf{H}$$.
@@ -1810,7 +1862,11 @@ the second line using $$\mu(E)\xi = \xi$$. Since $$E \cap S = S \cap E$$, the tw
 *Step 2: $$\left< \phi, A_f\psi \right> = 0$$ for $$\psi \in V_E$$ and $$\phi \in V_E^\perp \cap W_f$$.* Fix such $$\psi$$ and $$\phi$$, and let $$S \in \Omega(X)$$ be arbitrary. By **Step 1**, $$\mu(S)\psi \in V_E$$, so $$\left< \phi, \mu(S)\psi \right> = 0$$ since $$\phi \in V_E^\perp$$; and, since $$\mu(S)$$ is self-adjoint, $$\left< \psi, \mu(S)\phi \right> = \overline{\left< \mu(S)\phi, \psi \right>} = \overline{\left< \phi, \mu(S)\psi \right>} = 0$$ as well. Hence
 
 $$
-    \mu_{\phi+\psi}(S) = \left< \phi + \psi, \mu(S)(\phi+\psi) \right> = \mu_\phi(S) + \mu_\psi(S) + \left< \phi, \mu(S)\psi \right> + \left< \psi, \mu(S)\phi \right> = \mu_\phi(S) + \mu_\psi(S)
+\begin{align}
+    \mu_{\phi+\psi}(S) &= \left< \phi + \psi, \mu(S)(\phi+\psi) \right> \\
+                &= \mu_\phi(S) + \mu_\psi(S) + \left< \phi, \mu(S)\psi \right> + \left< \psi, \mu(S)\phi \right> \\
+                &= \mu_\phi(S) + \mu_\psi(S)
+\end{align}
 $$
 
 for every $$S \in \Omega(X)$$, i.e. $$\mu_{\phi+\psi} = \mu_\phi + \mu_\psi$$ as measures. Hence, by [**Proposition** *(Additivity of the Integral in the Measure)*](#prpstn:additivity-of-the-integral-in-the-measure) — applicable since $$f$$ is integrable against each of $$\mu_\phi$$ and $$\mu_\psi$$, both $$\phi$$ and $$\psi$$ lying in $$W_f$$ —
@@ -1891,19 +1947,33 @@ So $$\{\mathbf{H}_n\}$$ is an internal orthogonal decomposition of $$\mathbf{H}$
 Identifying $$\mathbf{H}$$ with sequences $$\psi = (\psi_1, \psi_2, \ldots)$$, $$\psi_n \in \mathbf{H}_n$$: for $$\psi \in \bigoplus_{n=1}^N \mathbf{H}_n$$ a finite sum (so $$\psi = \sum_{n=1}^N \psi_n \in W_f$$, since $$W_f$$ is a subspace and $$\mathbf{H}_n \subset W_f$$ for each $$n$$, shown above), linearity of $$A_f$$ on $$W_f$$ together with $$A_f$$ mapping each $$\mathbf{H}_n$$ to itself via $$A_n$$ gives $$A_f\psi = \sum_{n=1}^N A_n\psi_n$$, matching the formula in [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26) on the finite direct sum. It remains to identify $$W_f$$ itself with the domain $$V$$ of that proposition. Let $$\psi \in \mathbf{H}$$ be arbitrary (not assumed to lie in $$W_f$$ or to be a finite sum), and write $$\psi_n \equiv \mu(F_n)\psi \in \mathbf{H}_n$$ for its components. We claim $$\mu_\psi$$ and $$\mu_{\psi_n}$$ agree on every measurable $$E \subset F_n$$. Indeed, for such $$E$$, using self-adjointness of $$\mu(F_n)$$ to move one factor across the inner product, then property 4 of the [definition of a projection-valued measure](../spectral-theorems/#def:projection-valued-measure) twice, and finally $$E \cap F_n = E$$ (as $$E \subset F_n$$),
 
 $$
-    \mu_{\psi_n}(E) = \left< \mu(F_n)\psi, \mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(F_n)\mu(E)\mu(F_n)\psi \right> = \left< \psi, \mu(F_n \cap E \cap F_n)\psi \right> = \left< \psi, \mu(E)\psi \right> = \mu_\psi(E).
+\begin{align}
+    \mu_{\psi_n}(E) &= \left< \mu(F_n)\psi, \mu(E)\mu(F_n)\psi \right> \\
+                &= \left< \psi, \mu(F_n)\mu(E)\mu(F_n)\psi \right> \\
+                &= \left< \psi, \mu(F_n \cap E \cap F_n)\psi \right> \\
+                &= \left< \psi, \mu(E)\psi \right> \\
+                &= \mu_\psi(E).
+\end{align}
 $$
 
 Hence
 
 $$
-    \int_X \lvert f \rvert^2 \, d\mu_\psi = \sum_n \int_{F_n} \lvert f \rvert^2 \, d\mu_\psi = \sum_n \int_{F_n} \lvert f \rvert^2 \, d\mu_{\psi_n} = \sum_n \int_X \lvert f \rvert^2 \, d\mu_{\psi_n} = \sum_n \left\| A_n \psi_n \right\|_n^2,
+\begin{align}
+    \int_X \lvert f \rvert^2 \, d\mu_\psi &= \sum_n \int_{F_n} \lvert f \rvert^2 \, d\mu_\psi \\
+                &= \sum_n \int_{F_n} \lvert f \rvert^2 \, d\mu_{\psi_n} \\
+                &= \sum_n \int_X \lvert f \rvert^2 \, d\mu_{\psi_n} \\
+                &= \sum_n \left\| A_n \psi_n \right\|_n^2,
+\end{align}
 $$
 
 where: the first equality is [**Proposition** *(Countable Additivity of the Integral over a Disjoint Cover)*](#prpstn:countable-additivity-of-the-integral), applied to the nonnegative measurable function $$\lvert f \rvert^2$$, the measure $$\mu_\psi$$, and the disjoint cover $$\{F_n\}$$; the second is [**Proposition** *(Integrals Agree when Measures Agree on a Set)*](#prpstn:integrals-agree-when-measures-agree), applied with $$E = F_n$$ and the two measures $$\mu_\psi, \mu_{\psi_n}$$, which agree on all measurable subsets of $$F_n$$ (just shown); the third uses $$\mu_{\psi_n}(F_n^c) = 0$$ — which is [**Lemma** *(Range Membership Concentrates the Associated Measure)*](#lmm:range-membership-concentrates-measure) applied to $$\psi_n = \mu(F_n)\psi \in \text{Range}(\mu(F_n))$$ — to extend the integral from $$F_n$$ back to $$X$$; and the last is the norm formula of [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1) applied in $$\mathbf{H}$$ to the vector $$\psi_n$$ (which lies in $$W_f$$, since $$\mathbf{H}_n \subset W_f$$), giving $$\int_X \lvert f \rvert^2 d\mu_{\psi_n} = \left\| A_f\psi_n \right\|^2$$, together with $$A_f\psi_n = A_n\psi_n$$ and the fact that the $$\mathbf{H}_n$$-norm is the restriction of the $$\mathbf{H}$$-norm, so $$\left\| A_f\psi_n \right\| = \left\| A_n\psi_n \right\|_n$$. This holds for *every* $$\psi \in \mathbf{H}$$, with both sides possibly infinite, so it identifies
 
 $$
-    W_f = \left\{ \psi \in \mathbf{H} \mid \int_X \lvert f \rvert^2 \, d\mu_\psi < \infty \right\} = \left\{ \psi = (\psi_1,\psi_2,\ldots) \;\middle|\; \sum_n \left( \left\| \psi_n \right\|_n^2 + \left\| A_n\psi_n \right\|_n^2 \right) < \infty \right\},
+\begin{align}
+    W_f &= \left\{ \psi \in \mathbf{H} \mid \int_X \lvert f \rvert^2 \, d\mu_\psi < \infty \right\} \\
+        &= \left\{ \psi = (\psi_1,\psi_2,\ldots) \;\middle|\; \sum_n \left( \left\| \psi_n \right\|_n^2 + \left\| A_n\psi_n \right\|_n^2 \right) < \infty \right\},
+\end{align}
 $$
 
 the second equality using that $$\psi \in \mathbf{H}$$ already forces $$\sum_n \left\| \psi_n \right\|_n^2 < \infty$$ (Parseval for the Hilbert space direct sum). This is exactly the domain $$V$$ in [**Proposition** *(hall-9.26)*](#prpstn:hall-9.26).
@@ -2074,7 +2144,12 @@ We can now prove the equality of norm and spectral radius for normal operators, 
 **Part 1.** For any $$\phi,\psi \in \mathbf{H}$$, applying the [definition of the adjoint](#def:hall-9.1) (for a bounded operator, with domain all of $$\mathbf{H}$$) to $$B$$ and then to $$A$$,
 
 $$
-    \left< \phi, (AB)\psi \right> = \left< \phi, A(B\psi) \right> = \left< A^*\phi, B\psi \right> = \left< B^*(A^*\phi), \psi \right> = \left< (B^*A^*)\phi, \psi \right>.
+\begin{align}
+    \left< \phi, (AB)\psi \right> &= \left< \phi, A(B\psi) \right> \\
+                &= \left< A^*\phi, B\psi \right> \\
+                &= \left< B^*(A^*\phi), \psi \right> \\
+                &= \left< (B^*A^*)\phi, \psi \right>.
+\end{align}
 $$
 
 As this holds for all $$\phi,\psi \in \mathbf{H}$$, this is exactly the defining property of $$(AB)^*$$, so $$(AB)^* = B^*A^*$$.
@@ -2239,7 +2314,13 @@ Indeed, writing $$Q_g(\xi) \equiv \left< \xi, g(A)\xi \right> = \int_{\sigma(A)}
 Now let $$\{f_i\}$$ be as above with each $$f_i \in \mathcal{F}$$. For all $$\phi,\psi \in \mathbf{H}$$, applying $$(\dagger\dagger)$$ twice — once with the fixed vector $$B\psi$$ in the second slot, once with the fixed vector $$B^*\phi$$ in the first —
 
 $$
-    \left< \phi, f(A)B\psi \right> = \lim_{i\to\infty} \left< \phi, f_i(A)B\psi \right> = \lim_{i\to\infty} \left< \phi, Bf_i(A)\psi \right> = \lim_{i\to\infty} \left< B^*\phi, f_i(A)\psi \right> = \left< B^*\phi, f(A)\psi \right> = \left< \phi, Bf(A)\psi \right>,
+\begin{align}
+    \left< \phi, f(A)B\psi \right> &= \lim_{i\to\infty} \left< \phi, f_i(A)B\psi \right> \\
+                &= \lim_{i\to\infty} \left< \phi, Bf_i(A)\psi \right> \\
+                &= \lim_{i\to\infty} \left< B^*\phi, f_i(A)\psi \right> \\
+                &= \left< B^*\phi, f(A)\psi \right> \\
+                &= \left< \phi, Bf(A)\psi \right>,
+\end{align}
 $$
 
 where the second equality used $$f_i \in \mathcal{F}$$ and the third and last used the [definition of the adjoint](#def:hall-9.1) for the bounded operator $$B$$. Since this holds for all $$\phi \in \mathbf{H}$$, [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D = \mathbf{H}$$ gives $$f(A)B\psi = Bf(A)\psi$$ for every $$\psi$$, i.e. $$f \in \mathcal{F}$$.
@@ -2866,7 +2947,11 @@ Throughout we use [**Lemma** *(Off-Diagonal Formula and Bounded Convergence for 
 $$\mathcal{F}_1$$ *is a vector space*: for $$f_1,f_2 \in \mathcal{F}_1$$ and $$\alpha_1,\alpha_2 \in \mathbb{C}$$, using that $$(\alpha_1f_1+\alpha_2f_2)g = \alpha_1(f_1g)+\alpha_2(f_2g)$$ pointwise and [**Lemma** *(The Extended Calculus is Linear)*](#lmm:abstract-extended-linear),
 
 $$
-    \widetilde\Phi\big((\alpha_1f_1+\alpha_2f_2)g\big) = \alpha_1\widetilde\Phi(f_1g)+\alpha_2\widetilde\Phi(f_2g) = \big(\alpha_1\widetilde\Phi(f_1)+\alpha_2\widetilde\Phi(f_2)\big)\widetilde\Phi(g) = \widetilde\Phi(\alpha_1f_1+\alpha_2f_2)\widetilde\Phi(g).
+\begin{align}
+    \widetilde\Phi\big((\alpha_1f_1+\alpha_2f_2)g\big) &= \alpha_1\widetilde\Phi(f_1g)+\alpha_2\widetilde\Phi(f_2g) \\
+                &= \big(\alpha_1\widetilde\Phi(f_1)+\alpha_2\widetilde\Phi(f_2)\big)\widetilde\Phi(g) \\
+                &= \widetilde\Phi(\alpha_1f_1+\alpha_2f_2)\widetilde\Phi(g).
+\end{align}
 $$
 
 $$\mathcal{F}_1 \supset C^0(X;\mathbb{R})$$: for continuous $$f$$, $$fg$$ is continuous, and $$\widetilde\Phi$$ agrees with $$\Phi$$ on continuous functions ([Definition (The Extended Calculus)](#def:abstract-extended-calculus)), so the claim reduces to $$\Phi(fg) = \Phi(f)\Phi(g)$$, which is property 2 of the [definition of an abstract continuous functional calculus](#def:abstract-continuous-functional-calculus).
@@ -2874,7 +2959,11 @@ $$\mathcal{F}_1 \supset C^0(X;\mathbb{R})$$: for continuous $$f$$, $$fg$$ is con
 $$\mathcal{F}_1$$ *is closed under bounded pointwise limits*: let $$f_i \to f$$ pointwise with $$\lvert f_i \rvert \le M$$, all $$f_i \in \mathcal{F}_1$$. Then $$f_ig \to fg$$ pointwise with $$\lvert f_ig \rvert \le M\left\| g \right\|_\infty$$, so by the convergence principle, for all $$\phi,\psi$$,
 
 $$
-    \left< \phi, \widetilde\Phi(fg)\psi \right> = \lim_i \left< \phi, \widetilde\Phi(f_ig)\psi \right> = \lim_i \left< \phi, \widetilde\Phi(f_i)\widetilde\Phi(g)\psi \right> = \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g)\psi \right>,
+\begin{align}
+    \left< \phi, \widetilde\Phi(fg)\psi \right> &= \lim_i \left< \phi, \widetilde\Phi(f_ig)\psi \right> \\
+                &= \lim_i \left< \phi, \widetilde\Phi(f_i)\widetilde\Phi(g)\psi \right> \\
+                &= \left< \phi, \widetilde\Phi(f)\widetilde\Phi(g)\psi \right>,
+\end{align}
 $$
 
 the last step being the convergence principle applied with the fixed vector $$\widetilde\Phi(g)\psi$$ in place of $$\psi$$. By [Lemma (Equality Testing on a Dense Subspace, Second Slot)](#lmm:hall-dense-testing-second-slot) with $$D = \mathbf{H}$$, $$\widetilde\Phi(fg)\psi = \widetilde\Phi(f)\widetilde\Phi(g)\psi$$ for every $$\psi$$, i.e. $$f \in \mathcal{F}_1$$.
@@ -2908,7 +2997,13 @@ By uniqueness of limits, $$\left< \phi, \widetilde\Phi(fg)\psi \right> = \left< 
 Write $$f = u + iv$$ with $$u = \tfrac{1}{2}(f+\overline f)$$ and $$v = \tfrac{1}{2i}(f - \overline f)$$ bounded, measurable, and real-valued. By [**Lemma** *(Real Functions Give Self-Adjoint Operators)*](#lmm:abstract-extended-real-self-adjoint), $$\widetilde\Phi(u)$$ and $$\widetilde\Phi(v)$$ are self-adjoint. By [**Lemma** *(The Extended Calculus is Linear)*](#lmm:abstract-extended-linear) and conjugate-linearity of the adjoint,
 
 $$
-    \widetilde\Phi(f)^* = \big( \widetilde\Phi(u) + i\widetilde\Phi(v) \big)^* = \widetilde\Phi(u)^* - i\widetilde\Phi(v)^* = \widetilde\Phi(u) - i\widetilde\Phi(v) = \widetilde\Phi(u - iv) = \widetilde\Phi(\overline f).\ \blacksquare
+\begin{align}
+    \widetilde\Phi(f)^* &= \big( \widetilde\Phi(u) + i\widetilde\Phi(v) \big)^* \\
+                &= \widetilde\Phi(u)^* - i\widetilde\Phi(v)^* \\
+                &= \widetilde\Phi(u) - i\widetilde\Phi(v) \\
+                &= \widetilde\Phi(u - iv) \\
+                &= \widetilde\Phi(\overline f).\ \blacksquare
+\end{align}
 $$
 
 We can now assemble the projection-valued measure. This is the abstract form of the previous post's [**Theorem** *(hall-8.10)*](../spectral-theorems/#thrm:hall-8.10).
@@ -2977,7 +3072,12 @@ $$
 using [Definition (The Extended Calculus)](#def:abstract-extended-calculus). So $$\mu^\Phi_\psi = \mu_\psi$$ as measures. Therefore, for *any* bounded measurable $$f$$,
 
 $$
-    \left< \psi, \left( \int_X f \, d\mu^\Phi \right)\psi \right> = \int_X f \, d\mu^\Phi_\psi = \int_X f \, d\mu_\psi = Q_f(\psi) = \left< \psi, \widetilde\Phi(f)\psi \right>,
+\begin{align}
+    \left< \psi, \left( \int_X f \, d\mu^\Phi \right)\psi \right> &= \int_X f \, d\mu^\Phi_\psi \\
+                &= \int_X f \, d\mu_\psi \\
+                &= Q_f(\psi) \\
+                &= \left< \psi, \widetilde\Phi(f)\psi \right>,
+\end{align}
 $$
 
 the last equality being [Definition (The Extended Calculus)](#def:abstract-extended-calculus). Two bounded operators inducing the same quadratic form are equal, by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63); hence $$\int_X f \, d\mu^\Phi = \widetilde\Phi(f)$$. When $$f$$ is continuous, $$\widetilde\Phi(f) = \Phi(f)$$ (the final clause of [Definition (The Extended Calculus)](#def:abstract-extended-calculus)), giving the stated special case.$$\blacksquare$$
@@ -3051,7 +3151,12 @@ By [**Proposition** *(Operator-Valued Integration Intertwines Conjugation and th
 Now fix $$\psi \in \mathbf{H}$$ and consider the two finite positive Borel measures $$\nu_\psi$$ and $$\widetilde{\mu^A}_\psi$$ on $$X$$. Writing $$\mathcal{P}$$ for the algebra of functions on $$X$$ of the form $$\lambda \mapsto p(\lambda,\overline\lambda)$$, we have for $$p \in \mathcal{P}$$
 
 $$
-    \int_X p \, d\nu_\psi = \left< \psi, \Psi(p)\psi \right> = \left< \psi, p(A,A^*)\psi \right> = \left< \psi, \left( \int_X p \, d\widetilde{\mu^A} \right)\psi \right> = \int_X p \, d\widetilde{\mu^A}_\psi,
+\begin{align}
+    \int_X p \, d\nu_\psi &= \left< \psi, \Psi(p)\psi \right> \\
+                &= \left< \psi, p(A,A^*)\psi \right> \\
+                &= \left< \psi, \left( \int_X p \, d\widetilde{\mu^A} \right)\psi \right> \\
+                &= \int_X p \, d\widetilde{\mu^A}_\psi,
+\end{align}
 $$
 
 using the defining property of each bounded integral at the two ends. Both sides are continuous in $$p$$ with respect to the supremum norm on $$X$$ (each is bounded in modulus by $$\left\| p \right\|_\infty$$ times the total mass $$\left\| \psi \right\|^2$$), and $$\mathcal{P}$$ is dense in $$C^0(X;\mathbb{C})$$ by the [**Complex Stone–Weierstrass Theorem**](../spectral-theorems/#thrm:stone–weierstrass-complex) — $$\mathcal{P}$$ being a subalgebra of $$C^0(X;\mathbb{C})$$ containing the constants, separating points, and closed under conjugation, exactly as verified for $$\sigma(A)$$ in the proof of [**Theorem** *(Continuous Functional Calculus for a Normal Operator)*](#thrm:continuous-functional-calculus-normal), the verification using nothing about the underlying compact set. Hence $$\int_X f \, d\nu_\psi = \int_X f \, d\widetilde{\mu^A}_\psi$$ for every $$f \in C^0(X;\mathbb{C})$$, in particular for every real-valued continuous $$f$$.
@@ -3125,7 +3230,14 @@ We record the scalar maps and their elementary properties. Write $$S^1 \equiv \{
 *$$D$$ is real-valued.* Let $$u \in S^1\setminus\{1\}$$, so $$\overline u = u^{-1}$$. Then
 
 $$
-    \overline{D(u)} = \overline{i\,\frac{u+1}{u-1}} = -i\,\frac{\overline u + 1}{\overline u - 1} = -i\,\frac{u^{-1}+1}{u^{-1}-1} = -i\,\frac{1 + u}{1 - u} = i\,\frac{u+1}{u-1} = D(u),
+\begin{align}
+    \overline{D(u)} &= \overline{i\,\frac{u+1}{u-1}} \\
+                &= -i\,\frac{\overline u + 1}{\overline u - 1} \\
+                &= -i\,\frac{u^{-1}+1}{u^{-1}-1} \\
+                &= -i\,\frac{1 + u}{1 - u} \\
+                &= i\,\frac{u+1}{u-1} \\
+                &= D(u),
+\end{align}
 $$
 
 multiplying numerator and denominator by $$u$$ in the middle step. A complex number equal to its conjugate is real.
@@ -3194,7 +3306,12 @@ $$
 the second equality by the same computation with $$i$$ replaced by $$-i$$ (the cross terms again cancelling). Applying this with $$\phi = (A-i\mathbf{1})^{-1}\psi \in \text{Dom}(A)$$, and using property (i) above,
 
 $$
-    \left\| U\psi \right\|^2 = \left< (A+i\mathbf{1})\phi, (A+i\mathbf{1})\phi \right> = \left< (A-i\mathbf{1})\phi, (A-i\mathbf{1})\phi \right> = \left< \psi,\psi \right> = \left\| \psi \right\|^2.
+\begin{align}
+    \left\| U\psi \right\|^2 &= \left< (A+i\mathbf{1})\phi, (A+i\mathbf{1})\phi \right> \\
+                &= \left< (A-i\mathbf{1})\phi, (A-i\mathbf{1})\phi \right> \\
+                &= \left< \psi,\psi \right> \\
+                &= \left\| \psi \right\|^2.
+\end{align}
 $$
 
 So $$U$$ preserves norms, hence is bounded with $$\left\| U \right\| = 1$$ (as $$\mathbf{H} \ne \{0\}$$; if $$\mathbf{H} = \{0\}$$ everything is trivial). By the consequence clause of [**Proposition** *(Polarization Identity for the Inner Product)*](#prpstn:polarization-identity), a norm-preserving linear map preserves the inner product, so $$U$$ does. Being also a bijection, $$U$$ is unitary in the sense of [Definition (Unitary Operator)](#def:unitary-operator).
@@ -3273,7 +3390,11 @@ $$
 a bounded operator. Since $$(A - i\mathbf{1})B = \big[ (A-\lambda\mathbf{1}) + (\lambda-i)\mathbf{1} \big]B = \mathbf{1} + (\lambda-i)B$$ — the products being defined because $$B$$ lands in $$\text{Dom}(A)$$ — we have $$S = \frac{\lambda-i}{-2i}(A-i\mathbf{1})B$$. Hence, using the factorization and $$(A-i\mathbf{1})^{-1}(A-i\mathbf{1})\psi = \psi$$ on $$\text{Dom}(A)$$,
 
 $$
-    \big( U - C(\lambda)\mathbf{1} \big) S = \frac{-2i}{\lambda-i}(A-\lambda\mathbf{1})(A-i\mathbf{1})^{-1}\cdot\frac{\lambda-i}{-2i}(A-i\mathbf{1})B = (A-\lambda\mathbf{1})B = \mathbf{1},
+\begin{align}
+    \big( U - C(\lambda)\mathbf{1} \big) S &= \frac{-2i}{\lambda-i}(A-\lambda\mathbf{1})(A-i\mathbf{1})^{-1}\cdot\frac{\lambda-i}{-2i}(A-i\mathbf{1})B \\
+                &= (A-\lambda\mathbf{1})B \\
+                &= \mathbf{1},
+\end{align}
 $$
 
 and symmetrically $$S\big( U - C(\lambda)\mathbf{1} \big) = \mathbf{1}$$, using $$B(A-\lambda\mathbf{1})\psi = \psi$$ on $$\text{Dom}(A)$$ together with the fact that $$(A-i\mathbf{1})^{-1}$$ maps $$\mathbf{H}$$ into $$\text{Dom}(A)$$. So $$U - C(\lambda)\mathbf{1}$$ has a bounded two-sided inverse, i.e. $$C(\lambda)$$ lies in the resolvent set of $$U$$ by the [definition of the resolvent set](../spectral-theorems/#def:bounded-operator-resolvent-and-spectrum).
@@ -3530,7 +3651,11 @@ The left side is finite exactly when $$\psi$$ lies in the domain $$W_\iota$$ of 
 *Equality of the operators.* Applying the change-of-variables theorem again, this time with $$g(\lambda) = \lambda$$ (integrable against $$\mu^A_\psi$$ for $$\psi$$ in the common domain), for every such $$\psi$$,
 
 $$
-    \left< \psi, \left( \int_{\mathbb{R}} \lambda \, d\mu^A(\lambda) \right)\psi \right> = \int_{\mathbb{R}} \lambda \, d\mu^A_\psi(\lambda) = \int_{\sigma(U)} D(u) \, d\mu^U_\psi(u) = \left< \psi, \left( \int_{\sigma(U)} D \, d\mu^U \right)\psi \right>,
+\begin{align}
+    \left< \psi, \left( \int_{\mathbb{R}} \lambda \, d\mu^A(\lambda) \right)\psi \right> &= \int_{\mathbb{R}} \lambda \, d\mu^A_\psi(\lambda) \\
+                &= \int_{\sigma(U)} D(u) \, d\mu^U_\psi(u) \\
+                &= \left< \psi, \left( \int_{\sigma(U)} D \, d\mu^U \right)\psi \right>,
+\end{align}
 $$
 
 the outer equalities by the defining property of the unbounded integral in [**Proposition** *(hall-10.1)*](#prpstn:hall-10.1). By the strengthened uniqueness clause of that proposition — an operator on the common domain is determined by its diagonal quadratic form — the two operators are equal. By [**Proposition** *(hall-10.29)*](#prpstn:hall-10.29), $$\int_{\sigma(U)}D\,d\mu^U = A$$, so $$\int_{\mathbb{R}}\lambda\,d\mu^A(\lambda) = A$$.$$\blacksquare$$
@@ -3590,7 +3715,11 @@ a continuous function on $$\mathbb{R}$$ satisfying $$\lvert r(\lambda) \rvert = 
 First, $$B\psi \in \text{Dom}(A)$$ for every $$\psi \in \mathbf{H}$$. By [**Lemma** *(The Associated Measure of a Bounded-Calculus Image)*](#lmm:associated-measure-of-image) applied with $$h = r$$, and then using $$\lvert \iota r \rvert^2 = \lambda^2/(\lambda^2+1) \le 1$$,
 
 $$
-    \int_{\mathbb{R}} \lvert \iota \rvert^2 \, d\nu_{B\psi} = \int_{\mathbb{R}} \lvert \iota \rvert^2 \lvert r \rvert^2 \, d\nu_\psi \le \int_{\mathbb{R}} 1 \, d\nu_\psi = \nu_\psi(\mathbb{R}) = \left\| \psi \right\|^2 < \infty,
+\begin{align}
+    \int_{\mathbb{R}} \lvert \iota \rvert^2 \, d\nu_{B\psi} &= \int_{\mathbb{R}} \lvert \iota \rvert^2 \lvert r \rvert^2 \, d\nu_\psi \le \int_{\mathbb{R}} 1 \, d\nu_\psi \\
+                &= \nu_\psi(\mathbb{R}) \\
+                &= \left\| \psi \right\|^2 < \infty,
+\end{align}
 $$
 
 so $$B\psi \in W_\iota = \text{Dom}(A)$$, by the definition of $$W_\iota$$ in [**Proposition** *(hall-10.2)*](#prpstn:hall-10.2).
@@ -3648,7 +3777,11 @@ on $$S^1\setminus\{1\}$$, with $$\nu^U_\psi = C_*\nu_\psi$$ for every $$\psi$$. 
 By [**Theorem** *(Change of Variables for a Pushforward Measure)*](#thrm:change-of-variables) with $$T = C$$ and $$g(u) = u$$ (bounded on $$S^1$$), for every $$\psi \in \mathbf{H}$$,
 
 $$
-    \left< \psi, \left( \int_{S^1} u \, d\nu^U(u) \right)\psi \right> = \int_{S^1} u \, d\nu^U_\psi(u) = \int_{\mathbb{R}} C(\lambda)\,d\nu_\psi(\lambda) = \left< \psi, \left( \int_{\mathbb{R}} C \, d\nu \right)\psi \right>,
+\begin{align}
+    \left< \psi, \left( \int_{S^1} u \, d\nu^U(u) \right)\psi \right> &= \int_{S^1} u \, d\nu^U_\psi(u) \\
+                &= \int_{\mathbb{R}} C(\lambda)\,d\nu_\psi(\lambda) \\
+                &= \left< \psi, \left( \int_{\mathbb{R}} C \, d\nu \right)\psi \right>,
+\end{align}
 $$
 
 so, two bounded operators inducing the same quadratic form being equal by uniqueness in [**Proposition** *(hall-a.63)*](../spectral-theorems/#prpstn:hall-a.63), and by **Step 2**,
