@@ -322,11 +322,8 @@ This is required to define the "spectrum" of an operator, which is required by m
 <!--  \uses{def:bounded-inverse} -->
 > For $$A \in \mathcal{B}(\mathbf{H})$$, the *resolvent set* of $$A$$, denoted as $$\rho(A)$$, is the set of all $$\lambda \in \mathbb{C}$$ such that the operator $$(A - \lambda \mathbf{1})$$ has a bounded inverse. The *spectrum* of $$A$$, denoted by $$\sigma(A)$$, is the complement of $$A$$'s resolvent set $$\rho(A)$$ in $$\mathbb{C}$$. For $$\lambda$$ in the resolvent set of $$A$$ the bounded inverse of $$(A - \lambda \mathbf{1})$$, which we notate as $$(A - \lambda \mathbf{1})^{-1}$$, is called the *resolvent* of $$A$$ at $$\lambda$$.
 
-## Spectral Theorem for Bounded Self-Adjoint Operators
-In this section we will actually be able to state the Spectral Theorem. However, we will only be able to do so after introducing "substantial machinery" related to "projection-valued measures".
 
-### Projection-Valued Measures
-"Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive, real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
+Two further pieces of Hilbert space theory are needed before we begin. The first identifies bounded linear functionals with vectors; the second uses it to define the adjoint.
 
 > **Theorem** *(Riesz Theorem)*
 <a name="thrm:hall-a.52"></a>
@@ -403,6 +400,12 @@ Each part follows from uniqueness in [Definition (Adjoint of a Bounded Operator)
 *Part 4.* $$\left< \phi, A^*\psi \right> = \overline{\left< A^*\psi, \phi \right>} = \overline{\left< \psi, A\phi \right>} = \left< A\phi, \psi \right>$$, using conjugate symmetry twice.
 
 *Part 5.* $$\left< \phi, \mathbf{1}\psi \right> = \left< \phi, \psi \right> = \left< \mathbf{1}\phi, \psi \right>$$.$$\blacksquare$$
+
+## Spectral Theorem for Bounded Self-Adjoint Operators
+In this section we will actually be able to state the Spectral Theorem. However, we will only be able to do so after introducing "substantial machinery" related to "projection-valued measures".
+
+### Projection-Valued Measures
+"Projection-valued measures" are "core" to the Spectral Theorem. Basically, they generalize the notion of a measure. A "projection-valued measure", instead of taking on positive, real-values as a standard measure does, takes on "bounded orthogonal projection" values. Formally, we define this by first introducing the notion of a "bounded orthogonal projection"
 
 > **Definition** *(Orthogonal Projection)*
 <a name="def:bounded-orthogonal-projection"></a>
