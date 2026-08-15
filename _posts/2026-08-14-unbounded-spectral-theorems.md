@@ -270,9 +270,17 @@ a sum of two sequences of non-negative reals each tending to $$0$$.$$\blacksquar
 <!--  \uses{def:product-hilbert-space} -->
 <!--  \uses{lmm:componentwise-convergence} -->
 <!--  \uses{thrm:sequential-closedness} -->
-> An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closed* if the graph of $$A$$ is a closed subset of $$\mathbf{H} \times \mathbf{H}$$. Equivalently — by [**Theorem** *(Sequential Characterization of Closed Sets and Closures)*](#thrm:sequential-closedness) and [**Lemma** *(Convergence in $$\mathbf{H} \times \mathbf{H}$$ is Componentwise)*](#lmm:componentwise-convergence) — $$A$$ is closed if and only if: whenever $$\{ \psi_n \}_{n \in \mathbb{N}}$$ is a sequence in $$\text{Dom}(A)$$ and there exist $$\psi, \varphi \in \mathbf{H}$$ with $$\psi_n \to \psi$$ and $$A\psi_n \to \varphi$$, it follows that $$\psi \in \text{Dom}(A)$$ and $$A\psi = \varphi$$.
+> The *graph* of an unbounded operator $$A$$ on $$\mathbf{H}$$ is the subset
 >
-> An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closable* if the closure, in $$\mathbf{H} \times \mathbf{H}$$, of the graph of $$A$$ is again the graph of some operator. If $$A$$ is closable, the *closure* $$A^{\text{cl}}$$ of $$A$$ is the operator whose graph is the closure of the graph of $$A$$.
+> $$
+>     \Gamma(A) \equiv \left\{ (\psi, A\psi) \;\middle|\; \psi \in \text{Dom}(A) \right\} \subset \mathbf{H} \times \mathbf{H},
+> $$
+>
+> a linear subspace of $$\mathbf{H} \times \mathbf{H}$$ because $$A$$ is linear on $$\text{Dom}(A)$$.
+>
+> An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closed* if $$\Gamma(A)$$ is a closed subset of $$\mathbf{H} \times \mathbf{H}$$. Equivalently — by [**Theorem** *(Sequential Characterization of Closed Sets and Closures)*](#thrm:sequential-closedness) and [**Lemma** *(Convergence in $$\mathbf{H} \times \mathbf{H}$$ is Componentwise)*](#lmm:componentwise-convergence) — $$A$$ is closed if and only if: whenever $$\{ \psi_n \}_{n \in \mathbb{N}}$$ is a sequence in $$\text{Dom}(A)$$ and there exist $$\psi, \varphi \in \mathbf{H}$$ with $$\psi_n \to \psi$$ and $$A\psi_n \to \varphi$$, it follows that $$\psi \in \text{Dom}(A)$$ and $$A\psi = \varphi$$.
+>
+> An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closable* if $$\overline{\Gamma(A)}$$, the closure of $$\Gamma(A)$$ in $$\mathbf{H} \times \mathbf{H}$$, is again the graph of some operator. If $$A$$ is closable, the *closure* $$A^{\text{cl}}$$ of $$A$$ is the operator with $$\Gamma(A^{\text{cl}}) = \overline{\Gamma(A)}$$.
 
 Two elementary facts about this closure — that it is automatically linear, and admits the same sequential description as $$A$$ itself — are needed repeatedly below, so we record and prove them immediately.
 
