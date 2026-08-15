@@ -297,6 +297,28 @@ Finally, $$\text{Dom}(A^{\text{cl}})$$ is dense: the graph of $$A$$ is a subset 
 
 **Part 3.** $$A^{\text{cl}}$$ is an extension of $$A$$: the graph of $$A$$ is a subset of its own closure, i.e. of the graph of $$A^{\text{cl}}$$. It is closed, since a closure is always a closed set. Suppose $$B$$ is any closed extension of $$A$$. Then the graph of $$B$$ is a closed set (as $$B$$ is closed) containing the graph of $$A$$ (as $$B$$ extends $$A$$), hence contains the closure of the graph of $$A$$, i.e. the graph of $$A^{\text{cl}}$$. This says exactly that $$B$$ is an extension of $$A^{\text{cl}}$$.$$\blacksquare$$
 
+Hall poses the next fact as Exercise 9.11.7(a); we need it in the proof of essential self-adjointness below, so we record and prove it here rather than appealing to an exercise.
+
+> **Lemma** *(The Closure of a Symmetric Operator is Symmetric)*
+<a name="lmm:closure-of-symmetric-is-symmetric"></a>
+<!--  \uses{def:hall-9.2} -->
+<!--  \uses{def:hall-9.6} -->
+<!--  \uses{prpstn:closure-linearity-and-sequential-description} -->
+<!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
+> Let $$A$$ be a symmetric, closable, unbounded operator on $$\mathbf{H}$$. Then $$A^{\text{cl}}$$ is symmetric.
+
+**Proof**
+Let $$\xi, \eta \in \text{Dom}(A^{\text{cl}})$$. By Part 2 of [Proposition (Linearity and Sequential Description of the Closure)](#prpstn:closure-linearity-and-sequential-description) there are sequences $$\{\xi_n\}, \{\eta_n\}$$ in $$\text{Dom}(A)$$ with $$\xi_n \to \xi$$, $$A\xi_n \to A^{\text{cl}}\xi$$, $$\eta_n \to \eta$$ and $$A\eta_n \to A^{\text{cl}}\eta$$.
+
+Symmetry of $$A$$ gives $$\left< \xi_n, A\eta_n \right> = \left< A\xi_n, \eta_n \right>$$ for every $$n$$. All four sequences converge, so [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product) passes the identity to the limit:
+
+$$
+    \left< \xi, A^{\text{cl}}\eta \right> = \left< A^{\text{cl}}\xi, \eta \right>.
+$$
+
+As $$\xi, \eta \in \text{Dom}(A^{\text{cl}})$$ were arbitrary, this is the [definition of symmetric](#def:hall-9.2) for $$A^{\text{cl}}$$.$$\blacksquare$$
+
+
 With self-adjointness, symmetry, and closure all in hand, we can state the last definition of this subsection.
 
 > **Definition** *(Essentially Self-Adjoint Operator)*
@@ -774,6 +796,7 @@ We conclude this part of the development with a criterion for essential self-adj
 <!--  \uses{crllr:trivial-complement-characterizes-density} -->
 <!--  \uses{../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product} -->
 <!--  \uses{def:kernel-of-an-unbounded-operator} -->
+<!--  \uses{lmm:closure-of-symmetric-is-symmetric} -->
 > If $$A$$ is a symmetric operator on $$\mathbf{H}$$, then $$A$$ is essentially self-adjoint if and only if $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ are dense subspaces of $$\mathbf{H}$$.
 
 **Proof**
@@ -789,7 +812,7 @@ $$
 
 Since $$A^{\text{cl}}$$ is self-adjoint, [Theorem (Spectrum of a Self-Adjoint Operator is Real)](#thrm:hall-9.17) shows $$\sigma(A^{\text{cl}}) \subset \mathbb{R}$$, and since $$-i \notin \mathbb{R}$$, $$-i$$ is not in $$\sigma(A^{\text{cl}})$$, i.e. $$-i$$ is in the resolvent set of $$A^{\text{cl}}$$. By the [definition of the resolvent set](#def:hall-9.16), this gives a bounded two-sided inverse to $$A^{\text{cl}} + i\mathbf{1}$$, and an operator with a two-sided inverse is in particular injective, so $$\text{Ker}(A^{\text{cl}} + i\mathbf{1}) = \{0\}$$. Hence $$\left( \text{Range}(A - i\mathbf{1}) \right)^\perp = \{0\}$$, so, by [Corollary (Trivial Complement Characterizes Density)](#crllr:trivial-complement-characterizes-density), $$\text{Range}(A - i\mathbf{1})$$ is dense in $$\mathbf{H}$$. An identical argument with $$i$$ replaced by $$-i$$ throughout shows $$\text{Range}(A + i\mathbf{1})$$ is dense in $$\mathbf{H}$$.
 
-We now prove the reverse direction, i.e. that if $$A$$ is symmetric with $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ both dense in $$\mathbf{H}$$, then $$A$$ is essentially self-adjoint. By [Proposition (Closedness of the Adjoint's Graph)](#prpstn:hall-9.8), $$A$$ is closable, so $$A^{\text{cl}}$$ exists. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$(A^{\text{cl}})^* = A^*$$; and $$A^*$$ is a closed extension of the symmetric operator $$A$$ (closed by [Proposition (Closedness of the Adjoint's Graph)](#prpstn:hall-9.8), an extension of $$A$$ by [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4)), hence also an extension of the closure $$A^{\text{cl}}$$, by Part 3 of [Proposition (Linearity and the Sequential Description of the Closure)](#prpstn:closure-linearity-and-sequential-description). We check $$A^{\text{cl}}$$ is itself symmetric: for $$\xi, \eta \in \text{Dom}(A^{\text{cl}})$$, take sequences $$\{\xi_n\}, \{\eta_n\}$$ in $$\text{Dom}(A)$$ with $$\xi_n \to \xi$$, $$A\xi_n \to A^{\text{cl}}\xi$$ and $$\eta_n \to \eta$$, $$A\eta_n \to A^{\text{cl}}\eta$$, as furnished by Part 2 of the same proposition; symmetry of $$A$$ gives $$\left< \xi_n, A\eta_n \right> = \left< A\xi_n, \eta_n \right>$$ for every $$n$$, and [continuity of the inner product](../spectral-theorems/#prpstn:continuity-of-norm-and-inner-product) — applicable since all four sequences $$\xi_n, A\xi_n, \eta_n, A\eta_n$$ converge — passes this to the limit, giving $$\left< \xi, A^{\text{cl}}\eta \right> = \left< A^{\text{cl}}\xi, \eta \right>$$, which is the [definition of symmetric](#def:hall-9.2) for $$A^{\text{cl}}$$.
+We now prove the reverse direction, i.e. that if $$A$$ is symmetric with $$\text{Range}(A - i\mathbf{1})$$ and $$\text{Range}(A + i\mathbf{1})$$ both dense in $$\mathbf{H}$$, then $$A$$ is essentially self-adjoint. By [Proposition (Closedness of the Adjoint's Graph)](#prpstn:hall-9.8), $$A$$ is closable, so $$A^{\text{cl}}$$ exists. By [Proposition (The Adjoint of a Closure)](#prpstn:hall-9.10), $$(A^{\text{cl}})^* = A^*$$; and $$A^*$$ is a closed extension of the symmetric operator $$A$$ (closed by [Proposition (Closedness of the Adjoint's Graph)](#prpstn:hall-9.8), an extension of $$A$$ by [Proposition (Symmetric Operators and the Adjoint)](#prpstn:hall-9.4)), hence also an extension of the closure $$A^{\text{cl}}$$, by Part 3 of [Proposition (Linearity and the Sequential Description of the Closure)](#prpstn:closure-linearity-and-sequential-description). By [**Lemma** *(The Closure of a Symmetric Operator is Symmetric)*](#lmm:closure-of-symmetric-is-symmetric), $$A^{\text{cl}}$$ is symmetric.
 
 Applying [**Lemma (The $$b^2$$ Inequality for Symmetric Operators)**](#lmm:b-squared-inequality-symmetric) — applicable since $$A^{\text{cl}}$$ is symmetric, shown above — with $$\lambda = i$$ (i.e. $$a=0$$, $$b=1$$) gives
 
