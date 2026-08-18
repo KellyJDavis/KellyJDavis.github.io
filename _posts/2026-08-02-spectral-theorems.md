@@ -700,7 +700,7 @@ Let us first prove that $$Q_{1_E}(\lambda\psi) = \lvert\lambda\rvert^2 Q_{1_E}(\
 $$
 \begin{align}
   Q_{1_E}(\lambda\psi) &= \left< \lambda\psi, \mu(E) \lambda\psi \right> \\
-                       &= \lambda^*\lambda \left< \psi, \mu(E) \psi \right> \\
+                       &= \overline{\lambda}\lambda \left< \psi, \mu(E) \psi \right> \\
                        &= \lvert\lambda\rvert^2 \left< \psi, \mu(E) \psi \right> \\
                        &= \lvert\lambda\rvert^2 Q_{1_E}(\psi),
 \end{align}
