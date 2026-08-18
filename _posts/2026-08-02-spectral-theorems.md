@@ -6353,7 +6353,7 @@ This proof broadly consists of two parts **Part 1:** prove that $$\mu^A$$ is a p
 $$
     \int_{\sigma(A)} \lambda \, d\mu^A(\lambda) = A.
 $$
-**Proof**
+
 That $$\mu^A$$ is a projection-valued measure is the conjunction of the four axioms of the [definition](#def:projection-valued-measure), established in [**Proposition** *(Each Spectral Projection is an Orthogonal Projection)*](#prpstn:mua-projection), [**Proposition** *(Spectral Projections Multiply to the Intersection)*](#prpstn:mua-multiplicative), [**Proposition** *(Spectral Projections of the Empty Set and the Whole Spectrum)*](#prpstn:mua-empty-and-whole) and [**Proposition** *(Spectral Projections are Countably Additive)*](#prpstn:mua-countably-additive). The integral identity is [**Proposition** *(The Spectral Measure Integrates to the Operator)*](#prpstn:mua-integrates-to-A).$$\blacksquare$$
 
 > **Proposition** *(Each Spectral Projection is an Orthogonal Projection)*
@@ -7665,7 +7665,7 @@ So we have $$\sigma(A)$$ a compact metric measurable space by [**Lemma**](#lmm:s
 Applying this [**Lemma**](#lmm:hall-prblm-8.3.3c) to the case at hand, we can conclude that $$\mathcal{G}$$ consists of all bounded, Borel-measurable functions on $$\sigma(A)$$. However, by definition $$\mathcal{G}$$ is the set of bounded, measurable, complex-valued functions on $$\sigma(A)$$ such that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$. Thus, these last two facts imply that operator-valued integration with respect to $$\mu^A$$ agrees with the same with respect to $$\nu^A$$ on all bounded, Borel-measurable functions on $$\sigma(A)$$, as required.
 $$\blacksquare$$
 
-So with this we have proven that under the hypotheses of the [**Theorem**](#thrm:hall-prblm-8.3.4) $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.$$\blacksquare$$
+So with this we have proven that under the hypotheses of the [**Theorem**](#thrm:hall-prblm-8.3.4) $$\mu^A(E) = \nu^A(E)$$ for all measurable subsets $$E$$ of the spectrum $$\sigma(A)$$ of $$A$$, i.e. $$\mu^A$$ and $$\nu^A$$ are equivalent projection-valued measures.
 
 
 > **Theorem** *(Spectral Theorem for Bounded, Self-Adjoint Operators)*

@@ -3323,8 +3323,8 @@ We now construct the operator $$U$$. Recall from [**Theorem** *(Spectrum of a Se
 >        A\psi = i(U + \mathbf{1})(U - \mathbf{1})^{-1}\psi.
 >    $$
 > 4. $$U - \mathbf{1} = 2i\,(A - i\mathbf{1})^{-1}$$, and equivalently $$U = \mathbf{1} + 2i\,(A-i\mathbf{1})^{-1}$$.
-
-Note that Point 2 and Point 3 together say that $$U - \mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\text{Dom}(A)$$; the symbol $$(U-\mathbf{1})^{-1}$$ in Point 3 refers to the inverse of *that* bijection. We are *not* claiming $$1$$ lies in the resolvent set of $$U$$: the map $$(U-\mathbf{1})^{-1} : \text{Dom}(A) \to \mathbf{H}$$ is not bounded unless $$\text{Dom}(A) = \mathbf{H}$$, which happens only when $$A$$ is bounded.
+>
+> Note that Point 2 and Point 3 together say that $$U - \mathbf{1}$$ is a bijection of $$\mathbf{H}$$ onto $$\text{Dom}(A)$$; the symbol $$(U-\mathbf{1})^{-1}$$ in Point 3 refers to the inverse of *that* bijection. We are *not* claiming $$1$$ lies in the resolvent set of $$U$$: the map $$(U-\mathbf{1})^{-1} : \text{Dom}(A) \to \mathbf{H}$$ is not bounded unless $$\text{Dom}(A) = \mathbf{H}$$, which happens only when $$A$$ is bounded.
 
 **Proof**
 *Preliminaries on the resolvents.* Since $$A$$ is self-adjoint, [**Theorem** *(Spectrum of a Self-Adjoint Operator is Real)*](#thrm:hall-9.17) gives $$\sigma(A) \subset \mathbb{R}$$, so $$\pm i$$ lie in the resolvent set. By the [definition of the resolvent set](#def:hall-9.16), there is a bounded $$(A-i\mathbf{1})^{-1} \in \mathcal{B}(\mathbf{H})$$ with: (i) $$(A-i\mathbf{1})^{-1}\psi \in \text{Dom}(A)$$ and $$(A-i\mathbf{1})(A-i\mathbf{1})^{-1}\psi = \psi$$ for all $$\psi \in \mathbf{H}$$; and (ii) $$(A-i\mathbf{1})^{-1}(A-i\mathbf{1})\psi = \psi$$ for all $$\psi \in \text{Dom}(A)$$.
