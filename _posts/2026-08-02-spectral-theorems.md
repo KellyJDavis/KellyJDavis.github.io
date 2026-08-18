@@ -71,7 +71,7 @@ Two pieces of notation are used pervasively throughout this post and are fixed h
 <a name="def:identity-operator"></a>
 <!--  \uses{def:bounded-operator-notation} -->
 <!--  \uses{conv:nonzero-hilbert-space} -->
-> $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear and bounded with $$\left\| \mathbf{1} \right\| = 1$$, so $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$. For $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$, and for $$A \in \mathcal{B}(\mathbf{H})$$ the operator $$A - \lambda\mathbf{1}$$ is $$\psi \mapsto A\psi - \lambda\psi$$, again an element of $$\mathcal{B}(\mathbf{H})$$.
+> $$\mathbf{1}$$ denotes the *identity operator* on $$\mathbf{H}$$, that is, the map $$\mathbf{1}\psi \equiv \psi$$ for every $$\psi \in \mathbf{H}$$. It is linear, and bounded with $$\left\| \mathbf{1} \right\| = 1$$: every unit vector $$\psi$$ has $$\left\| \mathbf{1}\psi \right\| = \left\| \psi \right\| = 1$$, and unit vectors exist because $$\mathbf{H} \ne \{0\}$$ by the [standing convention](#conv:nonzero-hilbert-space), so the supremum defining the operator norm equals $$1$$. Hence $$\mathbf{1} \in \mathcal{B}(\mathbf{H})$$. For $$\lambda \in \mathbb{C}$$, $$\lambda\mathbf{1}$$ denotes the operator $$\psi \mapsto \lambda\psi$$, and for $$A \in \mathcal{B}(\mathbf{H})$$ the operator $$A - \lambda\mathbf{1}$$ is $$\psi \mapsto A\psi - \lambda\psi$$, again an element of $$\mathcal{B}(\mathbf{H})$$.
 
 > **Definition** *(Indicator Function)*
 <a name="def:indicator-function"></a>

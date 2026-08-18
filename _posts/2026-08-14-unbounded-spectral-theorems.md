@@ -844,6 +844,7 @@ We close this section with a construction we will use directly in the proof of [
 
 > **Definition** *(Hilbert Space Direct Sum)*
 <a name="def:hall-a.45"></a>
+<!--  \uses{def:hall-3.1} -->
 > Suppose $$\{ \mathbf{H}_j \}_{j=1}^\infty$$ is a sequence of separable Hilbert spaces. Then the *Hilbert space direct sum*, denoted
 >
 > $$
@@ -862,7 +863,11 @@ We close this section with a construction we will use directly in the proof of [
 >     \left< \phi, \psi \right> \equiv \sum_{j=1}^\infty \left< \phi_j, \psi_j \right>_j.
 > $$
 >
-> This inner product is well defined, and $$\mathbf{H}$$ is complete with respect to it; hence $$\mathbf{H}$$, with this inner product, is itself a separable, complex Hilbert space.
+> This inner product is well defined: by Cauchy–Schwarz in each $$\mathbf{H}_j$$ and then in $$\ell^2$$, $$\sum_j \lvert \left< \phi_j, \psi_j \right>_j \rvert \le \sum_j \left\| \phi_j \right\|_j \left\| \psi_j \right\|_j \le \left\| \phi \right\| \left\| \psi \right\|$$, so the series converges absolutely.
+>
+> $$\mathbf{H}$$ is complete with respect to the induced norm, and separable because each $$\mathbf{H}_j$$ is: a countable dense set is obtained from the finitely-supported sequences whose entries are drawn from countable dense subsets of the $$\mathbf{H}_j$$. Hence $$\mathbf{H}$$, with this inner product, is itself a separable, complex Hilbert space.
+>
+> Completeness is the one clause not argued here; it is the standard $$\ell^2$$-style argument — a Cauchy sequence is componentwise Cauchy, the componentwise limits have square-summable norms by Fatou, and convergence to that limit follows — and we import it.
 
 The finite direct sum is dense in the full direct sum. This is used in the proof of [**Proposition** *(Direct Sums of Bounded Self-Adjoint Operators)*](#prpstn:hall-9.26) below, so we record it as a lemma rather than as part of the definition.
 
