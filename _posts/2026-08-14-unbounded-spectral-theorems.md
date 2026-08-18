@@ -273,10 +273,10 @@ a sum of two sequences of non-negative reals each tending to $$0$$.$$\blacksquar
 > The *graph* of an unbounded operator $$A$$ on $$\mathbf{H}$$ is the subset
 >
 > $$
->     \Gamma(A) \equiv \left\{ (\psi, A\psi) \;\middle|\; \psi \in \text{Dom}(A) \right\} \subset \mathbf{H} \times \mathbf{H},
+>     \Gamma(A) \equiv \left\{ (\psi, A\psi) \;\middle|\; \psi \in \text{Dom}(A) \right\} \subset \mathbf{H} \times \mathbf{H}.
 > $$
 >
-> a linear subspace of $$\mathbf{H} \times \mathbf{H}$$ because $$A$$ is linear on $$\text{Dom}(A)$$.
+> That $$\Gamma(A)$$ is a linear subspace, and that the same holds for its closure, is established in Part 1 of [**Proposition** *(Linearity and the Sequential Description of the Closure)*](#prpstn:closure-linearity-and-sequential-description) below.
 >
 > An unbounded operator $$A$$ on $$\mathbf{H}$$ is *closed* if $$\Gamma(A)$$ is a closed subset of $$\mathbf{H} \times \mathbf{H}$$. Equivalently — by [**Theorem** *(Sequential Characterization of Closed Sets and Closures)*](#thrm:sequential-closedness) and [**Lemma** *(Convergence in $$\mathbf{H} \times \mathbf{H}$$ is Componentwise)*](#lmm:componentwise-convergence) — $$A$$ is closed if and only if: whenever $$\{ \psi_n \}_{n \in \mathbb{N}}$$ is a sequence in $$\text{Dom}(A)$$ and there exist $$\psi, \varphi \in \mathbf{H}$$ with $$\psi_n \to \psi$$ and $$A\psi_n \to \varphi$$, it follows that $$\psi \in \text{Dom}(A)$$ and $$A\psi = \varphi$$.
 >
