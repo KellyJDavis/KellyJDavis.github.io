@@ -2704,10 +2704,10 @@ The next "utility" lemma we must prove is the following
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{lmm:lemma-2} -->
 <!--  \uses{prpstn:hall-a.34} -->
-> Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse is given by the following series
+> Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$\mathbf{1} - X$$ has a bounded inverse $$(\mathbf{1} - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse is given by the following series
 >
 > $$
->     (I - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots
+>     (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots
 > $$
 >
 > that is convergent in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm.
