@@ -2237,6 +2237,10 @@ $$
     \left( \int_X s_1 \, d\mu \right) \left( \int_X s_2 \, d\mu \right) = \int_X s_1 s_2 \, d\mu,
 $$
 
+
+as required.
+$$\blacksquare$$
+
 > **Proposition** *(Products of Uniform Approximants Converge Uniformly)*
 <a name="prpstn:products-converge-uniformly"></a>
 <!--  \uses{prpstn:basic-integral-properties} -->
@@ -2354,9 +2358,6 @@ implies that for any $$\epsilon > 0$$ there exists a natural number $$L$$ such t
 $$
     \left\| \left( \int_X fg \, d\mu \right) - \left( \int_X s_i r_j \, d\mu \right) \right\| < \epsilon.
 $$
-$$\blacksquare$$
-
-as required.
 $$\blacksquare$$
 
 > **Proposition** *(Multiplicativity of the Integral for Bounded Measurable Functions)*
@@ -2786,6 +2787,8 @@ $$
     (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots.
 $$
 
+Together these imply the final desired result.$$\blacksquare$$
+
 The proof of the next proposition draws on two standard results from complex analysis, which we state first.
 
 > **Theorem** *(Analytic Equivalence Theorem)*
@@ -2796,7 +2799,6 @@ The proof of the next proposition draws on two standard results from complex ana
 <a name="thrm:maximum-modulus-principle"></a>
 > Let $$B$$ be a bounded, non-empty, connected open subset of $$\mathbb{C}$$. Let $$\overline{B}$$ be the closure of $$B$$. Suppose $$f : \overline{B} \rightarrow \mathbb{C}$$ is a continuous function that is holomorphic on $$B$$. Then $$\lvert f(z) \rvert$$ attains its maximum at some point on the boundary of $$B$$.
 
-Together these imply the final desired result.$$\blacksquare$$
 
 > **Proposition** *(The Spectrum is Closed, Bounded and Non-Empty)*
 <a name="prpstn:hall-7.5"></a>
