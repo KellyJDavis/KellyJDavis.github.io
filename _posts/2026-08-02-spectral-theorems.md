@@ -3370,6 +3370,9 @@ $$
     \left\| B_n^* - B^* \right\| = \left\| (B_n - B)^* \right\| = \left\| B_n - B \right\|.
 $$
 
+As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$, and hence $$B_n^* \rightarrow B^*$$ in the operator norm, the desired result.$$\blacksquare$$
+
+
 The proof of the next lemma draws on four standard results — one about series, two from complex and functional analysis, and the Principle of Uniform Boundedness — which we state first.
 
 > **Lemma** *(Nth-Term Test)*
@@ -3402,8 +3405,6 @@ The proof of the next lemma draws on four standard results — one about series,
 > $$
 > 
 > where $$\|T_m\|$$ is the operator norm of $$T_m$$.
-
-As $$B_n \rightarrow B$$ in the operator norm the righthand side tends to $$0$$, and hence $$B_n^* \rightarrow B^*$$ in the operator norm, the desired result.$$\blacksquare$$
 
 > **Lemma** *(The Norm of a Self-Adjoint Operator is its Spectral Radius)*
 <a name="lmm:hall-8.1"></a>
