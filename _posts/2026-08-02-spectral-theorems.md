@@ -2582,11 +2582,9 @@ The [**Stone–Weierstrass Theorem for Real Numbers**](#thrm:stone–weierstrass
 
 *Stage 2:* The second stage shows that for a continuous function $$f$$ on $$\sigma(A)$$ the operator $$f(A)$$ of the first stage can be represented as integration against a projection-valued measure. This amounts to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation) from measure theory.
 
-**Stage 1: The Continuous Functional Calculus**
+#### Stage 1: The Continuous Functional Calculus
 
 We begin this stage with "utility" lemmas and propositions that we will have need of later in this stage.
-
-#### Stage 1: The Continuous Functional Calculus
 
 > **Lemma** *(Bounded Operator Product is Submultiplicative)*
 <a name="lmm:lemma-2"></a>
@@ -2704,10 +2702,10 @@ The next "utility" lemma we must prove is the following
 <!--  \uses{lmm:bounded-operators-form-a-banach-space} -->
 <!--  \uses{lmm:lemma-2} -->
 <!--  \uses{prpstn:hall-a.34} -->
-> Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$I - X$$ has a bounded inverse $$(I - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse is given by the following series
+> Suppose $$X \in \mathcal{B}(\mathbf{H})$$ satisfies $$\|X\| < 1$$, where $$\|X\|$$ is the operator norm of $$X$$. Then the operator $$\mathbf{1} - X$$ has a bounded inverse $$(\mathbf{1} - X)^{-1}$$ in $$\mathcal{B}(\mathbf{H})$$; and this bounded inverse is given by the following series
 >
 > $$
->     (I - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots
+>     (\mathbf{1} - X)^{-1} = \mathbf{1} + X + X^2 + X^3 + \cdots
 > $$
 >
 > that is convergent in $$\mathcal{B}(\mathbf{H})$$ with respect to the operator norm.
@@ -4647,7 +4645,7 @@ $$
 the final desired result.$$\blacksquare$$
 
 
-**Stage 2: An Operator-Valued Riesz Representation Theorem**
+#### Stage 2: An Operator-Valued Riesz Representation Theorem
 
 We are finally in a position to kick off Stage 2. In this stage we will prove that for a real-valued, continuous function $$f$$ on the spectrum $$\sigma(A)$$ of $$A$$, the operator $$f(A)$$ derived using real-valued functional calculus can be represented as integration against a projection-valued measure. This will essentially amount to an operator-valued version of the [**Riesz Representation Theorem**](#thrm:riesz-representation).
 
@@ -4690,11 +4688,8 @@ $$
 $$
 
 
-#### Stage 2: From the Calculus to a Measure
-
 is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$, and satisfies the hypotheses required by the [**Riesz Representation Theorem**](#thrm:riesz-representation). It is linear, as $$f \mapsto f(A)$$ is linear by [**Proposition**](#prpstn:hall-8.3) and the inner product is linear in its second argument, and it is non-negative whenever all the values of $$f$$ are non-negative, as established in the first paragraph above. Hence, we can apply the [**Riesz Representation Theorem**](#thrm:riesz-representation), which yields the following.
 
-<a name="eqtn:hall-8.8"></a>
 > **Proposition** *(The Measures Associated to a Self-Adjoint Operator)*
 <a name="prpstn:associated-measures-self-adjoint"></a>
 <!--  \uses{def:adjoint-bounded} -->
@@ -4711,7 +4706,9 @@ is well-defined, in the sense that it does indeed take values in $$\mathbb{R}$$,
 > for all $$f \in C^0(\sigma(A) ; \mathbb{R})$$.
 
 **Proof**
-The functional $$\Lambda_\psi$$ is well defined, linear and non-negative, as established in the preceding paragraphs, so the [**Riesz Representation Theorem**](#thrm:riesz-representation) applies to it and supplies a unique positive measure $$\mu_\psi$$ representing it; unwinding the definition $$\Lambda_\psi(f) = \left< \psi, f(A)\psi \right>$$ gives the displayed identity.$$\blacksquare$$ Note how similar this is to the equality
+The functional $$\Lambda_\psi$$ is well defined, linear and non-negative, as established in the preceding paragraphs, so the [**Riesz Representation Theorem**](#thrm:riesz-representation) applies to it and supplies a unique positive measure $$\mu_\psi$$ representing it; unwinding the definition $$\Lambda_\psi(f) = \left< \psi, f(A)\psi \right>$$ gives the displayed identity.$$\blacksquare$$
+
+Note how similar this is to the equality
 
 $$
     \left< \psi, \left( \int_{\sigma(A)} f \, d\mu \right) \psi \right> = \int_{\sigma(A)} f(\lambda) d\mu_\psi(\lambda).
@@ -5348,7 +5345,9 @@ for all $$x \in X$$. Hence, we must prove that for each $$x \in X$$ and any real
 
 $$
     \lvert f_n(x) \rvert < \epsilon.
-$$ As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property). Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof.
+$$
+
+As $$f_n(x) \equiv 1 / (n + 1)$$, this is true as a result of the [**Archimedean Property**](#thrm:archimedean-property). Hence, the sequence $$f_n(x) \equiv 1 / (n + 1)$$ satisfies all the desired properties required by **Property 1.2.2**. This completes the proof.
 $$\blacksquare$$
 
 > **Proposition** *($$\mathcal{L}_0$$ is Closed under Complements)*
