@@ -1,5 +1,5 @@
 ---
-title:  "physicslib4 Tutorial"
+title:  "Tutorial for the Lean 4 Library physicslib4"
 date:   2026-11-01 10:00:00 +0100
 categories: aqft
 ---
